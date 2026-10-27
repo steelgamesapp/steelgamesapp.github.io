@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gear Guide · Steel Games</title>
+<meta name="description" content="Steel Games gear guide: well-known picks for PC parts, desk setups, streaming and console accessories, with every commission link clearly labeled.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: same dark steel look as the home page — header, intro with disclosure, sticky group chips, four groups of category rows with product cards, footer. */
+:root {
+  --bg: #0C0E11;
+  --surface: #15181D;
+  --raised: #1C2027;
+  --line: #262C35;
+  --line-strong: #2E3540;
+  --fg: #EDEFF2;
+  --muted: #9BA4AF;
+  --steel: #C3CBD5;
+  --accent: #FF7A1A;
+  --accent-soft: #FF9A4D;
+  --accent-ink: #1A0E04;
+  --pc: #FF8A3D;
+  --xbox: #5CCB72;
+  --ps: #6FA0FF;
+  --nin: #FF6B74;
+  --display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --body: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.6; }
+a { color: var(--accent-soft); }
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3, h4 { font-family: var(--display); line-height: 1.2; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.wrap {
+  max-width: 1080px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 640px) {
+  .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); }
+}
+
+.site-header { border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); }
+.brand:hover { color: var(--fg); }
+.brand span { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: 2.5px; }
+.nav { display: flex; gap: 6px; flex-wrap: wrap; }
+.nav a { color: var(--steel); text-decoration: none; font-size: 14px; font-weight: 500; padding: 10px 12px; border-radius: 10px; }
+.nav a:hover { color: var(--fg); background: var(--surface); }
+.nav a[aria-current="page"] { color: var(--fg); background: var(--surface); }
+.nav a.nav-cta { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.nav a.nav-cta:hover { background: var(--accent-soft); color: var(--accent-ink); }
+
+.intro .wrap { padding-block: 56px 32px; display: flex; flex-direction: column; gap: 16px; }
+@media (max-width: 640px) { .intro .wrap { padding-block: 40px 24px; } }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); }
+.intro h1 { font-size: clamp(34px, 5.5vw, 54px); font-weight: 700; letter-spacing: -0.8px; }
+.intro .lede { max-width: 38em; font-size: 18px; color: var(--steel); }
+.notice { max-width: 46em; padding: 14px 16px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); font-size: 14px; color: var(--steel); }
+.notice strong { color: var(--fg); }
+
+.jump { position: sticky; top: 0; z-index: 5; background: rgba(12, 14, 17, 0.94); border-block: 1px solid var(--line); }
+@supports (backdrop-filter: blur(8px)) { .jump { background: rgba(12, 14, 17, 0.8); backdrop-filter: blur(8px); } }
+.jump .wrap { display: flex; gap: 8px; padding-block: 10px; overflow-x: auto; scrollbar-width: none; }
+.jump .wrap::-webkit-scrollbar { display: none; }
+.jump a { flex-shrink: 0; text-decoration: none; color: var(--steel); font-size: 14px; font-weight: 600; padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); }
+.jump a:hover { color: var(--fg); background: var(--raised); }
+
+.group .wrap { padding-block: 48px; display: flex; flex-direction: column; gap: 32px; }
+.group + .group { border-top: 1px solid var(--line); }
+.group-head { display: flex; flex-direction: column; gap: 8px; }
+.group-head h2 { font-size: clamp(26px, 4vw, 34px); font-weight: 700; letter-spacing: -0.4px; }
+.group-head p { color: var(--steel); font-size: 16px; }
+.cat { display: flex; flex-direction: column; gap: 14px; }
+.cat h3 { font-size: 13px; font-family: var(--body); font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); }
+.items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 900px) { .items { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .items { grid-template-columns: minmax(0, 1fr); } }
+.item { display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); min-width: 0; }
+.item h4 { font-size: 18px; font-weight: 700; overflow-wrap: anywhere; }
+.item p { color: var(--steel); font-size: 15px; flex: 1; }
+.item-top { display: flex; }
+.chip { font-size: 11px; font-weight: 700; letter-spacing: 0.6px; padding: 3px 8px; border-radius: 6px; border: 1px solid; }
+.p-pc { color: var(--pc); background: #1E150E; border-color: #4A2E16; }
+.p-xbox { color: var(--xbox); background: #0F1D14; border-color: #244A30; }
+.p-ps { color: var(--ps); background: #0E1526; border-color: #243C68; }
+.p-nin { color: var(--nin); background: #231114; border-color: #5A262C; }
+.p-all { color: var(--steel); background: var(--raised); border-color: var(--line-strong); }
+.buy { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 16px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); font-weight: 600; font-size: 15px; text-decoration: none; margin-top: 4px; }
+.buy:hover { background: var(--accent-soft); color: var(--accent-ink); }
+.earns { font-size: 12px; color: var(--muted); text-align: center; }
+
+.cta { border-top: 1px solid var(--line); }
+.cta .wrap { padding-block: 48px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.cta h2 { font-size: clamp(24px, 3.5vw, 30px); }
+.cta p { color: var(--steel); max-width: 40em; }
+.btn { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px; border-radius: 12px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--line-strong); color: var(--fg); background: var(--surface); margin-top: 6px; }
+.btn:hover { color: var(--fg); background: var(--raised); }
+
+.site-footer { border-top: 1px solid var(--line); background: #0A0C0F; }
+.site-footer .wrap { padding-block: 36px; display: flex; flex-direction: column; gap: 14px; font-size: 13px; color: var(--muted); }
+.footer-row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+.disclosure { color: var(--steel); }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Steel Games home">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span>STEEL GAMES</span>
+    </a>
+    <nav class="nav" aria-label="Site">
+      <a href="index.html#features">How it works</a>
+      <a href="gear.html" aria-current="page">Gear guide</a>
+      <a href="index.html#guides">Guides</a>
+      <a class="nav-cta" href="index.html#get-app">Get the app</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <span class="eyebrow">Gear guide</span>
+      <h1>Gear for your whole setup</h1>
+      <p class="lede">45 well-known picks across PC parts, desk setups, streaming and console accessories. Each one opens Amazon so you see today's price and reviews before you buy.</p>
+      <p class="notice"><strong>How we make money:</strong> As an Amazon Associate, Steel Games earns from qualifying purchases. Every button on this page is an affiliate link, and it costs you nothing extra. These are picks we chose, not paid placements.</p>
+    </div>
+  </section>
+
+  <nav class="jump" aria-label="Gear groups">
+    <div class="wrap">
+      <a href="#pc-parts">PC parts</a>
+      <a href="#desk-setup">Desk setup</a>
+      <a href="#streaming">Streaming and audio</a>
+      <a href="#console">Console accessories</a>
+    </div>
+  </nav>
+
+  <section class="group" id="pc-parts" aria-labelledby="pc-parts-h">
+    <div class="wrap">
+      <div class="group-head">
+        <h2 id="pc-parts-h">PC parts</h2>
+        <p>Upgrades that make games run better.</p>
+      </div>
+      <div class="cat">
+        <h3>Graphics cards</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>NVIDIA GeForce RTX 4060</h4>
+          <p>Entry 1080p card with DLSS support.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=NVIDIA+GeForce+RTX+4060&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>AMD Radeon RX 7800 XT</h4>
+          <p>1440p card with 16 GB of memory.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=AMD+Radeon+RX+7800+XT&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Processors</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>AMD Ryzen 7 7800X3D</h4>
+          <p>Gaming-focused 8-core processor.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=AMD+Ryzen+7+7800X3D&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Intel Core i5-14600K</h4>
+          <p>Strong value processor for gaming and streaming.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Intel+Core+i5-14600K&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Memory</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Corsair Vengeance 32GB DDR5</h4>
+          <p>Two-stick DDR5 kit for modern gaming PCs.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Corsair+Vengeance+32GB+DDR5&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Storage</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Samsung 990 Pro 2TB NVMe SSD</h4>
+          <p>Fast PCIe 4.0 drive for games and Windows.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Samsung+990+Pro+2TB+NVMe+SSD&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>WD Black SN850X 2TB NVMe SSD</h4>
+          <p>Fast PCIe 4.0 drive, also fits PS5.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=WD+Black+SN850X+2TB+NVMe+SSD&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Keyboards</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Keychron K8 Pro</h4>
+          <p>Wireless tenkeyless mechanical keyboard with hot-swappable switches.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Keychron+K8+Pro&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Razer Huntsman V3 Pro TKL</h4>
+          <p>Fast analog optical keyboard for competitive play.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Razer+Huntsman+V3+Pro+TKL&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>SteelSeries Apex Pro TKL</h4>
+          <p>Adjustable-actuation keyboard with a compact layout.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=SteelSeries+Apex+Pro+TKL&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Mice</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Logitech G Pro X Superlight 2</h4>
+          <p>Very light wireless mouse popular for competitive shooters.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Logitech+G+Pro+X+Superlight+2&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Razer DeathAdder V3</h4>
+          <p>Ergonomic wired mouse for right-handed players.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Razer+DeathAdder+V3&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Logitech G502 X</h4>
+          <p>Full-size mouse with lots of programmable buttons.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Logitech+G502+X&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="group" id="desk-setup" aria-labelledby="desk-setup-h">
+    <div class="wrap">
+      <div class="group-head">
+        <h2 id="desk-setup-h">Desk setup</h2>
+        <p>Comfort, space and lighting for long sessions.</p>
+      </div>
+      <div class="cat">
+        <h3>Gaming chairs</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>Secretlab Titan Evo</h4>
+          <p>Adjustable gaming chair in several sizes.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Secretlab+Titan+Evo&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>Corsair TC100 Relaxed</h4>
+          <p>Budget-friendly gaming chair with a wide seat.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Corsair+TC100+Relaxed&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Desks and mounts</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>FlexiSpot E7 Standing Desk</h4>
+          <p>Motorized sit-stand desk frame.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=FlexiSpot+E7+Standing+Desk&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>Amazon Basics Single Monitor Arm</h4>
+          <p>Clamp-on arm that frees up desk space.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Amazon+Basics+Single+Monitor+Arm&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Monitors</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Dell S2721DGF 27-inch 1440p Monitor</h4>
+          <p>27-inch 1440p monitor with a fast refresh rate.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Dell+S2721DGF+27-inch+1440p+Monitor&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>LG 27GR75Q 27-inch Monitor</h4>
+          <p>27-inch 1440p gaming monitor.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=LG+27GR75Q+27-inch+Monitor&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>RGB lighting</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>BenQ ScreenBar Monitor Light</h4>
+          <p>Light bar that sits on top of the monitor.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=BenQ+ScreenBar+Monitor+Light&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>Govee RGBIC LED Strip</h4>
+          <p>App-controlled LED strip for behind a desk or TV.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Govee+RGBIC+LED+Strip&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Mousepads</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>SteelSeries QcK XXL Mousepad</h4>
+          <p>Desk-size cloth mousepad.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=SteelSeries+QcK+XXL+Mousepad&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Logitech G840 XL Mousepad</h4>
+          <p>Extra-large cloth mousepad.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Logitech+G840+XL+Mousepad&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Desk gadgets</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>Razer Base Station V2 Chroma Headset Stand</h4>
+          <p>Headset stand with USB hub and lighting.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Razer+Base+Station+V2+Chroma+Headset+Stand&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>Anker 7-in-1 USB-C Hub</h4>
+          <p>Adds USB, HDMI and card-reader ports to a desk setup.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Anker+7-in-1+USB-C+Hub&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="group" id="streaming" aria-labelledby="streaming-h">
+    <div class="wrap">
+      <div class="group-head">
+        <h2 id="streaming-h">Streaming and audio</h2>
+        <p>Sound, camera and controls for streaming or chatting with your squad.</p>
+      </div>
+      <div class="cat">
+        <h3>Stream decks</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Elgato Stream Deck MK.2</h4>
+          <p>15 customizable keys for streaming and shortcuts.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Elgato+Stream+Deck+MK.2&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Elgato Stream Deck Mini</h4>
+          <p>Compact 6-key stream controller.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Elgato+Stream+Deck+Mini&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Microphones</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Shure MV7+</h4>
+          <p>USB and XLR microphone for streaming and podcasts.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Shure+MV7%2B&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>HyperX QuadCast S</h4>
+          <p>USB microphone with RGB lighting.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=HyperX+QuadCast+S&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Webcams</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Logitech C920 HD Pro Webcam</h4>
+          <p>Reliable 1080p webcam.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Logitech+C920+HD+Pro+Webcam&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Elgato Facecam MK.2</h4>
+          <p>1080p webcam built for streaming.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Elgato+Facecam+MK.2&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Speakers</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-pc">PC</span></div>
+          <h4>Creative Pebble V3 Speakers</h4>
+          <p>Compact USB desktop speakers.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Creative+Pebble+V3+Speakers&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Headsets</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>SteelSeries Arctis Nova 7</h4>
+          <p>Wireless headset that works across PC and consoles.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=SteelSeries+Arctis+Nova+7&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>HyperX Cloud III</h4>
+          <p>Comfortable wired headset for any platform.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=HyperX+Cloud+III&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Capture cards</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>Elgato HD60 X Capture Card</h4>
+          <p>Capture card for recording console gameplay.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Elgato+HD60+X+Capture+Card&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="group" id="console" aria-labelledby="console-h">
+    <div class="wrap">
+      <div class="group-head">
+        <h2 id="console-h">Console accessories</h2>
+        <p>Controllers, storage and extras for Xbox, PlayStation and Nintendo.</p>
+      </div>
+      <div class="cat">
+        <h3>Controllers</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-xbox">Xbox</span></div>
+          <h4>Xbox Wireless Controller</h4>
+          <p>Official controller for Xbox and PC.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Xbox+Wireless+Controller&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-ps">PlayStation</span></div>
+          <h4>PlayStation DualSense Wireless Controller</h4>
+          <p>Official PS5 controller.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=PlayStation+DualSense+Wireless+Controller&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-nin">Nintendo</span></div>
+          <h4>Nintendo Switch Pro Controller</h4>
+          <p>Official full-size controller for Switch.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Nintendo+Switch+Pro+Controller&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Charging docks</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-ps">PlayStation</span></div>
+          <h4>PS5 DualSense Charging Station</h4>
+          <p>Charges two DualSense controllers.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=PS5+DualSense+Charging+Station&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Cables and power</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>Anker USB-C Charging Cable 2-Pack</h4>
+          <p>Spare cables for controllers and headsets.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Anker+USB-C+Charging+Cable+2-Pack&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Extra storage</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-xbox">Xbox</span></div>
+          <h4>Seagate Storage Expansion Card for Xbox Series X|S</h4>
+          <p>Official plug-in storage expansion for Xbox.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Seagate+Storage+Expansion+Card+for+Xbox+Series+X%7CS&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-nin">Nintendo</span></div>
+          <h4>SanDisk 512GB microSD for Nintendo Switch</h4>
+          <p>Extra game storage for Switch.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=SanDisk+512GB+microSD+for+Nintendo+Switch&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Cases and bags</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-nin">Nintendo</span></div>
+          <h4>Nintendo Switch Carrying Case</h4>
+          <p>Protective travel case for Switch.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Nintendo+Switch+Carrying+Case&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item">
+          <div class="item-top"><span class="chip p-ps">PlayStation</span></div>
+          <h4>Sony PlayStation Portal Case</h4>
+          <p>Protective case for PlayStation Portal.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Sony+PlayStation+Portal+Case&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Racing wheels</h3>
+        <div class="items">
+        <article class="item">
+          <div class="item-top"><span class="chip p-all">Any platform</span></div>
+          <h4>Logitech G923 Racing Wheel</h4>
+          <p>Force-feedback wheel and pedals for racing games.</p>
+          <a class="buy" href="https://www.amazon.com/s?k=Logitech+G923+Racing+Wheel&amp;tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Plan a full setup on a budget</h2>
+      <p>The Steel Games app adds a setup builder, Verified Buyer reviews backed by real receipts, and a check that tells you whether your PC can run a game before you buy it.</p>
+      <a class="btn" href="index.html#get-app">Get the app</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="brand" href="index.html" aria-label="Steel Games home">
+        <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <span style="font-size:14px">STEEL GAMES</span>
+      </a>
+      <span><a href="index.html#privacy">Privacy policy</a> · <a href="terms.html">Terms of use</a> · © 2026 Steel Games</span>
+    </div>
+    <p class="disclosure">As an Amazon Associate, Steel Games earns from qualifying purchases. Steel Games may also earn a commission from other stores and retailers linked on this site and in the app, at no extra cost to you.</p>
+    <p>Steel Games is not affiliated with Valve, Epic Games, Microsoft, Sony, Nintendo or Amazon. Product and platform names belong to their owners.</p>
+  </div>
+</footer>
+</body>
+</html>
