@@ -33,7 +33,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.6; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.65; }
 a { color: var(--accent-soft); }
 a:hover { color: var(--accent); }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
@@ -87,7 +87,7 @@ p { margin: 0; }
 @media (max-width: 560px) { .items { grid-template-columns: minmax(0, 1fr); } }
 .item { display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); min-width: 0; }
 .item h4 { font-size: 18px; font-weight: 700; overflow-wrap: anywhere; }
-.item p { color: var(--steel); font-size: 15px; flex: 1; }
+.item p { color: var(--steel); font-size: 16px; flex: 1; }
 .item-top { display: flex; }
 .chip { font-size: 11px; font-weight: 700; letter-spacing: 0.6px; padding: 3px 8px; border-radius: 6px; border: 1px solid; }
 .p-pc { color: var(--pc); background: #1E150E; border-color: #4A2E16; }
@@ -97,7 +97,7 @@ p { margin: 0; }
 .p-all { color: var(--steel); background: var(--raised); border-color: var(--line-strong); }
 .buy { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 16px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); font-weight: 600; font-size: 15px; text-decoration: none; margin-top: 4px; }
 .buy:hover { background: var(--accent-soft); color: var(--accent-ink); }
-.earns { font-size: 12px; color: var(--muted); text-align: center; }
+.earns { font-size: 13px; color: var(--muted); text-align: center; }
 
 .cta { border-top: 1px solid var(--line); }
 .cta .wrap { padding-block: 48px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
@@ -107,9 +107,11 @@ p { margin: 0; }
 .btn:hover { color: var(--fg); background: var(--raised); }
 
 .site-footer { border-top: 1px solid var(--line); background: #0A0C0F; }
-.site-footer .wrap { padding-block: 36px; display: flex; flex-direction: column; gap: 14px; font-size: 13px; color: var(--muted); }
+.site-footer .wrap { padding-block: 36px; display: flex; flex-direction: column; gap: 14px; font-size: 14px; color: var(--muted); }
 .footer-row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
 .disclosure { color: var(--steel); }
+.footer-links { display: flex; gap: 6px 16px; flex-wrap: wrap; }
+.vet-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 8px; border-radius: 999px; background: #121A26; border: 1px solid #2B3D57; color: #CFE0F5; font-size: 14px; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -120,9 +122,9 @@ p { margin: 0; }
       <span>STEEL GAMES</span>
     </a>
     <nav class="nav" aria-label="Site">
-      <a href="index.html#features">How it works</a>
-      <a href="gear.html" aria-current="page">Gear guide</a>
-      <a href="index.html#guides">Guides</a>
+      <a href="gear.html" aria-current="page">Shop gear</a>
+      <a href="https://discord.gg/ekrRaejc6">Discord</a>
+      <a href="index.html#help">Help</a>
       <a class="nav-cta" href="index.html#get-app">Get the app</a>
     </nav>
   </div>
@@ -131,9 +133,9 @@ p { margin: 0; }
 <main>
   <section class="intro">
     <div class="wrap">
-      <span class="eyebrow">Gear guide</span>
+      <span class="vet-badge" style="align-self:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned and operated</span>
       <h1>Gear for your whole setup</h1>
-      <p class="lede">45 well-known picks across PC parts, desk setups, streaming and console accessories. Each one opens Amazon so you see today's price and reviews before you buy.</p>
+      <p class="lede">45 trusted picks for PC parts, desk setups, streaming and console accessories. Tap any button to see today's price and reviews on Amazon before you buy.</p>
       <p class="notice"><strong>How we make money:</strong> As an Amazon Associate, Steel Games earns from qualifying purchases. Every button on this page is an affiliate link, and it costs you nothing extra. These are picks we chose, not paid placements.</p>
     </div>
   </section>
@@ -619,7 +621,7 @@ p { margin: 0; }
     <div class="wrap">
       <h2>Plan a full setup on a budget</h2>
       <p>The Steel Games app adds a setup builder, Verified Buyer reviews backed by real receipts, and a check that tells you whether your PC can run a game before you buy it.</p>
-      <a class="btn" href="index.html#get-app">Get the app</a>
+      <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="index.html#get-app">Get the app</a><a class="btn" href="https://discord.gg/ekrRaejc6">Join the Discord</a></div>
     </div>
   </section>
 </main>
@@ -631,7 +633,17 @@ p { margin: 0; }
         <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
         <span style="font-size:14px">STEEL GAMES</span>
       </a>
-      <span><a href="index.html#privacy">Privacy policy</a> · <a href="terms.html">Terms of use</a> · © 2026 Steel Games</span>
+      <span class="vet-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned and operated</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#get-app">Get the app</a>
+      <a href="gear.html">Shop gear</a>
+      <a href="https://discord.gg/ekrRaejc6">Discord</a>
+      <a href="index.html#help">Help</a>
+      <a href="index.html#privacy">Privacy policy</a>
+      <a href="terms.html">Terms of use</a>
+      <a href="mailto:steelgames.app@outlook.com">Contact us</a>
+      <span>© 2026 Steel Games</span>
     </div>
     <p class="disclosure">As an Amazon Associate, Steel Games earns from qualifying purchases. Steel Games may also earn a commission from other stores and retailers linked on this site and in the app, at no extra cost to you.</p>
     <p>Steel Games is not affiliated with Valve, Epic Games, Microsoft, Sony, Nintendo or Amazon. Product and platform names belong to their owners.</p>
