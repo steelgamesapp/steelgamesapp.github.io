@@ -1,0 +1,535 @@
+{
+ "note": "Rough relative graphics performance for the Will it run check. Review and extend as new cards release.",
+ "gpus": [
+  {
+   "name": "GeForce GT 1030",
+   "key": "gt 1030",
+   "score": 8
+  },
+  {
+   "name": "GeForce GTX 660",
+   "key": "gtx 660",
+   "score": 9
+  },
+  {
+   "name": "GeForce GTX 750 Ti",
+   "key": "gtx 750 ti",
+   "score": 10
+  },
+  {
+   "name": "GeForce GTX 670",
+   "key": "gtx 670",
+   "score": 11
+  },
+  {
+   "name": "GeForce GTX 760",
+   "key": "gtx 760",
+   "score": 12
+  },
+  {
+   "name": "GeForce GTX 950",
+   "key": "gtx 950",
+   "score": 13
+  },
+  {
+   "name": "GeForce GTX 680",
+   "key": "gtx 680",
+   "score": 13
+  },
+  {
+   "name": "GeForce GTX 1630",
+   "key": "gtx 1630",
+   "score": 13
+  },
+  {
+   "name": "GeForce GTX 1050",
+   "key": "gtx 1050",
+   "score": 15
+  },
+  {
+   "name": "GeForce GTX 770",
+   "key": "gtx 770",
+   "score": 15
+  },
+  {
+   "name": "GeForce GTX 960",
+   "key": "gtx 960",
+   "score": 16
+  },
+  {
+   "name": "GeForce GTX 780",
+   "key": "gtx 780",
+   "score": 18
+  },
+  {
+   "name": "GeForce GTX 1050 Ti",
+   "key": "gtx 1050 ti",
+   "score": 19
+  },
+  {
+   "name": "GeForce GTX 970",
+   "key": "gtx 970",
+   "score": 24
+  },
+  {
+   "name": "GeForce GTX 1650",
+   "key": "gtx 1650",
+   "score": 24
+  },
+  {
+   "name": "GeForce GTX 980",
+   "key": "gtx 980",
+   "score": 28
+  },
+  {
+   "name": "GeForce GTX 1060",
+   "key": "gtx 1060",
+   "score": 30
+  },
+  {
+   "name": "GeForce GTX 1650 Super",
+   "key": "gtx 1650 super",
+   "score": 32
+  },
+  {
+   "name": "GeForce GTX 980 Ti",
+   "key": "gtx 980 ti",
+   "score": 36
+  },
+  {
+   "name": "GeForce GTX 1660",
+   "key": "gtx 1660",
+   "score": 36
+  },
+  {
+   "name": "GeForce GTX 1070",
+   "key": "gtx 1070",
+   "score": 40
+  },
+  {
+   "name": "GeForce GTX 1660 Super",
+   "key": "gtx 1660 super",
+   "score": 40
+  },
+  {
+   "name": "GeForce GTX 1660 Ti",
+   "key": "gtx 1660 ti",
+   "score": 41
+  },
+  {
+   "name": "GeForce RTX 3050",
+   "key": "rtx 3050",
+   "score": 42
+  },
+  {
+   "name": "GeForce GTX 1070 Ti",
+   "key": "gtx 1070 ti",
+   "score": 45
+  },
+  {
+   "name": "GeForce RTX 2060",
+   "key": "rtx 2060",
+   "score": 48
+  },
+  {
+   "name": "GeForce GTX 1080",
+   "key": "gtx 1080",
+   "score": 50
+  },
+  {
+   "name": "GeForce RTX 2060 Super",
+   "key": "rtx 2060 super",
+   "score": 56
+  },
+  {
+   "name": "GeForce RTX 2070",
+   "key": "rtx 2070",
+   "score": 58
+  },
+  {
+   "name": "GeForce RTX 3060",
+   "key": "rtx 3060",
+   "score": 58
+  },
+  {
+   "name": "GeForce GTX 1080 Ti",
+   "key": "gtx 1080 ti",
+   "score": 63
+  },
+  {
+   "name": "GeForce RTX 2070 Super",
+   "key": "rtx 2070 super",
+   "score": 66
+  },
+  {
+   "name": "GeForce RTX 4060",
+   "key": "rtx 4060",
+   "score": 68
+  },
+  {
+   "name": "GeForce RTX 2080",
+   "key": "rtx 2080",
+   "score": 71
+  },
+  {
+   "name": "GeForce RTX 2080 Super",
+   "key": "rtx 2080 super",
+   "score": 75
+  },
+  {
+   "name": "GeForce RTX 3060 Ti",
+   "key": "rtx 3060 ti",
+   "score": 75
+  },
+  {
+   "name": "GeForce RTX 5060",
+   "key": "rtx 5060",
+   "score": 80
+  },
+  {
+   "name": "GeForce RTX 4060 Ti",
+   "key": "rtx 4060 ti",
+   "score": 82
+  },
+  {
+   "name": "GeForce RTX 3070",
+   "key": "rtx 3070",
+   "score": 85
+  },
+  {
+   "name": "GeForce RTX 2080 Ti",
+   "key": "rtx 2080 ti",
+   "score": 88
+  },
+  {
+   "name": "GeForce RTX 3070 Ti",
+   "key": "rtx 3070 ti",
+   "score": 90
+  },
+  {
+   "name": "GeForce RTX 5060 Ti",
+   "key": "rtx 5060 ti",
+   "score": 92
+  },
+  {
+   "name": "GeForce RTX 3080",
+   "key": "rtx 3080",
+   "score": 105
+  },
+  {
+   "name": "GeForce RTX 4070",
+   "key": "rtx 4070",
+   "score": 105
+  },
+  {
+   "name": "GeForce RTX 3080 Ti",
+   "key": "rtx 3080 ti",
+   "score": 115
+  },
+  {
+   "name": "GeForce RTX 3090",
+   "key": "rtx 3090",
+   "score": 118
+  },
+  {
+   "name": "GeForce RTX 4070 Super",
+   "key": "rtx 4070 super",
+   "score": 120
+  },
+  {
+   "name": "GeForce RTX 3090 Ti",
+   "key": "rtx 3090 ti",
+   "score": 125
+  },
+  {
+   "name": "GeForce RTX 4070 Ti",
+   "key": "rtx 4070 ti",
+   "score": 125
+  },
+  {
+   "name": "GeForce RTX 5070",
+   "key": "rtx 5070",
+   "score": 128
+  },
+  {
+   "name": "GeForce RTX 4070 Ti Super",
+   "key": "rtx 4070 ti super",
+   "score": 135
+  },
+  {
+   "name": "GeForce RTX 4080",
+   "key": "rtx 4080",
+   "score": 150
+  },
+  {
+   "name": "GeForce RTX 4080 Super",
+   "key": "rtx 4080 super",
+   "score": 152
+  },
+  {
+   "name": "GeForce RTX 5070 Ti",
+   "key": "rtx 5070 ti",
+   "score": 155
+  },
+  {
+   "name": "GeForce RTX 5080",
+   "key": "rtx 5080",
+   "score": 170
+  },
+  {
+   "name": "GeForce RTX 4090",
+   "key": "rtx 4090",
+   "score": 190
+  },
+  {
+   "name": "GeForce RTX 5090",
+   "key": "rtx 5090",
+   "score": 240
+  },
+  {
+   "name": "Intel Arc A380",
+   "key": "arc a380",
+   "score": 20
+  },
+  {
+   "name": "Intel Arc A580",
+   "key": "arc a580",
+   "score": 48
+  },
+  {
+   "name": "Intel Arc A750",
+   "key": "arc a750",
+   "score": 55
+  },
+  {
+   "name": "Intel Arc A770",
+   "key": "arc a770",
+   "score": 60
+  },
+  {
+   "name": "Intel Arc B580",
+   "key": "arc b580",
+   "score": 72
+  },
+  {
+   "name": "Radeon RX 550",
+   "key": "rx 550",
+   "score": 9
+  },
+  {
+   "name": "Radeon HD 7850",
+   "key": "hd 7850",
+   "score": 11
+  },
+  {
+   "name": "Radeon RX 460",
+   "key": "rx 460",
+   "score": 12
+  },
+  {
+   "name": "Radeon R9 270X",
+   "key": "r9 270x",
+   "score": 14
+  },
+  {
+   "name": "Radeon RX 560",
+   "key": "rx 560",
+   "score": 14
+  },
+  {
+   "name": "Radeon HD 7970",
+   "key": "hd 7970",
+   "score": 18
+  },
+  {
+   "name": "Radeon R9 380",
+   "key": "r9 380",
+   "score": 18
+  },
+  {
+   "name": "Radeon R9 280X",
+   "key": "r9 280x",
+   "score": 19
+  },
+  {
+   "name": "Radeon RX 6400",
+   "key": "rx 6400",
+   "score": 20
+  },
+  {
+   "name": "Radeon R9 290",
+   "key": "r9 290",
+   "score": 22
+  },
+  {
+   "name": "Radeon R9 290X",
+   "key": "r9 290x",
+   "score": 24
+  },
+  {
+   "name": "Radeon RX 470",
+   "key": "rx 470",
+   "score": 26
+  },
+  {
+   "name": "Radeon RX 6500 XT",
+   "key": "rx 6500 xt",
+   "score": 26
+  },
+  {
+   "name": "Radeon R9 390",
+   "key": "r9 390",
+   "score": 27
+  },
+  {
+   "name": "Radeon RX 570",
+   "key": "rx 570",
+   "score": 28
+  },
+  {
+   "name": "Radeon R9 390X",
+   "key": "r9 390x",
+   "score": 28
+  },
+  {
+   "name": "Radeon RX 480",
+   "key": "rx 480",
+   "score": 30
+  },
+  {
+   "name": "Radeon RX 580",
+   "key": "rx 580",
+   "score": 31
+  },
+  {
+   "name": "Radeon RX 5500 XT",
+   "key": "rx 5500 xt",
+   "score": 33
+  },
+  {
+   "name": "Radeon RX 590",
+   "key": "rx 590",
+   "score": 34
+  },
+  {
+   "name": "Radeon RX Vega 56",
+   "key": "vega 56",
+   "score": 42
+  },
+  {
+   "name": "Radeon RX Vega 64",
+   "key": "vega 64",
+   "score": 47
+  },
+  {
+   "name": "Radeon RX 5600 XT",
+   "key": "rx 5600 xt",
+   "score": 47
+  },
+  {
+   "name": "Radeon RX 5700",
+   "key": "rx 5700",
+   "score": 55
+  },
+  {
+   "name": "Radeon RX 6600",
+   "key": "rx 6600",
+   "score": 58
+  },
+  {
+   "name": "Radeon RX 5700 XT",
+   "key": "rx 5700 xt",
+   "score": 62
+  },
+  {
+   "name": "Radeon RX 6600 XT",
+   "key": "rx 6600 xt",
+   "score": 66
+  },
+  {
+   "name": "Radeon RX 7600",
+   "key": "rx 7600",
+   "score": 68
+  },
+  {
+   "name": "Radeon RX 6650 XT",
+   "key": "rx 6650 xt",
+   "score": 70
+  },
+  {
+   "name": "Radeon RX 7600 XT",
+   "key": "rx 7600 xt",
+   "score": 72
+  },
+  {
+   "name": "Radeon RX 6700 XT",
+   "key": "rx 6700 xt",
+   "score": 82
+  },
+  {
+   "name": "Radeon RX 6750 XT",
+   "key": "rx 6750 xt",
+   "score": 86
+  },
+  {
+   "name": "Radeon RX 9060 XT",
+   "key": "rx 9060 xt",
+   "score": 92
+  },
+  {
+   "name": "Radeon RX 7700 XT",
+   "key": "rx 7700 xt",
+   "score": 98
+  },
+  {
+   "name": "Radeon RX 6800",
+   "key": "rx 6800",
+   "score": 100
+  },
+  {
+   "name": "Radeon RX 6800 XT",
+   "key": "rx 6800 xt",
+   "score": 115
+  },
+  {
+   "name": "Radeon RX 7800 XT",
+   "key": "rx 7800 xt",
+   "score": 120
+  },
+  {
+   "name": "Radeon RX 6900 XT",
+   "key": "rx 6900 xt",
+   "score": 122
+  },
+  {
+   "name": "Radeon RX 6950 XT",
+   "key": "rx 6950 xt",
+   "score": 128
+  },
+  {
+   "name": "Radeon RX 7900 GRE",
+   "key": "rx 7900 gre",
+   "score": 130
+  },
+  {
+   "name": "Radeon RX 9070",
+   "key": "rx 9070",
+   "score": 140
+  },
+  {
+   "name": "Radeon RX 7900 XT",
+   "key": "rx 7900 xt",
+   "score": 150
+  },
+  {
+   "name": "Radeon RX 9070 XT",
+   "key": "rx 9070 xt",
+   "score": 160
+  },
+  {
+   "name": "Radeon RX 7900 XTX",
+   "key": "rx 7900 xtx",
+   "score": 170
+  }
+ ]
+}

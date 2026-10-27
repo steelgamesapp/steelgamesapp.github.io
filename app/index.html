@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Steel Games · Game Deals</title>
+<meta name="description" content="Compare PC game prices across official stores, see if a game runs on your PC, read gaming news and shop gear. Veteran-owned.">
+<meta name="theme-color" content="#0C0E11">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<style>
+/* Layout: app shell. Sticky top bar with the brand, one scrolling screen per tab, and a fixed bottom tab bar (Deals, News, Gear, Account). Game and product pages slide in as their own screens with a Back button. */
+:root {
+  --bg: #0C0E11; --surface: #15181D; --raised: #1C2027; --line: #262C35; --line-strong: #2E3540;
+  --fg: #EDEFF2; --muted: #9BA4AF; --steel: #C3CBD5;
+  --accent: #FF7A1A; --accent-soft: #FF9A4D; --accent-ink: #1A0E04;
+  --good: #5CCB72; --good-bg: #0F1D14; --good-line: #244A30;
+  --warn: #F5B544; --warn-bg: #221A0B; --warn-line: #5A4416;
+  --bad: #FF6B74; --bad-bg: #231114; --bad-line: #5A262C;
+  --info: #8FB4E3; --info-bg: #121A26; --info-line: #2B3D57;
+  --resale: #C4B5FD;
+  --display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --body: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --tabbar: 68px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.5; }
+body { min-height: 100dvh; padding-bottom: calc(var(--tabbar) + env(safe-area-inset-bottom, 0px)); }
+a { color: var(--accent-soft); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.15; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-left, 0px)) 0 max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Top bar */
+.topbar { position: sticky; top: 0; z-index: 20; background: rgba(12,14,17,0.94); border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
+@supports (backdrop-filter: blur(8px)) { .topbar { background: rgba(12,14,17,0.82); backdrop-filter: blur(10px); } }
+.topbar .wrap { display: flex; align-items: center; gap: 12px; min-height: 60px; }
+.brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--fg); }
+.brand span { font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: 2.4px; }
+.vet { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px 5px 7px; border-radius: 999px; background: var(--info-bg); border: 1px solid var(--info-line); color: #CFE0F5; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.back { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px 0 6px; border: 0; border-radius: 10px; background: none; color: var(--accent-soft); font-weight: 600; cursor: pointer; }
+
+/* Tab bar */
+.tabbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: #111418; border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.tabbar nav { max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); height: var(--tabbar); }
+.tabbar a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 600; }
+.tabbar a[aria-current="page"] { color: var(--accent); }
+
+/* Screens */
+main { padding: 16px 0 28px; }
+main:focus { outline: none; }
+.screen-title { font-size: 28px; font-weight: 700; margin: 6px 0 4px; }
+.lede { color: var(--steel); font-size: 16px; }
+.stack { display: flex; flex-direction: column; gap: 12px; }
+.section { margin-top: 26px; display: flex; flex-direction: column; gap: 12px; }
+.section h2 { font-size: 20px; }
+.hint { color: var(--muted); font-size: 14px; }
+
+/* Search and chips */
+.search { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line-strong); margin-top: 14px; }
+.search input { flex: 1; min-width: 0; height: 50px; border: 0; background: none; color: var(--fg); font: inherit; font-size: 17px; outline: none; }
+.search input::placeholder { color: var(--muted); }
+.chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px 0; margin-top: 12px; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex-shrink: 0; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--steel); font-size: 15px; font-weight: 600; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+/* Deal rows */
+.deal { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; color: var(--fg); min-height: 76px; }
+.deal:active { background: var(--raised); }
+.thumb { width: 96px; height: 45px; flex-shrink: 0; border-radius: 8px; object-fit: cover; background: var(--raised); }
+.deal-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.deal-title { font-weight: 600; font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.deal-meta { font-size: 13px; color: var(--muted); }
+.price { font-weight: 700; font-variant-numeric: tabular-nums; }
+.was { color: var(--muted); text-decoration: line-through; font-size: 13px; margin-left: 6px; font-weight: 400; }
+.off { flex-shrink: 0; padding: 5px 8px; border-radius: 8px; background: var(--accent); color: var(--accent-ink); font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* Cards */
+.card { padding: 18px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; }
+.card h3 { font-size: 19px; }
+.card p { color: var(--steel); font-size: 16px; }
+.verdict { border-width: 2px; }
+.verdict .label { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.v-good { background: var(--good-bg); border-color: var(--good-line); } .v-good .label, .v-good h3 { color: var(--good); }
+.v-warn { background: var(--warn-bg); border-color: var(--warn-line); } .v-warn .label, .v-warn h3 { color: var(--warn); }
+.v-bad { background: var(--bad-bg); border-color: var(--bad-line); } .v-bad .label, .v-bad h3 { color: var(--bad); }
+.v-info { background: var(--info-bg); border-color: var(--info-line); } .v-info .label, .v-info h3 { color: var(--info); }
+.card ul { margin: 0; padding-left: 20px; color: var(--steel); font-size: 15px; display: flex; flex-direction: column; gap: 4px; }
+
+/* Game header */
+.hero-img { width: 100%; aspect-ratio: 460 / 215; object-fit: cover; border-radius: 16px; background: var(--raised); display: block; }
+.game-title { font-size: 26px; margin-top: 14px; }
+.big-price { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+.big-price .price { font-family: var(--display); font-size: 32px; }
+
+/* Store rows */
+.store { display: flex; align-items: center; gap: 12px; padding: 14px 14px 14px 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.store.best { border: 2px solid var(--accent); }
+.store-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.store-name { font-weight: 700; }
+.earn { font-size: 13px; color: var(--muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 18px; border-radius: 12px; border: 1px solid transparent; font-weight: 700; font-size: 16px; text-decoration: none; cursor: pointer; white-space: nowrap; }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-ghost { background: var(--raised); color: var(--fg); border-color: var(--line-strong); }
+.btn-danger { background: var(--bad-bg); color: var(--bad); border-color: var(--bad-line); }
+.btn-block { width: 100%; }
+.btn[disabled] { opacity: 0.5; cursor: default; }
+
+/* News */
+.news-item { display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; color: var(--fg); }
+.news-item h3 { font-family: var(--body); font-size: 17px; font-weight: 600; line-height: 1.35; }
+.tag-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); flex-wrap: wrap; }
+.plat { padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 700; border: 1px solid; }
+.p-pc { color: #FF8A3D; background: #1E150E; border-color: #4A2E16; }
+.p-xbox { color: #5CCB72; background: #0F1D14; border-color: #244A30; }
+.p-playstation { color: #6FA0FF; background: #0E1526; border-color: #243C68; }
+.p-nintendo { color: #FF6B74; background: #231114; border-color: #5A262C; }
+.p-all { color: var(--steel); background: var(--raised); border-color: var(--line-strong); }
+
+/* Gear */
+.cats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.cat { display: flex; flex-direction: column; justify-content: center; gap: 2px; min-height: 64px; padding: 12px 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); color: var(--fg); text-decoration: none; font-weight: 600; font-size: 16px; }
+.cat small { color: var(--muted); font-weight: 500; font-size: 13px; }
+.product { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.product h3 { font-family: var(--body); font-size: 17px; font-weight: 700; }
+.product p { color: var(--steel); font-size: 15px; }
+
+/* Forms */
+label.field { display: flex; flex-direction: column; gap: 6px; font-size: 15px; font-weight: 600; color: var(--steel); }
+.input, select.input { min-height: 52px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--fg); font: inherit; font-size: 17px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.check { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: var(--steel); }
+.check input { width: 24px; height: 24px; margin-top: 2px; accent-color: var(--accent); flex-shrink: 0; }
+.seg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 4px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.seg button { min-height: 44px; border: 0; border-radius: 10px; background: none; font-weight: 600; color: var(--steel); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--raised); color: var(--fg); }
+.list-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 0 16px; border-bottom: 1px solid var(--line); color: var(--fg); text-decoration: none; font-weight: 500; background: none; border-left: 0; border-right: 0; border-top: 0; width: 100%; text-align: left; cursor: pointer; }
+.list-link:last-child { border-bottom: 0; }
+.list { border-radius: 16px; background: var(--surface); border: 1px solid var(--line); overflow: hidden; }
+.list-link span:last-child { color: var(--muted); }
+.msg { padding: 12px 14px; border-radius: 12px; font-size: 15px; }
+.msg.err { background: var(--bad-bg); border: 1px solid var(--bad-line); color: #FFC2C6; }
+.msg.ok { background: var(--good-bg); border: 1px solid var(--good-line); color: #BDEBC7; }
+.foot { margin-top: 28px; color: var(--muted); font-size: 13px; display: flex; flex-direction: column; gap: 8px; }
+
+/* Loading */
+.skel { height: 76px; border-radius: 16px; background: linear-gradient(90deg, var(--surface), var(--raised), var(--surface)); background-size: 200% 100%; animation: shimmer 1.4s infinite; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .skel { animation: none; } }
+.empty { padding: 28px 16px; text-align: center; color: var(--muted); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap" id="topbar">
+    <a class="brand" href="#/deals" aria-label="Steel Games home">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span>STEEL GAMES</span>
+    </a>
+    <span class="vet"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z" fill="#8FB4E3"/></svg>Veteran-owned</span>
+  </div>
+</header>
+
+<main class="wrap" id="view" tabindex="-1"></main>
+
+<div class="tabbar">
+  <nav aria-label="Main">
+    <a href="#/deals" data-tab="deals"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2H4v8l10 10 8-8L12 2z"/><circle cx="8" cy="6" r="1.5"/></svg>Deals</a>
+    <a href="#/news" data-tab="news"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>News</a>
+    <a href="#/gear" data-tab="gear"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>Gear</a>
+    <a href="#/account" data-tab="account"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Account</a>
+  </nav>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+'use strict';
+// ---------- Settings ----------
+const SUPABASE_URL = 'https://hcevjksajzetoezupzec.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhjZXZqa3NhanpldG9lenVwemVjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMxMjE1NTcsImV4cCI6MjEwODY5NzU1N30.bKQhWEEQDGixQNn3uwNSyGEM64hN-B8TNGWgHWq4GtM';
+const AMAZON_TAG = 'steelgames-20';
+const SITE = 'https://steelgamesapp.github.io';
+const DISCORD = 'https://discord.gg/ekrRaejc6';
+const SUPPORT = 'steelgames.app@outlook.com';
+const CS = 'https://www.cheapshark.com/api/1.0/';
+const STORES = [['1','Steam'],['25','Epic'],['7','GOG'],['11','Humble'],['15','Fanatical']];
+const PLATFORM_NAMES = { pc: 'PC', xbox: 'Xbox', playstation: 'PlayStation', nintendo: 'Nintendo' };
+const GEAR_GROUPS = [
+  ['PC parts', ['Graphics cards','Processors','Memory','Storage','Keyboards','Mice']],
+  ['Desk setup', ['Gaming chairs','Desks and mounts','Monitors','RGB lighting','Mousepads','Desk gadgets']],
+  ['Streaming and audio', ['Stream decks','Microphones','Webcams','Speakers','Headsets','Capture cards']],
+  ['Console accessories', ['Controllers','Charging docks','Cables and power','Extra storage','Cases and bags','Racing wheels']],
+];
+
+const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+const view = document.getElementById('view');
+
+// ---------- Small helpers ----------
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const money = (v) => (v == null || isNaN(v)) ? '' : (Number(v) === 0 ? 'Free' : '$' + Number(v).toFixed(2));
+const pct = (sale, normal) => normal > 0 ? Math.round((normal - sale) / normal * 100) : 0;
+const store = { get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+                set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
+const cache = new Map();
+async function getJSON(url, opts = {}, ttl = 15 * 60_000) {
+  const hit = cache.get(url);
+  if (hit && Date.now() - hit.at < ttl) return hit.data;
+  const r = await fetch(url, opts);
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  const data = await r.json();
+  cache.set(url, { at: Date.now(), data });
+  return data;
+}
+const webData = (q) => getJSON(SUPABASE_URL + '/functions/v1/web-data?' + q, { headers: { apikey: SUPABASE_KEY, Authorization: 'Bearer ' + SUPABASE_KEY } });
+function ago(iso) {
+  if (!iso) return '';
+  const m = Math.round((Date.now() - Date.parse(iso)) / 60000);
+  if (m < 60) return Math.max(1, m) + ' min ago';
+  const h = Math.round(m / 60); if (h < 24) return h + (h === 1 ? ' hour ago' : ' hours ago');
+  const d = Math.round(h / 24); return d + (d === 1 ? ' day ago' : ' days ago');
+}
+function amazonize(url) {
+  try { const u = new URL(url); if (/(^|\.)amazon\./.test(u.hostname)) { u.searchParams.set('tag', AMAZON_TAG); return { url: u.toString(), earns: true }; } return { url, earns: null }; }
+  catch { return { url, earns: null }; }
+}
+const skeletons = (n) => Array.from({ length: n }, () => '<div class="skel" aria-hidden="true"></div>').join('');
+const errorBox = (text) => `<div class="msg err" role="alert">${esc(text)}</div>`;
+
+let storeNames = null;
+async function getStoreNames() {
+  if (storeNames) return storeNames;
+  try { const list = await getJSON(CS + 'stores', {}, 24 * 3600_000); storeNames = Object.fromEntries(list.filter((s) => s.isActive).map((s) => [s.storeID, s.storeName])); }
+  catch { storeNames = Object.fromEntries(STORES); }
+  return storeNames;
+}
+
+// ---------- Will it run ----------
+let gpus = null;
+async function getGPUs() {
+  if (gpus) return gpus;
+  try { gpus = (await getJSON('hardware.json', {}, 24 * 3600_000)).gpus; } catch { gpus = []; }
+  return gpus;
+}
+const myPC = () => store.get('myPC', { gpu: null, ram: 16, storage: 200 });
+function normalizeHW(t) {
+  t = t.toLowerCase();
+  for (const w of ['nvidia','geforce','amd','radeon','intel','™','®','(r)','(tm)']) t = t.split(w).join(' ');
+  return t.replace(/rx vega/g, 'vega').replace(/-/g, ' ');
+}
+function gpusIn(text, list) {
+  let rest = normalizeHW(text); const found = [];
+  for (const g of [...list].sort((a, b) => b.key.length - a.key.length)) {
+    const re = new RegExp('(?<![a-z0-9])' + g.key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '\\s*') + '(?![a-z0-9])');
+    if (re.test(rest)) { found.push(g); rest = rest.replace(re, ' '); }
+  }
+  return found;
+}
+function needs(text, list) {
+  const n = { gpus: gpusIn(text || '', list), ram: null, storage: null };
+  const lower = (text || '').toLowerCase();
+  let m = lower.match(/memory:\s*(\d+(?:\.\d+)?)\s*(gb|mb)/);
+  if (m) n.ram = m[2] === 'mb' ? Math.max(1, Math.floor(m[1] / 1024)) : Math.ceil(+m[1]);
+  m = lower.match(/(?:storage|hard drive|hard disk|disk space)[^\d\n]*(\d+(?:\.\d+)?)\s*(gb|mb|tb)/);
+  if (m) n.storage = m[2] === 'mb' ? Math.max(1, Math.floor(m[1] / 1024)) : m[2] === 'tb' ? Math.round(m[1] * 1024) : Math.ceil(+m[1]);
+  n.gpuScore = n.gpus.length ? Math.min(...n.gpus.map((g) => g.score)) : null;
+  return n;
+}
+function runVerdict(info, list) {
+  if (!info || (!info.minimum && !info.recommended)) return { level: 'info', headline: 'No system requirements listed', details: ["This game's store page doesn't list PC requirements."], upgrades: [] };
+  const pc = myPC(); const gpu = list.find((g) => g.key === pc.gpu);
+  if (!gpu) return { level: 'info', headline: 'Add your PC to check', details: ['Tell us your graphics card and memory once, and every game will check it.'], upgrades: [], needsPC: true };
+  const min = needs(info.minimum, list), rec = needs(info.recommended, list);
+  const details = [], upgrades = [];
+  const meets = (n) => { let known = false, ok = true; if (n.gpuScore != null) { known = true; ok = ok && gpu.score >= n.gpuScore; } if (n.ram != null) { known = true; ok = ok && pc.ram >= n.ram; } return known ? ok : null; };
+  const mRec = meets(rec), mMin = meets(min);
+  if (min.gpuScore != null && gpu.score < min.gpuScore) { details.push(`Graphics: needs at least ${min.gpus.map((g) => g.name).join(' or ')}. You have ${gpu.name}.`); upgrades.push('Graphics cards'); }
+  if (min.ram != null && pc.ram < min.ram) { details.push(`Memory: needs ${min.ram} GB. You have ${pc.ram} GB.`); upgrades.push('Memory'); }
+  const space = rec.storage ?? min.storage;
+  if (space != null && pc.storage < space) { details.push(`Storage: needs ${space} GB free. You have ${pc.storage} GB.`); upgrades.push('Storage'); }
+  if (!min.gpus.length && !rec.gpus.length) details.push("We couldn't match the graphics card this game lists, so only memory was checked.");
+  details.push("Processor isn't checked. Compare it with the requirements below.");
+  let level, headline;
+  if (mRec === true && !upgrades.includes('Storage')) { level = 'good'; headline = 'Runs great on your PC'; }
+  else if (mMin === true || (mMin == null && mRec === true)) {
+    level = 'good'; headline = upgrades.length ? 'Should run, but check storage' : 'Should run on your PC';
+    if (rec.gpuScore != null && gpu.score < rec.gpuScore && !upgrades.includes('Graphics cards')) { details.unshift('Expect lower settings. Your graphics card is below the recommended one.'); upgrades.push('Graphics cards'); level = 'warn'; }
+  } else if (mMin === false) { level = 'bad'; headline = "Below this game's minimum"; }
+  else { level = 'info'; headline = "Can't tell from this listing"; }
+  return { level, headline, details, upgrades };
+}
+function buyOrWait(current, regular, low) {
+  const off = pct(current, regular);
+  if (!(low > 0)) return off >= 50 ? { level: 'good', label: 'Good deal', detail: `${off}% off right now. We don't have its price history yet.` }
+                                   : { level: 'warn', label: 'Consider waiting', detail: "We don't have its price history yet. Add it to your watchlist so you can check back." };
+  if (current <= low * 1.05) return { level: 'good', label: 'Buy now', detail: current <= low ? "This is the lowest price it's ever been." : `Within 5% of its lowest price ever (${money(low)}).` };
+  if (off >= 40 && current <= low * 1.35) return { level: 'good', label: 'Good deal', detail: `${off}% off. It has been ${money(low)} before, so waiting could save ${money(current - low)}.` };
+  return { level: 'warn', label: 'Wait for a better price', detail: `It has been as low as ${money(low)}. Add it to your watchlist and check back.` };
+}
+
+// ---------- Screens ----------
+const state = { store: 'all', q: '' };
+
+function dealRow(d, names) {
+  const off = Math.round(+d.savings);
+  return `<a class="deal" href="#/game/${encodeURIComponent(d.gameID)}">
+    <img class="thumb" src="${esc(d.thumb)}" alt="" loading="lazy">
+    <span class="deal-info"><span class="deal-title">${esc(d.title)}</span>
+      <span class="deal-meta">${esc(names[d.storeID] || 'Store')} · Official store</span>
+      <span><span class="price">${money(d.salePrice)}</span><span class="was">${money(d.normalPrice)}</span></span></span>
+    ${off > 0 ? `<span class="off">-${off}%</span>` : ''}</a>`;
+}
+
+async function screenDeals() {
+  view.innerHTML = `
+    <h1 class="screen-title">Game deals</h1>
+    <p class="lede">The best current prices on PC games from official stores.</p>
+    <form class="search" role="search" id="searchForm">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9BA4AF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label class="sr" for="q">Search for a game</label>
+      <input id="q" type="search" placeholder="Search for a game" autocomplete="off" enterkeyhint="search" value="${esc(state.q)}">
+    </form>
+    <div class="chips" role="group" aria-label="Store">
+      ${[['all','All stores'], ...STORES].map(([id, n]) => `<button class="chip" data-store="${id}" aria-pressed="${state.store === id}">${n}</button>`).join('')}
+    </div>
+    <div class="section" id="results"><div class="stack">${skeletons(6)}</div></div>
+    ${watchlistBlock()}
+    <div class="foot"><p>Prices from official and authorized stores, updated through CheapShark. Prices can change at the store.</p></div>`;
+  const form = document.getElementById('searchForm');
+  const input = document.getElementById('q');
+  form.addEventListener('submit', (e) => { e.preventDefault(); state.q = input.value.trim(); input.blur(); loadDeals(); });
+  input.addEventListener('search', () => { if (!input.value) { state.q = ''; loadDeals(); } });
+  view.querySelectorAll('.chip').forEach((b) => b.addEventListener('click', () => {
+    state.store = b.dataset.store; view.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', c === b)); loadDeals();
+  }));
+  loadDeals();
+}
+
+async function loadDeals() {
+  const box = document.getElementById('results'); if (!box) return;
+  box.innerHTML = `<div class="stack">${skeletons(6)}</div>`;
+  const names = await getStoreNames();
+  try {
+    if (state.q) {
+      const games = await getJSON(CS + 'games?limit=30&title=' + encodeURIComponent(state.q));
+      box.innerHTML = `<h2>Results for "${esc(state.q)}"</h2>` + (games.length ? `<div class="stack">${games.map((g) => `
+        <a class="deal" href="#/game/${encodeURIComponent(g.gameID)}"><img class="thumb" src="${esc(g.thumb)}" alt="" loading="lazy">
+        <span class="deal-info"><span class="deal-title">${esc(g.external)}</span><span class="deal-meta">Lowest price right now</span>
+        <span class="price">${money(g.cheapest)}</span></span></a>`).join('')}</div>` : '<p class="empty">No games found. Check the spelling, or try fewer words.</p>');
+      return;
+    }
+    const ids = state.store === 'all' ? STORES.map((s) => s[0]).join(',') : state.store;
+    const deals = await getJSON(`${CS}deals?storeID=${ids}&onSale=1&sortBy=Deal%20Rating&pageSize=40&AAA=0`);
+    const seen = new Set(); const unique = deals.filter((d) => !seen.has(d.gameID) && seen.add(d.gameID));
+    box.innerHTML = `<h2>Biggest price drops</h2>` + (unique.length ? `<div class="stack">${unique.map((d) => dealRow(d, names)).join('')}</div>` : '<p class="empty">No deals right now. Check back soon.</p>');
+  } catch { box.innerHTML = errorBox("Couldn't load prices. Check your connection and try again."); }
+}
+
+function watchlistBlock() {
+  const w = store.get('watchlist', []);
+  if (!w.length) return '';
+  return `<div class="section"><h2>Your watchlist</h2><div class="stack">${w.map((g) => `
+    <a class="deal" href="#/game/${encodeURIComponent(g.id)}"><img class="thumb" src="${esc(g.thumb)}" alt="" loading="lazy">
+    <span class="deal-info"><span class="deal-title">${esc(g.title)}</span><span class="deal-meta">Was ${money(g.price)} when you saved it</span></span></a>`).join('')}</div></div>`;
+}
+
+async function screenGame(id) {
+  view.innerHTML = `<div class="stack">${skeletons(3)}</div>`;
+  let g;
+  try { g = await getJSON(CS + 'games?id=' + encodeURIComponent(id)); }
+  catch { view.innerHTML = errorBox("Couldn't load this game. Check your connection and try again."); return; }
+  const names = await getStoreNames();
+  const official = (g.deals || []).filter((d) => names[d.storeID]).sort((a, b) => a.price - b.price);
+  const best = official[0];
+  const title = g.info?.title || 'Game';
+  document.title = title + ' · Steel Games';
+  const steamID = g.info?.steamAppID;
+  const img = steamID ? `https://cdn.cloudflare.steamstatic.com/steam/apps/${steamID}/header.jpg` : g.info?.thumb;
+  const bw = best ? buyOrWait(+best.price, +best.retailPrice, +(g.cheapestPriceEver?.price)) : null;
+  const watch = store.get('watchlist', []); const watching = watch.some((w) => w.id === id);
+  view.innerHTML = `
+    <button class="back" onclick="history.length > 1 ? history.back() : (location.hash = '#/deals')">‹ Back</button>
+    <img class="hero-img" src="${esc(img)}" alt="" onerror="this.src='${esc(g.info?.thumb || '')}'">
+    <h1 class="game-title">${esc(title)}</h1>
+    ${best ? `<div class="big-price"><span class="price">${money(best.price)}</span><span class="was">${money(best.retailPrice)}</span><span class="hint">Lowest price, at ${esc(names[best.storeID])}</span></div>` : ''}
+    <div class="row" style="margin-top:14px">
+      <button class="btn btn-ghost" id="watchBtn" aria-pressed="${watching}">${watching ? 'On your watchlist ✓' : '+ Add to watchlist'}</button>
+    </div>
+    ${bw ? `<div class="section"><div class="card verdict v-${bw.level}"><span class="label">Buy now or wait?</span><h3>${esc(bw.label)}</h3><p>${esc(bw.detail)}</p></div></div>` : ''}
+    <div class="section"><h2>Prices at official stores</h2>
+      ${official.length ? `<div class="stack">${official.map((d, i) => `
+        <div class="store ${i === 0 ? 'best' : ''}"><div class="store-info">
+          <span class="store-name">${esc(names[d.storeID])}${i === 0 ? ' · lowest price' : ''}</span>
+          <span><span class="price">${money(d.price)}</span>${+d.savings >= 1 ? `<span class="was">${money(d.retailPrice)}</span>` : ''}</span>
+          <span class="earn">Steel Games earns nothing from this link</span></div>
+          <a class="btn ${i === 0 ? 'btn-primary' : 'btn-ghost'}" href="https://www.cheapshark.com/redirect?dealID=${encodeURIComponent(d.dealID)}" target="_blank" rel="noopener">Buy ↗</a></div>`).join('')}</div>
+        <p class="hint">You pay the store directly, the way you normally would.</p>` : '<p class="empty">No official store has this game for sale right now.</p>'}
+    </div>
+    <div class="section" id="resellers"></div>
+    ${steamID ? `<div class="section" id="runbox"><h2>Will it run on my PC?</h2><div class="skel" aria-hidden="true"></div></div>` : ''}
+    <div class="foot"><p>Have a question about this game? Ask on our <a href="${DISCORD}" target="_blank" rel="noopener">Discord</a>.</p></div>`;
+  document.getElementById('watchBtn').addEventListener('click', (e) => {
+    let w = store.get('watchlist', []);
+    if (w.some((x) => x.id === id)) w = w.filter((x) => x.id !== id);
+    else w.unshift({ id, title, thumb: g.info?.thumb, price: best ? +best.price : null });
+    store.set('watchlist', w.slice(0, 50));
+    const on = w.some((x) => x.id === id);
+    e.currentTarget.textContent = on ? 'On your watchlist ✓' : '+ Add to watchlist';
+    e.currentTarget.setAttribute('aria-pressed', on);
+  });
+  if (steamID) loadRunCheck(steamID);
+  loadResellers(steamID || id);
+}
+
+async function loadResellers(gameKey) {
+  const box = document.getElementById('resellers'); if (!box || !sb) return;
+  try {
+    const { data } = await sb.from('reseller_offers').select('*').eq('game_id', String(gameKey)).order('price');
+    if (!data || !data.length) return;
+    box.innerHTML = `<h2 style="color:var(--resale)">Key resellers</h2>
+      <p class="hint">These sites resell game codes. They're often cheaper, but refunds go through the reseller, not the official store.</p>
+      <div class="stack">${data.map((o) => { const out = amazonize(o.url); const earns = o.earns_commission ?? out.earns; return `
+      <div class="store" style="border-style:dashed;border-color:#4B4270;background:#14121D"><div class="store-info">
+        <span class="store-name">${esc(o.reseller)} <span class="plat" style="color:var(--resale);border-color:#4B4270">RESOLD KEY</span></span>
+        <span class="price">${money(o.price)}</span>
+        <span class="earn">${earns ? 'Steel Games may earn a commission from this link' : 'Steel Games earns nothing from this link'}</span></div>
+        <a class="btn btn-ghost" href="${esc(out.url)}" target="_blank" rel="noopener sponsored">View ↗</a></div>`; }).join('')}</div>`;
+  } catch {}
+}
+
+async function loadRunCheck(steamID) {
+  const box = document.getElementById('runbox'); if (!box) return;
+  let info = null;
+  try { info = await webData('steam=' + encodeURIComponent(steamID)); } catch {}
+  const list = await getGPUs();
+  const v = runVerdict(info, list);
+  const rating = info && (info.esrb || info.pegi || info.requiredAge >= 17)
+    ? `<div class="card"><span class="hint">Age rating</span><p>${info.esrb ? 'ESRB ' + esc(info.esrb) : ''}${info.esrb && info.pegi ? ' · ' : ''}${info.pegi ? 'PEGI ' + esc(info.pegi) : ''}${info.requiredAge >= 17 && !info.esrb && !info.pegi ? 'For mature players' : ''}</p>${info.esrbDescriptors ? `<p class="hint">${esc(info.esrbDescriptors)}</p>` : ''}</div>` : '';
+  box.innerHTML = `<h2>Will it run on my PC?</h2>
+    <div class="card verdict v-${v.level}"><span class="label">Your PC</span><h3>${esc(v.headline)}</h3>
+      ${v.details.length ? `<ul>${v.details.map((d) => `<li>${esc(d)}</li>`).join('')}</ul>` : ''}
+      ${v.needsPC ? '<a class="btn btn-primary" href="#/mypc">Add my PC</a>' : ''}
+      ${v.upgrades.length ? `<div class="row">${[...new Set(v.upgrades)].map((u) => `<a class="btn btn-ghost" href="#/gear/${encodeURIComponent(u)}">Shop ${esc(u.toLowerCase())}</a>`).join('')}</div>` : ''}
+    </div>
+    ${info && (info.minimum || info.recommended) ? `<details class="card"><summary style="cursor:pointer;font-weight:600">See the full requirements</summary>
+      ${info.minimum ? `<p style="white-space:pre-line">${esc(info.minimum)}</p>` : ''}${info.recommended ? `<p style="white-space:pre-line">${esc(info.recommended)}</p>` : ''}</details>` : ''}
+    ${rating}`;
+}
+
+let newsFilter = 'all';
+async function screenNews() {
+  view.innerHTML = `<h1 class="screen-title">Gaming news</h1><p class="lede">Headlines from PC, Xbox, PlayStation and Nintendo. Stories open on the publisher's site.</p>
+    <div class="chips" role="group" aria-label="Platform">${[['all','All'],['pc','PC'],['xbox','Xbox'],['playstation','PlayStation'],['nintendo','Nintendo']].map(([k, n]) => `<button class="chip" data-p="${k}" aria-pressed="${newsFilter === k}">${n}</button>`).join('')}</div>
+    <div class="section" id="newsList"><div class="stack">${skeletons(6)}</div></div>`;
+  view.querySelectorAll('.chip').forEach((b) => b.addEventListener('click', () => { newsFilter = b.dataset.p; view.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', c === b)); renderNews(); }));
+  renderNews();
+}
+async function renderNews() {
+  const box = document.getElementById('newsList'); if (!box) return;
+  try {
+    const items = (await webData('news=1')).filter((i) => newsFilter === 'all' || i.platform === newsFilter).slice(0, 60);
+    box.innerHTML = items.length ? `<div class="stack">${items.map((i) => `
+      <a class="news-item" href="${esc(i.link)}" target="_blank" rel="noopener">
+        <div class="tag-row"><span class="plat p-${esc(i.platform)}">${esc(PLATFORM_NAMES[i.platform] || i.platform)}</span><span>${esc(i.source)}</span>${i.date ? `<span>· ${ago(i.date)}</span>` : ''}</div>
+        <h3>${esc(i.title)}</h3></a>`).join('')}</div>` : '<p class="empty">No headlines right now.</p>';
+  } catch { box.innerHTML = errorBox("Couldn't load the news. Check your connection and try again."); }
+}
+
+let productsCache = null;
+async function getProducts() {
+  if (productsCache) return productsCache;
+  const { data: products, error } = await sb.from('products').select('*').order('name');
+  if (error) throw error;
+  const { data: offers } = await sb.from('product_offers').select('*');
+  const byProduct = {};
+  for (const o of offers || []) (byProduct[o.product_id] ||= []).push(o);
+  productsCache = products.map((p) => ({ ...p, offers: (byProduct[p.id] || []).sort((a, b) => (a.price ?? 1e9) - (b.price ?? 1e9)) }));
+  return productsCache;
+}
+async function screenGear(category) {
+  if (!sb) { view.innerHTML = errorBox("Couldn't load gear right now."); return; }
+  view.innerHTML = `<div class="stack">${skeletons(5)}</div>`;
+  let products;
+  try { products = await getProducts(); } catch { view.innerHTML = errorBox("Couldn't load gear. Check your connection and try again."); return; }
+  if (!category) {
+    const count = (c) => products.filter((p) => p.category === c).length;
+    view.innerHTML = `<h1 class="screen-title">Gear</h1><p class="lede">Our picks for your whole setup. Tap a category to see them.</p>
+      ${GEAR_GROUPS.map(([g, cats]) => `<div class="section"><h2>${esc(g)}</h2><div class="cats">${cats.map((c) => `<a class="cat" href="#/gear/${encodeURIComponent(c)}">${esc(c)}<small>${count(c)} ${count(c) === 1 ? 'pick' : 'picks'}</small></a>`).join('')}</div></div>`).join('')}
+      <div class="foot"><p>As an Amazon Associate, Steel Games earns from qualifying purchases. Every link that earns us a commission is labeled.</p></div>`;
+    return;
+  }
+  const list = products.filter((p) => p.category === category);
+  view.innerHTML = `<button class="back" onclick="history.back()">‹ Back</button>
+    <h1 class="screen-title">${esc(category)}</h1>
+    <div class="section stack">${list.length ? list.map((p) => `
+      <div class="product">
+        ${p.platform ? `<div class="tag-row"><span class="plat p-${esc(p.platform)}">${esc(PLATFORM_NAMES[p.platform])}</span></div>` : '<div class="tag-row"><span class="plat p-all">Any platform</span></div>'}
+        <h3>${esc(p.name)}</h3>${p.summary ? `<p>${esc(p.summary)}</p>` : ''}
+        ${p.offers.map((o) => { const out = amazonize(o.url); const earns = o.earns_commission ?? out.earns; return `
+          <a class="btn btn-primary btn-block" href="${esc(out.url)}" target="_blank" rel="noopener sponsored">${o.price != null ? money(o.price) + ' at ' : 'See price at '}${esc(o.retailer)} ↗</a>
+          <span class="earn" style="text-align:center">${earns ? 'We earn a commission from this link' : 'We earn nothing from this link'}</span>`; }).join('')}
+      </div>`).join('') : '<p class="empty">No picks here yet. Check back soon.</p>'}</div>
+    <div class="foot"><p>As an Amazon Associate, Steel Games earns from qualifying purchases.</p></div>`;
+}
+
+async function screenMyPC() {
+  const list = await getGPUs(); const pc = myPC();
+  view.innerHTML = `<button class="back" onclick="history.back()">‹ Back</button>
+    <h1 class="screen-title">My PC</h1><p class="lede">Saved on this device only. Every game page will check it for you.</p>
+    <form class="section" id="pcForm">
+      <label class="field">Graphics card
+        <select class="input" id="gpu"><option value="">Choose your graphics card</option>${list.map((g) => `<option value="${esc(g.key)}" ${pc.gpu === g.key ? 'selected' : ''}>${esc(g.name)}</option>`).join('')}</select></label>
+      <p class="hint">Not sure? On Windows, press Start, type "Device Manager", and open "Display adapters".</p>
+      <label class="field">Memory (RAM)
+        <select class="input" id="ram">${[4,6,8,12,16,24,32,48,64,128].map((v) => `<option value="${v}" ${pc.ram === v ? 'selected' : ''}>${v} GB</option>`).join('')}</select></label>
+      <label class="field">Free storage space
+        <select class="input" id="storage">${[25,50,100,200,300,500,750,1000,2000].map((v) => `<option value="${v}" ${pc.storage === v ? 'selected' : ''}>${v >= 1000 ? v / 1000 + ' TB' : v + ' GB'}</option>`).join('')}</select></label>
+      <button class="btn btn-primary btn-block" type="submit">Save my PC</button>
+      <div id="pcMsg" role="status"></div>
+    </form>`;
+  document.getElementById('pcForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    store.set('myPC', { gpu: document.getElementById('gpu').value || null, ram: +document.getElementById('ram').value, storage: +document.getElementById('storage').value });
+    document.getElementById('pcMsg').innerHTML = '<div class="msg ok">Saved. Game pages will now check your PC.</div>';
+  });
+}
+
+// ---------- Account ----------
+let session = null;
+async function refreshSession() { if (!sb) return null; const { data } = await sb.auth.getSession(); session = data.session; return session; }
+
+async function screenAccount() {
+  await refreshSession();
+  const help = `
+    <div class="section"><h2>Help and community</h2><div class="list">
+      <a class="list-link" href="#/mypc"><span>My PC (for "Will it run?")</span><span>›</span></a>
+      <a class="list-link" href="${SITE}/#help" target="_blank" rel="noopener"><span>Help and common questions</span><span>↗</span></a>
+      <a class="list-link" href="mailto:${SUPPORT}"><span>Email us</span><span>↗</span></a>
+      <a class="list-link" href="${DISCORD}" target="_blank" rel="noopener"><span>Join our Discord community</span><span>↗</span></a>
+      <a class="list-link" href="${SITE}/#privacy" target="_blank" rel="noopener"><span>Privacy policy</span><span>↗</span></a>
+      <a class="list-link" href="${SITE}/terms.html" target="_blank" rel="noopener"><span>Terms of use</span><span>↗</span></a>
+    </div></div>
+    <div class="foot"><p>Steel Games is veteran-owned and operated.</p><p>Steel Games is not affiliated with Valve, Epic Games, Microsoft, Sony or Nintendo.</p></div>`;
+  if (!session) { renderAuth(help); return; }
+  view.innerHTML = `<h1 class="screen-title">Account</h1><div class="section stack" id="acct"><div class="skel"></div></div>${help}`;
+  let profile = null, points = null;
+  try { profile = (await sb.rpc('my_profile')).data; } catch {}
+  try { points = (await sb.rpc('my_points')).data; } catch {}
+  if (profile && !profile.accepted_terms_at && store.get('termsPending', false)) { try { await sb.rpc('accept_terms'); store.set('termsPending', false); } catch {} }
+  document.getElementById('acct').innerHTML = `
+    <div class="card"><h3>${esc(profile?.username || 'Your account')}${profile?.is_veteran ? ' <span class="vet" style="margin-left:6px">Veteran</span>' : ''}</h3><p>${esc(session.user.email || '')}</p></div>
+    <div class="card"><span class="hint">Steel Points</span><h3 style="font-size:28px">${(points?.balance ?? 0).toLocaleString()}</h3><p>Earn points when you shop through Steel Games at eligible stores, and trade them for gift cards in the iPhone app.</p></div>
+    <button class="btn btn-ghost btn-block" id="signOut">Sign out</button>
+    <button class="btn btn-danger btn-block" id="deleteBtn">Delete my account</button>
+    <p class="hint">Deleting your account permanently removes your profile, reviews, messages, receipts and Steel Points. This can't be undone.</p>
+    <div id="acctMsg" role="status"></div>`;
+  document.getElementById('signOut').addEventListener('click', async () => { await sb.auth.signOut(); session = null; screenAccount(); });
+  document.getElementById('deleteBtn').addEventListener('click', () => confirmDelete());
+}
+
+function confirmDelete() {
+  const box = document.getElementById('acctMsg');
+  box.innerHTML = `<div class="card verdict v-bad"><h3>Delete your account for good?</h3><p>Type DELETE to confirm.</p>
+    <input class="input" id="delConfirm" autocomplete="off" aria-label="Type DELETE to confirm">
+    <div class="row"><button class="btn btn-danger" id="delGo">Delete account</button><button class="btn btn-ghost" id="delCancel">Cancel</button></div></div>`;
+  document.getElementById('delCancel').addEventListener('click', () => { box.innerHTML = ''; });
+  document.getElementById('delGo').addEventListener('click', async (e) => {
+    if (document.getElementById('delConfirm').value.trim().toUpperCase() !== 'DELETE') { document.getElementById('delConfirm').focus(); return; }
+    e.currentTarget.disabled = true; e.currentTarget.textContent = 'Deleting…';
+    try {
+      const r = await fetch(SUPABASE_URL + '/functions/v1/delete-account', { method: 'POST', headers: { apikey: SUPABASE_KEY, Authorization: 'Bearer ' + session.access_token } });
+      if (!r.ok) throw new Error();
+      await sb.auth.signOut(); session = null;
+      view.innerHTML = `<div class="section"><div class="msg ok">Your account has been deleted.</div><a class="btn btn-ghost" href="#/deals">Back to deals</a></div>`;
+    } catch { box.innerHTML = errorBox(`Couldn't delete your account. Check your connection and try again, or email ${SUPPORT}.`); }
+  });
+}
+
+let authMode = 'signin';
+function renderAuth(help) {
+  view.innerHTML = `<h1 class="screen-title">Account</h1>
+    <p class="lede">You can browse prices, news and gear without an account. A free account lets you earn Steel Points.</p>
+    <div class="section">
+      <div class="seg" role="group" aria-label="Sign in or create an account">
+        <button type="button" data-m="signin" aria-pressed="${authMode === 'signin'}">Sign in</button>
+        <button type="button" data-m="create" aria-pressed="${authMode === 'create'}">Create account</button>
+      </div>
+      <form class="stack" id="authForm" novalidate>
+        <label class="field">Email<input class="input" type="email" id="email" autocomplete="email" required></label>
+        <label class="field">Password (8 or more characters)<input class="input" type="password" id="pw" autocomplete="${authMode === 'create' ? 'new-password' : 'current-password'}" minlength="8" required></label>
+        ${authMode === 'create' ? `
+          <label class="field">Username (shown publicly)<input class="input" id="un" autocomplete="username" pattern="[A-Za-z0-9_]{3,20}" required></label>
+          <p class="hint">3 to 20 letters, numbers or underscores.</p>
+          <label class="check"><input type="checkbox" id="agree"><span>I agree to the <a href="${SITE}/terms.html" target="_blank" rel="noopener">Terms of Use</a> and community rules. Steel Games has zero tolerance for abusive or objectionable content.</span></label>` : ''}
+        <button class="btn btn-primary btn-block" type="submit" id="authGo">${authMode === 'create' ? 'Create account' : 'Sign in'}</button>
+        ${authMode === 'signin' ? '<button class="btn btn-ghost btn-block" type="button" id="forgot">Forgot password?</button>' : ''}
+        <div id="authMsg" role="status"></div>
+      </form>
+    </div>${help}`;
+  view.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => { authMode = b.dataset.m; renderAuth(help); }));
+  const msg = (html) => { document.getElementById('authMsg').innerHTML = html; };
+  document.getElementById('authForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim(), pw = document.getElementById('pw').value;
+    if (!email.includes('@')) return msg(errorBox('Enter a valid email address.'));
+    if (pw.length < 8) return msg(errorBox('Your password needs at least 8 characters.'));
+    const go = document.getElementById('authGo'); go.disabled = true;
+    try {
+      if (authMode === 'create') {
+        const un = document.getElementById('un').value.trim();
+        if (!/^[A-Za-z0-9_]{3,20}$/.test(un)) { go.disabled = false; return msg(errorBox('Usernames use 3 to 20 letters, numbers or underscores.')); }
+        if (!document.getElementById('agree').checked) { go.disabled = false; return msg(errorBox('Please agree to the Terms of Use to continue.')); }
+        const { data, error } = await sb.auth.signUp({ email, password: pw, options: { data: { username: un }, emailRedirectTo: SITE + '/app/#/account' } });
+        if (error) throw error;
+        store.set('termsPending', true);
+        if (data.session) { await sb.rpc('accept_terms'); store.set('termsPending', false); screenAccount(); }
+        else msg('<div class="msg ok">Check your email and tap the link to finish creating your account.</div>');
+      } else {
+        const { error } = await sb.auth.signInWithPassword({ email, password: pw });
+        if (error) throw error;
+        screenAccount();
+      }
+    } catch (err) { msg(errorBox(err?.message || 'Something went wrong. Try again.')); }
+    finally { if (document.getElementById('authGo')) document.getElementById('authGo').disabled = false; }
+  });
+  const forgot = document.getElementById('forgot');
+  if (forgot) forgot.addEventListener('click', async () => {
+    const email = document.getElementById('email').value.trim();
+    if (!email.includes('@')) return msg(errorBox('Type your email above first.'));
+    await sb.auth.resetPasswordForEmail(email, { redirectTo: SITE + '/app/#/account' });
+    msg('<div class="msg ok">If that email has an account, we sent a link to reset your password.</div>');
+  });
+}
+
+// ---------- Router ----------
+async function route() {
+  const parts = (location.hash.replace(/^#\/?/, '') || 'deals').split('/').map(decodeURIComponent);
+  const [page, arg] = parts;
+  const tab = { deals: 'deals', game: 'deals', news: 'news', gear: 'gear', account: 'account', mypc: 'account' }[page] || 'deals';
+  document.querySelectorAll('.tabbar a').forEach((a) => { if (a.dataset.tab === tab) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+  document.title = 'Steel Games · Game Deals';
+  window.scrollTo(0, 0);
+  if (page === 'game' && arg) await screenGame(arg);
+  else if (page === 'news') await screenNews();
+  else if (page === 'gear') await screenGear(arg);
+  else if (page === 'account') await screenAccount();
+  else if (page === 'mypc') await screenMyPC();
+  else await screenDeals();
+  view.focus({ preventScroll: true });
+}
+window.addEventListener('hashchange', route);
+if (sb) sb.auth.onAuthStateChange((_e, s) => { session = s; });
+route();
+
+if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+</script>
+</body>
+</html>
