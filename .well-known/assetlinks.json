@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.steelgamesapp.twa",
+        "sha256_cert_fingerprints": ["69:FB:FA:D1:5C:6B:DC:C8:72:1E:1D:A8:3C:2C:87:19:4D:97:48:3B:6A:E2:28:9D:82:F7:6A:AD:2D:DA:E0:11"]
+      }
+    }]
