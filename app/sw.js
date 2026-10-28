@@ -1,6 +1,6 @@
 // Steel Games web app: keeps the app shell available offline.
 // Prices, news and gear always come fresh from the network.
-const CACHE = 'steelgames-v3';
+const CACHE = 'steelgames-v4';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './hardware.json', './icons/icon-192.png', './icons/icon-512.png', './offline.html'];
 
 self.addEventListener('install', (e) => {
