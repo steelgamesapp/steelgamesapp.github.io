@@ -612,7 +612,7 @@ async function screenGame(id) {
         <div class="store ${i === 0 ? 'best' : ''}"><div class="store-info">
           <span class="store-name">${esc(names[d.storeID])}${i === 0 ? ' · lowest price' : ''}</span>
           <span><span class="price">${money(d.price)}</span>${+d.savings >= 1 ? `<span class="was">${money(d.retailPrice)}</span>` : ''}</span>
-          <span class="earn">${earnsAt(d.storeID) ? 'SteelGames may earn a small commission. You pay the same price.' : 'SteelGames earns nothing from this link'}</span></div>
+          <span class="earn">${earnsAt(d.storeID) ? 'Affiliate link' : ''}</span></div>
           <a class="btn ${i === 0 ? 'btn-primary' : 'btn-ghost'}" href="${esc(storeLink(d.storeID, d.dealID, title, steamID))}" target="_blank" rel="noopener">Buy ↗</a></div>`).join('')}</div>
         <p class="hint">You pay the store directly, the way you normally would.</p>` : '<p class="empty">No official store has this game for sale right now.</p>'}
     </div>
@@ -644,7 +644,7 @@ async function loadResellers(gameKey) {
       <div class="store" style="border-style:dashed;border-color:#4B4270;background:#14121D"><div class="store-info">
         <span class="store-name">${esc(o.reseller)} <span class="plat" style="color:var(--resale);border-color:#4B4270">RESOLD KEY</span></span>
         <span class="price">${money(o.price)}</span>
-        <span class="earn">${earns ? 'SteelGames may earn a commission from this link' : 'SteelGames earns nothing from this link'}</span></div>
+        <span class="earn">${earns ? 'Affiliate link' : ''}</span></div>
         <a class="btn btn-ghost" href="${esc(out.url)}" target="_blank" rel="noopener sponsored">View ↗</a></div>`; }).join('')}</div>`;
   } catch {}
 }
@@ -707,7 +707,7 @@ async function screenGear(category) {
     const count = (c) => products.filter((p) => p.category === c).length;
     view.innerHTML = `<h1 class="screen-title">Gear</h1><p class="lede">Our picks for your whole setup. Tap a category to see them.</p>
       ${GEAR_GROUPS.map(([g, cats]) => `<div class="section"><h2>${esc(g)}</h2><div class="cats">${cats.map((c) => `<a class="cat" href="#/gear/${encodeURIComponent(c)}"><span class="gi gi-sm">${gIcon(c, 22)}</span>${esc(c)}<small>${count(c)} ${count(c) === 1 ? 'pick' : 'picks'}</small></a>`).join('')}</div></div>`).join('')}
-      <div class="foot"><p>As an Amazon Associate, SteelGames earns from qualifying purchases. Every link that earns us a commission is labeled.</p></div>`;
+      <div class="foot"><p>As an Amazon Associate, SteelGames earns from qualifying purchases.</p></div>`;
     return;
   }
   const list = products.filter((p) => p.category === category);
@@ -719,7 +719,7 @@ async function screenGear(category) {
         <h3>${esc(p.name)}</h3>${p.summary ? `<p>${esc(p.summary)}</p>` : ''}
         ${p.offers.map((o) => { const out = amazonize(o.url); const earns = o.earns_commission ?? out.earns; return `
           <a class="btn btn-primary btn-block" href="${esc(out.url)}" target="_blank" rel="noopener sponsored">${o.price != null ? money(o.price) + ' at ' : 'See price at '}${esc(o.retailer)} ↗</a>
-          <span class="earn" style="text-align:center">${earns ? 'We earn a commission from this link' : 'We earn nothing from this link'}</span>`; }).join('')}
+          <span class="earn" style="text-align:center">${earns ? 'Affiliate link' : ''}</span>`; }).join('')}
       </div>`).join('') : '<p class="empty">No picks here yet. Check back soon.</p>'}</div>
     <div class="foot"><p>As an Amazon Associate, SteelGames earns from qualifying purchases.</p></div>`;
 }
