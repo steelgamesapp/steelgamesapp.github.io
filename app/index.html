@@ -157,6 +157,14 @@ label.field { display: flex; flex-direction: column; gap: 6px; font-size: 15px; 
 @media (prefers-reduced-motion: reduce) { .skel { animation: none; } }
 .empty { padding: 28px 16px; text-align: center; color: var(--muted); }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.ad-box{margin:14px 0;padding:8px;border:1px dashed rgba(155,164,175,.35);border-radius:12px;min-height:60px}
+.ad-label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9BA4AF;margin-bottom:4px}
+.sponsor{display:block;margin:6px 0 18px;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,122,26,.45);background:linear-gradient(135deg,rgba(255,122,26,.12),rgba(255,122,26,.03));color:inherit;text-decoration:none}
+.sponsor img{width:100%;border-radius:10px;margin-bottom:10px;display:block}
+.sponsor strong{display:block;font-size:17px;margin-bottom:2px}
+.sponsor span:last-child{color:#9BA4AF;font-size:14px}
+.sponsor.house{border-style:dashed}
 </style>
 </head>
 <body>
@@ -192,7 +200,22 @@ const SITE = 'https://steelgamesapp.github.io';
 const DISCORD = 'https://discord.gg/ekrRaejc6';
 const SUPPORT = 'steelgames.app@outlook.com';
 const CS = 'https://www.cheapshark.com/api/1.0/';
-const STORES = [['1','Steam'],['25','Epic'],['7','GOG'],['11','Humble'],['15','Fanatical']];
+const STORES = [['1','Steam'],['25','Epic'],['3','Green Man Gaming'],['7','GOG'],['11','Humble'],['15','Fanatical']];
+
+// ---------- Money settings ----------
+// Store commission links. Once a store's affiliate program approves you, paste its deep-link
+// pattern here. {url} = the store page (URL-encoded), {title} = game title, {steamAppID}.
+//   Green Man Gaming (Impact):  'https://greenmangaming.sjv.io/c/ACCOUNT/AD/CAMPAIGN?u={url}'
+//   Fanatical (Awin):           'https://www.awin1.com/cread.php?awinmid=MERCHANT&awinaffid=YOURID&ued={url}'
+//   Humble (CJ):                'https://www.anrdoezrs.net/click-PID-AID?url={url}'
+const AFFILIATE = {
+  // '3': '',
+  // '15': '',
+  // '11': '',
+};
+// Google AdSense: set both once AdSense approves the site. Until then no ads load.
+const ADSENSE_CLIENT = '';   // e.g. 'ca-pub-1234567890123456'
+const ADSENSE_SLOT = '';     // e.g. '1234567890'
 const PLATFORM_NAMES = { pc: 'PC', xbox: 'Xbox', playstation: 'PlayStation', nintendo: 'Nintendo' };
 const GEAR_GROUPS = [
   ['PC parts', ['Graphics cards','Processors','Memory','Storage','Keyboards','Mice']],
@@ -207,6 +230,52 @@ const view = document.getElementById('view');
 // ---------- Small helpers ----------
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const money = (v) => (v == null || isNaN(v)) ? '' : (Number(v) === 0 ? 'Free' : '$' + Number(v).toFixed(2));
+// Buy links go straight to the store's own site (no in-between pages),
+// wrapped in your commission link when that store's program is set up above.
+function storePage(storeID, dealID, title, steamAppID) {
+  const q = encodeURIComponent(title || '');
+  switch (String(storeID)) {
+    case '1': if (steamAppID && steamAppID !== '0') return `https://store.steampowered.com/app/${steamAppID}/`; return `https://store.steampowered.com/search/?term=${q}`;
+    case '3': return `https://www.greenmangaming.com/search/?query=${q}`;
+    case '7': return `https://www.gog.com/en/games?query=${q}`;
+    case '11': return `https://www.humblebundle.com/store/search?search=${q}`;
+    case '15': return `https://www.fanatical.com/en/search?search=${q}`;
+    case '25': return `https://store.epicgames.com/en-US/browse?q=${q}&sortBy=relevancy&sortDir=DESC`;
+    default: return `https://www.cheapshark.com/redirect?dealID=${encodeURIComponent(dealID)}`;
+  }
+}
+const earnsAt = (storeID) => !!AFFILIATE[String(storeID)];
+function storeLink(storeID, dealID, title, steamAppID) {
+  const page = storePage(storeID, dealID, title, steamAppID);
+  const t = AFFILIATE[String(storeID)];
+  if (!t) return page;
+  return t.replace('{url}', encodeURIComponent(page)).replace('{title}', encodeURIComponent(title || '')).replace('{steamAppID}', steamAppID || '');
+}
+
+// ---------- Ads and sponsors ----------
+let adsLoaded = false;
+function adSlot() {
+  if (!ADSENSE_CLIENT || !ADSENSE_SLOT) return '';
+  if (!adsLoaded) {
+    adsLoaded = true;
+    const sc = document.createElement('script'); sc.async = true; sc.crossOrigin = 'anonymous';
+    sc.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + ADSENSE_CLIENT;
+    document.head.appendChild(sc);
+  }
+  setTimeout(() => document.querySelectorAll('ins.adsbygoogle:not([data-adsbygoogle-status])').forEach(() => { try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch {} }), 50);
+  return `<div class="ad-box"><span class="ad-label">Advertisement</span><ins class="adsbygoogle" style="display:block" data-ad-client="${ADSENSE_CLIENT}" data-ad-slot="${ADSENSE_SLOT}" data-ad-format="auto" data-full-width-responsive="true"></ins></div>`;
+}
+// Sponsored "Featured" spot. Edit /sponsors.json on the site to sell it; empty = "Advertise here" card.
+let sponsors = null;
+async function getSponsor() {
+  if (sponsors === null) { try { sponsors = (await getJSON(SITE + '/sponsors.json', {}, 3600_000)).filter((x) => x.active && (!x.ends || Date.parse(x.ends) > Date.now())); } catch { sponsors = []; } }
+  return sponsors.length ? sponsors[Math.floor(Math.random() * sponsors.length)] : null;
+}
+async function sponsorCard() {
+  const s = await getSponsor();
+  if (!s) return `<a class="sponsor house" href="${SITE}/advertise.html" target="_blank" rel="noopener"><span class="ad-label">Featured spot</span><strong>Your game or gear could be here</strong><span>Reach PC gamers who are ready to buy. Advertise with Steel Games ↗</span></a>`;
+  return `<a class="sponsor" href="${esc(s.url)}" target="_blank" rel="noopener sponsored">${s.image ? `<img src="${esc(s.image)}" alt="" loading="lazy">` : ''}<span class="ad-label">Sponsored</span><strong>${esc(s.title)}</strong><span>${esc(s.text || '')}</span></a>`;
+}
 const pct = (sale, normal) => normal > 0 ? Math.round((normal - sale) / normal * 100) : 0;
 const store = { get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch { return d; } },
                 set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} } };
@@ -360,7 +429,8 @@ async function loadDeals() {
     const ids = state.store === 'all' ? STORES.map((s) => s[0]).join(',') : state.store;
     const deals = await getJSON(`${CS}deals?storeID=${ids}&onSale=1&sortBy=Deal%20Rating&pageSize=40&AAA=0`);
     const seen = new Set(); const unique = deals.filter((d) => !seen.has(d.gameID) && seen.add(d.gameID));
-    box.innerHTML = `<h2>Biggest price drops</h2>` + (unique.length ? `<div class="stack">${unique.map((d) => dealRow(d, names)).join('')}</div>` : '<p class="empty">No deals right now. Check back soon.</p>');
+    const rows = unique.map((d, i) => dealRow(d, names) + (i === 7 ? adSlot() : ''));
+    box.innerHTML = (await sponsorCard()) + `<h2>Biggest price drops</h2>` + (unique.length ? `<div class="stack">${rows.join('')}</div>` : '<p class="empty">No deals right now. Check back soon.</p>');
   } catch { box.innerHTML = errorBox("Couldn't load prices. Check your connection and try again."); }
 }
 
@@ -378,7 +448,10 @@ async function screenGame(id) {
   try { g = await getJSON(CS + 'games?id=' + encodeURIComponent(id)); }
   catch { view.innerHTML = errorBox("Couldn't load this game. Check your connection and try again."); return; }
   const names = await getStoreNames();
-  const official = (g.deals || []).filter((d) => names[d.storeID]).sort((a, b) => a.price - b.price);
+  // Cheapest first. On a tie (within 5 cents), a store that pays Steel Games a commission goes first.
+  const official = (g.deals || []).filter((d) => names[d.storeID]).sort((a, b) => {
+    const diff = a.price - b.price;
+    return Math.abs(diff) <= 0.05 ? (earnsAt(b.storeID) - earnsAt(a.storeID)) || diff : diff; });
   const best = official[0];
   const title = g.info?.title || 'Game';
   document.title = title + ' · Steel Games';
@@ -400,10 +473,11 @@ async function screenGame(id) {
         <div class="store ${i === 0 ? 'best' : ''}"><div class="store-info">
           <span class="store-name">${esc(names[d.storeID])}${i === 0 ? ' · lowest price' : ''}</span>
           <span><span class="price">${money(d.price)}</span>${+d.savings >= 1 ? `<span class="was">${money(d.retailPrice)}</span>` : ''}</span>
-          <span class="earn">Steel Games earns nothing from this link</span></div>
-          <a class="btn ${i === 0 ? 'btn-primary' : 'btn-ghost'}" href="https://www.cheapshark.com/redirect?dealID=${encodeURIComponent(d.dealID)}" target="_blank" rel="noopener">Buy ↗</a></div>`).join('')}</div>
+          <span class="earn">${earnsAt(d.storeID) ? 'Steel Games may earn a small commission. You pay the same price.' : 'Steel Games earns nothing from this link'}</span></div>
+          <a class="btn ${i === 0 ? 'btn-primary' : 'btn-ghost'}" href="${esc(storeLink(d.storeID, d.dealID, title, steamID))}" target="_blank" rel="noopener">Buy ↗</a></div>`).join('')}</div>
         <p class="hint">You pay the store directly, the way you normally would.</p>` : '<p class="empty">No official store has this game for sale right now.</p>'}
     </div>
+    ${adSlot()}
     <div class="section" id="resellers"></div>
     ${steamID ? `<div class="section" id="runbox"><h2>Will it run on my PC?</h2><div class="skel" aria-hidden="true"></div></div>` : ''}
     <div class="foot"><p>Have a question about this game? Ask on our <a href="${DISCORD}" target="_blank" rel="noopener">Discord</a>.</p></div>`;
