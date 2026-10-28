@@ -200,7 +200,7 @@ label.field { display: flex; flex-direction: column; gap: 6px; font-size: 15px; 
 const SUPABASE_URL = 'https://hcevjksajzetoezupzec.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhjZXZqa3NhanpldG9lenVwemVjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMxMjE1NTcsImV4cCI6MjEwODY5NzU1N30.bKQhWEEQDGixQNn3uwNSyGEM64hN-B8TNGWgHWq4GtM';
 const AMAZON_TAG = 'steelgames-20';
-const SITE = 'https://steelgamesapp.github.io';
+const SITE = location.hostname.endsWith('github.io') ? 'https://steelgamesapp.github.io' : 'https://steelgamesapp.com';
 const DISCORD = 'https://discord.gg/ekrRaejc6';
 const SUPPORT = 'steelgames.app@outlook.com';
 const CS = 'https://www.cheapshark.com/api/1.0/';
