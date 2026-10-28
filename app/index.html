@@ -170,6 +170,35 @@ label.field { display: flex; flex-direction: column; gap: 6px; font-size: 15px; 
 .gi{flex:none;width:48px;height:48px;border-radius:12px;display:inline-grid;place-items:center;color:#FF9A4D;background:radial-gradient(120% 120% at 30% 20%,rgba(255,122,26,.22),rgba(255,122,26,.04) 60%),#1A1E25;border:1px solid rgba(255,122,26,.28)}
 .gi-sm{width:38px;height:38px;border-radius:10px;margin-bottom:8px}
 .product .tag-row{display:flex;align-items:center;gap:10px}
+
+/* Deals upgrade */
+.controls { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+.sel { width: 100%; min-height: 44px; font-size: 15px; font-weight: 600; }
+.chips-tight { margin-top: 0; }
+.chip-sm { min-height: 34px; padding: 0 13px; font-size: 14px; }
+.pill { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 6px; font-size: 12px; font-weight: 700; border: 1px solid; vertical-align: 1px; }
+.pill-good { color: var(--good); background: var(--good-bg); border-color: var(--good-line); }
+.pill-mid { color: var(--warn); background: var(--warn-bg); border-color: var(--warn-line); }
+.pill-low { color: var(--bad); background: var(--bad-bg); border-color: var(--bad-line); }
+.pick { display: block; position: relative; border-radius: 18px; overflow: hidden; background: var(--surface); border: 1px solid var(--line-strong); text-decoration: none; color: var(--fg); }
+.pick img { width: 100%; aspect-ratio: 460 / 215; object-fit: cover; display: block; background: var(--raised); }
+.pick-body { display: flex; flex-direction: column; gap: 5px; padding: 14px 16px 16px; }
+.pick-label { font-size: 12px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); }
+.pick-title { font-family: var(--display); font-size: 24px; font-weight: 700; line-height: 1.15; }
+.pick-line { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.pick-line .price { font-family: var(--display); font-size: 28px; }
+.pick-meta { font-size: 13px; color: var(--muted); }
+#more { margin-top: 12px; }
+@media (min-width: 900px) {
+  .wrap { max-width: 1040px; }
+  .controls { flex-direction: row; align-items: center; }
+  .controls .sortbox { flex: 0 0 220px; }
+  .deal-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .pick { display: grid; grid-template-columns: 1.4fr 1fr; align-items: stretch; }
+  .pick img { height: 100%; aspect-ratio: auto; }
+  .pick-body { justify-content: center; padding: 22px; }
+  .pick-title { font-size: 30px; }
+}
 </style>
 </head>
 <body>
@@ -383,14 +412,33 @@ function buyOrWait(current, regular, low) {
 }
 
 // ---------- Screens ----------
-const state = { store: 'all', q: '' };
+const SORTS = [['Deal Rating','Best deals'],['Savings','Biggest discount'],['Price','Lowest price'],['Metacritic','Top rated'],['Recent','Newest']];
+const FILTERS = [['','Any price'],['free','Free'],['10','Under $10'],['20','Under $20'],['great','Great reviews']];
+const state = Object.assign({ store: 'all', q: '', sort: 'Deal Rating', filter: '', page: 0 }, store.get('dealPrefs', {}));
+const savePrefs = () => store.set('dealPrefs', { store: state.store, sort: state.sort, filter: state.filter });
 
+function ratingPill(d) {
+  const r = +d.steamRatingPercent;
+  if (r > 0) return `<span class="pill ${r >= 80 ? 'pill-good' : r >= 60 ? 'pill-mid' : 'pill-low'}">${r}% positive</span>`;
+  const m = +d.metacriticScore;
+  return m > 0 ? `<span class="pill ${m >= 75 ? 'pill-good' : m >= 55 ? 'pill-mid' : 'pill-low'}">Metacritic ${m}</span>` : '';
+}
+function heroImg(d) { return d.steamAppID && d.steamAppID !== '0' ? `https://cdn.cloudflare.steamstatic.com/steam/apps/${d.steamAppID}/header.jpg` : d.thumb; }
+function topPick(d, names) {
+  const off = Math.round(+d.savings);
+  return `<a class="pick" href="#/game/${encodeURIComponent(d.gameID)}">
+    <img src="${esc(heroImg(d))}" alt="" loading="eager">
+    <span class="pick-body"><span class="pick-label">Top pick today</span>
+      <span class="pick-title">${esc(d.title)}</span>
+      <span class="pick-line"><span class="price">${money(d.salePrice)}</span><span class="was">${money(d.normalPrice)}</span>${off > 0 ? `<span class="off">-${off}%</span>` : ''}</span>
+      <span class="pick-meta">${esc(names[d.storeID] || 'Store')} · Official store ${ratingPill(d)}</span></span></a>`;
+}
 function dealRow(d, names) {
   const off = Math.round(+d.savings);
   return `<a class="deal" href="#/game/${encodeURIComponent(d.gameID)}">
     <img class="thumb" src="${esc(d.thumb)}" alt="" loading="lazy">
     <span class="deal-info"><span class="deal-title">${esc(d.title)}</span>
-      <span class="deal-meta">${esc(names[d.storeID] || 'Store')} · Official store</span>
+      <span class="deal-meta">${esc(names[d.storeID] || 'Store')} · Official store ${ratingPill(d)}</span>
       <span><span class="price">${money(d.salePrice)}</span><span class="was">${money(d.normalPrice)}</span></span></span>
     ${off > 0 ? `<span class="off">-${off}%</span>` : ''}</a>`;
 }
@@ -407,6 +455,10 @@ async function screenDeals() {
     <div class="chips" role="group" aria-label="Store">
       ${[['all','All stores'], ...STORES].map(([id, n]) => `<button class="chip" data-store="${id}" aria-pressed="${state.store === id}">${n}</button>`).join('')}
     </div>
+    <div class="controls" role="group" aria-label="Sort and filter">
+      <label class="sortbox"><span class="sr">Sort deals</span><select id="sortSel" class="input sel">${SORTS.map(([v, n]) => `<option value="${v}" ${state.sort === v ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
+      <div class="chips chips-tight" role="group" aria-label="Price and rating">${FILTERS.map(([v, n]) => `<button class="chip chip-sm" data-filter="${v}" aria-pressed="${state.filter === v}">${n}</button>`).join('')}</div>
+    </div>
     <div class="section" id="results"><div class="stack">${skeletons(6)}</div></div>
     ${watchlistBlock()}
     <div class="foot"><p>Prices from official and authorized stores, updated through CheapShark. Prices can change at the store.</p></div>`;
@@ -414,9 +466,13 @@ async function screenDeals() {
   const input = document.getElementById('q');
   form.addEventListener('submit', (e) => { e.preventDefault(); state.q = input.value.trim(); input.blur(); loadDeals(); });
   input.addEventListener('search', () => { if (!input.value) { state.q = ''; loadDeals(); } });
-  view.querySelectorAll('.chip').forEach((b) => b.addEventListener('click', () => {
-    state.store = b.dataset.store; view.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', c === b)); loadDeals();
+  view.querySelectorAll('.chip[data-store]').forEach((b) => b.addEventListener('click', () => {
+    state.store = b.dataset.store; state.page = 0; savePrefs(); view.querySelectorAll('.chip[data-store]').forEach((c) => c.setAttribute('aria-pressed', c === b)); loadDeals();
   }));
+  view.querySelectorAll('.chip[data-filter]').forEach((b) => b.addEventListener('click', () => {
+    state.filter = b.dataset.filter; state.page = 0; savePrefs(); view.querySelectorAll('.chip[data-filter]').forEach((c) => c.setAttribute('aria-pressed', c === b)); loadDeals();
+  }));
+  document.getElementById('sortSel').addEventListener('change', (e) => { state.sort = e.target.value; state.page = 0; savePrefs(); loadDeals(); });
   loadDeals();
 }
 
@@ -434,10 +490,28 @@ async function loadDeals() {
       return;
     }
     const ids = state.store === 'all' ? STORES.map((s) => s[0]).join(',') : state.store;
-    const deals = await getJSON(`${CS}deals?storeID=${ids}&onSale=1&sortBy=Deal%20Rating&pageSize=40&AAA=0`);
+    const f = state.filter;
+    const extra = f === 'free' ? '&upperPrice=0' : (f === '10' || f === '20') ? `&upperPrice=${f}&lowerPrice=0.01` : f === 'great' ? '&steamRating=80' : '';
+    const url = `${CS}deals?storeID=${ids}&onSale=1&sortBy=${encodeURIComponent(state.sort)}&desc=${state.sort === 'Price' ? 0 : 1}&pageSize=40&pageNumber=${state.page}&AAA=0${extra}`;
+    const deals = await getJSON(url);
     const seen = new Set(); const unique = deals.filter((d) => !seen.has(d.gameID) && seen.add(d.gameID));
+    const lead = !state.page && state.sort === 'Deal Rating' && !f && unique.length > 3 ? unique.shift() : null;
     const rows = unique.map((d, i) => dealRow(d, names) + (i === 7 ? adSlot() : ''));
-    box.innerHTML = (await sponsorCard()) + `<h2>Biggest price drops</h2>` + (unique.length ? `<div class="stack">${rows.join('')}</div>` : '<p class="empty">No deals right now. Check back soon.</p>');
+    const title = f === 'free' ? 'Free right now' : (SORTS.find((x) => x[0] === state.sort) || [])[1] || 'Deals';
+    box.innerHTML = (await sponsorCard()) + (lead ? topPick(lead, names) : '') + `<h2>${esc(title)}</h2>` +
+      (unique.length || lead ? `<div class="stack deal-grid">${rows.join('')}</div>${deals.length >= 40 ? '<button class="btn btn-ghost btn-block" id="more">Show more deals</button>' : ''}` : '<p class="empty">Nothing matches those filters right now. Try Any price, or another store.</p>');
+    const more = document.getElementById('more');
+    if (more) more.addEventListener('click', async () => {
+      more.disabled = true; more.textContent = 'Loading…';
+      try {
+        state.page += 1;
+        const next = await getJSON(url.replace(/pageNumber=\d+/, 'pageNumber=' + state.page));
+        const have = new Set([...box.querySelectorAll('a.deal')].map((a) => decodeURIComponent(a.getAttribute('href').split('/').pop())));
+        const add = next.filter((d) => !have.has(d.gameID));
+        box.querySelector('.deal-grid').insertAdjacentHTML('beforeend', add.map((d) => dealRow(d, names)).join(''));
+        if (next.length >= 40) { more.disabled = false; more.textContent = 'Show more deals'; } else more.remove();
+      } catch { more.disabled = false; more.textContent = 'Try again'; }
+    });
   } catch { box.innerHTML = errorBox("Couldn't load prices. Check your connection and try again."); }
 }
 
