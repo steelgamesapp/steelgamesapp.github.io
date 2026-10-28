@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SteelGames · Game Deals</title>
-<meta name="description" content="Compare PC game prices across official stores, see if a game runs on your PC, read gaming news and shop gear. Veteran-owned.">
+<meta property="og:title" content="SteelGames: PC game deals"><meta property="og:description" content="Compare PC game prices across official stores. Veteran-owned."><meta property="og:type" content="website"><meta property="og:url" content="https://steelgamesapp.com/app/"><meta name="description" content="Compare PC game prices across official stores, see if a game runs on your PC, read gaming news and shop gear. Veteran-owned.">
 <meta name="theme-color" content="#0C0E11">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png">
@@ -199,6 +199,26 @@ label.field { display: flex; flex-direction: column; gap: 6px; font-size: 15px; 
   .pick-body { justify-content: center; padding: 22px; }
   .pick-title { font-size: 30px; }
 }
+
+.meter-card { margin-top: 16px; padding: 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; }
+.meter-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.meter { position: relative; height: 10px; border-radius: 999px; background: linear-gradient(90deg, var(--good), var(--warn) 55%, var(--bad)); margin: 6px 8px 0; }
+.meter-dot { position: absolute; top: 50%; width: 22px; height: 22px; border-radius: 50%; transform: translate(-50%, -50%); background: var(--fg); border: 4px solid var(--bg); box-shadow: 0 0 0 2px var(--fg); }
+.meter-scale { display: flex; justify-content: space-between; gap: 10px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.meter-scale span { display: flex; flex-direction: column; }
+.meter-scale span:last-child { text-align: right; }
+.meter-scale small { font-weight: 500; color: var(--muted); font-size: 12px; }
+
+.widgets { display: grid; gap: 12px; margin-top: 16px; grid-template-columns: 1fr; }
+.widget { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 16px; background: linear-gradient(160deg, var(--raised), var(--surface)); border: 1px solid var(--line-strong); }
+.widget strong { font-family: var(--display); font-size: 20px; }
+.widget p { color: var(--muted); font-size: 14px; }
+.w-label { font-size: 12px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); }
+.w-row { display: flex; align-items: center; gap: 8px; }
+.w-row .input { flex: 1; min-width: 0; }
+.w-cur { font-weight: 700; color: var(--steel); }
+.widget .btn { align-self: flex-start; }
+@media (min-width: 700px) { .widgets { grid-template-columns: 1fr 1.4fr; } }
 </style>
 </head>
 <body>
@@ -411,6 +431,16 @@ function buyOrWait(current, regular, low) {
   return { level: 'warn', label: 'Wait for a better price', detail: `It has been as low as ${money(low)}. Add it to your watchlist and check back.` };
 }
 
+function priceMeter(cur, low, reg, ts) {
+  if (!(low > 0) || !(reg > low)) return '';
+  const pos = Math.max(0, Math.min(100, Math.round((cur - low) / (reg - low) * 100)));
+  const when = ts ? new Date(+ts * 1000).toLocaleDateString(undefined, { month: 'short', year: 'numeric' }) : '';
+  const tone = cur <= low * 1.05 ? 'good' : pos <= 40 ? 'mid' : 'low';
+  return `<div class="meter-card"><div class="meter-head"><strong>Price history</strong><span class="hint">${cur <= low ? 'At its lowest ever' : money(cur - low) + ' above its lowest'}</span></div>
+    <div class="meter" role="img" aria-label="Current price ${money(cur)}, lowest ever ${money(low)}, regular ${money(reg)}"><span class="meter-dot m-${tone}" style="left:${pos}%"></span></div>
+    <div class="meter-scale"><span>${money(low)}<small>Lowest ever${when ? ' · ' + when : ''}</small></span><span>${money(reg)}<small>Regular price</small></span></div></div>`;
+}
+
 // ---------- Screens ----------
 const SORTS = [['Deal Rating','Best deals'],['Savings','Biggest discount'],['Price','Lowest price'],['Metacritic','Top rated'],['Recent','Newest']];
 const FILTERS = [['','Any price'],['free','Free'],['10','Under $10'],['20','Under $20'],['great','Great reviews']];
@@ -459,6 +489,12 @@ async function screenDeals() {
       <label class="sortbox"><span class="sr">Sort deals</span><select id="sortSel" class="input sel">${SORTS.map(([v, n]) => `<option value="${v}" ${state.sort === v ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
       <div class="chips chips-tight" role="group" aria-label="Price and rating">${FILTERS.map(([v, n]) => `<button class="chip chip-sm" data-filter="${v}" aria-pressed="${state.filter === v}">${n}</button>`).join('')}</div>
     </div>
+    <div class="widgets" aria-label="Deal tools">
+      <div class="widget"><span class="w-label">Can't decide?</span><strong>Surprise me</strong><p>One well-reviewed game, under $15, picked at random.</p><button class="btn btn-primary" id="surprise">Pick a game</button></div>
+      <form class="widget" id="budgetForm"><span class="w-label">Budget builder</span><strong>What can I get for…</strong>
+        <div class="w-row"><span class="w-cur" aria-hidden="true">$</span><label class="sr" for="budget">Budget in dollars</label><input id="budget" class="input" type="number" inputmode="decimal" min="1" max="100" step="1" placeholder="25" value="${/^\d+(\.\d+)?$/.test(state.filter) ? esc(state.filter) : ''}"><button class="btn btn-primary" type="submit">Show games</button></div>
+        <p>Best-reviewed deals at or under your budget.</p></form>
+    </div>
     <div class="section" id="results"><div class="stack">${skeletons(6)}</div></div>
     ${watchlistBlock()}
     <div class="foot"><p>Prices from official and authorized stores, updated through CheapShark. Prices can change at the store.</p></div>`;
@@ -472,6 +508,25 @@ async function screenDeals() {
   view.querySelectorAll('.chip[data-filter]').forEach((b) => b.addEventListener('click', () => {
     state.filter = b.dataset.filter; state.page = 0; savePrefs(); view.querySelectorAll('.chip[data-filter]').forEach((c) => c.setAttribute('aria-pressed', c === b)); loadDeals();
   }));
+  document.getElementById('surprise').addEventListener('click', async (e) => {
+    const b = e.currentTarget; b.disabled = true; b.textContent = 'Picking…';
+    try {
+      const ids = STORES.map((x) => x[0]).join(',');
+      const list = await getJSON(`${CS}deals?storeID=${ids}&onSale=1&upperPrice=15&lowerPrice=1&steamRating=85&sortBy=Reviews&pageSize=60&AAA=0`);
+      const pool = list.filter((d) => +d.steamRatingPercent >= 85);
+      if (!pool.length) throw new Error('empty');
+      location.hash = '#/game/' + encodeURIComponent(pool[Math.floor(Math.random() * pool.length)].gameID);
+    } catch { b.disabled = false; b.textContent = 'Try again'; }
+  });
+  document.getElementById('budgetForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = parseFloat(document.getElementById('budget').value);
+    if (!(v >= 1)) return;
+    state.filter = String(Math.min(v, 100)); state.sort = 'Metacritic'; state.page = 0; savePrefs();
+    document.getElementById('sortSel').value = 'Metacritic';
+    view.querySelectorAll('.chip[data-filter]').forEach((c) => c.setAttribute('aria-pressed', false));
+    loadDeals(); document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
   document.getElementById('sortSel').addEventListener('change', (e) => { state.sort = e.target.value; state.page = 0; savePrefs(); loadDeals(); });
   loadDeals();
 }
@@ -491,13 +546,13 @@ async function loadDeals() {
     }
     const ids = state.store === 'all' ? STORES.map((s) => s[0]).join(',') : state.store;
     const f = state.filter;
-    const extra = f === 'free' ? '&upperPrice=0' : (f === '10' || f === '20') ? `&upperPrice=${f}&lowerPrice=0.01` : f === 'great' ? '&steamRating=80' : '';
+    const extra = f === 'free' ? '&upperPrice=0' : /^\d+(\.\d+)?$/.test(f) ? `&upperPrice=${f}&lowerPrice=0.01` : f === 'great' ? '&steamRating=80' : '';
     const url = `${CS}deals?storeID=${ids}&onSale=1&sortBy=${encodeURIComponent(state.sort)}&desc=${state.sort === 'Price' ? 0 : 1}&pageSize=40&pageNumber=${state.page}&AAA=0${extra}`;
     const deals = await getJSON(url);
     const seen = new Set(); const unique = deals.filter((d) => !seen.has(d.gameID) && seen.add(d.gameID));
     const lead = !state.page && state.sort === 'Deal Rating' && !f && unique.length > 3 ? unique.shift() : null;
     const rows = unique.map((d, i) => dealRow(d, names) + (i === 7 ? adSlot() : ''));
-    const title = f === 'free' ? 'Free right now' : (SORTS.find((x) => x[0] === state.sort) || [])[1] || 'Deals';
+    const title = f === 'free' ? 'Free right now' : /^\d+(\.\d+)?$/.test(f) ? `Best deals under $${f}` : (SORTS.find((x) => x[0] === state.sort) || [])[1] || 'Deals';
     box.innerHTML = (await sponsorCard()) + (lead ? topPick(lead, names) : '') + `<h2>${esc(title)}</h2>` +
       (unique.length || lead ? `<div class="stack deal-grid">${rows.join('')}</div>${deals.length >= 40 ? '<button class="btn btn-ghost btn-block" id="more">Show more deals</button>' : ''}` : '<p class="empty">Nothing matches those filters right now. Try Any price, or another store.</p>');
     const more = document.getElementById('more');
@@ -548,6 +603,7 @@ async function screenGame(id) {
     <div class="row" style="margin-top:14px">
       <button class="btn btn-ghost" id="watchBtn" aria-pressed="${watching}">${watching ? 'On your watchlist ✓' : '+ Add to watchlist'}</button>
     </div>
+    ${best ? priceMeter(+best.price, +(g.cheapestPriceEver?.price), +best.retailPrice, g.cheapestPriceEver?.date) : ''}
     ${bw ? `<div class="section"><div class="card verdict v-${bw.level}"><span class="label">Buy now or wait?</span><h3>${esc(bw.label)}</h3><p>${esc(bw.detail)}</p></div></div>` : ''}
     <div class="section"><h2>Prices at official stores</h2>
       ${official.length ? `<div class="stack">${official.map((d, i) => `
