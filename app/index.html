@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Steel Games · Game Deals</title>
+<title>SteelGames · Game Deals</title>
 <meta name="description" content="Compare PC game prices across official stores, see if a game runs on your PC, read gaming news and shop gear. Veteran-owned.">
 <meta name="theme-color" content="#0C0E11">
 <link rel="manifest" href="manifest.webmanifest">
@@ -175,9 +175,9 @@ label.field { display: flex; flex-direction: column; gap: 6px; font-size: 15px; 
 <body>
 <header class="topbar">
   <div class="wrap" id="topbar">
-    <a class="brand" href="#/deals" aria-label="Steel Games home">
+    <a class="brand" href="#/deals" aria-label="SteelGames home">
       <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
-      <span>STEEL GAMES</span>
+      <span>STEELGAMES</span>
     </a>
     <span class="vet"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z" fill="#8FB4E3"/></svg>Veteran-owned</span>
   </div>
@@ -280,7 +280,7 @@ async function getSponsor() {
 }
 async function sponsorCard() {
   const s = await getSponsor();
-  if (!s) return `<a class="sponsor house" href="${SITE}/advertise.html" target="_blank" rel="noopener"><span class="ad-label">Featured spot</span><strong>Your game or gear could be here</strong><span>Reach PC gamers who are ready to buy. Advertise with Steel Games ↗</span></a>`;
+  if (!s) return `<a class="sponsor house" href="${SITE}/advertise.html" target="_blank" rel="noopener"><span class="ad-label">Featured spot</span><strong>Your game or gear could be here</strong><span>Reach PC gamers who are ready to buy. Advertise with SteelGames ↗</span></a>`;
   return `<a class="sponsor" href="${esc(s.url)}" target="_blank" rel="noopener sponsored">${s.image ? `<img src="${esc(s.image)}" alt="" loading="lazy">` : ''}<span class="ad-label">Sponsored</span><strong>${esc(s.title)}</strong><span>${esc(s.text || '')}</span></a>`;
 }
 const pct = (sale, normal) => normal > 0 ? Math.round((normal - sale) / normal * 100) : 0;
@@ -455,13 +455,13 @@ async function screenGame(id) {
   try { g = await getJSON(CS + 'games?id=' + encodeURIComponent(id)); }
   catch { view.innerHTML = errorBox("Couldn't load this game. Check your connection and try again."); return; }
   const names = await getStoreNames();
-  // Cheapest first. On a tie (within 5 cents), a store that pays Steel Games a commission goes first.
+  // Cheapest first. On a tie (within 5 cents), a store that pays SteelGames a commission goes first.
   const official = (g.deals || []).filter((d) => names[d.storeID]).sort((a, b) => {
     const diff = a.price - b.price;
     return Math.abs(diff) <= 0.05 ? (earnsAt(b.storeID) - earnsAt(a.storeID)) || diff : diff; });
   const best = official[0];
   const title = g.info?.title || 'Game';
-  document.title = title + ' · Steel Games';
+  document.title = title + ' · SteelGames';
   const steamID = g.info?.steamAppID;
   const img = steamID ? `https://cdn.cloudflare.steamstatic.com/steam/apps/${steamID}/header.jpg` : g.info?.thumb;
   const bw = best ? buyOrWait(+best.price, +best.retailPrice, +(g.cheapestPriceEver?.price)) : null;
@@ -480,7 +480,7 @@ async function screenGame(id) {
         <div class="store ${i === 0 ? 'best' : ''}"><div class="store-info">
           <span class="store-name">${esc(names[d.storeID])}${i === 0 ? ' · lowest price' : ''}</span>
           <span><span class="price">${money(d.price)}</span>${+d.savings >= 1 ? `<span class="was">${money(d.retailPrice)}</span>` : ''}</span>
-          <span class="earn">${earnsAt(d.storeID) ? 'Steel Games may earn a small commission. You pay the same price.' : 'Steel Games earns nothing from this link'}</span></div>
+          <span class="earn">${earnsAt(d.storeID) ? 'SteelGames may earn a small commission. You pay the same price.' : 'SteelGames earns nothing from this link'}</span></div>
           <a class="btn ${i === 0 ? 'btn-primary' : 'btn-ghost'}" href="${esc(storeLink(d.storeID, d.dealID, title, steamID))}" target="_blank" rel="noopener">Buy ↗</a></div>`).join('')}</div>
         <p class="hint">You pay the store directly, the way you normally would.</p>` : '<p class="empty">No official store has this game for sale right now.</p>'}
     </div>
@@ -512,7 +512,7 @@ async function loadResellers(gameKey) {
       <div class="store" style="border-style:dashed;border-color:#4B4270;background:#14121D"><div class="store-info">
         <span class="store-name">${esc(o.reseller)} <span class="plat" style="color:var(--resale);border-color:#4B4270">RESOLD KEY</span></span>
         <span class="price">${money(o.price)}</span>
-        <span class="earn">${earns ? 'Steel Games may earn a commission from this link' : 'Steel Games earns nothing from this link'}</span></div>
+        <span class="earn">${earns ? 'SteelGames may earn a commission from this link' : 'SteelGames earns nothing from this link'}</span></div>
         <a class="btn btn-ghost" href="${esc(out.url)}" target="_blank" rel="noopener sponsored">View ↗</a></div>`; }).join('')}</div>`;
   } catch {}
 }
@@ -575,7 +575,7 @@ async function screenGear(category) {
     const count = (c) => products.filter((p) => p.category === c).length;
     view.innerHTML = `<h1 class="screen-title">Gear</h1><p class="lede">Our picks for your whole setup. Tap a category to see them.</p>
       ${GEAR_GROUPS.map(([g, cats]) => `<div class="section"><h2>${esc(g)}</h2><div class="cats">${cats.map((c) => `<a class="cat" href="#/gear/${encodeURIComponent(c)}"><span class="gi gi-sm">${gIcon(c, 22)}</span>${esc(c)}<small>${count(c)} ${count(c) === 1 ? 'pick' : 'picks'}</small></a>`).join('')}</div></div>`).join('')}
-      <div class="foot"><p>As an Amazon Associate, Steel Games earns from qualifying purchases. Every link that earns us a commission is labeled.</p></div>`;
+      <div class="foot"><p>As an Amazon Associate, SteelGames earns from qualifying purchases. Every link that earns us a commission is labeled.</p></div>`;
     return;
   }
   const list = products.filter((p) => p.category === category);
@@ -589,7 +589,7 @@ async function screenGear(category) {
           <a class="btn btn-primary btn-block" href="${esc(out.url)}" target="_blank" rel="noopener sponsored">${o.price != null ? money(o.price) + ' at ' : 'See price at '}${esc(o.retailer)} ↗</a>
           <span class="earn" style="text-align:center">${earns ? 'We earn a commission from this link' : 'We earn nothing from this link'}</span>`; }).join('')}
       </div>`).join('') : '<p class="empty">No picks here yet. Check back soon.</p>'}</div>
-    <div class="foot"><p>As an Amazon Associate, Steel Games earns from qualifying purchases.</p></div>`;
+    <div class="foot"><p>As an Amazon Associate, SteelGames earns from qualifying purchases.</p></div>`;
 }
 
 async function screenMyPC() {
@@ -629,7 +629,7 @@ async function screenAccount() {
       <a class="list-link" href="${SITE}/#privacy" target="_blank" rel="noopener"><span>Privacy policy</span><span>↗</span></a>
       <a class="list-link" href="${SITE}/terms.html" target="_blank" rel="noopener"><span>Terms of use</span><span>↗</span></a>
     </div></div>
-    <div class="foot"><p>Steel Games is a product of Lonestar PPS, LLC, a veteran-owned company.</p><p>Steel Games is not affiliated with Valve, Epic Games, Microsoft, Sony or Nintendo.</p></div>`;
+    <div class="foot"><p>SteelGames is a product of Lonestar PPS, LLC, a veteran-owned company.</p><p>SteelGames is not affiliated with Valve, Epic Games, Microsoft, Sony or Nintendo.</p></div>`;
   if (!session) { renderAuth(help); return; }
   view.innerHTML = `<h1 class="screen-title">Account</h1><div class="section stack" id="acct"><div class="skel"></div></div>${help}`;
   let profile = null, points = null;
@@ -638,7 +638,7 @@ async function screenAccount() {
   if (profile && !profile.accepted_terms_at && store.get('termsPending', false)) { try { await sb.rpc('accept_terms'); store.set('termsPending', false); } catch {} }
   document.getElementById('acct').innerHTML = `
     <div class="card"><h3>${esc(profile?.username || 'Your account')}${profile?.is_veteran ? ' <span class="vet" style="margin-left:6px">Veteran</span>' : ''}</h3><p>${esc(session.user.email || '')}</p></div>
-    <div class="card"><span class="hint">Steel Points</span><h3 style="font-size:28px">${(points?.balance ?? 0).toLocaleString()}</h3><p>Earn points when you shop through Steel Games at eligible stores, and trade them for gift cards in the iPhone app.</p></div>
+    <div class="card"><span class="hint">Steel Points</span><h3 style="font-size:28px">${(points?.balance ?? 0).toLocaleString()}</h3><p>Earn points when you shop through SteelGames at eligible stores, and trade them for gift cards in the iPhone app.</p></div>
     <button class="btn btn-ghost btn-block" id="signOut">Sign out</button>
     <button class="btn btn-danger btn-block" id="deleteBtn">Delete my account</button>
     <p class="hint">Deleting your account permanently removes your profile, reviews, messages, receipts and Steel Points. This can't be undone.</p>
@@ -680,7 +680,7 @@ function renderAuth(help) {
         ${authMode === 'create' ? `
           <label class="field">Username (shown publicly)<input class="input" id="un" autocomplete="username" pattern="[A-Za-z0-9_]{3,20}" required></label>
           <p class="hint">3 to 20 letters, numbers or underscores.</p>
-          <label class="check"><input type="checkbox" id="agree"><span>I agree to the <a href="${SITE}/terms.html" target="_blank" rel="noopener">Terms of Use</a> and community rules. Steel Games has zero tolerance for abusive or objectionable content.</span></label>` : ''}
+          <label class="check"><input type="checkbox" id="agree"><span>I agree to the <a href="${SITE}/terms.html" target="_blank" rel="noopener">Terms of Use</a> and community rules. SteelGames has zero tolerance for abusive or objectionable content.</span></label>` : ''}
         <button class="btn btn-primary btn-block" type="submit" id="authGo">${authMode === 'create' ? 'Create account' : 'Sign in'}</button>
         ${authMode === 'signin' ? '<button class="btn btn-ghost btn-block" type="button" id="forgot">Forgot password?</button>' : ''}
         <div id="authMsg" role="status"></div>
@@ -727,7 +727,7 @@ async function route() {
   const [page, arg] = parts;
   const tab = { deals: 'deals', game: 'deals', news: 'news', gear: 'gear', account: 'account', mypc: 'account' }[page] || 'deals';
   document.querySelectorAll('.tabbar a').forEach((a) => { if (a.dataset.tab === tab) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
-  document.title = 'Steel Games · Game Deals';
+  document.title = 'SteelGames · Game Deals';
   window.scrollTo(0, 0);
   if (page === 'game' && arg) await screenGame(arg);
   else if (page === 'news') await screenNews();
