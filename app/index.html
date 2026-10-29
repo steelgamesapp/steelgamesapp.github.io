@@ -795,16 +795,23 @@ async function screenGameNight() {
     const out = document.getElementById('gnResults'); out.innerHTML = `<div class="stack">${skeletons(4)}</div>`;
     const names = await getStoreNames();
     const cand = GAMENIGHT.filter((x) => gn.players >= x[2] && (gn.players <= x[3] || gn.players >= 8 && x[3] >= 8) && (gn.mode === 'any' || x[4] === gn.mode));
-    const rows = (await Promise.all(cand.map(async (x) => {
-      try {
-        const d = await getJSON(CS + 'deals?pageSize=20&sortBy=Price&title=' + encodeURIComponent(x[1]));
-        const m = d.filter((y) => names[y.storeID] && titleHas(y.title, x[1]) && isBase(y.title, x[1]) && +y.salePrice > 0.5).sort((a, b) => a.title.length - b.title.length || a.salePrice - b.salePrice);
-        return m.length ? Object.assign({}, m[0], { _max: x[3], _mode: x[4] }) : null;
-      } catch { return null; }
-    }))).filter((r) => r && +r.salePrice <= gn.budget);
+    // CheapShark rate-limits bursts, so look games up a few at a time.
+    const found = []; let failed = 0, next = 0;
+    const worker = async () => {
+      while (next < cand.length) {
+        const x = cand[next++];
+        try {
+          const d = await getJSON(CS + 'deals?pageSize=20&sortBy=Price&title=' + encodeURIComponent(x[1]));
+          const m = d.filter((y) => names[y.storeID] && titleHas(y.title, x[1]) && isBase(y.title, x[1]) && +y.salePrice > 0.5).sort((p, q) => p.title.length - q.title.length || p.salePrice - q.salePrice);
+          if (m.length && +m[0].salePrice <= gn.budget) found.push(Object.assign({}, m[0], { _max: x[3], _mode: x[4] }));
+        } catch { failed++; }
+      }
+    };
+    await Promise.all([worker(), worker(), worker()]);
+    const rows = found;
     rows.sort((a, b) => b.savings - a.savings);
     out.innerHTML = rows.length ? `<h2>${rows.length} picks for ${gn.players} players</h2><div class="stack">${rows.map((d) => dealRow(d, names).replace('Official store', `Up to ${d._max} players · ${d._mode}`)).join('')}</div>`
-      : '<p class="empty">Nothing matched right now. Try a higher budget or a different style.</p>';
+      : failed > cand.length / 2 ? '<p class="empty">The price service is busy. Wait a moment and change a filter to try again.</p>' : '<p class="empty">Nothing matched right now. Try a higher budget or a different style.</p>';
   };
   ['gnPlayers', 'gnMode', 'gnBudget'].forEach((id) => document.getElementById(id).addEventListener('change', run));
   run();
