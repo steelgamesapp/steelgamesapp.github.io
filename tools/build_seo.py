@@ -202,6 +202,138 @@ def hub_html(today):
 """
 
 
+# ---------- Per-game price pages ----------
+import re, time
+GAME_CAP = 400          # most games tracked at once; the list grows a little every day
+GAME_IDS_FILE = os.path.join(ROOT, "tools", "game_ids.json")
+
+
+def slugify(t):
+    return re.sub(r"[^a-z0-9]+", "-", (t or "game").lower()).strip("-")[:60] or "game"
+
+
+def verdict(cur, reg, low):
+    off = round((reg - cur) / reg * 100) if reg > 0 else 0
+    if low <= 0:
+        return ("Good deal" if off >= 50 else "Consider waiting"), f"{off}% off right now. We don't have its full price history yet."
+    if cur <= low * 1.05:
+        return "Buy now", "This is the lowest price it has been." if cur <= low else "Within 5% of its lowest price ever (%s)." % money(low)
+    if off >= 40 and cur <= low * 1.35:
+        return "Good deal", f"{off}% off. It has been {money(low)} before, so waiting could save {money(cur - low)}."
+    return "Wait for a better price", f"It has been as low as {money(low)}. Track it and check back."
+
+
+def game_page(gid, g, stores, today):
+    e = html.escape
+    info = g.get("info") or {}
+    title = info.get("title") or "Game"
+    deals = sorted([d for d in g.get("deals", []) if str(d.get("storeID")) in stores], key=lambda d: float(d["price"]))
+    if not deals:
+        return None, None
+    best = deals[0]
+    cur, reg = float(best["price"]), float(best["retailPrice"])
+    low = float((g.get("cheapestPriceEver") or {}).get("price") or 0)
+    ts = (g.get("cheapestPriceEver") or {}).get("date")
+    when = datetime.fromtimestamp(int(ts), timezone.utc).strftime("%B %Y") if ts else ""
+    label, detail = verdict(cur, reg, low)
+    slug = f"{slugify(title)}-{gid}"
+    url = f"{SITE}/game/{slug}/"
+    app = f"{SITE}/app/#/game/{gid}"
+    rows = "".join(f"<tr><td>{e(stores[str(d['storeID'])])}</td><td>{money(d['price'])}</td><td class=\"was\">{money(d['retailPrice'])}</td></tr>" for d in deals)
+    faq = [(f"What is the lowest price ever for {title}?", f"The lowest recorded price is {money(low)}{(' in ' + when) if when else ''}." if low > 0 else "We don't have a recorded lowest price for this game yet."),
+           (f"Is {title} on sale right now?", f"The best current price we found is {money(cur)} at {stores[str(best['storeID'])]}, against a usual price of {money(reg)}."),
+           (f"Should I buy {title} now or wait?", f"{label}. {detail}")]
+    ld = json.dumps([
+        {"@context": "https://schema.org", "@type": "Product", "name": title, "image": info.get("thumb") or "",
+         "offers": {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "%.2f" % cur, "highPrice": "%.2f" % float(deals[-1]["price"]), "offerCount": len(deals)}},
+        {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}]).replace("<", "\\u003c")
+    desc = f"{title} price today: {money(cur)} at {stores[str(best['storeID'])]}. {label}. Compare official store prices and see the lowest price ever."
+    page = f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{e(title)} price history and best price today | SteelGames</title>
+<meta name="description" content="{e(desc)}">
+<link rel="canonical" href="{url}">
+<meta property="og:title" content="{e(title)} price today | SteelGames"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{url}">
+<meta name="google-adsense-account" content="ca-pub-3613204296597380">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
+<script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{ld}</script>
+<style>:root{{--bg:#0C0E11;--surface:#15181D;--line:#262C35;--fg:#EDEFF2;--muted:#9BA4AF;--accent:#FF7A1A;color-scheme:dark}}*{{box-sizing:border-box}}
+body{{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;padding:24px 16px 56px}}
+main{{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:18px}}a{{color:var(--accent)}}nav a{{font-weight:600;text-decoration:none}}
+h1{{font:700 32px/1.1 "Space Grotesk",system-ui,sans-serif;margin:0;text-wrap:balance}}h2,h3{{margin:0}}h3{{font-size:17px;margin-top:6px}}p{{margin:0;color:var(--muted)}}
+.big{{font:700 40px/1 "Space Grotesk",system-ui,sans-serif;color:var(--fg)}}.big s{{font-size:20px;color:var(--muted);font-weight:400;margin-left:10px}}
+.card{{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:6px}}
+table{{border-collapse:collapse;width:100%}}th,td{{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}}th{{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.06em}}td.was{{color:var(--muted);text-decoration:line-through}}
+.cta{{display:inline-block;background:var(--accent);color:#1A0E04;padding:12px 18px;border-radius:8px;font-weight:700;text-decoration:none;align-self:flex-start}}footer p{{font-size:13px}}</style></head>
+<body><main>
+<nav><a href="/">SteelGames</a> / <a href="/game/">Games</a></nav>
+<h1>{e(title)} price history and best price today</h1>
+<div class="big">{money(cur)}<s>{money(reg)}</s></div>
+<p>Best current price: {e(stores[str(best['storeID'])])}. Updated {today}.</p>
+<div class="card"><strong>{e(label)}</strong><p>{e(detail)}</p></div>
+<table><thead><tr><th>Store</th><th>Price</th><th>Usual</th></tr></thead><tbody>{rows}</tbody></table>
+{"<p>Lowest price ever: <strong style=\"color:var(--fg)\">" + money(low) + "</strong>" + (" (" + when + ")" if when else "") + "</p>" if low > 0 else ""}
+<a class="cta" href="{app}">Track this price and check if it runs on your PC</a>
+<section><h2>Questions</h2>{"".join(f"<h3>{e(q)}</h3><p>{e(a)}</p>" for q, a in faq)}</section>
+<footer><p>SteelGames is a product of Lonestar PPS, LLC, a veteran-owned company. Prices can change at any time. As an Amazon Associate, SteelGames earns from qualifying purchases.</p></footer>
+</main></body></html>
+"""
+    return slug, page
+
+
+def build_games(stores, today, seeds, fetch_game):
+    """Keep a growing list of game ids, rebuild every game page, return (urls, index entries)."""
+    ids = []
+    try:
+        ids = json.load(open(GAME_IDS_FILE))
+    except Exception:
+        pass
+    for gid in seeds:
+        if gid not in ids:
+            ids.append(gid)
+    ids = ids[-GAME_CAP:]
+    entries, urls, keep = [], [], []
+    base = os.path.join(ROOT, "game")
+    for gid in ids:
+        try:
+            g = fetch_game(gid)
+            slug, page = game_page(gid, g, stores, today)
+        except Exception as ex:
+            print("game failed", gid, ex, file=sys.stderr)
+            slug, page = None, None
+        if not page:
+            continue
+        d = os.path.join(base, slug)
+        os.makedirs(d, exist_ok=True)
+        open(os.path.join(d, "index.html"), "w").write(page)
+        keep.append(gid)
+        entries.append((slug, (g.get("info") or {}).get("title", "Game")))
+        urls.append(f"{SITE}/game/{slug}/")
+        time.sleep(0.25)
+    json.dump(keep, open(GAME_IDS_FILE, "w"))
+    # Remove pages for games that are no longer tracked.
+    live = {s for s, _ in entries}
+    if os.path.isdir(base):
+        for name in os.listdir(base):
+            if name not in live and os.path.isdir(os.path.join(base, name)):
+                import shutil
+                shutil.rmtree(os.path.join(base, name))
+    lis = "".join(f"<li><a href=\"/game/{s}/\">{html.escape(t)}</a></li>" for s, t in sorted(entries, key=lambda x: x[1].lower()))
+    os.makedirs(base, exist_ok=True)
+    open(os.path.join(base, "index.html"), "w").write(f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PC game prices and price history | SteelGames</title>
+<meta name="description" content="Current best prices and lowest-ever prices for popular PC games from official stores.">
+<link rel="canonical" href="{SITE}/game/">
+<script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>:root{{color-scheme:dark}}body{{margin:0;background:#0C0E11;color:#EDEFF2;font:16px/1.6 Inter,system-ui,sans-serif;padding:24px 16px 56px}}main{{max-width:760px;margin:0 auto}}a{{color:#FF7A1A}}h1{{font:700 32px/1.1 system-ui}}li{{margin:4px 0}}</style></head>
+<body><main><nav><a href="/">SteelGames</a></nav><h1>PC game prices and price history</h1><p style="color:#9BA4AF">Updated {today}.</p><ul>{lis}</ul></main></body></html>
+""")
+    return [f"{SITE}/game/"] + urls
+
+
 def main():
     today = datetime.now(timezone.utc).strftime("%B %d, %Y").replace(" 0", " ")
     sample = sys.argv[sys.argv.index("--sample") + 1] if "--sample" in sys.argv else None
@@ -223,6 +355,17 @@ def main():
         open(os.path.join(d, "index.html"), "w").write(page_html(p, deals, stores, today))
         urls.append(f"{SITE}/deals/{p['slug']}/")
         print("built", p["slug"], len(deals))
+    # Per-game pages: seed with today's top deals, then rebuild every tracked game.
+    try:
+        if sample:
+            seeds = ["1"]; fg = lambda gid: data["game"]
+        else:
+            top = get("/deals", {"sortBy": "Deal Rating", "onSale": 1, "pageSize": 60, "AAA": 0, "steamRating": 70})
+            seeds = [str(d["gameID"]) for d in top if str(d.get("storeID")) in stores]
+            fg = lambda gid: get("/games", {"id": gid})
+        urls += build_games(stores, today, seeds, fg)
+    except Exception as ex:
+        print("games step failed", ex, file=sys.stderr)
     os.makedirs(os.path.join(ROOT, "deals"), exist_ok=True)
     open(os.path.join(ROOT, "deals", "index.html"), "w").write(hub_html(today))
     iso = datetime.now(timezone.utc).strftime("%Y-%m-%d")
