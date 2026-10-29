@@ -80,6 +80,20 @@ PAGES = [
 ]
 
 
+# Keyword pages: one per popular game theme, built from a CheapShark title search.
+_THEMES = [("zombie", "Zombie games"), ("horror", "Horror games"), ("farming", "Farming games"), ("racing", "Racing games"),
+           ("city", "City builder games"), ("survival", "Survival games"), ("space", "Space games"), ("puzzle", "Puzzle games"),
+           ("tower defense", "Tower defense games"), ("roguelike", "Roguelike games"), ("football", "Football and soccer games"),
+           ("war", "War and military games"), ("simulator", "Simulator games"), ("dungeon", "Dungeon crawler games"),
+           ("lego", "LEGO games"), ("star wars", "Star Wars games"), ("resident evil", "Resident Evil games"), ("civilization", "Civilization games")]
+for _kw, _name in _THEMES:
+    PAGES.append({"slug": "deals-" + _kw.replace(" ", "-"), "h1": _name + " on sale", "q": {"title": _kw, "upperPrice": 40, "sortBy": "Deal Rating"},
+        "desc": f"{_name} on sale for PC today, ranked by deal rating with review scores.",
+        "intro": f"Current PC deals for {_name.lower()}, ranked by how good the discount is against each game's usual price. Prices come from official stores and authorized key sellers and refresh daily.",
+        "faq": [("How is this list picked?", f"It searches current store listings for \"{_kw}\" and ranks results by deal rating."),
+                ("Can I see price history?", "Open any game in the SteelGames app to see its price meter and lowest recorded price.")]})
+
+
 def get(path, params=None):
     url = API + path + ("?" + urllib.parse.urlencode(params) if params else "")
     req = urllib.request.Request(url, headers={"User-Agent": "SteelGames-SEO-Builder"})
