@@ -757,6 +757,9 @@ function renderTracker(id, title, thumb, price, low) {
 }
 
 const titleHas = (t, q) => new RegExp('(^|[^a-z0-9])' + q.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[^a-z0-9])').test(t.toLowerCase());
+// Skip soundtracks, DLC and add-on packs so the lists show the actual games.
+const JUNK = /soundtrack|\bost\b|\bdlc\b|expansion|cosplay|supporter|\bcoins?\b|artbook|art book|costume|skin\b|season pass|\bdemo\b|upgrade|bonus|survivors of|\bpack\b|\bpass\b|\bcontent\b|wallpaper|digital deluxe upgrade/i;
+const isBase = (t, q) => !JUNK.test(t.replace(new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'ig'), ' '));
 // ---------- Game night picker ----------
 const GAMENIGHT = [
   ['Jackbox Party Pack', 'Jackbox Party Pack', 1, 8, 'party'], ['Overcooked', 'Overcooked', 1, 4, 'party'], ['Moving Out', 'Moving Out', 1, 4, 'party'],
@@ -794,8 +797,8 @@ async function screenGameNight() {
     const cand = GAMENIGHT.filter((x) => gn.players >= x[2] && (gn.players <= x[3] || gn.players >= 8 && x[3] >= 8) && (gn.mode === 'any' || x[4] === gn.mode));
     const rows = (await Promise.all(cand.map(async (x) => {
       try {
-        const d = await getJSON(CS + 'deals?pageSize=8&sortBy=Price&title=' + encodeURIComponent(x[1]));
-        const m = d.filter((y) => names[y.storeID] && titleHas(y.title, x[1]) && +y.salePrice > 0.5);
+        const d = await getJSON(CS + 'deals?pageSize=20&sortBy=Price&title=' + encodeURIComponent(x[1]));
+        const m = d.filter((y) => names[y.storeID] && titleHas(y.title, x[1]) && isBase(y.title, x[1]) && +y.salePrice > 0.5).sort((a, b) => a.title.length - b.title.length || a.salePrice - b.salePrice);
         return m.length ? Object.assign({}, m[0], { _max: x[3], _mode: x[4] }) : null;
       } catch { return null; }
     }))).filter((r) => r && +r.salePrice <= gn.budget);
@@ -828,7 +831,7 @@ async function screenVeterans() {
     <div class="section"><h2>Veteran-owned studio or brand?</h2><div class="card"><p>Tell us about your game or gear and we'll feature it here.</p>
       <a class="btn btn-primary" href="mailto:${SUPPORT}?subject=${encodeURIComponent('Veteran hub listing')}">Get listed</a></div></div>`;
   const names = await getStoreNames();
-  const lists = await Promise.all(VET_GAMES.map(async (q) => { try { return (await getJSON(CS + 'deals?pageSize=4&sortBy=Savings&title=' + encodeURIComponent(q))).filter((d) => names[d.storeID] && titleHas(d.title, q) && +d.savings >= 20 && +d.salePrice > 0.5); } catch { return []; } }));
+  const lists = await Promise.all(VET_GAMES.map(async (q) => { try { return (await getJSON(CS + 'deals?pageSize=4&sortBy=Savings&title=' + encodeURIComponent(q))).filter((d) => names[d.storeID] && titleHas(d.title, q) && isBase(d.title, q) && +d.savings >= 20 && +d.salePrice > 0.5); } catch { return []; } }));
   const seen = new Set(); const rows = lists.flat().filter((d) => !seen.has(d.gameID) && seen.add(d.gameID)).sort((a, b) => b.savings - a.savings).slice(0, 15);
   document.getElementById('vetGames').innerHTML = rows.length ? rows.map((d) => dealRow(d, names)).join('') : '<p class="empty">No military game deals right now. Check back soon.</p>';
 }
