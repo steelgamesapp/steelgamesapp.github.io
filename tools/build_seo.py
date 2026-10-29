@@ -96,6 +96,7 @@ def page_html(p, deals, stores, today):
 <meta property="og:url" content="{url}">
 <meta name="google-adsense-account" content="ca-pub-3613204296597380">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
+<script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script type="application/ld+json">{ld}</script>
 <style>
 :root{{--bg:#0C0E11;--surface:#15181D;--line:#262C35;--fg:#EDEFF2;--muted:#9BA4AF;--accent:#FF7A1A;color-scheme:dark}}
@@ -143,6 +144,7 @@ def hub_html(today):
 <title>PC Game Deals | SteelGames</title>
 <meta name="description" content="Daily PC game deal lists from SteelGames: games under $5, under $10, best Steam deals, highly rated sales and free games.">
 <link rel="canonical" href="{SITE}/deals/">
+<script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <meta name="google-adsense-account" content="ca-pub-3613204296597380">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
 <style>:root{{color-scheme:dark}}body{{margin:0;background:#0C0E11;color:#EDEFF2;font:16px/1.6 Inter,system-ui,sans-serif;padding-block:24px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}main{{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:16px}}a{{color:#FF7A1A}}h1{{font:700 34px/1.1 "Space Grotesk",system-ui,sans-serif;margin:0}}li{{margin-bottom:12px}}li span{{display:block;color:#9BA4AF;font-size:15px}}ul{{padding-left:20px;margin:0}}</style></head>
