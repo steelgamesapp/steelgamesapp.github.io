@@ -15,6 +15,6 @@ jobs:
         run: |
           git config user.name "SteelGames Bot"
           git config user.email "steelgames.app@outlook.com"
-          git add -A deals sitemap.xml robots.txt
+          git add -A deals game tools/game_ids.json sitemap.xml robots.txt
           git diff --cached --quiet || git commit -m "Daily deal pages update"
           git push
