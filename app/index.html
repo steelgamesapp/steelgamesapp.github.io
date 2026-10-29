@@ -838,7 +838,7 @@ async function screenVeterans() {
     <div class="section"><h2>Veteran-owned studio or brand?</h2><div class="card"><p>Tell us about your game or gear and we'll feature it here.</p>
       <a class="btn btn-primary" href="mailto:${SUPPORT}?subject=${encodeURIComponent('Veteran hub listing')}">Get listed</a></div></div>`;
   const names = await getStoreNames();
-  const lists = await Promise.all(VET_GAMES.map(async (q) => { try { return (await getJSON(CS + 'deals?pageSize=4&sortBy=Savings&title=' + encodeURIComponent(q))).filter((d) => names[d.storeID] && titleHas(d.title, q) && isBase(d.title, q) && +d.savings >= 20 && +d.salePrice > 0.5); } catch { return []; } }));
+  const lists = await Promise.all(VET_GAMES.map(async (q) => { try { return (await getJSON(CS + 'deals?pageSize=4&sortBy=Savings&title=' + encodeURIComponent(q))).filter((d) => names[d.storeID] && d.title.toLowerCase().replace(/^tom clancy'?s /, '').startsWith(q.toLowerCase()) && !/suicide|swords/i.test(d.title) && isBase(d.title, q) && +d.savings >= 20 && +d.salePrice > 0.5); } catch { return []; } }));
   const seen = new Set(); const rows = lists.flat().filter((d) => !seen.has(d.gameID) && seen.add(d.gameID)).sort((a, b) => b.savings - a.savings).slice(0, 15);
   document.getElementById('vetGames').innerHTML = rows.length ? rows.map((d) => dealRow(d, names)).join('') : '<p class="empty">No military game deals right now. Check back soon.</p>';
 }
