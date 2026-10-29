@@ -88,6 +88,7 @@ main:focus { outline: none; }
 .card { padding: 18px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; }
 .card h3 { font-size: 19px; }
 .card p { color: var(--steel); font-size: 16px; }
+[hidden] { display: none !important; }
 .verdict { border-width: 2px; }
 .verdict .label { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
 .v-good { background: var(--good-bg); border-color: var(--good-line); } .v-good .label, .v-good h3 { color: var(--good); }
@@ -501,6 +502,7 @@ async function screenDeals() {
     <div class="section" id="results"><div class="stack">${skeletons(6)}</div></div>
     ${watchlistBlock()}
     <div class="foot"><p>Prices from official and authorized stores, updated through CheapShark. Prices can change at the store.</p></div>`;
+  refreshWatchlist();
   const form = document.getElementById('searchForm');
   const input = document.getElementById('q');
   form.addEventListener('submit', (e) => { e.preventDefault(); state.q = input.value.trim(); input.blur(); loadDeals(); });
@@ -576,9 +578,35 @@ async function loadDeals() {
 function watchlistBlock() {
   const w = store.get('watchlist', []);
   if (!w.length) return '';
-  return `<div class="section"><h2>Your watchlist</h2><div class="stack">${w.map((g) => `
-    <a class="deal" href="#/game/${encodeURIComponent(g.id)}"><img class="thumb" src="${esc(g.thumb)}" alt="" loading="lazy">
-    <span class="deal-info"><span class="deal-title">${esc(g.title)}</span><span class="deal-meta">Was ${money(g.price)} when you saved it</span></span></a>`).join('')}</div></div>`;
+  return `<div class="section" id="watchSec"><h2>Your watchlist</h2><div id="dropBanner"></div><div class="stack">${w.map((g) => `
+    <a class="deal" href="#/game/${encodeURIComponent(g.id)}" data-wid="${esc(g.id)}"><img class="thumb" src="${esc(g.thumb)}" alt="" loading="lazy">
+    <span class="deal-info"><span class="deal-title">${esc(g.title)}</span><span class="deal-meta wmeta">${g.price != null ? 'Was ' + money(g.price) + ' when you saved it' : 'Saved'}${g.target ? ' · alert at ' + money(g.target) : ''}</span></span></a>`).join('')}</div></div>`;
+}
+
+// Compares each watched game's cheapest official price now with the price when it was saved
+// (or the target price the visitor set) and flags drops. Runs in the browser, no account needed.
+async function refreshWatchlist() {
+  const w = store.get('watchlist', []);
+  if (!w.length) return;
+  try {
+    const names = await getStoreNames();
+    const data = await getJSON(CS + 'games?ids=' + w.slice(0, 25).map((g) => encodeURIComponent(g.id)).join(','));
+    const hits = [];
+    w.forEach((g) => {
+      const entry = data[g.id]; if (!entry) return;
+      const prices = (entry.deals || []).filter((d) => names[d.storeID]).map((d) => +d.price);
+      if (!prices.length) return;
+      const now = Math.min(...prices);
+      const row = document.querySelector(`[data-wid="${CSS.escape(String(g.id))}"] .wmeta`);
+      const hitTarget = g.target && now <= g.target;
+      const dropped = g.price != null && now <= g.price - 0.5;
+      if (row) row.innerHTML = `Now <b>${money(now)}</b>` + (g.price != null ? ` · was ${money(g.price)} when saved` : '') + (g.target ? ` · alert at ${money(g.target)}` : '')
+        + (hitTarget ? ' <span class="pill pill-good">Hit your target</span>' : dropped ? ' <span class="pill pill-good">Price drop</span>' : '');
+      if (hitTarget || dropped) hits.push(g.title);
+    });
+    const ban = document.getElementById('dropBanner');
+    if (ban && hits.length) ban.innerHTML = `<div class="card verdict v-good"><span class="label">Price alert</span><h3>${hits.length === 1 ? esc(hits[0]) + ' is cheaper now' : hits.length + ' games on your watchlist are cheaper now'}</h3></div>`;
+  } catch { /* offline or API busy: keep the saved-price view */ }
 }
 
 async function screenGame(id) {
@@ -606,6 +634,11 @@ async function screenGame(id) {
     <div class="row" style="margin-top:14px">
       <button class="btn btn-ghost" id="watchBtn" aria-pressed="${watching}">${watching ? 'On your watchlist ✓' : '+ Add to watchlist'}</button>
     </div>
+    <form class="row" id="targetForm" style="margin-top:10px;gap:8px;align-items:center" ${watching ? '' : 'hidden'}>
+      <label class="hint" for="targetPrice">Alert me at or below $</label>
+      <input id="targetPrice" class="input" type="number" inputmode="decimal" min="0" step="0.01" style="max-width:110px" value="${(watch.find((w) => w.id === id) || {}).target || ''}">
+      <button class="btn btn-ghost" type="submit">Save</button><span class="hint" id="targetMsg" aria-live="polite"></span>
+    </form>
     ${best ? priceMeter(+best.price, +(g.cheapestPriceEver?.price), +best.retailPrice, g.cheapestPriceEver?.date) : ''}
     ${bw ? `<div class="section"><div class="card verdict v-${bw.level}"><span class="label">Buy now or wait?</span><h3>${esc(bw.label)}</h3><p>${esc(bw.detail)}</p></div></div>` : ''}
     <div class="section"><h2>Prices at official stores</h2>
@@ -629,6 +662,15 @@ async function screenGame(id) {
     const on = w.some((x) => x.id === id);
     e.currentTarget.textContent = on ? 'On your watchlist ✓' : '+ Add to watchlist';
     e.currentTarget.setAttribute('aria-pressed', on);
+    document.getElementById('targetForm').hidden = !on;
+  });
+  document.getElementById('targetForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = parseFloat(document.getElementById('targetPrice').value);
+    const w = store.get('watchlist', []); const item = w.find((x) => x.id === id); if (!item) return;
+    if (v > 0) item.target = v; else delete item.target;
+    store.set('watchlist', w);
+    document.getElementById('targetMsg').textContent = v > 0 ? 'Saved. We flag it here when it hits $' + v.toFixed(2) + '.' : 'Alert removed.';
   });
   if (steamID) loadRunCheck(steamID);
   loadResellers(steamID || id);
