@@ -500,6 +500,9 @@ async function screenDeals() {
         <p>Best-reviewed deals at or under your budget.</p></form>
     </div>
     <div class="section" id="results"><div class="stack">${skeletons(6)}</div></div>
+    <div class="section"><div class="stack">
+      <a class="card" href="#/gamenight"><strong>Game night picker</strong><p>Pick your group size and budget. We find the games that fit, at the lowest official price.</p></a>
+      <a class="card" href="#/veterans"><strong>Veteran hub</strong><p>Military discounts on gaming gear and military games on sale.</p></a></div></div>
     ${watchlistBlock()}
     <div class="foot"><p>Prices from official and authorized stores, updated through CheapShark. Prices can change at the store.</p></div>`;
   refreshWatchlist();
@@ -640,6 +643,7 @@ async function screenGame(id) {
       <button class="btn btn-ghost" type="submit">Save</button><span class="hint" id="targetMsg" aria-live="polite"></span>
     </form>
     ${best ? priceMeter(+best.price, +(g.cheapestPriceEver?.price), +best.retailPrice, g.cheapestPriceEver?.date) : ''}
+    <div class="section" id="trackbox"></div>
     ${bw ? `<div class="section"><div class="card verdict v-${bw.level}"><span class="label">Buy now or wait?</span><h3>${esc(bw.label)}</h3><p>${esc(bw.detail)}</p></div></div>` : ''}
     <div class="section"><h2>Prices at official stores</h2>
       ${official.length ? `<div class="stack">${official.map((d, i) => `
@@ -652,7 +656,7 @@ async function screenGame(id) {
     </div>
     ${adSlot()}
     <div class="section" id="resellers"></div>
-    ${steamID ? `<div class="section" id="runbox"><h2>Will it run on my PC?</h2><div class="skel" aria-hidden="true"></div></div>` : ''}
+    <div class="section" id="runbox"><h2>Will it run on my PC?</h2><div class="skel" aria-hidden="true"></div></div>
     <div class="foot"><p>Have a question about this game? Ask on our <a href="${DISCORD}" target="_blank" rel="noopener">Discord</a>.</p></div>`;
   document.getElementById('watchBtn').addEventListener('click', (e) => {
     let w = store.get('watchlist', []);
@@ -672,7 +676,8 @@ async function screenGame(id) {
     store.set('watchlist', w);
     document.getElementById('targetMsg').textContent = v > 0 ? 'Saved. We flag it here when it hits $' + v.toFixed(2) + '.' : 'Alert removed.';
   });
-  if (steamID) loadRunCheck(steamID);
+  loadRunCheck(steamID);
+  renderTracker(id, title, g.info?.thumb, best ? +best.price : null, +(g.cheapestPriceEver?.price) || 0);
   loadResellers(steamID || id);
 }
 
@@ -695,9 +700,10 @@ async function loadResellers(gameKey) {
 async function loadRunCheck(steamID) {
   const box = document.getElementById('runbox'); if (!box) return;
   let info = null;
-  try { info = await webData('steam=' + encodeURIComponent(steamID)); } catch {}
+  if (steamID) { try { info = await webData('steam=' + encodeURIComponent(steamID)); } catch {} }
   const list = await getGPUs();
   const v = runVerdict(info, list);
+  if (!steamID) { v.details = ["This game isn't listed on Steam, so we can't read its requirements automatically. Check the store page, then compare with your PC."]; v.needsPC = false; }
   const rating = info && (info.esrb || info.pegi || info.requiredAge >= 17)
     ? `<div class="card"><span class="hint">Age rating</span><p>${info.esrb ? 'ESRB ' + esc(info.esrb) : ''}${info.esrb && info.pegi ? ' · ' : ''}${info.pegi ? 'PEGI ' + esc(info.pegi) : ''}${info.requiredAge >= 17 && !info.esrb && !info.pegi ? 'For mature players' : ''}</p>${info.esrbDescriptors ? `<p class="hint">${esc(info.esrbDescriptors)}</p>` : ''}</div>` : '';
   box.innerHTML = `<h2>Will it run on my PC?</h2>
@@ -709,6 +715,122 @@ async function loadRunCheck(steamID) {
     ${info && (info.minimum || info.recommended) ? `<details class="card"><summary style="cursor:pointer;font-weight:600">See the full requirements</summary>
       ${info.minimum ? `<p style="white-space:pre-line">${esc(info.minimum)}</p>` : ''}${info.recommended ? `<p style="white-space:pre-line">${esc(info.recommended)}</p>` : ''}</details>` : ''}
     ${rating}`;
+}
+
+
+// ---------- Price tracker (every game page) ----------
+function recordPrice(id, price) {
+  if (!(price > 0)) return [];
+  const h = store.get('ph', {}); const day = new Date().toISOString().slice(0, 10);
+  const a = h[id] || []; if (a.length && a[a.length - 1][0] === day) a[a.length - 1][1] = price; else a.push([day, price]);
+  h[id] = a.slice(-60);
+  const keys = Object.keys(h); if (keys.length > 120) delete h[keys[0]];
+  store.set('ph', h); return h[id];
+}
+function sparkline(pts) {
+  if (pts.length < 2) return '';
+  const vals = pts.map((p) => p[1]), lo = Math.min(...vals), hi = Math.max(...vals), span = hi - lo || 1;
+  const xy = vals.map((v, i) => `${(i / (vals.length - 1) * 280 + 10).toFixed(1)},${(48 - (v - lo) / span * 36).toFixed(1)}`).join(' ');
+  return `<svg viewBox="0 0 300 56" width="100%" height="56" role="img" aria-label="Prices you have seen for this game, from ${money(vals[0])} to ${money(vals[vals.length - 1])}"><polyline fill="none" stroke="currentColor" stroke-width="2" points="${xy}"/></svg>
+    <p class="hint">Prices seen on your visits, ${money(lo)} to ${money(hi)}.</p>`;
+}
+function renderTracker(id, title, thumb, price, low) {
+  const box = document.getElementById('trackbox'); if (!box || !(price > 0)) return;
+  const pts = recordPrice(id, price);
+  const wl = store.get('watchlist', []); const cur = wl.find((x) => x.id === id);
+  const opts = []; if (low > 0 && low < price) opts.push([low, `Lowest ever (${money(low)})`]);
+  const tenOff = Math.floor(price * 90) / 100; if (tenOff > 0 && tenOff > low) opts.push([tenOff, `10% cheaper (${money(tenOff)})`]);
+  box.innerHTML = `<h2>Price tracker</h2><div class="card">
+    <p>${cur ? (cur.target ? `Tracking. We flag it when it reaches ${money(cur.target)}.` : 'Tracking. Pick a price to be flagged at.') : 'Track this game and we flag it on the deals screen when the price drops.'}</p>
+    <div class="row" style="flex-wrap:wrap;gap:8px">${opts.map((o, i) => `<button class="btn btn-ghost" data-t="${o[0]}">Flag me at ${esc(o[1])}</button>`).join('')}${opts.length ? '' : '<button class="btn btn-ghost" data-t="0">Track this game</button>'}</div>
+    <p class="hint" id="trackMsg" aria-live="polite"></p>${sparkline(pts)}</div>`;
+  box.querySelectorAll('[data-t]').forEach((b) => b.addEventListener('click', () => {
+    const t = parseFloat(b.dataset.t); let w = store.get('watchlist', []); let it = w.find((x) => x.id === id);
+    if (!it) { it = { id, title, thumb, price }; w.unshift(it); }
+    if (t > 0) it.target = t;
+    store.set('watchlist', w.slice(0, 50));
+    document.getElementById('trackMsg').textContent = t > 0 ? `Saved. We flag it on the deals screen at ${money(t)}.` : 'Tracking this game.';
+    const wb = document.getElementById('watchBtn'); if (wb) { wb.textContent = 'On your watchlist ✓'; wb.setAttribute('aria-pressed', 'true'); }
+    const tf = document.getElementById('targetForm'); if (tf) tf.hidden = false;
+    const ti = document.getElementById('targetPrice'); if (ti && t > 0) ti.value = t;
+  }));
+}
+
+const titleHas = (t, q) => new RegExp('(^|[^a-z0-9])' + q.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[^a-z0-9])').test(t.toLowerCase());
+// ---------- Game night picker ----------
+const GAMENIGHT = [
+  ['Jackbox Party Pack', 'Jackbox Party Pack', 1, 8, 'party'], ['Overcooked', 'Overcooked', 1, 4, 'party'], ['Moving Out', 'Moving Out', 1, 4, 'party'],
+  ['Human: Fall Flat', 'Human: Fall Flat', 1, 8, 'party'], ['Golf With Your Friends', 'Golf With Your Friends', 1, 12, 'party'],
+  ['Ultimate Chicken Horse', 'Ultimate Chicken Horse', 2, 4, 'party'], ['Gang Beasts', 'Gang Beasts', 2, 8, 'versus'], ['Pummel Party', 'Pummel Party', 2, 8, 'versus'],
+  ['Tabletop Simulator', 'Tabletop Simulator', 2, 10, 'party'], ['PlateUp!', 'PlateUp', 1, 4, 'party'], ['Unrailed!', 'Unrailed', 1, 4, 'party'],
+  ['Worms W.M.D', 'Worms W.M.D', 2, 6, 'versus'], ['Duck Game', 'Duck Game', 2, 4, 'versus'],
+  ['It Takes Two', 'It Takes Two', 2, 2, 'co-op'], ['Portal 2', 'Portal 2', 2, 2, 'co-op'], ['Deep Rock Galactic', 'Deep Rock Galactic', 1, 4, 'co-op'],
+  ['Left 4 Dead 2', 'Left 4 Dead 2', 1, 4, 'co-op'], ['Helldivers 2', 'Helldivers 2', 1, 4, 'co-op'], ['Lethal Company', 'Lethal Company', 1, 4, 'co-op'],
+  ['Risk of Rain 2', 'Risk of Rain 2', 1, 4, 'co-op'], ['Warhammer: Vermintide 2', 'Vermintide 2', 1, 4, 'co-op'], ['Phasmophobia', 'Phasmophobia', 1, 4, 'co-op'],
+  ['Valheim', 'Valheim', 1, 10, 'co-op'], ['Terraria', 'Terraria', 1, 8, 'co-op'], ['Stardew Valley', 'Stardew Valley', 1, 4, 'co-op'],
+  ["Don't Starve Together", "Don't Starve Together", 1, 6, 'co-op'], ['Raft', 'Raft', 1, 4, 'co-op'], ['Grounded', 'Grounded', 1, 4, 'co-op'],
+  ['Sea of Thieves', 'Sea of Thieves', 1, 4, 'co-op'], ['Back 4 Blood', 'Back 4 Blood', 1, 4, 'co-op'], ['Borderlands 3', 'Borderlands 3', 1, 4, 'co-op'],
+  ['Barotrauma', 'Barotrauma', 1, 16, 'co-op'], ['Keep Talking and Nobody Explodes', 'Keep Talking and Nobody Explodes', 2, 6, 'party'],
+];
+const gn = { players: 4, mode: 'any', budget: 20 };
+async function screenGameNight() {
+  view.innerHTML = `<button class="back" onclick="history.length > 1 ? history.back() : (location.hash = '#/deals')">‹ Back</button>
+    <h1 class="screen-title">Game night picker</h1>
+    <p class="hint">Tell us who's playing. We find games that fit your group, with the lowest official price today.</p>
+    <div class="section stack">
+      <label class="hint" for="gnPlayers">Players</label>
+      <select id="gnPlayers" class="input">${[2,3,4,5,6,8].map((n) => `<option value="${n}" ${n === gn.players ? 'selected' : ''}>${n}${n === 8 ? ' or more' : ''}</option>`).join('')}</select>
+      <label class="hint" for="gnMode">Style</label>
+      <select id="gnMode" class="input">${[['any','Anything'],['co-op','Co-op (team up)'],['party','Party and couch games'],['versus','Head to head']].map((o) => `<option value="${o[0]}" ${o[0] === gn.mode ? 'selected' : ''}>${o[1]}</option>`).join('')}</select>
+      <label class="hint" for="gnBudget">Most you'd pay per game</label>
+      <select id="gnBudget" class="input">${[[10,'$10'],[20,'$20'],[30,'$30'],[60,'Any price']].map((o) => `<option value="${o[0]}" ${o[0] === gn.budget ? 'selected' : ''}>${o[1]}</option>`).join('')}</select>
+    </div>
+    <div class="section" id="gnResults"></div>
+    <div class="foot"><p>Player counts are the usual maximums. Check the store page for exact online and local limits.</p></div>`;
+  const run = async () => {
+    gn.players = +document.getElementById('gnPlayers').value; gn.mode = document.getElementById('gnMode').value; gn.budget = +document.getElementById('gnBudget').value;
+    const out = document.getElementById('gnResults'); out.innerHTML = `<div class="stack">${skeletons(4)}</div>`;
+    const names = await getStoreNames();
+    const cand = GAMENIGHT.filter((x) => gn.players >= x[2] && (gn.players <= x[3] || gn.players >= 8 && x[3] >= 8) && (gn.mode === 'any' || x[4] === gn.mode));
+    const rows = (await Promise.all(cand.map(async (x) => {
+      try {
+        const d = await getJSON(CS + 'deals?pageSize=8&sortBy=Price&title=' + encodeURIComponent(x[1]));
+        const m = d.filter((y) => names[y.storeID] && titleHas(y.title, x[1]) && +y.salePrice > 0.5);
+        return m.length ? Object.assign({}, m[0], { _max: x[3], _mode: x[4] }) : null;
+      } catch { return null; }
+    }))).filter((r) => r && +r.salePrice <= gn.budget);
+    rows.sort((a, b) => b.savings - a.savings);
+    out.innerHTML = rows.length ? `<h2>${rows.length} picks for ${gn.players} players</h2><div class="stack">${rows.map((d) => dealRow(d, names).replace('Official store', `Up to ${d._max} players · ${d._mode}`)).join('')}</div>`
+      : '<p class="empty">Nothing matched right now. Try a higher budget or a different style.</p>';
+  };
+  ['gnPlayers', 'gnMode', 'gnBudget'].forEach((id) => document.getElementById(id).addEventListener('change', run));
+  run();
+}
+
+// ---------- Veteran hub ----------
+const VET_DISCOUNTS = [
+  ['Razer', 'Military and veterans: 15% off peripherals and 5% off laptops and desktops on RazerStore, verified through ID.me. US only.', 'https://www.razer.com/campaigns/military'],
+  ['Lenovo', 'About 5% off for US military, veterans and families, verified through ID.me.', 'https://www.lenovo.com'],
+  ['Corsair', 'Has offered about 5% off to verified military through ID.me. Check the store for the current offer.', 'https://www.corsair.com'],
+  ['Microsoft', 'About 10% off select products for active, former and retired military and their families.', 'https://www.microsoft.com'],
+  ['Dell', 'A military and veteran program, claimed through Dell Rewards.', 'https://www.dell.com'],
+  ['Vertagear', 'Gaming chairs. About 20% off, requested with a form and proof of service.', 'https://www.vertagear.com'],
+];
+const VET_GAMES = ['Squad', 'Arma', 'Hell Let Loose', 'Battlefield', 'Call of Duty', 'Sniper Elite', 'Insurgency', 'Ready or Not', 'Company of Heroes', 'Men of War', 'Brothers in Arms', 'Medal of Honor', 'Ghost Recon', 'Rainbow Six', 'Gunfire Reborn'].slice(0, 14);
+async function screenVeterans() {
+  view.innerHTML = `<button class="back" onclick="history.length > 1 ? history.back() : (location.hash = '#/deals')">‹ Back</button>
+    <h1 class="screen-title">Veteran hub</h1>
+    <p>SteelGames is veteran-owned. This page is for service members, veterans and families: military discounts on gaming gear, and military and tactical games on sale.</p>
+    <div class="section"><h2>Military discounts on gaming gear</h2><div class="stack">${VET_DISCOUNTS.map((d) => `
+      <a class="card" href="${esc(d[2])}" target="_blank" rel="noopener"><strong>${esc(d[0])}</strong><p>${esc(d[1])}</p></a>`).join('')}</div>
+      <p class="hint">Offers change and some need ID.me or proof of service. Confirm the current terms at checkout.</p></div>
+    <div class="section"><h2>Military and tactical games on sale</h2><div class="stack" id="vetGames">${skeletons(4)}</div></div>
+    <div class="section"><h2>Veteran-owned studio or brand?</h2><div class="card"><p>Tell us about your game or gear and we'll feature it here.</p>
+      <a class="btn btn-primary" href="mailto:${SUPPORT}?subject=${encodeURIComponent('Veteran hub listing')}">Get listed</a></div></div>`;
+  const names = await getStoreNames();
+  const lists = await Promise.all(VET_GAMES.map(async (q) => { try { return (await getJSON(CS + 'deals?pageSize=4&sortBy=Savings&title=' + encodeURIComponent(q))).filter((d) => names[d.storeID] && titleHas(d.title, q) && +d.savings >= 20 && +d.salePrice > 0.5); } catch { return []; } }));
+  const seen = new Set(); const rows = lists.flat().filter((d) => !seen.has(d.gameID) && seen.add(d.gameID)).sort((a, b) => b.savings - a.savings).slice(0, 15);
+  document.getElementById('vetGames').innerHTML = rows.length ? rows.map((d) => dealRow(d, names)).join('') : '<p class="empty">No military game deals right now. Check back soon.</p>';
 }
 
 let newsFilter = 'all';
@@ -797,6 +919,8 @@ async function screenAccount() {
   await refreshSession();
   const help = `
     <div class="section"><h2>Help and community</h2><div class="list">
+      <a class="list-link" href="#/gamenight"><span>Game night picker</span><span>›</span></a>
+      <a class="list-link" href="#/veterans"><span>Veteran hub</span><span>›</span></a>
       <a class="list-link" href="#/mypc"><span>My PC (for "Will it run?")</span><span>›</span></a>
       <a class="list-link" href="${SITE}/#help" target="_blank" rel="noopener"><span>Help and common questions</span><span>↗</span></a>
       <a class="list-link" href="mailto:${SUPPORT}"><span>Email us</span><span>↗</span></a>
@@ -900,7 +1024,7 @@ function renderAuth(help) {
 async function route() {
   const parts = (location.hash.replace(/^#\/?/, '') || 'deals').split('/').map(decodeURIComponent);
   const [page, arg] = parts;
-  const tab = { deals: 'deals', game: 'deals', news: 'news', gear: 'gear', account: 'account', mypc: 'account' }[page] || 'deals';
+  const tab = { deals: 'deals', game: 'deals', news: 'news', gear: 'gear', account: 'account', mypc: 'account', gamenight: 'deals', veterans: 'deals' }[page] || 'deals';
   document.querySelectorAll('.tabbar a').forEach((a) => { if (a.dataset.tab === tab) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
   document.title = 'SteelGames · Game Deals';
   window.scrollTo(0, 0);
@@ -909,6 +1033,8 @@ async function route() {
   else if (page === 'gear') await screenGear(arg);
   else if (page === 'account') await screenAccount();
   else if (page === 'mypc') await screenMyPC();
+  else if (page === 'gamenight') await screenGameNight();
+  else if (page === 'veterans') await screenVeterans();
   else await screenDeals();
   view.focus({ preventScroll: true });
 }
