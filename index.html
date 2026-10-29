@@ -223,6 +223,32 @@ html { scroll-padding-top: 88px; }
 .footer-links { display: flex; gap: 6px 16px; flex-wrap: wrap; }
 .disclosure { color: var(--steel); }
 .fake-select { user-select: all; color: var(--fg); }
+
+[hidden] { display: none !important; }
+.live { padding-block: 40px 8px; }
+.live-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; }
+.live-head h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.5px; }
+.live-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.live-links a { padding: 8px 14px; border-radius: 999px; border: 1px solid #343B45; color: var(--steel); text-decoration: none; font-size: 15px; font-weight: 600; }
+.live-links a:hover { color: var(--fg); border-color: var(--steel); }
+.live-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 20px; }
+.live-card { display: flex; gap: 12px; align-items: center; padding: 10px; border-radius: 14px; background: #14181E; border: 1px solid #2A313A; color: var(--fg); text-decoration: none; min-width: 0; }
+.live-card:hover { border-color: var(--accent); }
+.live-card img { width: 112px; height: 52px; object-fit: cover; border-radius: 8px; flex-shrink: 0; background: #1C2027; }
+.live-card .t { display: block; font-weight: 600; font-size: 15px; line-height: 1.25; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.live-card .m { display: block; color: var(--muted); font-size: 13px; }
+.live-card .p { font-family: var(--display); font-weight: 700; color: var(--fg); }
+.live-card .p s { color: var(--muted); font-weight: 400; margin-left: 6px; font-size: 13px; }
+.live-card .off { margin-left: auto; flex-shrink: 0; padding: 3px 8px; border-radius: 8px; background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 13px; }
+.live-sk { height: 74px; border-radius: 14px; background: #14181E; border: 1px solid #2A313A; }
+
+.plat-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.plat-tabs button { min-height: 42px; padding: 0 18px; border-radius: 999px; border: 1px solid #343B45; background: transparent; color: var(--steel); font: 600 15px var(--body); cursor: pointer; }
+.plat-tabs button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.con-card { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 14px; background: #14181E; border: 1px solid #2A313A; color: var(--fg); text-decoration: none; }
+.con-card:hover { border-color: var(--accent); }
+.con-card b { font-family: var(--display); font-size: 17px; }
+.con-card span { color: var(--muted); font-size: 14px; }
 </style>
 <meta name="google-adsense-account" content="ca-pub-3613204296597380">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
@@ -245,6 +271,32 @@ html { scroll-padding-top: 88px; }
 </header>
 
 <main id="top">
+  <section class="live" id="deals" aria-labelledby="live-title">
+    <div class="wrap">
+      <div class="live-head">
+        <div><p class="eyebrow">Live now</p><h2 id="live-title">Today's best PC game deals</h2></div>
+        <a class="btn btn-primary" href="app/">See all deals</a>
+      </div>
+      <div class="live-links" aria-label="Shortcuts">
+        <a href="deals/pc-games-under-10/">Under $10</a>
+        <a href="deals/free-pc-games-right-now/">Free games</a>
+        <a href="deals/highly-rated-pc-game-deals/">Top rated</a>
+        <a href="app/#/gamenight">Game night picker</a>
+        <a href="app/#/veterans">Veteran hub</a>
+        <a href="gear.html">Gaming gear</a>
+      </div>
+      <div class="plat-tabs" role="group" aria-label="Platform">
+        <button type="button" data-plat="pc" aria-pressed="true">PC</button>
+        <button type="button" data-plat="ps" aria-pressed="false">PlayStation</button>
+        <button type="button" data-plat="xbox" aria-pressed="false">Xbox</button>
+        <button type="button" data-plat="switch" aria-pressed="false">Switch</button>
+      </div>
+      <div class="live-grid" id="conGrid" hidden></div>
+      <div class="live-grid" id="liveGrid" aria-live="polite">
+        <div class="live-sk"></div><div class="live-sk"></div><div class="live-sk"></div><div class="live-sk"></div><div class="live-sk"></div><div class="live-sk"></div>
+      </div>
+    </div>
+  </section>
   <section class="hero">
     <div class="wrap">
       <div>
@@ -486,14 +538,16 @@ html { scroll-padding-top: 88px; }
         <div class="section-head">
           <p class="eyebrow">Get SteelGames</p>
           <h2 id="getapp-title">Every price, every platform, in your pocket</h2>
-          <p>Download the free app to get price alerts, earn Steel Points and review games. It's free.</p>
+          <p>Use SteelGames on your phone today. Add the free web app to your home screen for price alerts, game night picks and your will-it-run check. The App Store version is coming soon.</p>
         </div>
         <div class="getapp-actions">
           <a class="store-btn" href="#get-app" aria-label="SteelGames on the App Store, coming soon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
             <span><small>Coming soon on the</small>App Store</span>
           </a>
-          <a class="btn btn-ghost" href="https://discord.gg/ekrRaejc6">Join the Discord meanwhile</a>
+          <a class="btn btn-primary" href="app/" id="installBtn">Open the free web app</a>
+          <p class="status-note" id="installHint">On iPhone: open the app in Safari, tap Share, then Add to Home Screen. On Android: tap the install prompt in Chrome.</p>
+          <a class="btn btn-ghost" href="https://discord.gg/ekrRaejc6">Join the Discord</a>
         </div>
       </div>
     </div>
@@ -626,5 +680,52 @@ html { scroll-padding-top: 88px; }
     <p>SteelGames is a product of Lonestar PPS, LLC, a veteran-owned company. SteelGames is not affiliated with Valve, Epic Games, Microsoft, Sony or Nintendo. Product and platform names belong to their owners.</p>
   </div>
 </footer>
+<script>
+// Live deals strip: lowest official-store prices from CheapShark, shown first on the page.
+(async () => {
+  const grid = document.getElementById('liveGrid'); if (!grid) return;
+  const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  try {
+    const [stores, deals] = await Promise.all([
+      fetch('https://www.cheapshark.com/api/1.0/stores').then((r) => r.json()),
+      fetch('https://www.cheapshark.com/api/1.0/deals?onSale=1&sortBy=Deal%20Rating&pageSize=24&AAA=0&metacritic=0').then((r) => r.json())]);
+    const names = Object.fromEntries(stores.filter((s) => s.isActive).map((s) => [s.storeID, s.storeName]));
+    const rows = deals.filter((d) => names[d.storeID] && +d.salePrice > 0).slice(0, 12);
+    if (!rows.length) throw new Error('empty');
+    grid.innerHTML = rows.map((d) => {
+      const img = d.steamAppID && d.steamAppID !== '0' ? 'https://cdn.cloudflare.steamstatic.com/steam/apps/' + d.steamAppID + '/capsule_184x69.jpg' : d.thumb;
+      const off = Math.round(+d.savings);
+      return '<a class="live-card" href="app/#/game/' + encodeURIComponent(d.gameID) + '"><img src="' + esc(img) + '" alt="" loading="lazy" onerror="this.src=\'' + esc(d.thumb) + '\'"><span style="min-width:0"><span class="t">' + esc(d.title) + '</span><span class="m">' + esc(names[d.storeID]) + '</span><span class="p">$' + (+d.salePrice).toFixed(2) + '<s>$' + (+d.normalPrice).toFixed(2) + '</s></span></span>' + (off > 0 ? '<span class="off">-' + off + '%</span>' : '') + '</a>';
+    }).join('');
+  } catch (e) {
+    grid.innerHTML = '<p style="color:var(--steel)">Open the app to see today\'s deals. <a href="app/">Check prices now</a></p>';
+  }
+})();
+</script>
+<script>
+// Console tabs: curated shortcuts to current console game deals.
+(() => {
+  const tag = 'steelgames-20', A = (q) => 'https://www.amazon.com/s?k=' + encodeURIComponent(q) + '&i=videogames&tag=' + tag;
+  const P = {
+    ps: [['PS5 game deals', 'Current discounts on PS5 games', 'ps5 games deals'], ['PS5 games under $20', 'Cheap picks for PlayStation 5', 'ps5 games under 20'], ['PS4 games under $20', 'Still plays on PS5', 'ps4 games under 20'], ['Best-selling PS5 games', 'What people are buying now', 'best selling ps5 games'], ['PS5 co-op and party games', 'For game night on the couch', 'ps5 co-op party games'], ['PS5 controllers and headsets', 'Gear for your setup', 'ps5 controller headset']],
+    xbox: [['Xbox game deals', 'Current discounts on Xbox games', 'xbox series x games deals'], ['Xbox games under $20', 'Cheap picks for Xbox', 'xbox games under 20'], ['Best-selling Xbox games', 'What people are buying now', 'best selling xbox series x games'], ['Xbox co-op and party games', 'For game night on the couch', 'xbox co-op party games'], ['Xbox controllers', 'Wireless and elite controllers', 'xbox wireless controller'], ['Xbox headsets', 'Chat and surround sound', 'xbox gaming headset']],
+    switch: [['Switch game deals', 'Current discounts on Switch games', 'nintendo switch games deals'], ['Switch games under $30', 'Cheap picks for Switch', 'nintendo switch games under 30'], ['Best-selling Switch games', 'What people are buying now', 'best selling nintendo switch games'], ['Switch party and family games', 'For the whole group', 'nintendo switch party family games'], ['Switch controllers', 'Pro and Joy-Con controllers', 'nintendo switch controller'], ['Switch memory cards and cases', 'Storage and protection', 'nintendo switch microsd case']]
+  };
+  const live = document.getElementById('liveGrid'), con = document.getElementById('conGrid');
+  document.querySelectorAll('.plat-tabs button').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('.plat-tabs button').forEach((x) => x.setAttribute('aria-pressed', x === b));
+    const k = b.dataset.plat;
+    live.hidden = k !== 'pc'; con.hidden = k === 'pc';
+    if (k !== 'pc') con.innerHTML = P[k].map((c) => '<a class="con-card" href="' + A(c[2]) + '" target="_blank" rel="noopener sponsored"><b>' + c[0] + '</b><span>' + c[1] + '</span></a>').join('');
+  }));
+})();
+</script>
+<script>
+// Offer a one-tap install where the browser supports it.
+(() => { let ev; const b = document.getElementById('installBtn'); if (!b) return;
+  window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); ev = e; b.textContent = 'Install the free app'; b.setAttribute('href', '#get-app'); });
+  b.addEventListener('click', (e) => { if (ev) { e.preventDefault(); ev.prompt(); ev = null; } });
+})();
+</script>
 </body>
 </html>
