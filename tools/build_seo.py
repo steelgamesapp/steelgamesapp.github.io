@@ -360,8 +360,12 @@ def main():
         if sample:
             seeds = ["1"]; fg = lambda gid: data["game"]
         else:
-            top = get("/deals", {"sortBy": "Deal Rating", "onSale": 1, "pageSize": 60, "AAA": 0, "steamRating": 70})
-            seeds = [str(d["gameID"]) for d in top if str(d.get("storeID")) in stores]
+            seeds = []
+            for pg in range(6):
+                for d in get("/deals", {"sortBy": "Deal Rating", "onSale": 1, "pageSize": 60, "pageNumber": pg, "AAA": 0, "steamRating": 70}):
+                    if str(d.get("storeID")) in stores and str(d["gameID"]) not in seeds:
+                        seeds.append(str(d["gameID"]))
+                time.sleep(0.5)
             fg = lambda gid: get("/games", {"id": gid})
         urls += build_games(stores, today, seeds, fg)
     except Exception as ex:
