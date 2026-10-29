@@ -1,0 +1,20 @@
+name: Build SEO deal pages
+on:
+  schedule:
+    - cron: "17 11 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/build_seo.py
+      - name: Commit changes
+        run: |
+          git config user.name "SteelGames Bot"
+          git config user.email "steelgames.app@outlook.com"
+          git add -A deals sitemap.xml robots.txt
+          git diff --cached --quiet || git commit -m "Daily deal pages update"
+          git push
