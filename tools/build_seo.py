@@ -154,7 +154,7 @@ def page_html(p, deals, stores, today):
 <script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script type="application/ld+json">{ld}</script>
 <style>
-:root{{--bg:#0C0E11;--surface:#15181D;--line:#262C35;--fg:#EDEFF2;--muted:#9BA4AF;--accent:#FF7A1A;color-scheme:dark}}
+:root{{--bg:#140B33;--surface:#1E1450;--line:#3B2B8A;--fg:#FFFFFF;--muted:#BDB4EA;--accent:#FFB020;color-scheme:dark}}
 *{{box-sizing:border-box}}
 body{{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;padding-block:24px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
 main{{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:18px}}
@@ -201,7 +201,7 @@ def hub_html(today):
 <script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <meta name="google-adsense-account" content="ca-pub-3613204296597380">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
-<style>:root{{color-scheme:dark}}body{{margin:0;background:#0C0E11;color:#EDEFF2;font:16px/1.6 Inter,system-ui,sans-serif;padding-block:24px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}main{{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:16px}}a{{color:#FF7A1A}}h1{{font:700 34px/1.1 "Space Grotesk",system-ui,sans-serif;margin:0}}li{{margin-bottom:12px}}li span{{display:block;color:#9BA4AF;font-size:15px}}ul{{padding-left:20px;margin:0}}</style></head>
+<style>:root{{color-scheme:dark}}body{{margin:0;background:#140B33;color:#FFFFFF;font:16px/1.6 Inter,system-ui,sans-serif;padding-block:24px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}main{{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:16px}}a{{color:#FF7A1A}}h1{{font:700 34px/1.1 "Space Grotesk",system-ui,sans-serif;margin:0}}li{{margin-bottom:12px}}li span{{display:block;color:#9BA4AF;font-size:15px}}ul{{padding-left:20px;margin:0}}</style></head>
 <body><main><nav><a href="/">SteelGames</a></nav><h1>PC game deals</h1>
 <p style="color:#9BA4AF;margin:0">Fresh lists every day. Updated {today}.</p><ul>{lis}</ul></main></body></html>
 """
@@ -263,7 +263,7 @@ def game_page(gid, g, stores, today):
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
 <script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script type="application/ld+json">{ld}</script>
-<style>:root{{--bg:#0C0E11;--surface:#15181D;--line:#262C35;--fg:#EDEFF2;--muted:#9BA4AF;--accent:#FF7A1A;color-scheme:dark}}*{{box-sizing:border-box}}
+<style>:root{{--bg:#140B33;--surface:#1E1450;--line:#3B2B8A;--fg:#FFFFFF;--muted:#BDB4EA;--accent:#FFB020;color-scheme:dark}}*{{box-sizing:border-box}}
 body{{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;padding:24px 16px 56px}}
 main{{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:18px}}a{{color:var(--accent)}}nav a{{font-weight:600;text-decoration:none}}
 h1{{font:700 32px/1.1 "Space Grotesk",system-ui,sans-serif;margin:0;text-wrap:balance}}h2,h3{{margin:0}}h3{{font-size:17px;margin-top:6px}}p{{margin:0;color:var(--muted)}}
@@ -332,7 +332,7 @@ def build_games(stores, today, seeds, fetch_game):
 <meta name="description" content="Current best prices and lowest-ever prices for popular PC games from official stores.">
 <link rel="canonical" href="{SITE}/game/">
 <script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<style>:root{{color-scheme:dark}}body{{margin:0;background:#0C0E11;color:#EDEFF2;font:16px/1.6 Inter,system-ui,sans-serif;padding:24px 16px 56px}}main{{max-width:760px;margin:0 auto}}a{{color:#FF7A1A}}h1{{font:700 32px/1.1 system-ui}}li{{margin:4px 0}}</style></head>
+<style>:root{{color-scheme:dark}}body{{margin:0;background:#140B33;color:#FFFFFF;font:16px/1.6 Inter,system-ui,sans-serif;padding:24px 16px 56px}}main{{max-width:760px;margin:0 auto}}a{{color:#FFB020}}h1{{font:700 32px/1.1 system-ui}}li{{margin:4px 0}}</style></head>
 <body><main><nav><a href="/">SteelGames</a></nav><h1>PC game prices and price history</h1><p style="color:#9BA4AF">Updated {today}.</p><ul>{lis}</ul></main></body></html>
 """)
     return [f"{SITE}/game/"] + urls

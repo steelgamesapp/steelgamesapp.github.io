@@ -255,6 +255,7 @@ html { scroll-padding-top: 88px; }
 <meta name="google-adsense-account" content="ca-pub-3613204296597380">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
 <script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<link rel="stylesheet" href="/assets/vivid.css">
 </head>
 <body>
 <header class="site-header">
@@ -342,13 +343,14 @@ html { scroll-padding-top: 88px; }
       if (!g) byGame.set(d.gameID, { best: d, n: 1 });
       else { g.n++; if (+d.salePrice < +g.best.salePrice) g.best = d; }
     });
+    const SC = { 'Steam': '#66C0F4', 'GreenManGaming': '#5CCB72', 'Fanatical': '#FF8A3D', 'GOG': '#B388FF', 'Epic Games Store': '#E8E8F0', 'Humble Store': '#FF5A5F', 'GameBillet': '#FFD43B', 'Gamesplanet': '#4DD0E1', 'GamersGate': '#FF7043', 'Voidu': '#F06292', 'Direct2Drive': '#9CCC65', 'IndieGala': '#FF5252', 'WinGameStore': '#4DB6AC', 'Gamesload': '#F9A825' };
     const rows = [...byGame.values()].slice(0, 24);
     if (!rows.length) throw new Error('empty');
     grid.innerHTML = rows.map(({ best: d, n }) => {
       const img = d.steamAppID && d.steamAppID !== '0' ? 'https://cdn.cloudflare.steamstatic.com/steam/apps/' + d.steamAppID + '/capsule_184x69.jpg' : d.thumb;
       const off = Math.round(+d.savings);
       const more = n > 1 ? ' · ' + (n - 1) + ' more ' + (n === 2 ? 'price' : 'prices') : '';
-      return '<a class="live-card" href="deal/?id=' + encodeURIComponent(d.gameID) + '"><img src="' + esc(img) + '" alt="" loading="lazy" onerror="this.src=\'' + esc(d.thumb) + '\'"><span style="min-width:0"><span class="t">' + esc(d.title) + '</span><span class="m">' + esc(names[d.storeID]) + more + '</span><span class="p">$' + (+d.salePrice).toFixed(2) + '<s>$' + (+d.normalPrice).toFixed(2) + '</s></span></span>' + (off > 0 ? '<span class="off">-' + off + '%</span>' : '') + '</a>';
+      return '<a class="live-card" style="--store:' + (SC[names[d.storeID]] || '#7B5CFF') + '" href="deal/?id=' + encodeURIComponent(d.gameID) + '"><img src="' + esc(img) + '" alt="" loading="lazy" onerror="this.src=\'' + esc(d.thumb) + '\'"><span style="min-width:0"><span class="t">' + esc(d.title) + '</span><span class="m">' + esc(names[d.storeID]) + more + '</span><span class="p">$' + (+d.salePrice).toFixed(2) + '<s>$' + (+d.normalPrice).toFixed(2) + '</s></span></span>' + (off > 0 ? '<span class="off">-' + off + '%</span>' : '') + '</a>';
     }).join('');
   } catch (e) {
     grid.innerHTML = '<p style="color:var(--steel)">Deals are loading slowly. <a href="deals/">Browse the deal lists</a></p>';

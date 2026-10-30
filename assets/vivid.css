@@ -1,0 +1,74 @@
+/* SteelGames vivid theme: deep purple base, warm yellow-orange actions, color-coded stores. */
+:root{
+  --bg:#120A2B; --surface:#1E1450; --raised:#2A1C6B;
+  --line:#3B2B8A; --line-strong:#4A37A8;
+  --fg:#FFFFFF; --muted:#BDB4EA; --steel:#DAD4F7;
+  --accent:#FFB020; --accent-soft:#FFCB5C; --accent-ink:#1F1000;
+  --verify:#7FD6FF; --resale:#D4B8FF;
+  --grad-cta:linear-gradient(135deg,#FFC21A 0%,#FF7A1A 100%);
+  --grad-off:linear-gradient(135deg,#FF9A1A 0%,#FF2E93 100%);
+  color-scheme:dark;
+}
+body{background:linear-gradient(180deg,#1C1050 0,#140B33 460px,#0E0820 100%) fixed;color:var(--fg)}
+body::before{background:#1C1050}
+.site-header{background:rgba(28,16,80,.94)!important;border-bottom:1px solid var(--line-strong)}
+.nav a:hover{background:rgba(255,255,255,.12);color:#fff}
+.nav a[aria-current="page"]{background:rgba(255,255,255,.16);color:#fff}
+.nav a.nav-cta,.btn-primary{background:var(--grad-cta)!important;color:var(--accent-ink)!important;border:0;box-shadow:0 4px 14px rgba(255,122,26,.35)}
+.nav a.nav-cta:hover,.btn-primary:hover{filter:brightness(1.08)}
+.eyebrow{color:#FFCB5C}
+.section{border-top:1px solid var(--line)}
+.site-footer{background:#0E0820;border-top:1px solid var(--line-strong)}
+a{color:#FFCB5C}
+.live h2{background:linear-gradient(90deg,#fff 0%,#FFD76A 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* shortcut chips, one color each */
+.live-links a{border:1px solid transparent;color:#fff;font-weight:700}
+.live-links a:nth-child(6n+1){background:#E0531E}
+.live-links a:nth-child(6n+2){background:#C026D3}
+.live-links a:nth-child(6n+3){background:#0E9F8E}
+.live-links a:nth-child(6n+4){background:#D99A00;color:#1F1000}
+.live-links a:nth-child(6n+5){background:#5B3FD9}
+.live-links a:nth-child(6n+6){background:#2D9B4B}
+.live-links a:hover{filter:brightness(1.12);transform:translateY(-2px);color:inherit;border-color:rgba(255,255,255,.5)}
+
+/* platform tabs */
+.plat-tabs button{background:rgba(255,255,255,.06);color:#fff;border:2px solid var(--line-strong)}
+.plat-tabs button[data-plat="pc"]{border-color:#FFB020}
+.plat-tabs button[data-plat="ps"]{border-color:#6FA0FF}
+.plat-tabs button[data-plat="xbox"]{border-color:#5CCB72}
+.plat-tabs button[data-plat="switch"]{border-color:#FF6B74}
+.plat-tabs button[aria-pressed="true"]{background:var(--grad-cta);color:var(--accent-ink);border-color:transparent}
+.plat-tabs button[data-plat="ps"][aria-pressed="true"]{background:linear-gradient(135deg,#6FA0FF,#3B5BDB);color:#fff}
+.plat-tabs button[data-plat="xbox"][aria-pressed="true"]{background:linear-gradient(135deg,#5CCB72,#1F8F3B);color:#06210F}
+.plat-tabs button[data-plat="switch"][aria-pressed="true"]{background:linear-gradient(135deg,#FF6B74,#D6249F);color:#fff}
+
+/* deal cards */
+.live-card,.con-card{background:linear-gradient(135deg,#2A1C6B 0%,#1E1450 100%);border:1px solid var(--line-strong);border-left:5px solid var(--store,#7B5CFF);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.live-card:hover,.con-card:hover{transform:translateY(-3px);border-color:#FFCB5C;box-shadow:0 10px 26px rgba(123,92,255,.35)}
+.live-card .m{color:var(--store,#BDB4EA);font-weight:600}
+.live-card .p{color:#FFD76A}
+.live-card .p s{color:#9F95D6}
+.live-card .off{background:var(--grad-off);color:#fff;box-shadow:0 2px 8px rgba(255,46,147,.4)}
+.live-sk{background:#241766;border-color:#3B2B8A}
+.con-card b{color:#FFD76A}
+
+/* info cards on Reviews, Community and the app page */
+.hub-card{background:linear-gradient(135deg,#2A1C6B,#1E1450);border:1px solid var(--line-strong);border-top:4px solid #FFB020}
+.hub-card:nth-child(3n+2){border-top-color:#FF2E93}
+.hub-card:nth-child(3n+3){border-top-color:#2DD4BF}
+.hub-card:hover{background:#33227F;border-color:#FFCB5C;transform:translateY(-3px)}
+.hub-card .hub-icon{background:rgba(255,255,255,.1)}
+
+/* gear page items */
+.item{background:linear-gradient(135deg,#2A1C6B,#1E1450)!important;border-color:var(--line-strong)!important}
+.item:hover{border-color:#FFCB5C!important}
+.item .buy{background:var(--grad-cta)!important;color:var(--accent-ink)!important;border:0!important}
+
+/* gear page jump bar */
+.jump{background:rgba(28,16,80,.95)!important;border-block:1px solid var(--line-strong)!important}
+.jump a:nth-child(4n+1){background:#E0531E;border-color:transparent;color:#fff}
+.jump a:nth-child(4n+2){background:#C026D3;border-color:transparent;color:#fff}
+.jump a:nth-child(4n+3){background:#0E9F8E;border-color:transparent;color:#fff}
+.jump a:nth-child(4n+4){background:#5B3FD9;border-color:transparent;color:#fff}
+.jump a:hover{filter:brightness(1.12);color:#fff}
