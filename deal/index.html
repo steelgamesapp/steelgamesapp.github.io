@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Game prices | SteelGames</title>
+<meta name="robots" content="noindex,follow">
+<meta name="description" content="Compare a game's price across official stores and authorized sellers.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<meta name="google-adsense-account" content="ca-pub-3613204296597380">
+<script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+:root{--bg:#0C0E11;--surface:#15181D;--line:#262C35;--fg:#EDEFF2;--muted:#9BA4AF;--steel:#C3CBD5;--accent:#FF7A1A;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;padding:24px max(16px,env(safe-area-inset-left)) 56px max(16px,env(safe-area-inset-right))}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+a{color:var(--accent)}nav a{font-weight:600;text-decoration:none}
+h1{font:700 32px/1.1 "Space Grotesk",system-ui,sans-serif;margin:0;text-wrap:balance}
+p{margin:0;color:var(--muted)}
+.top{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.top img{width:184px;max-width:100%;border-radius:8px;border:1px solid var(--line)}
+.big{font:700 40px/1 "Space Grotesk",system-ui,sans-serif}.big s{font-size:20px;color:var(--muted);font-weight:400;margin-left:10px}
+.off{display:inline-block;margin-left:10px;padding:3px 9px;border-radius:8px;background:var(--accent);color:#1A0E04;font:700 15px Inter,sans-serif;vertical-align:middle}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:480px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+th{background:var(--surface);color:var(--muted);font-weight:500;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+td.was{color:var(--muted);text-decoration:line-through}
+tr.best td:first-child{font-weight:700}
+.buy{display:inline-block;background:var(--accent);color:#1A0E04;padding:8px 14px;border-radius:8px;font-weight:700;text-decoration:none;white-space:nowrap}
+.buy.alt{background:transparent;color:var(--fg);border:1px solid #343B45}
+.resold{display:inline-block;margin-left:8px;font-size:11px;letter-spacing:.06em;color:var(--muted);border:1px solid #343B45;border-radius:6px;padding:1px 6px}
+footer p{font-size:13px}
+</style></head>
+<body><main>
+<nav><a href="/">SteelGames</a> / <a href="/deals/">Deals</a></nav>
+<div id="out"><p>Loading prices…</p></div>
+<footer><p>SteelGames is a product of Lonestar PPS, LLC, a veteran-owned company. Prices can change at any time. As an Amazon Associate, SteelGames earns from qualifying purchases. SteelGames may also earn a commission from other stores and retailers linked on this site, at no extra cost to you.</p></footer>
+</main>
+<script>
+(async () => {
+  const out = document.getElementById('out');
+  const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const $ = (v) => '$' + (+v).toFixed(2);
+  const id = new URLSearchParams(location.search).get('id');
+  if (!id || !/^\d+$/.test(id)) { out.innerHTML = '<h1>Game not found</h1><p><a href="/">Back to today\'s best deals</a></p>'; return; }
+  try {
+    const [stores, g] = await Promise.all([
+      fetch('https://www.cheapshark.com/api/1.0/stores').then((r) => r.json()),
+      fetch('https://www.cheapshark.com/api/1.0/games?id=' + id).then((r) => r.json())]);
+    const names = Object.fromEntries(stores.filter((s) => s.isActive).map((s) => [s.storeID, s.storeName]));
+    const deals = (g.deals || []).filter((d) => names[d.storeID]).sort((a, b) => +a.price - +b.price);
+    if (!g.info || !deals.length) throw new Error('none');
+    const title = g.info.title, best = deals[0];
+    document.title = title + ': compare prices | SteelGames';
+    const img = g.info.steamAppID ? 'https://cdn.cloudflare.steamstatic.com/steam/apps/' + g.info.steamAppID + '/capsule_184x69.jpg' : g.info.thumb;
+    const off = Math.round(+best.savings);
+    const low = g.cheapestPriceEver && +g.cheapestPriceEver.price > 0 ? g.cheapestPriceEver : null;
+    const lowWhen = low && low.date ? new Date(low.date * 1000).toLocaleString('en-US', { month: 'long', year: 'numeric' }) : '';
+    const link = (d) => 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(d.dealID);
+    const rows = deals.map((d, i) => '<tr' + (i === 0 ? ' class="best"' : '') + '><td>' + esc(names[d.storeID]) + (i === 0 ? ' <span class="resold" style="color:var(--accent);border-color:var(--accent)">LOWEST</span>' : '') + '</td><td>' + $(d.price) + '</td><td class="was">' + $(d.retailPrice) + '</td><td><a class="buy' + (i ? ' alt' : '') + '" href="' + esc(link(d)) + '" target="_blank" rel="noopener sponsored">Buy</a></td></tr>').join('');
+    out.innerHTML = '<div style="display:flex;flex-direction:column;gap:18px">'
+      + '<div class="top"><img src="' + esc(img) + '" alt="" onerror="this.src=\'' + esc(g.info.thumb) + '\'"><div style="display:flex;flex-direction:column;gap:8px"><h1>' + esc(title) + '</h1>'
+      + '<div class="big">' + $(best.price) + '<s>' + $(best.retailPrice) + '</s>' + (off > 0 ? '<span class="off">-' + off + '%</span>' : '') + '</div>'
+      + '<p>Lowest price today: ' + esc(names[best.storeID]) + '</p></div></div>'
+      + '<div class="scroll"><table><thead><tr><th>Store</th><th>Price</th><th>Usual</th><th></th></tr></thead><tbody>' + rows + '</tbody></table></div>'
+      + (low ? '<p>Lowest price ever recorded: <strong style="color:var(--fg)">' + $(low.price) + '</strong>' + (lowWhen ? ' (' + lowWhen + ')' : '') + '</p>' : '')
+      + '</div>';
+  } catch (e) {
+    out.innerHTML = '<h1>Prices unavailable</h1><p>We couldn\'t load this game right now. <a href="/">Back to today\'s best deals</a></p>';
+  }
+})();
+</script></body></html>

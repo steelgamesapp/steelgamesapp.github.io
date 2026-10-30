@@ -25,8 +25,8 @@ PAGES = [
     {"slug": "best-steam-deals-today", "h1": "Best Steam deals today", "q": {"storeID": 1, "sortBy": "Deal Rating"},
      "desc": "The best Steam game deals today, ranked by deal rating with review scores.",
      "intro": "These are the strongest Steam discounts running today, ranked by deal rating. Each row shows the sale price, the usual price and the Steam review score.",
-     "faq": [("Are these Steam prices?", "Yes. Every row on this page is the Steam price. Other stores are compared on each game's page in the SteelGames app."),
-             ("Can I find the lowest price ever?", "Open a game in the app to see its price history meter and the lowest price recorded.")]},
+     "faq": [("Are these Steam prices?", "Yes. Every row on this page is the Steam price. Open a game to compare its price at other stores."),
+             ("Can I find the lowest price ever?", "Open a game to see the lowest price recorded and the price at every store.")]},
     {"slug": "highly-rated-pc-game-deals", "h1": "Highly rated PC games on sale", "q": {"steamRating": 90, "upperPrice": 20, "sortBy": "Deal Rating"},
      "desc": "PC games with 90% or higher Steam reviews that are on sale for $20 or less.",
      "intro": "Great reviews and a small price. Every game here has a Steam rating of 90 percent or higher and is on sale for $20 or less today.",
@@ -35,13 +35,13 @@ PAGES = [
     {"slug": "biggest-pc-game-discounts", "h1": "Biggest PC game discounts", "q": {"sortBy": "Savings", "upperPrice": 30},
      "desc": "The deepest PC game discounts right now, sorted by percent off.",
      "intro": "If you want the biggest percentage off, start here. These PC games have the deepest discounts today across the stores we track.",
-     "faq": [("Is a big discount always a good deal?", "Not always. Compare the sale price with the game's lowest recorded price in the SteelGames app."),
+     "faq": [("Is a big discount always a good deal?", "Not always. Open a game to compare the sale price with its lowest recorded price."),
              ("Do you include free games?", "Free giveaways are covered separately. This list focuses on paid games with deep discounts.")]},
     {"slug": "gog-game-deals", "h1": "GOG game deals today", "q": {"storeID": 7, "sortBy": "Deal Rating"},
      "desc": "The best GOG game deals today, DRM-free PC games ranked by deal rating.",
      "intro": "GOG sells DRM-free PC games, so you keep them without a launcher. These are today's strongest GOG discounts, ranked by deal rating.",
      "faq": [("What does DRM-free mean?", "You can install and play the game without an online check or a launcher."),
-             ("Can I compare prices with other stores?", "Open any game in the SteelGames app to see every store's price side by side.")]},
+             ("Can I compare prices with other stores?", "Open any game to see every store's price side by side.")]},
     {"slug": "epic-games-store-deals", "h1": "Epic Games Store deals today", "q": {"storeID": 25, "sortBy": "Deal Rating"},
      "desc": "Today's best Epic Games Store discounts on PC games, ranked by deal rating.",
      "intro": "These are the strongest Epic Games Store discounts today. Each row shows the sale price, the regular price and the Steam review score when one exists.",
@@ -56,7 +56,7 @@ PAGES = [
      "desc": "Today's best Green Man Gaming PC game deals, ranked by deal rating.",
      "intro": "Green Man Gaming is an official reseller of PC game keys. These are the best discounts there today, ranked by deal rating.",
      "faq": [("Is Green Man Gaming legit?", "Yes. It is an authorized digital retailer for many publishers."),
-             ("Which store has the lowest price?", "It changes daily. Open a game in the SteelGames app to compare every store.")]},
+             ("Which store has the lowest price?", "It changes daily. Open a game to compare every store.")]},
     {"slug": "fanatical-deals", "h1": "Fanatical deals today", "q": {"storeID": 15, "sortBy": "Deal Rating"},
      "desc": "Today's best Fanatical PC game deals, ranked by deal rating.",
      "intro": "Fanatical sells official PC game keys and bundles. These are the strongest single-game discounts there today, ranked by deal rating.",
@@ -91,7 +91,7 @@ for _kw, _name in _THEMES:
         "desc": f"{_name} on sale for PC today, ranked by deal rating with review scores.",
         "intro": f"Current PC deals for {_name.lower()}, ranked by how good the discount is against each game's usual price. Prices come from official stores and authorized key sellers and refresh daily.",
         "faq": [("How is this list picked?", f"It searches current store listings for \"{_kw}\" and ranks results by deal rating."),
-                ("Can I see price history?", "Open any game in the SteelGames app to see its price meter and lowest recorded price.")]})
+                ("Can I see price history?", "Open any game to see its lowest recorded price and every store's price.")]})
 
 
 def get(path, params=None):
@@ -113,12 +113,18 @@ def page_html(p, deals, stores, today):
     url = f"{SITE}/deals/{p['slug']}/"
     rows = []
     items = []
+    best = {}
+    for d in deals:
+        gid = str(d.get("gameID"))
+        if gid not in best or float(d.get("salePrice") or 0) < float(best[gid].get("salePrice") or 0):
+            best[gid] = d
+    deals = [best[g] for g in dict.fromkeys(str(d.get("gameID")) for d in deals)]
     for i, d in enumerate(deals, 1):
         store = stores.get(str(d.get("storeID")), "Store")
         sav = round(float(d.get("savings") or 0))
         rate = d.get("steamRatingPercent")
         rating = f"{rate}% ({e(d.get('steamRatingText') or '')})" if rate and rate != "0" else "-"
-        link = f"{SITE}/app/#/game/{d.get('gameID')}"
+        link = f"{SITE}/deal/?id={d.get('gameID')}"
         rows.append(
             f"<tr><td><a href=\"{e(link)}\">{e(d.get('title',''))}</a></td><td>{money(d.get('salePrice'))}</td>"
             f"<td class=\"was\">{money(d.get('normalPrice'))}</td><td>{sav}% off</td><td>{rating}</td><td>{e(store)}</td></tr>")
@@ -175,7 +181,6 @@ ul{{margin:0;padding-left:20px;color:var(--muted)}}
 <p>{e(p['intro'])}</p>
 <p>Updated {today}. Prices come from official stores and key sellers and can change at any time.</p>
 {table}
-<a class="cta" href="{SITE}/app/">Open the SteelGames app for price history and alerts</a>
 <section><h2>Questions</h2>{faq_html}</section>
 <section><h2>More deal lists</h2><ul>{others}</ul></section>
 <footer><p>SteelGames is a product of Lonestar PPS, LLC, a veteran-owned company. As an Amazon Associate, SteelGames earns from qualifying purchases.</p></footer>
@@ -238,8 +243,7 @@ def game_page(gid, g, stores, today):
     label, detail = verdict(cur, reg, low)
     slug = f"{slugify(title)}-{gid}"
     url = f"{SITE}/game/{slug}/"
-    app = f"{SITE}/app/#/game/{gid}"
-    rows = "".join(f"<tr><td>{e(stores[str(d['storeID'])])}</td><td>{money(d['price'])}</td><td class=\"was\">{money(d['retailPrice'])}</td></tr>" for d in deals)
+    rows = "".join(f"<tr><td>{e(stores[str(d['storeID'])])}</td><td>{money(d['price'])}</td><td class=\"was\">{money(d['retailPrice'])}</td><td><a rel=\"sponsored noopener\" href=\"https://www.cheapshark.com/redirect?dealID={e(str(d.get('dealID','')))}\">Buy</a></td></tr>" for d in deals)
     faq = [(f"What is the lowest price ever for {title}?", f"The lowest recorded price is {money(low)}{(' in ' + when) if when else ''}." if low > 0 else "We don't have a recorded lowest price for this game yet."),
            (f"Is {title} on sale right now?", f"The best current price we found is {money(cur)} at {stores[str(best['storeID'])]}, against a usual price of {money(reg)}."),
            (f"Should I buy {title} now or wait?", f"{label}. {detail}")]
@@ -273,9 +277,9 @@ table{{border-collapse:collapse;width:100%}}th,td{{text-align:left;padding:10px 
 <div class="big">{money(cur)}<s>{money(reg)}</s></div>
 <p>Best current price: {e(stores[str(best['storeID'])])}. Updated {today}.</p>
 <div class="card"><strong>{e(label)}</strong><p>{e(detail)}</p></div>
-<table><thead><tr><th>Store</th><th>Price</th><th>Usual</th></tr></thead><tbody>{rows}</tbody></table>
+<table><thead><tr><th>Store</th><th>Price</th><th>Usual</th><th></th></tr></thead><tbody>{rows}</tbody></table>
 {"<p>Lowest price ever: <strong style=\"color:var(--fg)\">" + money(low) + "</strong>" + (" (" + when + ")" if when else "") + "</p>" if low > 0 else ""}
-<a class="cta" href="{app}">Track this price and check if it runs on your PC</a>
+<a class="cta" rel="sponsored noopener" href="https://www.cheapshark.com/redirect?dealID={e(str(best.get('dealID','')))}">Buy at {e(stores[str(best['storeID'])])} for {money(cur)}</a>
 <section><h2>Questions</h2>{"".join(f"<h3>{e(q)}</h3><p>{e(a)}</p>" for q, a in faq)}</section>
 <footer><p>SteelGames is a product of Lonestar PPS, LLC, a veteran-owned company. Prices can change at any time. As an Amazon Associate, SteelGames earns from qualifying purchases.</p></footer>
 </main></body></html>
@@ -343,7 +347,7 @@ def main():
     else:
         stores = {s["storeID"]: s["storeName"] for s in get("/stores")}
         fetch = lambda q: get("/deals", {**q, "pageSize": 40, "onSale": 1})
-    urls = [f"{SITE}/", f"{SITE}/app/", f"{SITE}/gear.html", f"{SITE}/advertise.html", f"{SITE}/deals/"]
+    urls = [f"{SITE}/", f"{SITE}/get-app/", f"{SITE}/gear.html", f"{SITE}/reviews.html", f"{SITE}/community.html", f"{SITE}/advertise.html", f"{SITE}/deals/"]
     for p in PAGES:
         try:
             deals = fetch(p["q"])

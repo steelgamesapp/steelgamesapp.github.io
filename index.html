@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name='impact-site-verification' value='a192b583-9f74-4bb6-a8f1-de2675b009ce'>
-<title>SteelGames</title>
-<meta name="description" content="SteelGames compares PC game prices across official stores, keeps key resellers in their own clearly marked section, and helps you find gear for your whole setup.">
+<title>SteelGames: best PC game deals today</title>
+<meta name="description" content="Today's best PC game deals from official stores, one lowest price per game. Veteran-owned.">
+<link rel="canonical" href="https://steelgamesapp.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
@@ -68,6 +69,7 @@ p { margin: 0; }
 .nav { display: flex; gap: 6px; flex-wrap: wrap; }
 .nav a { color: var(--steel); text-decoration: none; font-size: 14px; font-weight: 500; padding: 10px 12px; border-radius: 10px; }
 .nav a:hover { color: var(--fg); background: var(--surface); }
+.nav a[aria-current="page"] { color: var(--fg); background: var(--surface); }
 
 /* Hero */
 .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 56px; align-items: center; padding-block: 72px 64px; }
@@ -257,15 +259,16 @@ html { scroll-padding-top: 88px; }
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="SteelGames home">
+    <a class="brand" href="/" aria-label="SteelGames home">
       <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
       <span>STEELGAMES</span>
     </a>
     <nav class="nav" aria-label="Site">
-      <a href="gear.html">Shop gear</a>
-      <a href="https://discord.gg/ekrRaejc6">Discord</a>
-      <a href="#help">Help</a>
-      <a class="nav-cta" href="#get-app">Get the app</a>
+      <a href="/app/#/news">News</a>
+      <a href="/gear.html">Gear</a>
+      <a href="/reviews.html">Reviews</a>
+      <a href="/community.html">Community</a>
+      <a class="nav-cta" href="/app/#/account">Profile</a>
     </nav>
   </div>
 </header>
@@ -274,15 +277,15 @@ html { scroll-padding-top: 88px; }
   <section class="live" id="deals" aria-labelledby="live-title">
     <div class="wrap">
       <div class="live-head">
-        <div><p class="eyebrow">Live now</p><h2 id="live-title">Today's best PC game deals</h2></div>
-        <a class="btn btn-primary" href="app/">See all deals</a>
+        <div><p class="eyebrow">Live now</p><h2 id="live-title">Today's best PC game deals</h2><p style="color:var(--steel);margin-top:8px">One card per game at its lowest price. Open a game to compare every store.</p></div>
+        <a class="btn btn-primary" href="/deals/">All deal lists</a>
       </div>
       <div class="live-links" aria-label="Shortcuts">
+        <a href="deals/pc-games-under-5/">Under $5</a>
         <a href="deals/pc-games-under-10/">Under $10</a>
         <a href="deals/free-pc-games-right-now/">Free games</a>
         <a href="deals/highly-rated-pc-game-deals/">Top rated</a>
-        <a href="app/#/gamenight">Game night picker</a>
-        <a href="app/#/veterans">Veteran hub</a>
+        <a href="deals/biggest-pc-game-discounts/">Biggest discounts</a>
         <a href="gear.html">Gaming gear</a>
       </div>
       <div class="plat-tabs" role="group" aria-label="Platform">
@@ -294,362 +297,6 @@ html { scroll-padding-top: 88px; }
       <div class="live-grid" id="conGrid" hidden></div>
       <div class="live-grid" id="liveGrid" aria-live="polite">
         <div class="live-sk"></div><div class="live-sk"></div><div class="live-sk"></div><div class="live-sk"></div><div class="live-sk"></div><div class="live-sk"></div>
-      </div>
-    </div>
-  </section>
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <span class="vet-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned and operated</span>
-        <h1 style="margin-top:18px">Stop paying <span class="cut">$59.99</span> for games that are on sale somewhere else.</h1>
-        <p class="lede">SteelGames checks the big game stores for you and shows the lowest price first. Tap it and you buy from that store the way you normally would. Gaming news and gear for your setup are in the same place.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#get-app"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Get the app</a>
-          <a class="btn btn-ghost" href="app/">Check prices now</a>
-        </div>
-        <p class="status-note">Free. iPhone app coming soon to the App Store.</p>
-      </div>
-
-      <div class="phone" role="img" aria-label="Preview of the SteelGames app showing game deals from official stores and a separate key reseller listing">
-        <p class="phone-label">App preview · sample prices</p>
-        <p class="section-mini">Official stores</p>
-        <div class="deal">
-          <div class="cover" style="background:#3B5BDB">SO</div>
-          <div class="deal-info"><span class="deal-title">Starfall Odyssey</span><span class="deal-store">Steam · Official store</span><span class="deal-price">$14.99<s>$59.99</s></span></div>
-          <span class="tag">-75%</span>
-        </div>
-        <div class="deal">
-          <div class="cover" style="background:#A6461F">IT</div>
-          <div class="deal-info"><span class="deal-title">Ironvale Tactics</span><span class="deal-store">GOG · Official store</span><span class="deal-price">$9.99<s>$29.99</s></span></div>
-          <span class="tag">-67%</span>
-        </div>
-        <p class="section-mini">Key resellers</p>
-        <div class="deal resold">
-          <div class="cover" style="background:#3B5BDB">SO</div>
-          <div class="deal-info"><span class="deal-title">Starfall Odyssey<span class="resold-chip">RESOLD KEY</span></span><span class="deal-store">Steam key · reseller</span><span class="deal-price">$12.39</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="start" aria-labelledby="start-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Start here</p>
-        <h2 id="start-title">Everything SteelGames does, in one place</h2>
-        <p>Pick what you need. Each one is a single click away.</p>
-      </div>
-      <div class="hub">
-        <a class="hub-card" href="app/">
-          <span class="hub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg></span>
-          <h3>Compare game prices</h3>
-          <p>See every official store's price for a game, side by side, and get a heads-up when it drops.</p>
-          <span class="go">Open the price checker <span aria-hidden="true">→</span></span>
-        </a>
-        <a class="hub-card" href="gear.html">
-          <span class="hub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg></span>
-          <h3>Shop gear</h3>
-          <p>Our picks for PC parts, chairs, desks, headsets, lighting and console accessories.</p>
-          <span class="go">Open the gear guide <span aria-hidden="true">→</span></span>
-        </a>
-        <a class="hub-card" href="https://discord.gg/ekrRaejc6">
-          <span class="hub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-          <h3>Join the community</h3>
-          <p>Talk deals, find people to play with, and share your setup on our free Discord server.</p>
-          <span class="go">Join on Discord <span aria-hidden="true">→</span></span>
-        </a>
-        <a class="hub-card" href="#help">
-          <span class="hub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></span>
-          <h3>Get help</h3>
-          <p>Plain answers to common questions, and a real person if you need one.</p>
-          <span class="go">Read the help page <span aria-hidden="true">→</span></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="about" aria-labelledby="about-title">
-    <div class="wrap">
-      <div class="about">
-        <div class="about-copy">
-          <span class="vet-badge" style="align-self:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned</span>
-          <h2 id="about-title" style="font-size: clamp(28px, 4vw, 38px); color: var(--fg)">Built by a veteran who was tired of overpaying</h2>
-          <p>SteelGames is veteran-owned and run. It's the deal site we wanted for ourselves: straight answers, no tricks, and the lowest price shown first.</p>
-          <p>Service members and veterans also get a military discounts directory in the app and an optional Veteran badge in the community.</p>
-        </div>
-        <div class="promise">
-          <h3>Our promise</h3>
-          <ul>
-            <li>The cheapest price always shows first, even when it pays us nothing.</li>
-            <li>Every link says whether we earn a commission from it.</li>
-            <li>Resold keys are kept in their own clearly marked section.</li>
-            <li>We never see or store your card details.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="features" aria-labelledby="features-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">How it works</p>
-        <h2 id="features-title">What the app does for you</h2>
-        <p>SteelGames doesn't sell anything itself. It finds the best price and sends you to the store, where you pay the way you already do.</p>
-      </div>
-      <div class="features">
-        <article class="feature">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg>See every store's price</h3>
-          <p>Every official store's price for a game, side by side. Set the price you want to pay and we'll tell you when it gets there.</p>
-        </article>
-        <article class="feature resale-card">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0M12 16v-4M12 8h.01"/></svg>Cheaper resold keys, clearly marked</h3>
-          <p>Some sites resell game codes for less. We show them in their own labeled section, so you always know which is which and who handles refunds.</p>
-        </article>
-        <article class="feature">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h20M4 8v12M20 8v12M8 8V5h8v3"/></svg>Gear for your setup</h3>
-          <p>PC parts, chairs, desks, lighting, headsets, microphones and console accessories, all in one place.</p>
-        </article>
-        <article class="feature">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5.1 4.8 1.3 7L12 17.8l-6.2 3.4 1.3-7L2 9.4l7-.9z"/></svg>Earn rewards</h3>
-          <p>Get Steel Points when you shop through SteelGames at eligible stores, and trade them for gift cards.</p>
-        </article>
-        <article class="feature">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Will it run on my PC?</h3>
-          <p>Tell us your graphics card and memory once. Every game then shows a simple yes or no, and what to upgrade if it's a no.</p>
-        </article>
-        <article class="feature">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg>Buy now or wait?</h3>
-          <p>A plain answer on every game, based on the lowest price it has ever been. No more guessing.</p>
-        </article>
-        <article class="feature">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Shop with friends</h3>
-          <p>Make a shared list with friends. When a game hits your price, everyone gets told, and buying together earns bonus points.</p>
-        </article>
-        <article class="feature">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg>Honest links</h3>
-          <p>Every Buy button says whether we earn from it. The cheapest price always comes first.</p>
-        </article>
-        <article class="feature">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg>See what you've saved</h3>
-          <p>A running total of how much you've saved this year compared with full price.</p>
-        </article>
-        <article class="feature">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V16h8v-1.3A7 7 0 0 0 12 2z"/></svg>Setup planner and parents mode</h3>
-          <p>Plan a whole desk setup on a budget. Parents mode shows age ratings and content notes on every game.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="guides" aria-labelledby="guides-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Guides</p>
-        <h2 id="guides-title">Buy smarter before you buy</h2>
-        <p>Short, practical reads on getting the most out of your gaming budget.</p>
-      </div>
-      <div class="guides">
-        <article class="guide">
-          <p class="kicker" style="color: var(--resale)">Buying games</p>
-          <h3>Official store or key reseller?</h3>
-          <p>When you buy from Steam, Epic or GOG, the publisher gets paid and the store handles refunds. A key reseller sells an activation key it got somewhere else. You still play the game on the same launcher, and it's often cheaper.</p>
-          <ul>
-            <li>Check the key's region before you buy.</li>
-            <li>Read the reseller's refund policy, since the official store can't help with a reseller key.</li>
-            <li>Be careful with open marketplaces, where anyone can list keys.</li>
-          </ul>
-        </article>
-        <article class="guide">
-          <p class="kicker" style="color: var(--accent-soft)">Deals</p>
-          <h3>Is this sale actually good?</h3>
-          <p>A big percentage off doesn't always mean a low price. Some games go on sale every few weeks, and some list prices change before a sale starts.</p>
-          <ul>
-            <li>Compare today's price with the game's lowest price in the past year.</li>
-            <li>Watch for seasonal sales, which often bring the deepest cuts.</li>
-            <li>Set a price alert instead of buying at the first discount.</li>
-          </ul>
-        </article>
-        <article class="guide">
-          <p class="kicker" style="color: var(--steel)">Setup</p>
-          <h3>Building your first gaming desk</h3>
-          <p>Spend first on what you touch and sit in every day. A good chair and a monitor at eye level make long sessions more comfortable than any amount of RGB.</p>
-          <ul>
-            <li>Chair and desk height first, then the monitor.</li>
-            <li>A large mousepad gives you room for low-sensitivity aim.</li>
-            <li>Add lighting and a stream deck once the basics feel right.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="community" aria-labelledby="community-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Community</p>
-        <h2 id="community-title">Talk games with real players</h2>
-        <p>Join our free Discord server today. In the app, a free account lets you review games and chat on every game page.</p>
-      </div>
-      <div class="community">
-        <div class="community-points">
-          <div class="cpoint">
-            <h3>Reviews you can trust</h3>
-            <p>Rate a game and say what you thought. Verified Buyer badges show which reviewers bought the game through SteelGames.</p>
-          </div>
-          <div class="cpoint">
-            <h3>A chat room for every game</h3>
-            <p>Ask about performance, find people to play with, or get tips. Every game page has its own discussion.</p>
-          </div>
-          <div class="cpoint">
-            <h3>Comments on deals and news</h3>
-            <p>Tell others when a deal is worth it, or weigh in on the latest platform news.</p>
-          </div>
-          <div class="cpoint">
-            <h3>A friendly place to talk</h3>
-            <p>Report and block tools on every post, plus moderation, keep the conversation about games.</p>
-          </div>
-          <div class="help-actions">
-            <a class="btn btn-primary" href="https://discord.gg/ekrRaejc6">Join the Discord</a>
-            <a class="btn btn-ghost" href="#get-app">Get the app</a>
-          </div>
-        </div>
-
-        <div class="thread" role="img" aria-label="Preview of a game page discussion with a review and chat replies">
-          <p class="phone-label">Community preview · sample posts</p>
-          <div class="review">
-            <div class="who"><span class="avatar" style="background:#3B5BDB">MK</span><span class="name">mk_frames</span><span class="badge-verified">Verified Buyer</span></div>
-            <div class="stars" aria-hidden="true">★★★★☆</div>
-            <p>Runs great on a mid-range card. Picked it up at 75% off and it's easily worth full price.</p>
-          </div>
-          <div class="chat">
-            <div class="msg"><span class="avatar" style="background:#1F7A5B">JR</span><div><span class="name">jrod</span><p>Anyone know if the sale ends tonight?</p></div></div>
-            <div class="msg"><span class="avatar" style="background:#A6461F">TZ</span><div><span class="name">tz_plays</span><p>Steam says two more days. Set an alert if you're waiting for lower.</p></div></div>
-          </div>
-          <div class="composer"><span>Join the chat…</span><span class="send">Send</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section get-app" id="get-app" aria-labelledby="getapp-title">
-    <div class="wrap">
-      <div class="getapp-band">
-        <div class="section-head">
-          <p class="eyebrow">Get SteelGames</p>
-          <h2 id="getapp-title">Every price, every platform, in your pocket</h2>
-          <p>Use SteelGames on your phone today. Add the free web app to your home screen for price alerts, game night picks and your will-it-run check. The App Store version is coming soon.</p>
-        </div>
-        <div class="getapp-actions">
-          <a class="store-btn" href="#get-app" aria-label="SteelGames on the App Store, coming soon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
-            <span><small>Coming soon on the</small>App Store</span>
-          </a>
-          <a class="btn btn-primary" href="app/" id="installBtn">Open the free web app</a>
-          <p class="status-note" id="installHint">On iPhone: open the app in Safari, tap Share, then Add to Home Screen. On Android: tap the install prompt in Chrome.</p>
-          <a class="btn btn-ghost" href="https://discord.gg/ekrRaejc6">Join the Discord</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="platforms-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">News</p>
-        <h2 id="platforms-title">Updates from every platform</h2>
-        <p>Each platform gets its own section in the app's news feed, with every story linking back to its original publisher.</p>
-      </div>
-      <div class="platforms">
-        <div class="platform p-pc"><strong>PC</strong><span>Store news, sales and hardware</span></div>
-        <div class="platform p-xbox"><strong>Xbox</strong><span>Platform news and updates</span></div>
-        <div class="platform p-ps"><strong>PlayStation</strong><span>Platform news and updates</span></div>
-        <div class="platform p-nin"><strong>Nintendo</strong><span>Platform news and updates</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="help" aria-labelledby="help-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Help</p>
-        <h2 id="help-title">Common questions</h2>
-        <p>Tap a question to see the answer.</p>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>Does SteelGames sell games?</summary>
-          <p>No. We show you where a game is cheapest and send you to that store. You pay the store directly, the same way you normally would.</p>
-        </details>
-        <details>
-          <summary>Is it free?</summary>
-          <p>Yes. The website, the app and the Discord server are all free.</p>
-        </details>
-        <details>
-          <summary>How does SteelGames make money?</summary>
-          <p>Some store links pay us a small commission when you buy, at no extra cost to you. Every link is labeled, and the free app shows ads.</p>
-        </details>
-        <details>
-          <summary>What is a "resold key"?</summary>
-          <p>A code for a game sold by a third-party site instead of the official store. It's often cheaper, but refunds go through that site, not the official store. We always label these.</p>
-        </details>
-        <details>
-          <summary>Do I need an account?</summary>
-          <p>No. You can browse prices and gear without one. An account lets you set price alerts, earn points, write reviews and chat.</p>
-        </details>
-        <details>
-          <summary>How do I delete my account?</summary>
-          <p>To permanently delete your account, open the app and navigate to Account &gt; Delete Account. Your profile, posts, and points will be permanently removed.</p>
-        </details>
-        <details>
-          <summary>I need help from a person.</summary>
-          <p>Email us at <span class="fake-select">steelgames.app@outlook.com</span> or ask in the #app-help channel on our Discord. We read every message.</p>
-        </details>
-      </div>
-      <div class="help-actions">
-        <a class="btn btn-primary" href="mailto:steelgames.app@outlook.com">Email us</a>
-        <a class="btn btn-ghost" href="https://discord.gg/ekrRaejc6">Ask on Discord</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="privacy" aria-labelledby="privacy-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Privacy policy</p>
-        <h2 id="privacy-title">Your data and SteelGames</h2>
-        <p>Last updated October 27, 2026.</p>
-      </div>
-      <div class="policy">
-        <div>
-          <h3>What we collect</h3>
-          <p>You can browse SteelGames without an account. We never ask for or store payment details.</p>
-        </div>
-        <div>
-          <h3>SteelGames accounts</h3>
-          <p>If you create an account, we store your email address, your username and what you post. Reviews, chat messages and comments are public under your username. If you upload a receipt to become a Verified Buyer, only our moderators can see it. You can delete your posts at any time, and you can delete your whole account in the app under Account → Delete account, which permanently removes your profile, posts, reviews, receipts and points.</p>
-        </div>
-        <div>
-          <h3>Links to stores and retailers</h3>
-          <p>Some links on SteelGames are affiliate links. When you follow one, the store or retailer may use cookies to record that you came from SteelGames so we can earn a commission if you make a purchase. Those sites have their own privacy policies, which apply once you leave SteelGames.</p>
-        </div>
-        <div>
-          <h3>Advertising</h3>
-          <p>SteelGames is free because it shows ads and sponsored spots. Sponsored spots are always labeled. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites. Google's use of advertising cookies lets it and its partners serve ads to you based on your visits to this and other sites. You can opt out of personalized advertising in <a href="https://adssettings.google.com" rel="noopener">Google Ads Settings</a>, or visit <a href="https://www.aboutads.info/choices/" rel="noopener">aboutads.info</a> to opt out of some third-party vendors' use of cookies.</p>
-          <p>We use GoatCounter, a privacy-friendly analytics service, to count page views. It sets no cookies and does not collect personal information.</p>
-        </div>
-        <div>
-          <h3>The SteelGames app</h3>
-          <ul>
-            <li>Purchases happen on the store's or retailer's own website. SteelGames never sees your card or payment details.</li>
-            <li>Price alerts and wishlists are used only to send you the notifications you set up.</li>
-            <li>The free version shows ads, and ad providers may use device identifiers as described in their own policies.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Contact</h3>
-          <p>Questions about privacy: <span class="fake-select">steelgames.app@outlook.com</span></p>
-        </div>
       </div>
     </div>
   </section>
@@ -665,41 +312,46 @@ html { scroll-padding-top: 88px; }
       <span class="vet-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned and operated</span>
     </div>
     <div class="footer-links">
-      <a href="#get-app">Get the app</a>
       <a href="gear.html">Shop gear</a>
       <a href="https://discord.gg/ekrRaejc6">Discord</a>
       <a href="https://www.youtube.com/channel/UCxnxfOz2r4jsk6TTFB1Ar-Q" rel="noopener">YouTube</a>
-      <a href="#help">Help</a>
-      <a href="#privacy">Privacy policy</a>
+      <a href="privacy.html">Privacy policy</a>
       <a href="terms.html">Terms of use</a>
       <a href="/deals/">Deal lists</a>
       <a href="advertise.html">Advertise</a>
       <a href="mailto:steelgames.app@outlook.com">Contact us</a>
       <span>© 2026 Lonestar PPS, LLC</span>
     </div>
-    <p class="disclosure">As an Amazon Associate, SteelGames earns from qualifying purchases. SteelGames may also earn a commission from other stores and retailers linked on this site and in the app, at no extra cost to you.</p>
+    <p class="disclosure">As an Amazon Associate, SteelGames earns from qualifying purchases. SteelGames may also earn a commission from other stores and retailers linked on this site, at no extra cost to you.</p>
     <p>SteelGames is a product of Lonestar PPS, LLC, a veteran-owned company. SteelGames is not affiliated with Valve, Epic Games, Microsoft, Sony or Nintendo. Product and platform names belong to their owners.</p>
   </div>
 </footer>
 <script>
-// Live deals strip: lowest official-store prices from CheapShark, shown first on the page.
+// Live deals: one card per game at its lowest price. Other stores are on the game's own page.
 (async () => {
   const grid = document.getElementById('liveGrid'); if (!grid) return;
   const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   try {
     const [stores, deals] = await Promise.all([
       fetch('https://www.cheapshark.com/api/1.0/stores').then((r) => r.json()),
-      fetch('https://www.cheapshark.com/api/1.0/deals?onSale=1&sortBy=Deal%20Rating&pageSize=24&AAA=0&metacritic=0').then((r) => r.json())]);
+      fetch('https://www.cheapshark.com/api/1.0/deals?onSale=1&sortBy=Deal%20Rating&pageSize=60&AAA=0&metacritic=0').then((r) => r.json())]);
     const names = Object.fromEntries(stores.filter((s) => s.isActive).map((s) => [s.storeID, s.storeName]));
-    const rows = deals.filter((d) => names[d.storeID] && +d.salePrice > 0).slice(0, 12);
+    const byGame = new Map();
+    deals.filter((d) => names[d.storeID] && +d.salePrice > 0).forEach((d) => {
+      const g = byGame.get(d.gameID);
+      if (!g) byGame.set(d.gameID, { best: d, n: 1 });
+      else { g.n++; if (+d.salePrice < +g.best.salePrice) g.best = d; }
+    });
+    const rows = [...byGame.values()].slice(0, 24);
     if (!rows.length) throw new Error('empty');
-    grid.innerHTML = rows.map((d) => {
+    grid.innerHTML = rows.map(({ best: d, n }) => {
       const img = d.steamAppID && d.steamAppID !== '0' ? 'https://cdn.cloudflare.steamstatic.com/steam/apps/' + d.steamAppID + '/capsule_184x69.jpg' : d.thumb;
       const off = Math.round(+d.savings);
-      return '<a class="live-card" href="app/#/game/' + encodeURIComponent(d.gameID) + '"><img src="' + esc(img) + '" alt="" loading="lazy" onerror="this.src=\'' + esc(d.thumb) + '\'"><span style="min-width:0"><span class="t">' + esc(d.title) + '</span><span class="m">' + esc(names[d.storeID]) + '</span><span class="p">$' + (+d.salePrice).toFixed(2) + '<s>$' + (+d.normalPrice).toFixed(2) + '</s></span></span>' + (off > 0 ? '<span class="off">-' + off + '%</span>' : '') + '</a>';
+      const more = n > 1 ? ' · ' + (n - 1) + ' more ' + (n === 2 ? 'price' : 'prices') : '';
+      return '<a class="live-card" href="deal/?id=' + encodeURIComponent(d.gameID) + '"><img src="' + esc(img) + '" alt="" loading="lazy" onerror="this.src=\'' + esc(d.thumb) + '\'"><span style="min-width:0"><span class="t">' + esc(d.title) + '</span><span class="m">' + esc(names[d.storeID]) + more + '</span><span class="p">$' + (+d.salePrice).toFixed(2) + '<s>$' + (+d.normalPrice).toFixed(2) + '</s></span></span>' + (off > 0 ? '<span class="off">-' + off + '%</span>' : '') + '</a>';
     }).join('');
   } catch (e) {
-    grid.innerHTML = '<p style="color:var(--steel)">Open the app to see today\'s deals. <a href="app/">Check prices now</a></p>';
+    grid.innerHTML = '<p style="color:var(--steel)">Deals are loading slowly. <a href="deals/">Browse the deal lists</a></p>';
   }
 })();
 </script>
@@ -722,11 +374,10 @@ html { scroll-padding-top: 88px; }
 })();
 </script>
 <script>
-// Offer a one-tap install where the browser supports it.
-(() => { let ev; const b = document.getElementById('installBtn'); if (!b) return;
-  window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); ev = e; b.textContent = 'Install the free app'; b.setAttribute('href', '#get-app'); });
-  b.addEventListener('click', (e) => { if (ev) { e.preventDefault(); ev.prompt(); ev = null; } });
-})();
+// Old links to sections that moved: send them to the right page.
+(() => { const h = location.hash.slice(1); if (!h) return;
+  if (h === 'privacy') location.replace('/privacy.html');
+  else if (['help','get-app','features','about','community','guides','start'].includes(h)) location.replace('/get-app/#' + h); })();
 </script>
 </body>
 </html>

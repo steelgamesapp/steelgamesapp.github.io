@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name='impact-site-verification' value='a192b583-9f74-4bb6-a8f1-de2675b009ce'>
+<title>SteelGames app: compare PC game prices on your phone</title>
+<meta name="description" content="The free SteelGames app compares PC game prices across official stores, tracks price drops, and checks whether your PC can run a game. Veteran-owned.">
+<link rel="canonical" href="https://steelgamesapp.com/get-app/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: one dark steel column — header, hero with live app preview, feature grid, guides, platforms, privacy, footer. Same look as the app. */
+:root {
+  --bg: #0C0E11;
+  --surface: #15181D;
+  --raised: #1C2027;
+  --line: #262C35;
+  --line-strong: #2E3540;
+  --fg: #EDEFF2;
+  --muted: #9BA4AF;
+  --steel: #C3CBD5;
+  --accent: #FF7A1A;
+  --accent-soft: #FF9A4D;
+  --accent-ink: #1A0E04;
+  --verify: #8FB4E3;
+  --resale: #C4B5FD;
+  --pc: #FF8A3D;
+  --xbox: #5CCB72;
+  --ps: #6FA0FF;
+  --nin: #FF6B74;
+  --display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --body: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+}
+a { color: var(--accent-soft); }
+a:hover { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.15; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 640px) {
+  .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); }
+}
+
+/* Header */
+.site-header { border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); }
+.brand:hover { color: var(--fg); }
+.brand span { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: 2.5px; }
+.nav { display: flex; gap: 6px; flex-wrap: wrap; }
+.nav a { color: var(--steel); text-decoration: none; font-size: 14px; font-weight: 500; padding: 10px 12px; border-radius: 10px; }
+.nav a:hover { color: var(--fg); background: var(--surface); }
+
+/* Hero */
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 56px; align-items: center; padding-block: 72px 64px; }
+@media (max-width: 820px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 44px 40px; } }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); }
+.hero h1 { font-size: clamp(38px, 6vw, 64px); font-weight: 700; letter-spacing: -1px; margin-top: 14px; }
+.hero h1 .cut { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 3px; text-decoration-color: var(--accent); }
+.hero .lede { margin-top: 20px; max-width: 34em; font-size: 18px; color: var(--steel); }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px; border-radius: 12px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid transparent; }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: var(--accent-soft); color: var(--accent-ink); }
+.btn-ghost { border-color: var(--line-strong); color: var(--fg); background: var(--surface); }
+.btn-ghost:hover { color: var(--fg); background: var(--raised); }
+.status-note { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+/* App preview */
+.phone {
+  width: 320px; max-width: 100%; justify-self: center;
+  background: var(--bg); border: 1px solid var(--line-strong); border-radius: 36px;
+  padding: 22px 16px 18px; display: flex; flex-direction: column; gap: 12px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+}
+.phone-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+.deal { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.cover { width: 44px; height: 58px; flex-shrink: 0; border-radius: 8px; display: flex; align-items: flex-end; padding: 5px; font-family: var(--display); font-weight: 700; font-size: 12px; color: #FFFFFF; }
+.deal-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.deal-title { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.deal-store { font-size: 11px; color: var(--muted); }
+.deal-price { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.deal-price s { font-weight: 400; font-size: 12px; color: var(--muted); margin-left: 6px; }
+.tag { padding: 4px 7px; border-radius: 7px; background: var(--accent); color: var(--accent-ink); font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.deal.resold { background: #14121D; border: 1px dashed #4B4270; }
+.resold-chip { font-size: 9px; font-weight: 700; letter-spacing: 0.8px; color: var(--resale); background: #2A2347; padding: 2px 5px; border-radius: 4px; margin-left: 6px; vertical-align: 1px; }
+.section-mini { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
+
+/* Sections */
+.section { border-top: 1px solid var(--line); }
+.section .wrap { padding-block: 64px; display: flex; flex-direction: column; gap: 32px; }
+@media (max-width: 640px) { .section .wrap { padding-block: 44px; } }
+.section-head { display: flex; flex-direction: column; gap: 10px; max-width: 40em; }
+.section-head h2 { font-size: clamp(28px, 4vw, 38px); font-weight: 700; letter-spacing: -0.5px; }
+.section-head p { color: var(--steel); font-size: 17px; }
+
+.features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 720px) { .features { grid-template-columns: minmax(0, 1fr); } }
+.feature { padding: 24px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.feature h3 { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.feature p { color: var(--steel); font-size: 16px; }
+.feature.resale-card { background: #14121D; border: 1px dashed #4B4270; }
+.feature.resale-card h3 { color: var(--resale); }
+
+/* Guides */
+.guides { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 900px) { .guides { grid-template-columns: minmax(0, 1fr); } }
+.guide { display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: 18px; border: 1px solid var(--line); min-width: 0; }
+.guide .kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+.guide h3 { font-size: 20px; font-weight: 700; }
+.guide p { color: var(--steel); font-size: 16px; }
+.guide ul { margin: 0; padding-left: 18px; color: var(--steel); font-size: 16px; display: flex; flex-direction: column; gap: 6px; }
+
+/* Platforms */
+.platforms { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 720px) { .platforms { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.platform { padding: 18px; border-radius: 16px; border: 1px solid; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.platform strong { font-family: var(--display); font-size: 18px; }
+.platform span { font-size: 13px; color: var(--steel); }
+.p-pc { background: #1E150E; border-color: #4A2E16; } .p-pc strong { color: var(--pc); }
+.p-xbox { background: #0F1D14; border-color: #244A30; } .p-xbox strong { color: var(--xbox); }
+.p-ps { background: #0E1526; border-color: #243C68; } .p-ps strong { color: var(--ps); }
+.p-nin { background: #231114; border-color: #5A262C; } .p-nin strong { color: var(--nin); }
+
+/* Privacy */
+.policy { max-width: 44em; display: flex; flex-direction: column; gap: 18px; }
+.policy h3 { font-size: 18px; font-weight: 600; font-family: var(--body); }
+.policy p, .policy li { color: var(--steel); font-size: 16px; }
+.policy ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+
+.nav a.nav-cta { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.nav a.nav-cta:hover { background: var(--accent-soft); color: var(--accent-ink); }
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(12,14,17,0.92); backdrop-filter: blur(10px); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+html { scroll-padding-top: 88px; }
+@media (max-width: 640px) { .site-header { position: static; } html { scroll-padding-top: 0; } }
+
+/* Community */
+.community { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+@media (max-width: 820px) { .community { grid-template-columns: minmax(0, 1fr); } }
+.community-points { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.cpoint h3 { font-size: 18px; font-weight: 700; }
+.cpoint p { color: var(--steel); font-size: 16px; margin-top: 4px; }
+.thread { background: var(--surface); border: 1px solid var(--line-strong); border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.review { padding: 16px; border-radius: 14px; background: var(--raised); display: flex; flex-direction: column; gap: 8px; }
+.review p { font-size: 14px; color: var(--steel); }
+.who { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.avatar { width: 30px; height: 30px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #FFFFFF; flex-shrink: 0; }
+.name { font-size: 14px; font-weight: 600; }
+.badge-verified { font-size: 11px; font-weight: 700; color: var(--verify); border: 1px solid #3A5272; padding: 2px 7px; border-radius: 6px; }
+.stars { color: var(--accent); letter-spacing: 2px; font-size: 15px; }
+.chat { display: flex; flex-direction: column; gap: 12px; }
+.msg { display: flex; gap: 10px; align-items: flex-start; }
+.msg p { font-size: 14px; color: var(--steel); }
+.composer { display: flex; justify-content: space-between; align-items: center; min-height: 46px; padding: 0 6px 0 14px; border-radius: 12px; border: 1px solid var(--line-strong); color: var(--muted); font-size: 14px; }
+.composer .send { background: var(--raised); color: var(--fg); font-weight: 600; padding: 8px 14px; border-radius: 9px; font-size: 13px; }
+
+/* Get the app */
+.getapp-band { display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; padding: 36px; border-radius: 24px; background: var(--raised); border: 1px solid var(--line-strong); }
+@media (max-width: 640px) { .getapp-band { padding: 24px; } }
+.getapp-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.store-btn { display: inline-flex; align-items: center; gap: 12px; min-height: 58px; padding: 0 22px; border-radius: 14px; background: var(--fg); color: var(--bg); text-decoration: none; }
+.store-btn:hover { color: var(--bg); background: #FFFFFF; }
+.store-btn span { display: flex; flex-direction: column; font-family: var(--display); font-size: 20px; font-weight: 700; line-height: 1.1; }
+.store-btn small { font-family: var(--body); font-size: 11px; font-weight: 500; }
+
+/* Veteran badge */
+.vet-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 8px; border-radius: 999px; background: #121A26; border: 1px solid #2B3D57; color: #CFE0F5; font-size: 14px; font-weight: 600; }
+.vet-badge svg { flex-shrink: 0; }
+
+/* Start here hub */
+.hub { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 960px) { .hub { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .hub { grid-template-columns: minmax(0, 1fr); } }
+.hub-card { display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line-strong); text-decoration: none; color: var(--fg); min-width: 0; min-height: 100%; }
+.hub-card:hover { background: var(--raised); color: var(--fg); border-color: #3A4350; }
+.hub-card .hub-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--raised); }
+.hub-card h3 { font-size: 21px; font-weight: 700; }
+.hub-card p { color: var(--steel); font-size: 16px; flex: 1; }
+.hub-card .go { color: var(--accent-soft); font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; gap: 6px; }
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 32px; align-items: start; }
+@media (max-width: 820px) { .about { grid-template-columns: minmax(0, 1fr); } }
+.about-copy { display: flex; flex-direction: column; gap: 14px; color: var(--steel); font-size: 17px; }
+.promise { display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); }
+.promise h3 { font-size: 18px; }
+.promise ul { margin: 0; padding-left: 20px; color: var(--steel); font-size: 16px; display: flex; flex-direction: column; gap: 8px; }
+
+/* Help */
+.faq { display: flex; flex-direction: column; gap: 10px; max-width: 48em; }
+.faq details { border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.faq summary { cursor: pointer; padding: 18px 20px; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: center; min-height: 56px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--accent-soft); font-size: 22px; line-height: 1; flex-shrink: 0; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 14px; }
+.faq details p { padding: 0 20px 18px; color: var(--steel); font-size: 16px; }
+.help-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--line); background: #0A0C0F; }
+.site-footer .wrap { padding-block: 36px; display: flex; flex-direction: column; gap: 14px; font-size: 14px; color: var(--muted); }
+.footer-row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+.footer-links { display: flex; gap: 6px 16px; flex-wrap: wrap; }
+.disclosure { color: var(--steel); }
+.fake-select { user-select: all; color: var(--fg); }
+
+[hidden] { display: none !important; }
+.live { padding-block: 40px 8px; }
+.live-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; }
+.live-head h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.5px; }
+.live-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.live-links a { padding: 8px 14px; border-radius: 999px; border: 1px solid #343B45; color: var(--steel); text-decoration: none; font-size: 15px; font-weight: 600; }
+.live-links a:hover { color: var(--fg); border-color: var(--steel); }
+.live-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 20px; }
+.live-card { display: flex; gap: 12px; align-items: center; padding: 10px; border-radius: 14px; background: #14181E; border: 1px solid #2A313A; color: var(--fg); text-decoration: none; min-width: 0; }
+.live-card:hover { border-color: var(--accent); }
+.live-card img { width: 112px; height: 52px; object-fit: cover; border-radius: 8px; flex-shrink: 0; background: #1C2027; }
+.live-card .t { display: block; font-weight: 600; font-size: 15px; line-height: 1.25; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.live-card .m { display: block; color: var(--muted); font-size: 13px; }
+.live-card .p { font-family: var(--display); font-weight: 700; color: var(--fg); }
+.live-card .p s { color: var(--muted); font-weight: 400; margin-left: 6px; font-size: 13px; }
+.live-card .off { margin-left: auto; flex-shrink: 0; padding: 3px 8px; border-radius: 8px; background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 13px; }
+.live-sk { height: 74px; border-radius: 14px; background: #14181E; border: 1px solid #2A313A; }
+
+.plat-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.plat-tabs button { min-height: 42px; padding: 0 18px; border-radius: 999px; border: 1px solid #343B45; background: transparent; color: var(--steel); font: 600 15px var(--body); cursor: pointer; }
+.plat-tabs button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.con-card { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 14px; background: #14181E; border: 1px solid #2A313A; color: var(--fg); text-decoration: none; }
+.con-card:hover { border-color: var(--accent); }
+.con-card b { font-family: var(--display); font-size: 17px; }
+.con-card span { color: var(--muted); font-size: 14px; }
+</style>
+<meta name="google-adsense-account" content="ca-pub-3613204296597380">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
+<script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="SteelGames home">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span>STEELGAMES</span>
+    </a>
+    <nav class="nav" aria-label="Site">
+      <a href="/">Deals</a>
+      <a href="/gear.html">Shop gear</a>
+      <a href="https://discord.gg/ekrRaejc6">Discord</a>
+      <a href="#help">Help</a>
+      <a class="nav-cta" href="#get-app">Get the app</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="vet-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned and operated</span>
+        <h1 style="margin-top:18px">Stop paying <span class="cut">$59.99</span> for games that are on sale somewhere else.</h1>
+        <p class="lede">SteelGames checks the big game stores for you and shows the lowest price first. Tap it and you buy from that store the way you normally would. Gaming news and gear for your setup are in the same place.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#get-app"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Get the app</a>
+          <a class="btn btn-ghost" href="/app/">Check prices now</a>
+        </div>
+        <p class="status-note">Free. iPhone app coming soon to the App Store.</p>
+      </div>
+
+      <div class="phone" role="img" aria-label="Preview of the SteelGames app showing game deals from official stores and a separate key reseller listing">
+        <p class="phone-label">App preview · sample prices</p>
+        <p class="section-mini">Official stores</p>
+        <div class="deal">
+          <div class="cover" style="background:#3B5BDB">SO</div>
+          <div class="deal-info"><span class="deal-title">Starfall Odyssey</span><span class="deal-store">Steam · Official store</span><span class="deal-price">$14.99<s>$59.99</s></span></div>
+          <span class="tag">-75%</span>
+        </div>
+        <div class="deal">
+          <div class="cover" style="background:#A6461F">IT</div>
+          <div class="deal-info"><span class="deal-title">Ironvale Tactics</span><span class="deal-store">GOG · Official store</span><span class="deal-price">$9.99<s>$29.99</s></span></div>
+          <span class="tag">-67%</span>
+        </div>
+        <p class="section-mini">Key resellers</p>
+        <div class="deal resold">
+          <div class="cover" style="background:#3B5BDB">SO</div>
+          <div class="deal-info"><span class="deal-title">Starfall Odyssey<span class="resold-chip">RESOLD KEY</span></span><span class="deal-store">Steam key · reseller</span><span class="deal-price">$12.39</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="start" aria-labelledby="start-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Start here</p>
+        <h2 id="start-title">Everything SteelGames does, in one place</h2>
+        <p>Pick what you need. Each one is a single click away.</p>
+      </div>
+      <div class="hub">
+        <a class="hub-card" href="/app/">
+          <span class="hub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg></span>
+          <h3>Compare game prices</h3>
+          <p>See every official store's price for a game, side by side, and get a heads-up when it drops.</p>
+          <span class="go">Open the price checker <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="hub-card" href="/gear.html">
+          <span class="hub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg></span>
+          <h3>Shop gear</h3>
+          <p>Our picks for PC parts, chairs, desks, headsets, lighting and console accessories.</p>
+          <span class="go">Open the gear guide <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="hub-card" href="https://discord.gg/ekrRaejc6">
+          <span class="hub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          <h3>Join the community</h3>
+          <p>Talk deals, find people to play with, and share your setup on our free Discord server.</p>
+          <span class="go">Join on Discord <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="hub-card" href="#help">
+          <span class="hub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></span>
+          <h3>Get help</h3>
+          <p>Plain answers to common questions, and a real person if you need one.</p>
+          <span class="go">Read the help page <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="about">
+        <div class="about-copy">
+          <span class="vet-badge" style="align-self:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned</span>
+          <h2 id="about-title" style="font-size: clamp(28px, 4vw, 38px); color: var(--fg)">Built by a veteran who was tired of overpaying</h2>
+          <p>SteelGames is veteran-owned and run. It's the deal site we wanted for ourselves: straight answers, no tricks, and the lowest price shown first.</p>
+          <p>Service members and veterans also get a military discounts directory in the app and an optional Veteran badge in the community.</p>
+        </div>
+        <div class="promise">
+          <h3>Our promise</h3>
+          <ul>
+            <li>The cheapest price always shows first, even when it pays us nothing.</li>
+            <li>Every link says whether we earn a commission from it.</li>
+            <li>Resold keys are kept in their own clearly marked section.</li>
+            <li>We never see or store your card details.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2 id="features-title">What the app does for you</h2>
+        <p>SteelGames doesn't sell anything itself. It finds the best price and sends you to the store, where you pay the way you already do.</p>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg>See every store's price</h3>
+          <p>Every official store's price for a game, side by side. Set the price you want to pay and we'll tell you when it gets there.</p>
+        </article>
+        <article class="feature resale-card">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0M12 16v-4M12 8h.01"/></svg>Cheaper resold keys, clearly marked</h3>
+          <p>Some sites resell game codes for less. We show them in their own labeled section, so you always know which is which and who handles refunds.</p>
+        </article>
+        <article class="feature">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h20M4 8v12M20 8v12M8 8V5h8v3"/></svg>Gear for your setup</h3>
+          <p>PC parts, chairs, desks, lighting, headsets, microphones and console accessories, all in one place.</p>
+        </article>
+        <article class="feature">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5.1 4.8 1.3 7L12 17.8l-6.2 3.4 1.3-7L2 9.4l7-.9z"/></svg>Earn rewards</h3>
+          <p>Get Steel Points when you shop through SteelGames at eligible stores, and trade them for gift cards.</p>
+        </article>
+        <article class="feature">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Will it run on my PC?</h3>
+          <p>Tell us your graphics card and memory once. Every game then shows a simple yes or no, and what to upgrade if it's a no.</p>
+        </article>
+        <article class="feature">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg>Buy now or wait?</h3>
+          <p>A plain answer on every game, based on the lowest price it has ever been. No more guessing.</p>
+        </article>
+        <article class="feature">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Shop with friends</h3>
+          <p>Make a shared list with friends. When a game hits your price, everyone gets told, and buying together earns bonus points.</p>
+        </article>
+        <article class="feature">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg>Honest links</h3>
+          <p>Every Buy button says whether we earn from it. The cheapest price always comes first.</p>
+        </article>
+        <article class="feature">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg>See what you've saved</h3>
+          <p>A running total of how much you've saved this year compared with full price.</p>
+        </article>
+        <article class="feature">
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V16h8v-1.3A7 7 0 0 0 12 2z"/></svg>Setup planner and parents mode</h3>
+          <p>Plan a whole desk setup on a budget. Parents mode shows age ratings and content notes on every game.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="guides" aria-labelledby="guides-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Guides</p>
+        <h2 id="guides-title">Buy smarter before you buy</h2>
+        <p>Short, practical reads on getting the most out of your gaming budget.</p>
+      </div>
+      <div class="guides">
+        <article class="guide">
+          <p class="kicker" style="color: var(--resale)">Buying games</p>
+          <h3>Official store or key reseller?</h3>
+          <p>When you buy from Steam, Epic or GOG, the publisher gets paid and the store handles refunds. A key reseller sells an activation key it got somewhere else. You still play the game on the same launcher, and it's often cheaper.</p>
+          <ul>
+            <li>Check the key's region before you buy.</li>
+            <li>Read the reseller's refund policy, since the official store can't help with a reseller key.</li>
+            <li>Be careful with open marketplaces, where anyone can list keys.</li>
+          </ul>
+        </article>
+        <article class="guide">
+          <p class="kicker" style="color: var(--accent-soft)">Deals</p>
+          <h3>Is this sale actually good?</h3>
+          <p>A big percentage off doesn't always mean a low price. Some games go on sale every few weeks, and some list prices change before a sale starts.</p>
+          <ul>
+            <li>Compare today's price with the game's lowest price in the past year.</li>
+            <li>Watch for seasonal sales, which often bring the deepest cuts.</li>
+            <li>Set a price alert instead of buying at the first discount.</li>
+          </ul>
+        </article>
+        <article class="guide">
+          <p class="kicker" style="color: var(--steel)">Setup</p>
+          <h3>Building your first gaming desk</h3>
+          <p>Spend first on what you touch and sit in every day. A good chair and a monitor at eye level make long sessions more comfortable than any amount of RGB.</p>
+          <ul>
+            <li>Chair and desk height first, then the monitor.</li>
+            <li>A large mousepad gives you room for low-sensitivity aim.</li>
+            <li>Add lighting and a stream deck once the basics feel right.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="community" aria-labelledby="community-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Community</p>
+        <h2 id="community-title">Talk games with real players</h2>
+        <p>Join our free Discord server today. In the app, a free account lets you review games and chat on every game page.</p>
+      </div>
+      <div class="community">
+        <div class="community-points">
+          <div class="cpoint">
+            <h3>Reviews you can trust</h3>
+            <p>Rate a game and say what you thought. Verified Buyer badges show which reviewers bought the game through SteelGames.</p>
+          </div>
+          <div class="cpoint">
+            <h3>A chat room for every game</h3>
+            <p>Ask about performance, find people to play with, or get tips. Every game page has its own discussion.</p>
+          </div>
+          <div class="cpoint">
+            <h3>Comments on deals and news</h3>
+            <p>Tell others when a deal is worth it, or weigh in on the latest platform news.</p>
+          </div>
+          <div class="cpoint">
+            <h3>A friendly place to talk</h3>
+            <p>Report and block tools on every post, plus moderation, keep the conversation about games.</p>
+          </div>
+          <div class="help-actions">
+            <a class="btn btn-primary" href="https://discord.gg/ekrRaejc6">Join the Discord</a>
+            <a class="btn btn-ghost" href="#get-app">Get the app</a>
+          </div>
+        </div>
+
+        <div class="thread" role="img" aria-label="Preview of a game page discussion with a review and chat replies">
+          <p class="phone-label">Community preview · sample posts</p>
+          <div class="review">
+            <div class="who"><span class="avatar" style="background:#3B5BDB">MK</span><span class="name">mk_frames</span><span class="badge-verified">Verified Buyer</span></div>
+            <div class="stars" aria-hidden="true">★★★★☆</div>
+            <p>Runs great on a mid-range card. Picked it up at 75% off and it's easily worth full price.</p>
+          </div>
+          <div class="chat">
+            <div class="msg"><span class="avatar" style="background:#1F7A5B">JR</span><div><span class="name">jrod</span><p>Anyone know if the sale ends tonight?</p></div></div>
+            <div class="msg"><span class="avatar" style="background:#A6461F">TZ</span><div><span class="name">tz_plays</span><p>Steam says two more days. Set an alert if you're waiting for lower.</p></div></div>
+          </div>
+          <div class="composer"><span>Join the chat…</span><span class="send">Send</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section get-app" id="get-app" aria-labelledby="getapp-title">
+    <div class="wrap">
+      <div class="getapp-band">
+        <div class="section-head">
+          <p class="eyebrow">Get SteelGames</p>
+          <h2 id="getapp-title">Every price, every platform, in your pocket</h2>
+          <p>Use SteelGames on your phone today. Add the free web app to your home screen for price alerts, game night picks and your will-it-run check. The App Store version is coming soon.</p>
+        </div>
+        <div class="getapp-actions">
+          <a class="store-btn" href="#get-app" aria-label="SteelGames on the App Store, coming soon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+            <span><small>Coming soon on the</small>App Store</span>
+          </a>
+          <a class="btn btn-primary" href="/app/" id="installBtn">Open the free web app</a>
+          <p class="status-note" id="installHint">On iPhone: open the app in Safari, tap Share, then Add to Home Screen. On Android: tap the install prompt in Chrome.</p>
+          <a class="btn btn-ghost" href="https://discord.gg/ekrRaejc6">Join the Discord</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="platforms-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">News</p>
+        <h2 id="platforms-title">Updates from every platform</h2>
+        <p>Each platform gets its own section in the app's news feed, with every story linking back to its original publisher.</p>
+      </div>
+      <div class="platforms">
+        <div class="platform p-pc"><strong>PC</strong><span>Store news, sales and hardware</span></div>
+        <div class="platform p-xbox"><strong>Xbox</strong><span>Platform news and updates</span></div>
+        <div class="platform p-ps"><strong>PlayStation</strong><span>Platform news and updates</span></div>
+        <div class="platform p-nin"><strong>Nintendo</strong><span>Platform news and updates</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="help" aria-labelledby="help-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Help</p>
+        <h2 id="help-title">Common questions</h2>
+        <p>Tap a question to see the answer.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Does SteelGames sell games?</summary>
+          <p>No. We show you where a game is cheapest and send you to that store. You pay the store directly, the same way you normally would.</p>
+        </details>
+        <details>
+          <summary>Is it free?</summary>
+          <p>Yes. The website, the app and the Discord server are all free.</p>
+        </details>
+        <details>
+          <summary>How does SteelGames make money?</summary>
+          <p>Some store links pay us a small commission when you buy, at no extra cost to you. Every link is labeled, and the free app shows ads.</p>
+        </details>
+        <details>
+          <summary>What is a "resold key"?</summary>
+          <p>A code for a game sold by a third-party site instead of the official store. It's often cheaper, but refunds go through that site, not the official store. We always label these.</p>
+        </details>
+        <details>
+          <summary>Do I need an account?</summary>
+          <p>No. You can browse prices and gear without one. An account lets you set price alerts, earn points, write reviews and chat.</p>
+        </details>
+        <details>
+          <summary>How do I delete my account?</summary>
+          <p>To permanently delete your account, open the app and navigate to Account &gt; Delete Account. Your profile, posts, and points will be permanently removed.</p>
+        </details>
+        <details>
+          <summary>I need help from a person.</summary>
+          <p>Email us at <span class="fake-select">steelgames.app@outlook.com</span> or ask in the #app-help channel on our Discord. We read every message.</p>
+        </details>
+      </div>
+      <div class="help-actions">
+        <a class="btn btn-primary" href="mailto:steelgames.app@outlook.com">Email us</a>
+        <a class="btn btn-ghost" href="https://discord.gg/ekrRaejc6">Ask on Discord</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <span style="font-size:14px">STEELGAMES</span>
+      </a>
+      <span class="vet-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned and operated</span>
+    </div>
+    <div class="footer-links">
+      <a href="#get-app">Get the app</a>
+      <a href="/gear.html">Shop gear</a>
+      <a href="https://discord.gg/ekrRaejc6">Discord</a>
+      <a href="https://www.youtube.com/channel/UCxnxfOz2r4jsk6TTFB1Ar-Q" rel="noopener">YouTube</a>
+      <a href="#help">Help</a>
+      <a href="/privacy.html">Privacy policy</a>
+      <a href="/terms.html">Terms of use</a>
+      <a href="/deals/">Deal lists</a>
+      <a href="/advertise.html">Advertise</a>
+      <a href="mailto:steelgames.app@outlook.com">Contact us</a>
+      <span>© 2026 Lonestar PPS, LLC</span>
+    </div>
+    <p class="disclosure">As an Amazon Associate, SteelGames earns from qualifying purchases. SteelGames may also earn a commission from other stores and retailers linked on this site and in the app, at no extra cost to you.</p>
+    <p>SteelGames is a product of Lonestar PPS, LLC, a veteran-owned company. SteelGames is not affiliated with Valve, Epic Games, Microsoft, Sony or Nintendo. Product and platform names belong to their owners.</p>
+  </div>
+</footer>
+<script>
+// Offer a one-tap install where the browser supports it.
+(() => { let ev; const b = document.getElementById('installBtn'); if (!b) return;
+  window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); ev = e; b.textContent = 'Install the free app'; b.setAttribute('href', '#get-app'); });
+  b.addEventListener('click', (e) => { if (ev) { e.preventDefault(); ev.prompt(); ev = null; } });
+})();
+</script>
+</body>
+</html>
