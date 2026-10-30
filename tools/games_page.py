@@ -1,0 +1,184 @@
+"""Builds /games.html: a browsable catalog of PC games with categories, pictures and price stats."""
+import layout
+
+SITE = layout.SITE
+
+SCRIPT = r"""
+<script>
+(() => {
+  const API = 'https://www.cheapshark.com/api/1.0';
+  const $ = (s) => document.querySelector(s);
+  const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const money = (v) => '$' + (+v).toFixed(2);
+  const SC = { 'Steam': '#66C0F4', 'GreenManGaming': '#5CE08A', 'Fanatical': '#FF8A3D', 'GOG': '#B388FF', 'Epic Games Store': '#E8E8F0', 'Humble Store': '#FF5A5F', 'GameBillet': '#FFD43B', 'Gamesplanet': '#4DD0E1', 'GamersGate': '#FF7043', 'Voidu': '#F06292', 'Direct2Drive': '#9CCC65', 'IndieGala': '#FF5252', 'WinGameStore': '#4FC3F7' };
+
+  // Collections use store filters; genres search the store catalog for well-known titles and words in that genre.
+  const COLLECTIONS = [
+    { id: 'all', name: 'All games', c: '#FFB020', p: {} },
+    { id: 'sale', name: 'On sale now', c: '#FF6B8A', p: { onSale: 1 } },
+    { id: 'top', name: 'Top rated', c: '#5CE08A', p: { steamRating: 90, onSale: 1 } },
+    { id: 'u5', name: 'Under $5', c: '#66C0F4', p: { upperPrice: 5, lowerPrice: 0.01 } },
+    { id: 'free', name: 'Free', c: '#B388FF', p: { upperPrice: 0 } },
+    { id: 'new', name: 'New releases', c: '#4DD0E1', p: { sortBy: 'Release' } },
+  ];
+  const GENRES = [
+    { id: 'action', name: 'Action', c: '#FF8A3D', kw: ['action', 'assassin', 'hitman', 'ninja', 'batman', 'devil may cry'] },
+    { id: 'adventure', name: 'Adventure', c: '#FFD43B', kw: ['adventure', 'tomb raider', 'uncharted', 'legend of', 'quest', 'journey'] },
+    { id: 'rpg', name: 'RPG', c: '#B388FF', kw: ['rpg', 'witcher', 'elder scrolls', 'dragon age', 'fallout', 'final fantasy', 'baldur', 'divinity'] },
+    { id: 'shooter', name: 'Shooter', c: '#FF6B8A', kw: ['call of duty', 'doom', 'battlefield', 'far cry', 'wolfenstein', 'shooter', 'borderlands'] },
+    { id: 'strategy', name: 'Strategy', c: '#66C0F4', kw: ['strategy', 'civilization', 'total war', 'xcom', 'age of', 'europa', 'command'] },
+    { id: 'sim', name: 'Simulation', c: '#5CE08A', kw: ['simulator', 'farming', 'tycoon', 'sims', 'city', 'planet'] },
+    { id: 'racing', name: 'Racing', c: '#FF7043', kw: ['racing', 'forza', 'need for speed', 'grid', 'rally', 'dirt'] },
+    { id: 'sports', name: 'Sports', c: '#9CCC65', kw: ['football', 'fifa', 'nba', 'soccer', 'golf', 'madden', 'wwe'] },
+    { id: 'horror', name: 'Horror', c: '#E05A5A', kw: ['horror', 'resident evil', 'outlast', 'dead space', 'silent hill', 'zombie'] },
+    { id: 'puzzle', name: 'Puzzle', c: '#4DD0E1', kw: ['puzzle', 'portal', 'tetris', 'talos', 'witness'] },
+    { id: 'survival', name: 'Survival', c: '#A1887F', kw: ['survival', 'subnautica', 'dying light', 'forest', 'rust', 'raft'] },
+    { id: 'fighting', name: 'Fighting', c: '#F06292', kw: ['mortal kombat', 'street fighter', 'tekken', 'fighter', 'injustice'] },
+    { id: 'family', name: 'Family and co-op', c: '#FFCB5C', kw: ['lego', 'overcooked', 'kirby', 'party', 'co-op', 'minecraft'] },
+  ];
+  const ALL = [...COLLECTIONS, ...GENRES];
+  const SORTS = { rating: ['Deal Rating', 0], savings: ['Savings', 0], low: ['Price', 0], high: ['Price', 1], title: ['Title', 0], release: ['Release', 0], reviews: ['Reviews', 0] };
+  const st = { cat: 'all', q: '', sort: 'rating', store: '', max: '', page: 0, list: new Map(), more: true, token: 0, names: {}, low: new Map(), asked: new Set() };
+
+  const catsEl = $('#cats'), genresEl = $('#genres');
+  const mk = (list, el) => { el.innerHTML = list.map((c) => '<button type="button" style="--c:' + c.c + '" data-cat="' + c.id + '" aria-pressed="' + (c.id === st.cat) + '">' + esc(c.name) + '</button>').join(''); };
+  mk(COLLECTIONS, catsEl); mk(GENRES, genresEl);
+  const syncChips = () => document.querySelectorAll('[data-cat]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.cat === st.cat));
+  document.addEventListener('click', (e) => { const b = e.target.closest('[data-cat]'); if (!b) return; st.cat = b.dataset.cat; syncChips(); reset(); });
+
+  const params = (kw, page) => {
+    const cat = ALL.find((c) => c.id === st.cat);
+    const [sortBy, desc] = SORTS[st.sort];
+    const p = { pageSize: 60, pageNumber: page, sortBy, desc, ...(cat.p || {}) };
+    if (st.cat === 'new' && st.sort === 'rating') p.sortBy = 'Release';
+    if (kw) { p.title = kw; if (cat.kw) p.steamRating = 60; }
+    if (st.q) p.title = st.q;
+    if (st.store) p.storeID = st.store;
+    if (st.max !== '') p.upperPrice = st.max;
+    return Object.entries(p).map(([k, v]) => k + '=' + encodeURIComponent(v)).join('&');
+  };
+
+  const SORTFN = {
+    rating: (a, b) => (+b.dealRating) - (+a.dealRating), savings: (a, b) => (+b.savings) - (+a.savings),
+    low: (a, b) => (+a.salePrice) - (+b.salePrice), high: (a, b) => (+b.salePrice) - (+a.salePrice),
+    title: (a, b) => a.title.localeCompare(b.title), release: (a, b) => (+b.releaseDate) - (+a.releaseDate), reviews: (a, b) => (+b.steamRatingPercent) - (+a.steamRatingPercent),
+  };
+
+  const HEART = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6.6 5.4 5.4 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg>';
+  const CARTI = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.2a1 1 0 0 0 1 .8h9.1a1 1 0 0 0 1-.8L21 7H6"/></svg>';
+  const act = (d, store) => {
+    const sid = d.steamAppID && d.steamAppID !== '0' ? d.steamAppID : '';
+    const a = ' data-id="' + esc(d.gameID) + '" data-deal="' + esc(d.dealID) + '" data-title="' + esc(d.title) + '" data-thumb="' + esc(d.thumb) + '" data-steam="' + esc(sid) + '" data-store="' + esc(store) + '" data-price="' + esc(d.salePrice) + '" data-normal="' + esc(d.normalPrice) + '"';
+    return '<div class="gact"><button type="button" data-wish' + a + ' aria-pressed="false">' + HEART + '<span class="lab">Wishlist</span></button><button type="button" data-cart' + a + ' aria-pressed="false">' + CARTI + '<span class="lab">Add to cart</span></button></div>';
+  };
+  const card = (d, tag) => {
+    const sid = d.steamAppID && d.steamAppID !== '0' ? d.steamAppID : '';
+    const img = sid ? 'https://cdn.cloudflare.steamstatic.com/steam/apps/' + sid + '/header.jpg' : d.thumb;
+    const off = Math.round(+d.savings), store = st.names[d.storeID] || 'Store';
+    const free = +d.salePrice === 0, rate = +d.steamRatingPercent;
+    const html = '<a class="gwide" style="--store:' + (SC[store] || '#7B5CFF') + '" href="/deal/?id=' + encodeURIComponent(d.gameID) + '">' +
+      '<span class="pic"><img src="' + esc(img) + '" alt="' + esc(d.title) + ' cover art" loading="lazy" onerror="this.onerror=null;this.src=\'' + esc(d.thumb) + '\'">' + (off > 0 ? '<span class="off">-' + off + '%</span>' : '') + '</span>' +
+      '<span class="info"><span class="t">' + esc(d.title) + '</span>' +
+      '<span class="sub"><b>' + esc(store) + '</b>' + (tag ? '<span class="tag">' + esc(tag) + '</span>' : '') + (rate > 0 ? '<span>' + rate + '% positive</span>' : '') + '</span>' +
+      '<span class="stats"><span class="stat now"><small>Now</small><strong>' + (free ? 'Free' : money(d.salePrice)) + '</strong></span>' +
+      '<span class="stat hi" title="Usual full price"><small>Highest</small><strong>' + money(Math.max(+d.normalPrice, +d.salePrice)) + '</strong></span>' +
+      '<span class="stat lo pending" data-low="' + esc(d.gameID) + '" title="Lowest price ever recorded"><small>Lowest ever</small><strong>...</strong></span></span></span></a>';
+    return '<div class="gw">' + html + act(d, store) + '</div>';
+  };
+
+  const grid = $('#grid'), status = $('#status'), moreBtn = $('#more');
+  const skeleton = (n) => Array.from({ length: n }, () => '<div class="gwide sk"></div>').join('');
+
+  const render = () => {
+    const cat = ALL.find((c) => c.id === st.cat);
+    const rows = [...st.list.values()].sort(SORTFN[st.sort]);
+    grid.innerHTML = rows.length ? rows.map((d) => card(d, cat.kw ? cat.name : '')).join('') : '<p class="empty">No games match those filters. Try another category or clear the search.</p>';
+    status.textContent = rows.length ? 'Showing ' + rows.length + ' games' + (st.q ? ' for "' + st.q + '"' : '') + '.' : '';
+    moreBtn.hidden = !st.more || !rows.length;
+    fillLow(rows);
+  };
+
+  const fillLow = async (rows) => {
+    const need = rows.map((d) => d.gameID).filter((id) => !st.asked.has(id));
+    need.forEach((id) => st.asked.add(id));
+    for (let i = 0; i < need.length; i += 25) {
+      const ids = need.slice(i, i + 25);
+      try {
+        const j = await (await fetch(API + '/games?ids=' + ids.join(','))).json();
+        ids.forEach((id) => { const g = j[id]; if (g && g.cheapestPriceEver) st.low.set(id, +g.cheapestPriceEver.price); });
+      } catch (e) { ids.forEach((id) => st.asked.delete(id)); }
+      paintLow();
+    }
+  };
+  const paintLow = () => document.querySelectorAll('[data-low]').forEach((el) => {
+    const v = st.low.get(el.dataset.low); if (v === undefined) return;
+    el.classList.remove('pending'); el.querySelector('strong').textContent = v === 0 ? 'Free' : money(v);
+  });
+
+  const load = async () => {
+    const my = ++st.token, cat = ALL.find((c) => c.id === st.cat);
+    const kws = st.q || !cat.kw ? [''] : cat.kw;
+    moreBtn.disabled = true; status.textContent = 'Loading games...';
+    if (!st.list.size) grid.innerHTML = skeleton(6);
+    try {
+      const res = await Promise.all(kws.map((k) => fetch(API + '/deals?' + params(k, st.page)).then((r) => r.json()).catch(() => [])));
+      if (my !== st.token) return;
+      let got = 0;
+      res.flat().forEach((d) => {
+        if (!st.names[d.storeID]) return;
+        if (st.cat === 'free' ? +d.salePrice !== 0 : +d.salePrice === 0 && st.cat !== 'all') return;
+        got++;
+        const old = st.list.get(d.gameID);
+        if (!old || +d.salePrice < +old.salePrice) st.list.set(d.gameID, d);
+      });
+      st.more = res.some((r) => r.length >= 60) && got > 0;
+      st.page++; render();
+    } catch (e) { grid.innerHTML = '<p class="empty">Games are loading slowly. Please try again in a moment.</p>'; }
+    moreBtn.disabled = false;
+  };
+  const reset = () => { st.list = new Map(); st.page = 0; st.more = true; st.token++; load(); };
+
+  moreBtn.addEventListener('click', load);
+  let t; $('#q').addEventListener('input', (e) => { clearTimeout(t); t = setTimeout(() => { st.q = e.target.value.trim(); reset(); }, 350); });
+  $('#sort').addEventListener('change', (e) => { st.sort = e.target.value; reset(); });
+  $('#store').addEventListener('change', (e) => { st.store = e.target.value; reset(); });
+  $('#max').addEventListener('change', (e) => { st.max = e.target.value; reset(); });
+
+  const h = new URLSearchParams(location.hash.slice(1)).get('cat'); if (h && ALL.some((c) => c.id === h)) { st.cat = h; syncChips(); }
+  fetch(API + '/stores').then((r) => r.json()).then((s) => {
+    s.filter((x) => x.isActive).forEach((x) => { st.names[x.storeID] = x.storeName; });
+    $('#store').insertAdjacentHTML('beforeend', s.filter((x) => x.isActive).map((x) => '<option value="' + x.storeID + '">' + esc(x.storeName) + '</option>').join(''));
+    load();
+  }).catch(() => { grid.innerHTML = '<p class="empty">Games are loading slowly. Please try again in a moment.</p>'; });
+})();
+</script>
+"""
+
+
+def build():
+    return (layout.head("All PC Games: prices, categories and lowest price ever | SteelGames",
+                        "Browse every PC game by category with its current price, highest price and lowest price ever. Search, filter by store and find the best deal.",
+                        f"{SITE}/games.html")
+            + layout.header("games")
+            + """<main>
+<section class="hero"><div class="wrap">
+<p class="eyebrow">Every PC game, one place</p>
+<h1>All games</h1>
+<p class="lede">Browse by category, then see each game's current price, its highest price and the lowest price it has ever hit.</p>
+</div></section>
+<section class="block"><div class="wrap">
+<div class="cat-head"><span class="cat-label">Collections</span><div class="chips cats" id="cats"></div></div>
+<div class="cat-head"><span class="cat-label">Categories</span><div class="chips cats" id="genres"></div></div>
+<div class="tools">
+  <label class="search">Search<input id="q" type="search" placeholder="Search any game, like Elden Ring" autocomplete="off"></label>
+  <label>Sort by<select id="sort"><option value="rating">Best deals</option><option value="savings">Biggest discount</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="title">Name: A to Z</option><option value="release">Newest</option><option value="reviews">Best reviewed</option></select></label>
+  <label>Store<select id="store"><option value="">All stores</option></select></label>
+  <label>Price<select id="max"><option value="">Any price</option><option value="5">Under $5</option><option value="10">Under $10</option><option value="20">Under $20</option><option value="30">Under $30</option><option value="60">Under $60</option></select></label>
+</div>
+<p class="status" id="status" aria-live="polite"></p>
+<div class="wide-grid" id="grid" aria-live="polite"></div>
+<div class="more"><button class="btn btn-ghost" id="more" type="button" hidden>Show more games</button></div>
+<p class="fine">Highest is the usual full price. Lowest ever is the lowest price recorded across the stores we track. Prices can change at any time.</p>
+</div></section>
+</main>
+""" + SCRIPT + layout.footer())
