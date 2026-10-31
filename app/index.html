@@ -119,6 +119,12 @@ main:focus { outline: none; }
 /* News */
 .news-item { display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; color: var(--fg); }
 .news-item h3 { font-family: var(--body); font-size: 17px; font-weight: 600; line-height: 1.35; }
+/* News thumbnails */
+.news-item.has-thumb { gap: 12px; }
+.news-thumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; background: var(--raised); display: block; }
+.news-ph { display: grid; place-items: center; background: radial-gradient(120% 120% at 30% 20%, rgba(255,122,26,.18), rgba(255,122,26,.03) 60%), #1A1E25; border: 1px solid rgba(255,122,26,.22); }
+.news-body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+@media (min-width: 640px) { .news-item.has-thumb { flex-direction: row; align-items: flex-start; } .news-item.has-thumb .news-thumb { width: 220px; flex-shrink: 0; } }
 .tag-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); flex-wrap: wrap; }
 .plat { padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 700; border: 1px solid; }
 .p-pc { color: #FF8A3D; background: #1E150E; border-color: #4A2E16; }
@@ -851,14 +857,20 @@ async function screenNews() {
   view.querySelectorAll('.chip').forEach((b) => b.addEventListener('click', () => { newsFilter = b.dataset.p; view.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', c === b)); renderNews(); }));
   renderNews();
 }
+const NEWS_PH = '<div class="news-thumb news-ph" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 32 32"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg></div>';
+// Article picture from the news feed; falls back to a SteelGames tile if a story has none or the picture fails to load.
+function newsThumb(i) {
+if (!i.image) return NEWS_PH;
+return '<img class="news-thumb" src="' + esc(i.image) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.outerHTML=NEWS_PH">';
+}
 async function renderNews() {
   const box = document.getElementById('newsList'); if (!box) return;
   try {
     const items = (await webData('news=1')).filter((i) => newsFilter === 'all' || i.platform === newsFilter).slice(0, 60);
     box.innerHTML = items.length ? `<div class="stack">${items.map((i) => `
-      <a class="news-item" href="${esc(i.link)}" target="_blank" rel="noopener">
+      <a class="news-item has-thumb" href="${esc(i.link)}" target="_blank" rel="noopener">${newsThumb(i)}<div class="news-body">
         <div class="tag-row"><span class="plat p-${esc(i.platform)}">${esc(PLATFORM_NAMES[i.platform] || i.platform)}</span><span>${esc(i.source)}</span>${i.date ? `<span>· ${ago(i.date)}</span>` : ''}</div>
-        <h3>${esc(i.title)}</h3></a>`).join('')}</div>` : '<p class="empty">No headlines right now.</p>';
+        <h3>${esc(i.title)}</h3></div></a>`).join('')}</div>` : '<p class="empty">No headlines right now.</p>';
   } catch { box.innerHTML = errorBox("Couldn't load the news. Check your connection and try again."); }
 }
 
