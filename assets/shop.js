@@ -44,6 +44,7 @@
   /* ---------- header icons ---------- */
   const HEART = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6.6 5.4 5.4 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg>';
   const CART = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.2a1 1 0 0 0 1 .8h9.1a1 1 0 0 0 1-.8L21 7H6"/></svg>';
+  const SEARCH_ICON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>';
   const counts = () => {
     const w = SG.wishlist().length, c = SG.cart().length;
     document.querySelectorAll('[data-count="wish"]').forEach((e) => { e.textContent = w; e.hidden = !w; });
@@ -54,7 +55,9 @@
     const cta = n.querySelector('.nav-cta');
     const mk = (href, icon, label, key) => { const a = document.createElement('a'); a.className = 'nav-ico'; a.href = href; a.setAttribute('aria-label', label); a.innerHTML = icon + '<span class="cnt" data-count="' + key + '" hidden>0</span>'; return a; };
     const a1 = mk('/wishlist.html', HEART, 'Wishlist', 'wish'), a2 = mk('/cart.html', CART, 'Cart', 'cart');
-    if (cta) { n.insertBefore(a1, cta); n.insertBefore(a2, cta); } else { n.appendChild(a1); n.appendChild(a2); }
+    const a0 = document.createElement('a'); a0.className = 'nav-ico nav-search'; a0.href = '/games.html'; a0.setAttribute('aria-label', 'Search games'); a0.setAttribute('aria-expanded', 'false'); a0.innerHTML = SEARCH_ICON;
+    a0.addEventListener('click', (e) => { e.preventDefault(); SG.openSearch(); });
+    if (cta) { n.insertBefore(a0, cta); n.insertBefore(a1, cta); n.insertBefore(a2, cta); } else { n.appendChild(a0); n.appendChild(a1); n.appendChild(a2); }
     if (location.pathname.startsWith('/wishlist')) a1.setAttribute('aria-current', 'page');
     if (location.pathname.startsWith('/cart')) a2.setAttribute('aria-current', 'page');
     counts();
@@ -182,6 +185,53 @@
     const o = e.target.closest('[data-own]'); if (!o) return;
     e.preventDefault(); const on = SG.toggleOwned(itemOf(o));
     SG.toast(on ? 'Added to your collection.' : 'Removed from your collection.', on ? '/collection.html' : '', 'View');
+  });
+
+  /* ---------- site-wide game search ---------- */
+  const sstyle = document.createElement('style');
+  sstyle.textContent = '.sg-search{position:relative;background:rgba(28,16,80,.98);border-bottom:1px solid #4A37A8;z-index:60}.sg-search[hidden]{display:none}.sg-search .box{max-width:1080px;margin:0 auto;padding:12px 16px;position:relative}' +
+    '.sg-search input{width:100%;min-height:48px;padding:0 16px;border-radius:12px;border:1px solid #4A37A8;background:#120A2B;color:#fff;font:17px Inter,system-ui,sans-serif}.sg-search input:focus-visible{outline:2px solid #FFB020;outline-offset:2px}' +
+    '.sg-res{list-style:none;margin:8px 0 0;padding:0;border-radius:12px;background:#1E1450;border:1px solid #3B2B8A;overflow:hidden;max-height:min(60vh,440px);overflow-y:auto}.sg-res:empty{display:none}' +
+    '.sg-res li a,.sg-res li.msg{display:flex;align-items:center;gap:12px;padding:10px 12px;color:#fff;text-decoration:none;font:600 15px Inter,system-ui,sans-serif}.sg-res li.msg{color:#BDB4EA;font-weight:500}' +
+    '.sg-res li a:hover,.sg-res li a[aria-selected="true"]{background:#2A1C6B}.sg-res img{width:92px;height:43px;object-fit:cover;border-radius:6px;background:#0E0820;flex:none}.sg-res .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sg-res .p{color:#FFCB5C;font-weight:700;white-space:nowrap}' +
+    '@media (max-width:480px){.sg-res img{width:64px;height:30px}}';
+  document.head.appendChild(sstyle);
+  let sbar, sinput, slist, stoken = 0, stimer, sactive = -1;
+  const sbuild = () => {
+    if (sbar) return;
+    const header = document.querySelector('.site-header'); if (!header) return;
+    sbar = document.createElement('div'); sbar.className = 'sg-search'; sbar.hidden = true; sbar.setAttribute('role', 'search');
+    sbar.innerHTML = '<div class="box"><input type="search" id="sg-q" placeholder="Search any game, like Elden Ring" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="sg-res" aria-label="Search games"><ul class="sg-res" id="sg-res" role="listbox" aria-live="polite"></ul></div>';
+    header.insertAdjacentElement('afterend', sbar);
+    sinput = sbar.querySelector('input'); slist = sbar.querySelector('ul');
+    sinput.addEventListener('input', () => { clearTimeout(stimer); stimer = setTimeout(sfind, 250); });
+    sinput.addEventListener('keydown', (e) => {
+      const items = [...slist.querySelectorAll('a')];
+      if (e.key === 'Escape') { SG.closeSearch(); return; }
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { if (!items.length) return; e.preventDefault(); sactive = (sactive + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length; items.forEach((a, i) => a.setAttribute('aria-selected', i === sactive)); items[sactive].scrollIntoView({ block: 'nearest' }); }
+      if (e.key === 'Enter') { const a = items[sactive >= 0 ? sactive : 0]; if (a) { e.preventDefault(); location.href = a.href; } }
+    });
+    document.addEventListener('click', (e) => { if (sbar && !sbar.hidden && !e.target.closest('.sg-search') && !e.target.closest('.nav-search')) SG.closeSearch(); });
+  };
+  const sfind = async () => {
+    const q = sinput.value.trim(), tok = ++stoken; sactive = -1;
+    if (q.length < 2) { slist.innerHTML = ''; sinput.setAttribute('aria-expanded', 'false'); return; }
+    slist.innerHTML = '<li class="msg">Searching...</li>';
+    try {
+      const list = await (await fetch(API + '/games?limit=8&title=' + encodeURIComponent(q))).json();
+      if (tok !== stoken) return;
+      const esc = (t) => String(t == null ? '' : t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      slist.innerHTML = list.length ? list.map((g) => {
+        const art = SG.art({ steam: g.steamAppID, thumb: g.thumb });
+        return '<li role="presentation"><a role="option" aria-selected="false" href="/deal/?id=' + encodeURIComponent(g.gameID) + '"><img src="' + esc(art) + '" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'' + esc(g.thumb) + '\'"><span class="t">' + esc(g.external) + '</span><span class="p">from ' + money(g.cheapest) + '</span></a></li>';
+      }).join('') : '<li class="msg">No games found for "' + esc(q) + '". Try fewer words.</li>';
+      sinput.setAttribute('aria-expanded', list.length ? 'true' : 'false');
+    } catch (e) { if (tok === stoken) slist.innerHTML = '<li class="msg">Search is busy right now. Try again in a moment.</li>'; }
+  };
+  SG.openSearch = () => { sbuild(); if (!sbar) { location.href = '/games.html'; return; } sbar.hidden = false; document.querySelectorAll('.nav-search').forEach((a) => a.setAttribute('aria-expanded', 'true')); sinput.focus(); sinput.select(); };
+  SG.closeSearch = () => { if (!sbar) return; sbar.hidden = true; document.querySelectorAll('.nav-search').forEach((a) => a.setAttribute('aria-expanded', 'false')); };
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey && !/^(INPUT|TEXTAREA|SELECT)$/.test((e.target.tagName || '')) && !e.target.isContentEditable) { e.preventDefault(); SG.openSearch(); }
   });
 
   const start = () => { nav(); sync(); setTimeout(alertCheck, 1500); };
