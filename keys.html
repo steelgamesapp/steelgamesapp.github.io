@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Game key stores and PC software deals | SteelGames</title>
+<meta name="description" content="Compare PC game key resellers, see live key deals with lowest-ever prices, and find Windows, Office and security software. Includes a guide to buying keys safely.">
+<link rel="canonical" href="https://steelgamesapp.com/keys.html">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/sg.css">
+<meta name="google-adsense-account" content="ca-pub-3613204296597380">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
+<script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script defer src="/assets/sg.js"></script>
+</head>
+<body>
+<div id="sg-header"></div>
+<main class="wrap">
+<section class="hero">
+<h1>Keys &amp; Software</h1>
+<p>Key stores often undercut the big launchers. Here are 12 resellers, labeled by how they work, with live numbers where their prices are available, then software deals for your PC.</p>
+</section>
+<section aria-labelledby="h-shops"><h2 id="h-shops">Key resellers</h2>
+<div class="shops" id="shops" style="margin-top:12px"></div>
+</section>
+<section aria-labelledby="h-deals"><h2 id="h-deals">Best key deals right now</h2>
+<p class="muted" style="margin:6px 0 12px">Cheapest current listing per game from the key stores above that share live prices.</p>
+<div class="grid" id="grid"><div class="empty">Loading deals...</div></div>
+</section>
+<section aria-labelledby="h-sw"><h2 id="h-sw">Software</h2>
+<p class="muted" style="margin:6px 0 12px">These link to Amazon search results. Compare editions and sellers before you buy.</p>
+<div class="sw" id="sw"></div>
+</section>
+<section class="guide" aria-labelledby="h-safe"><h2 id="h-safe">Buying keys safely</h2>
+<ul>
+<li><b>Prefer authorized retailers.</b> Stores labeled authorized work directly with publishers, so keys are far less likely to be revoked.</li>
+<li><b>Treat marketplaces with care.</b> On a marketplace, individual sellers list the keys. Prices can be low, but quality depends on the seller, so check seller ratings and the refund terms.</li>
+<li><b>Check the region.</b> Some keys only activate in certain countries. Read the product page before you pay.</li>
+<li><b>Check the platform.</b> Make sure the key is for Steam, Epic, GOG or the launcher you actually use.</li>
+<li><b>Redeem quickly.</b> Redeem a key soon after purchase so any problem is covered by the store's refund window.</li>
+<li><b>Pay with protection.</b> A card or PayPal gives you a dispute route if a key fails.</li>
+<li><b>Compare to the official price.</b> If a key is far below its lowest price ever, be skeptical.</li>
+</ul>
+</section>
+</main>
+<div id="sg-footer"></div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+const E = SG.esc;
+// type: auth = authorized retailer, key = key store, market = marketplace. cs = name in the price service (null = no live data).
+const SHOPS = [
+{ n: 'Fanatical', t: 'auth', cs: 'Fanatical', url: 'https://www.fanatical.com/', d: 'Official keys and bundles from publishers and authorized distributors. Strong on bundles.' },
+{ n: 'Green Man Gaming', t: 'auth', cs: 'GreenManGaming', url: 'https://www.greenmangaming.com/', d: 'Authorized reseller with a loyalty program and frequent publisher sales.' },
+{ n: 'Humble Store', t: 'auth', cs: 'Humble Store', url: 'https://www.humblebundle.com/store', d: 'Steam keys and DRM-free games. Part of each sale supports charity.' },
+{ n: 'GamersGate', t: 'auth', cs: 'GamersGate', url: 'https://www.gamersgate.com/', d: 'Long-running digital store with a large catalog of PC games and DLC.' },
+{ n: 'Gamesplanet', t: 'auth', cs: 'Gamesplanet', url: 'https://us.gamesplanet.com/', d: 'Authorized store with clear regional pricing and strong strategy and simulation lists.' },
+{ n: 'GameBillet', t: 'key', cs: 'GameBillet', url: 'https://www.gamebillet.com/', d: 'Key store that often sits below the launchers on newer releases.' },
+{ n: 'IndieGala', t: 'key', cs: 'IndieGala', url: 'https://www.indiegala.com/', d: 'Indie-focused store known for low-priced bundles and cheap singles.' },
+{ n: 'DreamGame', t: 'key', cs: 'DreamGame', url: 'https://dreamgame.com/', d: 'Key store with deep discounts on PC games and software.' },
+{ n: 'WinGameStore', t: 'key', cs: 'WinGameStore', url: 'https://www.wingamestore.com/', d: 'Keys and downloads with a mix of recent and classic PC games.' },
+{ n: 'CDKeys', t: 'key', cs: null, url: 'https://www.cdkeys.com/', d: 'Large key store. Live prices are not available here, so open the site to compare.' },
+{ n: 'Kinguin', t: 'market', cs: null, url: 'https://www.kinguin.net/', d: 'Marketplace where independent sellers list keys. Low prices, so check the seller and refund terms.' },
+{ n: 'Eneba', t: 'market', cs: null, url: 'https://www.eneba.com/', d: 'Marketplace for keys from many sellers. Compare seller ratings and region before you buy.' }
+];
+const TYPE = { auth: ['Authorized retailer', ''], key: ['Key store', 'key'], market: ['Marketplace', 'market'] };
+const colorFor = {};
+document.getElementById('shops').innerHTML = SHOPS.map((s, i) =>
+'<article class="shop" id="shop' + i + '"><span class="tag ' + TYPE[s.t][1] + '">' + TYPE[s.t][0] + '</span><h3>' + E(s.n) + '</h3><p>' + E(s.d) + '</p>'
++ '<div class="stat" data-stat>' + (s.cs ? 'Loading live prices...' : 'No live data. Links straight to the store.') + '</div>'
++ '<a class="btn btn-primary" href="' + E(s.url) + '" target="_blank" rel="sponsored noopener">Visit ' + E(s.n) + '</a></article>').join('');
+SG.api('stores').then(async (list) => {
+const byName = Object.fromEntries(list.filter((s) => s.isActive).map((s) => [s.storeName, s.storeID]));
+const liveIds = [];
+await Promise.all(SHOPS.map(async (s, i) => {
+const el = document.querySelector('#shop' + i + ' [data-stat]');
+if (!s.cs) return;
+const id = byName[s.cs];
+if (!id) { el.textContent = 'No live data. Links straight to the store.'; return; }
+liveIds.push(id);
+document.getElementById('shop' + i).style.setProperty('--store', SG.STORE_COLORS[id] || '#7B5CFF');
+try {
+const deals = await SG.api('deals', { storeID: id, onSale: 1, pageSize: 60, sortBy: 'Savings' });
+if (!deals.length) { el.textContent = 'No discounted games found right now.'; return; }
+const avg = Math.round(deals.reduce((a, d) => a + (+d.savings || 0), 0) / deals.length);
+const top = deals.reduce((a, d) => (+d.salePrice < +a.salePrice ? d : a), deals[0]);
+el.textContent = deals.length + (deals.length >= 60 ? '+' : '') + ' games on sale · average ' + avg + '% off · from ' + SG.money(top.salePrice);
+} catch (e) { el.textContent = 'Live prices unavailable right now.'; }
+}));
+try {
+const deals = await SG.api('deals', { storeID: liveIds.join(','), onSale: 1, sortBy: 'Deal Rating', pageSize: 24 });
+await SG.render(document.getElementById('grid'), deals);
+} catch (e) { document.getElementById('grid').innerHTML = '<div class="empty">Could not load deals right now.</div>'; }
+}).catch(() => { document.getElementById('grid').innerHTML = '<div class="empty">Could not load deals right now.</div>'; });
+const SW = [['W', 'Windows 11', 'Windows 11 Pro'], ['O', 'Microsoft Office', 'Microsoft Office Home 2024'], ['S', 'Antivirus and security', 'antivirus internet security 1 year'],
+['V', 'VPN', 'VPN subscription'], ['B', 'Backup and cloud', 'external hard drive backup software'], ['U', 'PC utilities', 'PC utility software'],
+['C', 'Creative tools', 'video editing software'], ['D', 'Driver and PC tune-up', 'PC tune up software']];
+document.getElementById('sw').innerHTML = SW.map((s) => '<article class="shop"><div class="ico" aria-hidden="true">' + s[0] + '</div><h3>' + E(s[1]) + '</h3>'
++ '<a class="btn" href="https://www.amazon.com/s?k=' + encodeURIComponent(s[2]).replace(/%20/g, '+') + '&tag=' + SG.AMAZON_TAG + '" target="_blank" rel="sponsored nofollow noopener">See options on Amazon</a></article>').join('');
+});
+</script>
+</body>
+</html>
