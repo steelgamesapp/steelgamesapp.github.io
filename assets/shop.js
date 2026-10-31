@@ -196,7 +196,8 @@
     '.sg-res li a:hover,.sg-res li a[aria-selected="true"]{background:#2A1C6B}.sg-res img{width:92px;height:43px;object-fit:cover;border-radius:6px;background:#0E0820;flex:none}.sg-res .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sg-res .p{color:#FFCB5C;font-weight:700;white-space:nowrap}' +
     '@media (max-width:480px){.sg-res img{width:64px;height:30px}}';
   document.head.appendChild(sstyle);
-  let sbar, sinput, slist, stoken = 0, stimer, sactive = -1;
+  let sbar, sinput, slist, stoken = 0, stimer, sactive = -1, tracked = null;
+  const loadTracked = () => { if (tracked) return; tracked = {}; fetch('/game/tracked.json').then((r) => r.json()).then((j) => { tracked = j || {}; }).catch(() => {}); };
   const sbuild = () => {
     if (sbar) return;
     const header = document.querySelector('.site-header'); if (!header) return;
@@ -223,12 +224,12 @@
       const esc = (t) => String(t == null ? '' : t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
       slist.innerHTML = list.length ? list.map((g) => {
         const art = SG.art({ steam: g.steamAppID, thumb: g.thumb });
-        return '<li role="presentation"><a role="option" aria-selected="false" href="/deal/?id=' + encodeURIComponent(g.gameID) + '"><img src="' + esc(art) + '" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'' + esc(g.thumb) + '\'"><span class="t">' + esc(g.external) + '</span><span class="p">from ' + money(g.cheapest) + '</span></a></li>';
+        return '<li role="presentation"><a role="option" aria-selected="false" href="' + (tracked && tracked[g.gameID] ? '/game/' + tracked[g.gameID] + '/' : '/deal/?id=' + encodeURIComponent(g.gameID)) + '"><img src="' + esc(art) + '" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'' + esc(g.thumb) + '\'"><span class="t">' + esc(g.external) + '</span><span class="p">from ' + money(g.cheapest) + '</span></a></li>';
       }).join('') : '<li class="msg">No games found for "' + esc(q) + '". Try fewer words.</li>';
       sinput.setAttribute('aria-expanded', list.length ? 'true' : 'false');
     } catch (e) { if (tok === stoken) slist.innerHTML = '<li class="msg">Search is busy right now. Try again in a moment.</li>'; }
   };
-  SG.openSearch = () => { sbuild(); if (!sbar) { location.href = '/games.html'; return; } sbar.hidden = false; document.querySelectorAll('.nav-search').forEach((a) => a.setAttribute('aria-expanded', 'true')); sinput.focus(); sinput.select(); };
+  SG.openSearch = () => { sbuild(); if (!sbar) { location.href = '/games.html'; return; } loadTracked(); sbar.hidden = false; document.querySelectorAll('.nav-search').forEach((a) => a.setAttribute('aria-expanded', 'true')); sinput.focus(); sinput.select(); };
   SG.closeSearch = () => { if (!sbar) return; sbar.hidden = true; document.querySelectorAll('.nav-search').forEach((a) => a.setAttribute('aria-expanded', 'false')); };
   document.addEventListener('keydown', (e) => {
     if (e.key === '/' && !e.ctrlKey && !e.metaKey && !e.altKey && !/^(INPUT|TEXTAREA|SELECT)$/.test((e.target.tagName || '')) && !e.target.isContentEditable) { e.preventDefault(); SG.openSearch(); }

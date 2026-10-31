@@ -13,6 +13,7 @@ import military_page
 import history
 import waitometer
 import medals
+import steam_meta
 import shop_pages
 import deal_page
 from datetime import datetime, timezone
@@ -273,17 +274,22 @@ def game_page(gid, g, stores, today):
     slug = f"{slugify(title)}-{gid}"
     url = f"{SITE}/game/{slug}/"
     rows = "".join(f"<tr><td>{e(stores[str(d['storeID'])])}</td><td>{money(d['price'])}</td><td class=\"was\">{money(d['retailPrice'])}</td><td><a class=\"go\" rel=\"sponsored noopener\" href=\"https://www.cheapshark.com/redirect?dealID={e(str(d.get('dealID','')))}\">Buy</a></td></tr>" for d in deals)
+    _m = steam_meta.get(str(info.get("steamAppID") or ""))
+    _desc, meta_html = steam_meta.details_html(_m) if _m else ("", steam_meta.fallback_html())
     faq = [(f"What is the lowest price ever for {title}?", f"The lowest recorded price is {money(low)}{(' in ' + when) if when else ''}." if low > 0 else "We don't have a recorded lowest price for this game yet."),
            (f"Is {title} on sale right now?", f"The best current price we found is {money(cur)} at {stores[str(best['storeID'])]}, against a usual price of {money(reg)}."),
            (f"Should I buy {title} now or wait?", f"{label}. {detail}")]
     ld = json.dumps([
-        {"@context": "https://schema.org", "@type": "Product", "name": title, "image": info.get("thumb") or "",
+        {"@context": "https://schema.org", "@type": "Product", "name": title, "image": info.get("thumb") or "", **({"description": _desc} if _desc else {}),
          "offers": {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "%.2f" % cur, "highPrice": "%.2f" % float(deals[-1]["price"]), "offerCount": len(deals)}},
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}]).replace("<", "\\u003c")
     desc = f"{title} price today: {money(cur)} at {stores[str(best['storeID'])]}. {label}. Compare official store prices and see the lowest price ever."
     sid = str(info.get("steamAppID") or "")
     cover = f"https://cdn.cloudflare.steamstatic.com/steam/apps/{sid}/header.jpg" if sid and sid != "0" else (info.get("thumb") or "")
+    if _m:
+        cover = _m.get("header") or cover
+    lede_html = f'<p class="lede">{e(_desc)}</p>' if _desc else ""
     vclass = "v-good" if label in ("Buy now", "Good deal") else ("v-wait" if label.startswith("Wait") else "")
     low_line = (f'<p class="fine">Lowest price ever: <strong style="color:#fff">{money(low)}</strong>' + (f" ({when})" if when else "") + "</p>") if low > 0 else ""
     faq_html = "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in faq)
@@ -299,10 +305,11 @@ def game_page(gid, g, stores, today):
 <p class="crumbs"><a href="/">Home</a> / <a href="/games.html">Games</a></p>
 <p class="eyebrow">Price check &middot; Updated {today}</p>
 <h1>{e(title)}</h1>
+{lede_html}
 </div></section>
 <section class="block"><div class="wrap">
 <div class="gp">
-<img class="cover" src="{e(cover)}" alt="{e(title)} cover art" width="460" height="215">
+<img class="cover" src="{e(cover)}" alt="{e(title)} cover art" width="460" height="215" onerror="this.onerror=null;this.src='{e(info.get("thumb") or "")}'">
 <div class="pricebox">
 <div class="big">{money(cur)}<s>{money(reg)}</s></div>
 <p class="fine">Best current price at {e(stores[str(best['storeID'])])}</p>
@@ -318,6 +325,7 @@ def game_page(gid, g, stores, today):
 <h2>Compare stores</h2>
 <table class="stores"><thead><tr><th>Store</th><th>Price</th><th>Usual</th><th></th></tr></thead><tbody>{rows}</tbody></table>
 </div></section>
+{meta_html}
 <section class="block"><div class="wrap"><h2>Questions</h2><div class="faq">{faq_html}</div></div></section>
 </main>
 """ + layout.footer())
@@ -336,6 +344,7 @@ def build_games(stores, today, seeds, fetch_game):
             ids.append(gid)
     ids = ids[-GAME_CAP:]
     entries, urls, keep = [], [], []
+    tracked_slugs = {}
     base = os.path.join(ROOT, "game")
     for gid in ids:
         try:
@@ -350,6 +359,7 @@ def build_games(stores, today, seeds, fetch_game):
         os.makedirs(d, exist_ok=True)
         open(os.path.join(d, "index.html"), "w").write(page)
         keep.append(gid)
+        tracked_slugs[gid] = slug
         _info = g.get("info") or {}
         _sid = str(_info.get("steamAppID") or "")
         _img = f"https://cdn.cloudflare.steamstatic.com/steam/apps/{_sid}/header.jpg" if _sid and _sid != "0" else (_info.get("thumb") or "")
@@ -358,6 +368,8 @@ def build_games(stores, today, seeds, fetch_game):
         urls.append(f"{SITE}/game/{slug}/")
         time.sleep(0.25)
     json.dump(keep, open(GAME_IDS_FILE, "w"))
+    os.makedirs(base, exist_ok=True)
+    json.dump({gid: slug for gid, slug in tracked_slugs.items() if gid in keep}, open(os.path.join(base, "tracked.json"), "w"), separators=(",", ":"))
     # Remove pages for games that are no longer tracked.
     live = {x[0] for x in entries}
     if os.path.isdir(base):
@@ -391,6 +403,7 @@ def main():
     sample = sys.argv[sys.argv.index("--sample") + 1] if "--sample" in sys.argv else None
     global OFFLINE
     OFFLINE = bool(sample)
+    steam_meta.OFFLINE = OFFLINE
     if sample:
         data = json.load(open(sample))
         stores, fetch = data["stores"], lambda q: data["deals"]
