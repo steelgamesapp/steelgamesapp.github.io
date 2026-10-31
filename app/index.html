@@ -944,7 +944,7 @@ const o = p.offers[0];
 const out = o ? amazonize(o.url) : null;
 const pic = p.image_url ? `<img src="${esc(p.image_url)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-img');this.remove()">` : gIcon(p.category, 56);
 const badge = p.platform ? `<span class="gx-badge">${esc(PLATFORM_NAMES[p.platform] || p.platform)}</span>` : '';
-const inner = `<div class="gx-media${p.image_url ? ' has-img' : ''}">${pic}${badge}</div><div class="gx-body"><span class="gx-cat">${esc(p.category)}</span><h3 class="gx-name">${esc(p.name)}</h3>${p.summary ? `<p class="gx-sum">${esc(p.summary)}</p>` : ''}${o && o.price != null ? `<span class="gx-price">${money(o.price)}</span>` : ''}${o ? `<span class="gx-cta">${o.price != null ? 'Buy' : 'See price'} on ${esc(o.retailer)} ↗</span>` : ''}</div>`;
+const inner = `<div class="gx-media${p.image_url ? ' has-img' : ''}">${pic}${badge}</div><div class="gx-body"><span class="gx-cat">${esc(p.category)}</span><h3 class="gx-name">${esc(p.name)}</h3>${p.summary ? `<p class="gx-sum">${esc(p.summary)}</p>` : ''}${o && o.price != null ? `<span class="gx-price">${money(o.price)}</span>` : ''}${o ? `<span class="gx-cta">${o.price != null ? 'Buy' : 'See'} on ${esc(o.retailer)} ↗</span>` : ''}</div>`;
 return o ? `<a class="gx-card ${gcls(p.category)}" href="${esc(out.url)}" target="_blank" rel="noopener sponsored">${inner}</a>` : `<div class="gx-card ${gcls(p.category)}">${inner}</div>`;
 };
 if (!category) {
