@@ -123,6 +123,26 @@ STORE_COLORS = {"Steam": "#66C0F4", "GreenManGaming": "#5CE08A", "Fanatical": "#
                 "Direct2Drive": "#9CCC65", "IndieGala": "#FF5252", "WinGameStore": "#4FC3F7", "2Game": "#FFB74D", "Games Republic": "#A1887F"}
 
 
+OFFLINE = False  # set by --sample so tests never touch the network
+
+
+def fetch_lows(gids):
+    """Lowest price on record per game id, batched 25 at a time. Missing ids simply get no medal."""
+    out = {}
+    if OFFLINE:
+        return out
+    gids = list(gids)
+    for i in range(0, len(gids), 25):
+        try:
+            data = get("/games", {"ids": ",".join(gids[i:i + 25])})
+            for gid, g in data.items():
+                out[str(gid)] = float((g.get("cheapestPriceEver") or {}).get("price") or 0)
+        except Exception as ex:
+            print("lows failed", ex, file=sys.stderr)
+        time.sleep(0.3)
+    return out
+
+
 def page_html(p, deals, stores, today):
     e = html.escape
     url = f"{SITE}/deals/{p['slug']}/"
@@ -133,6 +153,8 @@ def page_html(p, deals, stores, today):
             best[gid] = d
     deals = [best[g] for g in dict.fromkeys(str(d.get("gameID")) for d in deals)]
     rows, items = [], []
+    lows = fetch_lows(str(d.get("gameID")) for d in deals)
+    _today = datetime.now(timezone.utc).date()
     for i, d in enumerate(deals, 1):
         store = stores.get(str(d.get("storeID")), "Store")
         sav = round(float(d.get("savings") or 0))
@@ -144,12 +166,14 @@ def page_html(p, deals, stores, today):
         was = f'<span class="was">{money(d.get("normalPrice"))}</span>' if sav > 0 else ""
         off = f'<span class="off">-{sav}%</span>' if sav > 0 else ""
         col = STORE_COLORS.get(store, "#7B5CFF")
+        _mk, _ = medals.rank(price, lows.get(str(d.get("gameID")), 0), history._load(str(d.get("gameID"))), _today)
+        mchip = medals.chip(_mk) if _mk else ""
         _h = (f'<button type="button" class="heart" data-wish data-id="{e(str(d.get("gameID")))}" data-title="{e(d.get("title", ""))}" data-thumb="{e(d.get("thumb") or "")}"'
               f' data-steam="{e(str(d.get("steamAppID") or "") if str(d.get("steamAppID") or "") != "0" else "")}" data-price="{price:.2f}" aria-pressed="false">{layout.HEART}</button>')
         rows.append(
             f'<div class="drow-w"><a class="drow" style="--store:{col}" href="{e(link)}"><span class="n">{i}</span>'
             f'<img src="{e(layout.img_for(d))}" alt="" loading="lazy" width="184" height="69">'
-            f'<span class="txt"><span class="t">{e(d.get("title", ""))}</span><span class="m"><b>{e(store)}</b>{rating}</span></span>'
+            f'<span class="txt"><span class="t">{e(d.get("title", ""))}</span><span class="m"><b>{e(store)}</b>{rating}{mchip}</span></span>'
             f'<span class="pr"><span><span class="price">{price_txt}</span>{was}</span>{off}</span></a>{_h}</div>')
         items.append({"@type": "ListItem", "position": i, "url": link, "name": d.get("title", "")})
     listing = ('<div class="deal-list">' + "".join(rows) + "</div>") if rows else '<p class="empty">No deals match right now. Check back tomorrow.</p>'
@@ -365,6 +389,8 @@ def build_games(stores, today, seeds, fetch_game):
 def main():
     today = datetime.now(timezone.utc).strftime("%B %d, %Y").replace(" 0", " ")
     sample = sys.argv[sys.argv.index("--sample") + 1] if "--sample" in sys.argv else None
+    global OFFLINE
+    OFFLINE = bool(sample)
     if sample:
         data = json.load(open(sample))
         stores, fetch = data["stores"], lambda q: data["deals"]

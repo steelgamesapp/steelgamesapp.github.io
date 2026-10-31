@@ -288,3 +288,4 @@ img{max-width:100%}
 .medal-silver{--m:#DDE3EA}.medal-bronze{--m:#E39B5A}
 .mchip{display:inline-flex;align-items:center;gap:4px;font:700 11px var(--body);padding:2px 8px 2px 4px;border-radius:999px;background:rgba(255,255,255,.1);color:#fff}
 .mchip-gold{color:#FFD24A}.mchip-silver{color:#DDE3EA}.mchip-bronze{color:#E39B5A}
+.drow .m .mchip{margin-left:8px;vertical-align:middle}
