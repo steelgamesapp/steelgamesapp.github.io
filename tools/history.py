@@ -35,6 +35,7 @@ def update(gid, today_iso, price, low=0.0, low_ts=None):
             pts[-1][1] = round(float(price), 2)
         else:
             pts.append([today_iso, round(float(price), 2)])
+    h.setdefault("start", today_iso)
     h["seen"] = today_iso
     os.makedirs(DIR, exist_ok=True)
     json.dump(h, open(os.path.join(DIR, f"{gid}.json"), "w"), separators=(",", ":"))

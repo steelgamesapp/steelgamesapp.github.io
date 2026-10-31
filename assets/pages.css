@@ -280,3 +280,11 @@ img{max-width:100%}
 .wom-save strong{color:#fff}
 .wom .fine{margin-top:8px}
 @media (max-width:600px){.phist .t{font-size:24px}}
+.medal{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid var(--m,#FFD24A)}
+.medal strong{display:block;font:700 18px var(--display);color:var(--m,#FFD24A)}
+.medal span{display:block;font-size:14px;color:var(--steel)}
+.medal svg{flex:none}
+.medal-gold{--m:#FFD24A;background:linear-gradient(135deg,rgba(255,210,74,.18),rgba(255,210,74,.04))}
+.medal-silver{--m:#DDE3EA}.medal-bronze{--m:#E39B5A}
+.mchip{display:inline-flex;align-items:center;gap:4px;font:700 11px var(--body);padding:2px 8px 2px 4px;border-radius:999px;background:rgba(255,255,255,.1);color:#fff}
+.mchip-gold{color:#FFD24A}.mchip-silver{color:#DDE3EA}.mchip-bronze{color:#E39B5A}

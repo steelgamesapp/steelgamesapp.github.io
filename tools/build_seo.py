@@ -12,6 +12,7 @@ import keys_page
 import military_page
 import history
 import waitometer
+import medals
 import shop_pages
 import deal_page
 from datetime import datetime, timezone
@@ -222,6 +223,9 @@ def verdict(cur, reg, low):
     return "Wait for a better price", f"It has been as low as {money(low)}. Track it and check back."
 
 
+MEDALS = {}
+
+
 def game_page(gid, g, stores, today):
     e = html.escape
     info = g.get("info") or {}
@@ -237,6 +241,9 @@ def game_page(gid, g, stores, today):
     label, detail = verdict(cur, reg, low)
     _h = history.update(gid, datetime.now(timezone.utc).strftime("%Y-%m-%d"), cur, low, ts)
     chart = history.render(_h, reg, low)
+    _medal, _mdetail = medals.rank(cur, low, _h, datetime.now(timezone.utc).date())
+    MEDALS[gid] = _medal
+    medal_html = medals.badge(_medal, _mdetail) if _medal else ""
     _wom = waitometer.assess(cur, reg, low, datetime.now(timezone.utc).date(), _h, stores[str(best['storeID'])])
     label, detail = _wom['label'], waitometer.faq_text(_wom)
     slug = f"{slugify(title)}-{gid}"
@@ -275,6 +282,7 @@ def game_page(gid, g, stores, today):
 <div class="pricebox">
 <div class="big">{money(cur)}<s>{money(reg)}</s></div>
 <p class="fine">Best current price at {e(stores[str(best['storeID'])])}</p>
+{medal_html}
 {waitometer.widget(_wom)}
 <div class="gact" style="border:0;background:none;padding:0">{shop_btns}</div>
 <a class="btn" rel="sponsored noopener" href="https://www.cheapshark.com/redirect?dealID={e(str(best.get('dealID','')))}">Buy at {e(stores[str(best['storeID'])])} for {money(cur)}</a>
@@ -322,7 +330,7 @@ def build_games(stores, today, seeds, fetch_game):
         _sid = str(_info.get("steamAppID") or "")
         _img = f"https://cdn.cloudflare.steamstatic.com/steam/apps/{_sid}/header.jpg" if _sid and _sid != "0" else (_info.get("thumb") or "")
         _low = min((float(d["price"]) for d in g.get("deals", []) if str(d.get("storeID")) in stores), default=0)
-        entries.append((slug, _info.get("title", "Game"), _img, money(_low)))
+        entries.append((slug, _info.get("title", "Game"), _img, money(_low), MEDALS.get(gid)))
         urls.append(f"{SITE}/game/{slug}/")
         time.sleep(0.25)
     json.dump(keep, open(GAME_IDS_FILE, "w"))
@@ -335,8 +343,8 @@ def build_games(stores, today, seeds, fetch_game):
                 shutil.rmtree(os.path.join(base, name))
     cards = "".join(
         f'<a class="gcard" href="/game/{s}/"><span class="pic"><img src="{html.escape(im)}" alt="" loading="lazy" width="460" height="215"></span>'
-        f'<span class="info"><span class="t">{html.escape(t)}</span><span class="row"><span class="price">{pr}</span></span></span></a>'
-        for s, t, im, pr in sorted(entries, key=lambda x: x[1].lower()))
+        f'<span class="info"><span class="t">{html.escape(t)}</span><span class="row"><span class="price">{pr}</span>{medals.chip(md) if md else ""}</span></span></a>'
+        for s, t, im, pr, md in sorted(entries, key=lambda x: x[1].lower()))
     os.makedirs(base, exist_ok=True)
     open(os.path.join(base, "index.html"), "w").write(
         layout.head("PC game prices and price history | SteelGames", "Current best prices and lowest-ever prices for popular PC games from official stores.", f"{SITE}/game/")
