@@ -1,5 +1,4 @@
-hello
-world/* SteelGames wishlist + cart. Saved in this browser (shares the app's "watchlist"), with sale alerts when you visit. */
+/* SteelGames wishlist + cart. Saved in this browser (shares the app's "watchlist"), with sale alerts when you visit. */
 (() => {
   if (window.SG) return;
   const API = 'https://www.cheapshark.com/api/1.0';
@@ -73,6 +72,10 @@ world/* SteelGames wishlist + cart. Saved in this browser (shares the app's "wat
       const on = SG.inCart(b.dataset.id); b.setAttribute('aria-pressed', on);
       const lab = b.querySelector('.lab'); if (lab) lab.textContent = on ? 'In cart' : 'Add to cart';
     });
+    document.querySelectorAll('[data-own]').forEach((b) => {
+      const on = SG.inOwned(b.dataset.id); b.setAttribute('aria-pressed', on);
+      const lab = b.querySelector('.lab'); if (lab) lab.textContent = on ? 'Owned' : 'I own this';
+    });
     counts();
   };
   document.addEventListener('click', (e) => {
@@ -114,6 +117,72 @@ world/* SteelGames wishlist + cart. Saved in this browser (shares the app's "wat
     SG.toast(msg, '/wishlist.html', 'See deals');
     try { if ('Notification' in window && Notification.permission === 'granted') new Notification('Price drop on SteelGames', { body: msg, icon: '/app/icons/icon-192.png' }); } catch (e) { /* not supported */ }
   };
+
+  /* ---------- collection (games you own) ---------- */
+  SG.collection = () => LS.get('sg_owned', []);
+  SG.inOwned = (id) => SG.collection().some((x) => String(x.id) === String(id));
+  SG.toggleOwned = (it) => {
+    let c = SG.collection(); const on = c.some((x) => String(x.id) === String(it.id));
+    if (on) c = c.filter((x) => String(x.id) !== String(it.id));
+    else {
+      c.unshift({ id: String(it.id), title: it.title, thumb: it.thumb || '', steam: it.steam || '', added: new Date().toISOString().slice(0, 10) });
+      LS.set('watchlist', SG.wishlist().filter((x) => String(x.id) !== String(it.id)));
+      LS.set('sg_cart', SG.cart().filter((x) => String(x.id) !== String(it.id)));
+    }
+    LS.set('sg_owned', c.slice(0, 1000)); emit(); return !on;
+  };
+
+  /* ---------- sync and backup (no account needed) ---------- */
+  const uniq = (arr) => { const seen = new Set(); return arr.filter((x) => x && x.id != null && !seen.has(String(x.id)) && seen.add(String(x.id))); };
+  const clean = (x, keys) => { const o = { id: String(x.id) }; keys.forEach((k) => { if (x[k] != null && x[k] !== '') o[k] = x[k]; }); o.title = String(x.title || 'Game').slice(0, 160); return o; };
+  SG.exportData = () => ({ app: 'SteelGames', v: 1, exported: new Date().toISOString(), wishlist: SG.wishlist(), collection: SG.collection() });
+  SG.importData = (d) => {
+    if (!d || typeof d !== 'object') throw new Error('Not a SteelGames backup.');
+    const w = Array.isArray(d.wishlist) ? d.wishlist : [], c = Array.isArray(d.collection) ? d.collection : [];
+    if (!w.length && !c.length) throw new Error('That backup has no games in it.');
+    const owned = uniq(c.map((x) => clean(x, ['thumb', 'steam', 'added'])).concat(SG.collection()));
+    const ownedIds = new Set(owned.map((x) => x.id));
+    const local = SG.wishlist(), localById = Object.fromEntries(local.map((x) => [x.id, x]));
+    const wish = uniq(local.concat(w.map((x) => Object.assign(clean(x, ['thumb', 'steam', 'price', 'target']), localById[String(x.id)] || {})))).filter((x) => !ownedIds.has(x.id));
+    LS.set('sg_owned', owned.slice(0, 1000)); LS.set('watchlist', wish.slice(0, 100)); emit();
+    return { wishlist: wish.length, collection: owned.length };
+  };
+  const b64 = (s) => btoa(unescape(encodeURIComponent(s))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  const unb64 = (s) => decodeURIComponent(escape(atob(s.replace(/-/g, '+').replace(/_/g, '/'))));
+  SG.syncLink = () => {
+    const d = { wishlist: SG.wishlist().map((x) => clean(x, ['steam', 'price', 'target'])), collection: SG.collection().map((x) => clean(x, ['steam', 'added'])) };
+    return location.origin + '/sync.html#d=' + b64(JSON.stringify(d));
+  };
+  SG.readSyncHash = () => { const m = /[#&]d=([^&]+)/.exec(location.hash); if (!m) return null; try { return JSON.parse(unb64(m[1])); } catch (e) { return null; } };
+  SG.download = (name, text) => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' })); a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); };
+
+  /* Steam import. Needs the small proxy in /worker (Steam blocks direct browser calls). Leave empty until it is deployed. */
+  SG.STEAM_PROXY = '';
+  SG.steamImport = async (profile, kind, onStep) => {
+    if (!SG.STEAM_PROXY) throw new Error('Steam import is not switched on yet.');
+    const r = await fetch(SG.STEAM_PROXY + '?kind=' + encodeURIComponent(kind) + '&profile=' + encodeURIComponent(profile));
+    const j = await r.json(); if (!r.ok || j.error) throw new Error(j.error || 'Steam did not answer.');
+    const apps = (j.appids || []).slice(0, kind === 'wishlist' ? 100 : 400), found = [];
+    for (let i = 0; i < apps.length; i++) {
+      if (onStep) onStep(i + 1, apps.length);
+      try {
+        const g = (await (await fetch(SG.API + '/games?steamAppID=' + apps[i])).json())[0];
+        if (g) found.push({ id: String(g.gameID), title: g.external, thumb: g.thumb || '', steam: String(apps[i]), price: g.cheapest != null ? +g.cheapest : null });
+      } catch (e) { /* skip this one */ }
+      await new Promise((ok) => setTimeout(ok, 120));
+    }
+    return found;
+  };
+  SG.addImported = (found, kind) => {
+    if (kind === 'owned') return SG.importData({ collection: found });
+    return SG.importData({ wishlist: found });
+  };
+
+  document.addEventListener('click', (e) => {
+    const o = e.target.closest('[data-own]'); if (!o) return;
+    e.preventDefault(); const on = SG.toggleOwned(itemOf(o));
+    SG.toast(on ? 'Added to your collection.' : 'Removed from your collection.', on ? '/collection.html' : '', 'View');
+  });
 
   const start = () => { nav(); sync(); setTimeout(alertCheck, 1500); };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();

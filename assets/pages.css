@@ -241,3 +241,30 @@ img{max-width:100%}
 @media (max-width:900px){.cols{grid-template-columns:1fr}}
 .notice{padding:14px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:15px;color:var(--steel)}
 .alertbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.scard[hidden]{display:none}
+.vetbox{margin-top:14px;padding:12px 14px;border-radius:12px;background:rgba(255,176,32,.12);border:1px solid rgba(255,176,32,.45);font-size:15px;color:var(--steel)}
+.vetbox strong{color:#fff}
+.phist{margin:0;padding:14px;border-radius:16px;background:var(--surface);border:1px solid var(--line)}
+.phist svg{width:100%;height:auto;display:block}
+.phist .g{stroke:rgba(255,255,255,.1);stroke-width:1}
+.phist .t{fill:var(--muted);font:12px var(--body)}
+.phist .r{stroke:var(--muted);stroke-width:1.2;stroke-dasharray:5 5;opacity:.7}
+.phist .r2{fill:var(--steel)}
+.phist .l{fill:none;stroke:#FFB020;stroke-width:2.6;stroke-linejoin:round}
+.phist .a{fill:rgba(255,176,32,.14);stroke:none}
+.phist .dl{fill:#5CE08A;stroke:#120A2B;stroke-width:2}
+.phist .dc{fill:#FFB020;stroke:#120A2B;stroke-width:2}
+.phist figcaption{margin-top:10px}
+.phist .k{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 6px 0 0;vertical-align:baseline}
+.phist .k.dc{margin-left:10px}
+.phist .k.dl{background:#5CE08A}.phist .k.dc{background:#FFB020}
+.syncbox{margin-top:8px;padding:14px 16px;border-radius:14px;background:var(--surface);border:1px solid var(--line)}
+.syncbox summary{cursor:pointer;font:700 16px var(--display);color:#fff}
+.syncbox[open] summary{margin-bottom:8px}
+.syncbox .chips{margin:10px 0}
+.syncbox .filebtn,.syncbox .chips button{font:600 14px var(--body);color:#fff;padding:9px 14px;border-radius:999px;border:1px solid var(--line-strong);background:var(--raised);cursor:pointer}
+.steamimp{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.steamimp h3{font-size:17px;margin-bottom:4px}
+.steamimp .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.steamimp input{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:12px;border:1px solid var(--line-strong);background:#120A2B;color:#fff;font:16px var(--body)}
+.chips a[aria-current="page"]{background:var(--grad-cta);color:var(--accent-ink);border-color:transparent}

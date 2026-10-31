@@ -12,6 +12,24 @@ const SC = { 'Steam': '#66C0F4', 'GreenManGaming': '#5CE08A', 'Fanatical': '#FF8
 const buy = (deal, id) => deal ? 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(deal) : '/deal/?id=' + encodeURIComponent(id);
 """
 
+SYNC_BOX = """<details class="syncbox" id="syncbox"><summary>Sync and backup</summary>
+<p class="fine">Move your wishlist and collection to another phone or computer, or keep a backup. No account needed.</p>
+<div class="chips"><button type="button" id="s-export">Download backup</button><label class="filebtn">Restore from backup<input type="file" id="s-file" accept="application/json,.json" hidden></label><button type="button" id="s-link">Copy sync link</button></div>
+<p class="fine" id="s-msg" role="status" aria-live="polite"></p>
+<div class="steamimp" id="steamimp" hidden><h3>Import from Steam</h3><p class="fine">Your Steam profile needs to be public. Type your profile name or 17-digit Steam ID.</p>
+<div class="row"><input id="s-prof" type="text" placeholder="Steam profile name or ID" autocomplete="off"><button type="button" class="btn" id="s-wl">Import wishlist</button><button type="button" class="btn btn-ghost" id="s-own">Import owned games</button></div></div>
+</details>
+<script>document.addEventListener('DOMContentLoaded', () => {
+const $ = (s) => document.querySelector(s), msg = (t) => { $('#s-msg').textContent = t; };
+$('#s-export').addEventListener('click', () => { SG.download('steelgames-backup-' + new Date().toISOString().slice(0, 10) + '.json', JSON.stringify(SG.exportData(), null, 2)); msg('Backup downloaded.'); });
+$('#s-file').addEventListener('change', async (e) => { const f = e.target.files[0]; if (!f) return; try { const r = SG.importData(JSON.parse(await f.text())); msg('Restored. You now have ' + r.wishlist + ' wishlisted and ' + r.collection + ' owned games.'); } catch (x) { msg(x.message || 'That file could not be read.'); } e.target.value = ''; });
+$('#s-link').addEventListener('click', async () => { const u = SG.syncLink(); try { await navigator.clipboard.writeText(u); msg('Link copied. Open it on your other device to bring your lists over.'); } catch (x) { window.prompt('Copy this link:', u); } });
+if (SG.STEAM_PROXY) { $('#steamimp').hidden = false;
+  const run = async (kind) => { const p = $('#s-prof').value.trim(); if (!p) { msg('Enter your Steam profile name or ID first.'); return; } msg('Reading your Steam profile...');
+    try { const found = await SG.steamImport(p, kind, (i, n) => msg('Matching games ' + i + ' of ' + n + '...')); const r = SG.addImported(found, kind); msg('Imported ' + found.length + ' games. You now have ' + r.wishlist + ' wishlisted and ' + r.collection + ' owned.'); } catch (x) { msg(x.message); } };
+  $('#s-wl').addEventListener('click', () => run('wishlist')); $('#s-own').addEventListener('click', () => run('owned')); }
+});</script>"""
+
 WISH_JS = COMMON + r"""
 const list = $('#list'), bar = $('#bar'); let live = {}, names = {};
 const draw = () => {
@@ -87,12 +105,13 @@ def wishlist():
 <p class="eyebrow">Saved on this device</p>
 <h1>Your wishlist</h1>
 <p class="lede">Save games you want and set a target price. We check prices each time you open SteelGames and flag every drop.</p>
+<div class="chips"><a href="/wishlist.html" aria-current="page">Wishlist</a><a href="/collection.html">My collection</a></div>
 </div></section>
 <section class="block"><div class="wrap">
 <div class="notice alertbar" id="bar"><span id="hitcount"></span><button type="button" class="btn btn-ghost" id="notify">Turn on browser alerts</button></div>
 <div class="rows" id="list" aria-live="polite"></div>
 <p class="fine">Your wishlist is saved in this browser and shared with the SteelGames app on this device. Alerts appear when you visit; browser alerts need permission.</p>
-</div></section>
+""" + SYNC_BOX + """</div></section>
 </main>
 <script>document.addEventListener('DOMContentLoaded', () => {""" + WISH_JS + """});</script>
 """ + layout.footer())
@@ -121,4 +140,60 @@ def cart():
 </div></div></section>
 </main>
 <script>document.addEventListener('DOMContentLoaded', () => {""" + CART_JS + """});</script>
+""" + layout.footer())
+
+
+COLL_JS = COMMON + r"""
+const list = $('#list');
+const draw = () => {
+  const c = SG.collection();
+  $('#cn').textContent = c.length ? c.length + (c.length === 1 ? ' game' : ' games') : '';
+  if (!c.length) { list.innerHTML = '<div class="empty"><p style="font-size:18px;color:#fff;margin-bottom:6px">Your collection is empty</p><p>Tap "I own this" on a game page to track what you already have. Owned games drop off your wishlist and cart.</p><p style="margin-top:14px"><a class="btn" href="/games.html">Browse games</a></p></div>'; return; }
+  list.innerHTML = c.map((g) => '<article class="lrow"><a class="pic" href="/deal/?id=' + encodeURIComponent(g.id) + '"><img src="' + esc(SG.art(g)) + '" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'' + esc(g.thumb) + '\'"></a>' +
+    '<div class="main"><h3>' + esc(g.title) + '</h3><div class="pills"><span class="pill good">Owned</span>' + (g.added ? '<span class="pill">Added ' + esc(g.added) + '</span>' : '') + '</div></div>' +
+    '<div class="side"><button type="button" class="danger" data-un="' + esc(g.id) + '">Remove</button></div></article>').join('');
+};
+document.addEventListener('click', (e) => { const r = e.target.closest('[data-un]'); if (r) { SG.LS.set('sg_owned', SG.collection().filter((x) => String(x.id) !== r.dataset.un)); document.dispatchEvent(new CustomEvent('sg:change')); draw(); } });
+document.addEventListener('sg:change', draw);
+draw();
+"""
+
+
+def collection():
+    return (layout.head("Your Collection | SteelGames", "Track the PC games you already own so your wishlist and deal alerts only show what you still want.", f"{SITE}/collection.html", '<meta name="robots" content="noindex,follow">\n')
+            + layout.header()
+            + """<main>
+<section class="hero"><div class="wrap">
+<p class="eyebrow">Saved on this device</p>
+<h1>My collection <span class="fine" id="cn"></span></h1>
+<p class="lede">The games you already own. Mark a game as owned and it leaves your wishlist and cart, so alerts only cover what you still want.</p>
+<div class="chips"><a href="/wishlist.html">Wishlist</a><a href="/collection.html" aria-current="page">My collection</a></div>
+</div></section>
+<section class="block"><div class="wrap">
+<div class="rows" id="list" aria-live="polite"></div>
+""" + SYNC_BOX + """</div></section>
+</main>
+<script>document.addEventListener('DOMContentLoaded', () => {""" + COLL_JS + """});</script>
+""" + layout.footer())
+
+
+def sync():
+    return (layout.head("Import your lists | SteelGames", "Bring your SteelGames wishlist and collection to this device.", f"{SITE}/sync.html", '<meta name="robots" content="noindex,nofollow">\n')
+            + layout.header()
+            + """<main>
+<section class="hero"><div class="wrap">
+<p class="eyebrow">Sync</p>
+<h1>Import your lists</h1>
+<p class="lede" id="lede">Checking your link...</p>
+<div class="chips" id="acts"></div>
+</div></section>
+</main>
+<script>document.addEventListener('DOMContentLoaded', () => {
+const d = SG.readSyncHash(), lede = document.getElementById('lede'), acts = document.getElementById('acts');
+if (!d || (!(d.wishlist || []).length && !(d.collection || []).length)) { lede.textContent = 'This link has no lists in it. Copy a fresh sync link from your wishlist page on your other device.'; return; }
+lede.textContent = 'This link has ' + (d.wishlist || []).length + ' wishlisted and ' + (d.collection || []).length + ' owned games. They will be merged with what you already have on this device.';
+const b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = 'Import now';
+b.addEventListener('click', () => { try { const r = SG.importData(d); lede.textContent = 'Done. You now have ' + r.wishlist + ' wishlisted and ' + r.collection + ' owned games.'; acts.innerHTML = '<a href="/wishlist.html">Open wishlist</a><a href="/collection.html">Open collection</a>'; history.replaceState(null, '', location.pathname); } catch (x) { lede.textContent = x.message; } });
+acts.appendChild(b);
+});</script>
 """ + layout.footer())

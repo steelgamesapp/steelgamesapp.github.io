@@ -9,8 +9,9 @@ STAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8F
         'stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>')
 HEART = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6.6 5.4 5.4 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg>'
 CARTI = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.2a1 1 0 0 0 1 .8h9.1a1 1 0 0 0 1-.8L21 7H6"/></svg>'
+CHECKI = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>'
 NAV = [("games", "/games.html", "Games"), ("keys", "/keys.html", "Keys"), ("news", "/app/#/news", "News"), ("gear", "/gear.html", "Gear"),
-       ("reviews", "/reviews.html", "Reviews"), ("community", "/community.html", "Community")]
+       ("reviews", "/reviews.html", "Reviews"), ("community", "/community.html", "Community"), ("military", "/military.html", "Veterans")]
 
 
 def head(title, desc, canonical, extra=""):
@@ -54,7 +55,7 @@ def footer():
   <div class="wrap">
     <span class="vet-badge">{STAR}Veteran-owned and operated</span>
     <div class="footer-links">
-      <a href="/games.html">Games</a><a href="/keys.html">Key resellers</a><a href="/deals/">Deal lists</a><a href="/gear.html">Shop gear</a>
+      <a href="/games.html">Games</a><a href="/keys.html">Key resellers</a><a href="/deals/">Deal lists</a><a href="/gear.html">Shop gear</a><a href="/military.html">Veteran discounts</a>
       <a href="/privacy.html">Privacy policy</a><a href="/terms.html">Terms of use</a><a href="/advertise.html">Advertise</a>
       <a href="mailto:steelgames.app@outlook.com">Contact us</a><span>© 2026 Lonestar PPS, LLC</span>
     </div>
