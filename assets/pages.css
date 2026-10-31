@@ -105,7 +105,8 @@ img{max-width:100%}
 .more-lists a{font:600 14px var(--body);text-decoration:none;color:#fff;padding:9px 14px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface)}
 .more-lists a:hover{background:var(--raised)}
 .gp{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:start}
-@media (max-width:820px){.gp{grid-template-columns:1fr}}
+@media (max-width:820px){.gp{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:480px){.stores th:nth-child(3),.stores td:nth-child(3){display:none}.stores th,.stores td{padding:10px 8px}.pricebox{padding:16px}.pricebox .big{font-size:40px}}
 .gp .cover{width:100%;aspect-ratio:460/215;object-fit:cover;border-radius:16px;border:1px solid var(--line);background:#0E0820;display:block}
 .pricebox{display:flex;flex-direction:column;gap:12px;padding:20px;border-radius:16px;background:var(--surface);border:1px solid var(--line)}
 .pricebox .big{font:700 46px/1 var(--display);color:var(--accent-soft)}
@@ -268,3 +269,14 @@ img{max-width:100%}
 .steamimp .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .steamimp input{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:12px;border:1px solid var(--line-strong);background:#120A2B;color:#fff;font:16px var(--body)}
 .chips a[aria-current="page"]{background:var(--grad-cta);color:var(--accent-ink);border-color:transparent}
+.wom{--v:#FFB020;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-top:4px solid var(--v)}
+.wom-buy{--v:#5CE08A}.wom-ok{--v:#B6E35C}.wom-lean{--v:#FFB020}.wom-wait{--v:#FF6B8A}
+.wom-title{font:700 12px var(--body);letter-spacing:2px;color:var(--accent-soft)}
+.wom-g{display:block;width:100%;max-width:260px;margin:6px auto 0}
+.wom-e{fill:var(--muted);font:700 10px var(--body);letter-spacing:1px}
+.wom-label{text-align:center;font:700 24px var(--display);color:var(--v);margin:8px 0 10px}
+.wom-why{margin:0;padding-left:18px;color:var(--steel);font-size:15px;display:flex;flex-direction:column;gap:4px}
+.wom-save{margin-top:10px;font-size:15px;color:var(--steel)}
+.wom-save strong{color:#fff}
+.wom .fine{margin-top:8px}
+@media (max-width:600px){.phist .t{font-size:24px}}

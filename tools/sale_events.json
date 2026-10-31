@@ -1,0 +1,9 @@
+{
+  "note": "Edit this list as new sale dates are announced. Steam dates come from Valve's Steamworks calendar. Black Friday is the day after US Thanksgiving.",
+  "events": [
+    {"name": "Black Friday weekend", "start": "2026-11-27", "end": "2026-11-30", "where": "most PC game stores"},
+    {"name": "Steam Winter Sale", "start": "2026-12-17", "end": "2027-01-04", "where": "Steam and stores that match it"},
+    {"name": "Steam Spring Sale", "start": "2027-03-18", "end": "2027-03-25", "where": "Steam and stores that match it"},
+    {"name": "Steam Summer Sale", "start": "2027-06-24", "end": "2027-07-08", "where": "Steam and stores that match it"}
+  ]
+}

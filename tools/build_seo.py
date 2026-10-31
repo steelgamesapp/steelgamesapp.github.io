@@ -11,6 +11,7 @@ import games_page
 import keys_page
 import military_page
 import history
+import waitometer
 import shop_pages
 import deal_page
 from datetime import datetime, timezone
@@ -236,6 +237,8 @@ def game_page(gid, g, stores, today):
     label, detail = verdict(cur, reg, low)
     _h = history.update(gid, datetime.now(timezone.utc).strftime("%Y-%m-%d"), cur, low, ts)
     chart = history.render(_h, reg, low)
+    _wom = waitometer.assess(cur, reg, low, datetime.now(timezone.utc).date(), _h, stores[str(best['storeID'])])
+    label, detail = _wom['label'], waitometer.faq_text(_wom)
     slug = f"{slugify(title)}-{gid}"
     url = f"{SITE}/game/{slug}/"
     rows = "".join(f"<tr><td>{e(stores[str(d['storeID'])])}</td><td>{money(d['price'])}</td><td class=\"was\">{money(d['retailPrice'])}</td><td><a class=\"go\" rel=\"sponsored noopener\" href=\"https://www.cheapshark.com/redirect?dealID={e(str(d.get('dealID','')))}\">Buy</a></td></tr>" for d in deals)
@@ -272,7 +275,7 @@ def game_page(gid, g, stores, today):
 <div class="pricebox">
 <div class="big">{money(cur)}<s>{money(reg)}</s></div>
 <p class="fine">Best current price at {e(stores[str(best['storeID'])])}</p>
-<div class="verdict {vclass}"><strong>{e(label)}</strong><p>{e(detail)}</p></div>
+{waitometer.widget(_wom)}
 <div class="gact" style="border:0;background:none;padding:0">{shop_btns}</div>
 <a class="btn" rel="sponsored noopener" href="https://www.cheapshark.com/redirect?dealID={e(str(best.get('dealID','')))}">Buy at {e(stores[str(best['storeID'])])} for {money(cur)}</a>
 {low_line}
