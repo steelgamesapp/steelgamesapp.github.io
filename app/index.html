@@ -141,6 +141,50 @@ main:focus { outline: none; }
 .product h3 { font-family: var(--body); font-size: 17px; font-weight: 700; }
 .product p { color: var(--steel); font-size: 15px; }
 
+/* Gear store */
+.g0 { --gx: #FF9A4D; --gxs: rgba(255,122,26,.22); --gxl: rgba(255,122,26,.45); }
+.g1 { --gx: #C4B5FD; --gxs: rgba(167,139,250,.22); --gxl: rgba(167,139,250,.45); }
+.g2 { --gx: #5EEAD4; --gxs: rgba(45,212,191,.20); --gxl: rgba(45,212,191,.42); }
+.g3 { --gx: #8FB4E3; --gxs: rgba(111,160,255,.22); --gxl: rgba(111,160,255,.45); }
+.gx-hero { margin-top: 6px; padding: 20px 18px; border-radius: 20px; background: linear-gradient(135deg, var(--gxs, rgba(255,122,26,.2)), rgba(21,24,29,0) 65%), var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; gap: 6px; }
+.gx-hero p { color: var(--steel); font-size: 16px; }
+.gx-search { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 14px; border-radius: 14px; background: var(--bg); border: 1px solid var(--line-strong); margin-top: 10px; }
+.gx-search input { flex: 1; min-width: 0; height: 50px; border: 0; background: none; color: var(--fg); font: inherit; font-size: 17px; outline: none; }
+.gx-search input::placeholder { color: var(--muted); }
+.gx-strip { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 14px 2px 4px; margin: 0 -2px; }
+.gx-strip::-webkit-scrollbar { display: none; }
+.gx-pill { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 6px; width: 84px; text-decoration: none; color: var(--steel); font-size: 12.5px; font-weight: 600; text-align: center; line-height: 1.2; }
+.gx-pill .gx-ic { width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; color: var(--gx, #FF9A4D); background: radial-gradient(120% 120% at 30% 20%, var(--gxs, rgba(255,122,26,.22)), transparent 65%), var(--raised); border: 1px solid var(--gxl, rgba(255,122,26,.4)); }
+.gx-pill:hover { color: var(--fg); }
+.gx-pill[aria-current="page"] { color: var(--fg); }
+.gx-pill[aria-current="page"] .gx-ic { box-shadow: 0 0 0 2px var(--gx); }
+.gx-group-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.gx-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.gx-tile { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; min-height: 112px; padding: 14px; border-radius: 16px; text-decoration: none; color: var(--fg); background: linear-gradient(160deg, var(--gxs), transparent 70%), var(--surface); border: 1px solid var(--line); }
+.gx-tile:hover { border-color: var(--gxl); }
+.gx-tile .gx-big { position: absolute; right: -4px; top: -4px; color: var(--gx); opacity: .4; }
+.gx-tile strong { font-family: var(--display); font-size: 17px; }
+.gx-tile small { color: var(--muted); font-size: 13px; }
+.gx-rail { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x proximity; padding: 2px 2px 8px; margin: 0 -2px; scrollbar-width: none; }
+.gx-rail::-webkit-scrollbar { display: none; }
+.gx-rail .gx-card { flex: 0 0 190px; scroll-snap-align: start; }
+.gx-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.gx-card { display: flex; flex-direction: column; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); overflow: hidden; text-decoration: none; color: var(--fg); }
+a.gx-card:hover { border-color: var(--gxl); }
+.gx-media { position: relative; aspect-ratio: 1 / 1; display: grid; place-items: center; color: var(--gx); background: radial-gradient(120% 120% at 30% 15%, var(--gxs), transparent 62%), #1A1E25; }
+.gx-media.has-img { background: #fff; }
+.gx-media img { width: 100%; height: 100%; object-fit: contain; padding: 12px; }
+.gx-badge { position: absolute; left: 10px; top: 10px; padding: 3px 8px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .4px; background: rgba(12,14,17,.82); border: 1px solid var(--line-strong); color: var(--fg); }
+.gx-body { display: flex; flex-direction: column; gap: 6px; padding: 12px 12px 14px; flex: 1; }
+.gx-cat { font-size: 11.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--gx); }
+.gx-name { font-family: var(--body); font-size: 15.5px; font-weight: 700; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.gx-sum { color: var(--muted); font-size: 13.5px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.gx-price { font-family: var(--display); font-size: 20px; font-weight: 700; }
+.gx-cta { margin-top: auto; display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 8px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); font-weight: 800; font-size: 14px; text-align: center; }
+.gx-toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 12px; }
+.gx-toolbar .chips { margin-top: 0; flex: 1 1 100%; }
+@media (min-width: 700px) { .gx-tiles, .gx-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .gx-tiles, .gx-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 /* Forms */
 label.field { display: flex; flex-direction: column; gap: 6px; font-size: 15px; font-weight: 600; color: var(--steel); }
 .input, select.input { min-height: 52px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--fg); font: inherit; font-size: 17px; }
@@ -886,29 +930,60 @@ async function getProducts() {
   return productsCache;
 }
 async function screenGear(category) {
-  if (!sb) { view.innerHTML = errorBox("Couldn't load gear right now."); return; }
-  view.innerHTML = `<div class="stack">${skeletons(5)}</div>`;
-  let products;
-  try { products = await getProducts(); } catch { view.innerHTML = errorBox("Couldn't load gear. Check your connection and try again."); return; }
-  if (!category) {
-    const count = (c) => products.filter((p) => p.category === c).length;
-    view.innerHTML = `<h1 class="screen-title">Gear</h1><p class="lede">Our picks for your whole setup. Tap a category to see them.</p>
-      ${GEAR_GROUPS.map(([g, cats]) => `<div class="section"><h2>${esc(g)}</h2><div class="cats">${cats.map((c) => `<a class="cat" href="#/gear/${encodeURIComponent(c)}"><span class="gi gi-sm">${gIcon(c, 22)}</span>${esc(c)}<small>${count(c)} ${count(c) === 1 ? 'pick' : 'picks'}</small></a>`).join('')}</div></div>`).join('')}
-      <div class="foot"><p>As an Amazon Associate, SteelGames earns from qualifying purchases.</p></div>`;
-    return;
-  }
-  const list = products.filter((p) => p.category === category);
-  view.innerHTML = `<button class="back" onclick="history.back()">‹ Back</button>
-    <h1 class="screen-title">${esc(category)}</h1>
-    <div class="section stack">${list.length ? list.map((p) => `
-      <div class="product">
-        <div class="tag-row"><span class="gi">${gIcon(p.category)}</span>${p.platform ? `<span class="plat p-${esc(p.platform)}">${esc(PLATFORM_NAMES[p.platform])}</span>` : '<span class="plat p-all">Any platform</span>'}</div>
-        <h3>${esc(p.name)}</h3>${p.summary ? `<p>${esc(p.summary)}</p>` : ''}
-        ${p.offers.map((o) => { const out = amazonize(o.url); const earns = o.earns_commission ?? out.earns; return `
-          <a class="btn btn-primary btn-block" href="${esc(out.url)}" target="_blank" rel="noopener sponsored">${o.price != null ? money(o.price) + ' at ' : 'See price at '}${esc(o.retailer)} ↗</a>
-          <span class="earn" style="text-align:center">${earns ? 'Affiliate link' : ''}</span>`; }).join('')}
-      </div>`).join('') : '<p class="empty">No picks here yet. Check back soon.</p>'}</div>
-    <div class="foot"><p>As an Amazon Associate, SteelGames earns from qualifying purchases.</p></div>`;
+if (!sb) { view.innerHTML = errorBox("Couldn't load gear right now."); return; }
+view.innerHTML = `<div class="stack">${skeletons(5)}</div>`;
+let products;
+try { products = await getProducts(); } catch { view.innerHTML = errorBox("Couldn't load gear. Check your connection and try again."); return; }
+const gi = {}; GEAR_GROUPS.forEach(([g, cats], n) => cats.forEach((c) => { gi[c] = n; }));
+const gcls = (c) => 'g' + (gi[c] ?? 0);
+const foot = '<div class="foot"><p>As an Amazon Associate, SteelGames earns from qualifying purchases.</p></div>';
+const newest = (x, y) => String(y.created_at).localeCompare(String(x.created_at));
+// One product card: big picture area (the real photo when image_url is set, otherwise a tinted icon tile), name, short summary, buy button.
+const card = (p) => {
+const o = p.offers[0];
+const out = o ? amazonize(o.url) : null;
+const pic = p.image_url ? `<img src="${esc(p.image_url)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-img');this.remove()">` : gIcon(p.category, 56);
+const badge = p.platform ? `<span class="gx-badge">${esc(PLATFORM_NAMES[p.platform] || p.platform)}</span>` : '';
+const inner = `<div class="gx-media${p.image_url ? ' has-img' : ''}">${pic}${badge}</div><div class="gx-body"><span class="gx-cat">${esc(p.category)}</span><h3 class="gx-name">${esc(p.name)}</h3>${p.summary ? `<p class="gx-sum">${esc(p.summary)}</p>` : ''}${o && o.price != null ? `<span class="gx-price">${money(o.price)}</span>` : ''}${o ? `<span class="gx-cta">${o.price != null ? 'Buy' : 'See price'} on ${esc(o.retailer)} ↗</span>` : ''}</div>`;
+return o ? `<a class="gx-card ${gcls(p.category)}" href="${esc(out.url)}" target="_blank" rel="noopener sponsored">${inner}</a>` : `<div class="gx-card ${gcls(p.category)}">${inner}</div>`;
+};
+if (!category) {
+const count = (c) => products.filter((p) => p.category === c).length;
+const strip = GEAR_GROUPS.flatMap(([g, cats], n) => cats.map((c) => `<a class="gx-pill g${n}" href="#/gear/${encodeURIComponent(c)}"><span class="gx-ic">${gIcon(c, 26)}</span>${esc(c)}</a>`)).join('');
+const fresh = [...products].sort(newest).slice(0, 10);
+const sections = GEAR_GROUPS.map(([g, cats], n) => `<div class="section g${n}"><div class="gx-group-h"><h2>${esc(g)}</h2><span class="hint">${cats.reduce((s, c) => s + count(c), 0)} picks</span></div><div class="gx-tiles">${cats.map((c) => `<a class="gx-tile" href="#/gear/${encodeURIComponent(c)}"><span class="gx-big">${gIcon(c, 76)}</span><strong>${esc(c)}</strong><small>${count(c)} ${count(c) === 1 ? 'pick' : 'picks'}</small></a>`).join('')}</div></div>`).join('');
+const home = `<div class="gx-strip" role="navigation" aria-label="Categories">${strip}</div><div class="section"><div class="gx-group-h"><h2>Just added</h2></div><div class="gx-rail">${fresh.map(card).join('')}</div></div>${sections}`;
+view.innerHTML = `<div class="gx-hero"><h1 class="screen-title" style="margin:0">Gear</h1><p>${products.length} picks for your whole setup, from PC parts to desk upgrades.</p>
+<form class="gx-search" id="gxForm" role="search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9BA4AF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label class="sr" for="gxQ">Search gear</label><input id="gxQ" type="search" placeholder="Search gear, like mouse or headset" autocomplete="off" enterkeyhint="search"></form></div>
+<div id="gxBody">${home}</div>${foot}`;
+const q = document.getElementById('gxQ'), body = document.getElementById('gxBody');
+document.getElementById('gxForm').addEventListener('submit', (e) => { e.preventDefault(); q.blur(); });
+q.addEventListener('input', () => {
+const t = q.value.trim().toLowerCase();
+if (t.length < 2) { body.innerHTML = home; return; }
+const hits = products.filter((p) => (p.name + ' ' + (p.summary || '') + ' ' + p.category).toLowerCase().includes(t)).slice(0, 60);
+body.innerHTML = hits.length ? `<div class="section"><h2>${hits.length} ${hits.length === 1 ? 'result' : 'results'}</h2><div class="gx-grid">${hits.map(card).join('')}</div></div>` : '<p class="empty">Nothing matches. Try a shorter word, like "mouse" or "chair".</p>';
+});
+return;
+}
+const list = products.filter((p) => p.category === category);
+const n = gi[category] ?? 0;
+const grp = GEAR_GROUPS[n] || ['Gear', []];
+const sibs = grp[1].map((c) => `<a class="gx-pill g${n}" href="#/gear/${encodeURIComponent(c)}" ${c === category ? 'aria-current="page"' : ''}><span class="gx-ic">${gIcon(c, 26)}</span>${esc(c)}</a>`).join('');
+const plats = [...new Set(list.map((p) => p.platform).filter(Boolean))];
+let plat = 'all', sort = 'name';
+view.innerHTML = `<button class="back" onclick="history.back()">‹ Back</button>
+<div class="gx-hero g${n}"><span class="gx-cat">${esc(grp[0])}</span><h1 class="screen-title" style="margin:0">${esc(category)}</h1><p>${list.length} ${list.length === 1 ? 'pick' : 'picks'} we like. Tap a card to see the price.</p></div>
+<div class="gx-strip g${n}" role="navigation" aria-label="More in ${esc(grp[0])}">${sibs}</div>
+<div class="gx-toolbar">${plats.length > 1 ? `<div class="chips" role="group" aria-label="Platform">${[['all', 'All']].concat(plats.map((k) => [k, PLATFORM_NAMES[k] || k])).map(([k, nm]) => `<button class="chip chip-sm" data-plat="${esc(k)}" aria-pressed="${k === 'all'}">${esc(nm)}</button>`).join('')}</div>` : ''}<label class="sortbox" style="flex:1 1 200px"><span class="sr">Sort</span><select id="gxSort" class="input sel"><option value="name">Name A to Z</option><option value="new">Newest first</option></select></label></div>
+<div class="section" id="gxList"></div>${foot}`;
+const render = () => {
+const rows = list.filter((p) => plat === 'all' || p.platform === plat).sort((x, y) => sort === 'new' ? newest(x, y) : x.name.localeCompare(y.name));
+document.getElementById('gxList').innerHTML = rows.length ? `<div class="gx-grid">${rows.map(card).join('')}</div>` : '<p class="empty">No picks here yet. Check back soon.</p>';
+};
+view.querySelectorAll('.chip[data-plat]').forEach((bt) => bt.addEventListener('click', () => { plat = bt.dataset.plat; view.querySelectorAll('.chip[data-plat]').forEach((c) => c.setAttribute('aria-pressed', c === bt)); render(); }));
+document.getElementById('gxSort').addEventListener('change', (e) => { sort = e.target.value; render(); });
+render();
 }
 
 async function screenMyPC() {
