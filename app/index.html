@@ -929,6 +929,8 @@ async function getProducts() {
   productsCache = products.map((p) => ({ ...p, offers: (byProduct[p.id] || []).sort((a, b) => (a.price ?? 1e9) - (b.price ?? 1e9)) }));
   return productsCache;
 }
+// Amazon product ID (ASIN) from a product link; search links have none.
+const asinOf = (u) => { const m = String(u || '').match(/\/(?:dp|gp\/product)\/([A-Z0-9]{10})/i); return m ? m[1].toUpperCase() : null; };
 async function screenGear(category) {
 if (!sb) { view.innerHTML = errorBox("Couldn't load gear right now."); return; }
 view.innerHTML = `<div class="stack">${skeletons(5)}</div>`;
@@ -938,14 +940,33 @@ const gi = {}; GEAR_GROUPS.forEach(([g, cats], n) => cats.forEach((c) => { gi[c]
 const gcls = (c) => 'g' + (gi[c] ?? 0);
 const foot = '<div class="foot"><p>As an Amazon Associate, SteelGames earns from qualifying purchases.</p></div>';
 const newest = (x, y) => String(y.created_at).localeCompare(String(x.created_at));
+// Fills in real product pictures after the page is shown. The server returns {} until Amazon credentials are added, so cards keep their icon tiles.
+const hydrate = async () => {
+const cards = [...view.querySelectorAll('.gx-card[data-asin]')].filter((c) => !c.querySelector('.gx-media img'));
+const asins = [...new Set(cards.map((c) => c.dataset.asin))];
+if (!asins.length) return;
+try {
+const map = await webData('images=' + asins.join(','));
+cards.forEach((c) => {
+const u = map[c.dataset.asin], m = c.querySelector('.gx-media');
+if (!u || !m || m.querySelector('img')) return;
+const img = new Image();
+img.alt = ''; img.referrerPolicy = 'no-referrer';
+img.onload = () => { m.classList.add('has-img'); const ic = m.querySelector('svg'); if (ic) ic.remove(); m.prepend(img); };
+img.src = u;
+});
+} catch { /* keep the icon tiles */ }
+};
+
 // One product card: big picture area (the real photo when image_url is set, otherwise a tinted icon tile), name, short summary, buy button.
 const card = (p) => {
 const o = p.offers[0];
 const out = o ? amazonize(o.url) : null;
+const asin = o ? asinOf(o.url) : null;
 const pic = p.image_url ? `<img src="${esc(p.image_url)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-img');this.remove()">` : gIcon(p.category, 56);
 const badge = p.platform ? `<span class="gx-badge">${esc(PLATFORM_NAMES[p.platform] || p.platform)}</span>` : '';
 const inner = `<div class="gx-media${p.image_url ? ' has-img' : ''}">${pic}${badge}</div><div class="gx-body"><span class="gx-cat">${esc(p.category)}</span><h3 class="gx-name">${esc(p.name)}</h3>${p.summary ? `<p class="gx-sum">${esc(p.summary)}</p>` : ''}${o && o.price != null ? `<span class="gx-price">${money(o.price)}</span>` : ''}${o ? `<span class="gx-cta">${o.price != null ? 'Buy' : 'See'} on ${esc(o.retailer)} ↗</span>` : ''}</div>`;
-return o ? `<a class="gx-card ${gcls(p.category)}" href="${esc(out.url)}" target="_blank" rel="noopener sponsored">${inner}</a>` : `<div class="gx-card ${gcls(p.category)}">${inner}</div>`;
+return o ? `<a class="gx-card ${gcls(p.category)}"${asin ? ' data-asin="' + asin + '"' : ''} href="${esc(out.url)}" target="_blank" rel="noopener sponsored">${inner}</a>` : `<div class="gx-card ${gcls(p.category)}">${inner}</div>`;
 };
 if (!category) {
 const count = (c) => products.filter((p) => p.category === c).length;
@@ -956,13 +977,13 @@ const home = `<div class="gx-strip" role="navigation" aria-label="Categories">${
 view.innerHTML = `<div class="gx-hero"><h1 class="screen-title" style="margin:0">Gear</h1><p>${products.length} picks for your whole setup, from PC parts to desk upgrades.</p>
 <form class="gx-search" id="gxForm" role="search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9BA4AF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label class="sr" for="gxQ">Search gear</label><input id="gxQ" type="search" placeholder="Search gear, like mouse or headset" autocomplete="off" enterkeyhint="search"></form></div>
 <div id="gxBody">${home}</div>${foot}`;
-const q = document.getElementById('gxQ'), body = document.getElementById('gxBody');
+const q = document.getElementById('gxQ'), body = document.getElementById('gxBody'); hydrate();
 document.getElementById('gxForm').addEventListener('submit', (e) => { e.preventDefault(); q.blur(); });
 q.addEventListener('input', () => {
 const t = q.value.trim().toLowerCase();
-if (t.length < 2) { body.innerHTML = home; return; }
+if (t.length < 2) { body.innerHTML = home; hydrate(); return; }
 const hits = products.filter((p) => (p.name + ' ' + (p.summary || '') + ' ' + p.category).toLowerCase().includes(t)).slice(0, 60);
-body.innerHTML = hits.length ? `<div class="section"><h2>${hits.length} ${hits.length === 1 ? 'result' : 'results'}</h2><div class="gx-grid">${hits.map(card).join('')}</div></div>` : '<p class="empty">Nothing matches. Try a shorter word, like "mouse" or "chair".</p>';
+body.innerHTML = hits.length ? `<div class="section"><h2>${hits.length} ${hits.length === 1 ? 'result' : 'results'}</h2><div class="gx-grid">${hits.map(card).join('')}</div></div>` : '<p class="empty">Nothing matches. Try a shorter word, like "mouse" or "chair".</p>'; hydrate();
 });
 return;
 }
@@ -979,7 +1000,7 @@ view.innerHTML = `<button class="back" onclick="history.back()">‹ Back</button
 <div class="section" id="gxList"></div>${foot}`;
 const render = () => {
 const rows = list.filter((p) => plat === 'all' || p.platform === plat).sort((x, y) => sort === 'new' ? newest(x, y) : x.name.localeCompare(y.name));
-document.getElementById('gxList').innerHTML = rows.length ? `<div class="gx-grid">${rows.map(card).join('')}</div>` : '<p class="empty">No picks here yet. Check back soon.</p>';
+document.getElementById('gxList').innerHTML = rows.length ? `<div class="gx-grid">${rows.map(card).join('')}</div>` : '<p class="empty">No picks here yet. Check back soon.</p>'; hydrate();
 };
 view.querySelectorAll('.chip[data-plat]').forEach((bt) => bt.addEventListener('click', () => { plat = bt.dataset.plat; view.querySelectorAll('.chip[data-plat]').forEach((c) => c.setAttribute('aria-pressed', c === bt)); render(); }));
 document.getElementById('gxSort').addEventListener('change', (e) => { sort = e.target.value; render(); });
