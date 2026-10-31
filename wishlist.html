@@ -3,90 +3,92 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Your wishlist | SteelGames</title>
-<meta name="robots" content="noindex,follow">
-<meta name="description" content="Your saved games with target prices and price-drop flags.">
+<title>Your Wishlist | SteelGames</title>
+<meta name="description" content="Save games to your SteelGames wishlist and see when their price drops.">
+<link rel="canonical" href="https://steelgamesapp.com/wishlist.html">
+<meta property="og:title" content="Your Wishlist | SteelGames"><meta property="og:description" content="Save games to your SteelGames wishlist and see when their price drops."><meta property="og:url" content="https://steelgamesapp.com/wishlist.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/sg.css">
+<link rel="stylesheet" href="/assets/pages.css">
+<meta name="google-adsense-account" content="ca-pub-3613204296597380">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
 <script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<script defer src="/assets/sg.js"></script>
+<script src="/assets/shop.js" defer></script>
+<meta name="robots" content="noindex,follow">
 </head>
 <body>
-<div id="sg-header"></div>
-<main class="wrap">
-<section class="hero">
-<h1>Wishlist</h1>
-<p>Set a target price on any saved game. We flag price drops and lowest-ever prices when you open this page. Your list stays in this browser and is shared with the SteelGames app on the same browser.</p>
-</section>
-<div id="alert"></div>
-<div><button class="btn" id="notify" hidden>Turn on browser notifications</button></div>
-<div class="grid" id="grid"></div>
-<p class="note">Alerts only run while the site is open in your browser. Email or push alerts while the site is closed are not available yet.</p>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="SteelGames home"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg><span>STEELGAMES</span></a>
+    <nav class="nav" aria-label="Site"><a href="/games.html">Games</a><a href="/keys.html">Keys</a><a href="/app/#/news">News</a><a href="/gear.html">Gear</a><a href="/reviews.html">Reviews</a><a href="/community.html">Community</a><a class="nav-cta" href="/app/#/account">Profile</a></nav>
+  </div>
+</header>
+<main>
+<section class="hero"><div class="wrap">
+<p class="eyebrow">Saved on this device</p>
+<h1>Your wishlist</h1>
+<p class="lede">Save games you want and set a target price. We check prices each time you open SteelGames and flag every drop.</p>
+</div></section>
+<section class="block"><div class="wrap">
+<div class="notice alertbar" id="bar"><span id="hitcount"></span><button type="button" class="btn btn-ghost" id="notify">Turn on browser alerts</button></div>
+<div class="rows" id="list" aria-live="polite"></div>
+<p class="fine">Your wishlist is saved in this browser and shared with the SteelGames app on this device. Alerts appear when you visit; browser alerts need permission.</p>
+</div></section>
 </main>
-<div id="sg-footer"></div>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-const E = SG.esc, M = SG.money, grid = document.getElementById('grid');
-let live = {};
-function best(g) {
-const info = live[g.id]; if (!info) return null;
-const ds = (info.deals || []).filter((d) => names[d.storeID]);
-if (!ds.length) return null;
-const d = ds.reduce((a, b) => (+b.price < +a.price ? b : a), ds[0]);
-return { price: +d.price, normal: +d.retailPrice, storeID: d.storeID, dealID: d.dealID };
-}
-let names = {};
-function row(g) {
-const b = best(g), low = live[g.id] ? live[g.id].low : null;
-const now = b ? b.price : null;
-const hit = g.target && now != null && now <= g.target;
-const drop = g.price != null && now != null && now <= g.price - 0.5;
-const lowest = low != null && now != null && now <= low + 0.005;
-const pills = (hit ? '<span class="pill">Hit your target</span> ' : '') + (lowest ? '<span class="pill">Lowest ever</span> ' : '') + (drop && !hit ? '<span class="pill">Price drop</span> ' : '');
-const inC = SG.inCart(g.id);
-return '<article class="gcard" data-id="' + E(g.id) + '" style="--store:' + (b ? (SG.STORE_COLORS[b.storeID] || '#7B5CFF') : '#7B5CFF') + '">'
-+ '<a class="art" href="/deal/?id=' + encodeURIComponent(g.id) + '"><img src="' + E(g.art || g.thumb) + '" data-fallback="' + E(g.thumb || '') + '" alt="' + E(g.title) + ' cover art" loading="lazy"></a>'
-+ '<div class="body"><h3><a href="/deal/?id=' + encodeURIComponent(g.id) + '">' + E(g.title) + '</a></h3>'
-+ '<div>' + pills + '</div>'
-+ '<div class="prices"><div class="now"><span>Now</span><b>' + (now != null ? M(now) : '...') + '</b></div><div><span>Saved at</span><b>' + (g.price != null ? M(g.price) : '-') + '</b></div><div class="low"><span>Lowest</span><b>' + (low != null ? M(Math.min(low, now == null ? low : now)) : '-') + '</b></div></div>'
-+ '<form class="filters" data-target="' + E(g.id) + '"><label>Target price<input type="number" min="0" step="0.01" value="' + (g.target || '') + '" placeholder="e.g. 9.99"></label><button class="btn" type="submit">Set</button></form>'
-+ '<div class="actions"><button class="btn grow" data-w="rm" data-id="' + E(g.id) + '">Remove</button>'
-+ '<button class="btn btn-primary grow" data-w="cart" data-id="' + E(g.id) + '"' + (b ? '' : ' disabled') + '>' + (inC ? 'In cart ✓' : 'Add to cart') + '</button></div></div></article>';
-}
-function draw() {
-const w = SG.wishlist();
-grid.innerHTML = w.length ? w.map(row).join('') : '<div class="empty">Nothing saved yet. Tap the heart on any game in <a href="/games.html">Games</a> or <a href="/keys.html">Keys &amp; Software</a>.</div>';
-const hits = w.filter((g) => { const b = best(g); return b && ((g.target && b.price <= g.target) || (g.price != null && b.price <= g.price - 0.5)); });
-document.getElementById('alert').innerHTML = hits.length ? '<div class="banner"><b>Price alert:</b> ' + (hits.length === 1 ? E(hits[0].title) + ' is cheaper now.' : hits.length + ' games on your wishlist are cheaper now.') + '</div>' : '';
-return hits;
-}
-grid.addEventListener('submit', (e) => {
-const f = e.target.closest('[data-target]'); if (!f) return; e.preventDefault();
-const v = parseFloat(f.querySelector('input').value), w = SG.wishlist(), it = w.find((x) => String(x.id) === f.dataset.target);
-if (!it) return; if (v > 0) it.target = v; else delete it.target;
-SG.store.set('watchlist', w); draw();
+<script>document.addEventListener('DOMContentLoaded', () => {
+const $ = (s) => document.querySelector(s);
+const esc = (t) => String(t == null ? '' : t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const money = SG.money;
+const SC = { 'Steam': '#66C0F4', 'GreenManGaming': '#5CE08A', 'Fanatical': '#FF8A3D', 'GOG': '#B388FF', 'Epic Games Store': '#E8E8F0', 'Humble Store': '#FF5A5F', 'GameBillet': '#FFD43B', 'Gamesplanet': '#4DD0E1', 'GamersGate': '#FF7043', 'Voidu': '#F06292', 'IndieGala': '#FF5252', 'WinGameStore': '#4FC3F7' };
+const buy = (deal, id) => deal ? 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(deal) : '/deal/?id=' + encodeURIComponent(id);
+
+const list = $('#list'), bar = $('#bar'); let live = {}, names = {};
+const draw = () => {
+  const w = SG.wishlist();
+  if (!w.length) { list.innerHTML = '<div class="empty"><p style="font-size:18px;color:#fff;margin-bottom:6px">Your wishlist is empty</p><p>Tap the heart on any game and we will flag it here when the price drops.</p><p style="margin-top:14px"><a class="btn" href="/games.html">Browse games</a></p></div>'; bar.hidden = true; return; }
+  bar.hidden = false;
+  list.innerHTML = w.map((g) => {
+    const p = live[g.id], now = p ? p.now : null, hit = p && ((g.target && now <= g.target) || (g.price != null && now <= g.price - 0.5));
+    const isLow = p && p.low != null && now <= p.low;
+    const img = SG.art({ steam: g.steam || (p && p.steam), thumb: g.thumb });
+    const store = p ? (names[p.storeID] || 'Store') : '';
+    const pills = (hit ? '<span class="pill hot">Price drop</span>' : '') + (isLow ? '<span class="pill good">Lowest ever</span>' : '') + (g.target && p && now <= g.target ? '<span class="pill good">Hit your target</span>' : '');
+    return '<article class="lrow" style="--store:' + (SC[store] || '#7B5CFF') + '"><a class="pic" href="/deal/?id=' + encodeURIComponent(g.id) + '"><img src="' + esc(img) + '" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'' + esc(g.thumb) + '\'"></a>' +
+      '<div class="main"><h3>' + esc(g.title) + '</h3><div class="pills">' + pills + '</div>' +
+      '<div class="stats"><div class="stat now"><small>Now' + (store ? ' at ' + esc(store) : '') + '</small><strong>' + (p ? money(now) : '...') + '</strong></div><div class="stat hi"><small>Highest</small><strong>' + (p && p.normal ? money(Math.max(p.normal, now)) : '...') + '</strong></div><div class="stat lo"><small>Lowest ever</small><strong>' + (p && p.low != null ? money(p.low) : '...') + '</strong></div></div>' +
+      '<label class="target">Alert me at or below $<input type="number" min="0" step="0.01" inputmode="decimal" value="' + (g.target || '') + '" data-target="' + esc(g.id) + '" placeholder="' + (p ? Math.max(1, Math.floor(now * 0.8)) : '10') + '"></label></div>' +
+      '<div class="side">' + (p ? '<button type="button" class="primary" data-addcart="' + esc(g.id) + '">' + (SG.inCart(g.id) ? 'In cart' : 'Add to cart') + '</button><a href="' + esc(buy(p.deal, g.id)) + '" target="_blank" rel="noopener sponsored">Buy now</a>' : '') + '<button type="button" class="danger" data-remove="' + esc(g.id) + '">Remove</button></div></article>';
+  }).join('');
+  const n = SG.hits(w, live).length;
+  $('#hitcount').textContent = n ? n + (n === 1 ? ' game is' : ' games are') + ' cheaper right now.' : 'No price drops yet. We check every time you open SteelGames.';
+};
+const refresh = async () => {
+  try { names = Object.fromEntries((await (await fetch(SG.API + '/stores')).json()).map((s) => [s.storeID, s.storeName])); } catch (e) {}
+  live = await SG.checkPrices(); draw();
+};
+document.addEventListener('click', (e) => {
+  const r = e.target.closest('[data-remove]'), a = e.target.closest('[data-addcart]');
+  if (r) { const id = r.dataset.remove; const w = SG.wishlist().filter((x) => x.id !== id); SG.LS.set('watchlist', w); document.dispatchEvent(new CustomEvent('sg:change')); draw(); }
+  if (a) { const g = SG.wishlist().find((x) => x.id === a.dataset.addcart), p = live[a.dataset.addcart]; if (g && p) { SG.addCart({ id: g.id, deal: p.deal, title: g.title, thumb: g.thumb, steam: g.steam || p.steam, store: names[p.storeID], price: p.now, normal: p.normal }); SG.toast('Added to your cart.', '/cart.html', 'View cart'); draw(); } }
 });
-grid.addEventListener('click', (e) => {
-const b = e.target.closest('[data-w]'); if (!b) return;
-const g = SG.wishlist().find((x) => String(x.id) === b.dataset.id); if (!g) return;
-if (b.dataset.w === 'rm') { SG.store.set('watchlist', SG.wishlist().filter((x) => String(x.id) !== b.dataset.id)); draw(); return; }
-const bb = best(g); if (!bb) return;
-SG.toggleCart({ gameID: g.id, title: g.title, thumb: g.thumb, art: g.art, steamAppID: null, salePrice: bb.price, normalPrice: bb.normal, storeID: bb.storeID, dealID: bb.dealID });
-draw();
-});
-draw();
-SG.storeNames().then(async (n) => {
-names = n;
-const w = SG.wishlist();
-if (!w.length) return;
-live = await SG.lowestEver(w.map((g) => g.id));
-const hits = draw();
-if ('Notification' in window) {
-if (Notification.permission === 'granted' && hits.length) new Notification('SteelGames price alert', { body: hits.length + ' game(s) on your wishlist are cheaper now.' });
-else if (Notification.permission === 'default') { const nb = document.getElementById('notify'); nb.hidden = false; nb.onclick = () => Notification.requestPermission().then(() => { nb.hidden = true; }); }
-}
-});
-});
-</script>
+document.addEventListener('change', (e) => { const t = e.target.closest('[data-target]'); if (t) { SG.setTarget(t.dataset.target, parseFloat(t.value)); SG.toast(t.value > 0 ? 'Alert set at $' + (+t.value).toFixed(2) + '.' : 'Alert removed.'); draw(); } });
+const nb = $('#notify');
+const syncNotify = () => { if (!('Notification' in window)) { nb.hidden = true; return; } nb.textContent = Notification.permission === 'granted' ? 'Browser alerts are on' : 'Turn on browser alerts'; nb.disabled = Notification.permission === 'granted' || Notification.permission === 'denied'; if (Notification.permission === 'denied') nb.textContent = 'Browser alerts are blocked'; };
+nb.addEventListener('click', async () => { try { await Notification.requestPermission(); } catch (e) {} syncNotify(); });
+syncNotify(); draw(); refresh();
+});</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="vet-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned and operated</span>
+    <div class="footer-links">
+      <a href="/games.html">Games</a><a href="/keys.html">Key resellers</a><a href="/deals/">Deal lists</a><a href="/gear.html">Shop gear</a>
+      <a href="/privacy.html">Privacy policy</a><a href="/terms.html">Terms of use</a><a href="/advertise.html">Advertise</a>
+      <a href="mailto:steelgames.app@outlook.com">Contact us</a><span>© 2026 Lonestar PPS, LLC</span>
+    </div>
+    <p>As an Amazon Associate, SteelGames earns from qualifying purchases. SteelGames may also earn a commission from other stores linked on this site, at no extra cost to you. Prices can change at any time.</p>
+    <p>SteelGames is a product of Lonestar PPS, LLC, a veteran-owned company. Not affiliated with Valve, Epic Games, Microsoft, Sony or Nintendo.</p>
+  </div>
+</footer>
 </body>
 </html>

@@ -3,56 +3,91 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Your cart | SteelGames</title>
-<meta name="robots" content="noindex,follow">
-<meta name="description" content="Games you plan to buy, grouped by store with totals and savings.">
+<title>Your Cart | SteelGames</title>
+<meta name="description" content="Compare your total across stores and buy each game at the store with the best price.">
+<link rel="canonical" href="https://steelgamesapp.com/cart.html">
+<meta property="og:title" content="Your Cart | SteelGames"><meta property="og:description" content="Compare your total across stores and buy each game at the store with the best price."><meta property="og:url" content="https://steelgamesapp.com/cart.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/sg.css">
+<link rel="stylesheet" href="/assets/pages.css">
+<meta name="google-adsense-account" content="ca-pub-3613204296597380">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
 <script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<script defer src="/assets/sg.js"></script>
+<script src="/assets/shop.js" defer></script>
+<meta name="robots" content="noindex,follow">
 </head>
 <body>
-<div id="sg-header"></div>
-<main class="wrap">
-<section class="hero">
-<h1>Cart</h1>
-<p>Your games grouped by the store with the best price. Each game is bought on that store's own site, so there is no payment here.</p>
-</section>
-<div id="stores" style="display:flex;flex-direction:column;gap:20px"></div>
-<div id="total"></div>
-<p class="note">Prices were saved when you added each game and can change. Open the store link to see the live price before you pay.</p>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="SteelGames home"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg><span>STEELGAMES</span></a>
+    <nav class="nav" aria-label="Site"><a href="/games.html">Games</a><a href="/keys.html">Keys</a><a href="/app/#/news">News</a><a href="/gear.html">Gear</a><a href="/reviews.html">Reviews</a><a href="/community.html">Community</a><a class="nav-cta" href="/app/#/account">Profile</a></nav>
+  </div>
+</header>
+<main>
+<section class="hero"><div class="wrap">
+<p class="eyebrow">Saved on this device</p>
+<h1>Your cart</h1>
+<p class="lede">Line up the games you plan to buy, see your total and what you save, then check out at each store.</p>
+</div></section>
+<section class="block"><div class="wrap"><div class="cols">
+<div class="rows" id="list" aria-live="polite"></div>
+<aside class="summary" id="sum" hidden>
+<h2 style="font-size:20px">Order summary</h2>
+<div class="line"><span>Games</span><span id="n">0</span></div>
+<div class="line"><span>Usual price</span><span id="reg"></span></div>
+<div class="line save"><span>You save</span><span id="sav"></span></div>
+<div class="line"><span>Total</span><span class="total" id="tot"></span></div>
+<p class="fine">Each game is bought on the store's own site, so you pay the store directly. SteelGames never takes payment. Prices can change at any time.</p>
+<button type="button" class="btn btn-ghost" id="clear">Clear cart</button>
+</aside>
+</div></div></section>
 </main>
-<div id="sg-footer"></div>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-const E = SG.esc, M = SG.money;
-let names = {};
-function draw() {
-const c = SG.cart(), box = document.getElementById('stores');
-if (!c.length) { box.innerHTML = '<div class="empty">Your cart is empty. Add games from <a href="/games.html">Games</a> or <a href="/keys.html">Keys &amp; Software</a>.</div>'; document.getElementById('total').innerHTML = ''; return; }
-const by = {};
-c.forEach((g) => (by[g.storeID] = by[g.storeID] || []).push(g));
-let sum = 0, was = 0;
-box.innerHTML = Object.entries(by).map(([sid, items]) => {
-const sub = items.reduce((a, g) => a + g.price, 0);
-sum += sub; was += items.reduce((a, g) => a + Math.max(g.normal || g.price, g.price), 0);
-return '<section class="store-group" style="--store:' + (SG.STORE_COLORS[sid] || '#7B5CFF') + '"><h2>' + E(names[sid] || 'Store') + ' <span class="muted" style="font-size:15px">' + items.length + (items.length === 1 ? ' game' : ' games') + ' · ' + M(sub) + '</span></h2>'
-+ '<div class="scroll"><table><thead><tr><th></th><th>Game</th><th>Price</th><th>Usual</th><th></th></tr></thead><tbody>'
-+ items.map((g) => '<tr><td><img src="' + E(g.art || g.thumb) + '" data-fallback="' + E(g.thumb || '') + '" alt="" loading="lazy"></td><td><a href="/deal/?id=' + encodeURIComponent(g.id) + '">' + E(g.title) + '</a></td><td>' + M(g.price) + '</td><td class="was">' + (g.normal ? M(g.normal) : '') + '</td>'
-+ '<td><a class="btn btn-primary" rel="sponsored noopener" target="_blank" href="https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(g.dealID) + '">Buy</a> <button class="btn" data-rm="' + E(g.id) + '">Remove</button></td></tr>').join('')
-+ '</tbody></table></div></section>';
-}).join('');
-document.getElementById('total').innerHTML = '<div class="total"><div><div class="muted">Total for ' + c.length + (c.length === 1 ? ' game' : ' games') + '</div><b>' + M(sum) + '</b></div>'
-+ (was > sum ? '<div class="save">You save ' + M(was - sum) + ' vs usual prices</div>' : '') + '<button class="btn" id="clear">Clear cart</button></div>';
-}
+<script>document.addEventListener('DOMContentLoaded', () => {
+const $ = (s) => document.querySelector(s);
+const esc = (t) => String(t == null ? '' : t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const money = SG.money;
+const SC = { 'Steam': '#66C0F4', 'GreenManGaming': '#5CE08A', 'Fanatical': '#FF8A3D', 'GOG': '#B388FF', 'Epic Games Store': '#E8E8F0', 'Humble Store': '#FF5A5F', 'GameBillet': '#FFD43B', 'Gamesplanet': '#4DD0E1', 'GamersGate': '#FF7043', 'Voidu': '#F06292', 'IndieGala': '#FF5252', 'WinGameStore': '#4FC3F7' };
+const buy = (deal, id) => deal ? 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(deal) : '/deal/?id=' + encodeURIComponent(id);
+
+const list = $('#list'), sum = $('#sum');
+const draw = () => {
+  const c = SG.cart();
+  if (!c.length) { list.innerHTML = '<div class="empty"><p style="font-size:18px;color:#fff;margin-bottom:6px">Your cart is empty</p><p>Add games from any list and compare your total here.</p><p style="margin-top:14px"><a class="btn" href="/games.html">Browse games</a></p></div>'; sum.hidden = true; return; }
+  sum.hidden = false;
+  const groups = {}; c.forEach((x) => { (groups[x.store] = groups[x.store] || []).push(x); });
+  list.innerHTML = Object.keys(groups).map((s) => {
+    const items = groups[s], sub = items.reduce((a, x) => a + x.price, 0);
+    return '<section class="rows" style="--store:' + (SC[s] || '#7B5CFF') + '"><h3 class="group-h"><i></i>' + esc(s) + '<span>' + items.length + (items.length === 1 ? ' game' : ' games') + ' · ' + money(sub) + '</span></h3>' + items.map((x) => {
+      const off = x.normal > x.price ? Math.round((1 - x.price / x.normal) * 100) : 0;
+      return '<article class="lrow"><a class="pic" href="/deal/?id=' + encodeURIComponent(x.id) + '"><img src="' + esc(SG.art(x)) + '" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'' + esc(x.thumb) + '\'"></a>' +
+        '<div class="main"><h3>' + esc(x.title) + '</h3><div class="pills">' + (off ? '<span class="pill hot">-' + off + '%</span>' : '') + '<span class="pill">' + esc(x.store) + '</span></div>' +
+        '<div class="stats"><div class="stat now"><small>Price</small><strong>' + money(x.price) + '</strong></div><div class="stat hi"><small>Highest</small><strong>' + money(Math.max(x.normal, x.price)) + '</strong></div><div class="stat lo"><small>You save</small><strong>' + money(Math.max(0, x.normal - x.price)) + '</strong></div></div></div>' +
+        '<div class="side"><a class="primary" href="' + esc(buy(x.deal, x.id)) + '" target="_blank" rel="noopener sponsored">Buy at ' + esc(x.store) + '</a><button type="button" data-wish2="' + esc(x.id) + '">Move to wishlist</button><button type="button" class="danger" data-rm="' + esc(x.id) + '">Remove</button></div></article>';
+    }).join('') + '</section>';
+  }).join('');
+  const total = c.reduce((a, x) => a + x.price, 0), reg = c.reduce((a, x) => a + Math.max(x.normal, x.price), 0);
+  $('#n').textContent = c.length; $('#reg').textContent = money(reg); $('#tot').textContent = money(total); $('#sav').textContent = money(Math.max(0, reg - total));
+};
 document.addEventListener('click', (e) => {
-const r = e.target.closest('[data-rm]');
-if (r) { SG.store.set('sg_cart', SG.cart().filter((x) => String(x.id) !== r.dataset.rm)); draw(); }
-if (e.target.id === 'clear') { SG.store.set('sg_cart', []); draw(); }
+  const r = e.target.closest('[data-rm]'), m = e.target.closest('[data-wish2]');
+  if (r) { SG.removeCart(r.dataset.rm); draw(); }
+  if (m) { const x = SG.cart().find((i) => i.id === m.dataset.wish2); if (x) { if (!SG.inWish(x.id)) SG.toggleWish({ id: x.id, title: x.title, thumb: x.thumb, steam: x.steam, price: x.price }); SG.removeCart(x.id); SG.toast('Moved to your wishlist.', '/wishlist.html', 'View'); draw(); } }
 });
-SG.storeNames().then((n) => { names = n; draw(); });
+$('#clear').addEventListener('click', () => { SG.LS.set('sg_cart', []); document.dispatchEvent(new CustomEvent('sg:change')); draw(); });
 draw();
-});
-</script>
+});</script>
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="vet-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned and operated</span>
+    <div class="footer-links">
+      <a href="/games.html">Games</a><a href="/keys.html">Key resellers</a><a href="/deals/">Deal lists</a><a href="/gear.html">Shop gear</a>
+      <a href="/privacy.html">Privacy policy</a><a href="/terms.html">Terms of use</a><a href="/advertise.html">Advertise</a>
+      <a href="mailto:steelgames.app@outlook.com">Contact us</a><span>© 2026 Lonestar PPS, LLC</span>
+    </div>
+    <p>As an Amazon Associate, SteelGames earns from qualifying purchases. SteelGames may also earn a commission from other stores linked on this site, at no extra cost to you. Prices can change at any time.</p>
+    <p>SteelGames is a product of Lonestar PPS, LLC, a veteran-owned company. Not affiliated with Valve, Epic Games, Microsoft, Sony or Nintendo.</p>
+  </div>
+</footer>
 </body>
 </html>
