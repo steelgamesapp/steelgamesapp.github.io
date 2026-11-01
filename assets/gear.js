@@ -32,12 +32,21 @@
 
   function card(R, id, title) {
     const s = R.slots[id], v = R.items[s.value], up = s.up ? R.items[s.up] : null;
-    const rel = 'target="_blank" rel="sponsored nofollow noopener"';
-    const upg = up ? '<a class="gup" href="' + esc(up.url) + '" ' + rel + '><img src="' + esc(up.img) + '" alt="" loading="lazy" width="56" height="56" onerror="this.style.visibility=\'hidden\'"><span><small>Upgrade pick</small>' + esc(up.name) + '</span></a>' : '';
+    const rel = 'target="_blank" rel="sponsored nofollow noopener"', icon = '/assets/gear-icons/' + s.icon + '.svg';
+    const upg = up ? '<a class="gup" href="' + esc(up.url) + '" ' + rel + '><img src="' + esc(up.img) + '" alt="" loading="lazy" width="56" height="56" onerror="this.onerror=null;this.src=\'' + icon + '\'"><span><small>Upgrade pick</small>' + esc(up.name) + '</span></a>' : '';
     return '<article class="gcar"><p class="gl">' + esc(s.label) + '</p>' +
-      '<a class="gimg" href="' + esc(v.url) + '" ' + rel + ' tabindex="-1" aria-hidden="true"><img src="' + esc(v.img) + '" alt="' + esc(v.name) + '" loading="lazy" width="400" height="300" onerror="this.closest(\'.gimg\').classList.add(\'empty\')"></a>' +
+      '<a class="gimg" href="' + esc(v.url) + '" ' + rel + ' tabindex="-1" aria-hidden="true"><img src="' + esc(v.img) + '" alt="' + esc(v.name) + '" loading="lazy" width="400" height="300" onerror="this.onerror=null;this.src=\'' + icon + '\';this.closest(\'.gimg\').classList.add(\'icon\')"></a>' +
       '<div class="gb"><span class="gtag">Best value</span><h3>' + esc(v.name) + '</h3><p>' + esc(s.why.split('{t}').join(title)) + '</p>' +
       '<a class="btn gbuy" href="' + esc(v.url) + '" ' + rel + '>See price on Amazon' + ARROW + '</a>' + upg + '</div></article>';
+  }
+
+  function bestWay(R, st) {
+    const first = (rows) => { for (const [p, t] of rows) if (st.includes(p)) return t; return Object.fromEntries(rows).general; };
+    const plat = (st.includes('vr') ? ['PC VR headset'] : []).concat(['Windows PC']).join(' · ');
+    const tiles = [['platform', 'Works best on', plat], ['controls', 'Best controls', first(R.bestway.controls)],
+      ['display', 'Best screen', first(R.bestway.display)], ['audio', 'Best sound', first(R.bestway.audio)]];
+    return '<h3 class="sub">Best way to play</h3><div class="bestway">' + tiles.map(([k, l, v]) =>
+      '<div class="bw"><span class="bwi">' + R.icons[k] + '</span><span><small>' + esc(l) + '</small>' + esc(v) + '</span></div>').join('') + '</div>';
   }
 
   window.SGGear = {
@@ -48,8 +57,8 @@
         if (R.games && R.games[gid] && R.games[gid].length) picks = R.games[gid];
         const chips = st.slice(0, 3).map((p) => '<span class="tag">' + esc(R.names[p] || p) + '</span>').join('');
         mount.innerHTML = '<section class="block gear"><div class="wrap"><h2>Best gear for ' + esc(title) + '</h2>' +
-          '<p class="lede gear-lede">Picked for how this game plays, with a best-value choice and an upgrade for each.</p>' +
-          '<div class="tags">' + chips + '</div><div class="gear-grid">' + picks.map((s) => card(R, s, title)).join('') + '</div>' +
+          '<p class="lede gear-lede">How this game plays best, and the gear to match: a best-value pick and an upgrade for each.</p>' +
+          '<div class="tags">' + chips + '</div>' + bestWay(R, st) + '<h3 class="sub">Recommended gear</h3><div class="gear-grid">' + picks.map((s) => card(R, s, title)).join('') + '</div>' +
           '<p class="fine">Prices change often, so check the latest price on Amazon. SteelGames may earn a small commission on purchases.</p></div></section>';
       } catch (e) { /* gear is a bonus; the price page works without it */ }
     },

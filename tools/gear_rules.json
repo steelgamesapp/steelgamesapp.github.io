@@ -211,133 +211,155 @@
    "label": "VR headset",
    "value": "quest3s",
    "up": "quest3",
-   "why": "{t} supports VR. The Quest 3S is the cheapest way into PC VR over Air Link or a cable; the Quest 3 adds sharper pancake lenses."
+   "why": "{t} supports VR. The Quest 3S is the cheapest way into PC VR over Air Link or a cable; the Quest 3 adds sharper pancake lenses.",
+   "icon": "vr"
   },
   "hotas": {
    "label": "Flight stick and throttle",
    "value": "hotas",
    "up": null,
-   "why": "A stick and throttle makes flying in {t} feel like a cockpit instead of a keyboard. The HOTAS One works on PC and Xbox."
+   "why": "A stick and throttle makes flying in {t} feel like a cockpit instead of a keyboard. The HOTAS One works on PC and Xbox.",
+   "icon": "joystick"
   },
   "wheel": {
    "label": "Racing wheel",
    "value": "g29",
    "up": "g923",
-   "why": "A force-feedback wheel and pedals give real throttle and brake control in {t}. The G29 is the best-value wheel; the G923 adds smoother TrueForce feedback."
+   "why": "A force-feedback wheel and pedals give real throttle and brake control in {t}. The G29 is the best-value wheel; the G923 adds smoother TrueForce feedback.",
+   "icon": "wheel"
   },
   "fps_mouse": {
    "label": "Low-latency mouse",
    "value": "g305",
    "up": "superlight2",
-   "why": "Fast aim in {t} needs a light mouse with a quick wireless link. The G305 is a cheap lag-free wireless pick; the Superlight 2 is what pros use."
+   "why": "Fast aim in {t} needs a light mouse with a quick wireless link. The G305 is a cheap lag-free wireless pick; the Superlight 2 is what pros use.",
+   "icon": "mouse"
   },
   "comp_kb": {
    "label": "Fast keyboard",
    "value": "aulaf75",
    "up": "huntsman",
-   "why": "Quick, consistent keys for movement in {t}. The Huntsman V3 Pro adds rapid-trigger switches that reset the moment you let go."
+   "why": "Quick, consistent keys for movement in {t}. The Huntsman V3 Pro adds rapid-trigger switches that reset the moment you let go.",
+   "icon": "keyboard"
   },
   "comp_monitor": {
    "label": "High-refresh monitor",
    "value": "sansui",
    "up": "lg27gr75q",
-   "why": "Higher refresh means smoother motion and quicker reactions in {t}. Both are sharp 1440p screens at 165Hz or more for the price of a 1080p monitor."
+   "why": "Higher refresh means smoother motion and quicker reactions in {t}. Both are sharp 1440p screens at 165Hz or more for the price of a 1080p monitor.",
+   "icon": "monitor"
   },
   "comp_headset": {
    "label": "Headset with a clear mic",
    "value": "blackshark",
    "up": "cloud3",
-   "why": "Hear footsteps and give callouts in {t}. The BlackShark V2 X is a light budget headset with a mic teammates can hear; the Cloud III is a step up in comfort and sound."
+   "why": "Hear footsteps and give callouts in {t}. The BlackShark V2 X is a light budget headset with a mic teammates can hear; the Cloud III is a step up in comfort and sound.",
+   "icon": "headset"
   },
   "chat_headset": {
    "label": "Headset for co-op voice chat",
    "value": "cloud3",
    "up": "g733",
-   "why": "{t} is better with friends on voice. The Cloud III has a clear detachable mic; the G733 goes wireless for long co-op nights."
+   "why": "{t} is better with friends on voice. The Cloud III has a clear detachable mic; the G733 goes wireless for long co-op nights.",
+   "icon": "headset"
   },
   "mic": {
    "label": "Microphone",
    "value": "am8",
    "up": "quadcast",
-   "why": "For crisp voice chat or streaming {t}, a desk mic beats any headset mic. The AM8 is a great USB starter; the QuadCast S is the creator favorite."
+   "why": "For crisp voice chat or streaming {t}, a desk mic beats any headset mic. The AM8 is a great USB starter; the QuadCast S is the creator favorite.",
+   "icon": "mic"
   },
   "controller": {
    "label": "Controller",
    "value": "8bitdo2c",
    "up": "8bitdo2",
-   "why": "{t} plays great on a controller. The 8BitDo Ultimate 2C is a cheap, reliable PC pad; the Ultimate 2 adds drift-free Hall effect sticks and a charging dock."
+   "why": "{t} plays great on a controller. The 8BitDo Ultimate 2C is a cheap, reliable PC pad; the Ultimate 2 adds drift-free Hall effect sticks and a charging dock.",
+   "icon": "controller"
   },
   "sports_pad": {
    "label": "Controller",
    "value": "xboxpad",
    "up": "dsedge",
-   "why": "Sports games like {t} are built around a controller. The Xbox pad works on PC with no setup; the DualSense Edge adds back buttons and swappable sticks."
+   "why": "Sports games like {t} are built around a controller. The Xbox pad works on PC with no setup; the DualSense Edge adds back buttons and swappable sticks.",
+   "icon": "controller"
   },
   "big_monitor": {
    "label": "Monitor for the best visuals",
    "value": "sansui",
    "up": "odyssey",
-   "why": "Show off {t} on a sharp 1440p screen. The SANSUI is the budget pick; the 32-inch curved Odyssey wraps the picture around you."
+   "why": "Show off {t} on a sharp 1440p screen. The SANSUI is the budget pick; the 32-inch curved Odyssey wraps the picture around you.",
+   "icon": "monitor"
   },
   "detail_monitor": {
    "label": "Monitor with room for maps and menus",
    "value": "dellqhd",
    "up": "odyssey",
-   "why": "1440p gives {t} far more screen space for maps, menus and UI than 1080p."
+   "why": "1440p gives {t} far more screen space for maps, menus and UI than 1080p.",
+   "icon": "monitor"
   },
   "strat_mouse": {
    "label": "Mouse with extra buttons",
    "value": "g502hero",
    "up": "g502wl",
-   "why": "Bind hotkeys to side buttons and spend long sessions in {t} comfortably. The G502 is the classic; the Lightspeed version cuts the cord."
+   "why": "Bind hotkeys to side buttons and spend long sessions in {t} comfortably. The G502 is the classic; the Lightspeed version cuts the cord.",
+   "icon": "mouse"
   },
   "type_kb": {
    "label": "Keyboard",
    "value": "g413",
    "up": "keychron",
-   "why": "Lots of hotkeys and typing in {t}. A solid mechanical board makes long sessions easier on your hands."
+   "why": "Lots of hotkeys and typing in {t}. A solid mechanical board makes long sessions easier on your hands.",
+   "icon": "keyboard"
   },
   "immersive_headset": {
    "label": "Headset for immersive sound",
    "value": "cloud3",
    "up": "nova7",
-   "why": "Atmosphere is half of {t}. The Cloud III has rich spatial sound; the Arctis Nova 7 goes wireless with long battery life."
+   "why": "Atmosphere is half of {t}. The Cloud III has rich spatial sound; the Arctis Nova 7 goes wireless with long battery life.",
+   "icon": "headset"
   },
   "speakers": {
    "label": "Speakers",
    "value": "pebble",
    "up": "edifier",
-   "why": "Relaxed games like {t} sound great on desk speakers. The Pebble V3 is tiny and cheap; the Edifier G2000 fills the room."
+   "why": "Relaxed games like {t} sound great on desk speakers. The Pebble V3 is tiny and cheap; the Edifier G2000 fills the room.",
+   "icon": "speaker"
   },
   "ambience": {
    "label": "Room lighting",
    "value": "govee",
    "up": null,
-   "why": "Light bars that sync colors to the screen make the scary parts of {t} hit harder after dark."
+   "why": "Light bars that sync colors to the screen make the scary parts of {t} hit harder after dark.",
+   "icon": "light"
   },
   "gpu": {
    "label": "Graphics card upgrade",
    "value": "rtx5060",
    "up": "rx7800",
-   "why": "{t} recommends a strong graphics card. The RTX 5060 is the value upgrade for 1080p with DLSS; the RX 7800 XT handles 1440p at high settings."
+   "why": "{t} recommends a strong graphics card. The RTX 5060 is the value upgrade for 1080p with DLSS; the RX 7800 XT handles 1440p at high settings.",
+   "icon": "gpu"
   },
   "deck_storage": {
    "label": "Steam Deck storage",
    "value": "sd256",
    "up": "sd512",
-   "why": "{t} runs on Steam Deck. A fast microSD card adds room for it and the rest of your library."
+   "why": "{t} runs on Steam Deck. A fast microSD card adds room for it and the rest of your library.",
+   "icon": "storage"
   },
   "chair": {
    "label": "Chair for long sessions",
    "value": "gtplayer",
    "up": "tc100",
-   "why": "{t} is the kind of game you lose hours in. Back support matters."
+   "why": "{t} is the kind of game you lose hours in. Back support matters.",
+   "icon": "chair"
   },
   "mousepad": {
    "label": "Mousepad",
    "value": "qck",
    "up": null,
-   "why": "A big, consistent surface for wide aim sweeps in {t}."
+   "why": "A big, consistent surface for wide aim sweeps in {t}.",
+   "icon": "pad"
   }
  },
  "profiles": {
@@ -451,5 +473,121 @@
   "action",
   "casual"
  ],
- "max_slots": 6
+ "max_slots": 6,
+ "bestway": {
+  "controls": [
+   [
+    "vr",
+    "VR motion controllers"
+   ],
+   [
+    "flight",
+    "Flight stick (HOTAS)"
+   ],
+   [
+    "racing",
+    "Racing wheel or controller"
+   ],
+   [
+    "competitive",
+    "Mouse and keyboard"
+   ],
+   [
+    "shooter",
+    "Mouse and keyboard"
+   ],
+   [
+    "strategy",
+    "Mouse and keyboard"
+   ],
+   [
+    "sports",
+    "Controller"
+   ],
+   [
+    "horror",
+    "Controller"
+   ],
+   [
+    "casual",
+    "Controller"
+   ],
+   [
+    "action",
+    "Controller"
+   ],
+   [
+    "coop",
+    "Controller or mouse and keyboard"
+   ],
+   [
+    "rpg",
+    "Controller or mouse and keyboard"
+   ],
+   [
+    "general",
+    "Mouse and keyboard or controller"
+   ]
+  ],
+  "display": [
+   [
+    "vr",
+    "VR headset, plus a monitor for menus"
+   ],
+   [
+    "competitive",
+    "High-refresh monitor (165Hz+)"
+   ],
+   [
+    "shooter",
+    "High-refresh monitor (165Hz+)"
+   ],
+   [
+    "sports",
+    "High-refresh monitor (165Hz+)"
+   ],
+   [
+    "strategy",
+    "1440p monitor for map space"
+   ],
+   [
+    "general",
+    "1440p monitor, curved for immersion"
+   ]
+  ],
+  "audio": [
+   [
+    "competitive",
+    "Headset with a mic for callouts"
+   ],
+   [
+    "coop",
+    "Headset with a mic for voice chat"
+   ],
+   [
+    "sports",
+    "Headset with a mic for voice chat"
+   ],
+   [
+    "horror",
+    "Headset for immersive sound"
+   ],
+   [
+    "rpg",
+    "Headset for immersive sound"
+   ],
+   [
+    "action",
+    "Headset for immersive sound"
+   ],
+   [
+    "casual",
+    "Speakers or a headset"
+   ],
+   [
+    "general",
+    "Headset for immersive sound"
+   ]
+  ]
+ }
 }
