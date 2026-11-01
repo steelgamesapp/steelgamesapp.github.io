@@ -16,6 +16,7 @@ import medals
 import steam_meta
 import shop_pages
 import deal_page
+import gear
 from datetime import datetime, timezone
 
 SITE = "https://steelgamesapp.com"
@@ -263,6 +264,7 @@ def verdict(cur, reg, low):
 
 
 MEDALS = {}
+GEAR_GAMES = {}  # game id -> gear slot ids, for the live /deal/ page
 
 
 def game_page(gid, g, stores, today):
@@ -312,6 +314,8 @@ def game_page(gid, g, stores, today):
     shop_btns = (f'<button type="button" data-wish{_da}>{layout.HEART}<span class="lab">Wishlist</span></button>'
                  f'<button type="button" data-cart{_da}>{layout.CARTI}<span class="lab">Add to cart</span></button>'
                  f'<button type="button" data-own{_da}>{layout.CHECKI}<span class="lab">I own this</span></button>')
+    gear_html = gear.section(title, _m)
+    GEAR_GAMES[str(gid)] = gear.slots_for(title, _m)[0]
     page = (layout.head(f"{title} price history and best price today | SteelGames", desc, url, f'<script type="application/ld+json">{ld}</script>\n')
         + layout.header("games")
         + f"""<main>
@@ -340,6 +344,7 @@ def game_page(gid, g, stores, today):
 <table class="stores"><thead><tr><th>Store</th><th>Price</th><th>Usual</th><th></th></tr></thead><tbody>{rows}</tbody></table>
 </div></section>
 {meta_html}
+{gear_html}
 <section class="block"><div class="wrap"><h2>Questions</h2><div class="faq">{faq_html}</div></div></section>
 </main>
 """ + layout.footer())
@@ -383,6 +388,13 @@ def build_games(stores, today, seeds, fetch_game):
             if old and old in old_cards and os.path.exists(os.path.join(base, old, "index.html")):
                 keep.append(gid)
                 tracked_slugs[gid] = old
+                try:  # yesterday's page still gets today's gear picks
+                    _p = os.path.join(base, old, "index.html")
+                    _t = old_cards[old][0]
+                    open(_p, "w").write(gear.inject(open(_p).read(), _t))
+                    GEAR_GAMES[str(gid)] = gear.slots_for(_t)[0]
+                except Exception as _ex:
+                    print("gear inject failed", gid, _ex, file=sys.stderr)
                 entries.append((old, old_cards[old][0], None, None, old_cards[old][1]))
                 urls.append(f"{SITE}/game/{old}/")
         if not page:
@@ -429,6 +441,26 @@ def build_games(stores, today, seeds, fetch_game):
 </main>
 """ + layout.footer())
     return [f"{SITE}/game/"] + urls
+
+
+def gear_existing_pages():
+    """Make sure every game page on disk has gear picks, even if today's price fetch for it failed."""
+    base = os.path.join(ROOT, "game")
+    if not os.path.isdir(base):
+        return
+    for name in sorted(os.listdir(base)):
+        f = os.path.join(base, name, "index.html")
+        gid = name.rsplit("-", 1)[-1]
+        if not os.path.isfile(f) or gid in GEAR_GAMES:
+            continue
+        try:
+            page = open(f).read()
+            m = re.search(r"<h1>(.*?)</h1>", page, re.S)
+            title = html.unescape(m.group(1)).strip() if m else name
+            open(f, "w").write(gear.inject(page, title))
+            GEAR_GAMES[gid] = gear.slots_for(title)[0]
+        except Exception as ex:
+            print("gear failed for", name, ex, file=sys.stderr)
 
 
 def main():
@@ -486,6 +518,8 @@ def main():
         if os.path.isdir(gbase):
             urls.append(f"{SITE}/game/")
             urls += [f"{SITE}/game/{n}/" for n in sorted(os.listdir(gbase)) if os.path.isdir(os.path.join(gbase, n))]
+    gear_existing_pages()
+    gear.write_json(GEAR_GAMES)
     open(os.path.join(ROOT, "games.html"), "w").write(games_page.build())
     open(os.path.join(ROOT, "keys.html"), "w").write(keys_page.build())
     os.makedirs(os.path.join(ROOT, "deal"), exist_ok=True)

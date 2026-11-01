@@ -22,7 +22,7 @@ OFFLINE = False
 GENRE_CAT = {"Action": "action", "Adventure": "adventure", "RPG": "rpg", "Strategy": "strategy", "Simulation": "sim",
              "Racing": "racing", "Sports": "sports"}
 FEATURES = ["Single-player", "Multi-player", "Co-op", "Online Co-op", "LAN Co-op", "Shared/Split Screen Co-op",
-            "Online PvP", "Steam Achievements", "Steam Cloud", "Remote Play on TV", "Steam Trading Cards", "Family Sharing"]
+            "Online PvP", "PvP", "MMO", "VR Supported", "VR Support", "VR Only", "Tracked Controller Support", "Steam Achievements", "Steam Cloud", "Remote Play on TV", "Steam Trading Cards", "Family Sharing"]
 DECK = {3: ("Verified", "good", "Steam Deck Verified: made to run well on the handheld."),
         2: ("Playable", "ok", "Steam Deck Playable: works, but may need small tweaks."),
         1: ("Unsupported", "bad", "Not supported on Steam Deck."),

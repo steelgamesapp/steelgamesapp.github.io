@@ -37,7 +37,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       '<div class="verdict ' + verdict[0] + '"><strong>' + (verdict[0] === 'v-good' ? 'Good time to buy' : verdict[0] === 'v-wait' ? 'Consider waiting' : 'Price check') + '</strong><p>' + verdict[1] + (lowWhen && low != null ? ' (Lowest was ' + lowWhen + '.)' : '') + '</p></div>' +
       '<div class="gact" style="border:0;background:none;padding:0"><button type="button" data-wish' + da + '>' + HEART + '<span class="lab">Wishlist</span></button><button type="button" data-cart' + da + '>' + CARTI + '<span class="lab">Add to cart</span></button></div>' +
       '<a class="btn" href="' + esc(link(best)) + '" target="_blank" rel="noopener sponsored">Buy at ' + esc(names[best.storeID]) + ' for ' + $(best.price) + '</a></div></div>' +
-      '<h2>Compare stores</h2><table class="stores"><thead><tr><th>Store</th><th>Price</th><th>Usual</th><th></th></tr></thead><tbody>' + rows + '</tbody></table></div></section>';
+      '<h2>Compare stores</h2><table class="stores"><thead><tr><th>Store</th><th>Price</th><th>Usual</th><th></th></tr></thead><tbody>' + rows + '</tbody></table></div></section><div id="gear"></div>';
+    if (window.SGGear) SGGear.render(document.getElementById('gear'), id, title);
   } catch (e) { fail('Prices unavailable right now'); }
 });
 </script>
@@ -48,5 +49,6 @@ def build():
     return (layout.head("Game prices | SteelGames", "Compare a game's price across official stores and authorized sellers.", f"{SITE}/deal/", '<meta name="robots" content="noindex,follow">\n')
             + layout.header("games")
             + '<main><div id="out"><section class="hero"><div class="wrap"><h1>Loading prices...</h1></div></section></div></main>\n'
+            + '<script src="/assets/gear.js" defer></script>\n'
             + "<script>const HEART = " + repr(layout.HEART) + ", CARTI = " + repr(layout.CARTI) + ";</script>"
             + SCRIPT + layout.footer())
