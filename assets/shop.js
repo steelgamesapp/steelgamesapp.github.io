@@ -161,6 +161,7 @@
 
   /* Steam import. Needs the small proxy in /worker (Steam blocks direct browser calls). Leave empty until it is deployed. */
   SG.STEAM_PROXY = 'https://steelgames-steam.steelgames.workers.dev';
+  SG.STEAM_OWNED = false; /* set true after adding a STEAM_API_KEY secret to the Worker */
   SG.steamImport = async (profile, kind, onStep) => {
     if (!SG.STEAM_PROXY) throw new Error('Steam import is not switched on yet.');
     const r = await fetch(SG.STEAM_PROXY + '?kind=' + encodeURIComponent(kind) + '&profile=' + encodeURIComponent(profile));

@@ -24,7 +24,7 @@ const $ = (s) => document.querySelector(s), msg = (t) => { $('#s-msg').textConte
 $('#s-export').addEventListener('click', () => { SG.download('steelgames-backup-' + new Date().toISOString().slice(0, 10) + '.json', JSON.stringify(SG.exportData(), null, 2)); msg('Backup downloaded.'); });
 $('#s-file').addEventListener('change', async (e) => { const f = e.target.files[0]; if (!f) return; try { const r = SG.importData(JSON.parse(await f.text())); msg('Restored. You now have ' + r.wishlist + ' wishlisted and ' + r.collection + ' owned games.'); } catch (x) { msg(x.message || 'That file could not be read.'); } e.target.value = ''; });
 $('#s-link').addEventListener('click', async () => { const u = SG.syncLink(); try { await navigator.clipboard.writeText(u); msg('Link copied. Open it on your other device to bring your lists over.'); } catch (x) { window.prompt('Copy this link:', u); } });
-if (SG.STEAM_PROXY) { $('#steamimp').hidden = false;
+if (SG.STEAM_PROXY) { $('#steamimp').hidden = false; if (!SG.STEAM_OWNED) $('#s-own').hidden = true;
   const run = async (kind) => { const p = $('#s-prof').value.trim(); if (!p) { msg('Enter your Steam profile name or ID first.'); return; } msg('Reading your Steam profile...');
     try { const found = await SG.steamImport(p, kind, (i, n) => msg('Matching games ' + i + ' of ' + n + '...')); const r = SG.addImported(found, kind); msg('Imported ' + found.length + ' games. You now have ' + r.wishlist + ' wishlisted and ' + r.collection + ' owned.'); } catch (x) { msg(x.message); } };
   $('#s-wl').addEventListener('click', () => run('wishlist')); $('#s-own').addEventListener('click', () => run('owned')); }

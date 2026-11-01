@@ -306,3 +306,4 @@ a.tag:hover{background:var(--line-strong);color:#fff}
 .specs tr:last-child th,.specs tr:last-child td{border-bottom:0}
 .sub{font-size:19px;margin-top:20px}
 .scroll{overflow-x:auto}
+.syncbox [hidden]{display:none!important}
