@@ -4,7 +4,7 @@
 Run daily by .github/workflows/seo.yml. Standard library only.
 Usage: python3 tools/build_seo.py [--sample path.json]   (--sample skips the network, for tests)
 """
-import html, json, os, sys, urllib.parse, urllib.request
+import html, json, os, sys, urllib.parse, urllib.request, urllib.error
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import layout
 import games_page
@@ -105,11 +105,24 @@ for _kw, _name in _THEMES:
                 ("Can I see price history?", "Open any game to see its lowest recorded price and every store's price.")]})
 
 
-def get(path, params=None):
+def get(path, params=None, tries=5):
+    """GET from the price API, backing off and retrying when it rate-limits (HTTP 429) or hiccups (5xx)."""
     url = API + path + ("?" + urllib.parse.urlencode(params) if params else "")
     req = urllib.request.Request(url, headers={"User-Agent": "SteelGames-SEO-Builder"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.load(r)
+    for attempt in range(tries):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as ex:
+            if ex.code not in (429, 500, 502, 503, 504) or attempt == tries - 1:
+                raise
+            try:
+                wait = float(ex.headers.get("Retry-After") or 0)
+            except Exception:
+                wait = 0
+            wait = max(wait, 5 * (2 ** attempt))  # 5, 10, 20, 40 s
+            print(f"rate limited on {path} ({ex.code}), waiting {wait:.0f}s", file=sys.stderr)
+            time.sleep(min(wait, 90))
 
 
 def money(v):
@@ -124,6 +137,7 @@ STORE_COLORS = {"Steam": "#66C0F4", "GreenManGaming": "#5CE08A", "Fanatical": "#
                 "Direct2Drive": "#9CCC65", "IndieGala": "#FF5252", "WinGameStore": "#4FC3F7", "2Game": "#FFB74D", "Games Republic": "#A1887F"}
 
 
+FAILED = []  # steps that failed; surfaced as an Actions warning
 OFFLINE = False  # set by --sample so tests never touch the network
 
 
@@ -346,13 +360,31 @@ def build_games(stores, today, seeds, fetch_game):
     entries, urls, keep = [], [], []
     tracked_slugs = {}
     base = os.path.join(ROOT, "game")
+    # Yesterday's slugs and grid cards, so a game that fails to fetch today keeps its page instead of vanishing.
+    try:
+        old_slugs = json.load(open(os.path.join(base, "tracked.json")))
+    except Exception:
+        old_slugs = {}
+    old_cards = {}
+    try:
+        for m in re.finditer(r'<a class="gcard" href="/game/([^/]+)/">.*?<span class="t">(.*?)</span>.*?</a>', open(os.path.join(base, "index.html")).read(), re.S):
+            old_cards[m.group(1)] = (html.unescape(m.group(2)), m.group(0))
+    except Exception:
+        pass
     for gid in ids:
         try:
             g = fetch_game(gid)
             slug, page = game_page(gid, g, stores, today)
         except Exception as ex:
             print("game failed", gid, ex, file=sys.stderr)
+            FAILED.append(f"game {gid}")
             slug, page = None, None
+            old = old_slugs.get(gid)
+            if old and old in old_cards and os.path.exists(os.path.join(base, old, "index.html")):
+                keep.append(gid)
+                tracked_slugs[gid] = old
+                entries.append((old, old_cards[old][0], None, None, old_cards[old][1]))
+                urls.append(f"{SITE}/game/{old}/")
         if not page:
             continue
         d = os.path.join(base, slug)
@@ -378,6 +410,7 @@ def build_games(stores, today, seeds, fetch_game):
                 import shutil
                 shutil.rmtree(os.path.join(base, name))
     cards = "".join(
+        md if im is None else  # reused card from yesterday (fetch failed today)
         f'<a class="gcard" href="/game/{s}/"><span class="pic"><img src="{html.escape(im)}" alt="" loading="lazy" width="460" height="215"></span>'
         f'<span class="info"><span class="t">{html.escape(t)}</span><span class="row"><span class="price">{pr}</span>{medals.chip(md) if md else ""}</span></span></a>'
         for s, t, im, pr, md in sorted(entries, key=lambda x: x[1].lower()))
@@ -416,12 +449,22 @@ def main():
             deals = fetch(p["q"])
         except Exception as ex:
             print("fetch failed for", p["slug"], ex, file=sys.stderr)
+            FAILED.append(p["slug"])
+            # Keep yesterday's page (and its sitemap entry) rather than dropping it.
+            if os.path.exists(os.path.join(ROOT, "deals", p["slug"], "index.html")):
+                urls.append(f"{SITE}/deals/{p['slug']}/")
             continue
         d = os.path.join(ROOT, "deals", p["slug"])
+        if not deals and os.path.exists(os.path.join(d, "index.html")):
+            print("no deals returned for", p["slug"], "- keeping yesterday's page", file=sys.stderr)
+            urls.append(f"{SITE}/deals/{p['slug']}/")
+            continue
         os.makedirs(d, exist_ok=True)
         open(os.path.join(d, "index.html"), "w").write(page_html(p, deals, stores, today))
         urls.append(f"{SITE}/deals/{p['slug']}/")
         print("built", p["slug"], len(deals))
+        if not sample:
+            time.sleep(1.0)
     # Per-game pages: seed with today's top deals, then rebuild every tracked game.
     try:
         if sample:
@@ -437,6 +480,12 @@ def main():
         urls += build_games(stores, today, seeds, fg)
     except Exception as ex:
         print("games step failed", ex, file=sys.stderr)
+        FAILED.append("games")
+        # Keep existing game pages in the sitemap so a bad day doesn't de-index them.
+        gbase = os.path.join(ROOT, "game")
+        if os.path.isdir(gbase):
+            urls.append(f"{SITE}/game/")
+            urls += [f"{SITE}/game/{n}/" for n in sorted(os.listdir(gbase)) if os.path.isdir(os.path.join(gbase, n))]
     open(os.path.join(ROOT, "games.html"), "w").write(games_page.build())
     open(os.path.join(ROOT, "keys.html"), "w").write(keys_page.build())
     os.makedirs(os.path.join(ROOT, "deal"), exist_ok=True)
@@ -453,6 +502,9 @@ def main():
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{u}</loc><lastmod>{iso}</lastmod></url>\n" for u in urls) + "</urlset>\n")
     open(os.path.join(ROOT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
+    if FAILED:
+        # Shows as a yellow warning on the Actions run instead of a silent green check.
+        print(f"::warning title=Partial build::{len(FAILED)} step(s) failed: {', '.join(FAILED[:15])}")
 
 
 if __name__ == "__main__":
