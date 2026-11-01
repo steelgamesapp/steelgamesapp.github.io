@@ -160,7 +160,7 @@
   SG.download = (name, text) => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' })); a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); };
 
   /* Steam import. Needs the small proxy in /worker (Steam blocks direct browser calls). Leave empty until it is deployed. */
-  SG.STEAM_PROXY = '';
+  SG.STEAM_PROXY = 'https://steelgames-steam.steelgames.workers.dev';
   SG.steamImport = async (profile, kind, onStep) => {
     if (!SG.STEAM_PROXY) throw new Error('Steam import is not switched on yet.');
     const r = await fetch(SG.STEAM_PROXY + '?kind=' + encodeURIComponent(kind) + '&profile=' + encodeURIComponent(profile));

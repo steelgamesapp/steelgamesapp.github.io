@@ -8,3 +8,5 @@ Lets visitors import their Steam wishlist (and owned games) into SteelGames.
 4. In `assets/shop.js`, set `SG.STEAM_PROXY = 'https://your-worker-url'`. The "Import from Steam" box then appears on the wishlist and collection pages.
 
 Wishlist import needs no key. Profiles and game details must be public on Steam.
+
+Deployed at https://steelgames-steam.steelgames.workers.dev (Cloudflare account subdomain: steelgames). `SG.STEAM_PROXY` in `assets/shop.js` points to it. Owned-games import stays off until a STEAM_API_KEY secret is added to the Worker.
