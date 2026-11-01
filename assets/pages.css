@@ -333,3 +333,11 @@ a.tag:hover{background:var(--line-strong);color:#fff}
 .bw{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:var(--surface);border:1px solid var(--line);font-weight:600;font-size:15px;line-height:1.35}
 .bw small{display:block;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
 .bwi{display:grid;place-items:center;width:36px;height:36px;flex:none;border-radius:10px;background:var(--raised);color:var(--accent-soft)}
+/* Pro setups */
+.pro-id{display:flex;gap:18px;align-items:center}
+.pro-av{display:grid;place-items:center;width:64px;height:64px;flex:none;border-radius:18px;background:var(--grad-cta);color:var(--accent-ink);font:700 28px var(--display)}
+.pro-card .pro-av{width:48px;height:48px;font-size:22px;border-radius:14px;margin-bottom:6px}
+.pro-top{font-size:14px!important;color:var(--accent-soft)!important}
+.gtag.pro{background:var(--accent);}
+.alt-h{font:700 11px var(--body)!important;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)!important;margin-top:6px;flex:0!important}
+@media (max-width:640px){.pro-id{flex-direction:column;align-items:flex-start}}

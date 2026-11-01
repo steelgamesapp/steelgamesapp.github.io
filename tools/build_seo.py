@@ -17,6 +17,7 @@ import steam_meta
 import shop_pages
 import deal_page
 import gear
+import pros
 from datetime import datetime, timezone
 
 SITE = "https://steelgamesapp.com"
@@ -519,6 +520,10 @@ def main():
             urls.append(f"{SITE}/game/")
             urls += [f"{SITE}/game/{n}/" for n in sorted(os.listdir(gbase)) if os.path.isdir(os.path.join(gbase, n))]
     gear_existing_pages()
+    try:
+        urls += pros.build_all()
+    except Exception as ex:
+        print('pros failed', ex, file=sys.stderr)
     gear.write_json(GEAR_GAMES)
     open(os.path.join(ROOT, "games.html"), "w").write(games_page.build())
     open(os.path.join(ROOT, "keys.html"), "w").write(keys_page.build())
