@@ -1,0 +1,31 @@
+name: Daily deal bot
+# Posts today's top deals to Bluesky, Telegram and Discord (whichever have secrets set).
+on:
+  schedule:
+    - cron: "7 16 * * *"   # about 10 AM Central
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: deal-bot
+  cancel-in-progress: false
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/deal_bot.py
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      - name: Remember what was posted
+        run: |
+          git config user.name "SteelGames Bot"
+          git config user.email "steelgames.app@outlook.com"
+          git add data/posted.json 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Deal bot: record posted deals"
+          git pull --rebase origin main && git push
