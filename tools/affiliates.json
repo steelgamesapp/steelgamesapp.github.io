@@ -1,0 +1,8 @@
+{
+  "_help": "Paste each approved program's tracking link template between the quotes. Write {url} where the store page address goes, for example https://example-network.com/click?id=YOURID&u={url} . Leave a store blank to keep the current CheapShark link. Never put passwords or API secrets in this file, it is public.",
+  "Fanatical": "",
+  "Humble Store": "",
+  "Kinguin": "",
+  "Eneba": "",
+  "CDKeys": ""
+}

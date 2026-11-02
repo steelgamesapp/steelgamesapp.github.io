@@ -1,5 +1,6 @@
 """Builds /keys.html: key resellers (live stats from CheapShark) plus a software deals section."""
 import layout
+import keys_finder
 
 SITE = layout.SITE
 TAG = "steelgames-20"
@@ -155,9 +156,9 @@ def build():
 <p class="eyebrow">Keys &amp; software</p>
 <h1>Game key resellers and software deals</h1>
 <p class="lede">Key stores often beat the official price. See who is running the best deals right now, how big their discounts are, and what to watch for before you buy.</p>
-<div class="chips"><a href="#resellers">Resellers</a><a href="#deals">Best key deals</a><a href="#software">Software deals</a><a href="#safe">Buying safely</a></div>
+<div class="chips"><a href="#find">Find a key</a><a href="#resellers">Resellers</a><a href="#deals">Best key deals</a><a href="#software">Software deals</a><a href="#safe">Buying safely</a></div>
 </div></section>
-<section class="block" id="resellers"><div class="wrap"><h2>Key resellers</h2>
+""" + keys_finder.SECTION + """<section class="block" id="resellers"><div class="wrap"><h2>Key resellers</h2>
 <p class="fine">Live stats come from current store listings. Marketplaces and stores we can't read live link straight to their sites.</p>
 <div class="rgrid" id="rgrid"></div></div></section>
 <section class="block" id="deals"><div class="wrap"><h2>Best key deals right now</h2>
@@ -170,4 +171,4 @@ def build():
 <div class="sgrid">""" + sw + """</div></div></section>
 <section class="block" id="safe"><div class="wrap"><h2>Buying keys safely</h2><div class="tips">""" + tips + """</div></div></section>
 </main>
-""" + SCRIPT.replace("__DATA__", js_data()) + layout.footer())
+""" + SCRIPT.replace("__DATA__", js_data()) + keys_finder.tail(js_data()) + layout.footer())
