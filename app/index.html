@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SteelGames · Game Deals</title>
 <meta property="og:title" content="SteelGames: PC game deals"><meta property="og:description" content="Compare PC game prices across official stores. Veteran-owned."><meta property="og:type" content="website"><meta property="og:url" content="https://steelgamesapp.com/app/"><meta name="description" content="Compare PC game prices across official stores, see if a game runs on your PC, read gaming news and shop gear. Veteran-owned.">
-<meta name="theme-color" content="#0C0E11">
+<meta name="theme-color" content="#17103A">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
@@ -16,9 +16,9 @@
 <style>
 /* Layout: app shell. Sticky top bar with the brand, one scrolling screen per tab, and a tab bar pinned under the top bar (Deals, News, Gear, Account). Game and product pages slide in as their own screens with a Back button. */
 :root {
-  --bg: #0C0E11; --surface: #15181D; --raised: #1C2027; --line: #262C35; --line-strong: #2E3540;
-  --fg: #EDEFF2; --muted: #9BA4AF; --steel: #C3CBD5;
-  --accent: #FF7A1A; --accent-soft: #FF9A4D; --accent-ink: #1A0E04;
+  --bg: #0F0A24; --surface: #1A1342; --raised: #261B5C; --line: #35288A; --line-strong: #4A37A8;
+  --fg: #FFFFFF; --muted: #C9C2EE; --steel: #DAD4F7;
+  --accent: #FFB020; --accent-soft: #B9AEFF; --accent-ink: #1A0E04;
   --good: #5CCB72; --good-bg: #0F1D14; --good-line: #244A30;
   --warn: #F5B544; --warn-bg: #221A0B; --warn-line: #5A4416;
   --bad: #FF6B74; --bad-bg: #231114; --bad-line: #5A262C;
@@ -40,8 +40,8 @@ p { margin: 0; }
 .wrap { max-width: 760px; margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-left, 0px)) 0 max(16px, env(safe-area-inset-right, 0px)); }
 
 /* Top bar */
-.topbar { position: sticky; top: 0; z-index: 20; background: rgba(12,14,17,0.94); border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
-@supports (backdrop-filter: blur(8px)) { .topbar { background: rgba(12,14,17,0.82); backdrop-filter: blur(10px); } }
+.topbar { position: sticky; top: 0; z-index: 20; background: rgba(23,16,58,0.94); border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
+@supports (backdrop-filter: blur(8px)) { .topbar { background: rgba(23,16,58,0.82); backdrop-filter: blur(10px); } }
 .topbar .wrap { display: flex; align-items: center; gap: 12px; min-height: 60px; }
 .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--fg); }
 .brand span { font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: 2.4px; }
@@ -53,7 +53,7 @@ p { margin: 0; }
 .tabbar nav { max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); height: var(--tabbar); }
 .tabbar a { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 7px; color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; border-bottom: 2px solid transparent; }
 .tabbar a svg { width: 20px; height: 20px; }
-.tabbar a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+.tabbar a[aria-current="page"] { color: #fff; border-bottom-color: #B9AEFF; }
 
 /* Screens */
 main { padding: 16px 0 28px; }
@@ -83,7 +83,7 @@ main:focus { outline: none; }
 .deal-meta { font-size: 13px; color: var(--muted); }
 .price { font-weight: 700; font-variant-numeric: tabular-nums; }
 .was { color: var(--muted); text-decoration: line-through; font-size: 13px; margin-left: 6px; font-weight: 400; }
-.off { flex-shrink: 0; padding: 5px 8px; border-radius: 8px; background: var(--accent); color: var(--accent-ink); font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.off { flex-shrink: 0; padding: 5px 8px; border-radius: 8px; background: #17432E; color: #7CF0A8; border: 1px solid rgba(124,240,168,.35); font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
 
 /* Cards */
 .card { padding: 18px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; }
@@ -106,7 +106,7 @@ main:focus { outline: none; }
 
 /* Store rows */
 .store { display: flex; align-items: center; gap: 12px; padding: 14px 14px 14px 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
-.store.best { border: 2px solid var(--accent); }
+.store.best { border: 2px solid #5CE08A; }
 .store-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .store-name { font-weight: 700; }
 .earn { font-size: 13px; color: var(--muted); }
@@ -123,12 +123,12 @@ main:focus { outline: none; }
 /* News thumbnails */
 .news-item.has-thumb { gap: 12px; }
 .news-thumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; background: var(--raised); display: block; }
-.news-ph { display: grid; place-items: center; background: radial-gradient(120% 120% at 30% 20%, rgba(255,122,26,.18), rgba(255,122,26,.03) 60%), #1A1E25; border: 1px solid rgba(255,122,26,.22); }
+.news-ph { display: grid; place-items: center; background: radial-gradient(120% 120% at 30% 20%, rgba(106,77,240,.18), rgba(106,77,240,.03) 60%), #1A1342; border: 1px solid rgba(106,77,240,.22); }
 .news-body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 @media (min-width: 640px) { .news-item.has-thumb { flex-direction: row; align-items: flex-start; } .news-item.has-thumb .news-thumb { width: 220px; flex-shrink: 0; } }
 .tag-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); flex-wrap: wrap; }
 .plat { padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 700; border: 1px solid; }
-.p-pc { color: #FF8A3D; background: #1E150E; border-color: #4A2E16; }
+.p-pc { color: #B9AEFF; background: #1F1750; border-color: #4A37A8; }
 .p-xbox { color: #5CCB72; background: #0F1D14; border-color: #244A30; }
 .p-playstation { color: #6FA0FF; background: #0E1526; border-color: #243C68; }
 .p-nintendo { color: #FF6B74; background: #231114; border-color: #5A262C; }
@@ -143,11 +143,11 @@ main:focus { outline: none; }
 .product p { color: var(--steel); font-size: 15px; }
 
 /* Gear store */
-.g0 { --gx: #FF9A4D; --gxs: rgba(255,122,26,.22); --gxl: rgba(255,122,26,.45); }
+.g0 { --gx: #B9AEFF; --gxs: rgba(106,77,240,.22); --gxl: rgba(106,77,240,.45); }
 .g1 { --gx: #C4B5FD; --gxs: rgba(167,139,250,.22); --gxl: rgba(167,139,250,.45); }
 .g2 { --gx: #5EEAD4; --gxs: rgba(45,212,191,.20); --gxl: rgba(45,212,191,.42); }
 .g3 { --gx: #8FB4E3; --gxs: rgba(111,160,255,.22); --gxl: rgba(111,160,255,.45); }
-.gx-hero { margin-top: 6px; padding: 20px 18px; border-radius: 20px; background: linear-gradient(135deg, var(--gxs, rgba(255,122,26,.2)), rgba(21,24,29,0) 65%), var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; gap: 6px; }
+.gx-hero { margin-top: 6px; padding: 20px 18px; border-radius: 20px; background: linear-gradient(135deg, var(--gxs, rgba(106,77,240,.2)), rgba(26,19,66,0) 65%), var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; gap: 6px; }
 .gx-hero p { color: var(--steel); font-size: 16px; }
 .gx-search { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 14px; border-radius: 14px; background: var(--bg); border: 1px solid var(--line-strong); margin-top: 10px; }
 .gx-search input { flex: 1; min-width: 0; height: 50px; border: 0; background: none; color: var(--fg); font: inherit; font-size: 17px; outline: none; }
@@ -155,7 +155,7 @@ main:focus { outline: none; }
 .gx-strip { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 14px 2px 4px; margin: 0 -2px; }
 .gx-strip::-webkit-scrollbar { display: none; }
 .gx-pill { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 6px; width: 84px; text-decoration: none; color: var(--steel); font-size: 12.5px; font-weight: 600; text-align: center; line-height: 1.2; }
-.gx-pill .gx-ic { width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; color: var(--gx, #FF9A4D); background: radial-gradient(120% 120% at 30% 20%, var(--gxs, rgba(255,122,26,.22)), transparent 65%), var(--raised); border: 1px solid var(--gxl, rgba(255,122,26,.4)); }
+.gx-pill .gx-ic { width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; color: var(--gx, #B9AEFF); background: radial-gradient(120% 120% at 30% 20%, var(--gxs, rgba(106,77,240,.22)), transparent 65%), var(--raised); border: 1px solid var(--gxl, rgba(106,77,240,.4)); }
 .gx-pill:hover { color: var(--fg); }
 .gx-pill[aria-current="page"] { color: var(--fg); }
 .gx-pill[aria-current="page"] .gx-ic { box-shadow: 0 0 0 2px var(--gx); }
@@ -172,10 +172,10 @@ main:focus { outline: none; }
 .gx-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .gx-card { display: flex; flex-direction: column; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); overflow: hidden; text-decoration: none; color: var(--fg); }
 a.gx-card:hover { border-color: var(--gxl); }
-.gx-media { position: relative; aspect-ratio: 1 / 1; display: grid; place-items: center; color: var(--gx); background: radial-gradient(120% 120% at 30% 15%, var(--gxs), transparent 62%), #1A1E25; }
+.gx-media { position: relative; aspect-ratio: 1 / 1; display: grid; place-items: center; color: var(--gx); background: radial-gradient(120% 120% at 30% 15%, var(--gxs), transparent 62%), #1A1342; }
 .gx-media.has-img { background: #fff; }
 .gx-media img { width: 100%; height: 100%; object-fit: contain; padding: 12px; }
-.gx-badge { position: absolute; left: 10px; top: 10px; padding: 3px 8px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .4px; background: rgba(12,14,17,.82); border: 1px solid var(--line-strong); color: var(--fg); }
+.gx-badge { position: absolute; left: 10px; top: 10px; padding: 3px 8px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .4px; background: rgba(23,16,58,.82); border: 1px solid var(--line-strong); color: var(--fg); }
 .gx-body { display: flex; flex-direction: column; gap: 6px; padding: 12px 12px 14px; flex: 1; }
 .gx-cat { font-size: 11.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--gx); }
 .gx-name { font-family: var(--body); font-size: 15.5px; font-weight: 700; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
@@ -191,7 +191,7 @@ label.field { display: flex; flex-direction: column; gap: 6px; font-size: 15px; 
 .input, select.input { min-height: 52px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--fg); font: inherit; font-size: 17px; }
 .row { display: flex; gap: 10px; flex-wrap: wrap; }
 .check { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: var(--steel); }
-.check input { width: 24px; height: 24px; margin-top: 2px; accent-color: var(--accent); flex-shrink: 0; }
+.check input { width: 24px; height: 24px; margin-top: 2px; accent-color: #6A4DF0; flex-shrink: 0; }
 .seg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 4px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
 .seg button { min-height: 44px; border: 0; border-radius: 10px; background: none; font-weight: 600; color: var(--steel); cursor: pointer; }
 .seg button[aria-pressed="true"] { background: var(--raised); color: var(--fg); }
@@ -212,14 +212,14 @@ label.field { display: flex; flex-direction: column; gap: 6px; font-size: 15px; 
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .ad-box{margin:14px 0;padding:8px;border:1px dashed rgba(155,164,175,.35);border-radius:12px;min-height:60px}
-.ad-label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9BA4AF;margin-bottom:4px}
-.sponsor{display:block;margin:6px 0 18px;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,122,26,.45);background:linear-gradient(135deg,rgba(255,122,26,.12),rgba(255,122,26,.03));color:inherit;text-decoration:none}
+.ad-label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#C9C2EE;margin-bottom:4px}
+.sponsor{display:block;margin:6px 0 18px;padding:14px 16px;border-radius:14px;border:1px solid rgba(106,77,240,.45);background:linear-gradient(135deg,rgba(106,77,240,.12),rgba(106,77,240,.03));color:inherit;text-decoration:none}
 .sponsor img{width:100%;border-radius:10px;margin-bottom:10px;display:block}
 .sponsor strong{display:block;font-size:17px;margin-bottom:2px}
-.sponsor span:last-child{color:#9BA4AF;font-size:14px}
+.sponsor span:last-child{color:#C9C2EE;font-size:14px}
 .sponsor.house{border-style:dashed}
 
-.gi{flex:none;width:48px;height:48px;border-radius:12px;display:inline-grid;place-items:center;color:#FF9A4D;background:radial-gradient(120% 120% at 30% 20%,rgba(255,122,26,.22),rgba(255,122,26,.04) 60%),#1A1E25;border:1px solid rgba(255,122,26,.28)}
+.gi{flex:none;width:48px;height:48px;border-radius:12px;display:inline-grid;place-items:center;color:#B9AEFF;background:radial-gradient(120% 120% at 30% 20%,rgba(106,77,240,.22),rgba(106,77,240,.04) 60%),#1A1342;border:1px solid rgba(106,77,240,.28)}
 .gi-sm{width:38px;height:38px;border-radius:10px;margin-bottom:8px}
 .product .tag-row{display:flex;align-items:center;gap:10px}
 
@@ -235,7 +235,7 @@ label.field { display: flex; flex-direction: column; gap: 6px; font-size: 15px; 
 .pick { display: block; position: relative; border-radius: 18px; overflow: hidden; background: var(--surface); border: 1px solid var(--line-strong); text-decoration: none; color: var(--fg); }
 .pick img { width: 100%; aspect-ratio: 460 / 215; object-fit: cover; display: block; background: var(--raised); }
 .pick-body { display: flex; flex-direction: column; gap: 5px; padding: 14px 16px 16px; }
-.pick-label { font-size: 12px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); }
+.pick-label { font-size: 12px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #B9AEFF; }
 .pick-title { font-family: var(--display); font-size: 24px; font-weight: 700; line-height: 1.15; }
 .pick-line { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .pick-line .price { font-family: var(--display); font-size: 28px; }
@@ -265,7 +265,7 @@ label.field { display: flex; flex-direction: column; gap: 6px; font-size: 15px; 
 .widget { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 16px; background: linear-gradient(160deg, var(--raised), var(--surface)); border: 1px solid var(--line-strong); }
 .widget strong { font-family: var(--display); font-size: 20px; }
 .widget p { color: var(--muted); font-size: 14px; }
-.w-label { font-size: 12px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); }
+.w-label { font-size: 12px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #B9AEFF; }
 .w-row { display: flex; align-items: center; gap: 8px; }
 .w-row .input { flex: 1; min-width: 0; }
 .w-cur { font-weight: 700; color: var(--steel); }
@@ -280,7 +280,7 @@ label.field { display: flex; flex-direction: column; gap: 6px; font-size: 15px; 
 <header class="topbar">
   <div class="wrap" id="topbar">
     <a class="brand" href="#/deals" aria-label="SteelGames home">
-      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#261B5C" stroke="#DAD4F7" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
       <span>STEELGAMES</span>
     </a>
     <span class="vet"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z" fill="#8FB4E3"/></svg>Veteran-owned</span>
@@ -533,7 +533,7 @@ async function screenDeals() {
     <h1 class="screen-title">Game deals</h1>
     <p class="lede">The best current prices on PC games from official stores.</p>
     <form class="search" role="search" id="searchForm">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9BA4AF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9C2EE" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <label class="sr" for="q">Search for a game</label>
       <input id="q" type="search" placeholder="Search for a game" autocomplete="off" enterkeyhint="search" value="${esc(state.q)}">
     </form>
@@ -902,7 +902,7 @@ async function screenNews() {
   view.querySelectorAll('.chip').forEach((b) => b.addEventListener('click', () => { newsFilter = b.dataset.p; view.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', c === b)); renderNews(); }));
   renderNews();
 }
-const NEWS_PH = '<div class="news-thumb news-ph" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 32 32"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg></div>';
+const NEWS_PH = '<div class="news-thumb news-ph" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 32 32"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#261B5C" stroke="#DAD4F7" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg></div>';
 // Article picture from the news feed; falls back to a SteelGames tile if a story has none or the picture fails to load.
 function newsThumb(i) {
 if (!i.image) return NEWS_PH;
@@ -976,7 +976,7 @@ const fresh = [...products].sort(newest).slice(0, 10);
 const sections = GEAR_GROUPS.map(([g, cats], n) => `<div class="section g${n}"><div class="gx-group-h"><h2>${esc(g)}</h2><span class="hint">${cats.reduce((s, c) => s + count(c), 0)} picks</span></div><div class="gx-tiles">${cats.map((c) => `<a class="gx-tile" href="#/gear/${encodeURIComponent(c)}"><span class="gx-big">${gIcon(c, 76)}</span><strong>${esc(c)}</strong><small>${count(c)} ${count(c) === 1 ? 'pick' : 'picks'}</small></a>`).join('')}</div></div>`).join('');
 const home = `<div class="gx-strip" role="navigation" aria-label="Categories">${strip}</div><div class="section"><div class="gx-group-h"><h2>Just added</h2></div><div class="gx-rail">${fresh.map(card).join('')}</div></div>${sections}`;
 view.innerHTML = `<div class="gx-hero"><h1 class="screen-title" style="margin:0">Gear</h1><p>${products.length} picks for your whole setup, from PC parts to desk upgrades.</p>
-<form class="gx-search" id="gxForm" role="search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9BA4AF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label class="sr" for="gxQ">Search gear</label><input id="gxQ" type="search" placeholder="Search gear, like mouse or headset" autocomplete="off" enterkeyhint="search"></form></div>
+<form class="gx-search" id="gxForm" role="search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9C2EE" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label class="sr" for="gxQ">Search gear</label><input id="gxQ" type="search" placeholder="Search gear, like mouse or headset" autocomplete="off" enterkeyhint="search"></form></div>
 <div id="gxBody">${home}</div>${foot}`;
 const q = document.getElementById('gxQ'), body = document.getElementById('gxBody'); hydrate();
 document.getElementById('gxForm').addEventListener('submit', (e) => { e.preventDefault(); q.blur(); });

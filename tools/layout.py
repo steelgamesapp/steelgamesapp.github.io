@@ -2,7 +2,7 @@
 import html
 
 SITE = "https://steelgamesapp.com"
-LOGO = ('<svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" '
+LOGO = ('<svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#261B5C" '
         'stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" '
         'fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>')
 STAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" '

@@ -111,7 +111,7 @@ SCRIPT = r"""
     const b = e.target.closest('[data-pick]'); if (!b) return;
     st.pick = b.dataset.pick; syncChips(); showDeals(); $('#deals').scrollIntoView({ behavior: 'smooth' });
   });
-  const syncChips = () => { chips.innerHTML = '<button type="button" data-pick="" aria-pressed="' + (!st.pick) + '" style="--c:#FFB020">All resellers</button>' + st.ids.map((id) => { const r = R.find((x) => x.store === st.stores[id]); return '<button type="button" data-pick="' + id + '" aria-pressed="' + (st.pick === id) + '" style="--c:' + (r ? r.c : '#7B5CFF') + '">' + esc(r ? r.name : st.stores[id]) + '</button>'; }).join(''); };
+  const syncChips = () => { chips.innerHTML = '<button type="button" data-pick="" aria-pressed="' + (!st.pick) + '" style="--c:#B9AEFF">All resellers</button>' + st.ids.map((id) => { const r = R.find((x) => x.store === st.stores[id]); return '<button type="button" data-pick="' + id + '" aria-pressed="' + (st.pick === id) + '" style="--c:' + (r ? r.c : '#7B5CFF') + '">' + esc(r ? r.name : st.stores[id]) + '</button>'; }).join(''); };
 
   draw();
   fetch(API + '/stores').then((r) => r.json()).then(async (all) => {

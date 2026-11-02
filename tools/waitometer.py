@@ -118,7 +118,7 @@ def gauge(score, label, key):
         arcs += f'<path d="M{x1:.1f},{y1:.1f} A{r},{r} 0 0 1 {x2:.1f},{y2:.1f}" fill="none" stroke="{COLORS[k]}" stroke-width="{w}" stroke-linecap="butt" opacity=".9"/>'
     nx, ny = _pt(cx, cy, r - 24, 180 - score * 1.8)
     needle = (f'<line x1="{cx}" y1="{cy}" x2="{nx:.1f}" y2="{ny:.1f}" stroke="#fff" stroke-width="4" stroke-linecap="round"/>'
-              f'<circle cx="{cx}" cy="{cy}" r="8" fill="#fff"/><circle cx="{cx}" cy="{cy}" r="3" fill="#120A2B"/>')
+              f'<circle cx="{cx}" cy="{cy}" r="8" fill="#fff"/><circle cx="{cx}" cy="{cy}" r="3" fill="#0F0A24"/>')
     d = f"Wait-O-Meter: {label}. Score {score} out of 100, where 0 is buy now and 100 is wait."
     return (f'<svg class="wom-g" viewBox="0 0 240 132" role="img" aria-label="{html.escape(d)}"><title>{html.escape(d)}</title>{arcs}{needle}'
             f'<text x="14" y="130" class="wom-e">BUY NOW</text><text x="226" y="130" text-anchor="end" class="wom-e">WAIT</text></svg>')

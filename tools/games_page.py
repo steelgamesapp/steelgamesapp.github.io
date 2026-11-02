@@ -14,7 +14,7 @@ SCRIPT = r"""
 
   // Collections use store filters; genres search the store catalog for well-known titles and words in that genre.
   const COLLECTIONS = [
-    { id: 'all', name: 'All games', c: '#FFB020', p: {} },
+    { id: 'all', name: 'All games', c: '#B9AEFF', p: {} },
     { id: 'sale', name: 'On sale now', c: '#FF6B8A', p: { onSale: 1 } },
     { id: 'top', name: 'Top rated', c: '#5CE08A', p: { steamRating: 90, onSale: 1 } },
     { id: 'u5', name: 'Under $5', c: '#66C0F4', p: { upperPrice: 5, lowerPrice: 0.01 } },

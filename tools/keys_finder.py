@@ -48,9 +48,9 @@ STYLE = """<style>
 .kgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
 .kres{display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px;padding:14px;border-radius:16px;background:var(--surface);border:1px solid var(--line);min-width:0}
 @media (max-width:520px){.kres{grid-template-columns:minmax(0,1fr)}}
-.kpic{position:relative;display:block;border-radius:10px;overflow:hidden;aspect-ratio:460/215;background:#0E0820;align-self:start}
+.kpic{position:relative;display:block;border-radius:10px;overflow:hidden;aspect-ratio:460/215;background:#0A0619;align-self:start}
 .kpic img{width:100%;height:100%;object-fit:cover;display:block}
-.kpic .off{position:absolute;top:6px;right:6px;padding:2px 8px;border-radius:7px;font:700 12px var(--display);background:var(--grad-off);color:#fff}
+.kpic .off{position:absolute;top:6px;right:6px;padding:2px 8px;border-radius:7px;font:700 12px var(--display);background:var(--off-bg);color:var(--off-fg)}
 .kbody{display:flex;flex-direction:column;gap:8px;min-width:0}
 .kt{font:700 18px/1.25 var(--display);color:#fff;text-decoration:none}
 .kt:hover{color:var(--accent-soft)}

@@ -1,9 +1,9 @@
-#sg-box{box-sizing:border-box;margin:0 0 16px;padding:14px 16px;border-radius:6px;background:linear-gradient(135deg,#1C1050,#2A1C6B);border:1px solid #4A37A8;color:#fff;font:14px/1.45 "Motiva Sans",Arial,sans-serif;max-width:616px}
+#sg-box{box-sizing:border-box;margin:0 0 16px;padding:14px 16px;border-radius:6px;background:linear-gradient(135deg,#17103A,#261B5C);border:1px solid #4A37A8;color:#fff;font:14px/1.45 "Motiva Sans",Arial,sans-serif;max-width:616px}
 #sg-box .sg-head{display:flex;gap:8px;align-items:baseline;margin-bottom:6px}
 #sg-box .sg-brand{font:700 12px Arial,sans-serif;letter-spacing:2px;color:#FFB020}
-#sg-box .sg-sub{font-size:12px;color:#BDB4EA}
+#sg-box .sg-sub{font-size:12px;color:#C9C2EE}
 #sg-box .sg-price{font-size:26px;font-weight:700;color:#FFCB5C}
-#sg-box .sg-price s{font-size:14px;font-weight:400;color:#BDB4EA;margin-left:8px}
+#sg-box .sg-price s{font-size:14px;font-weight:400;color:#C9C2EE;margin-left:8px}
 #sg-box .sg-where,#sg-box .sg-low{color:#DAD4F7}
 #sg-box .sg-good{color:#5CE08A;font-weight:700}
 #sg-box .sg-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}

@@ -32,7 +32,7 @@
   /* ---------- styles for the header icons and toast ---------- */
   const css = document.createElement('style');
   css.textContent = '.nav a.nav-ico{display:inline-flex;align-items:center;gap:6px;position:relative}.nav a.nav-ico svg{display:block}.nav-ico .cnt{min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#FF2E93;color:#fff;font:700 11px/18px Inter,system-ui,sans-serif;text-align:center}.nav-ico .cnt[hidden]{display:none}' +
-    '.sg-toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;z-index:99;max-width:min(92vw,460px);padding:12px 18px;border-radius:12px;background:#2A1C6B;border:1px solid #4A37A8;color:#fff;font:600 15px Inter,system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:opacity .2s,transform .2s;display:flex;gap:12px;align-items:center}.sg-toast.on{opacity:1;transform:translate(-50%,0)}.sg-toast a{color:#FFCB5C;white-space:nowrap}@media (prefers-reduced-motion:reduce){.sg-toast{transition:none}}';
+    '.sg-toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;z-index:99;max-width:min(92vw,460px);padding:12px 18px;border-radius:12px;background:#261B5C;border:1px solid #4A37A8;color:#fff;font:600 15px Inter,system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:opacity .2s,transform .2s;display:flex;gap:12px;align-items:center}.sg-toast.on{opacity:1;transform:translate(-50%,0)}.sg-toast a{color:#CFC6FF;white-space:nowrap}@media (prefers-reduced-motion:reduce){.sg-toast{transition:none}}';
   document.head.appendChild(css);
   let tt, toastEl;
   SG.toast = (msg, href, label) => {
@@ -190,11 +190,11 @@
 
   /* ---------- site-wide game search ---------- */
   const sstyle = document.createElement('style');
-  sstyle.textContent = '.sg-search{position:relative;background:rgba(28,16,80,.98);border-bottom:1px solid #4A37A8;z-index:60}.sg-search[hidden]{display:none}.sg-search .box{max-width:1080px;margin:0 auto;padding:12px 16px;position:relative}' +
-    '.sg-search input{width:100%;min-height:48px;padding:0 16px;border-radius:12px;border:1px solid #4A37A8;background:#120A2B;color:#fff;font:17px Inter,system-ui,sans-serif}.sg-search input:focus-visible{outline:2px solid #FFB020;outline-offset:2px}' +
-    '.sg-res{list-style:none;margin:8px 0 0;padding:0;border-radius:12px;background:#1E1450;border:1px solid #3B2B8A;overflow:hidden;max-height:min(60vh,440px);overflow-y:auto}.sg-res:empty{display:none}' +
-    '.sg-res li a,.sg-res li.msg{display:flex;align-items:center;gap:12px;padding:10px 12px;color:#fff;text-decoration:none;font:600 15px Inter,system-ui,sans-serif}.sg-res li.msg{color:#BDB4EA;font-weight:500}' +
-    '.sg-res li a:hover,.sg-res li a[aria-selected="true"]{background:#2A1C6B}.sg-res img{width:92px;height:43px;object-fit:cover;border-radius:6px;background:#0E0820;flex:none}.sg-res .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sg-res .p{color:#FFCB5C;font-weight:700;white-space:nowrap}' +
+  sstyle.textContent = '.sg-search{position:relative;background:rgba(23,16,58,.98);border-bottom:1px solid #4A37A8;z-index:60}.sg-search[hidden]{display:none}.sg-search .box{max-width:1080px;margin:0 auto;padding:12px 16px;position:relative}' +
+    '.sg-search input{width:100%;min-height:48px;padding:0 16px;border-radius:12px;border:1px solid #4A37A8;background:#0F0A24;color:#fff;font:17px Inter,system-ui,sans-serif}.sg-search input:focus-visible{outline:2px solid #FFB020;outline-offset:2px}' +
+    '.sg-res{list-style:none;margin:8px 0 0;padding:0;border-radius:12px;background:#1A1342;border:1px solid #35288A;overflow:hidden;max-height:min(60vh,440px);overflow-y:auto}.sg-res:empty{display:none}' +
+    '.sg-res li a,.sg-res li.msg{display:flex;align-items:center;gap:12px;padding:10px 12px;color:#fff;text-decoration:none;font:600 15px Inter,system-ui,sans-serif}.sg-res li.msg{color:#C9C2EE;font-weight:500}' +
+    '.sg-res li a:hover,.sg-res li a[aria-selected="true"]{background:#261B5C}.sg-res img{width:92px;height:43px;object-fit:cover;border-radius:6px;background:#0A0619;flex:none}.sg-res .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sg-res .p{color:#fff;font-weight:700;white-space:nowrap}' +
     '@media (max-width:480px){.sg-res img{width:64px;height:30px}}';
   document.head.appendChild(sstyle);
   let sbar, sinput, slist, stoken = 0, stimer, sactive = -1, tracked = null;

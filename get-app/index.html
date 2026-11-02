@@ -13,20 +13,20 @@
 <style>
 /* Layout: one dark steel column — header, hero with live app preview, feature grid, guides, platforms, privacy, footer. Same look as the app. */
 :root {
-  --bg: #0C0E11;
-  --surface: #15181D;
-  --raised: #1C2027;
-  --line: #262C35;
-  --line-strong: #2E3540;
-  --fg: #EDEFF2;
-  --muted: #9BA4AF;
-  --steel: #C3CBD5;
-  --accent: #FF7A1A;
-  --accent-soft: #FF9A4D;
+  --bg: #0F0A24;
+  --surface: #1A1342;
+  --raised: #261B5C;
+  --line: #35288A;
+  --line-strong: #4A37A8;
+  --fg: #FFFFFF;
+  --muted: #C9C2EE;
+  --steel: #DAD4F7;
+  --accent: #FFB020;
+  --accent-soft: #CFC6FF;
   --accent-ink: #1A0E04;
   --verify: #8FB4E3;
   --resale: #C4B5FD;
-  --pc: #FF8A3D;
+  --pc: #B9AEFF;
   --xbox: #5CCB72;
   --ps: #6FA0FF;
   --nin: #FF6B74;
@@ -149,7 +149,7 @@ p { margin: 0; }
 
 .nav a.nav-cta { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
 .nav a.nav-cta:hover { background: var(--accent-soft); color: var(--accent-ink); }
-.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(12,14,17,0.92); backdrop-filter: blur(10px); }
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(23,16,58,0.92); backdrop-filter: blur(10px); }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
 html { scroll-padding-top: 88px; }
 @media (max-width: 640px) { .site-header { position: static; } html { scroll-padding-top: 0; } }
@@ -235,7 +235,7 @@ html { scroll-padding-top: 88px; }
 .live-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 20px; }
 .live-card { display: flex; gap: 12px; align-items: center; padding: 10px; border-radius: 14px; background: #14181E; border: 1px solid #2A313A; color: var(--fg); text-decoration: none; min-width: 0; }
 .live-card:hover { border-color: var(--accent); }
-.live-card img { width: 112px; height: 52px; object-fit: cover; border-radius: 8px; flex-shrink: 0; background: #1C2027; }
+.live-card img { width: 112px; height: 52px; object-fit: cover; border-radius: 8px; flex-shrink: 0; background: #261B5C; }
 .live-card .t { display: block; font-weight: 600; font-size: 15px; line-height: 1.25; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .live-card .m { display: block; color: var(--muted); font-size: 13px; }
 .live-card .p { font-family: var(--display); font-weight: 700; color: var(--fg); }
@@ -260,7 +260,7 @@ html { scroll-padding-top: 88px; }
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="SteelGames home">
-      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#261B5C" stroke="#DAD4F7" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
       <span>STEELGAMES</span>
     </a>
     <nav class="nav" aria-label="Site">
@@ -324,7 +324,7 @@ html { scroll-padding-top: 88px; }
           <span class="go">Open the price checker <span aria-hidden="true">→</span></span>
         </a>
         <a class="hub-card" href="/gear.html">
-          <span class="hub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg></span>
+          <span class="hub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DAD4F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg></span>
           <h3>Shop gear</h3>
           <p>Our picks for PC parts, chairs, desks, headsets, lighting and console accessories.</p>
           <span class="go">Open the gear guide <span aria-hidden="true">→</span></span>
@@ -336,7 +336,7 @@ html { scroll-padding-top: 88px; }
           <span class="go">Join on Discord <span aria-hidden="true">→</span></span>
         </a>
         <a class="hub-card" href="#help">
-          <span class="hub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></span>
+          <span class="hub-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DAD4F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></span>
           <h3>Get help</h3>
           <p>Plain answers to common questions, and a real person if you need one.</p>
           <span class="go">Read the help page <span aria-hidden="true">→</span></span>
@@ -384,7 +384,7 @@ html { scroll-padding-top: 88px; }
           <p>Some sites resell game codes for less. We show them in their own labeled section, so you always know which is which and who handles refunds.</p>
         </article>
         <article class="feature">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h20M4 8v12M20 8v12M8 8V5h8v3"/></svg>Gear for your setup</h3>
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DAD4F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h20M4 8v12M20 8v12M8 8V5h8v3"/></svg>Gear for your setup</h3>
           <p>PC parts, chairs, desks, lighting, headsets, microphones and console accessories, all in one place.</p>
         </article>
         <article class="feature">
@@ -400,7 +400,7 @@ html { scroll-padding-top: 88px; }
           <p>A plain answer on every game, based on the lowest price it has ever been. No more guessing.</p>
         </article>
         <article class="feature">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Shop with friends</h3>
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DAD4F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Shop with friends</h3>
           <p>Make a shared list with friends. When a game hits your price, everyone gets told, and buying together earns bonus points.</p>
         </article>
         <article class="feature">
@@ -412,7 +412,7 @@ html { scroll-padding-top: 88px; }
           <p>A running total of how much you've saved this year compared with full price.</p>
         </article>
         <article class="feature">
-          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C3CBD5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V16h8v-1.3A7 7 0 0 0 12 2z"/></svg>Setup planner and parents mode</h3>
+          <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#DAD4F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V16h8v-1.3A7 7 0 0 0 12 2z"/></svg>Setup planner and parents mode</h3>
           <p>Plan a whole desk setup on a budget. Parents mode shows age ratings and content notes on every game.</p>
         </article>
       </div>
@@ -596,7 +596,7 @@ html { scroll-padding-top: 88px; }
   <div class="wrap">
     <div class="footer-row">
       <a class="brand" href="#top" aria-label="Back to top">
-        <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#261B5C" stroke="#DAD4F7" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
         <span style="font-size:14px">STEELGAMES</span>
       </a>
       <span class="vet-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned and operated</span>
