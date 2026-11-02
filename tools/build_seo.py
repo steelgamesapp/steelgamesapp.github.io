@@ -519,6 +519,10 @@ def main():
         if os.path.isdir(gbase):
             urls.append(f"{SITE}/game/")
             urls += [f"{SITE}/game/{n}/" for n in sorted(os.listdir(gbase)) if os.path.isdir(os.path.join(gbase, n))]
+    gdir = os.path.join(ROOT, "guides")
+    if os.path.isdir(gdir):
+        urls.append(f"{SITE}/guides/")
+        urls += [f"{SITE}/guides/{n}/" for n in sorted(os.listdir(gdir)) if os.path.exists(os.path.join(gdir, n, "index.html"))]
     gear_existing_pages()
     try:
         urls += pros.build_all()
