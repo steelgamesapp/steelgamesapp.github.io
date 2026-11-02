@@ -10,7 +10,7 @@ STAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8F
 HEART = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6.6 5.4 5.4 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg>'
 CARTI = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.2a1 1 0 0 0 1 .8h9.1a1 1 0 0 0 1-.8L21 7H6"/></svg>'
 CHECKI = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>'
-NAV = [("games", "/games.html", "Games"), ("keys", "/keys.html", "Keys"), ("news", "/app/#/news", "News"), ("gear", "/gear.html", "Gear"), ("pros", "/pros/", "Pro setups"),
+NAV = [("games", "/games.html", "Games"), ("keys", "/keys.html", "Keys"), ("news", "/news.html", "News"), ("gear", "/gear.html", "Gear"), ("pros", "/pros/", "Pro setups"),
        ("reviews", "/reviews.html", "Reviews"), ("community", "/community.html", "Community"), ("military", "/military.html", "Veterans")]
 
 

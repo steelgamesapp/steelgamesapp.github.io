@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gaming news: PC, Xbox, PlayStation and Nintendo | SteelGames</title>
+<meta name="description" content="Fresh gaming headlines from PC, Xbox, PlayStation and Nintendo, updated through the day. Every story opens on the publisher's own site.">
+<link rel="canonical" href="https://steelgamesapp.com/news.html">
+<meta property="og:title" content="Gaming news: PC, Xbox, PlayStation and Nintendo | SteelGames"><meta property="og:description" content="Fresh gaming headlines from PC, Xbox, PlayStation and Nintendo, updated through the day."><meta property="og:url" content="https://steelgamesapp.com/news.html"><meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/pages.css">
+<style>
+.nfilters{display:flex;flex-wrap:wrap;gap:8px}
+.nfilters button{font:600 14px var(--body);color:#fff;padding:9px 16px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);cursor:pointer}
+.nfilters button:hover{background:var(--raised)}
+.nfilters button[aria-pressed="true"]{background:var(--grad-cta);color:var(--accent-ink);border-color:transparent}
+.nstatus{font-size:14px;color:var(--muted);min-height:22px}
+.top-story{--c:#FFB020;position:relative;display:block;border-radius:20px;overflow:hidden;min-height:340px;background:#0E0820;border:1px solid var(--line-strong);text-decoration:none;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.4)}
+.top-story:hover{color:#fff;border-color:var(--c)}
+.top-story .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.top-story:hover .bg{transform:scale(1.03)}
+.top-story .bg.ph{display:grid;place-items:center;background:radial-gradient(120% 120% at 30% 20%,rgba(255,176,32,.28),rgba(255,176,32,.04) 60%),#1E1450}
+.top-story::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,8,32,0) 25%,rgba(14,8,32,.94) 92%)}
+.top-story .in{position:absolute;left:0;right:0;bottom:0;z-index:1;display:flex;flex-direction:column;gap:10px;padding:24px}
+.top-story h2{font-size:clamp(24px,3.6vw,36px);text-shadow:0 2px 12px rgba(0,0,0,.6);max-width:30em}
+.flag{align-self:flex-start;font:700 11px var(--body);letter-spacing:1.2px;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--grad-off);color:#fff}
+.ngrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:960px){.ngrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.ngrid{grid-template-columns:minmax(0,1fr)}.top-story{min-height:300px}}
+.ncard{display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:var(--surface);border:1px solid var(--line);text-decoration:none;color:#fff;min-width:0;transition:transform .15s ease,border-color .15s ease}
+.ncard:hover{transform:translateY(-3px);border-color:var(--line-strong);color:#fff;background:var(--raised)}
+.ncard .pic{aspect-ratio:16/9;background:#0E0820;overflow:hidden}
+.ncard .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.ph{display:grid;place-items:center;width:100%;height:100%;background:radial-gradient(120% 120% at 30% 20%,rgba(255,176,32,.22),rgba(255,176,32,.04) 60%),#1E1450}
+.ncard .body{display:flex;flex-direction:column;gap:10px;padding:14px 16px 16px;flex:1}
+.ncard h3{font-size:18px;line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.meta-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.plat{--p:#FFB020;padding:2px 9px;border-radius:999px;font:700 11px var(--body);letter-spacing:.6px;text-transform:uppercase;color:var(--p);border:1px solid color-mix(in srgb,var(--p) 55%,transparent);background:color-mix(in srgb,var(--p) 14%,transparent)}
+.plat.p-xbox{--p:#5CE08A}.plat.p-playstation{--p:#66C0F4}.plat.p-nintendo{--p:#FF6B8A}
+.nsk{min-height:250px;border-radius:16px;background:linear-gradient(100deg,var(--surface) 30%,var(--raised) 50%,var(--surface) 70%);background-size:200% 100%;animation:sh 1.4s infinite linear;border:1px solid transparent}
+.nsk.big{min-height:340px;border-radius:20px}
+@keyframes sh{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){.nsk{animation:none}.ncard,.top-story .bg{transition:none}}
+.nmore{display:flex;justify-content:center;padding-top:6px}
+.nerr{padding:28px 18px;text-align:center;color:var(--steel);border:1px dashed var(--line-strong);border-radius:16px}
+.nerr button{margin-top:12px}
+.nlinks{display:flex;flex-wrap:wrap;gap:8px}
+.nlinks a{font:600 14px var(--body);text-decoration:none;color:#fff;padding:9px 14px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface)}
+.nlinks a:hover{background:var(--raised)}
+</style>
+<meta name="google-adsense-account" content="ca-pub-3613204296597380">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
+<script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="SteelGames home"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg><span>STEELGAMES</span></a>
+    <nav class="nav" aria-label="Site"><a href="/games.html">Games</a><a href="/keys.html">Keys</a><a href="/news.html" aria-current="page">News</a><a href="/gear.html">Gear</a><a href="/pros/">Pro setups</a><a href="/reviews.html">Reviews</a><a href="/community.html">Community</a><a href="/military.html">Veterans</a><a class="nav-cta" href="/app/#/account">Profile</a></nav>
+  </div>
+</header>
+<main>
+<section class="hero"><div class="wrap">
+<p class="crumbs"><a href="/">Home</a> / News</p>
+<p class="eyebrow">Live headlines</p>
+<h1>Gaming news</h1>
+<p class="lede">Headlines from PC, Xbox, PlayStation and Nintendo. Every story opens on the publisher's own site.</p>
+</div></section>
+<section class="block"><div class="wrap">
+<div class="nfilters" role="group" aria-label="Platform">
+<button type="button" data-p="all" aria-pressed="true">All</button>
+<button type="button" data-p="pc" aria-pressed="false">PC</button>
+<button type="button" data-p="xbox" aria-pressed="false">Xbox</button>
+<button type="button" data-p="playstation" aria-pressed="false">PlayStation</button>
+<button type="button" data-p="nintendo" aria-pressed="false">Nintendo</button>
+</div>
+<p class="nstatus" id="nstatus" aria-live="polite"></p>
+<div id="top"><div class="nsk big"></div></div>
+<div class="ngrid" id="grid"><div class="nsk"></div><div class="nsk"></div><div class="nsk"></div><div class="nsk"></div><div class="nsk"></div><div class="nsk"></div></div>
+<div class="nmore"><button class="btn btn-ghost" id="more" type="button" hidden>Show more stories</button></div>
+<noscript><p class="nerr">The news feed needs JavaScript. You can still browse <a href="/deals/">today's game deals</a>.</p></noscript>
+</div></section>
+<section class="block"><div class="wrap">
+<h2>Looking for a deal instead?</h2>
+<div class="nlinks"><a href="/deals/best-steam-deals-today/">Best Steam deals today</a><a href="/deals/biggest-pc-game-discounts/">Biggest discounts</a><a href="/deals/free-pc-games-right-now/">Free PC games</a><a href="/deals/pc-games-under-10/">PC games under $10</a><a href="/guides/">Buying guides</a></div>
+</div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="vet-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned and operated</span>
+    <div class="footer-links">
+      <a href="/games.html">Games</a><a href="/keys.html">Key resellers</a><a href="/deals/">Deal lists</a><a href="/guides/">Buying guides</a><a href="/gear.html">Shop gear</a><a href="/pros/">Pro setups</a><a href="/military.html">Veteran discounts</a>
+      <a href="/privacy.html">Privacy policy</a><a href="/terms.html">Terms of use</a><a href="/advertise.html">Advertise</a>
+      <a href="mailto:steelgames.app@outlook.com">Contact us</a><span>© 2026 Lonestar PPS, LLC</span>
+    </div>
+    <p>As an Amazon Associate, SteelGames earns from qualifying purchases. SteelGames may also earn a commission from other stores linked on this site, at no extra cost to you. Prices can change at any time.</p>
+    <p>SteelGames is a product of Lonestar PPS, LLC, a veteran-owned company. Not affiliated with Valve, Epic Games, Microsoft, Sony or Nintendo.</p>
+  </div>
+</footer>
+<script>
+(() => {
+  const URL_ = 'https://hcevjksajzetoezupzec.supabase.co/functions/v1/web-data?news=1';
+  const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhjZXZqa3NhanpldG9lenVwemVjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMxMjE1NTcsImV4cCI6MjEwODY5NzU1N30.bKQhWEEQDGixQNn3uwNSyGEM64hN-B8TNGWgHWq4GtM';
+  const NAMES = { pc: 'PC', xbox: 'Xbox', playstation: 'PlayStation', nintendo: 'Nintendo' };
+  const PAGE = 12;
+  const $ = (s) => document.querySelector(s);
+  const esc = (t) => String(t == null ? '' : t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const safe = (u) => (/^https?:\/\//i.test(u || '') ? u : '');
+  const ago = (iso) => {
+    if (!iso) return '';
+    const m = Math.round((Date.now() - Date.parse(iso)) / 60000);
+    if (isNaN(m)) return '';
+    if (m < 60) return Math.max(1, m) + ' min ago';
+    const h = Math.round(m / 60); if (h < 24) return h + (h === 1 ? ' hour ago' : ' hours ago');
+    const d = Math.round(h / 24); return d + (d === 1 ? ' day ago' : ' days ago');
+  };
+  const LOGO = '<svg width="44" height="44" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#1C2027" stroke="#C3CBD5" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>';
+  const state = { all: [], filter: 'all', shown: PAGE, loaded: false };
+  const grid = $('#grid'), top = $('#top'), status = $('#nstatus'), moreBtn = $('#more');
+
+  const meta = (i) => '<span class="meta-row"><span class="plat p-' + esc(i.platform) + '">' + esc(NAMES[i.platform] || i.platform) + '</span>' +
+    '<span>' + esc(i.source) + '</span>' + (ago(i.date) ? '<span>· ' + ago(i.date) + '</span>' : '') + '</span>';
+  const pic = (i, cls) => safe(i.image)
+    ? '<img class="' + cls + '" src="' + esc(i.image) + '" alt="" loading="lazy" referrerpolicy="no-referrer" data-fb>'
+    : '<span class="ph ' + cls + '">' + LOGO + '</span>';
+
+  const topCard = (i) => '<a class="top-story" href="' + esc(safe(i.link)) + '" target="_blank" rel="noopener">' + pic(i, 'bg') +
+    '<span class="in"><span class="flag">Top story</span>' + meta(i) + '<h2>' + esc(i.title) + '</h2></span></a>';
+  const card = (i) => '<a class="ncard" href="' + esc(safe(i.link)) + '" target="_blank" rel="noopener"><span class="pic">' + pic(i, '') + '</span>' +
+    '<span class="body">' + meta(i) + '<h3>' + esc(i.title) + '</h3></span></a>';
+
+  const render = () => {
+    const rows = state.all.filter((i) => safe(i.link) && i.title && (state.filter === 'all' || i.platform === state.filter));
+    if (!rows.length) {
+      top.innerHTML = ''; grid.innerHTML = '<p class="nerr" style="grid-column:1/-1">No headlines for this platform right now. Try another one.</p>';
+      status.textContent = ''; moreBtn.hidden = true; return;
+    }
+    top.innerHTML = topCard(rows[0]);
+    const rest = rows.slice(1, state.shown + 1);
+    grid.innerHTML = rest.map(card).join('');
+    status.textContent = 'Showing ' + (rest.length + 1) + ' of ' + rows.length + ' stories.';
+    moreBtn.hidden = rows.length <= rest.length + 1;
+  };
+
+  // If a picture fails to load, swap in the SteelGames tile.
+  document.addEventListener('error', (e) => {
+    const t = e.target;
+    if (t && t.tagName === 'IMG' && t.hasAttribute('data-fb')) {
+      const s = document.createElement('span'); s.className = 'ph ' + (t.className || ''); s.innerHTML = LOGO; t.replaceWith(s);
+    }
+  }, true);
+
+  const fail = () => {
+    top.innerHTML = '';
+    grid.innerHTML = '<div class="nerr" style="grid-column:1/-1">Couldn\'t load the news right now.<br><button class="btn btn-ghost" type="button" id="retry">Try again</button></div>';
+    status.textContent = ''; moreBtn.hidden = true;
+    const r = $('#retry'); if (r) r.addEventListener('click', load);
+  };
+  const load = () => {
+    fetch(URL_, { headers: { apikey: KEY, Authorization: 'Bearer ' + KEY } })
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((list) => { if (!Array.isArray(list)) throw 0; state.all = list; state.loaded = true; render(); })
+      .catch(fail);
+  };
+
+  document.querySelectorAll('.nfilters button').forEach((b) => b.addEventListener('click', () => {
+    state.filter = b.dataset.p; state.shown = PAGE;
+    document.querySelectorAll('.nfilters button').forEach((x) => x.setAttribute('aria-pressed', x === b));
+    if (state.loaded) render();
+  }));
+  moreBtn.addEventListener('click', () => { state.shown += PAGE; render(); });
+  load();
+})();
+</script>
+</body>
+</html>

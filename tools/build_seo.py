@@ -476,7 +476,7 @@ def main():
     else:
         stores = {s["storeID"]: s["storeName"] for s in get("/stores")}
         fetch = lambda q: get("/deals", {**q, "pageSize": 40, "onSale": 1})
-    urls = [f"{SITE}/", f"{SITE}/games.html", f"{SITE}/keys.html", f"{SITE}/get-app/", f"{SITE}/gear.html", f"{SITE}/reviews.html", f"{SITE}/community.html", f"{SITE}/military.html", f"{SITE}/advertise.html", f"{SITE}/deals/"]
+    urls = [f"{SITE}/", f"{SITE}/games.html", f"{SITE}/keys.html", f"{SITE}/get-app/", f"{SITE}/gear.html", f"{SITE}/reviews.html", f"{SITE}/news.html", f"{SITE}/community.html", f"{SITE}/military.html", f"{SITE}/advertise.html", f"{SITE}/deals/"]
     for p in PAGES:
         try:
             deals = fetch(p["q"])
