@@ -392,7 +392,10 @@ def build_games(stores, today, seeds, fetch_game):
                 try:  # yesterday's page still gets today's gear picks
                     _p = os.path.join(base, old, "index.html")
                     _t = old_cards[old][0]
-                    open(_p, "w").write(gear.inject(open(_p).read(), _t))
+                    _old_html = open(_p).read()
+                    _new_html = gear.inject(_old_html, _t) if len(_old_html) > 1000 else ""
+                    if len(_new_html) > 1000:  # never blank an existing page
+                        open(_p, "w").write(_new_html)
                     GEAR_GAMES[str(gid)] = gear.slots_for(_t)[0]
                 except Exception as _ex:
                     print("gear inject failed", gid, _ex, file=sys.stderr)
