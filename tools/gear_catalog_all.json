@@ -30,6 +30,26 @@
   "earns": "Direct from the brand"
  },
  {
+  "name": "SOLAKAKA",
+  "url": "https://solakaka.sjv.io/GbJJDE",
+  "img": "https://solakaka.com/cdn/shop/files/SOLAKAKA-A75-PRO-zhutu-black.jpg?v=1782973625&width=400",
+  "desc": "Wireless mechanical keyboards, gaming mice and combos, sold direct.",
+  "chips": [
+   "PC"
+  ],
+  "earns": "We earn a commission from this link"
+ },
+ {
+  "name": "Edifier",
+  "url": "https://edifier.pxf.io/3kWWkv",
+  "img": "https://us.edifier.com/cdn/shop/files/mr5-black-6.png?v=1760669876&width=400",
+  "desc": "Desktop, studio and gaming speakers, sold direct.",
+  "chips": [
+   "Any platform"
+  ],
+  "earns": "We earn a commission from this link"
+ },
+ {
   "name": "ASUS Dual GeForce RTX 5060 8GB OC",
   "url": "https://www.amazon.com/dp/B0F8PR9L3X?tag=steelgames-20",
   "img": "https://m.media-amazon.com/images/I/81i5KcFKysL._AC_SL400_.jpg",
