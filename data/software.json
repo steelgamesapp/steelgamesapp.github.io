@@ -1,0 +1,147 @@
+{
+  "checked": "2026-11-05",
+  "items": [
+    {
+      "id": "win11-pro",
+      "name": "Windows 11 Pro",
+      "cat": "windows",
+      "tags": ["1 PC", "Digital key", "Global"],
+      "img": "https://imgproxy.eneba.games/2INcnKuyFkJuiKcA7IdP8gqwthj8qDfBvhk57kxu6i4/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9a/TzNsMzNvY282UDc2/ZW5JakRJMVZoY1hj/UHRVU3VsOWtCazl6/a1FreUZFLnBuZw",
+      "offers": [
+        { "store": "Eneba", "price": 13.46, "label": "Global key", "url": "https://www.eneba.com/microsoft-windows-microsoft-windows-11-professional-key-global" },
+        { "store": "Kinguin", "price": 22.02, "label": "OEM key", "url": "https://www.kinguin.net/category/110936/windows-11-professional-oem-key" }
+      ]
+    },
+    {
+      "id": "win11-home",
+      "name": "Windows 11 Home",
+      "cat": "windows",
+      "tags": ["1 PC", "Digital key", "Global"],
+      "img": "https://imgproxy.eneba.games/5pWNo4oE6f2mDkVeEio9Z--sdt9z1Zdf_6Fkkc5kzyU/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9D/NEhJMC1FRnlVcTZQ/UGd0a29hWnJpWTNZ/RE5ZZWhkbDhNRi1H/NkotZzJVLnBuZw",
+      "offers": [
+        { "store": "Eneba", "price": 16.83, "label": "Global key", "url": "https://www.eneba.com/microsoft-windows-microsoft-windows-11-home-retail-key-clean-install-only-no-upgrade-global" },
+        { "store": "Kinguin", "price": 18.74, "label": "OEM key", "url": "https://www.kinguin.net/category/110943/windows-11-home-oem-key" }
+      ]
+    },
+    {
+      "id": "office-2024-pp",
+      "name": "Microsoft Office 2024 Professional Plus",
+      "cat": "office",
+      "tags": ["1 PC", "One-time purchase", "LTSC", "Global"],
+      "img": "https://imgproxy.eneba.games/YG8ldS9Mfj5qGs2q9vjMxueJ0HF1b_6htQTf8BcBYy4/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy80/czMzU3hyZWI2VERN/T1ROQTgxV2g2OG9s/OThOSlZ5VDVRVE0x/aFMzNmVzLnBuZw",
+      "offers": [
+        { "store": "Kinguin", "price": 15.93, "label": "LTSC key", "url": "https://www.kinguin.net/category/484263/ms-office-2024-professional-plus-ltsc-key" },
+        { "store": "Eneba", "price": 16.86, "label": "LTSC key", "url": "https://www.eneba.com/microsoft-windows-microsoft-office-2024-professional-plus-ltsc-key-global" }
+      ]
+    },
+    {
+      "id": "avast-premium",
+      "name": "Avast Premium Security",
+      "cat": "security",
+      "tags": ["1 device", "1 year", "Global"],
+      "was": 77.99,
+      "img": "https://imgproxy.eneba.games/ksZ6RuDU4YXhdsv2Wss0yXeiScW-5tjTkgyl-S6sRoo/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9U/cXNMZVNwQl9FcGt6/N0k3aHhvalg1cFZl/VndvQzJ6a0xKdGZF/MllFTjhzLmpwZWc",
+      "offers": [
+        { "store": "Kinguin", "price": 3.10, "url": "https://www.kinguin.net/category/328407/avast-premium-security-key-1-year-1-pc" },
+        { "store": "Eneba", "price": 4.97, "url": "https://www.eneba.com/other-avast-premium-security-1-device-1-year-avast-key-global" }
+      ]
+    },
+    {
+      "id": "mcafee-av-2026",
+      "name": "McAfee AntiVirus 2026",
+      "cat": "security",
+      "tags": ["1 device", "1 year", "Global"],
+      "was": 89.99,
+      "img": "https://imgproxy.eneba.games/18hguCtXB2-0EEAQRCn5pzpMAVcimoH-CLmBF6qxWuM/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy82/SEVKUWMyNUcwd3hE/U3BkYUhXSzNING9M/XzRvaGY2V2lNNTVD/eWZhWnZrLmpwZWc",
+      "offers": [
+        { "store": "Eneba", "price": 3.80, "url": "https://www.eneba.com/mcafee-mcafee-antivirus-2026-1-device-1-year-mcafee-key-global" }
+      ]
+    },
+    {
+      "id": "mcafee-tp-5",
+      "name": "McAfee Total Protection",
+      "cat": "security",
+      "tags": ["5 devices", "1 year", "Global"],
+      "was": 119.99,
+      "img": "https://imgproxy.eneba.games/q_HspaLv_dnpvmF6om2Oc04Oayd6SWtG64jSR0bJs8c/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9l/NEx6NHg0VGo5d2J1/d3YzcTgxQUg1Rkph/OHNKTzhvNmdha3Ra/eUZRS01jLmpwZWc",
+      "offers": [
+        { "store": "Eneba", "price": 8.90, "url": "https://www.eneba.com/other-mcafee-total-protection-5-devices-1-year-multidevice-mcafee-key-global" }
+      ]
+    },
+    {
+      "id": "avast-ultimate",
+      "name": "Avast Ultimate",
+      "cat": "security",
+      "tags": ["1 device", "1 year", "Global"],
+      "was": 109.99,
+      "img": "https://imgproxy.eneba.games/Pe42amiim43hsNffoptTm4CyPIA77LLD5s8M4WdCSe0/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy96/Qy12Nm14eWZsOGRx/anVWa3hkR1R0TWdn/QnBfZTZvdXlLdFRj/cnFQdTl3LmpwZWc",
+      "offers": [
+        { "store": "Eneba", "price": 6.40, "url": "https://www.eneba.com/other-avast-ultimate-1-device-1-year-avast-key-global" },
+        { "store": "Kinguin", "price": 9.13, "url": "https://www.kinguin.net/category/433451/avast-ultimate-2026-key-1-year-1-device" }
+      ]
+    },
+    {
+      "id": "bitdefender-ts-5",
+      "name": "Bitdefender Total Security",
+      "cat": "security",
+      "tags": ["5 devices", "1 year", "US region"],
+      "img": "https://imgproxy.eneba.games/QK0QRSXzI5_BIvvQrVJWGSGzQ_Uknj81EwppgFkmQH4/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy85/ZlgwLTBfcWwzal96/N3cxZXB0U25sa2NS/Q1ZRUXVheVFBZWc0/WHRONGRjLnBuZw",
+      "offers": [
+        { "store": "Eneba", "price": 16.23, "label": "US region", "url": "https://www.eneba.com/bitdefender-bitdefender-total-security-5-devices-1-year-key-united-states" }
+      ]
+    },
+    {
+      "id": "norton-360-deluxe-3",
+      "name": "Norton 360 Deluxe",
+      "cat": "security",
+      "tags": ["3 devices", "1 year", "US region"],
+      "img": "https://imgproxy.eneba.games/MlvUFgt9Cfp7vKgFG7KsT2WwWvslOXWQ8mmqMgf9VLo/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9C/MkIxS0oybXlEZFda/ZmtSYjJYNVlqaHpu/MU5zTV9SdjlXc0dY/dnh3UFFVLmpwZw",
+      "offers": [
+        { "store": "Eneba", "price": 16.95, "label": "US region", "url": "https://www.eneba.com/other-norton-360-deluxe-25gb-3-devices-1-year-norton-key-united-states" }
+      ]
+    },
+    {
+      "id": "avg-secure-vpn",
+      "name": "AVG Secure VPN",
+      "cat": "vpn",
+      "tags": ["1 device", "1 year", "Global"],
+      "img": "https://imgproxy.eneba.games/ZygoHLt9IqQMhktvUEPorkEFXvI-FywdAPysfa3iSoQ/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9K/eVBvblEzT1RKMEt2/MFJqSUVoTlp5ZGx0/bjJidHRPNGdmcmJh/cF8wSE1RLmpwZWc",
+      "offers": [
+        { "store": "Eneba", "price": 4.50, "url": "https://www.eneba.com/other-avg-secure-vpn-1-device-1-year-avg-key-global" }
+      ]
+    },
+    {
+      "id": "avast-secureline-vpn",
+      "name": "Avast SecureLine VPN",
+      "cat": "vpn",
+      "tags": ["1 device", "1 year", "Global"],
+      "img": "https://imgproxy.eneba.games/wrNkTNlYeAHh38zVnteEN-Zxy8OZ57K5CIrmMoiP8JY/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9Y/SlNZYmFCUkN6U1hp/eE1sN04zbm9JVzVB/QXVxclZXTGtBMFZC/T2dNdHhNLmpwZWc",
+      "offers": [
+        { "store": "Eneba", "price": 5.85, "url": "https://www.eneba.com/other-avast-secureline-vpn-1-devices-1-year-avast-key-global" }
+      ]
+    },
+    {
+      "id": "avast-cleanup-premium",
+      "name": "Avast Cleanup Premium",
+      "cat": "tools",
+      "tags": ["1 PC", "1 year", "PC tune-up", "Global"],
+      "img": "https://imgproxy.eneba.games/_YtBC7oi-90ckKCPpsT4fEnA76vWaFwLTC_mNhw-k80/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9D/OGdYTEtaXzJ2RlRE/OWg1MXV0UU56VENj/aHpqNGxFZ3dnbkh5/RGhmQ1BBLmpwZWc",
+      "offers": [
+        { "store": "Kinguin", "price": 2.56, "url": "https://www.kinguin.net/category/46582/avast-cleanup-premium-1-year-1-pc" },
+        { "store": "Eneba", "price": 5.63, "url": "https://www.eneba.com/other-avast-cleanup-premium-1-pc-1-year-avast-key-global" }
+      ]
+    },
+    {
+      "id": "filmora-15-pc",
+      "name": "Wondershare Filmora 15 Video Editor",
+      "cat": "tools",
+      "tags": ["1 PC", "Lifetime", "Video editing", "Global"],
+      "was": 79.99,
+      "img": "https://imgproxy.eneba.games/BNMCntPsoe6YZDl5kzIzqks0aRjoJDZS5FqSWxN5P8I/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy96/NUhieGRaazlSNFpl/N1RWcU5CSmdhV0dy/NGZQakdnaHhDbG5p/a0dDb1hNLnBuZw",
+      "offers": [
+        { "store": "Eneba", "price": 35.85, "url": "https://www.eneba.com/wondershare-wondershare-filmora-15-video-editor-1-device-lifetime-wondershare-key-pc-global" }
+      ]
+    }
+  ]
+}
+
