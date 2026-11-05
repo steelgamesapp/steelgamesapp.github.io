@@ -252,6 +252,12 @@ html { scroll-padding-top: 88px; }
 .con-card:hover { border-color: var(--accent); }
 .con-card b { font-family: var(--display); font-size: 17px; }
 .con-card span { color: var(--muted); font-size: 14px; }
+
+/* Chrome extension banner */
+.ext-banner { border-bottom: 1px solid var(--line); background: var(--surface); }
+.ext-banner .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-block: 18px; }
+.ext-title { font-size: 18px; font-weight: 700; margin-top: 4px; }
+.ext-sub { color: var(--steel); font-size: 14px; margin-top: 4px; max-width: 42em; }
 </style>
 <meta name="google-adsense-account" content="ca-pub-3613204296597380">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
@@ -279,6 +285,16 @@ html { scroll-padding-top: 88px; }
 </header>
 
 <main id="top">
+  <section class="ext-banner" aria-label="SteelGames Chrome extension">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">New</p>
+        <p class="ext-title">See the lowest price on every Steam page</p>
+        <p class="ext-sub">The SteelGames Chrome extension shows the best price across major PC game stores, the all-time low and a Wait-O-Meter right on Steam game pages.</p>
+      </div>
+      <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/digihifdddmmflefajfemioefidnoaif" rel="noopener">Get the Chrome extension</a>
+    </div>
+  </section>
   <section class="live" id="deals" aria-labelledby="live-title">
     <div class="wrap">
       <div class="live-head">
@@ -326,7 +342,7 @@ html { scroll-padding-top: 88px; }
       <a href="terms.html">Terms of use</a>
       <a href="/deals/">Deal lists</a>
       <a href="advertise.html">Advertise</a>
-      <a href="mailto:steelgames.app@outlook.com">Contact us</a>
+      <a href="https://chromewebstore.google.com/detail/digihifdddmmflefajfemioefidnoaif" rel="noopener">Chrome extension</a><a href="mailto:steelgames.app@outlook.com">Contact us</a>
       <span>© 2026 Lonestar PPS, LLC</span>
     </div>
     <p class="disclosure">As an Amazon Associate, SteelGames earns from qualifying purchases. SteelGames may also earn a commission from other stores and retailers linked on this site, at no extra cost to you.</p>
