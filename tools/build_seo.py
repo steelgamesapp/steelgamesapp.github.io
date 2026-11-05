@@ -107,8 +107,22 @@ for _kw, _name in _THEMES:
                 ("Can I see price history?", "Open any game to see its lowest recorded price and every store's price.")]})
 
 
+class RateLimited(Exception):
+    """The price API told us to come back much later. Retrying in this run would only burn hours."""
+
+
+RATE_LIMITED = False  # once tripped, every later API call in this run fails instantly
+MAX_WAIT = 120        # longest pause we are willing to take for a short rate limit (seconds)
+
+
 def get(path, params=None, tries=5):
-    """GET from the price API, backing off and retrying when it rate-limits (HTTP 429) or hiccups (5xx)."""
+    """GET from the price API, backing off and retrying when it rate-limits (HTTP 429) or hiccups (5xx).
+
+    If the API asks us to wait longer than MAX_WAIT (it has been sending Retry-After of an hour), we stop
+    calling it for the rest of the run instead of sleeping and retrying for hours. Existing pages are kept."""
+    global RATE_LIMITED
+    if RATE_LIMITED:
+        raise RateLimited("price API rate limit still active; skipping call to " + path)
     url = API + path + ("?" + urllib.parse.urlencode(params) if params else "")
     req = urllib.request.Request(url, headers={"User-Agent": "SteelGames-SEO-Builder"})
     for attempt in range(tries):
@@ -122,9 +136,13 @@ def get(path, params=None, tries=5):
                 wait = float(ex.headers.get("Retry-After") or 0)
             except Exception:
                 wait = 0
+            if ex.code == 429 and wait > MAX_WAIT:
+                RATE_LIMITED = True
+                print(f"price API says wait {wait:.0f}s on {path}; stopping API calls for this run", file=sys.stderr)
+                raise RateLimited(f"HTTP 429, retry after {wait:.0f}s")
             wait = max(wait, 5 * (2 ** attempt))  # 5, 10, 20, 40 s
-            print(f"rate limited on {path} ({ex.code}), waiting {wait:.0f}s", file=sys.stderr)
-            time.sleep(min(wait, 90))
+            print(f"rate limited on {path} ({ex.code}), waiting {min(wait, MAX_WAIT):.0f}s", file=sys.stderr)
+            time.sleep(min(wait, MAX_WAIT))
 
 
 def money(v):
@@ -381,6 +399,8 @@ def build_games(stores, today, seeds, fetch_game):
         try:
             g = fetch_game(gid)
             slug, page = game_page(gid, g, stores, today)
+        except RateLimited:
+            raise  # abort the whole games step so no existing page is dropped; main() keeps them all
         except Exception as ex:
             print("game failed", gid, ex, file=sys.stderr)
             FAILED.append(f"game {gid}")
@@ -477,7 +497,12 @@ def main():
         data = json.load(open(sample))
         stores, fetch = data["stores"], lambda q: data["deals"]
     else:
-        stores = {s["storeID"]: s["storeName"] for s in get("/stores")}
+        try:
+            stores = {s["storeID"]: s["storeName"] for s in get("/stores")}
+        except Exception as ex:
+            # Nothing can be refreshed without the store list. Leave the site as it is and finish cleanly.
+            print(f"::warning title=Price API unavailable::skipped this run ({ex}); existing pages left unchanged")
+            return
         fetch = lambda q: get("/deals", {**q, "pageSize": 40, "onSale": 1})
     urls = [f"{SITE}/", f"{SITE}/games.html", f"{SITE}/keys.html", f"{SITE}/get-app/", f"{SITE}/gear.html", f"{SITE}/reviews.html", f"{SITE}/news.html", f"{SITE}/community.html", f"{SITE}/military.html", f"{SITE}/advertise.html", f"{SITE}/deals/"]
     for p in PAGES:
