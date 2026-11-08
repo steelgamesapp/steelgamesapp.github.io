@@ -335,7 +335,7 @@ def game_page(gid, g, stores, today):
                  f'<button type="button" data-own{_da}>{layout.CHECKI}<span class="lab">I own this</span></button>')
     gear_html = gear.section(title, _m)
     GEAR_GAMES[str(gid)] = gear.slots_for(title, _m)[0]
-    page = (layout.head(f"{title} price history and best price today | SteelGames", desc, url, f'<script type="application/ld+json">{ld}</script>\n')
+    page = (layout.head(f"{title} price history and best price today | SteelGames", desc, url, f'<script type="application/ld+json">{ld}</script>\n<script src="/assets/gamedetails.js" defer></script>\n')
         + layout.header("games")
         + f"""<main>
 <section class="hero"><div class="wrap">
@@ -343,6 +343,7 @@ def game_page(gid, g, stores, today):
 <p class="eyebrow">Price check &middot; Updated {today}</p>
 <h1>{e(title)}</h1>
 {lede_html}
+{steam_meta.strip_html(_m)}
 </div></section>
 <section class="block"><div class="wrap">
 <div class="gp">
