@@ -11,7 +11,8 @@
     "Edifier": {"product_url": "https://us.edifier.com/products/{handle}", "link": {"type": "impact", "base": "https://edifier.pxf.io/3kWWkv"}},
     "UPERFECT": {"product_url": "https://uperfect.com/products/{handle}", "link": {"type": "impact", "base": "https://uperfect.sjv.io/1GBBGg"}},
     "AutoFull": {"product_url": "https://www.autofull.com/products/{handle}", "link": {"type": "impact", "base": "https://go.sjv.io/k4EE4M"}},
-    "GMKtec": {"product_url": "https://www.gmktec.com/products/{handle}", "link": {"type": "awin", "base": "https://www.awin1.com/cread.php?awinmid=45751&awinaffid=3137720"}}
+    "GMKtec": {"product_url": "https://www.gmktec.com/products/{handle}", "link": {"type": "awin", "base": "https://www.awin1.com/cread.php?awinmid=45751&awinaffid=3137720"}},
+    "Satechi": {"product_url": "https://satechi.com/products/{handle}", "link": {"type": "impact", "base": "https://satechi.pxf.io/E0110X"}}
   },
   "shopify_cdn": "https://cdn.shopify.com/s/files/",
   "jlab_cats": [
@@ -123,6 +124,16 @@
         {"handle": "gmktec-k17-plus-intel-core-ultra-7-258v-mini-pc", "name": "GMKtec K17 Plus Mini PC", "blurb": "A mini PC with an Intel Core Ultra 7 258V processor.", "price": "949.99", "img": "1/0715/1314/5498/files/K17_8070872b-6c05-4410-90c1-abb7d5e8f6f9.jpg", "chips": [["pc", "PC"]], "from": true},
         {"handle": "gmktec-evo-x1-pro-ai-mini-pc-amd-ryzen-ai-9-hx-470", "name": "GMKtec EVO-X1 Pro AI Mini PC", "blurb": "A mini PC with an AMD Ryzen AI 9 HX 470 processor.", "price": "1599.99", "img": "1/0715/1314/5498/files/EVO-X1-PRO_1.jpg", "chips": [["pc", "PC"]], "from": true},
         {"handle": "gmktec-neo-x1-pro-modt-gaming-pc-amd-ryzen-9-9955hx3d-nvidia-geforce-rtx-5070", "name": "GMKtec NEO-X1 Pro Gaming PC", "blurb": "A compact liquid-cooled gaming PC with a Ryzen 9 9955HX3D and graphics up to GeForce RTX 5070.", "price": "2199.99", "img": "1/0715/1314/5498/files/affd46ccaac1fc513d15f48752707bab.png", "chips": [["pc", "PC"]], "from": true}
+      ]
+    },
+    {
+      "brand": "Satechi",
+      "title": "Satechi chargers, hubs and cables",
+      "items": [
+        {"handle": "100w-usb-c-pd-compact-charger", "name": "Satechi 100W USB-C GaN Charger", "blurb": "A compact wall charger with two USB-C ports and one USB-A port, enough power for a laptop, handheld PC and phone at once.", "price": "55.99", "img": "1/1520/4366/products/100w-usb-c-pd-compact-gan-charger-wall-chargers-satechi-us-193832.jpg", "chips": [["all", "Any platform"]]},
+        {"handle": "7-in-1-usb-c-slim-multiport-adapter-with-ethernet", "name": "Satechi 7-in-1 USB-C Multiport Adapter", "blurb": "A slim hub with 4K HDMI, 100W USB-C charging pass-through, two USB-A ports, Gigabit Ethernet and SD card readers.", "price": "79.99", "img": "1/1520/4366/files/7-in-1-usb-c-slim-multiport-adapter-with-ethernet-satechi-space-grey-149430.webp", "chips": [["all", "Any platform"]]},
+        {"handle": "usb-c-2-5-gigabit-ethernet-adapter", "name": "Satechi USB-C 2.5 Gigabit Ethernet Adapter", "blurb": "Adds a wired 2.5 Gigabit connection to a handheld PC or laptop for steadier online play.", "price": "39.99", "img": "1/1520/4366/files/usb-c-25-gigabit-ethernet-adapter-adapters-satechi-929288.png", "chips": [["all", "Any platform"]]},
+        {"handle": "usb-c-to-hdmi-2-1-8k-cable", "name": "Satechi USB-C to HDMI 2.1 Cable", "blurb": "Plugs a USB-C handheld or laptop straight into a TV or monitor, with support for up to 4K at 120Hz.", "price": "49.99", "img": "1/1520/4366/files/usb-c-to-hdmi-21-8k-cable-cables-satechi-343215.png", "chips": [["all", "Any platform"]]}
       ]
     }
   ],
