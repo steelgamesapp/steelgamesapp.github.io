@@ -1,6 +1,7 @@
 """Builds /keys.html: key resellers (live stats from CheapShark) plus a software deals section."""
 import layout
 import keys_finder
+import key_deals
 
 SITE = layout.SITE
 TAG = "steelgames-20"
@@ -147,6 +148,8 @@ def build():
         "Check the region and platform. Some keys only work in certain countries or on certain launchers like Steam, EA or Ubisoft.",
         "Redeem your key soon after buying and keep the receipt in case you need support.",
         "For Windows and Office, buy a full retail license from a trusted seller and make sure it matches the version you want."], 1))
+    kd = key_deals.section(RESELLERS, keys_finder.affiliates())
+    chip = '<a href="#today">Today\'s deals</a>' if kd else ""
     return (layout.head("Game Key Resellers and Software Deals | SteelGames",
                         "Compare trusted game key resellers and see today's best key deals with current, highest and lowest prices. Plus deals on Windows, Office, security and creative software.",
                         f"{SITE}/keys.html")
@@ -157,9 +160,9 @@ def build():
 <h1>Game key resellers and software deals</h1>
 <p class="lede">Key stores often beat the official price. See who is running the best deals right now, how big their discounts are, and what to watch for before you buy.</p>
 <p class="fine">Black Friday is Nov 27. Before you buy a key, read <a href="/guides/black-friday-2026-pc-game-deals-guide/">our Black Friday shopping guide</a>, and see the <a href="/gear.html#deals">Black Friday gear deals and promo codes</a> for the rest of your setup.</p>
-<div class="chips"><a href="#find">Find a key</a><a href="#resellers">Resellers</a><a href="#deals">Best key deals</a><a href="#software">Software deals</a><a href="#safe">Buying safely</a></div>
+<div class="chips">""" + chip + """<a href="#find">Find a key</a><a href="#resellers">Resellers</a><a href="#deals">Best key deals</a><a href="#software">Software deals</a><a href="#safe">Buying safely</a></div>
 </div></section>
-""" + keys_finder.SECTION + """<section class="block" id="resellers"><div class="wrap"><h2>Key resellers</h2>
+""" + kd + keys_finder.SECTION + """<section class="block" id="resellers"><div class="wrap"><h2>Key resellers</h2>
 <p class="fine">Live stats come from current store listings. Marketplaces and stores we can't read live link straight to their sites.</p>
 <div class="rgrid" id="rgrid"></div></div></section>
 <section class="block" id="deals"><div class="wrap"><h2>Best key deals right now</h2>
