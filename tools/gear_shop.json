@@ -1,0 +1,218 @@
+{
+  "_help": "Products for the shop sections on gear.html. Run: python3 tools/gear_shop.py. Amazon items need only an ASIN (links and photos use the Amazon Associates tag). Brand items use the brand's own product handle, price and photo. Never put passwords or API secrets in this file, it is public.",
+  "asof": "Nov 8, 2026",
+  "amazon_tag": "steelgames-20",
+  "jlab": {"_help": "Leave direct_template blank to send JLab buttons to Amazon with the steelgames-20 tag. Once the JLab affiliate link is approved on Impact, paste the tracking link here with {url} where the jlab.com product address goes, for example https://jlab.sjv.io/XXXX?u={url} and the JLab buttons will go to jlab.com instead.", "direct_template": "", "product_url": "https://www.jlab.com/products/{handle}"},
+  "brands": {
+    "EPOMAKER": {"product_url": "https://epomaker.com/products/{handle}", "link": {"type": "append", "param": "sca_ref=12671429.AWsfL1Z8b8"}},
+    "Redragon": {"product_url": "https://redragonshop.com/products/{handle}", "link": {"type": "append", "param": "aff=7360"}},
+    "LAMZU": {"product_url": "https://lamzu.com/products/{handle}", "link": {"type": "append", "param": "bg_ref=ML5sLKSUoj"}},
+    "SOLAKAKA": {"product_url": "https://solakaka.com/products/{handle}", "link": {"type": "impact", "base": "https://solakaka.sjv.io/GbJJDE"}},
+    "Edifier": {"product_url": "https://us.edifier.com/products/{handle}", "link": {"type": "impact", "base": "https://edifier.pxf.io/3kWWkv"}},
+    "UPERFECT": {"product_url": "https://uperfect.com/products/{handle}", "link": {"type": "impact", "base": "https://uperfect.sjv.io/1GBBGg"}},
+    "AutoFull": {"product_url": "https://www.autofull.com/products/{handle}", "link": {"type": "impact", "base": "https://go.sjv.io/k4EE4M"}},
+    "GMKtec": {"product_url": "https://www.gmktec.com/products/{handle}", "link": {"type": "awin", "base": "https://www.awin1.com/cread.php?awinmid=45751&awinaffid=3137720"}}
+  },
+  "shopify_cdn": "https://cdn.shopify.com/s/files/",
+  "jlab_cats": [
+    {
+      "title": "Gaming headsets, mice and keyboards",
+      "items": [
+        {"asin": "B0GR8W432K", "handle": "daybreak-wireless-gaming-headset-black", "img": "1/0240/9337/files/1_Daybreak_Headset_Black.jpg", "name": "JLab Daybreak Wireless Gaming Headset", "blurb": "JLab's top gaming headset, with dual drivers and wireless play on PC and PlayStation.", "price": "149.99", "chips": [["pc", "PC"], ["ps", "PlayStation"]]},
+        {"asin": "B0GS7FQ41K", "handle": "midnight-wireless-gaming-headset-black", "img": "1/0240/9337/files/1_Midnight_Headphone_Black.jpg", "name": "JLab Midnight Wireless Gaming Headset", "blurb": "A wireless headset that works with PC, PlayStation, Xbox and Switch.", "price": "104.99", "chips": [["all", "Any platform"]]},
+        {"asin": "B0D5PP1W71", "handle": "nightfall-wireless-gaming-headset-black", "img": "1/0240/9337/files/1_Nightfall_Wireless_5d798acd-a3d6-4744-b979-de0e344455a8.jpg", "name": "JLab Nightfall Wireless Gaming Headset", "blurb": "A budget wireless gaming headset with Bluetooth 5.3.", "price": "64.99", "chips": [["pc", "PC"]]},
+        {"asin": "B0GSH26W25", "handle": "mrbeast-nightfall-wired-gaming-headset-black", "img": "1/0240/9337/files/1_NightfallGaming_MrBeast.jpg", "name": "JLab x MrBeast Nightfall Gaming Headset", "blurb": "A wired headset with a flip-to-mute rotating boom mic.", "price": "49.99", "chips": [["pc", "PC"]]},
+        {"asin": "B0GSCTR58C", "handle": "daybreak-wireless-gaming-mouse-black", "img": "1/0240/9337/files/1_Daybreak_Mouse_Black.jpg", "name": "JLab Daybreak Wireless Gaming Mouse", "blurb": "An ergonomic wireless mouse with nine buttons and a D-pad.", "price": "99.99", "chips": [["pc", "PC"]]},
+        {"asin": "B0GSCD86LT", "handle": "midnight-wireless-gaming-mouse-black", "img": "1/0240/9337/files/1_Midnight_Mouse_Black.jpg", "name": "JLab Midnight Wireless Gaming Mouse", "blurb": "An ergonomic wireless mouse with seven buttons.", "price": "69.99", "chips": [["pc", "PC"]]},
+        {"asin": "B0GS7KBMZ8", "handle": "nightfall-wireless-gaming-mouse-black", "img": "1/0240/9337/files/1_Nightfall_Mouse_Black.jpg", "name": "JLab Nightfall Wireless Gaming Mouse", "blurb": "A 53-gram wireless mouse with a PAW3311 sensor at an entry-level price.", "price": "33.99", "chips": [["pc", "PC"]]},
+        {"asin": "B0GSCDC8C3", "handle": "daybreak-tkl-wired-magnetic-gaming-keyboard-black", "img": "1/0240/9337/files/1_Daybreak_Keyboard_Black.jpg", "name": "JLab Daybreak TKL Magnetic Gaming Keyboard", "blurb": "A wired tenkeyless keyboard with magnetic switches and RGB lighting.", "price": "169.99", "chips": [["pc", "PC"]]},
+        {"asin": "B0GSCCMJNJ", "handle": "midnight-tkl-wired-mechanical-gaming-keyboard-black", "img": "1/0240/9337/files/1_Midnight_Keyboard_Black.jpg", "name": "JLab Midnight TKL Mechanical Gaming Keyboard", "blurb": "A wired tenkeyless mechanical keyboard with RGB lighting.", "price": "99.99", "chips": [["pc", "PC"]]},
+        {"asin": "B0GSC8TMD4", "handle": "nightfall-full-size-wired-gaming-keyboard-black", "img": "1/0240/9337/files/1_Nightfall_Keyboard_Black.jpg", "name": "JLab Nightfall Gaming Keyboard", "blurb": "A full-size wired keyboard with 104 keys and RGB lighting.", "price": "33.99", "chips": [["pc", "PC"]]}
+      ]
+    },
+    {
+      "title": "Headphones, earbuds and speakers",
+      "items": [
+        {"asin": "B0CRM4Q1W1", "handle": "jbuds-lux-anc-headphones-navy", "img": "1/0240/9337/files/1_JBuds_Lux_Deep_Blue-UPDATE.png", "name": "JLab JBuds Lux ANC Wireless Headphones", "blurb": "Over-ear wireless headphones with active noise cancelling, for music and calls away from the desk.", "price": "99.99", "chips": [["all", "Any platform"]], "top": true},
+        {"asin": "B0FKBS4RVC", "handle": "epic-lux-lab-edition-anc-over-ear-headphones-cloud", "img": "1/0240/9337/files/4c67431b-f01d-4730-9863-07d74e403715_2.jpg", "name": "JLab Epic Lux Lab Edition ANC Headphones", "blurb": "JLab's premium noise-cancelling over-ear headphones.", "price": "209.99", "chips": [["all", "Any platform"]]},
+        {"asin": "B0DD2VL3MX", "handle": "go-pop-anc-true-wireless-earbuds-cloud", "img": "1/0240/9337/files/1GOPopANCCloud.jpg", "name": "JLab Go Pop ANC True Wireless Earbuds", "blurb": "Noise-cancelling earbuds with Dual Connect at a low price.", "price": "31.99", "chips": [["all", "Any platform"]]},
+        {"asin": "B0HJSWPPH2", "handle": "jbuds-open-sport-2-earbuds-black", "img": "1/0240/9337/files/1_JBudsOpenSport2_Black.jpg", "name": "JLab JBuds Open Sport 2 Earbuds", "blurb": "Open-ear sport earbuds with secure ear hooks and Bluetooth 6.0.", "price": "52.99", "chips": [["all", "Any platform"]]},
+        {"asin": "B0F39TVYSP", "handle": "pop-party-ultra-portable-bluetooth-speaker-cyan", "img": "1/0240/9337/files/1_PopSpeaker_Cyan.jpg", "name": "JLab Pop Party Bluetooth Speaker", "blurb": "A portable, waterproof (IP55) speaker with customizable RGB lights.", "price": "24.99", "chips": [["all", "Any platform"]]}
+      ]
+    }
+  ],
+  "brand_cats": [
+    {
+      "brand": "EPOMAKER",
+      "title": "EPOMAKER keyboards and mice",
+      "items": [
+        {"handle": "epomaker-aula-f75", "name": "EPOMAKER x AULA F75", "blurb": "A compact 75% mechanical keyboard from the EPOMAKER x AULA collab.", "price": "65.99", "img": "1/0280/3931/5529/files/f75.jpg", "chips": [["pc", "PC"]]},
+        {"handle": "epomaker-th80-v2-pro", "name": "EPOMAKER TH80 V2 Pro", "blurb": "A compact wireless mechanical keyboard with a metal volume knob, a small screen and a 10,000mAh battery.", "price": "66.29", "img": "1/0280/3931/5529/files/TH80V2.png", "chips": [["pc", "PC"]], "from": true},
+        {"handle": "epomaker-rt82", "name": "EPOMAKER RT82", "blurb": "A mechanical keyboard with a magnetically detachable LCD screen.", "price": "60.19", "img": "1/0280/3931/5529/files/RT82-Gadgety_Awards_2026.png", "chips": [["pc", "PC"]], "from": true},
+        {"handle": "epomaker-he80", "name": "EPOMAKER HE80", "blurb": "A wired 75% keyboard with fast-trigger magnetic switches for gaming.", "price": "59.49", "img": "1/0280/3931/5529/files/EPOMAKERHE80PNG_18.png", "chips": [["pc", "PC"]]},
+        {"handle": "epomaker-carbonis-mouse", "name": "EPOMAKER Carbonis Mouse", "blurb": "A wireless carbon fiber gaming mouse with an 8000Hz polling rate.", "price": "53.99", "img": "1/0280/3931/5529/files/EPOMAKERCarbonis_01.webp", "chips": [["pc", "PC"]], "from": true}
+      ]
+    },
+    {
+      "brand": "Redragon",
+      "title": "Redragon keyboards, mice and headsets",
+      "items": [
+        {"handle": "m913", "name": "Redragon Impact Elite M913", "blurb": "A wireless gaming mouse with Bluetooth, a 2.4GHz receiver and a Pixart 3395 sensor.", "price": "46.99", "img": "1/0012/4957/4961/files/RedragonRGBWirelessGamingMouseImpactEliteM913_1.png", "chips": [["pc", "PC"]], "from": true},
+        {"handle": "small-mechanical-keyboard", "name": "Redragon Fizz K617 60% Keyboard", "blurb": "A small 60% mechanical keyboard that frees up desk space for your mouse.", "price": "44.99", "img": "1/0012/4957/4961/products/minikeyboard.png", "chips": [["pc", "PC"]]},
+        {"handle": "horus-k618-ultrathin-wireless-keyboard", "name": "Redragon Horus K618 Wireless Keyboard", "blurb": "An ultra-slim wireless mechanical keyboard with RGB lighting.", "price": "64.99", "img": "1/0012/4957/4961/files/RedragonK618WirelessUltra-ThinLowProfileRGBMechanicalKeyboard_1.png", "chips": [["pc", "PC"]]},
+        {"handle": "galatin-pro-k719", "name": "Redragon Galatin Pro K719", "blurb": "A gasket-mounted mechanical keyboard with a small color screen for battery and connection status.", "price": "69.99", "img": "1/0012/4957/4961/files/RedragonGALATINPROK71995KeysOEMProfileGasketRGBGamingKeyboard.png", "chips": [["pc", "PC"]], "from": true},
+        {"handle": "h510-zeus", "name": "Redragon H510 Zeus Headset", "blurb": "A wired gaming headset with 7.1 surround sound and 53mm drivers.", "price": "64.99", "img": "1/0012/4957/4961/products/h510.png", "chips": [["all", "Any platform"]]},
+        {"handle": "vampire-elite-m686", "name": "Redragon Vampire Elite M686", "blurb": "A wireless gaming mouse with a 2.4GHz receiver and DPI up to 16,000.", "price": "42.99", "img": "1/0012/4957/4961/files/Untitled_design_28.png", "chips": [["pc", "PC"]]}
+      ]
+    },
+    {
+      "brand": "LAMZU",
+      "title": "LAMZU esports mice",
+      "items": [
+        {"handle": "lamzu-atlantis-mini-pro-gaming-mouse", "name": "LAMZU Atlantis Mini Pro", "blurb": "A small, light gaming mouse that supports 4K polling with LAMZU's separate 4K dongle.", "price": "91.99", "img": "1/0581/9675/4466/products/atlantis-mini-pro-polar-white-1-445836.jpg", "chips": [["pc", "PC"]]},
+        {"handle": "lamzu-maya-champion-edition", "name": "LAMZU Maya Champion Edition", "blurb": "A Champion Edition of LAMZU's Maya wireless gaming mouse.", "price": "119.99", "img": "1/0581/9675/4466/files/Mainpicture1-1.jpg", "chips": [["pc", "PC"]]},
+        {"handle": "lamzu-paro-aurora", "name": "LAMZU Paro Aurora", "blurb": "The Aurora version of LAMZU's Paro gaming mouse.", "price": "119.99", "img": "1/0581/9675/4466/files/Paro_AUROR_1.jpg", "chips": [["pc", "PC"]]},
+        {"handle": "lamzu-thorn-v2", "name": "LAMZU Thorn V2", "blurb": "The second-generation Thorn gaming mouse from LAMZU.", "price": "129.99", "img": "1/0581/9675/4466/files/1_ff95c640-6e49-4e04-a7ef-ce95afb96313.jpg", "chips": [["pc", "PC"]]}
+      ]
+    },
+    {
+      "brand": "SOLAKAKA",
+      "title": "SOLAKAKA keyboards and mice",
+      "items": [
+        {"handle": "solakaka-a75-pro-wireless-mechanical-gaming-keyboard", "name": "SOLAKAKA A75 Pro Wireless Keyboard", "blurb": "A 75% wireless mechanical gaming keyboard.", "price": "59.99", "img": "1/0910/3661/4959/files/SOLAKAKA-A75-PRO-zhutu-black.jpg", "chips": [["pc", "PC"]], "from": true},
+        {"handle": "solakaka-ki99pro-wireless-mechanical-keyboard", "name": "SOLAKAKA KI99 Pro Wireless Keyboard", "blurb": "A tri-mode wireless mechanical keyboard: Bluetooth 5.0, 2.4GHz or USB-C.", "price": "59.99", "img": "1/0910/3661/4959/files/KI99PRO-White.jpg", "chips": [["pc", "PC"]], "from": true},
+        {"handle": "solakaka-e9-pro-mouse", "name": "SOLAKAKA E9 Pro Vertical MMO Mouse", "blurb": "A vertical, ergonomic mouse with side buttons for MMO players.", "price": "69.99", "img": "1/0910/3661/4959/files/SOLAKAKA_E9_PRO.png", "chips": [["pc", "PC"]], "from": true},
+        {"handle": "solakaka-ax68-se-magnetic-gaming-wired-keyboard", "name": "SOLAKAKA AX68 SE Magnetic Keyboard", "blurb": "A wired 68-key keyboard with magnetic switches.", "price": "46.99", "img": "1/0910/3661/4959/files/SOLAKAKAAX68SE-black.jpg", "chips": [["pc", "PC"]]}
+      ]
+    },
+    {
+      "brand": "Edifier",
+      "title": "Edifier gaming audio",
+      "items": [
+        {"handle": "g1000", "name": "Edifier G1000 Gaming Speakers", "blurb": "Compact desktop gaming speakers with Bluetooth 5.3 and 12 RGB lighting effects.", "price": "79.99", "img": "1/0918/0928/4400/files/G1000-Black-1.jpg", "chips": [["all", "Any platform"]]},
+        {"handle": "g1500", "name": "Edifier G1500 Gaming Speakers", "blurb": "Desktop gaming speakers with three sound modes, 2.5-inch drivers and 12 RGB lighting effects.", "price": "89.99", "img": "1/0918/0928/4400/files/G1500-black-6.jpg", "chips": [["all", "Any platform"]]},
+        {"handle": "g2000-ii", "name": "Edifier G2000 II Gaming Speakers", "blurb": "Compact desktop speakers with a 2.75-inch driver, 16W output and three EQ modes.", "price": "129.99", "img": "1/0918/0928/4400/files/G2000_II-BLACK-2.jpg", "chips": [["all", "Any platform"]]},
+        {"handle": "g5-max", "name": "Edifier G5 Max Gaming Headset", "blurb": "A wireless gaming headset with THX Spatial Audio+ and quad-mode connectivity.", "price": "149.99", "img": "1/0918/0928/4400/files/G5MAX_BLACK-2.jpg", "chips": [["all", "Any platform"]]}
+      ]
+    },
+    {
+      "brand": "UPERFECT",
+      "title": "UPERFECT portable gaming monitors",
+      "items": [
+        {"handle": "15-6-inch-portable-monitor-1080p-nxtled", "name": "UPERFECT 15.6\" Portable Monitor", "blurb": "A simple 1080p second screen for a laptop, handheld PC or console.", "price": "139.99", "img": "1/0039/6387/9494/files/b28b822dfc74519545bfd818d271541e.png", "chips": [["all", "Any platform"]]},
+        {"handle": "nxtled-one-plus", "name": "UPERFECT 18.5\" 120Hz Gaming Monitor", "blurb": "A larger portable screen with a 120Hz refresh rate.", "price": "219.99", "img": "1/0039/6387/9494/files/02_9edb1c9c-0659-41c2-b183-a86fca19a631.webp", "chips": [["all", "Any platform"]]},
+        {"handle": "16-inch-2k-240hz-gaming-monitor", "name": "UPERFECT 16\" 2K 240Hz Gaming Monitor", "blurb": "A 16-inch portable monitor with 2K resolution and a 240Hz refresh rate.", "price": "349.99", "img": "1/0039/6387/9494/files/01_c9b0c587-8b4b-4a66-97cf-142a4a108b2d.png", "chips": [["all", "Any platform"]], "from": true},
+        {"handle": "14-inch-3k-120hz-oled-touchscreen", "name": "UPERFECT 14\" 3K OLED 120Hz Monitor", "blurb": "A portable OLED gaming screen with touch and a 120Hz refresh rate.", "price": "399.99", "img": "1/0039/6387/9494/files/a05dcca636b8c3c10d08a77d44cec48c.png", "chips": [["all", "Any platform"]], "from": true}
+      ]
+    },
+    {
+      "brand": "AutoFull",
+      "title": "AutoFull chairs and desks",
+      "items": [
+        {"handle": "autofull-c3-pro-gaming-chair", "name": "AutoFull C3 Pro Gaming Chair", "blurb": "An ergonomic gaming chair with a roomy seat and no side wings squeezing your legs.", "price": "299.00", "img": "1/0303/9805/4531/files/C3_Pro_-4.png", "chips": [["pc", "PC"]], "from": true},
+        {"handle": "autofull-g7-ergonomic-gaming-chair-black", "name": "AutoFull G7 Gaming Chair", "blurb": "A gaming chair with dual-mode lumbar support that adjusts as you lean or recline.", "price": "569.99", "img": "1/0303/9805/4531/files/gaming_chair_1_c5f546de-af69-4926-b5e4-a859ea893772.jpg", "chips": [["pc", "PC"]]},
+        {"handle": "autofull-m6-ultra-2-ergonomic-gaming-chair", "name": "AutoFull M6 Ultra 2.0 Gaming Chair", "blurb": "A gaming chair with built-in massage, plus fans and heating for the seat.", "price": "599.99", "img": "1/0303/9805/4531/files/M602_MainImage_01_Productimage_front_webp.webp", "chips": [["pc", "PC"]]},
+        {"handle": "autofull-a4-pro-rgb-gaming-desk", "name": "AutoFull A4 Pro RGB Electric Gaming Desk", "blurb": "An electric gaming desk with RGB lighting.", "price": "699.99", "img": "1/0303/9805/4531/files/20251201-151340.webp", "chips": [["pc", "PC"]]}
+      ]
+    },
+    {
+      "brand": "GMKtec",
+      "title": "GMKtec mini PCs and gaming PCs",
+      "items": [
+        {"handle": "gmktec-m5s-amd-ryzen-3-5400u-mini-pc", "name": "GMKtec M5S Mini PC", "blurb": "A budget mini PC with an AMD Ryzen 3 5400U for everyday computing.", "price": "269.99", "img": "1/0715/1314/5498/files/M5PLUS.webp", "chips": [["pc", "PC"]], "from": true},
+        {"handle": "gmktec-k17-plus-intel-core-ultra-7-258v-mini-pc", "name": "GMKtec K17 Plus Mini PC", "blurb": "A mini PC with an Intel Core Ultra 7 258V processor.", "price": "949.99", "img": "1/0715/1314/5498/files/K17_8070872b-6c05-4410-90c1-abb7d5e8f6f9.jpg", "chips": [["pc", "PC"]], "from": true},
+        {"handle": "gmktec-evo-x1-pro-ai-mini-pc-amd-ryzen-ai-9-hx-470", "name": "GMKtec EVO-X1 Pro AI Mini PC", "blurb": "A mini PC with an AMD Ryzen AI 9 HX 470 processor.", "price": "1599.99", "img": "1/0715/1314/5498/files/EVO-X1-PRO_1.jpg", "chips": [["pc", "PC"]], "from": true},
+        {"handle": "gmktec-neo-x1-pro-modt-gaming-pc-amd-ryzen-9-9955hx3d-nvidia-geforce-rtx-5070", "name": "GMKtec NEO-X1 Pro Gaming PC", "blurb": "A compact liquid-cooled gaming PC with a Ryzen 9 9955HX3D and graphics up to GeForce RTX 5070.", "price": "2199.99", "img": "1/0715/1314/5498/files/affd46ccaac1fc513d15f48752707bab.png", "chips": [["pc", "PC"]], "from": true}
+      ]
+    }
+  ],
+  "amazon_new_cats": [
+    {
+      "group": "pc-parts",
+      "after": "Storage",
+      "title": "PC cases",
+      "items": [
+        {"asin": "B0D2MK6NML", "name": "NZXT H5 Flow Compact ATX Mid-Tower Case", "blurb": "A compact airflow case with two included 120mm fans and room for a 360mm front radiator.", "chips": [["pc", "PC"]]},
+        {"asin": "B0BRP58KHT", "name": "Lian Li Lancool 216 Mid-Tower Case", "blurb": "An airflow-focused ATX case that ships with three PWM fans.", "chips": [["pc", "PC"]]}
+      ]
+    },
+    {
+      "group": "pc-parts",
+      "after": "PC cases",
+      "title": "Cooling and power",
+      "items": [
+        {"asin": "B0DPR86ZC8", "name": "Corsair RM850e (2025) 850W Power Supply", "blurb": "A fully modular ATX 3.1 power supply with a native 12V-2x6 cable for modern graphics cards.", "chips": [["pc", "PC"]]}
+      ]
+    },
+    {
+      "group": "pc-parts",
+      "after": "Cooling and power",
+      "title": "Networking",
+      "items": [
+        {"asin": "B0DC99N2T8", "name": "TP-Link Archer BE230 Wi-Fi 7 Router", "blurb": "A dual-band BE3600 Wi-Fi 7 router with two 2.5G ports, a value way into Wi-Fi 7.", "chips": [["all", "Any platform"]]},
+        {"asin": "B0CJSNSVMR", "name": "TP-Link Archer BE550 Wi-Fi 7 Router", "blurb": "A tri-band BE9300 Wi-Fi 7 router with 2.5G ports throughout.", "chips": [["all", "Any platform"]]},
+        {"asin": "B00A128S24", "name": "TP-Link TL-SG105 5-Port Gigabit Switch", "blurb": "A plug-and-play switch that turns one wall jack into five wired connections.", "chips": [["all", "Any platform"]]}
+      ]
+    },
+    {
+      "group": "streaming",
+      "after": "Microphones",
+      "title": "Lights and mic arms",
+      "items": [
+        {"asin": "B0GYDFGCCQ", "name": "Elgato Key Light Air MK.2", "blurb": "A 15-inch edge-lit LED panel with touch controls and adjustable color temperature.", "chips": [["all", "Any platform"]]},
+        {"asin": "B097376LKF", "name": "Elgato Wave Mic Arm LP", "blurb": "A low-profile boom arm that keeps your mic below the shoulder line and your desk clear.", "chips": [["all", "Any platform"]]}
+      ]
+    }
+  ],
+  "amazon_appends": [
+    {
+      "group": "desk-setup",
+      "cat": "Monitors",
+      "items": [
+        {"asin": "B0GDSC8K2H", "name": "Samsung 27\" Odyssey OLED G6 (G61SH)", "blurb": "A 27-inch QD-OLED gaming monitor with QHD resolution and a 240Hz refresh rate.", "chips": [["pc", "PC"]]},
+        {"asin": "B0FNQ4B2Z2", "name": "LG 27GX704A-B UltraGear OLED Monitor", "blurb": "A 27-inch QHD OLED gaming monitor with a 240Hz refresh rate and G-Sync compatibility.", "chips": [["pc", "PC"]]},
+        {"asin": "B0FWHPY1GJ", "name": "ASUS ROG XG27AQDMGR 27\" OLED Monitor", "blurb": "A glossy 27-inch 1440p OLED gaming monitor with a 240Hz refresh rate.", "chips": [["pc", "PC"]]}
+      ]
+    }
+  ],
+  "new_groups": [
+    {
+      "after": "console",
+      "id": "portable-vr",
+      "nav": "VR and handheld",
+      "title": "VR and handheld PC",
+      "intro": "Headsets for PC VR and the accessories that make a handheld PC easier to live with.",
+      "cats": [
+        {
+          "title": "VR headsets",
+          "items": [
+            {"asin": "B0F2GYMC8H", "name": "Meta Quest 3S 128GB VR Headset", "blurb": "The cheapest way into PC VR over Air Link or a cable.", "chips": [["all", "VR"]]},
+            {"asin": "B0CD1JTBSC", "name": "Meta Quest 3 512GB VR Headset", "blurb": "Sharper pancake lenses and more storage than the Quest 3S.", "chips": [["all", "VR"]]}
+          ]
+        }
+      ]
+    }
+  ],
+  "thumbs": {
+    "Redragon Black Friday sale": {"img": "1/0012/4957/4961/products/minikeyboard.png", "alt": "Redragon Fizz K617 mechanical keyboard"},
+    "AutoFull gaming chairs: Black Friday Early Access": {"img": "1/0303/9805/4531/files/gaming_chair_1_c5f546de-af69-4926-b5e4-a859ea893772.jpg", "alt": "AutoFull G7 gaming chair"},
+    "UPERFECT portable monitor sale": {"img": "1/0039/6387/9494/files/01_c9b0c587-8b4b-4a66-97cf-142a4a108b2d.png", "alt": "UPERFECT portable gaming monitor"},
+    "GMKtec mini PC Black Friday Early Access": {"img": "1/0715/1314/5498/files/K17_8070872b-6c05-4410-90c1-abb7d5e8f6f9.jpg", "alt": "GMKtec mini PC"},
+    "AutoFull": {"img": "1/0303/9805/4531/files/M602_MainImage_01_Productimage_front_webp.webp", "alt": "AutoFull M6 Ultra gaming chair"},
+    "UPERFECT": {"img": "1/0039/6387/9494/files/02_9edb1c9c-0659-41c2-b183-a86fca19a631.webp", "alt": "UPERFECT portable gaming monitor"},
+    "GMKtec mini PCs": {"img": "1/0715/1314/5498/files/M5PLUS.webp", "alt": "GMKtec mini PC"},
+    "NordVPN": {"icon": "vpn", "alt": "NordVPN"},
+    "NordPass": {"icon": "password", "alt": "NordPass"},
+    "Kinguin key marketplace": {"icon": "keys", "alt": "Kinguin game keys"}
+  },
+  "pending_photos": {
+    "_help": "Amazon products with no usable photo yet (Amazon returns no image for these ASINs). Add them back to the categories above once a photo is confirmed.",
+    "items": [
+      {"asin": "B09LGY38L4", "name": "Thermalright Peerless Assassin 120 SE CPU Cooler", "blurb": "A dual-tower air cooler with six heat pipes and two 120mm fans, and a long-time budget favorite.", "chips": [["pc", "PC"]]},
+      {"asin": "B00WD017FW", "name": "Jadaol Flat Cat6 Ethernet Cable", "blurb": "A flat Ethernet cable for a wired connection that beats Wi-Fi lag. Comes in several lengths.", "chips": [["all", "Any platform"]]},
+      {"asin": "B0DBLP2438", "name": "JSAUX 6-in-1 Docking Station for ROG Xbox Ally and Steam Deck", "blurb": "Adds 4K HDMI, Ethernet and USB ports to a handheld PC so it can play on a big screen.", "chips": [["pc", "PC"]]},
+      {"asin": "B0FVLVQJH1", "name": "JSAUX Hard Carrying Case for ROG Xbox Ally", "blurb": "A hard-shell travel case with room for the charger and accessories.", "chips": [["pc", "PC"]]},
+      {"asin": "B0CM97FCXZ", "name": "Anker Nano 100W 3-Port GaN Charger", "blurb": "A compact charger that can power a handheld PC, a laptop and a phone at once.", "chips": [["pc", "PC"]]}
+    ]
+  }
+}
