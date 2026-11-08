@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gear Guide · SteelGames</title>
-<meta name="description" content="SteelGames gear guide: well-known picks for PC parts, desk setups, streaming and console accessories, with every commission link clearly labeled.">
+<meta name="description" content="SteelGames gear guide: JLab audio and gaming gear, brand-partner picks and top Amazon finds for PC parts, desk setups, streaming and console accessories, with every commission link clearly labeled.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
@@ -129,6 +129,29 @@ p { margin: 0; }
 .vet-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 8px; border-radius: 999px; background: #121A26; border: 1px solid #2B3D57; color: #CFE0F5; font-size: 14px; font-weight: 600; }
 .code-chip { display: inline-block; align-self: center; margin: 2px 0; padding: 6px 12px; border-radius: 8px; border: 1px dashed var(--accent); color: var(--accent); background: rgba(255,176,32,0.08); font-size: 13px; font-weight: 700; letter-spacing: 0.4px; text-align: center; }
 .code-chip b { letter-spacing: 1px; }
+
+/* shop additions: price line, search and filters */
+.item[hidden], .cat[hidden], .group[hidden] { display: none; }
+.price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 8px; }
+.price b { font-family: var(--display); font-size: 22px; font-weight: 700; letter-spacing: -0.2px; }
+.price span { font-size: 13px; color: var(--muted); }
+/* keep the whole product photo inside the 4:3 picture box instead of letting a square photo spill out and get cut off */
+.thumb { grid-template: minmax(0, 1fr) / minmax(0, 1fr); }
+.thumb img { max-width: 100%; max-height: 100%; }
+.thumb.icon { background: #1E1450; }
+.thumb.icon img { padding: 0; object-fit: cover; }
+.shopbar .wrap { padding-block: 22px 0; display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; }
+.sq { flex: 1 1 320px; display: flex; align-items: center; gap: 10px; padding: 0 14px; min-height: 48px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line-strong); color: var(--steel); }
+.sq:focus-within { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(255,176,32,.35); }
+.sq input { flex: 1; min-width: 0; background: none; border: 0; color: var(--fg); font: inherit; font-size: 16px; outline: 0; padding: 12px 0; }
+.sq input::placeholder { color: var(--muted); }
+.fchips { display: flex; gap: 8px; flex-wrap: wrap; }
+.fchip { font: inherit; font-size: 14px; font-weight: 600; padding: 0 14px; min-height: 42px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--steel); cursor: pointer; }
+.fchip:hover { color: var(--fg); background: var(--raised); }
+.fchip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.fchip:focus-visible, .sq input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.scount { margin: 0; flex-basis: 100%; font-size: 14px; color: var(--muted); }
+.shop-empty { margin: 0; padding: 40px 0; text-align: center; color: var(--steel); }
 </style>
 <meta name="google-adsense-account" content="ca-pub-3613204296597380">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
@@ -160,21 +183,40 @@ p { margin: 0; }
     <div class="wrap">
       <span class="vet-badge" style="align-self:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned and operated</span>
       <h1>Gear for your whole setup</h1>
-      <p class="lede">112 trusted picks for PC parts, desk setups, streaming and console accessories. Items marked ★ Top rated had 4.4 stars or better from at least 1,500 Amazon buyers when we picked them. Tap any button to see today's price and reviews on Amazon before you buy.</p>
-      <p class="notice"><strong>How we make money:</strong> As an Amazon Associate, SteelGames earns from qualifying purchases. Every button on this page is an affiliate link, and it costs you nothing extra. These are picks we chose, not paid placements.</p>
+      <p class="lede">183 products for PC parts, desk setups, streaming, audio and console accessories: JLab, the brands we partner with, and our top Amazon picks. Items marked ★ Top rated had 4.4 stars or better from at least 1,500 Amazon buyers when we picked them. Tap any button to see today's price and reviews before you buy.</p>
+      <p class="notice"><strong>How we make money:</strong> As an Amazon Associate and a partner of the brands featured here, SteelGames earns from qualifying purchases. Every button on this page is an affiliate link, and it costs you nothing extra. These are picks we chose, not paid placements.</p>
     </div>
   </section>
 
   <nav class="jump" aria-label="Gear groups">
     <div class="wrap">
       <a href="#deals">Black Friday deals</a>
+      <a href="#jlab">JLab</a>
+      <a href="#brand-shop">Brand picks</a>
       <a href="#brand-stores">Brand stores</a>
       <a href="#pc-parts">PC parts</a>
       <a href="#desk-setup">Desk setup</a>
       <a href="#streaming">Streaming and audio</a>
       <a href="#console">Console accessories</a>
+      <a href="#portable-vr">VR and handheld</a>
     </div>
   </nav>
+
+  <!--shop:bar-->
+  <script>function sgFix(i){var a=i.getAttribute('data-alt');if(a&&!i.dataset.t){i.dataset.t=1;i.src=a;return}i.onerror=i.onload=null;i.src='/assets/gear-icons/'+i.dataset.icon+'.svg';i.closest('.thumb').classList.add('icon')}function sgChk(i){if(i.naturalWidth<40)sgFix(i)}</script>
+  <section class="shopbar" aria-label="Search the gear guide">
+    <div class="wrap">
+      <label class="sq"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="shop-q" type="search" placeholder="Search gear, like headset or JLab" autocomplete="off" aria-label="Search gear"></label>
+      <div class="fchips" role="group" aria-label="Filter products">
+        <button type="button" class="fchip" data-mode="all" aria-pressed="true">All</button>
+        <button type="button" class="fchip" data-mode="jlab" aria-pressed="false">JLab</button>
+        <button type="button" class="fchip" data-mode="brand" aria-pressed="false">Brand stores</button>
+        <button type="button" class="fchip" data-mode="amazon" aria-pressed="false">Amazon picks</button>
+      </div>
+      <p class="scount" id="shop-count" aria-live="polite"></p>
+    </div>
+  </section>
+<!--/shop:bar-->
 
   <section class="group" id="deals" aria-labelledby="deals-h">
     <div class="wrap">
@@ -185,6 +227,7 @@ p { margin: 0; }
       <div class="cat">
         <div class="items">
         <article class="item">
+          <a class="thumb" data-shop="1" href="https://redragonshop.com/pages/black-friday-cyber-monday?aff=7360" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0012/4957/4961/products/minikeyboard.png?width=520" alt="Redragon Fizz K617 mechanical keyboard" loading="lazy" decoding="async" width="400" height="300" data-icon="keyboard" onerror="sgFix(this)" onload="sgChk(this)"></a>
           <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
           <h4>Redragon Black Friday sale</h4>
           <p>Budget gaming keyboards, mice and headsets from the maker's Black Friday and Cyber Monday page.</p>
@@ -193,6 +236,7 @@ p { margin: 0; }
           <span class="earns">We earn a commission from this link</span>
         </article>
         <article class="item">
+          <a class="thumb" data-shop="1" href="https://go.sjv.io/k4EE4M" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0303/9805/4531/files/gaming_chair_1_c5f546de-af69-4926-b5e4-a859ea893772.jpg?width=520" alt="AutoFull G7 gaming chair" loading="lazy" decoding="async" width="400" height="300" data-icon="chair" onerror="sgFix(this)" onload="sgChk(this)"></a>
           <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
           <h4>AutoFull gaming chairs: Black Friday Early Access</h4>
           <p>AutoFull's Early Access sale runs Nov 10 to 18. They announced the M6 Ultra 2.0 at $484.49, the G7 at $460.27 and the M6 Ultra+ 2.0 at $726.74, and say shoppers get an extra 5% off during the sale. Check the cart for the final price.</p>
@@ -200,6 +244,7 @@ p { margin: 0; }
           <span class="earns">We earn a commission from this link</span>
         </article>
         <article class="item">
+          <a class="thumb" data-shop="1" href="https://uperfect.sjv.io/1GBBGg" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0039/6387/9494/files/01_c9b0c587-8b4b-4a66-97cf-142a4a108b2d.png?width=520" alt="UPERFECT portable gaming monitor" loading="lazy" decoding="async" width="400" height="300" data-icon="monitor" onerror="sgFix(this)" onload="sgChk(this)"></a>
           <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
           <h4>UPERFECT portable monitor sale</h4>
           <p>Portable monitors for a laptop, handheld PC or console. UPERFECT's Black Friday page advertises up to 50% off with free accessories on select models. Discounts vary by model, so compare the final price before you buy.</p>
@@ -207,6 +252,7 @@ p { margin: 0; }
           <span class="earns">We earn a commission from this link</span>
         </article>
         <article class="item">
+          <a class="thumb" data-shop="1" href="https://www.awin1.com/cread.php?awinmid=45751&amp;awinaffid=3137720" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0715/1314/5498/files/K17_8070872b-6c05-4410-90c1-abb7d5e8f6f9.jpg?width=520" alt="GMKtec mini PC" loading="lazy" decoding="async" width="400" height="300" data-icon="gpu" onerror="sgFix(this)" onload="sgChk(this)"></a>
           <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
           <h4>GMKtec mini PC Black Friday Early Access</h4>
           <p>GMKtec lists its Black Friday Early Access from Nov 5 to Dec 2, with 30-day price protection. Mini PCs suit a small desk or media setup. Check each model's graphics specs before you buy one for games.</p>
@@ -214,12 +260,14 @@ p { margin: 0; }
           <span class="earns">We earn a commission from this link</span>
         </article>
         <article class="item">
+          <a class="thumb icon" data-shop="1" href="https://go.nordvpn.net/aff_c?offer_id=15&amp;aff_id=159836&amp;url_id=902" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="/assets/gear-icons/vpn.svg" alt="NordVPN" loading="lazy" decoding="async" width="400" height="300"></a>
           <h4>NordVPN</h4>
           <p>Encrypted VPN for public Wi-Fi and safer logins on your game accounts. Nord runs seasonal offers, so check the current price on their site.</p>
           <a class="buy" href="https://go.nordvpn.net/aff_c?offer_id=15&amp;aff_id=159836&amp;url_id=902" target="_blank" rel="sponsored nofollow noopener">See NordVPN plans<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           <span class="earns">We earn a commission from this link</span>
         </article>
         <article class="item">
+          <a class="thumb icon" data-shop="1" href="https://go.nordpass.io/aff_c?offer_id=488&amp;aff_id=159836&amp;url_id=9356" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="/assets/gear-icons/password.svg" alt="NordPass" loading="lazy" decoding="async" width="400" height="300"></a>
           <h4>NordPass</h4>
           <p>Password manager for your Steam, Epic and email logins, so one leaked password does not open everything.</p>
           <a class="buy" href="https://go.nordpass.io/aff_c?offer_id=488&amp;aff_id=159836&amp;url_id=9356" target="_blank" rel="sponsored nofollow noopener">See NordPass plans<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -231,6 +279,7 @@ p { margin: 0; }
         <h3>Game key marketplaces (third-party sellers)</h3>
         <div class="items">
         <article class="item">
+          <a class="thumb icon" data-shop="1" href="https://www.awin1.com/cread.php?awinmid=125780&amp;awinaffid=3137720" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="/assets/gear-icons/keys.svg" alt="Kinguin game keys" loading="lazy" decoding="async" width="400" height="300"></a>
           <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
           <h4>Kinguin key marketplace</h4>
           <p>A marketplace where third-party sellers list PC game keys, often priced differently from the official stores. Compare the price against Steam first, check the seller rating and read the buyer protection terms before you buy.</p>
@@ -241,6 +290,528 @@ p { margin: 0; }
       </div>
     </div>
   </section>
+
+<!--shop:jlab-->
+  <section class="group" id="jlab" aria-labelledby="jlab-h">
+    <div class="wrap">
+      <div class="group-head">
+        <h2 id="jlab-h">JLab Audio and gaming gear</h2>
+        <p>JLab makes headsets, keyboards, mice, headphones and speakers at everyday prices. These are the pieces we would look at first. Prices shown are JLab&#x27;s own list prices as of Nov 8, 2026; check the store for today&#x27;s price.</p>
+      </div>
+      <div class="cat">
+        <h3>Gaming headsets, mice and keyboards</h3>
+        <div class="items">
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0GR8W432K?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_Daybreak_Headset_Black.jpg?width=520" alt="JLab Daybreak Wireless Gaming Headset" loading="lazy" decoding="async" width="400" height="300" data-icon="headset" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span><span class="chip p-ps">PlayStation</span></span></div>
+          <h4>JLab Daybreak Wireless Gaming Headset</h4>
+          <p>JLab&#x27;s top gaming headset, with dual drivers and wireless play on PC and PlayStation.</p>
+          <div class="price"><b>$149.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0GR8W432K?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0GS7FQ41K?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_Midnight_Headphone_Black.jpg?width=520" alt="JLab Midnight Wireless Gaming Headset" loading="lazy" decoding="async" width="400" height="300" data-icon="headset" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>JLab Midnight Wireless Gaming Headset</h4>
+          <p>A wireless headset that works with PC, PlayStation, Xbox and Switch.</p>
+          <div class="price"><b>$104.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0GS7FQ41K?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0D5PP1W71?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_Nightfall_Wireless_5d798acd-a3d6-4744-b979-de0e344455a8.jpg?width=520" alt="JLab Nightfall Wireless Gaming Headset" loading="lazy" decoding="async" width="400" height="300" data-icon="headset" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>JLab Nightfall Wireless Gaming Headset</h4>
+          <p>A budget wireless gaming headset with Bluetooth 5.3.</p>
+          <div class="price"><b>$64.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0D5PP1W71?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0GSH26W25?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_NightfallGaming_MrBeast.jpg?width=520" alt="JLab x MrBeast Nightfall Gaming Headset" loading="lazy" decoding="async" width="400" height="300" data-icon="headset" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>JLab x MrBeast Nightfall Gaming Headset</h4>
+          <p>A wired headset with a flip-to-mute rotating boom mic.</p>
+          <div class="price"><b>$49.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0GSH26W25?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0GSCTR58C?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_Daybreak_Mouse_Black.jpg?width=520" alt="JLab Daybreak Wireless Gaming Mouse" loading="lazy" decoding="async" width="400" height="300" data-icon="mouse" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>JLab Daybreak Wireless Gaming Mouse</h4>
+          <p>An ergonomic wireless mouse with nine buttons and a D-pad.</p>
+          <div class="price"><b>$99.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0GSCTR58C?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0GSCD86LT?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_Midnight_Mouse_Black.jpg?width=520" alt="JLab Midnight Wireless Gaming Mouse" loading="lazy" decoding="async" width="400" height="300" data-icon="mouse" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>JLab Midnight Wireless Gaming Mouse</h4>
+          <p>An ergonomic wireless mouse with seven buttons.</p>
+          <div class="price"><b>$69.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0GSCD86LT?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0GS7KBMZ8?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_Nightfall_Mouse_Black.jpg?width=520" alt="JLab Nightfall Wireless Gaming Mouse" loading="lazy" decoding="async" width="400" height="300" data-icon="mouse" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>JLab Nightfall Wireless Gaming Mouse</h4>
+          <p>A 53-gram wireless mouse with a PAW3311 sensor at an entry-level price.</p>
+          <div class="price"><b>$33.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0GS7KBMZ8?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0GSCDC8C3?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_Daybreak_Keyboard_Black.jpg?width=520" alt="JLab Daybreak TKL Magnetic Gaming Keyboard" loading="lazy" decoding="async" width="400" height="300" data-icon="keyboard" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>JLab Daybreak TKL Magnetic Gaming Keyboard</h4>
+          <p>A wired tenkeyless keyboard with magnetic switches and RGB lighting.</p>
+          <div class="price"><b>$169.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0GSCDC8C3?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0GSCCMJNJ?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_Midnight_Keyboard_Black.jpg?width=520" alt="JLab Midnight TKL Mechanical Gaming Keyboard" loading="lazy" decoding="async" width="400" height="300" data-icon="keyboard" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>JLab Midnight TKL Mechanical Gaming Keyboard</h4>
+          <p>A wired tenkeyless mechanical keyboard with RGB lighting.</p>
+          <div class="price"><b>$99.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0GSCCMJNJ?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0GSC8TMD4?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_Nightfall_Keyboard_Black.jpg?width=520" alt="JLab Nightfall Gaming Keyboard" loading="lazy" decoding="async" width="400" height="300" data-icon="keyboard" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>JLab Nightfall Gaming Keyboard</h4>
+          <p>A full-size wired keyboard with 104 keys and RGB lighting.</p>
+          <div class="price"><b>$33.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0GSC8TMD4?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Headphones, earbuds and speakers</h3>
+        <div class="items">
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0CRM4Q1W1?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_JBuds_Lux_Deep_Blue-UPDATE.png?width=520" alt="JLab JBuds Lux ANC Wireless Headphones" loading="lazy" decoding="async" width="400" height="300" data-icon="headset" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span><span class="chip p-top">★ Top rated</span></span></div>
+          <h4>JLab JBuds Lux ANC Wireless Headphones</h4>
+          <p>Over-ear wireless headphones with active noise cancelling, for music and calls away from the desk.</p>
+          <div class="price"><b>$99.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0CRM4Q1W1?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0FKBS4RVC?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/4c67431b-f01d-4730-9863-07d74e403715_2.jpg?width=520" alt="JLab Epic Lux Lab Edition ANC Headphones" loading="lazy" decoding="async" width="400" height="300" data-icon="headset" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>JLab Epic Lux Lab Edition ANC Headphones</h4>
+          <p>JLab&#x27;s premium noise-cancelling over-ear headphones.</p>
+          <div class="price"><b>$209.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0FKBS4RVC?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0DD2VL3MX?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1GOPopANCCloud.jpg?width=520" alt="JLab Go Pop ANC True Wireless Earbuds" loading="lazy" decoding="async" width="400" height="300" data-icon="headset" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>JLab Go Pop ANC True Wireless Earbuds</h4>
+          <p>Noise-cancelling earbuds with Dual Connect at a low price.</p>
+          <div class="price"><b>$31.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0DD2VL3MX?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0HJSWPPH2?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_JBudsOpenSport2_Black.jpg?width=520" alt="JLab JBuds Open Sport 2 Earbuds" loading="lazy" decoding="async" width="400" height="300" data-icon="headset" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>JLab JBuds Open Sport 2 Earbuds</h4>
+          <p>Open-ear sport earbuds with secure ear hooks and Bluetooth 6.0.</p>
+          <div class="price"><b>$52.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0HJSWPPH2?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon" data-brand="JLab">
+          <a class="thumb" href="https://www.amazon.com/dp/B0F39TVYSP?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0240/9337/files/1_PopSpeaker_Cyan.jpg?width=520" alt="JLab Pop Party Bluetooth Speaker" loading="lazy" decoding="async" width="400" height="300" data-icon="speaker" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>JLab Pop Party Bluetooth Speaker</h4>
+          <p>A portable, waterproof (IP55) speaker with customizable RGB lights.</p>
+          <div class="price"><b>$24.99</b><span>JLab list price</span></div>
+          <a class="buy" href="https://www.amazon.com/dp/B0F39TVYSP?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--shop:brand-shop-->
+  <section class="group" id="brand-shop" aria-labelledby="brand-shop-h">
+    <div class="wrap">
+      <div class="group-head">
+        <h2 id="brand-shop-h">Brand picks you can shop now</h2>
+        <p>Products from the brands we partner with, linked straight to each brand&#x27;s own store. Prices are what each store listed on Nov 8, 2026 and can change, so check the final price at checkout.</p>
+      </div>
+      <div class="cat">
+        <h3>EPOMAKER keyboards and mice</h3>
+        <div class="items">
+        <article class="item" data-src="brand" data-brand="EPOMAKER">
+          <a class="thumb" href="https://epomaker.com/products/epomaker-aula-f75?sca_ref=12671429.AWsfL1Z8b8" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0280/3931/5529/files/f75.jpg?width=520" alt="EPOMAKER x AULA F75" loading="lazy" decoding="async" width="400" height="300" data-icon="controller" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>EPOMAKER x AULA F75</h4>
+          <p>A compact 75% mechanical keyboard from the EPOMAKER x AULA collab.</p>
+          <div class="price"><b>$65.99</b><span>at EPOMAKER</span></div>
+          <a class="buy" href="https://epomaker.com/products/epomaker-aula-f75?sca_ref=12671429.AWsfL1Z8b8" target="_blank" rel="sponsored nofollow noopener">Shop at EPOMAKER<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="EPOMAKER">
+          <a class="thumb" href="https://epomaker.com/products/epomaker-th80-v2-pro?sca_ref=12671429.AWsfL1Z8b8" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0280/3931/5529/files/TH80V2.png?width=520" alt="EPOMAKER TH80 V2 Pro" loading="lazy" decoding="async" width="400" height="300" data-icon="controller" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>EPOMAKER TH80 V2 Pro</h4>
+          <p>A compact wireless mechanical keyboard with a metal volume knob, a small screen and a 10,000mAh battery.</p>
+          <div class="price"><span>From</span><b>$66.29</b><span>at EPOMAKER</span></div>
+          <a class="buy" href="https://epomaker.com/products/epomaker-th80-v2-pro?sca_ref=12671429.AWsfL1Z8b8" target="_blank" rel="sponsored nofollow noopener">Shop at EPOMAKER<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="EPOMAKER">
+          <a class="thumb" href="https://epomaker.com/products/epomaker-rt82?sca_ref=12671429.AWsfL1Z8b8" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0280/3931/5529/files/RT82-Gadgety_Awards_2026.png?width=520" alt="EPOMAKER RT82" loading="lazy" decoding="async" width="400" height="300" data-icon="controller" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>EPOMAKER RT82</h4>
+          <p>A mechanical keyboard with a magnetically detachable LCD screen.</p>
+          <div class="price"><span>From</span><b>$60.19</b><span>at EPOMAKER</span></div>
+          <a class="buy" href="https://epomaker.com/products/epomaker-rt82?sca_ref=12671429.AWsfL1Z8b8" target="_blank" rel="sponsored nofollow noopener">Shop at EPOMAKER<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="EPOMAKER">
+          <a class="thumb" href="https://epomaker.com/products/epomaker-he80?sca_ref=12671429.AWsfL1Z8b8" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHE80PNG_18.png?width=520" alt="EPOMAKER HE80" loading="lazy" decoding="async" width="400" height="300" data-icon="controller" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>EPOMAKER HE80</h4>
+          <p>A wired 75% keyboard with fast-trigger magnetic switches for gaming.</p>
+          <div class="price"><b>$59.49</b><span>at EPOMAKER</span></div>
+          <a class="buy" href="https://epomaker.com/products/epomaker-he80?sca_ref=12671429.AWsfL1Z8b8" target="_blank" rel="sponsored nofollow noopener">Shop at EPOMAKER<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="EPOMAKER">
+          <a class="thumb" href="https://epomaker.com/products/epomaker-carbonis-mouse?sca_ref=12671429.AWsfL1Z8b8" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERCarbonis_01.webp?width=520" alt="EPOMAKER Carbonis Mouse" loading="lazy" decoding="async" width="400" height="300" data-icon="mouse" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>EPOMAKER Carbonis Mouse</h4>
+          <p>A wireless carbon fiber gaming mouse with an 8000Hz polling rate.</p>
+          <div class="price"><span>From</span><b>$53.99</b><span>at EPOMAKER</span></div>
+          <a class="buy" href="https://epomaker.com/products/epomaker-carbonis-mouse?sca_ref=12671429.AWsfL1Z8b8" target="_blank" rel="sponsored nofollow noopener">Shop at EPOMAKER<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Redragon keyboards, mice and headsets</h3>
+        <div class="items">
+        <article class="item" data-src="brand" data-brand="Redragon">
+          <a class="thumb" href="https://redragonshop.com/products/m913?aff=7360" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonRGBWirelessGamingMouseImpactEliteM913_1.png?width=520" alt="Redragon Impact Elite M913" loading="lazy" decoding="async" width="400" height="300" data-icon="controller" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>Redragon Impact Elite M913</h4>
+          <p>A wireless gaming mouse with Bluetooth, a 2.4GHz receiver and a Pixart 3395 sensor.</p>
+          <div class="price"><span>From</span><b>$46.99</b><span>at Redragon</span></div>
+          <a class="buy" href="https://redragonshop.com/products/m913?aff=7360" target="_blank" rel="sponsored nofollow noopener">Shop at Redragon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="Redragon">
+          <a class="thumb" href="https://redragonshop.com/products/small-mechanical-keyboard?aff=7360" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0012/4957/4961/products/minikeyboard.png?width=520" alt="Redragon Fizz K617 60% Keyboard" loading="lazy" decoding="async" width="400" height="300" data-icon="keyboard" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>Redragon Fizz K617 60% Keyboard</h4>
+          <p>A small 60% mechanical keyboard that frees up desk space for your mouse.</p>
+          <div class="price"><b>$44.99</b><span>at Redragon</span></div>
+          <a class="buy" href="https://redragonshop.com/products/small-mechanical-keyboard?aff=7360" target="_blank" rel="sponsored nofollow noopener">Shop at Redragon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="Redragon">
+          <a class="thumb" href="https://redragonshop.com/products/horus-k618-ultrathin-wireless-keyboard?aff=7360" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK618WirelessUltra-ThinLowProfileRGBMechanicalKeyboard_1.png?width=520" alt="Redragon Horus K618 Wireless Keyboard" loading="lazy" decoding="async" width="400" height="300" data-icon="keyboard" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>Redragon Horus K618 Wireless Keyboard</h4>
+          <p>An ultra-slim wireless mechanical keyboard with RGB lighting.</p>
+          <div class="price"><b>$64.99</b><span>at Redragon</span></div>
+          <a class="buy" href="https://redragonshop.com/products/horus-k618-ultrathin-wireless-keyboard?aff=7360" target="_blank" rel="sponsored nofollow noopener">Shop at Redragon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="Redragon">
+          <a class="thumb" href="https://redragonshop.com/products/galatin-pro-k719?aff=7360" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonGALATINPROK71995KeysOEMProfileGasketRGBGamingKeyboard.png?width=520" alt="Redragon Galatin Pro K719" loading="lazy" decoding="async" width="400" height="300" data-icon="controller" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>Redragon Galatin Pro K719</h4>
+          <p>A gasket-mounted mechanical keyboard with a small color screen for battery and connection status.</p>
+          <div class="price"><span>From</span><b>$69.99</b><span>at Redragon</span></div>
+          <a class="buy" href="https://redragonshop.com/products/galatin-pro-k719?aff=7360" target="_blank" rel="sponsored nofollow noopener">Shop at Redragon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="Redragon">
+          <a class="thumb" href="https://redragonshop.com/products/h510-zeus?aff=7360" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0012/4957/4961/products/h510.png?width=520" alt="Redragon H510 Zeus Headset" loading="lazy" decoding="async" width="400" height="300" data-icon="headset" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>Redragon H510 Zeus Headset</h4>
+          <p>A wired gaming headset with 7.1 surround sound and 53mm drivers.</p>
+          <div class="price"><b>$64.99</b><span>at Redragon</span></div>
+          <a class="buy" href="https://redragonshop.com/products/h510-zeus?aff=7360" target="_blank" rel="sponsored nofollow noopener">Shop at Redragon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="Redragon">
+          <a class="thumb" href="https://redragonshop.com/products/vampire-elite-m686?aff=7360" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Untitled_design_28.png?width=520" alt="Redragon Vampire Elite M686" loading="lazy" decoding="async" width="400" height="300" data-icon="controller" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>Redragon Vampire Elite M686</h4>
+          <p>A wireless gaming mouse with a 2.4GHz receiver and DPI up to 16,000.</p>
+          <div class="price"><b>$42.99</b><span>at Redragon</span></div>
+          <a class="buy" href="https://redragonshop.com/products/vampire-elite-m686?aff=7360" target="_blank" rel="sponsored nofollow noopener">Shop at Redragon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>LAMZU esports mice</h3>
+        <div class="items">
+        <article class="item" data-src="brand" data-brand="LAMZU">
+          <a class="thumb" href="https://lamzu.com/products/lamzu-atlantis-mini-pro-gaming-mouse?bg_ref=ML5sLKSUoj" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0581/9675/4466/products/atlantis-mini-pro-polar-white-1-445836.jpg?width=520" alt="LAMZU Atlantis Mini Pro" loading="lazy" decoding="async" width="400" height="300" data-icon="controller" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>LAMZU Atlantis Mini Pro</h4>
+          <p>A small, light gaming mouse that supports 4K polling with LAMZU&#x27;s separate 4K dongle.</p>
+          <div class="price"><b>$91.99</b><span>at LAMZU</span></div>
+          <a class="buy" href="https://lamzu.com/products/lamzu-atlantis-mini-pro-gaming-mouse?bg_ref=ML5sLKSUoj" target="_blank" rel="sponsored nofollow noopener">Shop at LAMZU<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="LAMZU">
+          <a class="thumb" href="https://lamzu.com/products/lamzu-maya-champion-edition?bg_ref=ML5sLKSUoj" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Mainpicture1-1.jpg?width=520" alt="LAMZU Maya Champion Edition" loading="lazy" decoding="async" width="400" height="300" data-icon="controller" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>LAMZU Maya Champion Edition</h4>
+          <p>A Champion Edition of LAMZU&#x27;s Maya wireless gaming mouse.</p>
+          <div class="price"><b>$119.99</b><span>at LAMZU</span></div>
+          <a class="buy" href="https://lamzu.com/products/lamzu-maya-champion-edition?bg_ref=ML5sLKSUoj" target="_blank" rel="sponsored nofollow noopener">Shop at LAMZU<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="LAMZU">
+          <a class="thumb" href="https://lamzu.com/products/lamzu-paro-aurora?bg_ref=ML5sLKSUoj" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Paro_AUROR_1.jpg?width=520" alt="LAMZU Paro Aurora" loading="lazy" decoding="async" width="400" height="300" data-icon="controller" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>LAMZU Paro Aurora</h4>
+          <p>The Aurora version of LAMZU&#x27;s Paro gaming mouse.</p>
+          <div class="price"><b>$119.99</b><span>at LAMZU</span></div>
+          <a class="buy" href="https://lamzu.com/products/lamzu-paro-aurora?bg_ref=ML5sLKSUoj" target="_blank" rel="sponsored nofollow noopener">Shop at LAMZU<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="LAMZU">
+          <a class="thumb" href="https://lamzu.com/products/lamzu-thorn-v2?bg_ref=ML5sLKSUoj" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0581/9675/4466/files/1_ff95c640-6e49-4e04-a7ef-ce95afb96313.jpg?width=520" alt="LAMZU Thorn V2" loading="lazy" decoding="async" width="400" height="300" data-icon="controller" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>LAMZU Thorn V2</h4>
+          <p>The second-generation Thorn gaming mouse from LAMZU.</p>
+          <div class="price"><b>$129.99</b><span>at LAMZU</span></div>
+          <a class="buy" href="https://lamzu.com/products/lamzu-thorn-v2?bg_ref=ML5sLKSUoj" target="_blank" rel="sponsored nofollow noopener">Shop at LAMZU<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>SOLAKAKA keyboards and mice</h3>
+        <div class="items">
+        <article class="item" data-src="brand" data-brand="SOLAKAKA">
+          <a class="thumb" href="https://solakaka.sjv.io/GbJJDE?u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-a75-pro-wireless-mechanical-gaming-keyboard" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0910/3661/4959/files/SOLAKAKA-A75-PRO-zhutu-black.jpg?width=520" alt="SOLAKAKA A75 Pro Wireless Keyboard" loading="lazy" decoding="async" width="400" height="300" data-icon="keyboard" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>SOLAKAKA A75 Pro Wireless Keyboard</h4>
+          <p>A 75% wireless mechanical gaming keyboard.</p>
+          <div class="price"><span>From</span><b>$59.99</b><span>at SOLAKAKA</span></div>
+          <a class="buy" href="https://solakaka.sjv.io/GbJJDE?u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-a75-pro-wireless-mechanical-gaming-keyboard" target="_blank" rel="sponsored nofollow noopener">Shop at SOLAKAKA<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="SOLAKAKA">
+          <a class="thumb" href="https://solakaka.sjv.io/GbJJDE?u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-ki99pro-wireless-mechanical-keyboard" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0910/3661/4959/files/KI99PRO-White.jpg?width=520" alt="SOLAKAKA KI99 Pro Wireless Keyboard" loading="lazy" decoding="async" width="400" height="300" data-icon="keyboard" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>SOLAKAKA KI99 Pro Wireless Keyboard</h4>
+          <p>A tri-mode wireless mechanical keyboard: Bluetooth 5.0, 2.4GHz or USB-C.</p>
+          <div class="price"><span>From</span><b>$59.99</b><span>at SOLAKAKA</span></div>
+          <a class="buy" href="https://solakaka.sjv.io/GbJJDE?u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-ki99pro-wireless-mechanical-keyboard" target="_blank" rel="sponsored nofollow noopener">Shop at SOLAKAKA<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="SOLAKAKA">
+          <a class="thumb" href="https://solakaka.sjv.io/GbJJDE?u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-e9-pro-mouse" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0910/3661/4959/files/SOLAKAKA_E9_PRO.png?width=520" alt="SOLAKAKA E9 Pro Vertical MMO Mouse" loading="lazy" decoding="async" width="400" height="300" data-icon="mouse" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>SOLAKAKA E9 Pro Vertical MMO Mouse</h4>
+          <p>A vertical, ergonomic mouse with side buttons for MMO players.</p>
+          <div class="price"><span>From</span><b>$69.99</b><span>at SOLAKAKA</span></div>
+          <a class="buy" href="https://solakaka.sjv.io/GbJJDE?u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-e9-pro-mouse" target="_blank" rel="sponsored nofollow noopener">Shop at SOLAKAKA<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="SOLAKAKA">
+          <a class="thumb" href="https://solakaka.sjv.io/GbJJDE?u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-ax68-se-magnetic-gaming-wired-keyboard" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0910/3661/4959/files/SOLAKAKAAX68SE-black.jpg?width=520" alt="SOLAKAKA AX68 SE Magnetic Keyboard" loading="lazy" decoding="async" width="400" height="300" data-icon="keyboard" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>SOLAKAKA AX68 SE Magnetic Keyboard</h4>
+          <p>A wired 68-key keyboard with magnetic switches.</p>
+          <div class="price"><b>$46.99</b><span>at SOLAKAKA</span></div>
+          <a class="buy" href="https://solakaka.sjv.io/GbJJDE?u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-ax68-se-magnetic-gaming-wired-keyboard" target="_blank" rel="sponsored nofollow noopener">Shop at SOLAKAKA<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>Edifier gaming audio</h3>
+        <div class="items">
+        <article class="item" data-src="brand" data-brand="Edifier">
+          <a class="thumb" href="https://edifier.pxf.io/3kWWkv?u=https%3A%2F%2Fus.edifier.com%2Fproducts%2Fg1000" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0918/0928/4400/files/G1000-Black-1.jpg?width=520" alt="Edifier G1000 Gaming Speakers" loading="lazy" decoding="async" width="400" height="300" data-icon="speaker" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>Edifier G1000 Gaming Speakers</h4>
+          <p>Compact desktop gaming speakers with Bluetooth 5.3 and 12 RGB lighting effects.</p>
+          <div class="price"><b>$79.99</b><span>at Edifier</span></div>
+          <a class="buy" href="https://edifier.pxf.io/3kWWkv?u=https%3A%2F%2Fus.edifier.com%2Fproducts%2Fg1000" target="_blank" rel="sponsored nofollow noopener">Shop at Edifier<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="Edifier">
+          <a class="thumb" href="https://edifier.pxf.io/3kWWkv?u=https%3A%2F%2Fus.edifier.com%2Fproducts%2Fg1500" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0918/0928/4400/files/G1500-black-6.jpg?width=520" alt="Edifier G1500 Gaming Speakers" loading="lazy" decoding="async" width="400" height="300" data-icon="speaker" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>Edifier G1500 Gaming Speakers</h4>
+          <p>Desktop gaming speakers with three sound modes, 2.5-inch drivers and 12 RGB lighting effects.</p>
+          <div class="price"><b>$89.99</b><span>at Edifier</span></div>
+          <a class="buy" href="https://edifier.pxf.io/3kWWkv?u=https%3A%2F%2Fus.edifier.com%2Fproducts%2Fg1500" target="_blank" rel="sponsored nofollow noopener">Shop at Edifier<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="Edifier">
+          <a class="thumb" href="https://edifier.pxf.io/3kWWkv?u=https%3A%2F%2Fus.edifier.com%2Fproducts%2Fg2000-ii" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0918/0928/4400/files/G2000_II-BLACK-2.jpg?width=520" alt="Edifier G2000 II Gaming Speakers" loading="lazy" decoding="async" width="400" height="300" data-icon="speaker" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>Edifier G2000 II Gaming Speakers</h4>
+          <p>Compact desktop speakers with a 2.75-inch driver, 16W output and three EQ modes.</p>
+          <div class="price"><b>$129.99</b><span>at Edifier</span></div>
+          <a class="buy" href="https://edifier.pxf.io/3kWWkv?u=https%3A%2F%2Fus.edifier.com%2Fproducts%2Fg2000-ii" target="_blank" rel="sponsored nofollow noopener">Shop at Edifier<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="Edifier">
+          <a class="thumb" href="https://edifier.pxf.io/3kWWkv?u=https%3A%2F%2Fus.edifier.com%2Fproducts%2Fg5-max" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0918/0928/4400/files/G5MAX_BLACK-2.jpg?width=520" alt="Edifier G5 Max Gaming Headset" loading="lazy" decoding="async" width="400" height="300" data-icon="headset" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>Edifier G5 Max Gaming Headset</h4>
+          <p>A wireless gaming headset with THX Spatial Audio+ and quad-mode connectivity.</p>
+          <div class="price"><b>$149.99</b><span>at Edifier</span></div>
+          <a class="buy" href="https://edifier.pxf.io/3kWWkv?u=https%3A%2F%2Fus.edifier.com%2Fproducts%2Fg5-max" target="_blank" rel="sponsored nofollow noopener">Shop at Edifier<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>UPERFECT portable gaming monitors</h3>
+        <div class="items">
+        <article class="item" data-src="brand" data-brand="UPERFECT">
+          <a class="thumb" href="https://uperfect.sjv.io/1GBBGg?u=https%3A%2F%2Fuperfect.com%2Fproducts%2F15-6-inch-portable-monitor-1080p-nxtled" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0039/6387/9494/files/b28b822dfc74519545bfd818d271541e.png?width=520" alt="UPERFECT 15.6&quot; Portable Monitor" loading="lazy" decoding="async" width="400" height="300" data-icon="monitor" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>UPERFECT 15.6&quot; Portable Monitor</h4>
+          <p>A simple 1080p second screen for a laptop, handheld PC or console.</p>
+          <div class="price"><b>$139.99</b><span>at UPERFECT</span></div>
+          <a class="buy" href="https://uperfect.sjv.io/1GBBGg?u=https%3A%2F%2Fuperfect.com%2Fproducts%2F15-6-inch-portable-monitor-1080p-nxtled" target="_blank" rel="sponsored nofollow noopener">Shop at UPERFECT<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="UPERFECT">
+          <a class="thumb" href="https://uperfect.sjv.io/1GBBGg?u=https%3A%2F%2Fuperfect.com%2Fproducts%2Fnxtled-one-plus" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0039/6387/9494/files/02_9edb1c9c-0659-41c2-b183-a86fca19a631.webp?width=520" alt="UPERFECT 18.5&quot; 120Hz Gaming Monitor" loading="lazy" decoding="async" width="400" height="300" data-icon="monitor" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>UPERFECT 18.5&quot; 120Hz Gaming Monitor</h4>
+          <p>A larger portable screen with a 120Hz refresh rate.</p>
+          <div class="price"><b>$219.99</b><span>at UPERFECT</span></div>
+          <a class="buy" href="https://uperfect.sjv.io/1GBBGg?u=https%3A%2F%2Fuperfect.com%2Fproducts%2Fnxtled-one-plus" target="_blank" rel="sponsored nofollow noopener">Shop at UPERFECT<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="UPERFECT">
+          <a class="thumb" href="https://uperfect.sjv.io/1GBBGg?u=https%3A%2F%2Fuperfect.com%2Fproducts%2F16-inch-2k-240hz-gaming-monitor" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0039/6387/9494/files/01_c9b0c587-8b4b-4a66-97cf-142a4a108b2d.png?width=520" alt="UPERFECT 16&quot; 2K 240Hz Gaming Monitor" loading="lazy" decoding="async" width="400" height="300" data-icon="monitor" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>UPERFECT 16&quot; 2K 240Hz Gaming Monitor</h4>
+          <p>A 16-inch portable monitor with 2K resolution and a 240Hz refresh rate.</p>
+          <div class="price"><span>From</span><b>$349.99</b><span>at UPERFECT</span></div>
+          <a class="buy" href="https://uperfect.sjv.io/1GBBGg?u=https%3A%2F%2Fuperfect.com%2Fproducts%2F16-inch-2k-240hz-gaming-monitor" target="_blank" rel="sponsored nofollow noopener">Shop at UPERFECT<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="UPERFECT">
+          <a class="thumb" href="https://uperfect.sjv.io/1GBBGg?u=https%3A%2F%2Fuperfect.com%2Fproducts%2F14-inch-3k-120hz-oled-touchscreen" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0039/6387/9494/files/a05dcca636b8c3c10d08a77d44cec48c.png?width=520" alt="UPERFECT 14&quot; 3K OLED 120Hz Monitor" loading="lazy" decoding="async" width="400" height="300" data-icon="monitor" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>UPERFECT 14&quot; 3K OLED 120Hz Monitor</h4>
+          <p>A portable OLED gaming screen with touch and a 120Hz refresh rate.</p>
+          <div class="price"><span>From</span><b>$399.99</b><span>at UPERFECT</span></div>
+          <a class="buy" href="https://uperfect.sjv.io/1GBBGg?u=https%3A%2F%2Fuperfect.com%2Fproducts%2F14-inch-3k-120hz-oled-touchscreen" target="_blank" rel="sponsored nofollow noopener">Shop at UPERFECT<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>AutoFull chairs and desks</h3>
+        <div class="items">
+        <article class="item" data-src="brand" data-brand="AutoFull">
+          <a class="thumb" href="https://go.sjv.io/k4EE4M?u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-c3-pro-gaming-chair" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0303/9805/4531/files/C3_Pro_-4.png?width=520" alt="AutoFull C3 Pro Gaming Chair" loading="lazy" decoding="async" width="400" height="300" data-icon="chair" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>AutoFull C3 Pro Gaming Chair</h4>
+          <p>An ergonomic gaming chair with a roomy seat and no side wings squeezing your legs.</p>
+          <div class="price"><span>From</span><b>$299.00</b><span>at AutoFull</span></div>
+          <a class="buy" href="https://go.sjv.io/k4EE4M?u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-c3-pro-gaming-chair" target="_blank" rel="sponsored nofollow noopener">Shop at AutoFull<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="AutoFull">
+          <a class="thumb" href="https://go.sjv.io/k4EE4M?u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-g7-ergonomic-gaming-chair-black" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0303/9805/4531/files/gaming_chair_1_c5f546de-af69-4926-b5e4-a859ea893772.jpg?width=520" alt="AutoFull G7 Gaming Chair" loading="lazy" decoding="async" width="400" height="300" data-icon="chair" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>AutoFull G7 Gaming Chair</h4>
+          <p>A gaming chair with dual-mode lumbar support that adjusts as you lean or recline.</p>
+          <div class="price"><b>$569.99</b><span>at AutoFull</span></div>
+          <a class="buy" href="https://go.sjv.io/k4EE4M?u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-g7-ergonomic-gaming-chair-black" target="_blank" rel="sponsored nofollow noopener">Shop at AutoFull<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="AutoFull">
+          <a class="thumb" href="https://go.sjv.io/k4EE4M?u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-m6-ultra-2-ergonomic-gaming-chair" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0303/9805/4531/files/M602_MainImage_01_Productimage_front_webp.webp?width=520" alt="AutoFull M6 Ultra 2.0 Gaming Chair" loading="lazy" decoding="async" width="400" height="300" data-icon="chair" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>AutoFull M6 Ultra 2.0 Gaming Chair</h4>
+          <p>A gaming chair with built-in massage, plus fans and heating for the seat.</p>
+          <div class="price"><b>$599.99</b><span>at AutoFull</span></div>
+          <a class="buy" href="https://go.sjv.io/k4EE4M?u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-m6-ultra-2-ergonomic-gaming-chair" target="_blank" rel="sponsored nofollow noopener">Shop at AutoFull<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="AutoFull">
+          <a class="thumb" href="https://go.sjv.io/k4EE4M?u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-a4-pro-rgb-gaming-desk" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0303/9805/4531/files/20251201-151340.webp?width=520" alt="AutoFull A4 Pro RGB Electric Gaming Desk" loading="lazy" decoding="async" width="400" height="300" data-icon="chair" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>AutoFull A4 Pro RGB Electric Gaming Desk</h4>
+          <p>An electric gaming desk with RGB lighting.</p>
+          <div class="price"><b>$699.99</b><span>at AutoFull</span></div>
+          <a class="buy" href="https://go.sjv.io/k4EE4M?u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-a4-pro-rgb-gaming-desk" target="_blank" rel="sponsored nofollow noopener">Shop at AutoFull<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+      <div class="cat">
+        <h3>GMKtec mini PCs and gaming PCs</h3>
+        <div class="items">
+        <article class="item" data-src="brand" data-brand="GMKtec">
+          <a class="thumb" href="https://www.awin1.com/cread.php?awinmid=45751&amp;awinaffid=3137720&amp;ued=https%3A%2F%2Fwww.gmktec.com%2Fproducts%2Fgmktec-m5s-amd-ryzen-3-5400u-mini-pc" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0715/1314/5498/files/M5PLUS.webp?width=520" alt="GMKtec M5S Mini PC" loading="lazy" decoding="async" width="400" height="300" data-icon="gpu" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>GMKtec M5S Mini PC</h4>
+          <p>A budget mini PC with an AMD Ryzen 3 5400U for everyday computing.</p>
+          <div class="price"><span>From</span><b>$269.99</b><span>at GMKtec</span></div>
+          <a class="buy" href="https://www.awin1.com/cread.php?awinmid=45751&amp;awinaffid=3137720&amp;ued=https%3A%2F%2Fwww.gmktec.com%2Fproducts%2Fgmktec-m5s-amd-ryzen-3-5400u-mini-pc" target="_blank" rel="sponsored nofollow noopener">Shop at GMKtec<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="GMKtec">
+          <a class="thumb" href="https://www.awin1.com/cread.php?awinmid=45751&amp;awinaffid=3137720&amp;ued=https%3A%2F%2Fwww.gmktec.com%2Fproducts%2Fgmktec-k17-plus-intel-core-ultra-7-258v-mini-pc" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0715/1314/5498/files/K17_8070872b-6c05-4410-90c1-abb7d5e8f6f9.jpg?width=520" alt="GMKtec K17 Plus Mini PC" loading="lazy" decoding="async" width="400" height="300" data-icon="gpu" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>GMKtec K17 Plus Mini PC</h4>
+          <p>A mini PC with an Intel Core Ultra 7 258V processor.</p>
+          <div class="price"><span>From</span><b>$949.99</b><span>at GMKtec</span></div>
+          <a class="buy" href="https://www.awin1.com/cread.php?awinmid=45751&amp;awinaffid=3137720&amp;ued=https%3A%2F%2Fwww.gmktec.com%2Fproducts%2Fgmktec-k17-plus-intel-core-ultra-7-258v-mini-pc" target="_blank" rel="sponsored nofollow noopener">Shop at GMKtec<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="GMKtec">
+          <a class="thumb" href="https://www.awin1.com/cread.php?awinmid=45751&amp;awinaffid=3137720&amp;ued=https%3A%2F%2Fwww.gmktec.com%2Fproducts%2Fgmktec-evo-x1-pro-ai-mini-pc-amd-ryzen-ai-9-hx-470" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0715/1314/5498/files/EVO-X1-PRO_1.jpg?width=520" alt="GMKtec EVO-X1 Pro AI Mini PC" loading="lazy" decoding="async" width="400" height="300" data-icon="gpu" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>GMKtec EVO-X1 Pro AI Mini PC</h4>
+          <p>A mini PC with an AMD Ryzen AI 9 HX 470 processor.</p>
+          <div class="price"><span>From</span><b>$1,599.99</b><span>at GMKtec</span></div>
+          <a class="buy" href="https://www.awin1.com/cread.php?awinmid=45751&amp;awinaffid=3137720&amp;ued=https%3A%2F%2Fwww.gmktec.com%2Fproducts%2Fgmktec-evo-x1-pro-ai-mini-pc-amd-ryzen-ai-9-hx-470" target="_blank" rel="sponsored nofollow noopener">Shop at GMKtec<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="brand" data-brand="GMKtec">
+          <a class="thumb" href="https://www.awin1.com/cread.php?awinmid=45751&amp;awinaffid=3137720&amp;ued=https%3A%2F%2Fwww.gmktec.com%2Fproducts%2Fgmktec-neo-x1-pro-modt-gaming-pc-amd-ryzen-9-9955hx3d-nvidia-geforce-rtx-5070" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0715/1314/5498/files/affd46ccaac1fc513d15f48752707bab.png?width=520" alt="GMKtec NEO-X1 Pro Gaming PC" loading="lazy" decoding="async" width="400" height="300" data-icon="gpu" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>GMKtec NEO-X1 Pro Gaming PC</h4>
+          <p>A compact liquid-cooled gaming PC with a Ryzen 9 9955HX3D and graphics up to GeForce RTX 5070.</p>
+          <div class="price"><span>From</span><b>$2,199.99</b><span>at GMKtec</span></div>
+          <a class="buy" href="https://www.awin1.com/cread.php?awinmid=45751&amp;awinaffid=3137720&amp;ued=https%3A%2F%2Fwww.gmktec.com%2Fproducts%2Fgmktec-neo-x1-pro-modt-gaming-pc-amd-ryzen-9-9955hx3d-nvidia-geforce-rtx-5070" target="_blank" rel="sponsored nofollow noopener">Shop at GMKtec<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--/shop:brand-shop-->
+<!--/shop:jlab-->
 
   <section class="group" id="brand-stores" aria-labelledby="brand-stores-h">
     <div class="wrap">
@@ -302,6 +873,7 @@ p { margin: 0; }
         <h3>Gaming chairs</h3>
         <div class="items">
         <article class="item">
+          <a class="thumb" data-shop="1" href="https://go.sjv.io/k4EE4M" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0303/9805/4531/files/M602_MainImage_01_Productimage_front_webp.webp?width=520" alt="AutoFull M6 Ultra gaming chair" loading="lazy" decoding="async" width="400" height="300" data-icon="chair" onerror="sgFix(this)" onload="sgChk(this)"></a>
           <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
           <h4>AutoFull</h4>
           <p>Gaming and ergonomic office chairs, sold direct. Their Black Friday Early Access sale runs Nov 10 to 18.</p>
@@ -314,6 +886,7 @@ p { margin: 0; }
         <h3>Monitors</h3>
         <div class="items">
         <article class="item">
+          <a class="thumb" data-shop="1" href="https://uperfect.sjv.io/1GBBGg" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0039/6387/9494/files/02_9edb1c9c-0659-41c2-b183-a86fca19a631.webp?width=520" alt="UPERFECT portable gaming monitor" loading="lazy" decoding="async" width="400" height="300" data-icon="monitor" onerror="sgFix(this)" onload="sgChk(this)"></a>
           <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
           <h4>UPERFECT</h4>
           <p>Portable monitors you can plug into a laptop, handheld PC or console for a second screen on the go, sold direct.</p>
@@ -326,6 +899,7 @@ p { margin: 0; }
         <h3>Mini PCs</h3>
         <div class="items">
         <article class="item">
+          <a class="thumb" data-shop="1" href="https://www.awin1.com/cread.php?awinmid=45751&amp;awinaffid=3137720" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://cdn.shopify.com/s/files/1/0715/1314/5498/files/M5PLUS.webp?width=520" alt="GMKtec mini PC" loading="lazy" decoding="async" width="400" height="300" data-icon="gpu" onerror="sgFix(this)" onload="sgChk(this)"></a>
           <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
           <h4>GMKtec mini PCs</h4>
           <p>Compact mini PCs for a small desk, a living-room media setup or lighter gaming. Check the graphics specs on each model before you buy for games.</p>
@@ -522,6 +1096,75 @@ p { margin: 0; }
         </article>
         </div>
       </div>
+<!--shop:cat:pc-parts:PC cases-->
+      <div class="cat">
+        <h3>PC cases</h3>
+        <div class="items">
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B0D2MK6NML?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0D2MK6NML.01._SCLZZZZZZZ_.jpg" alt="NZXT H5 Flow Compact ATX Mid-Tower Case" loading="lazy" decoding="async" width="400" height="300" data-icon="case" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0D2MK6NML&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>NZXT H5 Flow Compact ATX Mid-Tower Case</h4>
+          <p>A compact airflow case with two included 120mm fans and room for a 360mm front radiator.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B0D2MK6NML?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B0BRP58KHT?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0BRP58KHT.01._SCLZZZZZZZ_.jpg" alt="Lian Li Lancool 216 Mid-Tower Case" loading="lazy" decoding="async" width="400" height="300" data-icon="case" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0BRP58KHT&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>Lian Li Lancool 216 Mid-Tower Case</h4>
+          <p>An airflow-focused ATX case that ships with three PWM fans.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B0BRP58KHT?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+<!--shop:cat:pc-parts:Cooling and power-->
+      <div class="cat">
+        <h3>Cooling and power</h3>
+        <div class="items">
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B0DPR86ZC8?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0DPR86ZC8.01._SCLZZZZZZZ_.jpg" alt="Corsair RM850e (2025) 850W Power Supply" loading="lazy" decoding="async" width="400" height="300" data-icon="power" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0DPR86ZC8&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>Corsair RM850e (2025) 850W Power Supply</h4>
+          <p>A fully modular ATX 3.1 power supply with a native 12V-2x6 cable for modern graphics cards.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B0DPR86ZC8?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+<!--shop:cat:pc-parts:Networking-->
+      <div class="cat">
+        <h3>Networking</h3>
+        <div class="items">
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B0DC99N2T8?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0DC99N2T8.01._SCLZZZZZZZ_.jpg" alt="TP-Link Archer BE230 Wi-Fi 7 Router" loading="lazy" decoding="async" width="400" height="300" data-icon="network" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0DC99N2T8&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>TP-Link Archer BE230 Wi-Fi 7 Router</h4>
+          <p>A dual-band BE3600 Wi-Fi 7 router with two 2.5G ports, a value way into Wi-Fi 7.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B0DC99N2T8?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B0CJSNSVMR?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0CJSNSVMR.01._SCLZZZZZZZ_.jpg" alt="TP-Link Archer BE550 Wi-Fi 7 Router" loading="lazy" decoding="async" width="400" height="300" data-icon="network" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0CJSNSVMR&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>TP-Link Archer BE550 Wi-Fi 7 Router</h4>
+          <p>A tri-band BE9300 Wi-Fi 7 router with 2.5G ports throughout.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B0CJSNSVMR?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B00A128S24?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B00A128S24.01._SCLZZZZZZZ_.jpg" alt="TP-Link TL-SG105 5-Port Gigabit Switch" loading="lazy" decoding="async" width="400" height="300" data-icon="network" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B00A128S24&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>TP-Link TL-SG105 5-Port Gigabit Switch</h4>
+          <p>A plug-and-play switch that turns one wall jack into five wired connections.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B00A128S24?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+<!--/shop:cat:pc-parts:Networking-->
+<!--/shop:cat:pc-parts:Cooling and power-->
+<!--/shop:cat:pc-parts:PC cases-->
       <div class="cat">
         <h3>Keyboards</h3>
         <div class="items">
@@ -778,6 +1421,32 @@ p { margin: 0; }
           <a class="buy" href="https://www.amazon.com/dp/B0BVWMSP1V?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           <span class="earns">We earn a commission from this link</span>
         </article>
+        <!--shop:append:desk-setup:Monitors-->
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B0GDSC8K2H?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0GDSC8K2H.01._SCLZZZZZZZ_.jpg" alt="Samsung 27&quot; Odyssey OLED G6 (G61SH)" loading="lazy" decoding="async" width="400" height="300" data-icon="monitor" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0GDSC8K2H&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>Samsung 27&quot; Odyssey OLED G6 (G61SH)</h4>
+          <p>A 27-inch QD-OLED gaming monitor with QHD resolution and a 240Hz refresh rate.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B0GDSC8K2H?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B0FNQ4B2Z2?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0FNQ4B2Z2.01._SCLZZZZZZZ_.jpg" alt="LG 27GX704A-B UltraGear OLED Monitor" loading="lazy" decoding="async" width="400" height="300" data-icon="monitor" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0FNQ4B2Z2&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>LG 27GX704A-B UltraGear OLED Monitor</h4>
+          <p>A 27-inch QHD OLED gaming monitor with a 240Hz refresh rate and G-Sync compatibility.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B0FNQ4B2Z2?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B0FWHPY1GJ?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0FWHPY1GJ.01._SCLZZZZZZZ_.jpg" alt="ASUS ROG XG27AQDMGR 27&quot; OLED Monitor" loading="lazy" decoding="async" width="400" height="300" data-icon="monitor" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0FWHPY1GJ&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-pc">PC</span></span></div>
+          <h4>ASUS ROG XG27AQDMGR 27&quot; OLED Monitor</h4>
+          <p>A glossy 27-inch 1440p OLED gaming monitor with a 240Hz refresh rate.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B0FWHPY1GJ?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+<!--/shop:append:desk-setup:Monitors-->
         </div>
       </div>
       <div class="cat">
@@ -989,6 +1658,29 @@ p { margin: 0; }
         </article>
         </div>
       </div>
+<!--shop:cat:streaming:Lights and mic arms-->
+      <div class="cat">
+        <h3>Lights and mic arms</h3>
+        <div class="items">
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B0GYDFGCCQ?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0GYDFGCCQ.01._SCLZZZZZZZ_.jpg" alt="Elgato Key Light Air MK.2" loading="lazy" decoding="async" width="400" height="300" data-icon="light" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0GYDFGCCQ&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>Elgato Key Light Air MK.2</h4>
+          <p>A 15-inch edge-lit LED panel with touch controls and adjustable color temperature.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B0GYDFGCCQ?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B097376LKF?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B097376LKF.01._SCLZZZZZZZ_.jpg" alt="Elgato Wave Mic Arm LP" loading="lazy" decoding="async" width="400" height="300" data-icon="mic" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B097376LKF&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">Any platform</span></span></div>
+          <h4>Elgato Wave Mic Arm LP</h4>
+          <p>A low-profile boom arm that keeps your mic below the shoulder line and your desk clear.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B097376LKF?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+<!--/shop:cat:streaming:Lights and mic arms-->
       <div class="cat">
         <h3>Webcams</h3>
         <div class="items">
@@ -1386,6 +2078,38 @@ p { margin: 0; }
     </div>
   </section>
 
+<!--shop:portable-vr-->
+  <section class="group" id="portable-vr" aria-labelledby="portable-vr-h">
+    <div class="wrap">
+      <div class="group-head">
+        <h2 id="portable-vr-h">VR and handheld PC</h2>
+        <p>Headsets for PC VR and the accessories that make a handheld PC easier to live with.</p>
+      </div>
+      <div class="cat">
+        <h3>VR headsets</h3>
+        <div class="items">
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B0F2GYMC8H?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0F2GYMC8H.01._SCLZZZZZZZ_.jpg" alt="Meta Quest 3S 128GB VR Headset" loading="lazy" decoding="async" width="400" height="300" data-icon="vr" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0F2GYMC8H&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">VR</span></span></div>
+          <h4>Meta Quest 3S 128GB VR Headset</h4>
+          <p>The cheapest way into PC VR over Air Link or a cable.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B0F2GYMC8H?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        <article class="item" data-src="amazon">
+          <a class="thumb" href="https://www.amazon.com/dp/B0CD1JTBSC?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true"><img src="https://m.media-amazon.com/images/P/B0CD1JTBSC.01._SCLZZZZZZZ_.jpg" alt="Meta Quest 3 512GB VR Headset" loading="lazy" decoding="async" width="400" height="300" data-icon="vr" data-alt="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0CD1JTBSC&amp;Format=_SL400_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=steelgames-20" onerror="sgFix(this)" onload="sgChk(this)"></a>
+          <div class="item-top"><span class="chips"><span class="chip p-all">VR</span></span></div>
+          <h4>Meta Quest 3 512GB VR Headset</h4>
+          <p>Sharper pancake lenses and more storage than the Quest 3S.</p>
+          <a class="buy" href="https://www.amazon.com/dp/B0CD1JTBSC?tag=steelgames-20" target="_blank" rel="sponsored nofollow noopener">See price on Amazon<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <span class="earns">We earn a commission from this link</span>
+        </article>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--/shop:portable-vr-->
+
   <section class="cta">
     <div class="wrap">
       <h2>Plan a full setup on a budget</h2>
@@ -1393,6 +2117,7 @@ p { margin: 0; }
       <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="index.html">See today's deals</a><a class="btn" href="https://discord.gg/ekrRaejc6">Join the Discord</a></div>
     </div>
   </section>
+<!--shop:empty--><p class="shop-empty wrap" id="shop-empty" hidden>No gear matches that search. Try a shorter word, like "mouse" or "chair".</p><!--/shop:empty-->
 </main>
 
 <footer class="site-footer">
@@ -1418,5 +2143,34 @@ p { margin: 0; }
     <p>SteelGames is not affiliated with Valve, Epic Games, Microsoft, Sony, Nintendo or Amazon. Product and platform names belong to their owners.</p>
   </div>
 </footer>
+<script>
+(function () {
+  var q = document.getElementById('shop-q'); if (!q) return;
+  var items = [].slice.call(document.querySelectorAll('.item'));
+  var chips = [].slice.call(document.querySelectorAll('.fchip'));
+  var count = document.getElementById('shop-count'), empty = document.getElementById('shop-empty'), mode = 'all';
+  items.forEach(function (el) {
+    if (!el.dataset.src) { var a = el.querySelector('a.buy'); el.dataset.src = a && /amazon\.com/.test(a.href) ? 'amazon' : 'brand'; }
+    el.dataset.t = el.textContent.toLowerCase().replace(/\s+/g, ' ');
+  });
+  function run() {
+    var words = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean), shown = 0;
+    items.forEach(function (el) {
+      var ok = mode === 'all' || (mode === 'jlab' ? el.dataset.brand === 'JLab' : el.dataset.src === mode);
+      for (var i = 0; ok && i < words.length; i++) if (el.dataset.t.indexOf(words[i]) < 0) ok = false;
+      el.hidden = !ok; if (ok) shown++;
+    });
+    [].forEach.call(document.querySelectorAll('.cat'), function (c) { c.hidden = !c.querySelector('.item:not([hidden])'); });
+    [].forEach.call(document.querySelectorAll('.group'), function (g) { g.hidden = !g.querySelector('.item:not([hidden])'); });
+    var filtering = mode !== 'all' || words.length > 0;
+    count.textContent = filtering ? shown + (shown === 1 ? ' product' : ' products') + ' shown' : '';
+    empty.hidden = shown > 0;
+  }
+  q.addEventListener('input', run);
+  chips.forEach(function (b) { b.addEventListener('click', function () {
+    mode = b.dataset.mode; chips.forEach(function (c) { c.setAttribute('aria-pressed', c === b ? 'true' : 'false'); }); run();
+  }); });
+})();
+</script>
 </body>
 </html>
