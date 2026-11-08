@@ -27,6 +27,9 @@ POSTED = os.path.join(ROOT, "data", "posted.json")
 PER_DAY = 3
 REPOST_DAYS = 7
 UTM = "utm_source={src}&utm_medium=social&utm_campaign=daily_deals"
+# Daily posts only send people to the platform's own store. Key stores, marketplaces and other resellers are
+# left out on purpose, and so is any store not listed here. Names match CheapShark's /stores storeName values.
+OFFICIAL_STORES = {"Steam", "GOG", "Epic Games Store", "Humble Store", "Origin", "Uplay", "Blizzard Shop"}
 
 
 def http(url, data=None, headers=None, method=None, tries=3):
@@ -81,6 +84,11 @@ def pick(deals, posted, today):
         if len(out) == PER_DAY:
             break
     return out
+
+
+def official_only(deals, stores):
+    """Keep only deals sold by an official store (see OFFICIAL_STORES)."""
+    return [d for d in deals if stores.get(str(d.get("storeID")), "") in OFFICIAL_STORES]
 
 
 def facts(d, stores):
@@ -170,9 +178,9 @@ def main():
         stores, deals = data["stores"], data["deals"]
     else:
         stores = {s["storeID"]: s["storeName"] for s in http(API + "/stores")}
-        deals = http(API + "/deals?" + urllib.parse.urlencode({"sortBy": "Deal Rating", "onSale": 1, "pageSize": 40, "steamRating": 80, "upperPrice": 40}))
+        deals = http(API + "/deals?" + urllib.parse.urlencode({"sortBy": "Deal Rating", "onSale": 1, "pageSize": 60, "steamRating": 80, "upperPrice": 40}))
     posted = load_json(POSTED, {})
-    chosen = pick(deals, posted, today)
+    chosen = pick(official_only(deals, stores), posted, today)
     if not chosen:
         print("No new deals worth posting today.")
         return
