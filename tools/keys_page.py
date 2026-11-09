@@ -68,7 +68,7 @@ RESELLERS = [
     ("Voidu", "Voidu", "#F06292", "keys", "Digital key store known for low prices on Steam and publisher launcher keys.", "https://www.voidu.com"),
     ("IndieGala", "IndieGala", "#FF5252", "keys", "Indie-focused store with bundles that pack many small games into one low price.", "https://www.indiegala.com"),
     ("WinGameStore", "WinGameStore", "#4FC3F7", "keys", "Key seller with aggressive pricing on older and mid-priced PC games.", "https://www.wingamestore.com"),
-    (None, "CDKeys", "#B388FF", "keys", "Popular key retailer for PC games, gift cards and software. Compare prices on their site.", "https://www.cdkeys.com"),
+    (None, "Loaded (formerly CDKeys)", "#B388FF", "keys", "The key retailer that used to be CDKeys, now called Loaded. It sells PC games, gift cards and software. Compare prices on their site.", "https://go.loaded.com/4a7vz9"),
     (None, "Kinguin", "#FF9A1A", "mkt", "A marketplace where many third-party sellers list keys. Prices can be very low, so check seller ratings first.", "https://www.kinguin.net"),
     (None, "Eneba", "#8E6BFF", "mkt", "A marketplace with keys from many sellers, plus gift cards and software. Check seller ratings and buyer protection.", "https://www.eneba.com"),
 ]
