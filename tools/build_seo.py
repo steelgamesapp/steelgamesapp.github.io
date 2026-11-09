@@ -547,9 +547,20 @@ def details_existing_pages():
                 continue
             try:
                 page = open(f).read()
-                if 'class="wbstrip"' in page:
-                    continue  # already built with the current layout
                 m = re.search(r'data-steam="(\d+)"', page)
+                if 'class="wbstrip"' in page:
+                    # Current layout: only add the About text if it was written after the page was built.
+                    if 'class="block about"' in page or not m or not steam_meta.blurb(m.group(1)):
+                        continue
+                    meta = steam_meta.get(m.group(1))
+                    about = steam_meta.about_html(meta) if meta else ""
+                    anchor = page.find('<section class="block" id="media">')
+                    if anchor < 0:
+                        anchor = page.find("<!--gear-->")
+                    if about and anchor > 0:
+                        open(f, "w").write(page[:anchor] + about + page[anchor:])
+                        done += 1
+                    continue
                 meta = steam_meta.get(m.group(1)) if m else None
                 start = page.find(STORES_END)
                 end = page.find("<!--gear-->", start)
