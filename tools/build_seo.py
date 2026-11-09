@@ -114,6 +114,9 @@ class RateLimited(Exception):
 
 RATE_LIMITED = False  # once tripped, every later API call in this run fails instantly
 MAX_WAIT = 120        # longest pause we are willing to take for a short rate limit (seconds)
+MIN_GAP = 3.0         # seconds between price API calls; bursts were earning an hour-long block
+_last_call = [0.0]
+API_CALLS = [0]
 
 
 def get(path, params=None, tries=5):
@@ -127,6 +130,11 @@ def get(path, params=None, tries=5):
     url = API + path + ("?" + urllib.parse.urlencode(params) if params else "")
     req = urllib.request.Request(url, headers={"User-Agent": "SteelGames-SEO-Builder"})
     for attempt in range(tries):
+        gap = MIN_GAP - (time.time() - _last_call[0])
+        if gap > 0:
+            time.sleep(gap)
+        _last_call[0] = time.time()
+        API_CALLS[0] += 1
         try:
             with urllib.request.urlopen(req, timeout=30) as r:
                 return json.load(r)
@@ -162,21 +170,50 @@ FAILED = []  # steps that failed; surfaced as an Actions warning
 OFFLINE = False  # set by --sample so tests never touch the network
 
 
+_LOWS = {}  # lowest-ever price per game id, shared by every hub page in a run (many games repeat across hubs)
+
+
 def fetch_lows(gids):
     """Lowest price on record per game id, batched 25 at a time. Missing ids simply get no medal."""
-    out = {}
     if OFFLINE:
-        return out
-    gids = list(gids)
-    for i in range(0, len(gids), 25):
+        return {}
+    gids = [str(g) for g in dict.fromkeys(gids)]
+    todo = [g for g in gids if g not in _LOWS]
+    for i in range(0, len(todo), 25):
         try:
-            data = get("/games", {"ids": ",".join(gids[i:i + 25])})
+            data = get("/games", {"ids": ",".join(todo[i:i + 25])})
             for gid, g in data.items():
-                out[str(gid)] = float((g.get("cheapestPriceEver") or {}).get("price") or 0)
+                _LOWS[str(gid)] = float((g.get("cheapestPriceEver") or {}).get("price") or 0)
         except Exception as ex:
             print("lows failed", ex, file=sys.stderr)
-        time.sleep(0.3)
-    return out
+    return {g: _LOWS[g] for g in gids if g in _LOWS}
+
+
+def batched_games():
+    """Game lookups 25 ids per call instead of one call per game (about 16 calls instead of about 390).
+    A game missing from the batch answer falls back to its own call."""
+    cache = {}
+
+    def fetch(gid):
+        g = cache.get(str(gid))
+        if g and g.get("info") and "deals" in g:
+            return g
+        return get("/games", {"id": gid})
+
+    def prefetch(ids):
+        todo = [str(i) for i in ids if str(i) not in cache]
+        for i in range(0, len(todo), 25):
+            try:
+                data = get("/games", {"ids": ",".join(todo[i:i + 25])})
+                for gid, g in (data or {}).items():
+                    if isinstance(g, dict):
+                        cache[str(gid)] = g
+            except RateLimited:
+                raise
+            except Exception as ex:
+                print("game batch failed", ex, file=sys.stderr)
+    fetch.prefetch = prefetch
+    return fetch
 
 
 def page_html(p, deals, stores, today):
@@ -383,6 +420,8 @@ def build_games(stores, today, seeds, fetch_game):
         if gid not in ids:
             ids.append(gid)
     ids = ids[-GAME_CAP:]
+    if hasattr(fetch_game, "prefetch"):
+        fetch_game.prefetch(ids)
     entries, urls, keep = [], [], []
     tracked_slugs = {}
     base = os.path.join(ROOT, "game")
@@ -573,6 +612,28 @@ def main():
             return
         fetch = lambda q: get("/deals", {**q, "pageSize": 40, "onSale": 1})
     urls = [f"{SITE}/", f"{SITE}/games.html", f"{SITE}/keys.html", f"{SITE}/get-app/", f"{SITE}/gear.html", f"{SITE}/reviews.html", f"{SITE}/about.html", f"{SITE}/military.html", f"{SITE}/advertise.html", f"{SITE}/deals/", f"{SITE}/international.html"]
+    # Per-game pages first (most of the site), while the price API budget is fresh.
+    # Per-game pages: seed with today's top deals, then rebuild every tracked game.
+    try:
+        if sample:
+            seeds = ["1"]; fg = lambda gid: data["game"]
+        else:
+            seeds = []
+            for pg in range(6):
+                for d in get("/deals", {"sortBy": "Deal Rating", "onSale": 1, "pageSize": 60, "pageNumber": pg, "AAA": 0, "steamRating": 70}):
+                    if str(d.get("storeID")) in stores and str(d["gameID"]) not in seeds:
+                        seeds.append(str(d["gameID"]))
+                time.sleep(0.5)
+            fg = batched_games()
+        urls += build_games(stores, today, seeds, fg)
+    except Exception as ex:
+        print("games step failed", ex, file=sys.stderr)
+        FAILED.append("games")
+        # Keep existing game pages in the sitemap so a bad day doesn't de-index them.
+        gbase = os.path.join(ROOT, "game")
+        if os.path.isdir(gbase):
+            urls.append(f"{SITE}/game/")
+            urls += [f"{SITE}/game/{n}/" for n in sorted(os.listdir(gbase)) if os.path.isdir(os.path.join(gbase, n))]
     for p in PAGES:
         try:
             deals = fetch(p["q"])
@@ -594,27 +655,6 @@ def main():
         print("built", p["slug"], len(deals))
         if not sample:
             time.sleep(1.0)
-    # Per-game pages: seed with today's top deals, then rebuild every tracked game.
-    try:
-        if sample:
-            seeds = ["1"]; fg = lambda gid: data["game"]
-        else:
-            seeds = []
-            for pg in range(6):
-                for d in get("/deals", {"sortBy": "Deal Rating", "onSale": 1, "pageSize": 60, "pageNumber": pg, "AAA": 0, "steamRating": 70}):
-                    if str(d.get("storeID")) in stores and str(d["gameID"]) not in seeds:
-                        seeds.append(str(d["gameID"]))
-                time.sleep(0.5)
-            fg = lambda gid: get("/games", {"id": gid})
-        urls += build_games(stores, today, seeds, fg)
-    except Exception as ex:
-        print("games step failed", ex, file=sys.stderr)
-        FAILED.append("games")
-        # Keep existing game pages in the sitemap so a bad day doesn't de-index them.
-        gbase = os.path.join(ROOT, "game")
-        if os.path.isdir(gbase):
-            urls.append(f"{SITE}/game/")
-            urls += [f"{SITE}/game/{n}/" for n in sorted(os.listdir(gbase)) if os.path.isdir(os.path.join(gbase, n))]
     gdir = os.path.join(ROOT, "guides")
     if os.path.isdir(gdir):
         urls.append(f"{SITE}/guides/")
