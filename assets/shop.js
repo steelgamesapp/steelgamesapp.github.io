@@ -239,3 +239,5 @@
   const start = () => { nav(); sync(); setTimeout(alertCheck, 1500); };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
+/* Country-aware Amazon links: loads once per page, skipped where a page already includes it. */
+(() => { if (window.SGGeo || document.querySelector('script[src*="/assets/geo.js"]')) return; const s = document.createElement('script'); s.src = '/assets/geo.js?v=1'; s.async = true; document.head.appendChild(s); })();
