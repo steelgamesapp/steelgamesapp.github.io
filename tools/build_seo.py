@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import layout
 import games_page
 import keys_page
+import international_page
 import military_page
 import history
 import waitometer
@@ -527,7 +528,7 @@ def main():
             print(f"::warning title=Price API unavailable::skipped this run ({ex}); existing pages left unchanged")
             return
         fetch = lambda q: get("/deals", {**q, "pageSize": 40, "onSale": 1})
-    urls = [f"{SITE}/", f"{SITE}/games.html", f"{SITE}/keys.html", f"{SITE}/get-app/", f"{SITE}/gear.html", f"{SITE}/reviews.html", f"{SITE}/about.html", f"{SITE}/military.html", f"{SITE}/advertise.html", f"{SITE}/deals/"]
+    urls = [f"{SITE}/", f"{SITE}/games.html", f"{SITE}/keys.html", f"{SITE}/get-app/", f"{SITE}/gear.html", f"{SITE}/reviews.html", f"{SITE}/about.html", f"{SITE}/military.html", f"{SITE}/advertise.html", f"{SITE}/deals/", f"{SITE}/international.html"]
     for p in PAGES:
         try:
             deals = fetch(p["q"])
@@ -582,6 +583,7 @@ def main():
     gear.write_json(GEAR_GAMES)
     open(os.path.join(ROOT, "games.html"), "w").write(games_page.build())
     open(os.path.join(ROOT, "keys.html"), "w").write(keys_page.build())
+    open(os.path.join(ROOT, "international.html"), "w").write(international_page.build())
     os.makedirs(os.path.join(ROOT, "deal"), exist_ok=True)
     open(os.path.join(ROOT, "deal", "index.html"), "w").write(deal_page.build())
     open(os.path.join(ROOT, "wishlist.html"), "w").write(shop_pages.wishlist())
