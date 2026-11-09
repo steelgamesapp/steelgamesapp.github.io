@@ -488,6 +488,28 @@ def gear_existing_pages():
             print("gear failed for", name, ex, file=sys.stderr)
 
 
+def normalize_footer():
+    """One sitewide commission line. Pages the games step could not rebuild (price API rate limits) keep their old HTML,
+    so bring the footer wording on every generated page up to date in place. Safe to re-run: it only rewrites the old wording."""
+    old = re.compile(r"SteelGames may also earn a commission from other stores(?: and retailers)? linked on this site")
+    new = "We earn a commission from links on this site"
+    fixed = 0
+    for top in ("game", "deal", "deals", "pros"):
+        for dirpath, _dirs, files in os.walk(os.path.join(ROOT, top)):
+            for name in files:
+                if not name.endswith(".html"):
+                    continue
+                path = os.path.join(dirpath, name)
+                with open(path, encoding="utf-8", newline="") as fh:
+                    text = fh.read()
+                updated = old.sub(new, text)
+                if updated != text:
+                    with open(path, "w", encoding="utf-8", newline="") as fh:
+                        fh.write(updated)
+                    fixed += 1
+    print("footer wording updated on", fixed, "pages")
+
+
 def main():
     today = datetime.now(timezone.utc).strftime("%B %d, %Y").replace(" 0", " ")
     sample = sys.argv[sys.argv.index("--sample") + 1] if "--sample" in sys.argv else None
@@ -569,6 +591,10 @@ def main():
     open(os.path.join(ROOT, "military.html"), "w").write(military_page.build())
     os.makedirs(os.path.join(ROOT, "deals"), exist_ok=True)
     open(os.path.join(ROOT, "deals", "index.html"), "w").write(hub_html(today))
+    try:
+        normalize_footer()
+    except Exception as ex:
+        print("footer update failed", ex, file=sys.stderr)
     iso = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     open(os.path.join(ROOT, "sitemap.xml"), "w").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
