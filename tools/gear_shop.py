@@ -113,7 +113,6 @@ def card(url, img, name, blurb, chips, label, top=False, price=None, price_note=
             f'          <h4>{esc(name)}</h4>\n'
             f'          <p>{esc(blurb)}</p>{price_html}\n'
             f'          <a class="buy" href="{esc(url)}" {REL}>{esc(label)}{ARROW}</a>\n'
-            f'          <span class="earns">We earn a commission from this link</span>\n'
             f'        </article>')
 
 
