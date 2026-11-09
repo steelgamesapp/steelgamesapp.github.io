@@ -489,6 +489,50 @@ def gear_existing_pages():
             print("gear failed for", name, ex, file=sys.stderr)
 
 
+STORES_END = '</tbody></table>\n</div></section>\n'
+
+
+def details_existing_pages():
+    """Bring game pages kept from an earlier build up to the current layout: our own About text (data/blurbs.json),
+    the Works best on strip, trailer, screenshots and specs, all from saved Steam details. Needs no price API call,
+    so a day when the price API rate-limits still publishes new descriptions. Prices on those pages stay as they were."""
+    base = os.path.join(ROOT, "game")
+    if not os.path.isdir(base):
+        return
+    was, steam_meta.OFFLINE = steam_meta.OFFLINE, True  # saved details only: no Steam calls here
+    done = 0
+    try:
+        for name in sorted(os.listdir(base)):
+            f = os.path.join(base, name, "index.html")
+            if not os.path.isfile(f):
+                continue
+            try:
+                page = open(f).read()
+                if 'class="wbstrip"' in page:
+                    continue  # already built with the current layout
+                m = re.search(r'data-steam="(\d+)"', page)
+                meta = steam_meta.get(m.group(1)) if m else None
+                start = page.find(STORES_END)
+                end = page.find("<!--gear-->", start)
+                if not meta or start < 0 or end < 0:
+                    continue
+                start += len(STORES_END)
+                _desc, body = steam_meta.details_html(meta)
+                new = page[:start] + body + "\n" + page[end:]
+                hero_end = new.find("</div></section>", new.find('<section class="hero">'))
+                new = new[:hero_end] + steam_meta.strip_html(meta) + "\n" + new[hero_end:]
+                if "/assets/gamedetails.js" not in new:
+                    new = new.replace("</head>", '<script src="/assets/gamedetails.js" defer></script>\n</head>', 1)
+                if len(new) > 1000:  # never blank an existing page
+                    open(f, "w").write(new)
+                    done += 1
+            except Exception as ex:
+                print("details refresh failed for", name, ex, file=sys.stderr)
+    finally:
+        steam_meta.OFFLINE = was
+    print("refreshed game details on", done, "kept pages")
+
+
 def normalize_footer():
     """One sitewide commission line. Pages the games step could not rebuild (price API rate limits) keep their old HTML,
     so bring the footer wording on every generated page up to date in place. Safe to re-run: it only rewrites the old wording."""
@@ -576,6 +620,7 @@ def main():
         urls.append(f"{SITE}/guides/")
         urls += [f"{SITE}/guides/{n}/" for n in sorted(os.listdir(gdir)) if os.path.exists(os.path.join(gdir, n, "index.html"))]
     gear_existing_pages()
+    details_existing_pages()
     try:
         urls += pros.build_all()
     except Exception as ex:
