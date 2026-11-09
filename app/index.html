@@ -939,7 +939,7 @@ let products;
 try { products = await getProducts(); } catch { view.innerHTML = errorBox("Couldn't load gear. Check your connection and try again."); return; }
 const gi = {}; GEAR_GROUPS.forEach(([g, cats], n) => cats.forEach((c) => { gi[c] = n; }));
 const gcls = (c) => 'g' + (gi[c] ?? 0);
-const foot = '<div class="foot"><p>As an Amazon Associate, SteelGames earns from qualifying purchases.</p></div>';
+const foot = '<div class="foot"><p>As an Amazon Associate, SteelGames earns from qualifying purchases. We earn a commission from links in this app, at no extra cost to you.</p></div>';
 const newest = (x, y) => String(y.created_at).localeCompare(String(x.created_at));
 // Fills in real product pictures after the page is shown. The server returns {} until Amazon credentials are added, so cards keep their icon tiles.
 const hydrate = async () => {
