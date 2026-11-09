@@ -29,6 +29,34 @@ SOFTWARE = [
     ("Privacy", "#4DD0E1", "lock", "Password managers and VPN apps", "Keep your accounts safe, especially store logins that hold your whole game library.", ["Subscription", "Accounts"], "password manager"),
 ]
 
+# Budget license sellers (Impact partners). Each gets its own tracking link; the card says plainly what they are.
+# (color, icon, title, description, tags, Impact tracking base, page on the seller's site)
+BUDGET = [
+    ("#FFD43B", "win", "Esd Codes: discounted Windows and Office",
+     "A store selling used digital licenses for Windows, Office and antivirus at low prices. Read each product page to see exactly which license you are getting.",
+     ["Used digital licenses", "Third-party seller"], "https://ecokeyportalcollc.pxf.io/YVPPVO", "https://esdcodes.com/en/"),
+    ("#4DD0E1", "doc", "Macrosoft Store: Office, Windows and Adobe",
+     "A reseller that delivers Microsoft Office, Windows and Adobe licenses by email. Check the license type on the product page before you buy.",
+     ["Reseller", "Email delivery"], "https://macrosoftstoresrl.pxf.io/PzEEa6", "https://macrosoft.store/en/"),
+]
+
+
+def impact_link(base, page):
+    from urllib.parse import quote
+    return f"{base}?u={quote(page, safe='')}"
+
+
+def budget_section():
+    cards = "".join(
+        f'<a class="scard" style="--c:{c}" href="{impact_link(b, pg)}" target="_blank" rel="noopener sponsored nofollow"><span class="ph">{ICONS[ic]}</span>'
+        f'<h3>{t}</h3><p>{d}</p><span class="tags">{"".join(f"<span>{x}</span>" for x in tags)}</span><span class="go">Visit the store &rarr;</span></a>'
+        for c, ic, t, d, tags, b, pg in BUDGET)
+    return ('<section class="block" id="budget"><div class="wrap"><h2>Budget license keys</h2>'
+            '<p class="fine">These are usually much cheaper than retail, with trade-offs. They are third-party resellers, not Microsoft or Adobe, and their licenses can be volume, OEM or previously used. '
+            'If you want zero risk, buy retail from the software cards above. We may earn a commission if you buy through these links.</p>'
+            '<div class="sgrid">' + cards + '</div></div></section>\n')
+
+
 # (store name used by CheapShark or None, display name, color, trust key, description, homepage)
 RESELLERS = [
     ("Fanatical", "Fanatical", "#FF8A3D", "auth", "Official Steam keys, big bundles and frequent flash sales. A favorite for single-game discounts.", "https://www.fanatical.com"),
@@ -147,7 +175,7 @@ def build():
         "Be careful when a price is far below every other store. A great price is fine, an impossible one is a warning sign.",
         "Check the region and platform. Some keys only work in certain countries or on certain launchers like Steam, EA or Ubisoft.",
         "Redeem your key soon after buying and keep the receipt in case you need support.",
-        "For Windows and Office, buy a full retail license from a trusted seller and make sure it matches the version you want."], 1))
+        "For Windows and Office, a full retail license from a trusted seller is the safest buy. Budget keys cost less but come with trade-offs, so read the product page and keep your receipt."], 1))
     kd = key_deals.section(RESELLERS, keys_finder.affiliates())
     chip = '<a href="#today">Today\'s deals</a>' if kd else ""
     return (layout.head("Game Key Resellers and Software Deals | SteelGames",
@@ -160,7 +188,7 @@ def build():
 <h1>Game key resellers and software deals</h1>
 <p class="lede">Key stores often beat the official price. See who is running the best deals right now, how big their discounts are, and what to watch for before you buy.</p>
 <p class="fine">Black Friday is Nov 27. Before you buy a key, read <a href="/guides/black-friday-2026-pc-game-deals-guide/">our Black Friday shopping guide</a>, and see the <a href="/gear.html#deals">Black Friday gear deals and promo codes</a> for the rest of your setup.</p>
-<div class="chips">""" + chip + """<a href="#find">Find a key</a><a href="#resellers">Resellers</a><a href="#deals">Best key deals</a><a href="#software">Software deals</a><a href="#safe">Buying safely</a></div>
+<div class="chips">""" + chip + """<a href="#find">Find a key</a><a href="#resellers">Resellers</a><a href="#deals">Best key deals</a><a href="#software">Software deals</a><a href="#budget">Budget keys</a><a href="#safe">Buying safely</a></div>
 </div></section>
 """ + kd + keys_finder.SECTION + """<section class="block" id="resellers"><div class="wrap"><h2>Key resellers</h2>
 <p class="fine">Live stats come from current store listings. Marketplaces and stores we can't read live link straight to their sites.</p>
@@ -173,6 +201,6 @@ def build():
 <section class="block" id="software"><div class="wrap"><h2>Software deals</h2>
 <p class="fine">Everyday software for your gaming PC. Tap a card to compare current prices.</p>
 <div class="sgrid">""" + sw + """</div></div></section>
-<section class="block" id="safe"><div class="wrap"><h2>Buying keys safely</h2><div class="tips">""" + tips + """</div></div></section>
+""" + budget_section() + """<section class="block" id="safe"><div class="wrap"><h2>Buying keys safely</h2><div class="tips">""" + tips + """</div></div></section>
 </main>
 """ + SCRIPT.replace("__DATA__", js_data()) + keys_finder.tail(js_data()) + layout.footer())
