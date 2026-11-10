@@ -654,6 +654,13 @@ def main():
                     if str(d.get("storeID")) in stores and str(d["gameID"]) not in seeds:
                         seeds.append(str(d["gameID"]))
                 time.sleep(0.5)
+            # Popular games (Elden Ring, Cyberpunk...) get a price page even when not on sale: a few more every run.
+            try:
+                import popular
+                _have = json.load(open(GAME_IDS_FILE)) if os.path.exists(GAME_IDS_FILE) else []
+                seeds += [g for g in popular.next_seeds(get, _have + seeds) if g not in seeds]
+            except Exception as ex:
+                print("popular games step skipped:", ex, file=sys.stderr)
             fg = batched_games()
         urls += build_games(stores, today, seeds, fg)
     except Exception as ex:
