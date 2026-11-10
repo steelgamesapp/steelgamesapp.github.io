@@ -312,7 +312,12 @@ def hub_html(today):
 
 # ---------- Per-game price pages ----------
 import re, time
-GAME_CAP = 400          # most games tracked at once; the list grows a little every day
+GAME_CAP = 1000         # most games tracked at once; about 15 new ones are added a day, so this lasts weeks.
+#                         When the list hits the cap the oldest games' pages are deleted and start returning 404,
+#                         so keep this well above the current count (game/tracked.json) and raise it before it fills.
+# Games the old 400 cap dropped on 2026-11-09. Their pages 404'd after Google had already found them; put them back.
+RESTORE_IDS = ["195959", "226910", "173850", "220805", "228428", "643", "101423", "196050", "229583", "203925", "343", "216211",
+               "61", "141034", "192", "226505", "104616"]
 GAME_IDS_FILE = os.path.join(ROOT, "tools", "game_ids.json")
 
 
@@ -427,6 +432,9 @@ def build_games(stores, today, seeds, fetch_game):
         ids = json.load(open(GAME_IDS_FILE))
     except Exception:
         pass
+    for gid in RESTORE_IDS:
+        if gid not in ids:
+            ids.insert(0, gid)
     for gid in seeds:
         if gid not in ids:
             ids.append(gid)
