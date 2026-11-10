@@ -2,7 +2,7 @@
  "days": [
   {
    "date": "2026-11-10",
-   "updated": "2026-11-10 13:55 UTC",
+   "updated": "2026-11-10 18:51 UTC",
    "picks": [
     {
      "gameID": "219648",
@@ -13,7 +13,7 @@
      "normal": 14.99,
      "off": 92,
      "rating": 97,
-     "reviews": 5983,
+     "reviews": 5984,
      "steam": "990630",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990630/capsule_231x87.jpg?t=1725272727",
      "score": 9.7,
@@ -87,8 +87,8 @@
      "sale": 0.98,
      "normal": 6.99,
      "off": 86,
-     "rating": 86,
-     "reviews": 1013,
+     "rating": 85,
+     "reviews": 1014,
      "steam": "25900",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/25900/060cb16925874f30d19ca6208757f4abdc7f1cf8/capsule_231x87.jpg?t=1793289268",
      "score": 9.1,
@@ -118,7 +118,7 @@
      "normal": 29.99,
      "off": 85,
      "rating": 88,
-     "reviews": 3451,
+     "reviews": 3452,
      "steam": "699170",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/699170/capsule_231x87.jpg?t=1789474578",
      "score": 8.9,
