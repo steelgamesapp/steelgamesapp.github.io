@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+health_report.md
+health_report.json

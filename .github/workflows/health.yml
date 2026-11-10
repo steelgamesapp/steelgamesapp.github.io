@@ -1,0 +1,26 @@
+name: Nightly site health
+# Checks prices, links, images, search basics, the sitemap and the live site. Opens one GitHub issue only when something
+# needs attention. Runs after the morning page build (about 6:35 AM Central).
+on:
+  schedule:
+    - cron: "35 12 * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+  actions: write
+concurrency:
+  group: site-health
+  cancel-in-progress: false
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run the health check
+        run: python3 tools/health_check.py | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Open, update or close the issue (and rebuild stale pages)
+        run: python3 tools/health_notify.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
