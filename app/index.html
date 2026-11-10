@@ -379,7 +379,7 @@ function adSlot() {
 // Sponsored "Featured" spot. Edit /sponsors.json on the site to sell it; empty = "Advertise here" card.
 let sponsors = null;
 async function getSponsor() {
-  if (sponsors === null) { try { sponsors = (await getJSON(SITE + '/sponsors.json', {}, 3600_000)).filter((x) => x.active && (!x.ends || Date.parse(x.ends) > Date.now())); } catch { sponsors = []; } }
+  if (sponsors === null) { try { sponsors = (await getJSON(SITE + '/sponsors.json', {}, 3600_000)).filter((x) => x.active && (!x.ends || Date.parse(x.ends) > Date.now()) && (!x.slots && !x.slot || [].concat(x.slots || x.slot).includes('home'))); } catch { sponsors = []; } }
   return sponsors.length ? sponsors[Math.floor(Math.random() * sponsors.length)] : null;
 }
 async function sponsorCard() {

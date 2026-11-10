@@ -11,6 +11,7 @@ import games_page
 import keys_page
 import international_page
 import military_page
+import media_kit
 import history
 import waitometer
 import medals
@@ -713,6 +714,12 @@ def main():
     open(os.path.join(ROOT, "collection.html"), "w").write(shop_pages.collection())
     open(os.path.join(ROOT, "sync.html"), "w").write(shop_pages.sync())
     open(os.path.join(ROOT, "military.html"), "w").write(military_page.build())
+    try:  # advertiser media kit: counts come from the site's own files, so it stays true as the site grows
+        os.makedirs(os.path.join(ROOT, "media-kit"), exist_ok=True)
+        open(os.path.join(ROOT, "media-kit", "index.html"), "w").write(media_kit.build())
+        urls.append(f"{SITE}/media-kit/")
+    except Exception as ex:
+        print("media kit failed", ex, file=sys.stderr)
     os.makedirs(os.path.join(ROOT, "deals"), exist_ok=True)
     open(os.path.join(ROOT, "deals", "index.html"), "w").write(hub_html(today))
     try:
