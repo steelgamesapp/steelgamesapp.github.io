@@ -241,3 +241,17 @@
 })();
 /* Country-aware Amazon links: loads once per page, skipped where a page already includes it. */
 (() => { if (window.SGGeo || document.querySelector('script[src*="/assets/geo.js"]')) return; const s = document.createElement('script'); s.src = '/assets/geo.js?v=1'; s.async = true; document.head.appendChild(s); })();
+
+// Point every /deal/?id=N link at the game's own static page (/game/<slug>/) when it has one.
+// Those pages are indexable and load faster; /deal/ is the noindex fallback for untracked games.
+(() => {
+  let map = null;
+  const SEL = 'a[href^="/deal/?id="]';
+  const fix = (a) => { const m = /^\/deal\/\?id=(\d+)/.exec(a.getAttribute('href') || ''); if (m && map[m[1]]) a.setAttribute('href', '/game/' + map[m[1]] + '/'); };
+  const scan = (root) => { if (!map || !root || root.nodeType !== 1) return; if (root.matches(SEL)) fix(root); root.querySelectorAll(SEL).forEach(fix); };
+  fetch('/game/tracked.json').then((r) => r.json()).then((j) => {
+    map = j || {};
+    scan(document.documentElement);
+    new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach(scan))).observe(document.documentElement, { childList: true, subtree: true });
+  }).catch(() => {});
+})();
