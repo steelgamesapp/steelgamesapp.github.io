@@ -63,9 +63,9 @@ def amazon_img(asin):
 
 
 def amazon_alt(asin):
-    """Second try if the first photo fails: Amazon's Associates image link."""
-    return (f"https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN={asin}&Format=_SL400_&ID=AsinImage"
-            f"&MarketPlace=US&ServiceVersion=20070822&WS=1&tag={TAG}")
+    """Second try if the first photo fails: the same Amazon photo service on its older image host.
+    (The Associates widget host ws-na.amazon-adsystem.com no longer exists, so it must not be used.)"""
+    return f"https://images-na.ssl-images-amazon.com/images/P/{asin}.01.LZZZZZZZ.jpg"
 
 
 def brand_url(brand, handle):

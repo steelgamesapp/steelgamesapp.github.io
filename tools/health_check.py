@@ -41,6 +41,9 @@ SKIP_HOSTS = ("amazon.", "amzn.", "tiktok.com", "instagram.com", "facebook.com",
 AFFILIATE_HOSTS = ("sjv.io", "pxf.io", "awin1.com", "go.nordvpn.net", "go.nordpass.io", "redragonshop.com", "epomaker.com",
                    "lamzu.com", "cheapshark.com")
 
+# Hosts that no longer exist. Any page still pointing at one shows a broken picture or a dead link.
+DEAD_HOSTS = ("ws-na.amazon-adsystem.com",)
+
 OFFLINE = "--offline" in sys.argv
 TODAY = dt.datetime.now(dt.timezone.utc).date()
 DAY = TODAY.toordinal()
@@ -96,11 +99,15 @@ def check_pages():
     no_title, no_desc, no_canon, no_h1, bad_links, bad_imgs = [], [], [], [], {}, {}
     amazon_untagged, sponsor_rel, stale, undated = [], [], [], []
     outside_links, outside_imgs = {}, {}
+    dead_host_pages = []
     game_pages = 0
     for path in pages:
         s = read(path)
         u = url_for(path)
         rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
+        for h in DEAD_HOSTS:
+            if h in s:
+                dead_host_pages.append(f"{u}  ({s.count(h)} references to {h})")
         # Pages that are not meant to rank (private pages, app shell, embeds) are not held to the search basics.
         searchable = not re.search(r'<meta[^>]*name="robots"[^>]*noindex', s) and not (
             rel.startswith(("assets/", "app/", "social/")) or rel in ("embed.html",))
@@ -127,7 +134,7 @@ def check_pages():
                     sponsor_rel.append(f"{u} -> {host}")
                 if not any(h in host for h in SKIP_HOSTS) and "steelgamesapp.com" not in host:
                     outside_links.setdefault(href, u)
-        for m in re.finditer(r'<img\b[^>]*\bsrc="([^"]+)"', s):
+        for m in re.finditer(r'<img\b[^>]*?\b(?:src|data-alt)="([^"]+)"', s):
             src = htmllib.unescape(m.group(1))
             if src.startswith("/") and not src.startswith("//"):
                 if not exists_local(src):
@@ -146,6 +153,8 @@ def check_pages():
                         stale.append((u, (TODAY - d).days))
                 except ValueError:
                     undated.append(u)
+    if dead_host_pages:
+        add("high", "Images", "Pages that still point at a website that no longer exists (broken pictures or links)", dead_host_pages)
     if no_title: add("high", "SEO basics", "Pages with no title", no_title)
     if no_desc: add("medium", "SEO basics", "Pages with no (or a very short) meta description", no_desc)
     if no_canon: add("medium", "SEO basics", "Pages with no canonical link", no_canon)
