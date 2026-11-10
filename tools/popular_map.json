@@ -27,6 +27,10 @@
 "id": "196149",
 "title": "Hades"
 },
+"1172470": {
+"skip": "free to play",
+"title": "Apex Legends\u2122"
+},
 "1172620": {
 "id": "320276",
 "title": "Sea of Thieves: 2026 Edition"
@@ -35,13 +39,29 @@
 "id": "206516",
 "title": "Red Dead Redemption 2"
 },
+"1196590": {
+"id": "225336",
+"title": "Resident Evil Village"
+},
+"1237970": {
+"id": "153781",
+"title": "Titanfall 2"
+},
 "1245620": {
 "id": "236717",
 "title": "ELDEN RING"
 },
+"1281930": {
+"skip": "not a game",
+"title": "tModLoader"
+},
 "1332010": {
 "id": "247173",
 "title": "Stray"
+},
+"1422450": {
+"skip": "not on the price API",
+"title": "Deadlock"
 },
 "1426210": {
 "id": "223989",
@@ -59,6 +79,18 @@
 "id": "263850",
 "title": "Starfield"
 },
+"1808500": {
+"id": "308654",
+"title": "ARC Raiders"
+},
+"1817070": {
+"id": "248711",
+"title": "Marvels Spider-Man Remastered"
+},
+"1867240": {
+"id": "328808",
+"title": "WARDOGS"
+},
 "1868140": {
 "id": "252614",
 "title": "DAVE THE DIVER"
@@ -67,25 +99,69 @@
 "id": "297214",
 "title": "Clair Obscur: Expedition 33"
 },
+"1938090": {
+"skip": "not on the price API",
+"title": "Call of Duty\u00ae"
+},
 "1966720": {
 "id": "276648",
 "title": "Lethal Company"
+},
+"1973530": {
+"skip": "free to play",
+"title": "Limbus Company"
 },
 "2050650": {
 "id": "106762",
 "title": "Resident Evil 4"
 },
+"2138710": {
+"id": "233850",
+"title": "Sifu"
+},
 "2246340": {
 "id": "287215",
 "title": "Monster Hunter Wilds"
+},
+"227300": {
+"id": "93389",
+"title": "Euro Truck Simulator 2"
+},
+"230410": {
+"skip": "free to play",
+"title": "Warframe"
+},
+"2357570": {
+"skip": "free to play",
+"title": "Overwatch\u00ae"
 },
 "2358720": {
 "id": "287845",
 "title": "Black Myth: Wukong"
 },
+"236390": {
+"skip": "free to play",
+"title": "War Thunder"
+},
 "2379780": {
 "id": "281345",
 "title": "Balatro"
+},
+"2507950": {
+"skip": "free to play",
+"title": "Delta Force"
+},
+"250900": {
+"id": "127266",
+"title": "The Binding of Isaac: Rebirth"
+},
+"2519060": {
+"id": "269809",
+"title": "Call of Duty: Modern Warfare III"
+},
+"252490": {
+"id": "104006",
+"title": "Rust"
 },
 "264710": {
 "id": "140643",
@@ -99,6 +175,18 @@
 "id": "150691",
 "title": "No Man's Sky"
 },
+"2767030": {
+"skip": "free to play",
+"title": "Marvel Rivals"
+},
+"2807960": {
+"skip": "not on the price API",
+"title": "Battlefield\u2122 6"
+},
+"2868840": {
+"id": "317211",
+"title": "Slay the Spire 2"
+},
 "289070": {
 "id": "152578",
 "title": "Sid Meiers Civilization VI"
@@ -110,6 +198,26 @@
 "294100": {
 "id": "154946",
 "title": "RimWorld"
+},
+"322170": {
+"id": "166239",
+"title": "Geometry Dash"
+},
+"3240220": {
+"id": "298615",
+"title": "Grand Theft Auto V Enhanced"
+},
+"3241660": {
+"id": "298392",
+"title": "R.E.P.O."
+},
+"3393110": {
+"skip": "free to play",
+"title": "AION 2"
+},
+"359550": {
+"skip": "free to play",
+"title": "Tom Clancy's Rainbow Six Siege"
 },
 "367520": {
 "id": "165363",
@@ -123,13 +231,37 @@
 "id": "144222",
 "title": "Fallout 4"
 },
+"381210": {
+"id": "152058",
+"title": "Dead by Daylight"
+},
+"4115450": {
+"id": "328839",
+"title": "Phantom Blade Zero"
+},
 "413150": {
 "id": "150036",
 "title": "Stardew Valley"
 },
+"4262460": {
+"skip": "free to play",
+"title": "ROB RUN"
+},
 "427520": {
 "id": "150308",
 "title": "Factorio"
+},
+"431960": {
+"skip": "not on the price API",
+"title": "Wallpaper Engine"
+},
+"4348910": {
+"id": "334508",
+"title": "Probably Stolen - Cyberpunk Shopkeeper Sim"
+},
+"440": {
+"skip": "free to play",
+"title": "Team Fortress 2"
 },
 "489830": {
 "id": "160759",
@@ -139,9 +271,25 @@
 "id": "199566",
 "title": "Satisfactory"
 },
+"550": {
+"id": "43",
+"title": "Left 4 Dead 2"
+},
 "553850": {
 "id": "268290",
 "title": "HELLDIVERS 2"
+},
+"570": {
+"skip": "free to play",
+"title": "Dota 2"
+},
+"578080": {
+"skip": "free to play",
+"title": "PUBG: BATTLEGROUNDS"
+},
+"620": {
+"id": "36",
+"title": "Portal 2"
 },
 "632470": {
 "id": "227942",
@@ -150,6 +298,10 @@
 "646570": {
 "id": "175271",
 "title": "Slay the Spire"
+},
+"730": {
+"skip": "free to play",
+"title": "Counter-Strike 2"
 },
 "739630": {
 "id": "220666",
