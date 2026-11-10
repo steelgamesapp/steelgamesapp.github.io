@@ -39,6 +39,10 @@
 "id": "196149",
 "title": "Hades"
 },
+"1158310": {
+"id": "215441",
+"title": "Crusader Kings III"
+},
 "1172470": {
 "skip": "free to play",
 "title": "Apex Legends\u2122"
@@ -78,6 +82,10 @@
 "1281930": {
 "skip": "not a game",
 "title": "tModLoader"
+},
+"1304930": {
+"id": "260874",
+"title": "The Outlast Trials"
 },
 "1332010": {
 "id": "247173",
@@ -175,6 +183,14 @@
 "id": "233850",
 "title": "Sifu"
 },
+"2139460": {
+"skip": "free to play",
+"title": "Once Human"
+},
+"2183900": {
+"id": "286574",
+"title": "Warhammer 40,000: Space Marine 2"
+},
 "221100": {
 "id": "104077",
 "title": "DayZ"
@@ -210,6 +226,10 @@
 "2379780": {
 "id": "281345",
 "title": "Balatro"
+},
+"2399830": {
+"id": "276883",
+"title": "ARK: Survival Ascended"
 },
 "244210": {
 "id": "102717",
@@ -250,6 +270,10 @@
 "264710": {
 "id": "140643",
 "title": "Subnautica"
+},
+"2694490": {
+"id": "295364",
+"title": "Path of Exile 2"
 },
 "271590": {
 "skip": "not on the price API",
@@ -331,6 +355,10 @@
 "skip": "not on the price API",
 "title": "PEAK"
 },
+"3557620": {
+"skip": "free to play",
+"title": "Blue Archive"
+},
 "359550": {
 "skip": "free to play",
 "title": "Tom Clancy's Rainbow Six Siege"
@@ -355,6 +383,10 @@
 "id": "152058",
 "title": "Dead by Daylight"
 },
+"3932890": {
+"id": "311731",
+"title": "Escape from Tarkov"
+},
 "394360": {
 "id": "152738",
 "title": "Hearts of Iron IV"
@@ -362,6 +394,10 @@
 "4000": {
 "id": "110",
 "title": "Garry's Mod"
+},
+"4019220": {
+"id": "331996",
+"title": "Dressmaker"
 },
 "4080220": {
 "id": "327581",
@@ -379,6 +415,10 @@
 "id": "150036",
 "title": "Stardew Valley"
 },
+"4162040": {
+"skip": "free to play",
+"title": "Zenless Zone Zero"
+},
 "4262460": {
 "skip": "free to play",
 "title": "ROB RUN"
@@ -394,6 +434,10 @@
 "4348910": {
 "id": "334508",
 "title": "Probably Stolen - Cyberpunk Shopkeeper Sim"
+},
+"4356430": {
+"id": "327456",
+"title": "NBA 2K27"
 },
 "438100": {
 "skip": "free to play",
@@ -431,6 +475,10 @@
 "skip": "free to play",
 "title": "PUBG: BATTLEGROUNDS"
 },
+"594650": {
+"id": "290324",
+"title": "Hunt: Showdown 1896"
+},
 "620": {
 "id": "36",
 "title": "Portal 2"
@@ -442,6 +490,10 @@
 "646570": {
 "id": "175271",
 "title": "Slay the Spire"
+},
+"714010": {
+"skip": "free to play",
+"title": "Aimlabs"
 },
 "730": {
 "skip": "free to play",
@@ -462,5 +514,9 @@
 "892970": {
 "id": "225747",
 "title": "Valheim"
+},
+"960090": {
+"id": "196536",
+"title": "Bloons TD 6"
 }
 }
