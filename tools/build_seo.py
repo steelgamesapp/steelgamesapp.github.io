@@ -216,8 +216,17 @@ def batched_games():
     return fetch
 
 
+def tracked_slugs():
+    """gameID -> slug for every game that has its own indexable /game/<slug>/ page (written by build_games)."""
+    try:
+        return json.load(open(os.path.join(ROOT, "game", "tracked.json")))
+    except Exception:
+        return {}
+
+
 def page_html(p, deals, stores, today):
     e = html.escape
+    slugs = tracked_slugs()
     url = f"{SITE}/deals/{p['slug']}/"
     best = {}
     for d in deals:
@@ -233,7 +242,9 @@ def page_html(p, deals, stores, today):
         sav = round(float(d.get("savings") or 0))
         rate = d.get("steamRatingPercent")
         rating = f" · {rate}% positive ({e(d.get('steamRatingText') or '')})" if rate and rate != "0" else ""
-        link = f"{SITE}/deal/?id={d.get('gameID')}"
+        _gid = str(d.get("gameID"))
+        # Link to the indexable game page when we have one; /deal/ is a noindex, client-rendered fallback.
+        link = f"{SITE}/game/{slugs[_gid]}/" if _gid in slugs else f"{SITE}/deal/?id={_gid}"
         price = float(d.get("salePrice") or 0)
         price_txt = "Free" if price == 0 else money(price)
         was = f'<span class="was">{money(d.get("normalPrice"))}</span>' if sav > 0 else ""
@@ -248,12 +259,12 @@ def page_html(p, deals, stores, today):
             f'<img src="{e(layout.img_for(d))}" alt="" loading="lazy" width="184" height="69">'
             f'<span class="txt"><span class="t">{e(d.get("title", ""))}</span><span class="m"><b>{e(store)}</b>{rating}{mchip}</span></span>'
             f'<span class="pr"><span><span class="price">{price_txt}</span>{was}</span>{off}</span></a>{_h}</div>')
-        items.append({"@type": "ListItem", "position": i, "url": link, "name": d.get("title", "")})
+        if _gid in slugs:  # only list URLs Google may index; the /deal/ fallback is noindex
+            items.append({"@type": "ListItem", "position": len(items) + 1, "url": link, "name": d.get("title", "")})
     listing = ('<div class="deal-list">' + "".join(rows) + "</div>") if rows else '<p class="empty">No deals match right now. Check back tomorrow.</p>'
     faq_html = "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in p["faq"])
     others = "".join(f"<a href=\"/deals/{o['slug']}/\">{e(o['h1'])}</a>" for o in PAGES if o["slug"] != p["slug"] and not o["slug"].startswith("deals-"))
-    ld = json.dumps([
-        {"@context": "https://schema.org", "@type": "ItemList", "name": p["h1"], "itemListElement": items},
+    ld = json.dumps(([{"@context": "https://schema.org", "@type": "ItemList", "name": p["h1"], "itemListElement": items}] if items else []) + [
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in p["faq"]]},
     ]).replace("<", "\\u003c")

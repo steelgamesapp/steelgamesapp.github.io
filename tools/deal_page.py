@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   const id = new URLSearchParams(location.search).get('id');
   const fail = (m) => { out.innerHTML = '<div class="wrap" style="padding-block:48px"><h1 style="font-size:32px">' + m + '</h1><p class="lede" style="margin-top:10px"><a href="/games.html">Browse all games</a></p></div>'; };
   if (!id || !/^\d+$/.test(id)) return fail('Game not found');
+  // Games with their own indexable page: go there instead of rendering this noindex fallback.
+  try { const tr = await fetch('/game/tracked.json').then((r) => r.json()); if (tr && tr[id]) { location.replace('/game/' + tr[id] + '/'); return; } } catch (e) { /* fall through to the live view */ }
   try {
     const [stores, g] = await Promise.all([fetch(API + '/stores').then((r) => r.json()), fetch(API + '/games?id=' + id).then((r) => r.json())]);
     const names = Object.fromEntries(stores.filter((s) => s.isActive).map((s) => [s.storeID, s.storeName]));

@@ -55,7 +55,7 @@ def footer():
   <div class="wrap">
     <span class="vet-badge">{STAR}Veteran-owned and operated</span>
     <div class="footer-links">
-      <a href="/games.html">Games</a><a href="/keys.html">Key resellers</a><a href="/deals/">Deal lists</a><a href="/gear.html">Shop gear</a><a href="/pros/">Pro setups</a><a href="/military.html">Veteran discounts</a>
+      <a href="/games.html">Games</a><a href="/game/">All game prices</a><a href="/keys.html">Key resellers</a><a href="/deals/">Deal lists</a><a href="/gear.html">Shop gear</a><a href="/pros/">Pro setups</a><a href="/military.html">Veteran discounts</a>
       <a href="/about.html">About</a><a href="/privacy.html">Privacy policy</a><a href="/terms.html">Terms of use</a><a href="/advertise.html">Advertise</a>
       <a href="https://www.tiktok.com/@steelgamesapp" rel="noopener">TikTok</a><a href="https://www.instagram.com/steelgamesapp/" rel="noopener">Instagram</a><a href="https://chromewebstore.google.com/detail/digihifdddmmflefajfemioefidnoaif" rel="noopener">Chrome extension</a><a href="mailto:steelgames.app@outlook.com">Contact us</a><span>© 2026 Lonestar PPS, LLC</span>
     </div>
