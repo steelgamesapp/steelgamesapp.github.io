@@ -272,7 +272,7 @@ def media_html(m):
         mv = movies[0]
         poster = (shots[0]["t"] if shots else mv.get("t")) or ""
         trailer = (f'<button type="button" class="trailer" data-hls="{_e(mv.get("hls"))}" data-mp4="{_e(mv.get("mp4"))}" data-poster="{_e(poster)}" aria-label="Play the {_e(name)} trailer">'
-                   f'<img src="{_e(poster)}" alt="" loading="lazy" width="600" height="338"><span class="play">{PLAY}</span><span class="tcap">Watch the trailer</span></button>')
+                   f'<img src="{_e(poster)}" alt="Trailer preview" loading="lazy" width="600" height="338"><span class="play">{PLAY}</span><span class="tcap">Watch the trailer</span></button>')
     cells = "".join(f'<a href="{_e(s["f"])}" target="_blank" rel="noopener" data-full="{_e(s["f"])}"><img src="{_e(s["t"])}" alt="Screenshot {i} of {_e(name)}" loading="lazy" width="300" height="169"></a>'
                     for i, s in enumerate(shots, 1))
     return (f'<section class="block" id="media"><div class="wrap"><h2>Trailer and screenshots</h2>'

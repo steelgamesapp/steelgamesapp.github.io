@@ -257,7 +257,7 @@ def page_html(p, deals, stores, today):
               f' data-steam="{e(str(d.get("steamAppID") or "") if str(d.get("steamAppID") or "") != "0" else "")}" data-price="{price:.2f}" aria-pressed="false">{layout.HEART}</button>')
         rows.append(
             f'<div class="drow-w"><a class="drow" style="--store:{col}" href="{e(link)}"><span class="n">{i}</span>'
-            f'<img src="{e(layout.img_for(d))}" alt="" loading="lazy" width="184" height="69">'
+            f'<img src="{e(layout.img_for(d))}" alt="{e(d.get("title", ""))} cover art" loading="lazy" width="184" height="69">'
             f'<span class="txt"><span class="t">{e(d.get("title", ""))}</span><span class="m"><b>{e(store)}</b>{rating}{mchip}</span></span>'
             f'<span class="pr"><span><span class="price">{price_txt}</span>{was}</span>{off}</span></a>{_h}</div>')
         if _gid in slugs:  # only list URLs Google may index; the /deal/ fallback is noindex
@@ -508,7 +508,7 @@ def build_games(stores, today, seeds, fetch_game):
                 shutil.rmtree(os.path.join(base, name))
     cards = "".join(
         md if im is None else  # reused card from yesterday (fetch failed today)
-        f'<a class="gcard" href="/game/{s}/"><span class="pic"><img src="{html.escape(im)}" alt="" loading="lazy" width="460" height="215"></span>'
+        f'<a class="gcard" href="/game/{s}/"><span class="pic"><img src="{html.escape(im)}" alt="{html.escape(t)} cover art" loading="lazy" width="460" height="215"></span>'
         f'<span class="info"><span class="t">{html.escape(t)}</span><span class="row"><span class="price">{pr}</span>{medals.chip(md) if md else ""}</span></span></a>'
         for s, t, im, pr, md in sorted(entries, key=lambda x: x[1].lower()))
     os.makedirs(base, exist_ok=True)

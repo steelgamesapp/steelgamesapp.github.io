@@ -1,0 +1,17 @@
+/* SteelGames mobile + touch polish (Emil Kowalski mobile-native / Impeccable craft floor) */
+html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%}
+/* iPhone zooms into form fields under 16px; keep them at 16px on touch screens */
+@media (pointer:coarse){input,select,textarea{font-size:16px!important}}
+/* Bigger tap targets on touch screens, no layout change on desktop */
+@media (pointer:coarse){
+  a,button,[role="button"],select,summary{touch-action:manipulation}
+  button,select,[role="button"],.chip,.pill,nav a,header a,footer a{min-height:44px}
+  nav a,header a,footer a{display:inline-flex;align-items:center}
+  /* Undo hover lift/highlight that sticks after a tap */
+  a:hover,button:hover,[class*="card"]:hover,[class*="tile"]:hover,[class*="row"]:hover{transform:none!important}
+}
+/* Controls should not get their label selected on long-press */
+button,[role="button"],select,.chip,.pill{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+/* Press feedback that works on touch and mouse */
+button:active,[role="button"]:active{transform:scale(.97);transition:transform 100ms cubic-bezier(.23,1,.32,1)}
+@media (prefers-reduced-motion:reduce){button:active,[role="button"]:active{transform:none}}

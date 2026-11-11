@@ -36,7 +36,7 @@ def head(title, desc, canonical, extra=""):
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
 <script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script src="/assets/shop.js" defer></script>
-{extra}</head>
+{extra}<link rel="stylesheet" href="/assets/mobile.css"></head>
 <body>
 """
 

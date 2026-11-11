@@ -426,7 +426,7 @@ img.noimg { visibility: hidden; }
 <link rel="stylesheet" href="/assets/vivid.css">
 <script src="/assets/shop.js" defer></script>
 <script src="/assets/sponsors.js" defer></script>
-</head>
+<link rel="stylesheet" href="/assets/mobile.css"></head>
 <body>
 <header class="site-header">
   <div class="wrap wrap-wide">
@@ -656,7 +656,7 @@ img.noimg { visibility: hidden; }
   };
   const SZ = { hero: ['library_hero', 'capsule_616x353', 'header'], tile: ['header', 'capsule_616x353'], row: ['header', 'capsule_184x69'] };
   const srcs = (g, k) => (g.a ? SZ[k].map((f) => CDN + g.a + '/' + f + '.jpg') : []).concat(g.th ? [g.th] : []);
-  const img = (g, k) => { const s = srcs(g, k); return '<img' + (s[0] ? ' src="' + esc(s[0]) + '"' : ' class="noimg"') + ' data-fb="' + esc(s.slice(1).join(' ')) + '" onerror="sgImg(this)" alt="" loading="lazy" decoding="async">'; };
+  const img = (g, k) => { const s = srcs(g, k); return '<img' + (s[0] ? ' src="' + esc(s[0]) + '"' : ' class="noimg"') + ' data-fb="' + esc(s.slice(1).join(' ')) + '" onerror="sgImg(this)" alt="' + esc(g.t || '') + ' cover art" loading="lazy" decoding="async">'; };
 
   // Network: two requests at a time, a retry on busy or failed calls, cached in the browser.
   let busy = 0; const waiting = [];
