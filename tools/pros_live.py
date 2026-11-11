@@ -85,25 +85,36 @@ def parse_spot(page):
 
 
 def backfill(ram):
-    """First run only: fill past months from public Wayback Machine snapshots of the DRAMeXchange home page."""
-    if len(ram["spot"].get("DDR5", [])) >= 20:
+    """Fill past months from public Wayback Machine snapshots of the DRAMeXchange home page, a few per run.
+
+    The archive rate-limits hard, so each run fetches at most 6 snapshots, waits between them and stops at the first
+    failure. Snapshots already tried are remembered in ram["bf_done"], so a day of two-hourly runs fills about 60 days."""
+    done = set(ram.setdefault("bf_done", []))
+    todo = ram.get("bf_todo")
+    if todo is None:
+        cdx = get("https://web.archive.org/cdx/search/cdx?url=dramexchange.com/&output=json&fl=timestamp&filter=statuscode:200"
+                  "&collapse=timestamp:8&from=" + (dt.date.today() - dt.timedelta(days=150)).strftime("%Y%m%d"), tries=1)
+        try:
+            stamps = [r[0] for r in json.loads(cdx)[1:]]
+        except Exception:
+            return
+        ram["bf_todo"] = todo = stamps[::max(1, len(stamps) // 60)][::-1]  # newest first, about 60 days
+    left = [t for t in todo if t not in done]
+    if not left:
         return
-    cdx = get("https://web.archive.org/cdx/search/cdx?url=dramexchange.com/&output=json&fl=timestamp&filter=statuscode:200"
-              "&collapse=timestamp:8&from=" + (dt.date.today() - dt.timedelta(days=150)).strftime("%Y%m%d"), tries=2)
-    try:
-        stamps = [r[0] for r in json.loads(cdx)[1:]]
-    except Exception:
-        return
-    stamps = stamps[::max(1, len(stamps) // 60)]  # about 60 days spread over the window
-    for ts in stamps:
+    for ts in left[:6]:
         page = get(f"https://web.archive.org/web/{ts}id_/https://www.dramexchange.com/", tries=1)
+        if not page:
+            break
+        done.add(ts)
         rows, when = parse_spot(page)
         when = when or dt.datetime.strptime(ts, "%Y%m%d%H%M%S").isoformat() + "Z"
         for sym, r in rows.items():
             ram["spot"].setdefault(sym, []).append([when, r["avg"]])
-        time.sleep(1.5)
+        time.sleep(8)
+    ram["bf_done"] = sorted(done)
     for sym in ram["spot"]:
-        ram["spot"][sym] = sorted({p[0]: p for p in ram["spot"][sym]}.values())
+        ram["spot"][sym] = sorted({p[0]: p for p in ram["spot"][sym]}.values())[-MAX_POINTS:]
 
 
 def update_spot(ram):
