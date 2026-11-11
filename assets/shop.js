@@ -50,8 +50,14 @@
     document.querySelectorAll('[data-count="wish"]').forEach((e) => { e.textContent = w; e.hidden = !w; });
     document.querySelectorAll('[data-count="cart"]').forEach((e) => { e.textContent = c; e.hidden = !c; });
   };
+  /* Veterans tab: gold with a star on every page, so veterans and their families find it. */
+  const vetTab = (n) => {
+    const v = n.querySelector('a[href="/military.html"]'); if (!v || v.dataset.vet) return; v.dataset.vet = '1';
+    v.style.color = '#FFB020'; v.style.fontWeight = '700';
+    v.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>' + v.textContent;
+  };
   const nav = () => {
-    const n = document.querySelector('.nav'); if (!n || n.querySelector('.nav-ico')) return;
+    const n = document.querySelector('.nav'); if (n) vetTab(n); if (!n || n.querySelector('.nav-ico')) return;
     const cta = n.querySelector('.nav-cta');
     const mk = (href, icon, label, key) => { const a = document.createElement('a'); a.className = 'nav-ico'; a.href = href; a.setAttribute('aria-label', label); a.innerHTML = icon + '<span class="cnt" data-count="' + key + '" hidden>0</span>'; return a; };
     const a1 = mk('/wishlist.html', HEART, 'Wishlist', 'wish'), a2 = mk('/cart.html', CART, 'Cart', 'cart');
