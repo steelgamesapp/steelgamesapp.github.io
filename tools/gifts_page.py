@@ -198,7 +198,7 @@ def main():
 
     jump_html = "\n".join(f'      <a href="#{sid}">{esc(label)}</a>' for sid, label in jump)
     star = re.search(r'<span class="vet-badge"[^>]*>.*?</span>', gear, re.S).group(0)
-    body = f"""<body>
+    body = f"""<body><a class="skip" href="#main" onclick="var m=document.querySelector('main');if(m){{m.setAttribute('tabindex','-1');m.focus();m.scrollIntoView();}}return false;">Skip to content</a>
 {header}
 
 <main>

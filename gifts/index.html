@@ -164,7 +164,7 @@ p { margin: 0; }
 <link rel="stylesheet" href="/assets/vivid.css">
 <script src="/assets/shop.js" defer></script>
 <script src="/assets/sponsors.js" defer></script>
-<style>
+<link rel="stylesheet" href="/assets/mobile.css"><style>
 .gift-dates{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
 .gift-dates span{background:var(--surface);border:1px solid var(--line-strong);border-radius:12px;padding:8px 12px;font-size:15px;color:var(--steel)}
 .gift-dates b{color:#fff}
@@ -176,8 +176,8 @@ p { margin: 0; }
 .link-list a:hover{border-color:var(--accent);color:#fff}
 .group.is-empty{display:none}
 </style>
-<link rel="stylesheet" href="/assets/mobile.css"></head>
-<body>
+</head>
+<body><a class="skip" href="#main" onclick="var m=document.querySelector('main');if(m){m.setAttribute('tabindex','-1');m.focus();m.scrollIntoView();}return false;">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="SteelGames home">

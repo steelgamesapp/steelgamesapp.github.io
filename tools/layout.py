@@ -37,7 +37,7 @@ def head(title, desc, canonical, extra=""):
 <script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script src="/assets/shop.js" defer></script>
 {extra}<link rel="stylesheet" href="/assets/mobile.css"></head>
-<body>
+<body><a class="skip" href="#main" onclick="var m=document.querySelector('main');if(m){{m.setAttribute('tabindex','-1');m.focus();m.scrollIntoView();}}return false;">Skip to content</a>
 """
 
 

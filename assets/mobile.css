@@ -15,3 +15,10 @@ button,[role="button"],select,.chip,.pill{-webkit-user-select:none;user-select:n
 /* Press feedback that works on touch and mouse */
 button:active,[role="button"]:active{transform:scale(.97);transition:transform 100ms cubic-bezier(.23,1,.32,1)}
 @media (prefers-reduced-motion:reduce){button:active,[role="button"]:active{transform:none}}
+
+/* Skip link: hidden until keyboard focus */
+.skip{position:absolute;left:12px;top:-60px;z-index:1000;background:#FFFFFF;color:#0F0A24;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;transition:top 120ms cubic-bezier(.23,1,.32,1)}
+.skip:focus{top:12px}
+main:focus{outline:none}
+/* Keyboard focus ring on every control, theme colored */
+select:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid #8F7BFF;outline-offset:3px;border-radius:6px}
