@@ -54,7 +54,8 @@
   const vetTab = (n) => {
     const v = n.querySelector('a[href="/military.html"]'); if (!v || v.dataset.vet) return; v.dataset.vet = '1';
     v.style.color = '#FFB020'; v.style.fontWeight = '700';
-    v.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>' + v.textContent;
+    v.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>' + 'Veteran Hub';
+    n.insertBefore(v, n.firstElementChild); /* first tab, so phones see it without scrolling the nav */
   };
   const nav = () => {
     const n = document.querySelector('.nav'); if (n) vetTab(n); if (!n || n.querySelector('.nav-ico')) return;
