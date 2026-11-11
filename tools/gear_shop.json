@@ -985,6 +985,69 @@
   "amazon_new_cats": [
     {
       "group": "pc-parts",
+      "after": "Processors",
+      "title": "Motherboards",
+      "items": [
+        {
+          "asin": "B0BH7GTY9C",
+          "name": "GIGABYTE B650 AORUS Elite AX Motherboard",
+          "blurb": "An AM5 board for Ryzen 7000, 8000 and 9000 chips with Wi-Fi 6E and room for three M.2 SSDs.",
+          "chips": [
+            [
+              "pc",
+              "PC"
+            ]
+          ],
+          "top": true
+        },
+        {
+          "asin": "B0BHCCNSRH",
+          "name": "MSI MAG B650 Tomahawk WiFi Motherboard",
+          "blurb": "A popular AM5 board with strong power delivery for X3D gaming chips, plus Wi-Fi and 2.5G Ethernet.",
+          "chips": [
+            [
+              "pc",
+              "PC"
+            ]
+          ]
+        },
+        {
+          "asin": "B0CB6XZ7RH",
+          "name": "MSI B650 Gaming Plus WiFi Motherboard",
+          "blurb": "A value AM5 board that covers the basics well for a Ryzen gaming build.",
+          "chips": [
+            [
+              "pc",
+              "PC"
+            ]
+          ]
+        },
+        {
+          "asin": "B0C15THTK7",
+          "name": "MSI B760 Gaming Plus WiFi Motherboard (DDR5)",
+          "blurb": "An Intel LGA 1700 board for 12th to 14th Gen Core chips with DDR5 and Wi-Fi.",
+          "chips": [
+            [
+              "pc",
+              "PC"
+            ]
+          ]
+        },
+        {
+          "asin": "B0BZT9KYNB",
+          "name": "ASUS TUF Gaming B760-Plus WiFi Motherboard",
+          "blurb": "A sturdy Intel 12th to 14th Gen board with Wi-Fi 6 and 2.5G Ethernet.",
+          "chips": [
+            [
+              "pc",
+              "PC"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "group": "pc-parts",
       "after": "Storage",
       "title": "PC cases",
       "items": [
@@ -1098,6 +1161,139 @@
           ]
         }
       ]
+    },
+    {
+      "group": "desk-setup",
+      "after": "Gaming chairs",
+      "title": "Chair cushions",
+      "items": [
+        {
+          "asin": "B0BWNHSJ21",
+          "name": "CloudBliss Seat Cushion and Lumbar Pillow Set",
+          "blurb": "A memory foam seat cushion plus a back pillow to make long gaming sessions easier on your back.",
+          "chips": [
+            [
+              "all",
+              "Any platform"
+            ]
+          ],
+          "top": true,
+          "img": "61tiWRylRFL"
+        },
+        {
+          "asin": "B0BFPJ5VR3",
+          "name": "CushZone Seat Cushion and Lumbar Support Pillow",
+          "blurb": "A matching memory foam seat and lower-back pillow that strap onto most gaming and office chairs.",
+          "chips": [
+            [
+              "all",
+              "Any platform"
+            ]
+          ],
+          "img": "71lwU7wuVfL"
+        }
+      ]
+    },
+    {
+      "group": "desk-setup",
+      "after": "Mousepads",
+      "title": "Wrist rests",
+      "items": [
+        {
+          "asin": "B07GP7JXQY",
+          "name": "HyperX Wrist Rest, Full Size",
+          "blurb": "A cooling gel memory foam rest for full-size keyboards.",
+          "chips": [
+            [
+              "all",
+              "Any platform"
+            ]
+          ],
+          "top": true
+        },
+        {
+          "asin": "B09SGS3X7W",
+          "name": "HyperX Wrist Rest, Tenkeyless",
+          "blurb": "The same cooling gel rest sized for TKL keyboards without a number pad.",
+          "chips": [
+            [
+              "all",
+              "Any platform"
+            ]
+          ],
+          "top": true
+        },
+        {
+          "asin": "B07DW2GCZL",
+          "name": "Glorious Keyboard Wrist Rest, Compact",
+          "blurb": "A soft, stitched-edge rest sized for 60% and 65% keyboards.",
+          "chips": [
+            [
+              "all",
+              "Any platform"
+            ]
+          ],
+          "top": true
+        }
+      ]
+    },
+    {
+      "group": "desk-setup",
+      "after": "Desk gadgets",
+      "title": "Cable management",
+      "items": [
+        {
+          "asin": "B0BZ3GHM8N",
+          "name": "Litwaro Under Desk Cable Management Tray",
+          "blurb": "A metal tray that screws under your desk to hide power strips and extra cable.",
+          "chips": [
+            [
+              "all",
+              "Any platform"
+            ]
+          ],
+          "top": true,
+          "img": "71PX8PprNgL"
+        },
+        {
+          "asin": "B09J5HH2LR",
+          "name": "Scanfield No-Screw Under Desk Cable Tray (2 Pack)",
+          "blurb": "Clamp-on trays that hide cables with no drilling, good for renters.",
+          "chips": [
+            [
+              "all",
+              "Any platform"
+            ]
+          ],
+          "top": true,
+          "img": "81vkUOSl5uL"
+        },
+        {
+          "asin": "B0DK13ZHNJ",
+          "name": "Univivi No Drill Under Desk Cable Tray, 36 inch",
+          "blurb": "A long clamp-on tray for wide desks and big setups.",
+          "chips": [
+            [
+              "all",
+              "Any platform"
+            ]
+          ],
+          "img": "71ujmpvYlkL"
+        },
+        {
+          "asin": "B0B687J37D",
+          "name": "NOROCME 192-Piece Cable Management Kit",
+          "blurb": "Cable sleeves, ties, clips and holders to tidy everything behind and under the desk.",
+          "chips": [
+            [
+              "all",
+              "Any platform"
+            ]
+          ],
+          "top": true,
+          "img": "81F7bTfj+4L"
+        }
+      ]
     }
   ],
   "amazon_appends": [
@@ -1139,9 +1335,164 @@
           ]
         }
       ]
+    },
+    {
+      "group": "pc-parts",
+      "cat": "Cooling and power",
+      "items": [
+        {
+          "asin": "B09LGY38L4",
+          "name": "Thermalright Peerless Assassin 120 SE CPU Cooler",
+          "blurb": "A dual-tower air cooler with six heat pipes and two 120mm fans, and a long-time budget favorite.",
+          "chips": [
+            [
+              "pc",
+              "PC"
+            ]
+          ],
+          "top": true,
+          "img": "71j6VKsz-fL"
+        },
+        {
+          "asin": "B09LHBFPJ6",
+          "name": "Thermalright Assassin X120 Refined SE CPU Cooler",
+          "blurb": "A slim, cheap single-tower air cooler that handles most mid-range CPUs.",
+          "chips": [
+            [
+              "pc",
+              "PC"
+            ]
+          ],
+          "top": true,
+          "img": "71beJ-ZVzNL"
+        },
+        {
+          "asin": "B0DLWGG85P",
+          "name": "ARCTIC Liquid Freezer III Pro 360 AIO Cooler",
+          "blurb": "A 360mm liquid cooler for hot high-end chips, known for strong cooling at a fair price.",
+          "chips": [
+            [
+              "pc",
+              "PC"
+            ]
+          ]
+        },
+        {
+          "asin": "B07HC782D5",
+          "name": "ARCTIC P12 PWM PST Case Fans (5 Pack)",
+          "blurb": "Five quiet 120mm fans that daisy-chain off one header to add airflow to any case.",
+          "chips": [
+            [
+              "pc",
+              "PC"
+            ]
+          ],
+          "top": true
+        }
+      ]
     }
   ],
   "new_groups": [
+    {
+      "after": "brand-stores",
+      "id": "gaming-pcs",
+      "nav": "Gaming PCs",
+      "title": "Gaming PCs and mini PCs",
+      "intro": "Ready-to-play desktops you plug in and game on, plus small mini PCs and NUCs for a tidy desk, a living room or light gaming.",
+      "cats": [
+        {
+          "title": "Prebuilt gaming PCs",
+          "items": [
+            {
+              "asin": "B0H1V3S5DB",
+              "name": "Skytech Gaming PC, Ryzen 7 5700 and RTX 5060",
+              "blurb": "A budget-friendly tower with an RTX 5060, 16GB of RAM and a 1TB SSD, ready for 1080p gaming out of the box.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0DXVK2SLY",
+              "name": "CyberPowerPC Gaming PC, Ryzen 7 8700F and RTX 5060 Ti",
+              "blurb": "A step-up 1080p and entry 1440p tower with an RTX 5060 Ti and DDR5 memory.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0GP2M76YC",
+              "name": "iBUYPOWER Element Gaming PC, Ryzen 9 7900X and RTX 5070",
+              "blurb": "A 1440p-ready tower with a 12-core Ryzen 9, an RTX 5070 and 32GB of DDR5 memory.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Mini PCs and NUCs",
+          "items": [
+            {
+              "asin": "B09SYR619R",
+              "name": "Beelink SER5 MAX Mini PC, Ryzen 7 7735U",
+              "blurb": "A palm-sized PC for everyday use, emulators and lighter games, with an 8-core Ryzen chip.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71jHDLh-FcL"
+            },
+            {
+              "asin": "B0DL9J5W1G",
+              "name": "Beelink EQR7 Mini PC, Ryzen 7 7735U",
+              "blurb": "A small 8-core mini PC with a built-in power supply, good for a home theater or a second gaming machine.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61yqbtAoWVL"
+            },
+            {
+              "asin": "B0BYNVGS39",
+              "name": "ASUS NUC 13 Pro Mini PC, Core i5",
+              "blurb": "Intel's classic NUC, now built by ASUS: a tiny, quiet desktop that can mount behind a monitor.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "617ys6-Un9L"
+            },
+            {
+              "asin": "B0FNQSFQ2T",
+              "name": "ASUS NUC 15 Pro AI Mini PC, Core Ultra 7 255H",
+              "blurb": "A newer NUC with Intel Arc graphics and 32GB of RAM for light gaming and streaming.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61LYRYj50oL"
+            }
+          ]
+        }
+      ]
+    },
     {
       "after": "console",
       "id": "portable-vr",
@@ -1224,17 +1575,6 @@
   "pending_photos": {
     "_help": "Amazon products with no usable photo yet (Amazon returns no image for these ASINs). Add them back to the categories above once a photo is confirmed.",
     "items": [
-      {
-        "asin": "B09LGY38L4",
-        "name": "Thermalright Peerless Assassin 120 SE CPU Cooler",
-        "blurb": "A dual-tower air cooler with six heat pipes and two 120mm fans, and a long-time budget favorite.",
-        "chips": [
-          [
-            "pc",
-            "PC"
-          ]
-        ]
-      },
       {
         "asin": "B00WD017FW",
         "name": "Jadaol Flat Cat6 Ethernet Cable",

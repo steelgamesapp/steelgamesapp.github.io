@@ -117,7 +117,9 @@ def card(url, img, name, blurb, chips, label, top=False, price=None, price_note=
 
 
 def amazon_card(it, brand=None, price=None, price_note=""):
-    return card(amazon_url(it["asin"]), amazon_img(it["asin"]), it["name"], it["blurb"], it["chips"],
+    # "img" is the photo id from the product's Amazon listing (images/I/<id>), for ASINs whose Associates photo is blank.
+    img = f'https://m.media-amazon.com/images/I/{it["img"]}._AC_SL400_.jpg' if it.get("img") else amazon_img(it["asin"])
+    return card(amazon_url(it["asin"]), img, it["name"], it["blurb"], it["chips"],
                 "See price on Amazon", top=it.get("top", False), price=price, price_note=price_note, src="amazon", brand=brand,
                 alt_img=amazon_alt(it["asin"]))
 
@@ -197,6 +199,109 @@ def insert_before_section(h, gid, block):
     return h[:s] + block + "\n\n  " + h[s:]
 
 
+# ---------------------------------------------------------------- shop by type
+# Every product card gets data-types (what kind of gear it is) and data-k (extra search words), so shoppers can tap a
+# "Shop by type" chip or type words like "cpu", "gpu", "nuc" or "rgb". Rules look at the product name (n) and its
+# category heading (c). A product can be more than one type (an RGB keyboard is a keyboard and an RGB light).
+TYPES = [  # (id, chip label, extra search words)
+    ("prebuilt", "Prebuilt gaming PCs", "prebuilt gaming pc desktop tower computer"),
+    ("mini", "Mini PCs and NUCs", "mini pc nuc small form factor"),
+    ("gpu", "Graphics cards", "gpu graphics card video card"),
+    ("cpu", "CPUs", "cpu processor"),
+    ("motherboard", "Motherboards", "motherboard mobo"),
+    ("memory", "Memory (RAM)", "ram memory ddr5"),
+    ("storage", "Storage", "ssd storage hard drive nvme"),
+    ("cooling", "Cooling", "cooling cpu cooler fans aio liquid"),
+    ("case", "PC cases", "pc case tower"),
+    ("power", "Power supplies", "psu power supply"),
+    ("monitor", "Monitors", "monitor screen display"),
+    ("chair", "Chairs", "gaming chair seat"),
+    ("cushion", "Cushions", "cushion seat cushion lumbar pillow back support"),
+    ("desk", "Desks", "desk standing desk"),
+    ("keyboard", "Keyboards", "keyboard mechanical"),
+    ("mouse", "Mice", "mouse mice"),
+    ("wrist", "Wrist rests", "wrist rest"),
+    ("mousepad", "Mousepads", "mousepad mouse pad desk mat"),
+    ("headset", "Headsets and headphones", "headset headphones earbuds"),
+    ("speaker", "Speakers", "speakers speaker"),
+    ("mic", "Microphones", "microphone mic"),
+    ("mount", "Mounts and stands", "mount monitor arm stand holder"),
+    ("camera", "Cameras", "camera webcam facecam"),
+    ("capture", "Capture cards", "capture card streaming"),
+    ("streamdeck", "Stream decks", "stream deck"),
+    ("rgb", "RGB lights", "rgb lights lighting led"),
+    ("cables", "Cable management", "cable management cord organizer tray"),
+    ("controller", "Controllers", "controller gamepad"),
+    ("wheel", "Racing wheels", "racing wheel"),
+    ("vr", "VR", "vr virtual reality"),
+    ("network", "Networking", "networking router wifi ethernet"),
+    ("accessory", "Accessories", "accessories"),
+]
+
+
+def item_types(n, c):
+    n, c = n.lower(), c.lower()
+    t = []
+    def add(k, cond):
+        if cond and k not in t:
+            t.append(k)
+    add("prebuilt", re.search(r"gaming pc\b|gaming desktop", n) and "mini" not in n)
+    add("mini", re.search(r"mini pc|\bnuc\b", n) or c == "mini pcs")
+    add("gpu", c == "graphics cards")
+    add("cpu", c == "processors")
+    add("motherboard", c == "motherboards" or "motherboard" in n)
+    add("memory", c == "memory")
+    add("storage", c in ("storage", "extra storage") or re.search(r"\bssd\b|hard drive|microsd|game drive", n) and "heatsink" not in n)
+    add("cooling", re.search(r"cooler|liquid freezer|case fans", n))
+    add("power", "power supply" in n)
+    add("case", c == "pc cases")
+    add("monitor", c == "monitors" or "portable gaming monitors" in c)
+    add("cushion", re.search(r"cushion|lumbar", n))
+    add("chair", "chair" in n and "cushion" not in n or c == "gaming chairs")
+    add("desk", re.search(r"standing desk|gaming desk|l-shaped", n))
+    add("wrist", "wrist rest" in n)
+    add("mousepad", re.search(r"mouse ?pad", n))
+    add("keyboard", ("keyboard" in n or re.search(r"\bkeyboards\b", c) and not re.search(r"mouse|headset|redragon (impact|vampire)|lamzu", n))
+        and "wrist rest" not in n)
+    add("mouse", (re.search(r"\bmouse\b", n) or c in ("lamzu esports mice", "mice", "keyboards and mice") or re.search(r"redragon (impact|vampire)", n))
+        and not re.search(r"pad|wrist|keyboard\b(?! and mouse)", n))
+    add("headset", re.search(r"headset|headphone|earbud", n) and not re.search(r"stand|holder|vr headset", n) or c == "headsets")
+    add("speaker", "speaker" in n or c == "speakers and audio")
+    add("mic", "microphone" in n or c == "microphones")
+    add("mount", re.search(r"monitor arm|monitor stand|mic arm|headphone stand|headset holder|headset stand|\bmount", n))
+    add("camera", c == "webcams" or re.search(r"webcam|facecam|cam link", n))
+    add("capture", re.search(r"capture card|cam link", n))
+    add("streamdeck", "stream deck" in n)
+    add("rgb", re.search(r"\brgb|argb|light bar|led strip|floor lamp|screenbar|key light|chroma", n) or c == "rgb lighting")
+    add("cables", re.search(r"cable management|cable tray|cable kit|cord organizer", n))
+    add("controller", re.search(r"controller|dualsense edge", n) and not re.search(r"charging|case", n))
+    add("wheel", "racing wheel" in n)
+    add("vr", c == "vr headsets")
+    add("network", c == "networking" or re.search(r"ethernet|router", n))
+    add("accessory", "key marketplace" not in c and not t and not re.search(r"nordvpn|nordpass|\bsale\b", n) or "mount" not in t and
+        re.search(r"hub|dock|charger|charging|cable|adapter|carrying case|case for|protection case|surge|kvm|\bstand\b|holder|heatsink|microsd", n))
+    return t
+
+
+def tag_types(h):
+    """Add data-types and data-k to every product card, using its name and the category heading above it."""
+    words = {k: w for k, _, w in TYPES}
+    out, cat, pos = [], "", 0
+    for m in re.finditer(r'<h3>(.*?)</h3>|<article class="item"([^>]*)>(.*?)</article>', h, re.S):
+        if m.group(1) is not None:
+            cat = html.unescape(m.group(1))
+            continue
+        attrs, body = m.group(2), m.group(3)
+        attrs = re.sub(r' data-(types|k)="[^"]*"', "", attrs)
+        name = html.unescape(re.search(r"<h4>(.*?)</h4>", body, re.S).group(1))
+        t = item_types(name, cat)
+        k = " ".join(words[x] for x in t)
+        out.append(h[pos:m.start()] + f'<article class="item"{attrs} data-types="{" ".join(t)}" data-k="{esc(k)}">' + body + "</article>")
+        pos = m.end()
+    out.append(h[pos:])
+    return "".join(out)
+
+
 # ---------------------------------------------------------------- page-level pieces
 CSS = """
 /* shop additions: price line, search and filters */
@@ -219,6 +324,14 @@ CSS = """
 .fchip:hover { color: var(--fg); background: var(--raised); }
 .fchip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .fchip:focus-visible, .sq input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.tchips-wrap { flex-basis: 100%; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.tlab { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.tchips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+.tchip { flex: none; font: inherit; font-size: 13px; font-weight: 600; padding: 0 12px; min-height: 36px; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; color: var(--steel); cursor: pointer; white-space: nowrap; }
+.tchip:hover { color: var(--fg); background: var(--raised); }
+.tchip[aria-pressed="true"] { background: var(--fg); border-color: var(--fg); color: var(--bg, #150E38); }
+.tchip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (min-width: 900px) { .tchips { flex-wrap: wrap; overflow: visible; } }
 .scount { margin: 0; flex-basis: 100%; font-size: 14px; color: var(--muted); }
 .shop-empty { margin: 0; padding: 40px 0; text-align: center; color: var(--steel); }
 """
@@ -228,28 +341,50 @@ JS = """
   var q = document.getElementById('shop-q'); if (!q) return;
   var items = [].slice.call(document.querySelectorAll('.item'));
   var chips = [].slice.call(document.querySelectorAll('.fchip'));
-  var count = document.getElementById('shop-count'), empty = document.getElementById('shop-empty'), mode = 'all';
+  var tchips = [].slice.call(document.querySelectorAll('.tchip'));
+  var count = document.getElementById('shop-count'), empty = document.getElementById('shop-empty'), mode = 'all', type = '';
   items.forEach(function (el) {
     if (!el.dataset.src) { var a = el.querySelector('a.buy'); el.dataset.src = a && /amazon\\.com/.test(a.href) ? 'amazon' : 'brand'; }
-    el.dataset.t = el.textContent.toLowerCase().replace(/\\s+/g, ' ');
+    el.dataset.t = (el.textContent + ' ' + (el.dataset.k || '')).toLowerCase().replace(/\\s+/g, ' ');
+    el.dataset.ty = ' ' + (el.dataset.types || '') + ' ';
   });
   function run() {
     var words = q.value.trim().toLowerCase().split(/\\s+/).filter(Boolean), shown = 0;
     items.forEach(function (el) {
       var ok = mode === 'all' || (mode === 'jlab' ? el.dataset.brand === 'JLab' : el.dataset.src === mode);
+      if (ok && type) ok = el.dataset.ty.indexOf(' ' + type + ' ') > -1;
       for (var i = 0; ok && i < words.length; i++) if (el.dataset.t.indexOf(words[i]) < 0) ok = false;
       el.hidden = !ok; if (ok) shown++;
     });
     [].forEach.call(document.querySelectorAll('.cat'), function (c) { c.hidden = !c.querySelector('.item:not([hidden])'); });
     [].forEach.call(document.querySelectorAll('.group'), function (g) { g.hidden = !g.querySelector('.item:not([hidden])'); });
-    var filtering = mode !== 'all' || words.length > 0;
+    var filtering = mode !== 'all' || type || words.length > 0;
     count.textContent = filtering ? shown + (shown === 1 ? ' product' : ' products') + ' shown' : '';
     empty.hidden = shown > 0;
+  }
+  function setType(t, push) {
+    type = t || '';
+    tchips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.type === type ? 'true' : 'false'); });
+    if (push) {
+      try { var u = new URL(location.href); if (type) u.searchParams.set('type', type); else u.searchParams.delete('type'); history.replaceState(null, '', u); } catch (e) {}
+    }
+    run();
   }
   q.addEventListener('input', run);
   chips.forEach(function (b) { b.addEventListener('click', function () {
     mode = b.dataset.mode; chips.forEach(function (c) { c.setAttribute('aria-pressed', c === b ? 'true' : 'false'); }); run();
   }); });
+  tchips.forEach(function (b) { b.addEventListener('click', function () {
+    setType(b.dataset.type === type ? '' : b.dataset.type, true);
+    if (type) { var bar = document.querySelector('.shopbar'); if (bar && bar.getBoundingClientRect().top < 0) bar.scrollIntoView({ block: 'start' }); }
+  }); });
+  // Links like /gear.html?type=motherboard (or ?q=nuc) open with that filter on, for Shorts, TikTok and Discord posts.
+  try {
+    var p = new URL(location.href).searchParams;
+    if (p.get('q')) q.value = p.get('q');
+    var start = p.get('type') || '';
+    if (start && tchips.some(function (c) { return c.dataset.type === start; })) setType(start, false); else if (p.get('q')) run();
+  } catch (e) {}
 })();
 """
 
@@ -262,12 +397,18 @@ BAR = f"""<!--shop:bar-->
   <script>{SGFIX}</script>
   <section class="shopbar" aria-label="Search the gear guide">
     <div class="wrap">
-      <label class="sq">{SEARCH_ICON}<input id="shop-q" type="search" placeholder="Search gear, like headset or JLab" autocomplete="off" aria-label="Search gear"></label>
+      <label class="sq">{SEARCH_ICON}<input id="shop-q" type="search" placeholder="Search gear, like motherboard, NUC or wrist rest" autocomplete="off" aria-label="Search gear"></label>
       <div class="fchips" role="group" aria-label="Filter products">
         <button type="button" class="fchip" data-mode="all" aria-pressed="true">All</button>
         <button type="button" class="fchip" data-mode="jlab" aria-pressed="false">JLab</button>
         <button type="button" class="fchip" data-mode="brand" aria-pressed="false">Brand stores</button>
         <button type="button" class="fchip" data-mode="amazon" aria-pressed="false">Amazon picks</button>
+      </div>
+      <div class="tchips-wrap"><span class="tlab" id="tlab">Shop by type</span>
+        <div class="tchips" role="group" aria-labelledby="tlab">
+          <button type="button" class="tchip" data-type="" aria-pressed="true">All types</button>
+@@TYPECHIPS@@
+        </div>
       </div>
       <p class="scount" id="shop-count" aria-live="polite"></p>
     </div>
@@ -277,12 +418,13 @@ BAR = f"""<!--shop:bar-->
 EMPTY = '<!--shop:empty--><p class="shop-empty wrap" id="shop-empty" hidden>No gear matches that search. Try a shorter word, like "mouse" or "chair".</p><!--/shop:empty-->'
 
 NAV = [("deals", "Black Friday deals"), ("jlab", "JLab"), ("brand-shop", "Brand picks"), ("brand-stores", "Brand stores"),
-       ("pc-parts", "PC parts"), ("desk-setup", "Desk setup"), ("streaming", "Streaming and audio"),
+       ("gaming-pcs", "Gaming PCs"), ("pc-parts", "PC parts"), ("desk-setup", "Desk setup"), ("streaming", "Streaming and audio"),
        ("console", "Console accessories"), ("portable-vr", "VR and handheld")]
 
 
 def build(h):
     h = strip_markers(h)
+    h = re.sub(r' data-types="[^"]*" data-k="[^"]*"', "", h)  # re-added by tag_types at the end
 
     # --- JLab group (after deals) and brand picks group (after JLab)
     jl_cats = [cat_html(c["title"], "\n".join(jlab_card(i) for i in c["items"])) for c in DATA["jlab_cats"]]
@@ -333,10 +475,16 @@ def build(h):
         card_html = m.group(0).replace('<article class="item">\n          ', '<article class="item">\n          ' + thumb, 1)
         h = h[:m.start()] + card_html + h[m.end():]
 
+    # --- what kind of gear each card is, for the "Shop by type" chips
+    h = tag_types(h)
+    have = set(" ".join(re.findall(r'data-types="([^"]*)"', h)).split())
+    tchips = "\n".join(f'          <button type="button" class="tchip" data-type="{k}" aria-pressed="false">{esc(l)}</button>'
+                       for k, l, _ in TYPES if k in have)
+
     # --- search bar, nav, css, js
     nav = ('<nav class="jump" aria-label="Gear groups">\n    <div class="wrap">\n' +
            "\n".join(f'      <a href="#{i}">{esc(t)}</a>' for i, t in NAV) + '\n    </div>\n  </nav>')
-    h = re.sub(r'<nav class="jump".*?</nav>', lambda _: nav + "\n\n  " + BAR, h, count=1, flags=re.S)
+    h = re.sub(r'<nav class="jump".*?</nav>', lambda _: nav + "\n\n  " + BAR.replace("@@TYPECHIPS@@", tchips), h, count=1, flags=re.S)
     h = h.replace("</main>", EMPTY + "\n</main>", 1)
     h = re.sub(r"\n/\* shop additions.*?(?=\n</style>)", "", h, flags=re.S)
     h = h.replace("</style>", CSS.rstrip("\n") + "\n</style>", 1)
