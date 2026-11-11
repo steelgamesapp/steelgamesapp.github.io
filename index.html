@@ -430,7 +430,7 @@ img.noimg { visibility: hidden; }
 @media (max-width: 960px) { .promo-strip { grid-template-columns: minmax(0, 1fr); } }
 /* Featured deal fills the same height as the picker beside it (no dead space) */
 .st-hero { align-items: stretch; }
-.st-hero-main { height: auto; min-height: clamp(230px, 30vw, 380px); }
+.st-hero-main { height: auto; min-height: clamp(230px, 28vw, 340px); }
 </style>
 <meta name="google-adsense-account" content="ca-pub-3613204296597380">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
@@ -773,7 +773,7 @@ img.noimg { visibility: hidden; }
     const all = [...pool.values()].filter((g) => g.a);
     const strong = (rc, n, o) => all.filter((g) => g.rp >= 80 && g.rc >= rc && g.n >= n && g.o >= o).sort(byBest);
     let h = strong(1500, 14.99, 30); if (h.length < 6) h = strong(300, 9.99, 25); if (h.length < 6) h = all.slice().sort(byBest);
-    hero = h.slice(0, 8);
+    hero = h.slice(0, 6);
     if (!hero.length) { $('stFeatured').hidden = true; $('stHot').hidden = true; return; }
     $('stHero').innerHTML = '<a class="st-hero-main" id="hMain" href="#"><img id="hImg" alt="" decoding="async"><span class="st-hero-over"><span class="st-hero-txt"><span class="st-eyebrow">Featured deal</span><span class="st-hero-title" id="hTitle"></span><span class="st-hero-meta" id="hMeta"></span></span><span id="hBadge"></span></span></a>' +
       '<div class="st-hero-list" id="hList">' + hero.map((g, i) => '<button type="button" class="st-hero-item" data-i="' + i + '">' + img(g, 'row') + '<span>' + esc(g.t) + '</span></button>').join('') + '</div>';
