@@ -1528,6 +1528,2264 @@
           ]
         }
       ]
+    },
+    {
+      "after": "gaming-pcs",
+      "id": "laptops-handhelds",
+      "nav": "Laptops and handhelds",
+      "title": "Gaming laptops and handheld PCs",
+      "intro": "Take your games anywhere: RTX gaming laptops, handheld gaming PCs, and the cases, screen protectors and cooling pads that keep them going.",
+      "cats": [
+        {
+          "title": "Gaming laptops",
+          "items": [
+            {
+              "asin": "B0F195W823",
+              "name": "Acer Nitro V 16S, Ryzen 7 260 and RTX 5060",
+              "blurb": "A 16-inch 180Hz gaming laptop with an RTX 5060 and 32GB of memory, a strong value for 1080p and 1200p gaming.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0DZZWMB2L",
+              "name": "ASUS ROG Strix G16 (2025), Core i7 and RTX 5060",
+              "blurb": "A 16-inch 165Hz ROG laptop with a 14th Gen Core i7 HX chip, an RTX 5060 and a 1TB Gen 4 SSD.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0FBHXJG7K",
+              "name": "Alienware 16 Aurora, Core 7 and RTX 5060",
+              "blurb": "Alienware's more affordable 16-inch gaming laptop, with an RTX 5060 and Intel Core 7 240H.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0FV4B883Y",
+              "name": "ASUS TUF Gaming A16, Ryzen 7 and RTX 4050",
+              "blurb": "A tough budget 16-inch gaming laptop with a 145Hz screen, 16GB of DDR5 and an RTX 4050.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61WVG2Fd76L"
+            },
+            {
+              "asin": "B0FFDDFW47",
+              "name": "ASUS TUF Gaming F16 (2025)",
+              "blurb": "A durable 16-inch 165Hz gaming laptop with an Intel Core i5 HX chip, built for budget buyers.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Handheld gaming PCs",
+          "items": [
+            {
+              "asin": "B0FM6C3ZMN",
+              "name": "ROG Xbox Ally handheld",
+              "blurb": "A 7-inch 1080p 120Hz Windows handheld with the Xbox full-screen experience and 3 months of Game Pass Premium.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CM74YFSP",
+              "name": "Lenovo Legion Go",
+              "blurb": "An 8.8-inch 144Hz handheld gaming PC with a Ryzen Z1 Extreme and detachable controllers.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Handheld and laptop accessories",
+          "items": [
+            {
+              "asin": "B0CD7WKLV9",
+              "name": "Anti-glare screen protector for ROG Ally X (2-pack)",
+              "blurb": "Matte glass that cuts glare on the ROG Xbox Ally X and ROG Ally X screen.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "71To3XjebkL"
+            },
+            {
+              "asin": "B0FVLVQJH1",
+              "name": "JSAUX carrying case for ROG Xbox Ally",
+              "blurb": "A two-layer hard case for the ROG Xbox Ally and Ally X with room for a charger and cables.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "81XB6pvbM3L"
+            },
+            {
+              "asin": "B0BRK96DJX",
+              "name": "JSAUX hard case for Steam Deck and ROG Ally",
+              "blurb": "A hard-shell travel case that fits Steam Deck, Steam Deck OLED and ROG Ally.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "81lSi3Hh5vL"
+            },
+            {
+              "asin": "B09ZYFV1GD",
+              "name": "tomtoc carrying case for handhelds",
+              "blurb": "A slim protective case for Steam Deck, Switch 2 and ROG Xbox Ally X.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "715JG0EF+8L"
+            },
+            {
+              "asin": "B00NNMB3KS",
+              "name": "havit HV-F2056 laptop cooling pad",
+              "blurb": "A three-fan cooling pad for 15.6 to 17-inch laptops, rated by tens of thousands of buyers.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "71jUT5npz-L"
+            },
+            {
+              "asin": "B01469DJLM",
+              "name": "Kootek laptop cooling pad with 5 fans",
+              "blurb": "A quiet five-fan cooler stand for 12 to 17-inch laptops with adjustable height.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "81t9B5pBMBL"
+            },
+            {
+              "asin": "B0BPRSQGQ4",
+              "name": "8-fan RGB gaming laptop cooling pad",
+              "blurb": "A stronger cooling pad with eight fans, six heights and RGB lighting for 15 to 17.3-inch laptops.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "712LI+N18-L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "after": "console",
+      "id": "console-shop",
+      "nav": "PlayStation, Xbox, Switch 2",
+      "title": "PlayStation, Xbox and Switch 2 shop",
+      "intro": "Controllers, storage, headsets, stands and cases for each console, sorted by system so you can find what fits fast.",
+      "cats": [
+        {
+          "title": "PlayStation 5",
+          "items": [
+            {
+              "asin": "B0FY6X2XXY",
+              "name": "PlayStation DualSense Wireless Controller",
+              "blurb": "Sony's PS5 controller with haptic feedback and adaptive triggers. It also works on PC and Mac.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0DSQQ1P8D",
+              "name": "PlayStation DualSense Edge",
+              "blurb": "Sony's pro controller with swappable stick modules, back buttons and trigger stops.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0CQKKNLKH",
+              "name": "DualSense Controller, Cosmic Red",
+              "blurb": "The standard DualSense in a bold red finish.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0CL5GJDVY",
+              "name": "PlayStation Vertical Stand for PS5",
+              "blurb": "Sony's official stand for standing the PS5 Slim or Pro upright.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B08T1KHHR9",
+              "name": "PS5 stand with cooling fans and controller charger",
+              "blurb": "A stand that cools the console and charges two controllers, for PS5, Slim and Pro.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true,
+              "img": "713asLPZglL"
+            },
+            {
+              "asin": "B09STGMJVK",
+              "name": "PS5 controller charging dock",
+              "blurb": "A dual dock that charges two DualSense controllers at once.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true,
+              "img": "61+eGIypBwL"
+            },
+            {
+              "asin": "B0CQXDN344",
+              "name": "CoBak hard case for PlayStation Portal",
+              "blurb": "A padded hard shell case for the PlayStation Portal remote player.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true,
+              "img": "71-HYS2AwyL"
+            },
+            {
+              "asin": "B0DQ9K7S1Q",
+              "name": "Crucial P310 1TB PS5 SSD with heatsink",
+              "blurb": "A Gen 4 SSD with a heatsink, ready to drop into the PS5 expansion slot.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0BHJDY57J",
+              "name": "Samsung 990 PRO 2TB with heatsink",
+              "blurb": "A top-speed Gen 4 SSD with heatsink for PS5 storage or a high-end PC.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0DFS1DGXR",
+              "name": "SteelSeries Arctis Nova 5P Wireless (White)",
+              "blurb": "A wireless headset tuned for PS5 that also works with PC, Switch and phones.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CYW96C5F",
+              "name": "Turtle Beach Stealth 600 for PS5 and PC",
+              "blurb": "A wireless multiplatform headset with long battery life.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true
+            }
+          ]
+        },
+        {
+          "title": "Xbox",
+          "items": [
+            {
+              "asin": "B0F1HX3WXX",
+              "name": "Xbox Wireless Controller, Carbon Black",
+              "blurb": "Microsoft's standard controller for Xbox Series X|S, Xbox One and Windows PCs.",
+              "chips": [
+                [
+                  "xbox",
+                  "Xbox"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0GY26QKWN",
+              "name": "Xbox Elite Series 2 Core, Robot White",
+              "blurb": "Microsoft's pro controller with adjustable stick tension and paddle support.",
+              "chips": [
+                [
+                  "xbox",
+                  "Xbox"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B08DFB4889",
+              "name": "Xbox Rechargeable Battery + USB-C Cable",
+              "blurb": "Microsoft's official rechargeable battery pack for Xbox controllers.",
+              "chips": [
+                [
+                  "xbox",
+                  "Xbox"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B09BJL2Z46",
+              "name": "OIVO rechargeable Xbox battery 4-pack with charger",
+              "blurb": "Four battery packs and a charging dock so a controller is never dead.",
+              "chips": [
+                [
+                  "xbox",
+                  "Xbox"
+                ]
+              ],
+              "top": true,
+              "img": "71Z6rgB9VZL"
+            },
+            {
+              "asin": "B08K48F6QZ",
+              "name": "Seagate 1TB Storage Expansion Card for Xbox",
+              "blurb": "Official plug-in storage that runs Series X|S games at full speed with Quick Resume.",
+              "chips": [
+                [
+                  "xbox",
+                  "Xbox"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0DK74LG91",
+              "name": "WD_Black 2TB C50 Expansion Card for Xbox",
+              "blurb": "Officially licensed 2TB plug-and-play storage for Xbox Series X|S.",
+              "chips": [
+                [
+                  "xbox",
+                  "Xbox"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0DH689JGY",
+              "name": "Xbox Wireless Headset, Carbon Black",
+              "blurb": "Microsoft's wireless headset for Xbox and Windows, with dial controls on the ear cups.",
+              "chips": [
+                [
+                  "xbox",
+                  "Xbox"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0CYWFH5Y9",
+              "name": "Turtle Beach Stealth 600 for Xbox",
+              "blurb": "A wireless headset for Xbox that also works with PS5, PC and phones.",
+              "chips": [
+                [
+                  "xbox",
+                  "Xbox"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B098TV8C93",
+              "name": "HyperX CloudX Stinger Core Wireless for Xbox",
+              "blurb": "A light wireless headset with memory foam, officially licensed for Xbox.",
+              "chips": [
+                [
+                  "xbox",
+                  "Xbox"
+                ]
+              ],
+              "top": true
+            }
+          ]
+        },
+        {
+          "title": "Nintendo Switch 2",
+          "items": [
+            {
+              "asin": "B0F3VTCZK8",
+              "name": "Samsung microSD Express 256GB for Switch 2",
+              "blurb": "Switch 2 needs microSD Express cards for game storage. This is Samsung's 256GB card made for it.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0FT995SPF",
+              "name": "Samsung P9 Express 512GB microSD",
+              "blurb": "A bigger 512GB microSD Express card for a large Switch 2 library.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0DTQ35NH6",
+              "name": "SanDisk 512GB microSD Express",
+              "blurb": "SanDisk's 512GB microSD Express card for Switch 2.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0F49DHSHJ",
+              "name": "Orzly carrying case for Switch 2",
+              "blurb": "A padded travel case with a screen pad, rated by over 100,000 buyers.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true,
+              "img": "71+kr3T6iLL"
+            },
+            {
+              "asin": "B0F5LJZ7GM",
+              "name": "ivoler all-in-one Switch 2 case",
+              "blurb": "A larger messenger-style case with room for the dock, controllers and 20 games.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true,
+              "img": "81dX3kLKj9L"
+            },
+            {
+              "asin": "B0F3YXTMPF",
+              "name": "Game Traveler Deluxe case for Switch 2",
+              "blurb": "An officially licensed travel case that fits Switch 2, Switch and OLED.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0DS1S2Z7L",
+              "name": "ivoler tempered glass protector for Switch 2 (4-pack)",
+              "blurb": "Four glass screen protectors with an alignment frame for easy install.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true,
+              "img": "71cEA2Ucd1L"
+            },
+            {
+              "asin": "B0DRCKDWD1",
+              "name": "amFilm OneTouch Switch 2 screen protector",
+              "blurb": "A glass protector with an auto-alignment tool that makes bubble-free installs easy.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true,
+              "img": "61eLt9bO17L"
+            },
+            {
+              "asin": "B0F2MXRRN5",
+              "name": "FASTSNAIL Joy-Con 2 charging dock",
+              "blurb": "A magnetic dock that charges Joy-Con 2 controllers.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true,
+              "img": "71QnV+5MVLL"
+            },
+            {
+              "asin": "B0F63B8F9V",
+              "name": "Switch 2 RGB organizer and charging station",
+              "blurb": "A storage stand that holds the console, charges the controllers and stores games.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true,
+              "img": "71nLb6+SI2L"
+            },
+            {
+              "asin": "B0FS147SDG",
+              "name": "PowerA Advantage Wireless Controller for Switch 2",
+              "blurb": "An officially licensed pro-style controller with Hall effect sticks and mappable buttons.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ]
+            },
+            {
+              "asin": "B0F194QFT2",
+              "name": "8BitDo Ultimate 2 Bluetooth Controller",
+              "blurb": "A Hall effect controller for Switch 2, Switch and Windows, with a charging dock.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ]
+            },
+            {
+              "asin": "B07GW3YK17",
+              "name": "Nintendo Pro Controller, Super Smash Bros. Ultimate Edition",
+              "blurb": "Nintendo's own Pro Controller in the Smash Bros. design.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "after": "console-shop",
+      "id": "sim-retro",
+      "nav": "Sim and retro",
+      "title": "Sim rigs, fight sticks, PC controllers and retro",
+      "intro": "Flight sticks and racing wheels for sim fans, arcade sticks for fighting games, PC controllers, and retro gear for classic games.",
+      "cats": [
+        {
+          "title": "PC controllers",
+          "items": [
+            {
+              "asin": "B0DNM3VGGG",
+              "name": "8BitDo Ultimate 2C Wireless Controller",
+              "blurb": "A budget wireless PC controller with Hall effect sticks and a 1000Hz polling rate.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61b4IqF7K9L"
+            },
+            {
+              "asin": "B0CSPH1JYV",
+              "name": "8BitDo Pro 2 (Hall effect)",
+              "blurb": "A classic-shaped Bluetooth controller with back paddles for PC, Switch and phones.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0F3CZJGSF",
+              "name": "GameSir Nova Lite 2 Wireless",
+              "blurb": "A low-cost wireless PC controller with drift-resistant Hall effect sticks.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "611o9pvtEhL"
+            },
+            {
+              "asin": "B0DPMHHBHY",
+              "name": "GameSir Super Nova Wireless Controller",
+              "blurb": "A Hall effect controller for PC, Switch 2, iOS and Android, with a charging dock.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "51sBkNKZy3L"
+            },
+            {
+              "asin": "B0F29F712R",
+              "name": "GameSir G7 Pro Wireless for Xbox and PC",
+              "blurb": "A premium Xbox-licensed controller with TMR sticks and trigger stops.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71PP-K4uX8L"
+            }
+          ]
+        },
+        {
+          "title": "Flight and farm sim sticks",
+          "items": [
+            {
+              "asin": "B000U1OOH4",
+              "name": "Thrustmaster T.Flight Stick X",
+              "blurb": "A long-time budget flight stick for PC flight and space sims.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0873QXDQT",
+              "name": "Thrustmaster TCA Sidestick Airbus Edition",
+              "blurb": "A sidestick modeled on the Airbus A320, for Microsoft Flight Simulator fans.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CGKMD4ZY",
+              "name": "Thrustmaster SimTask FarmStick",
+              "blurb": "A multifunction joystick built for Farming Simulator.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fight sticks and racing",
+          "items": [
+            {
+              "asin": "B0CKB9WK3F",
+              "name": "HORI Fighting Stick Mini for PS5 and PC",
+              "blurb": "A compact, officially licensed arcade stick for fighting games.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ]
+            },
+            {
+              "asin": "B0BYBNGJH1",
+              "name": "Qanba Drone 2 arcade stick",
+              "blurb": "A wired arcade stick for PS5, PS4 and PC with a full-size layout.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ]
+            },
+            {
+              "asin": "B0C4FZYPZD",
+              "name": "Nacon Daija Arcade Fight Stick",
+              "blurb": "A premium, officially licensed fight stick for PlayStation and PC.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ]
+            },
+            {
+              "asin": "B0961HLVY1",
+              "name": "Logitech G923 Racing Wheel and Pedals",
+              "blurb": "A force feedback wheel with TRUEFORCE for PS5, PS4 and PC racing games.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ]
+            },
+            {
+              "asin": "B00Z0UWV3O",
+              "name": "Logitech G Driving Force Shifter",
+              "blurb": "A six-speed shifter that adds a manual gearbox to Logitech wheels.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Retro and arcade",
+          "items": [
+            {
+              "asin": "B0BYQNPTCF",
+              "name": "Arcade1Up Pac-Man Deluxe Arcade Cabinet",
+              "blurb": "A home arcade cabinet with 14 classic games.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0BYQ7S68P",
+              "name": "Arcade1Up Ms. Pac-Man Class of '81 Deluxe",
+              "blurb": "A deluxe cabinet with 12 retro games.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0C9QT4HHP",
+              "name": "Numskull Quarter Arcades TMNT",
+              "blurb": "A 1/4 scale playable Teenage Mutant Ninja Turtles arcade for a shelf or desk.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B01JYGYAX8",
+              "name": "KIWITATA SNES-style USB controllers (2-pack)",
+              "blurb": "Wired SNES-style pads for retro games on PC.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "71gFUv3JC5L"
+            },
+            {
+              "asin": "B08Y9RC49N",
+              "name": "8BitDo SN30 Pro USB Wired Gamepad",
+              "blurb": "A modern SNES-style controller with analog sticks for PC, Switch and Raspberry Pi.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B076B995TL",
+              "name": "8BitDo Retro Receiver for SNES Classic",
+              "blurb": "Use modern wireless controllers on the SNES, SFC and NES Classic consoles.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "after": "portable-vr",
+      "id": "game-room",
+      "nav": "Game room and collectibles",
+      "title": "Game room, TVs and collectibles",
+      "intro": "Big screens and sound for console gaming, plus LEGO, Funko, trading cards, official guides and gifts for the gamer in your house.",
+      "cats": [
+        {
+          "title": "TVs and projectors",
+          "items": [
+            {
+              "asin": "B0DYQF1Q3Z",
+              "name": "LG 55-inch OLED evo C5 (2025)",
+              "blurb": "A 4K OLED TV with 144Hz support and four HDMI 2.1 ports, a favorite for PS5, Xbox and PC gaming.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0GPYDMBYX",
+              "name": "Samsung 55-inch S90H OLED 4K (2026)",
+              "blurb": "Samsung's 2026 OLED TV for deep blacks and fast gaming.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0GP9GBB58",
+              "name": "55-inch M80H Mini LED 4K Smart TV (2026)",
+              "blurb": "A bright Mini LED 4K TV for living-room console gaming at a lower price than OLED.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B076MHKTFH",
+              "name": "BenQ TH671ST short-throw projector",
+              "blurb": "A 1080p short-throw projector that puts a big game screen in a small room.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Sound and streaming",
+          "items": [
+            {
+              "asin": "B07H1B3PY9",
+              "name": "Polk Audio Signa S2 soundbar with subwoofer",
+              "blurb": "A slim soundbar and wireless sub that make game and movie audio much bigger.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CX3Z2QYJ",
+              "name": "LG S60T 3.1 soundbar with wireless subwoofer",
+              "blurb": "A 3.1-channel soundbar with a center channel for clear dialogue.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0C6W3D4RM",
+              "name": "Fire TV Stick 4K Select",
+              "blurb": "Stream in 4K, including cloud gaming apps, on any TV.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B09BZZ3MM7",
+              "name": "Amazon Fire TV Cube",
+              "blurb": "Amazon's fastest streaming box with hands-free voice control.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B09QMRNL86",
+              "name": "Roku Streaming Stick 4K",
+              "blurb": "A simple 4K streaming stick with Dolby Vision.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "LEGO and collectibles",
+          "items": [
+            {
+              "asin": "B09FMVDHDM",
+              "name": "LEGO Super Mario 64 Question Mark Block",
+              "blurb": "A display set for adult fans that opens to reveal Super Mario 64 scenes.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CV2CNDYZ",
+              "name": "LEGO Adventures with Interactive LEGO Peach",
+              "blurb": "An interactive LEGO Super Mario starter set with talking Peach.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CGY1MQFD",
+              "name": "LEGO Super Mario Bowser's Muscle Car",
+              "blurb": "A Bowser expansion set for the LEGO Super Mario line.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ]
+            },
+            {
+              "asin": "B0DRW63X1Z",
+              "name": "LEGO Minecraft The Warden Encounter",
+              "blurb": "A small Minecraft set with the Warden.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0FMS6KGR3",
+              "name": "LEGO Minecraft Nether and End Portal Journey",
+              "blurb": "A Minecraft set with both the Nether and End portals.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0DJ1BGVQY",
+              "name": "LEGO Minecraft Woodland Mansion Fighting Ring",
+              "blurb": "A bigger Minecraft build with a mansion battle arena.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B08XC6PKY8",
+              "name": "Funko Pop! Pokemon Charizard",
+              "blurb": "The Charizard vinyl figure for any Pokemon fan's shelf.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B07CGDG79G",
+              "name": "Funko Pop! Marvel Gamerverse Spider-Man",
+              "blurb": "Spider-Man from the PlayStation games as a Funko Pop.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CMFFTTN7",
+              "name": "Zelda Master Sword Hanayama puzzle",
+              "blurb": "A metal brain teaser shaped like the Master Sword, level 6 difficulty.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ]
+            },
+            {
+              "asin": "B094YTCDFK",
+              "name": "Legend of Zelda Hyrule Map 1,000-piece puzzle",
+              "blurb": "A collectible jigsaw puzzle of the Hyrule map.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Pokemon cards",
+          "items": [
+            {
+              "asin": "B0GFZV1ZVV",
+              "name": "Pokemon TCG Mega Evolution Perfect Order Elite Trainer Box",
+              "blurb": "Booster packs plus sleeves, dice and a storage box.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0GR6N18F6",
+              "name": "Pokemon TCG Mega Evolution Chaos Rising Elite Trainer Box",
+              "blurb": "Booster packs, card sleeves and accessories from a recent set.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0FPM3LQJ4",
+              "name": "Pokemon TCG Phantasmal Flames Elite Trainer Box",
+              "blurb": "An Elite Trainer Box from the Mega Evolution series. Card prices move fast, so compare before you buy.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Official guides and books",
+          "items": [
+            {
+              "asin": "1913330001",
+              "name": "Zelda: Tears of the Kingdom Complete Official Guide",
+              "blurb": "The collector's edition hardcover guide with maps and full walkthroughs.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ]
+            },
+            {
+              "asin": "1911015761",
+              "name": "Cyberpunk 2077 Complete Official Guide",
+              "blurb": "The collector's edition guide to Night City.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "1783293233",
+              "name": "The Skyrim Library, Volumes I to III",
+              "blurb": "A box set of the in-game books from The Elder Scrolls.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Gamer gifts and decor",
+          "items": [
+            {
+              "asin": "B09YS1K5GT",
+              "name": "PlayStation shaped mug",
+              "blurb": "An officially licensed mug shaped like the PlayStation button icons.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ]
+            },
+            {
+              "asin": "B06XHW87BR",
+              "name": "Legend of Zelda metal travel tumbler",
+              "blurb": "A double-walled stainless steel tumbler with Zelda artwork.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ]
+            },
+            {
+              "asin": "B0C7VFFLCD",
+              "name": "Glow-in-the-dark controller blanket hoodie",
+              "blurb": "An oversized sherpa blanket hoodie with a glowing controller print.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "81RaRBhA4mL"
+            },
+            {
+              "asin": "B079CBP6P9",
+              "name": "Paladone PlayStation icons light",
+              "blurb": "A sound-reactive light shaped like the PlayStation button icons.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CRQZTM5L",
+              "name": "Gamer controller neon sign",
+              "blurb": "A dimmable LED neon sign for a game room wall.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "71f6LzpPf6L"
+            },
+            {
+              "asin": "B0CPCHHKQD",
+              "name": "Neon gaming wall posters (set of 3)",
+              "blurb": "Game room canvas wall art at a small price.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "81EpHByDrIL"
+            },
+            {
+              "asin": "B0D967BWQ1",
+              "name": "Hobestluk big bean bag chair",
+              "blurb": "A large bean bag couch for console gaming on the floor.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "81-tXxJzrfL"
+            },
+            {
+              "asin": "B08CS1ZW7R",
+              "name": "Dell Gaming Backpack 17",
+              "blurb": "A padded backpack for 17-inch gaming laptops.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0D9HW51YJ",
+              "name": "Titan blue light gaming glasses",
+              "blurb": "Blue light filtering glasses for long sessions at the screen.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "81ebOKjtQqL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "after": "game-room",
+      "id": "pc-extras",
+      "nav": "PC upgrades",
+      "title": "PC upgrades, storage and power protection",
+      "intro": "Faster SSDs, cooling, fans, power supplies, Wi-Fi and battery backup for your build, plus portable drives for game libraries.",
+      "cats": [
+        {
+          "title": "SSDs and game drives",
+          "items": [
+            {
+              "asin": "B0DBR3DZWG",
+              "name": "Kingston NV3 1TB NVMe SSD",
+              "blurb": "A budget Gen 4 SSD with up to 6,000 MB/s reads, rated by over 14,000 buyers.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0DC8VPSHV",
+              "name": "Crucial P310 1TB NVMe SSD",
+              "blurb": "A fast Gen 4 SSD for desktops, laptops and handhelds.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0DBR6TRZQ",
+              "name": "Kingston NV3 2TB NVMe SSD",
+              "blurb": "Twice the space for a big Steam library on a budget.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0DHLCRF91",
+              "name": "Samsung 990 EVO Plus 2TB",
+              "blurb": "A fast, efficient Gen 4 SSD from Samsung with up to 7,250 MB/s reads.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0FJ8QMW4H",
+              "name": "WD Blue SN5100 2TB NVMe SSD",
+              "blurb": "A newer Gen 4 drive with up to 7,100 MB/s reads.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B09VLK9W3S",
+              "name": "Samsung T7 Shield 1TB portable SSD",
+              "blurb": "A rugged USB-C SSD for carrying games and clips between PCs and consoles.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B08GTYFC37",
+              "name": "SanDisk 1TB Extreme Portable SSD",
+              "blurb": "A pocket SSD rated by over 90,000 buyers.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B07CRGSR16",
+              "name": "Seagate Portable 4TB external drive",
+              "blurb": "Cheap bulk storage for PS4 games, Xbox One games and backups.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B07X41PWTY",
+              "name": "WD 5TB Elements portable drive",
+              "blurb": "A 5TB USB drive for backups and older game libraries.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true
+            }
+          ]
+        },
+        {
+          "title": "Cooling, fans and thermal paste",
+          "items": [
+            {
+              "asin": "B0DLWFCVSD",
+              "name": "ARCTIC Liquid Freezer III Pro 360 A-RGB",
+              "blurb": "A 360mm AIO liquid cooler known for strong performance at a fair price.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0DF7C4YPQ",
+              "name": "CORSAIR Nautilus 360 RS ARGB",
+              "blurb": "A quiet 360mm AIO cooler from Corsair.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0BDDZGLXL",
+              "name": "Thermalright Frozen Notte 360 ARGB",
+              "blurb": "A budget 360mm liquid cooler with ARGB lighting.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "611BpsempAL"
+            },
+            {
+              "asin": "B0D49Q4CGM",
+              "name": "CORSAIR RS120 ARGB fans (3-pack)",
+              "blurb": "Daisy-chain ARGB case fans with low noise.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0DJD8MJ5S",
+              "name": "ARCTIC P12 Pro A-RGB (3-pack)",
+              "blurb": "High-pressure 120mm fans with a Y-cable splitter.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71ejvZlh8ZL"
+            },
+            {
+              "asin": "B07L9BDY3T",
+              "name": "ARCTIC MX-4 thermal paste",
+              "blurb": "The go-to thermal paste for a CPU repaste, rated by over 100,000 buyers.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0FT2TC2NW",
+              "name": "ARCTIC MX-7 thermal paste (8g)",
+              "blurb": "ARCTIC's newer long-life paste in a bigger tube.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            }
+          ]
+        },
+        {
+          "title": "Power supplies",
+          "items": [
+            {
+              "asin": "B0CB9MSJ5N",
+              "name": "MSI MAG A850GL PCIE5 850W",
+              "blurb": "A fully modular 80+ Gold ATX 3.1 power supply with a native 12V-2x6 cable for new GPUs.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0DJ6DGHCP",
+              "name": "Thermaltake Toughpower GT 850W",
+              "blurb": "An ATX 3.1, 80+ Gold power supply with a zero-fan mode.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CKY88GMT",
+              "name": "Thermaltake GF1 850W Gold",
+              "blurb": "A quiet, fully modular 850W unit at a lower price.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Wi-Fi, routers and mesh",
+          "items": [
+            {
+              "asin": "B0DVBP5L6Y",
+              "name": "TP-Link BE6500 Wi-Fi 7 router (BE400)",
+              "blurb": "An affordable Wi-Fi 7 router for lower lag on new devices.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0D4JBGPH4",
+              "name": "NETGEAR Nighthawk Wi-Fi 7 RS300",
+              "blurb": "A Wi-Fi 7 router for homes up to 2,500 sq ft.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B09PRB1MZM",
+              "name": "TP-Link Deco X55 Wi-Fi 6 mesh (3-pack)",
+              "blurb": "Mesh Wi-Fi that kills dead zones in the game room.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B0D955ZMSR",
+              "name": "Amazon eero 7 Wi-Fi 7 mesh router",
+              "blurb": "Amazon's newest dual-band Wi-Fi 7 mesh router.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0B1NRGDQ4",
+              "name": "TP-Link Wi-Fi 6 PCIe card AX3000",
+              "blurb": "Add fast Wi-Fi and Bluetooth to a desktop PC.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B091HTG6DQ",
+              "name": "GIGABYTE Wi-Fi 6E PCIe card",
+              "blurb": "A tri-band Wi-Fi 6E card with Bluetooth 5.2.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Battery backup and surge protection",
+          "items": [
+            {
+              "asin": "B01FWAZEIU",
+              "name": "APC BE600M1 battery backup",
+              "blurb": "Keeps your router and PC up through short power blinks.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B06VY6FXMM",
+              "name": "APC BX1500M battery backup",
+              "blurb": "A larger UPS for a gaming PC and monitor.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B00429N19W",
+              "name": "CyberPower CP1500PFCLCD sine wave UPS",
+              "blurb": "Pure sine wave battery backup that works with modern PC power supplies.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true
+            },
+            {
+              "asin": "B08P5LRY37",
+              "name": "ALESTOR 12-outlet surge protector with USB",
+              "blurb": "A 6-foot surge strip with 12 outlets and 4 USB ports for a full setup.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "61lQ3Z-401L"
+            },
+            {
+              "asin": "B0CSFQQVVT",
+              "name": "Anker 9-in-1 desktop charger and surge strip",
+              "blurb": "Outlets plus 100W USB-C charging on your desk.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "61xI72GTQoL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "after": "pc-extras",
+      "id": "desk-extras",
+      "nav": "Desk and room upgrades",
+      "title": "Desk, chair and room upgrades",
+      "intro": "More desks, monitor arms, lighting, hubs and comfort gear to finish your battle station.",
+      "cats": [
+        {
+          "title": "Desks and monitor arms",
+          "items": [
+            {
+              "asin": "B0CXPKSPZ4",
+              "name": "AODK L-shaped gaming desk with LED and outlets",
+              "blurb": "A corner desk with built-in power outlets and LED lights.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "81zQBwE0x7L"
+            },
+            {
+              "asin": "B08XQ4FQTP",
+              "name": "Homall L-shaped gaming desk",
+              "blurb": "A budget corner desk with room for two monitors.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "81WR1XdR0WL"
+            },
+            {
+              "asin": "B0DGPT759H",
+              "name": "WALI dual monitor arm",
+              "blurb": "Holds two 13 to 32-inch screens, up to 22 lbs each.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61S1Knw16SL"
+            },
+            {
+              "asin": "B01N2YFO5Z",
+              "name": "VIVO dual monitor stand",
+              "blurb": "A sturdy dual arm for 17 to 32-inch monitors.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "712XH9EBijL"
+            },
+            {
+              "asin": "B0CTMHHJJC",
+              "name": "HUANUO dual monitor stand",
+              "blurb": "A fully adjustable gas-spring dual monitor mount.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61T+SoUet+L"
+            }
+          ]
+        },
+        {
+          "title": "Chairs and comfort",
+          "items": [
+            {
+              "asin": "B0FVXRZJ12",
+              "name": "GTPLAYER gaming chair with footrest",
+              "blurb": "A reclining gaming chair with lumbar support and a pull-out footrest.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0HDSDRXPT",
+              "name": "GTPLAYER big and tall gaming chair (400 lbs)",
+              "blurb": "A heavy-duty gaming chair rated for up to 400 lbs.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "718kJka5IkL"
+            },
+            {
+              "asin": "B0DK4HP264",
+              "name": "Adjustable under-desk footrest",
+              "blurb": "A three-height footrest for better posture during long sessions.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71Jy1G+mYuL"
+            },
+            {
+              "asin": "B07N1QCJGZ",
+              "name": "StrongTek wooden rocking footrest",
+              "blurb": "A non-slip rocking foot rest rated for 350 lbs.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "613HgO89iSL"
+            }
+          ]
+        },
+        {
+          "title": "Lighting",
+          "items": [
+            {
+              "asin": "B08DKQ3JG1",
+              "name": "Quntis monitor light bar",
+              "blurb": "Lights your desk without glare on the screen.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "51p1Ui5sa7L"
+            },
+            {
+              "asin": "B099S9DXT7",
+              "name": "Govee 32.8ft RGBIC LED strip lights",
+              "blurb": "App-controlled multicolor strips for behind a desk or TV.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true,
+              "img": "71U-8UJ6MoL"
+            },
+            {
+              "asin": "B0939DJN8P",
+              "name": "Nanoleaf Hexagon smart light panels (3-pack)",
+              "blurb": "Wall-mounted RGBW hexagon panels for a streaming backdrop.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0DHSC78P2",
+              "name": "Keepsmile smart RGB corner floor lamp",
+              "blurb": "A music-sync corner lamp that fills a room with color.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "611qexSDJ-L"
+            },
+            {
+              "asin": "B098DVZZDQ",
+              "name": "Daymeet TV LED backlight",
+              "blurb": "USB-powered RGB lights for 32 to 43-inch TVs.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "71GG4i8OvtL"
+            }
+          ]
+        },
+        {
+          "title": "Hubs, stands and desk gadgets",
+          "items": [
+            {
+              "asin": "B08V58PY4L",
+              "name": "RGB gaming headset stand with 2 USB ports",
+              "blurb": "A lit stand that holds your headset and charges small gear.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61YykmyEmLL"
+            },
+            {
+              "asin": "B0C3CG2L1C",
+              "name": "New Bee RGB headphone stand with USB-C",
+              "blurb": "A headset stand with two USB-C ports and one USB-A port.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71qnRnBEPuL"
+            },
+            {
+              "asin": "B0C61LYRY5",
+              "name": "9-in-1 USB-C hub with 4K HDMI",
+              "blurb": "Adds HDMI, USB and card readers to a laptop or handheld.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71LR5VorKEL"
+            },
+            {
+              "asin": "B0DT6Z3R4F",
+              "name": "Powered 9-port 10Gbps USB hub",
+              "blurb": "A powered hub for controllers, drives and accessories.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71ur1aXEkeL"
+            },
+            {
+              "asin": "B0CJCJTVJ6",
+              "name": "Bostitch Konnect under-desk drawer",
+              "blurb": "A self-adhesive slide-out drawer for controllers and cables.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "after": "desk-extras",
+      "id": "creator",
+      "nav": "Creator gear",
+      "title": "Streaming and creator gear",
+      "intro": "Upgrade your stream and your Shorts: 4K webcams, capture cards, studio mics, audio interfaces, prompters and action cameras.",
+      "cats": [
+        {
+          "title": "Webcams and capture cards",
+          "items": [
+            {
+              "asin": "B0DVZG36J8",
+              "name": "Elgato Facecam 4K",
+              "blurb": "A 4K60 streaming webcam with DSLR-like manual controls.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B01N5UOYC4",
+              "name": "Logitech Brio 4K webcam",
+              "blurb": "Logitech's 4K webcam with HDR and Windows Hello support.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CYQ5P6T7",
+              "name": "EMEET S600 4K webcam",
+              "blurb": "A budget 4K webcam with a Sony sensor and fast autofocus.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61exJWcysXL"
+            },
+            {
+              "asin": "B0CPFWXMBL",
+              "name": "Elgato 4K X capture card",
+              "blurb": "Capture PS5, Xbox or Switch 2 gameplay with HDMI 2.1 and 4K144 passthrough.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CSJPDYDN",
+              "name": "Elgato 4K Pro internal capture card",
+              "blurb": "A PCIe capture card with 8K60 passthrough for a dual-PC or console stream.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0FH7P62QX",
+              "name": "Elgato Game Capture Neo",
+              "blurb": "A small USB capture card with 4K60 HDR passthrough.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "4191agkN0wL"
+            }
+          ]
+        },
+        {
+          "title": "Microphones and audio interfaces",
+          "items": [
+            {
+              "asin": "B0CTJ8BSWN",
+              "name": "Shure MV7+ USB-C and XLR mic",
+              "blurb": "A pro podcast and streaming mic with both USB-C and XLR outputs.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0B8GRCXB6",
+              "name": "Elgato Wave DX dynamic XLR mic",
+              "blurb": "A dynamic mic that rejects keyboard and room noise.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B088HHWC47",
+              "name": "Elgato Wave:3 USB mic",
+              "blurb": "A USB condenser mic with clip-guard for loud moments.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0D458QDVN",
+              "name": "FIFINE AmpliTank K688CT USB/XLR kit",
+              "blurb": "A budget dynamic mic kit that grows with you from USB to XLR.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71P1QQK4qYL"
+            },
+            {
+              "asin": "B0FF9SM2ZD",
+              "name": "MAONO A04 Gen2 mic kit",
+              "blurb": "A condenser mic kit with arm and pop filter for new streamers.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61nJ7+qIkXL"
+            },
+            {
+              "asin": "B0C5JRTS3Y",
+              "name": "Focusrite Scarlett 2i2 (4th Gen)",
+              "blurb": "The best-known USB-C audio interface for XLR mics and instruments.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "51ov6SGAYeL"
+            },
+            {
+              "asin": "B08D8R6VFC",
+              "name": "PreSonus AudioBox 96",
+              "blurb": "A budget two-input USB audio interface.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B09HL4GZF9",
+              "name": "Arturia MiniFuse 2",
+              "blurb": "A USB audio and MIDI interface for streamers who also make music.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Lights, prompters and cameras",
+          "items": [
+            {
+              "asin": "B0784SSRZS",
+              "name": "NEEWER 18-inch ring light kit",
+              "blurb": "A big 55W ring light with tripod for face-cam lighting.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "61RYOzlCVZL"
+            },
+            {
+              "asin": "B0CH3P9K1X",
+              "name": "Elgato Prompter",
+              "blurb": "A teleprompter with a built-in screen so you can read chat or scripts while looking at the lens.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CV3M9GPJ",
+              "name": "NEEWER X12B teleprompter",
+              "blurb": "An aluminum prompter for a tablet, phone or camera.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "71GCNdQKX1L"
+            },
+            {
+              "asin": "B07P7RVNRF",
+              "name": "Collapsible 62-inch green screen",
+              "blurb": "A pull-up chroma key backdrop for streams and Shorts.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            },
+            {
+              "asin": "B0DS2B3P2B",
+              "name": "DJI Osmo Action 4 Essential Combo",
+              "blurb": "A waterproof action camera for vlogs and IRL clips.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0DS2DF5S5",
+              "name": "DJI Osmo Action 5 Pro Essential Combo",
+              "blurb": "DJI's top action camera for creators.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ]
+            },
+            {
+              "asin": "B0CVY4566H",
+              "name": "Elgato Stream Deck Neo",
+              "blurb": "Eight keys and two touch points for scenes, sound and shortcuts.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "after": "creator",
+      "id": "vr-extras",
+      "nav": "VR accessories",
+      "title": "VR accessories",
+      "intro": "Comfort straps, battery packs and grips that make a Meta Quest more comfortable for longer play.",
+      "cats": [
+        {
+          "title": "Quest straps and grips",
+          "items": [
+            {
+              "asin": "B0CPYMDPB5",
+              "name": "Meta Quest Elite Strap with Battery",
+              "blurb": "Meta's own comfort strap with a built-in battery for Quest 3 and 3S.",
+              "chips": [
+                [
+                  "all",
+                  "VR"
+                ]
+              ]
+            },
+            {
+              "asin": "B0D3TGPT5F",
+              "name": "KIWI design K4 head strap",
+              "blurb": "A comfortable adjustable strap for Quest 3 and 3S.",
+              "chips": [
+                [
+                  "all",
+                  "VR"
+                ]
+              ],
+              "img": "61Ggq3-nAjL"
+            },
+            {
+              "asin": "B0CJLG9SBR",
+              "name": "BOBOVR M3 Pro battery strap",
+              "blurb": "A head strap with a swappable battery for longer Quest 3 sessions.",
+              "chips": [
+                [
+                  "all",
+                  "VR"
+                ]
+              ],
+              "img": "61H5fzKPBVL"
+            },
+            {
+              "asin": "B0CL9Q8XCT",
+              "name": "10000mAh battery head strap for Quest 3/3S",
+              "blurb": "An elite-style strap with a large battery.",
+              "chips": [
+                [
+                  "all",
+                  "VR"
+                ]
+              ],
+              "img": "61QdzSl9+sL"
+            },
+            {
+              "asin": "B0CJF9QKZ5",
+              "name": "AMVR non-slip controller grips for Quest 3",
+              "blurb": "Grips with knuckle straps so the controllers stay in your hands.",
+              "chips": [
+                [
+                  "all",
+                  "VR"
+                ]
+              ],
+              "img": "61mi92Ah4jL"
+            }
+          ]
+        }
+      ]
     }
   ],
   "thumbs": {

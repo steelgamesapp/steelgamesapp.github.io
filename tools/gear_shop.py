@@ -418,8 +418,11 @@ BAR = f"""<!--shop:bar-->
 EMPTY = '<!--shop:empty--><p class="shop-empty wrap" id="shop-empty" hidden>No gear matches that search. Try a shorter word, like "mouse" or "chair".</p><!--/shop:empty-->'
 
 NAV = [("deals", "Black Friday deals"), ("jlab", "JLab"), ("brand-shop", "Brand picks"), ("brand-stores", "Brand stores"),
-       ("gaming-pcs", "Gaming PCs"), ("pc-parts", "PC parts"), ("desk-setup", "Desk setup"), ("streaming", "Streaming and audio"),
-       ("console", "Console accessories"), ("portable-vr", "VR and handheld")]
+       ("gaming-pcs", "Gaming PCs"), ("laptops-handhelds", "Laptops and handhelds"), ("pc-parts", "PC parts"), ("pc-extras", "PC upgrades"),
+       ("desk-setup", "Desk setup"), ("desk-extras", "Desk and room"), ("streaming", "Streaming and audio"), ("creator", "Creator gear"),
+       ("console", "Console accessories"), ("console-shop", "PlayStation, Xbox, Switch 2"), ("sim-retro", "Sim and retro"),
+       ("portable-vr", "VR and handheld"), ("vr-extras", "VR accessories"), ("game-room", "Game room and collectibles"),
+       ("/keys.html#software", "Software")]
 
 
 def build(h):
@@ -483,7 +486,7 @@ def build(h):
 
     # --- search bar, nav, css, js
     nav = ('<nav class="jump" aria-label="Gear groups">\n    <div class="wrap">\n' +
-           "\n".join(f'      <a href="#{i}">{esc(t)}</a>' for i, t in NAV) + '\n    </div>\n  </nav>')
+           "\n".join(f'      <a href="{i if i.startswith("/") else "#" + i}">{esc(t)}</a>' for i, t in NAV) + '\n    </div>\n  </nav>')
     h = re.sub(r'<nav class="jump".*?</nav>', lambda _: nav + "\n\n  " + BAR.replace("@@TYPECHIPS@@", tchips), h, count=1, flags=re.S)
     h = h.replace("</main>", EMPTY + "\n</main>", 1)
     h = re.sub(r"\n/\* shop additions.*?(?=\n</style>)", "", h, flags=re.S)

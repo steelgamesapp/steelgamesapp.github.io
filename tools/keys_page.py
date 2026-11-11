@@ -80,6 +80,120 @@ def js_data():
     return json.dumps([{"store": s, "name": n, "c": c, "trust": t, "desc": d, "url": u} for s, n, c, t, d, u in RESELLERS])
 
 
+
+# ---------------------------------------------------------------- Software store (Amazon, official licenses)
+SW_CATS = [  # (id, label, icon key, color, short line)
+    ("windows", "Windows", "win", "#66C0F4", "Windows 11 Home and Pro licenses"),
+    ("office", "Office and Microsoft 365", "doc", "#FF8A3D", "Word, Excel, PowerPoint and Outlook"),
+    ("security", "Antivirus and security", "shield", "#5CE08A", "Protect every PC and phone"),
+    ("vpn", "VPN and privacy", "lock", "#4DD0E1", "Safer public Wi-Fi and travel"),
+    ("creative", "Creative and pro apps", "brush", "#FF6B8A", "Adobe, video, design and music"),
+    ("tools", "PC utilities and money", "disk", "#B388FF", "Backup, media and budgeting"),
+]
+
+
+def sw_items():
+    import json, os
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "software_store.json")
+    try:
+        return json.load(open(path, encoding="utf-8"))["items"]
+    except Exception:
+        return []
+
+
+def sw_store():
+    import html as H
+    items = sw_items()
+    if not items:
+        return ""
+    e = lambda t: H.escape(str(t), quote=True)
+    small = lambda k: ICONS[k].replace('width="52" height="52"', 'width="22" height="22"')
+    count = {c: sum(1 for i in items if i["cat"] == c) for c, *_ in SW_CATS}
+    tiles = "".join(
+        f'<button type="button" class="swtile" data-swf="{c}" style="--c:{col}" aria-pressed="false"><span class="swi">{small(ic)}</span>'
+        f'<span class="swt"><b>{e(lab)}</b><small>{e(line)}</small></span><span class="swn">{count[c]}</span></button>'
+        for c, lab, ic, col, line in SW_CATS if count[c])
+    col = {c: k for c, _, _, k, _ in SW_CATS}
+    lab = {c: l for c, l, *_ in SW_CATS}
+
+    def card(i):
+        img = (f'https://m.media-amazon.com/images/I/{i["img"]}._AC_SL400_.jpg' if i.get("img")
+               else f'https://m.media-amazon.com/images/P/{i["asin"]}.01._SCLZZZZZZZ_.jpg')
+        url = f'https://www.amazon.com/dp/{i["asin"]}?tag={TAG}'
+        return (f'<a class="swcard" data-swc="{i["cat"]}" style="--c:{col[i["cat"]]}" href="{url}" target="_blank" rel="noopener sponsored nofollow">'
+                f'<span class="swph"><img src="{e(img)}" alt="{e(i["name"])}" loading="lazy" decoding="async"></span>'
+                f'<span class="swcat">{e(lab[i["cat"]])}</span><h3>{e(i["name"])}</h3><p>{e(i["blurb"])}</p>'
+                f'<span class="swgo">See price on Amazon &rarr;</span></a>')
+
+    order = {c: n for n, (c, *_) in enumerate(SW_CATS)}
+    cards = "".join(card(i) for i in sorted(items, key=lambda i: order.get(i["cat"], 99)))
+    return ('<section class="block swstore" id="software"><div class="wrap">'
+            '<div class="swhead"><div><p class="eyebrow">Software store</p><h2>Windows, Office and pro software</h2>'
+            '<p class="fine">Official, full-price licenses sold on Amazon, so there is no guesswork about where the key came from. '
+            'Pick a category or browse everything. Prices change, so check Amazon for today\'s price.</p></div>'
+            '<div class="swsearch"><input id="swq" type="search" placeholder="Search software, e.g. Windows 11 Pro" aria-label="Search software"></div></div>'
+            '<div class="swtiles"><button type="button" class="swtile all" data-swf="" style="--c:#FFB020" aria-pressed="true"><span class="swi">'
+            + '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>' + '</span><span class="swt"><b>All software</b><small>Everything in the store</small></span>'
+            f'<span class="swn">{len(items)}</span></button>' + tiles + '</div>'
+            '<div class="swgrid" id="swgrid">' + cards + '</div>'
+            '<p class="swempty" id="swempty" hidden>No software matches that search.</p>'
+            '<p class="fine">Want a lower price? See <a href="#budget">budget license keys</a> below, and read what you give up first. '
+            'For everyday software for your gaming PC, the category cards under <a href="#more-software">More software</a> open Amazon searches.</p>'
+            '</div></section>\n' + SW_CSS + SW_JS)
+
+
+SW_CSS = """<style>
+.swstore{scroll-margin-top:90px}
+.swhead{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:end;justify-content:space-between}
+.swhead h2{font-size:clamp(26px,4vw,38px)}
+.swsearch{flex:1 1 320px;max-width:440px}.swsearch input{width:100%;min-height:46px;padding:0 16px;border-radius:12px;border:1px solid var(--line-strong);background:var(--surface);color:#fff;font:500 15px var(--body)}
+.swtiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:22px 0 20px}
+.swtile{--c:#66C0F4;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--line-strong);background:var(--surface);color:#fff;text-align:left;cursor:pointer;font:inherit;transition:transform .15s,border-color .15s,background .15s}
+.swtile:hover{transform:translateY(-2px);border-color:var(--c)}
+.swtile[aria-pressed="true"]{border-color:var(--c);background:color-mix(in srgb,var(--c) 18%,var(--surface));box-shadow:inset 3px 0 0 var(--c)}
+.swi{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex-shrink:0;background:color-mix(in srgb,var(--c) 22%,transparent);color:var(--c)}
+.swt{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25}
+.swt b{font-size:15px}.swt small{font-size:12px;color:var(--muted)}
+.swn{font-size:12px;font-weight:700;color:var(--muted);background:rgba(255,255,255,.07);border-radius:999px;padding:2px 9px}
+.swgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.swcard{--c:#66C0F4;display:flex;flex-direction:column;gap:6px;border-radius:16px;overflow:hidden;background:var(--surface);border:1px solid var(--line);color:#fff;text-decoration:none;padding-bottom:16px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.swcard:hover{color:#fff;transform:translateY(-4px);border-color:var(--c);box-shadow:0 14px 34px rgba(0,0,0,.4)}
+.swcard>*:not(.swph){margin-inline:16px}
+.swph{display:block;height:160px;overflow:hidden;box-sizing:border-box;background:radial-gradient(120% 100% at 50% 20%,#fff 0%,#EEEAFF 70%,#D6CEFF 100%);padding:14px;margin-bottom:6px}
+.swph img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .3s}
+.swcard:hover .swph img{transform:scale(1.06)}
+.swcat{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--c)}
+.swcard h3{font-size:17px;line-height:1.25}
+.swcard p{color:var(--steel);font-size:14px;line-height:1.5;flex:1}
+.swgo{color:#FFB020;font-weight:700;font-size:14px;margin-top:4px}
+.swempty{color:var(--muted)}
+.swjump{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:8px}
+.swjump a{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:16px;text-decoration:none;color:#fff;border:1px solid var(--line-strong);background:linear-gradient(135deg,#261B5C,#1A1342);transition:transform .15s,border-color .15s}
+.swjump a:hover{color:#fff;transform:translateY(-2px);border-color:#FFB020}
+.swjump a.sw{background:linear-gradient(135deg,#0E3A5C,#1A1342);border-color:#2F6FA8}
+.swjump .ji{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;flex-shrink:0;background:rgba(255,255,255,.1)}
+.swjump b{font-size:17px;display:block}.swjump small{color:var(--muted);font-size:13px}
+</style>
+"""
+
+SW_JS = """<script>
+(function(){var tiles=document.querySelectorAll('.swtile'),cards=document.querySelectorAll('.swcard'),q=document.getElementById('swq'),empty=document.getElementById('swempty'),f='';
+function run(){var t=(q.value||'').toLowerCase().trim(),n=0;cards.forEach(function(c){var ok=(!f||c.dataset.swc===f)&&(!t||c.textContent.toLowerCase().indexOf(t)>-1);c.hidden=!ok;if(ok)n++});empty.hidden=n>0}
+tiles.forEach(function(b){b.addEventListener('click',function(){f=b.dataset.swf;tiles.forEach(function(x){x.setAttribute('aria-pressed',x===b)});run()})});
+q.addEventListener('input',run);
+function fromHash(){var h=(location.hash||'').match(/^#software-(\\w+)/);if(h){var b=document.querySelector('.swtile[data-swf="'+h[1]+'"]');if(b){b.click();document.getElementById('software').scrollIntoView({behavior:'smooth'})}}}
+window.addEventListener('hashchange',fromHash);fromHash();})();
+</script>
+"""
+
+JUMP = ('<div class="swjump">'
+        '<a href="#find"><span class="ji">' + '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11h4M8 9v4M15 12h.01M18 10h.01"/><path d="M17.3 5H6.7a4 4 0 0 0-4 3.6l-.7 6.6A3 3 0 0 0 7.2 17.6L9 15h6l1.8 2.6a3 3 0 0 0 5.2-2.4l-.7-6.6A4 4 0 0 0 17.3 5z"/></svg>' + '</span>'
+        '<span><b>Game keys</b><small>Compare key stores and today\'s best PC game deals</small></span></a>'
+        '<a class="sw" href="#software"><span class="ji">' + ICONS["doc"].replace('width="52" height="52"', 'width="24" height="24"') + '</span>'
+        '<span><b>Software store</b><small>Windows 11, Office, antivirus, Adobe and more</small></span></a>'
+        '</div>')
+
+
 SCRIPT = r"""
 <script>
 (() => {
@@ -178,19 +292,20 @@ def build():
         "For Windows and Office, a full retail license from a trusted seller is the safest buy. Budget keys cost less but come with trade-offs, so read the product page and keep your receipt."], 1))
     kd = key_deals.section(RESELLERS, keys_finder.affiliates())
     chip = '<a href="#today">Today\'s deals</a>' if kd else ""
-    return (layout.head("Game Key Resellers and Software Deals | SteelGames",
+    return (layout.head("Game Keys and Software Store: Windows, Office, Antivirus | SteelGames",
                         "Compare trusted game key resellers and see today's best key deals with current, highest and lowest prices. Plus deals on Windows, Office, security and creative software.",
                         f"{SITE}/keys.html")
             + layout.header("keys")
             + """<main>
 <section class="hero"><div class="wrap">
 <p class="eyebrow">Keys &amp; software</p>
-<h1>Game key resellers and software deals</h1>
+<h1>Game keys and software store</h1>
 <p class="lede">Key stores often beat the official price. See who is running the best deals right now, how big their discounts are, and what to watch for before you buy.</p>
 <p class="fine">Black Friday is Nov 27. Before you buy a key, read <a href="/guides/black-friday-2026-pc-game-deals-guide/">our Black Friday shopping guide</a>, and see the <a href="/gear.html#deals">Black Friday gear deals and promo codes</a> for the rest of your setup.</p>
-<div class="chips">""" + chip + """<a href="#find">Find a key</a><a href="#resellers">Resellers</a><a href="#deals">Best key deals</a><a href="#software">Software deals</a><a href="#budget">Budget keys</a><a href="#safe">Buying safely</a></div>
+""" + JUMP + """
+<div class="chips">""" + chip + """<a href="#find">Find a key</a><a href="#resellers">Resellers</a><a href="#deals">Best key deals</a><a href="#software">Software store</a><a href="#software-windows">Windows</a><a href="#software-office">Office</a><a href="#software-security">Antivirus</a><a href="#budget">Budget keys</a><a href="#safe">Buying safely</a></div>
 </div></section>
-""" + kd + keys_finder.SECTION + """<section class="block" id="resellers"><div class="wrap"><h2>Key resellers</h2>
+""" + sw_store() + kd + keys_finder.SECTION + """<section class="block" id="resellers"><div class="wrap"><h2>Key resellers</h2>
 <p class="fine">Live stats come from current store listings. Marketplaces and stores we can't read live link straight to their sites.</p>
 <div class="rgrid" id="rgrid"></div></div></section>
 <section class="block" id="deals"><div class="wrap"><h2>Best key deals right now</h2>
@@ -198,8 +313,8 @@ def build():
 <p class="status" id="status" aria-live="polite"></p>
 <div class="wide-grid" id="grid" aria-live="polite"><div class="gwide sk"></div><div class="gwide sk"></div><div class="gwide sk"></div><div class="gwide sk"></div></div>
 <p class="fine">Highest is the usual full price. Lowest ever is the lowest price recorded across the stores we track.</p></div></section>
-<section class="block" id="software"><div class="wrap"><h2>Software deals</h2>
-<p class="fine">Everyday software for your gaming PC. Tap a card to compare current prices.</p>
+<section class="block" id="more-software"><div class="wrap"><h2>More software</h2>
+<p class="fine">Browse whole categories on Amazon. Tap a card to compare current prices.</p>
 <div class="sgrid">""" + sw + """</div></div></section>
 """ + budget_section() + """<section class="block" id="safe"><div class="wrap"><h2>Buying keys safely</h2><div class="tips">""" + tips + """</div></div></section>
 </main>
