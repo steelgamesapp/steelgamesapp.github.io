@@ -1,0 +1,214 @@
+{
+ "_help": "Software sold on Amazon for the Software store on keys.html. Run python3 tools/build_seo.py (or python3 -c 'import keys_page' from tools) to rebuild. Each item needs an ASIN; img is optional (Amazon photo id) for products whose Associates photo is blank.",
+ "checked": "2026-11-11",
+ "items": [
+  {
+   "asin": "B09MYJ1R6L",
+   "name": "Windows 11 Home (System Builder)",
+   "blurb": "A full Windows 11 Home license for a new PC build.",
+   "cat": "windows"
+  },
+  {
+   "asin": "B09MYBD79G",
+   "name": "Windows 11 Pro (System Builder)",
+   "blurb": "Windows 11 Pro for a new build, with BitLocker, Remote Desktop and Hyper-V.",
+   "cat": "windows"
+  },
+  {
+   "asin": "B09V6R9QZZ",
+   "name": "Windows 11 Home on USB (retail)",
+   "blurb": "A boxed retail Windows 11 license on a USB installer you can move to a new PC later.",
+   "cat": "windows"
+  },
+  {
+   "asin": "B09WCTTXQ6",
+   "name": "Windows 11 Pro Upgrade from Home",
+   "blurb": "A digital upgrade that turns Windows 11 Home into Pro.",
+   "cat": "windows"
+  },
+  {
+   "asin": "B07F3TQ6DQ",
+   "name": "Microsoft 365 Personal (12 months)",
+   "blurb": "Word, Excel, PowerPoint, Outlook and 1TB of OneDrive for one person.",
+   "cat": "office"
+  },
+  {
+   "asin": "B07F3SNQT5",
+   "name": "Microsoft 365 Family (12 months)",
+   "blurb": "The same apps for up to 6 people, each with 1TB of OneDrive.",
+   "cat": "office"
+  },
+  {
+   "asin": "B0DK29FP4Z",
+   "name": "Microsoft Office Home 2024",
+   "blurb": "Classic Word, Excel and PowerPoint as a one-time purchase for one PC or Mac.",
+   "cat": "office"
+  },
+  {
+   "asin": "B0DJMMSCGC",
+   "name": "Microsoft Office Home and Business 2024",
+   "blurb": "Office 2024 with Outlook and commercial-use rights, one-time purchase.",
+   "cat": "office"
+  },
+  {
+   "asin": "B07H5C1X31",
+   "name": "Microsoft 365 Business Standard (12 months)",
+   "blurb": "Office apps plus Teams and business email for one user.",
+   "cat": "office"
+  },
+  {
+   "asin": "B093N4F3VV",
+   "name": "Corel WordPerfect Office Home and Student 2021",
+   "blurb": "A low-cost Office alternative that opens Word and Excel files.",
+   "cat": "office"
+  },
+  {
+   "asin": "B07Q8JGCSQ",
+   "name": "Norton 360 Deluxe, 3 devices",
+   "blurb": "Antivirus, VPN, password manager and dark web monitoring.",
+   "cat": "security"
+  },
+  {
+   "asin": "B07Q33SJDW",
+   "name": "Norton 360 Deluxe, 5 devices",
+   "blurb": "Norton 360 Deluxe for the whole household.",
+   "cat": "security"
+  },
+  {
+   "asin": "B0BB2GF9WW",
+   "name": "McAfee Total Protection, 5 devices",
+   "blurb": "Antivirus, VPN and identity monitoring for PCs, Macs and phones.",
+   "cat": "security"
+  },
+  {
+   "asin": "B07G8SQ2S3",
+   "name": "Bitdefender Total Security",
+   "blurb": "Top-rated antivirus with very light impact on gaming performance.",
+   "cat": "security"
+  },
+  {
+   "asin": "B07DDQGPMZ",
+   "name": "Webroot Antivirus for PC Gamers",
+   "blurb": "A lightweight antivirus with a game mode, made for gaming PCs.",
+   "cat": "security"
+  },
+  {
+   "asin": "B084L8X5VV",
+   "name": "Malwarebytes Premium, 18 months, 2 devices",
+   "blurb": "Malware and ransomware protection, an Amazon-exclusive plan.",
+   "cat": "security"
+  },
+  {
+   "asin": "B08X2L57CT",
+   "name": "ESET Home Security Essential, 3 devices",
+   "blurb": "Fast, light antivirus with a gamer mode.",
+   "cat": "security"
+  },
+  {
+   "asin": "B0C9FYN8GF",
+   "name": "NordVPN Standard, 1 year, 10 devices",
+   "blurb": "A VPN plus threat protection for public Wi-Fi and travel.",
+   "cat": "vpn"
+  },
+  {
+   "asin": "B092M5G1G7",
+   "name": "Mullvad VPN, 12 months, 5 devices",
+   "blurb": "A privacy-first VPN with no account email needed.",
+   "cat": "vpn",
+   "img": "61IHAqDMolL"
+  },
+  {
+   "asin": "B07Q4QZGFR",
+   "name": "Adobe Acrobat Pro (12 months)",
+   "blurb": "Edit, convert, sign and protect PDFs on PC or Mac.",
+   "cat": "creative"
+  },
+  {
+   "asin": "B09J1H7HYG",
+   "name": "Adobe Photography Plan 1TB (12 months)",
+   "blurb": "Photoshop and Lightroom with 1TB of cloud storage.",
+   "cat": "creative"
+  },
+  {
+   "asin": "B07Q3SPLSV",
+   "name": "Adobe Premiere (12 months)",
+   "blurb": "The pro video editor many YouTubers use.",
+   "cat": "creative"
+  },
+  {
+   "asin": "B0DCQVNL7W",
+   "name": "Photoshop Elements and Premiere Elements 2025 (Student and Teacher)",
+   "blurb": "Easy photo and video editing, owned outright, at the education price.",
+   "cat": "creative"
+  },
+  {
+   "asin": "B0FPJH3VC9",
+   "name": "CyberLink PowerDirector and PhotoDirector 2026",
+   "blurb": "AI-assisted video and photo editing for Windows.",
+   "cat": "creative",
+   "img": "811QhH+noKL"
+  },
+  {
+   "asin": "B0B5TDS42Z",
+   "name": "Pinnacle Studio 26 Ultimate",
+   "blurb": "Video editing with screen recording, good for gameplay clips.",
+   "cat": "creative"
+  },
+  {
+   "asin": "B09JLCFNLM",
+   "name": "CorelDRAW Graphics Suite (12 months)",
+   "blurb": "Pro vector design for logos, thumbnails and print.",
+   "cat": "creative"
+  },
+  {
+   "asin": "B0B7KFYQVK",
+   "name": "Corel PaintShop Pro 2023 Ultimate",
+   "blurb": "A one-time-purchase Photoshop alternative for Windows.",
+   "cat": "creative"
+  },
+  {
+   "asin": "B07C895FTM",
+   "name": "FL Studio 20 Producer Edition",
+   "blurb": "A popular music production app with lifetime free updates.",
+   "cat": "creative"
+  },
+  {
+   "asin": "B0CTK2BYJT",
+   "name": "Ableton Live 12 Standard",
+   "blurb": "Music production and live performance software.",
+   "cat": "creative",
+   "img": "61OykTnTXsL"
+  },
+  {
+   "asin": "B08QLN4ZZN",
+   "name": "DaVinci Resolve Speed Editor bundle",
+   "blurb": "Blackmagic's editing keyboard, which includes a DaVinci Resolve Studio license.",
+   "cat": "creative",
+   "img": "61siIP5rI3L"
+  },
+  {
+   "asin": "B09F7K746F",
+   "name": "Roxio Creator NXT 9",
+   "blurb": "Disc burning, video editing and media tools in one suite.",
+   "cat": "tools"
+  },
+  {
+   "asin": "B07TWN55VV",
+   "name": "Roxio Easy VHS to DVD 3 Plus",
+   "blurb": "Turn old VHS tapes into digital files or DVDs.",
+   "cat": "tools"
+  },
+  {
+   "asin": "B09VK7M14B",
+   "name": "Nero Unlimited Platinum",
+   "blurb": "Burning, backup, video and media tools for Windows 10 and 11.",
+   "cat": "tools"
+  },
+  {
+   "asin": "B0CFSX431Z",
+   "name": "Quicken Classic Deluxe (1 year)",
+   "blurb": "Budgeting and money tracking for your household.",
+   "cat": "tools"
+  }
+ ]
+}
