@@ -1,6 +1,6 @@
 {
   "_help": "Products for the shop sections on gear.html. Run: python3 tools/gear_shop.py. Amazon items need only an ASIN (links and photos use the Amazon Associates tag). Brand items use the brand's own product handle, price and photo. Never put passwords or API secrets in this file, it is public.",
-  "asof": "Nov 8, 2026",
+  "asof": "Nov 11, 2026",
   "amazon_tag": "steelgames-20",
   "jlab": {
     "_help": "Leave direct_template blank to send JLab buttons to Amazon with the steelgames-20 tag. Once the JLab affiliate link is approved on Impact, paste the tracking link here with {url} where the jlab.com product address goes, for example https://jlab.sjv.io/XXXX?u={url} and the JLab buttons will go to jlab.com instead.",
@@ -178,7 +178,7 @@
           "img": "1/0240/9337/files/1_Nightfall_Mouse_Black.jpg",
           "name": "JLab Nightfall Wireless Gaming Mouse",
           "blurb": "A 53-gram wireless mouse with a PAW3311 sensor at an entry-level price.",
-          "price": "33.99",
+          "price": "39.99",
           "chips": [
             [
               "pc",
@@ -220,7 +220,7 @@
           "img": "1/0240/9337/files/1_Nightfall_Keyboard_Black.jpg",
           "name": "JLab Nightfall Gaming Keyboard",
           "blurb": "A full-size wired keyboard with 104 keys and RGB lighting.",
-          "price": "33.99",
+          "price": "39.99",
           "chips": [
             [
               "pc",
@@ -562,7 +562,7 @@
           "handle": "solakaka-e9-pro-mouse",
           "name": "SOLAKAKA E9 Pro Vertical MMO Mouse",
           "blurb": "A vertical, ergonomic mouse with side buttons for MMO players.",
-          "price": "69.99",
+          "price": "76.99",
           "img": "1/0910/3661/4959/files/SOLAKAKA_E9_PRO.png",
           "chips": [
             [

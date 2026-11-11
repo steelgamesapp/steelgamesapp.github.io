@@ -18,11 +18,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 tools/build_seo.py
+      - name: Rebuild the holiday gift shop from gear.html
+        run: python3 tools/gifts_page.py || echo "Gift shop page skipped"
       - name: Commit changes
         run: |
           git config user.name "SteelGames Bot"
           git config user.email "steelgames.app@outlook.com"
-          git add -A deal deals game data pros media-kit tools/game_ids.json tools/popular_map.json sitemap.xml robots.txt games.html keys.html military.html wishlist.html cart.html collection.html sync.html
+          git add -A deal deals gifts game data pros media-kit tools/game_ids.json tools/popular_map.json sitemap.xml robots.txt games.html keys.html military.html wishlist.html cart.html collection.html sync.html
           git diff --cached --quiet && { echo "Nothing changed, nothing to push."; exit 0; }
           git commit -m "Daily deal pages update"
           for i in 1 2 3; do

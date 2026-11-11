@@ -352,7 +352,7 @@ def build(h):
     h = re.sub(r'(<h1>Gear for your whole setup</h1>\s*<p class="lede">).*?(</p>)', lambda m: m.group(1) + lede + m.group(2), h, count=1, flags=re.S)
     h = re.sub(r'<strong>How we make money:</strong>.*?</p>',
                "<strong>How we make money:</strong> As an Amazon Associate and a partner of the brands featured here, SteelGames earns from qualifying purchases. "
-               "Every button on this page is an affiliate link, and it costs you nothing extra. These are picks we chose, not paid placements.</p>",
+               "Every button on this page is an affiliate link, and it costs you nothing extra. These are picks we chose. The only paid placement is the box marked Sponsored, if there is one.</p>",
                h, count=1, flags=re.S)
     h = re.sub(r'(<meta name="description" content=")[^"]*(")',
                r"\1SteelGames gear guide: JLab audio and gaming gear, brand-partner picks and top Amazon finds for PC parts, desk setups, streaming and console accessories, with every commission link clearly labeled.\2",
