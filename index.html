@@ -419,6 +419,18 @@ img.noimg { visibility: hidden; }
   .st-lists { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 88%; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; padding-bottom: 6px; }
   .st-list { scroll-snap-align: start; }
 }
+
+/* Promo banners: compact 2x2 strip so the deals start higher on the page */
+.promo-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding-block: 14px 4px; }
+.promo-strip .ext-banner { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.promo-strip .ext-banner .wrap { max-width: none; padding: 10px 14px; flex-wrap: nowrap; gap: 12px; }
+.promo-strip .ext-banner .wrap > div { flex: 1; min-width: 0; }
+.promo-strip .ext-banner .ext-title { font-size: 14px; line-height: 1.3; }
+.promo-strip .ext-banner .btn { flex-shrink: 0; white-space: nowrap; }
+@media (max-width: 960px) { .promo-strip { grid-template-columns: minmax(0, 1fr); } }
+/* Featured deal fills the same height as the picker beside it (no dead space) */
+.st-hero { align-items: stretch; }
+.st-hero-main { height: auto; min-height: clamp(230px, 30vw, 380px); }
 </style>
 <meta name="google-adsense-account" content="ca-pub-3613204296597380">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
@@ -447,7 +459,8 @@ img.noimg { visibility: hidden; }
 </header>
 
 <main id="top">
-  <section class="ext-banner" aria-label="SteelGames Chrome extension">
+  <div class="wrap wrap-wide promo-strip">
+<section class="ext-banner" aria-label="SteelGames Chrome extension">
     <div class="wrap wrap-wide">
       <div>
         <p class="eyebrow">New</p>
@@ -487,6 +500,7 @@ img.noimg { visibility: hidden; }
       <a class="btn btn-primary" href="/gifts/">Shop gifts</a>
     </div>
   </section>
+  </div>
   <section class="st" id="deals" aria-labelledby="st-title">
     <div class="wrap wrap-wide">
       <div class="st-top">
