@@ -1,7 +1,7 @@
 /* SteelGames sponsor slots.
    Fills any element that has data-sponsor-slot="home" or "gear" from /sponsors.json (see tools/SPONSORS.md to book one).
    - Every paid spot is labeled "Sponsored" and its link is rel="sponsored nofollow".
-   - An empty slot shows a slim "Advertise here" line (only when the element has data-house) so prospects can see where it goes.
+   - An empty slot shows nothing (the old "Advertise here" box was removed Nov 2026).
    - Views and clicks are counted as GoatCounter events (sponsor-view/<id>, sponsor-click/<id>) so sponsors get real numbers.
    - A sponsor only shows between its starts and ends dates (inclusive). If several are booked for one slot they take turns. */
 (function () {
@@ -85,7 +85,7 @@
       var slot = el.getAttribute('data-sponsor-slot');
       var now = live(list, slot);
       if (now.length) render(el, now[turn % now.length]);
-      else if (el.hasAttribute('data-house')) house(el);
+      // empty slots stay hidden (no 'Advertise here' box)
     });
   });
 })();
