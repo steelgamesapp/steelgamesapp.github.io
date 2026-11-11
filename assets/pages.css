@@ -369,3 +369,10 @@ a.tag:hover{background:var(--line-strong);color:#fff}
 .lb .lb-c{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:var(--muted);font-size:14px}
 /* Mobile header: one swipeable menu row (Nov 2026) */
 @media (max-width:720px){.site-header .wrap{padding-block:10px;gap:8px}.site-header .nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;width:100%;gap:2px;padding-bottom:2px}.site-header .nav::-webkit-scrollbar{display:none}.site-header .nav a{white-space:nowrap;flex:0 0 auto;padding:8px 10px}}
+
+/* Polish: one-row header like the home page, and the cover follows you down beside the price card */
+@media (min-width:900px){
+  .site-header .wrap{max-width:1240px;flex-wrap:nowrap}
+  .site-header .nav{flex-wrap:nowrap}
+  .gp>:first-child{position:sticky;top:24px}
+}
