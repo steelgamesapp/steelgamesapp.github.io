@@ -22,3 +22,9 @@ button:active,[role="button"]:active{transform:scale(.97);transition:transform 1
 main:focus{outline:none}
 /* Keyboard focus ring on every control, theme colored */
 select:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid #8F7BFF;outline-offset:3px;border-radius:6px}
+
+/* Small text never below 12px (default <small> shrinks to ~10px inside 12px labels) */
+small{font-size:max(12px,.83em)}
+/* Section-heading links and footer links: at least 24px tall (WCAG 2.5.8), 44px on touch */
+.st-h a,.st-list h3 a,footer a,.foot a,.footer a{display:inline-flex;align-items:center;min-height:24px;padding-block:3px}
+@media (pointer:coarse){.st-h a,.st-list h3 a,footer a,.foot a,.footer a{min-height:44px}}
