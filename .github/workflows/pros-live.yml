@@ -1,0 +1,32 @@
+name: Pro setups live data (RAM prices + Amazon best sellers)
+# Refreshes data/ram.json and data/bestsellers.json and rebuilds /pros/ every two hours.
+on:
+  schedule:
+    - cron: "11 */2 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: pros-live
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/pros_live.py
+      - run: cd tools && python3 pros.py
+      - name: Commit changes
+        run: |
+          git config user.name "SteelGames Bot"
+          git config user.email "steelgames.app@outlook.com"
+          git add data/ram.json data/bestsellers.json pros
+          git diff --cached --quiet && { echo "Nothing changed."; exit 0; }
+          git commit -m "Pro setups: refresh RAM prices and best sellers"
+          for i in 1 2 3; do
+            git pull --rebase --autostash -X theirs origin main && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          exit 1
