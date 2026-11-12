@@ -262,3 +262,6 @@
     new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach(scan))).observe(document.documentElement, { childList: true, subtree: true });
   }).catch(() => {});
 })();
+
+/* Site-wide LIVE RAM scrolling ticker (see /assets/ram-ticker.js). */
+(() => { if (window.__sgRamTicker || document.querySelector('script[src*="ram-ticker.js"]')) return; const s = document.createElement('script'); s.src = '/assets/ram-ticker.js'; s.defer = true; document.head.appendChild(s); })();
