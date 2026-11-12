@@ -20,7 +20,7 @@
     const st = document.createElement('style');
     st.textContent =
       '.sg-rt{position:relative;overflow:hidden;background:#0A0619;border-bottom:1px solid #3A2C7A;font:600 14px/1 "Space Grotesk",Inter,system-ui,sans-serif;white-space:nowrap}' +
-      '.sg-rt-lab{position:absolute;left:0;top:0;bottom:0;z-index:2;display:flex;align-items:center;padding:0 14px 0 14px;background:linear-gradient(90deg,#0A0619 80%,transparent);color:#FF8A1A;letter-spacing:1.5px;font-size:12px;text-decoration:none}' +
+      '.sg-rt-lab{position:absolute;left:0;top:0;bottom:0;z-index:2;display:flex;align-items:center;padding:0 14px;background:#0A0619;box-shadow:12px 0 12px #0A0619;color:#FF8A1A;letter-spacing:1.5px;font-size:12px;text-decoration:none}' +
       '.sg-rt-run{display:inline-flex;align-items:center;gap:18px;padding:11px 0 11px 110px;animation:sgrt 60s linear infinite}' +
       '.sg-rt:hover .sg-rt-run{animation-play-state:paused}' +
       '@keyframes sgrt{to{transform:translateX(-50%)}}' +
