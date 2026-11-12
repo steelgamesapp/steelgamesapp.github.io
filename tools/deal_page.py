@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const lowObj = g.cheapestPriceEver && g.cheapestPriceEver.price !== undefined ? g.cheapestPriceEver : null;
     const low = lowObj ? +lowObj.price : null;
     const lowWhen = lowObj && lowObj.date ? new Date(lowObj.date * 1000).toLocaleString('en-US', { month: 'long', year: 'numeric' }) : '';
-    const link = (d) => 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(d.dealID);
+    const link = (d) => 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(decodeURIComponent(d.dealID));
     const hi = Math.max(...deals.map((d) => +d.retailPrice), +best.price);
     const verdict = low == null ? ['', 'We do not have price history for this game yet.'] : (+best.price <= low * 1.05 ? ['v-good', 'Buy now: this is at or near the lowest price it has ever been.'] : (+best.price <= low * 1.35 ? ['', 'Fair price. It has been as low as ' + $(low) + ', so waiting could save a little.'] : ['v-wait', 'Wait if you can: it has been as low as ' + $(low) + '.']));
     const da = ' data-id="' + esc(id) + '" data-deal="' + esc(best.dealID) + '" data-title="' + esc(title) + '" data-thumb="' + esc(g.info.thumb) + '" data-steam="' + esc(sid) + '" data-store="' + esc(names[best.storeID]) + '" data-price="' + esc(best.price) + '" data-normal="' + esc(best.retailPrice) + '" aria-pressed="false"';

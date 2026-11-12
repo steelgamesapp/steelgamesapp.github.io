@@ -104,7 +104,7 @@ SCRIPT = r"""<script>
   const art = (d) => d.steamAppID && d.steamAppID !== '0' ? 'https://cdn.cloudflare.steamstatic.com/steam/apps/' + d.steamAppID + '/header.jpg' : d.thumb;
   const finite = (v) => isFinite(v) ? v : Infinity;
   // Stores CheapShark tracks always open through its redirect: that is the condition for its free price data.
-  const buyUrl = (d) => 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(d.dealID);
+  const buyUrl = (d) => 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(decodeURIComponent(d.dealID));
   const mktUrl = (m, q) => AFF[m.name] ? AFF[m.name].replace('{url}', encodeURIComponent(m.url(q))) : m.url(q);
 
   // Every game that matches the search, with the key store deals that exist for it right now (often none).

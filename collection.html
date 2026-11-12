@@ -60,7 +60,7 @@ const $ = (s) => document.querySelector(s);
 const esc = (t) => String(t == null ? '' : t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const money = SG.money;
 const SC = { 'Steam': '#66C0F4', 'GreenManGaming': '#5CE08A', 'Fanatical': '#FF8A3D', 'GOG': '#B388FF', 'Epic Games Store': '#E8E8F0', 'Humble Store': '#FF5A5F', 'GameBillet': '#FFD43B', 'Gamesplanet': '#4DD0E1', 'GamersGate': '#FF7043', 'Voidu': '#F06292', 'IndieGala': '#FF5252', 'WinGameStore': '#4FC3F7' };
-const buy = (deal, id) => deal ? 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(deal) : '/deal/?id=' + encodeURIComponent(id);
+const buy = (deal, id) => deal ? 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(decodeURIComponent(deal)) : '/deal/?id=' + encodeURIComponent(id);
 
 const list = $('#list');
 const draw = () => {

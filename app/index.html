@@ -337,7 +337,7 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 const money = (v) => (v == null || isNaN(v)) ? '' : (Number(v) === 0 ? 'Free' : '$' + Number(v).toFixed(2));
 // Every game deal opens through CheapShark's redirect to that exact deal (see note above).
 function storeLink(storeID, dealID) {
-  return `https://www.cheapshark.com/redirect?dealID=${encodeURIComponent(dealID || '')}`;
+  return `https://www.cheapshark.com/redirect?dealID=${encodeURIComponent(decodeURIComponent(dealID || ''))}`;
 }
 
 // ---------- Ads and sponsors ----------
