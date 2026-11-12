@@ -1,6 +1,7 @@
 """Builds data/home_promos.json: the picture slider of Black Friday deals and holiday gifts on the home page.
 Reads the finished gifts page (/gifts/index.html), so it always matches what the gift shop shows.
 Run after tools/gifts_page.py:  python3 tools/home_promos.py"""
+import datetime
 import html
 import json
 import pathlib
@@ -22,7 +23,8 @@ SECTIONS = [
     ('console', 'For console players', 2),
 ]
 
-ART = re.compile(r'<article class="item"[^>]*>(.*?)</article>', re.S)
+ART = re.compile(r'<article class="item"([^>]*)>(.*?)</article>', re.S)
+TODAY = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-6))).date().isoformat()  # US Central
 
 
 def text(s):
@@ -36,7 +38,10 @@ def items(page, sec_id):
     end = page.find('<h2', start + 10)
     chunk = page[start:end if end > 0 else len(page)]
     out = []
-    for body in ART.findall(chunk):
+    for attrs, body in ART.findall(chunk):
+        until = re.search(r'data-until="([0-9-]+)"', attrs)
+        if until and until.group(1) < TODAY:
+            continue  # time-limited offer has ended
         img = re.search(r'<img src="([^"]+)"', body)
         if not img or img.group(1).endswith('.svg'):
             continue  # only real product photos

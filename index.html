@@ -847,7 +847,7 @@ img.noimg { visibility: hidden; }
   const esc = s => String(s || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const card = s => `<a class="pr-card" data-kind="${esc(s.kind)}" href="${esc(s.href)}" target="_blank" rel="sponsored nofollow noopener">
     <span class="pr-img"><img src="${esc(s.img)}" alt="" loading="lazy" decoding="async"><span class="pr-tag">${esc(s.tag)}</span></span>
-    <span class="pr-body"><span class="pr-title">${esc(s.title)}</span><span class="pr-meta">${s.price ? `<b>${esc(s.price)}</b>` : s.kind === 'deal' ? 'Black Friday sale' : 'See price'}</span></span></a>`;
+    <span class="pr-body"><span class="pr-title">${esc(s.title)}</span><span class="pr-meta">${s.price ? `<b>${esc(s.price)}</b>` : s.note ? esc(s.note) : s.kind === 'deal' ? 'Black Friday sale' : 'See price'}</span></span></a>`;
   fetch('/data/home_promos.json', { cache: 'no-cache' }).then(r => r.json()).then(d => {
     const slides = (d && d.slides) || [];
     if (!slides.length) { el.closest('.pr').hidden = true; return; }

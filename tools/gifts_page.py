@@ -58,6 +58,10 @@ GUIDE_LINKS = [("/guides/best-gifts-for-pc-gamers-under-100/", "Best gifts for P
                ("/guides/black-friday-2026-pc-game-deals-guide/", "Black Friday 2026 PC game deals guide")]
 
 
+# Offers marked data-until="YYYY-MM-DD" (copied from gear.html) hide themselves after that day, US Central time.
+HIDE_ENDED = '<script>document.querySelectorAll("[data-until]").forEach(function(e){if(Date.now()>Date.parse(e.dataset.until+"T23:59:59-06:00"))e.remove()});</script>'
+
+
 def esc(t):
     return html.escape(str(t), quote=True)
 
@@ -109,7 +113,7 @@ def main():
     head = gear[:head_end]
     header = re.search(r'<header class="site-header">.*?</header>', gear, re.S).group(0)
     # Only the footer itself: the Gear page's own filter script after it targets elements this page does not have.
-    footer = gear[gear.index("<footer"):gear.index("</footer>") + len("</footer>")] + "\n</body>\n</html>\n"
+    footer = gear[gear.index("<footer"):gear.index("</footer>") + len("</footer>")] + "\n" + HIDE_ENDED + "\n</body>\n</html>\n"
     helper = re.search(r"<script>function sgFix.*?</script>", gear, re.S).group(0)
     asof = re.search(r"listed on ([A-Z][a-z]{2} \d{1,2}, \d{4})", gear)
     asof = asof.group(1) if asof else "the date shown on our Gear page"
