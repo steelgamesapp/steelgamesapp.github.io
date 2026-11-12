@@ -95,6 +95,11 @@ ICONS = {
     "family": '<path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/><path d="M22 9v5"/>',
     "gaming": '<rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 10.5v4M5 12.5h4M16 11.5h.01M18 13.5h.01"/>',
     "gifts": '<rect x="3" y="9" width="18" height="12" rx="1.5"/><path d="M3 13h18M12 9v12"/><path d="M12 9C10 6 6.5 5.8 6.5 7.6 6.5 9 12 9 12 9zm0 0c2-3 5.5-3.2 5.5-1.4C17.5 9 12 9 12 9z"/>',
+    "tech": '<rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/>',
+    "auto": '<path d="M5 16V11l2-5h10l2 5v5"/><path d="M3 16h18v3H3z"/><circle cx="7.5" cy="13" r="1"/><circle cx="16.5" cy="13" r="1"/>',
+    "health": '<path d="M12 21s-7-4.4-9.2-9A5 5 0 0 1 12 6.5 5 5 0 0 1 21.2 12C19 16.6 12 21 12 21z"/><path d="M12 10v5M9.5 12.5h5"/>',
+    "careers": '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/>',
+    "outdoors": '<path d="m3 20 6-11 4 7 3-4 5 8z"/><circle cx="17" cy="6" r="2"/>',
     "star": '<path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/>',
 }
 
@@ -176,6 +181,16 @@ SAVINGS = [
          "Army MWR lists active duty, Guard, Reserve and retired members, and VA has also named Gold Star families. It does not say every veteran qualifies.",
          "Check eligibility on afvclub.com before you plan.",
          ["$349 a week", "Check eligibility"], "ret gs"),
+        ("wyndham", "Wyndham Military Appreciation Rate", "https://www.wyndhamhotels.com/military",
+         "15% or more off at participating Wyndham hotels in the US, plus Wyndham Rewards perks like a Gold level upgrade.",
+         "Active and retired military, veterans and their families.",
+         "Book with rate code SML and show military ID at check-in. Confirm your status in Wyndham Rewards for the extra perks.",
+         ["15%+ off", "Rate code SML"], "vet fam ret"),
+        ("spacea", "Space-A military flights", "https://myairforcebenefits.us.af.mil/Benefit-Library/Federal-Benefits/Space-Available-Travel-(Space-A-Travel)?serv=23",
+         "Free seats on military flights when there's space, within the US and to Alaska, Hawaii, Puerto Rico and US territories.",
+         "Veterans with a permanent service-connected disability rated as total (100% P&T), plus retirees and their family.",
+         "Sign up at a military passenger terminal. Seats aren't guaranteed, so have a backup plan.",
+         ["Free flights", "100% P&T"], "dis ret"),
         ("resorts", "Hale Koa (Hawaii) and Edelweiss (Germany)", "https://www.halekoa.com/about-hale-koa-hotel/eligibility",
          "Military resort hotels in Honolulu and the German Alps.",
          "Hale Koa: veterans rated 100% service-connected, Purple Heart recipients, former POWs, service-connected VA Health ID Card holders and caregivers. Edelweiss: 100% service-connected veterans and retirees.",
@@ -261,6 +276,126 @@ SAVINGS = [
          "Apply with VA Form 28-1900.",
          ["Monthly allowance"], "dis"),
     ]),
+    ("tech", "Tech, phones and computers", "Tech", "Apple, Samsung and Microsoft knock money off laptops, phones, tablets and Xbox gear.", "#4DA3FF", [
+        ("apple", "Apple Veterans and Military Purchase Program", "https://www.apple.com/shop/browse/home/veterans_military",
+         "10% off Apple products and accessories in Apple's special veterans and military online store.",
+         "Current and veteran members of the US military, National Guard and Reserve, plus immediate family who live in the same household.",
+         "Verify with ID.me from Apple's veterans and military store page. Regular Apple Store and apple.com purchases don't get this price.",
+         ["10%", "Family in household"], "vet fam ret"),
+        ("samsung", "Samsung military savings", "https://order-help.us.samsung.com/articles/samsung-offer-programs/can-i-still-get-the-samsung-military-discount-if-i-am-a-veteran/669e317679828c791e799f54",
+         "Samsung says veterans can get up to 30% off through its partner WeSalute, on phones, TVs, monitors and appliances.",
+         "Veterans of any branch, current or former Guard and Reserve, retirees and immediate family (WeSalute). Active duty uses the Samsung Offer Program.",
+         "Veterans sign up with WeSalute using a personal email. Active duty signs in to the Samsung Offer Program with a .mil email or ID.me.",
+         ["Up to 30%", "WeSalute"], "vet fam ret"),
+        ("microsoft", "Microsoft Store military discount", "https://www.microsoft.com/en-us/store/b/military",
+         "10% off select products, including Surface and Xbox, at Microsoft Store.",
+         "Active, former and retired military personnel and their families.",
+         "Verify on Microsoft's military store page, then shop online.",
+         ["10%", "Xbox", "Families"], "vet fam ret"),
+    ]),
+    ("auto", "Cars, insurance and banking", "Cars and insurance", "New-car bonuses, military car insurance discounts and banks built for veterans.", "#2DD4BF", [
+        ("hyundai", "Hyundai Military Program", "https://www.hyundaiusa.com/us/en/special-programs/military",
+         "A $500 bonus toward buying or leasing an eligible new Hyundai.",
+         "Active duty, Reserve and National Guard, veterans and retirees of every branch.",
+         "Verify with ID.me on Hyundai's military page before you buy.",
+         ["$500 bonus", "ID.me"], "vet ret"),
+        ("toyota", "Toyota Military Rebate", "https://www.toyota.com/military-rebate/",
+         "A $500 rebate on an eligible new Toyota.",
+         "Active duty and inactive reserve, household members (including Gold Star families), and veterans within two years of discharge.",
+         "Verify with ID.me on Toyota's page (ID.me verification isn't offered in AL, FL, GA, NC or SC, so ask your dealer there).",
+         ["$500", "Within 2 years of discharge"], "vet fam gs"),
+        ("geico", "GEICO military car insurance", "https://www.geico.com/military/",
+         "A military discount of up to 15% on car insurance, plus an emergency deployment discount.",
+         "Veterans, National Guard, active duty and Reserve members.",
+         "Get a quote online or call 1-800-MILITARY (645-4827), GEICO's military team.",
+         ["Up to 15%"], "vet ret"),
+        ("usaa", "USAA membership", "https://www.usaa.com/",
+         "Insurance, banking and investing for the military community. USAA advertises up to 10% off when you bundle auto and property policies.",
+         "Active duty, Guard and Reserve, veterans who served honorably, military spouses and children of USAA members.",
+         "Join online at usaa.com.",
+         ["Bundle up to 10%", "Spouses"], "vet fam ret"),
+        ("navyfed", "Navy Federal Credit Union", "https://www.navyfederal.org/membership.html",
+         "A credit union for the military community, with VA home loans, military specials and discounts for those who served.",
+         "All veterans, no matter how long they served, plus active duty, DoD civilians and immediate family (spouses, siblings, parents, children, grandparents and grandchildren).",
+         "Apply online with your Social Security number, ID and home address.",
+         ["Every veteran", "Family can join"], "vet fam ret"),
+        ("valife", "VA life insurance (VALife)", "https://www.va.gov/life-insurance/options-eligibility/valife/",
+         "Up to $40,000 of whole life insurance with guaranteed approval if you qualify.",
+         "Veterans age 80 or younger with any VA service-connected disability rating, even 0%.",
+         "Apply online on VA.gov. Full coverage pays out after a 2-year waiting period.",
+         ["Guaranteed approval", "Up to $40,000"], "dis"),
+    ]),
+    ("health", "Health care and wellness", "Health", "VA health, dental and vision care, free counseling and fitness communities.", "#FF6B8A", [
+        ("vahealth", "VA health care", "https://www.va.gov/health-care/eligibility/",
+         "Health care through VA, free or low cost depending on your situation.",
+         "Veterans who served in the active military and weren't dishonorably discharged may qualify. VA says all veterans exposed to toxins or hazards, including everyone who served in the Vietnam War, Gulf War, Iraq, Afghanistan or any combat zone after 9/11, are now eligible.",
+         "Apply on VA.gov, by phone or with an accredited representative.",
+         ["Expanded eligibility", "Toxic exposure"], "vet dis"),
+        ("vadental", "VA dental care and VADIP", "https://www.va.gov/health-care/about-va-health-benefits/dental-care/dental-insurance/",
+         "Free VA dental care for some veterans. Everyone else enrolled in VA health care can buy discounted private dental insurance through VADIP.",
+         "VADIP: veterans enrolled in VA health care, and spouses or children enrolled in CHAMPVA. Free care depends on your rating and service history.",
+         "Check your dental class on VA.gov, then enroll in a VADIP plan if you need more coverage.",
+         ["Discounted insurance", "Family through CHAMPVA"], "vet dis fam"),
+        ("vavision", "VA vision care", "https://www.va.gov/health-care/about-va-health-benefits/vision-care/",
+         "Eye exams and, for some veterans, eyeglasses through VA, plus advanced care for blind and low-vision veterans.",
+         "Veterans who qualify for VA health care.",
+         "Ask your VA primary care team or find a VA medical center near you.",
+         ["Eye exams", "Glasses for some"], "vet dis"),
+        ("vetcenter", "Vet Centers", "https://www.vetcenter.va.gov/",
+         "Free, confidential counseling in a relaxed, non-medical setting, often with counselors who are veterans themselves.",
+         "Eligible veterans, service members (including Guard and Reserve) and their families.",
+         "Walk in to a local Vet Center or call 1-877-927-8387 any time.",
+         ["Free", "Families too"], "vet fam"),
+        ("teamrwb", "Team RWB", "https://www.teamrwb.org/",
+         "A health and wellness community for veterans: workouts, events, challenges and outdoor expeditions.",
+         "Veterans, service members, military families and supporters.",
+         "Join on the Team RWB site or app.",
+         ["Fitness", "Community"], "vet fam"),
+    ]),
+    ("careers", "Careers, school and claims help", "Careers", "Free career tools, GI Bill school money and free help filing VA claims.", "#B05CFF", [
+        ("linkedin", "Free LinkedIn Premium", "https://socialimpact.linkedin.com/programs/veterans",
+         "A complimentary LinkedIn Premium subscription for job seekers, plus LinkedIn Learning courses.",
+         "Veterans, military spouses and transitioning service members who take part in career services from Hire Heroes USA, Student Veterans of America or Hiring Our Heroes.",
+         "Sign up for career services with one of those nonprofits. Offers are first come, first served.",
+         ["Premium free", "Through partners"], "vet fam"),
+        ("o2o", "Onward to Opportunity (Syracuse IVMF)", "https://ivmf.syracuse.edu/programs/career-training/",
+         "Training for over 40 industry certifications, career coaches and connections to 800+ employers.",
+         "Service members, veterans and military spouses.",
+         "Apply on the IVMF site and pick a certification track.",
+         ["40+ certifications"], "vet fam"),
+        ("gi911", "Post-9/11 GI Bill", "https://www.va.gov/education/about-gi-bill-benefits/post-9-11/",
+         "Money for college, trade school and training, including tuition, housing and books.",
+         "Veterans and service members with qualifying active-duty service after Sept 10, 2001.",
+         "Apply on VA.gov and check how much your service time covers.",
+         ["School money"], "vet"),
+        ("vacomp", "VA disability compensation", "https://www.va.gov/disability/",
+         "A monthly tax-free payment for illnesses or injuries caused or made worse by your service.",
+         "Veterans who got sick or injured while serving, or whose service made a condition worse.",
+         "File on VA.gov or get free help from an accredited Veterans Service Organization.",
+         ["Tax-free", "Monthly"], "vet dis"),
+        ("dav", "DAV free claims help and rides", "https://www.dav.org/get-help-now/",
+         "Free help filing VA claims, free rides to VA appointments and veteran career fairs.",
+         "Veterans and their families.",
+         "Find the nearest DAV national service office by ZIP code.",
+         ["Free claims help", "Free rides"], "vet fam dis"),
+    ]),
+    ("outdoors", "Parks, hunting and fishing", "Outdoors", "Free state park entry and hunting and fishing licenses for veterans.", "#76C043", [
+        ("txparks", "Texas State Parks Veterans passport", "https://tpwd.texas.gov/state-parks/park-information/passes/texas-parklands-passports",
+         "Free entry to Texas state parks.",
+         "US veterans who were honorably discharged.",
+         "Bring a photo ID plus a veteran ID card, a veteran-marked license, a DD214 showing honorable discharge or a VA health ID card to a state park.",
+         ["Free entry", "Texas"], "vet tx"),
+        ("txparksdv", "Texas State Parks Disabled Veterans passport", "https://tpwd.texas.gov/state-parks/park-information/passes/texas-parklands-passports",
+         "Free entry to Texas state parks.",
+         "US veterans with a 60% or higher service-connected disability, or loss of a lower extremity.",
+         "Bring a photo ID plus your VA award letter, Texas DV plate receipt or Texas veteran tax exemption letter.",
+         ["Free entry", "60%+ rating"], "dis tx"),
+        ("txcombo", "Texas Disabled Veteran Super Combo license", "https://tpwd.texas.gov/regulations/outdoor-annual/licenses/combination-hunting-fishing/disabled-veteran-super-combo-hunting-and-all-water-fishing-package",
+         "A hunting license and all-water fishing license plus five state endorsements in one package.",
+         "Texas disabled veterans who meet TPWD's disability rules.",
+         "Show VA proof of disability (stating your rating) or a Texas license marked Disabled Veteran each year when you buy it.",
+         ["Hunting and fishing", "Texas"], "dis tx"),
+    ]),
     ("family", "For spouses and kids of veterans", "Spouses and kids", "Education money and scholarships for military families.", "#FF6B8A", [
         ("dea", "Dependents' Educational Assistance (DEA)", "https://www.va.gov/family-and-caregiver-benefits/education-and-careers/dependents-education-assistance/",
          "Up to 36 months of education benefits: $1,621 a month for full-time school from Oct 1, 2026 to Sept 30, 2027.",
@@ -302,6 +437,54 @@ SAVINGS = [
 
 TOP_PICKS = [("parks", "Free lifetime national parks pass"), ("vic", "VA Veteran ID Card"), ("exchange", "Tax-free exchange shopping online"),
              ("vettix", "Free event tickets from Vet Tix"), ("aft", "American Forces Travel deals"), ("shades", "Disney World's military resort in Jan and Sept")]
+
+# Pictures for the featured slider and card banners: each program's own official photo or share image (hotlinked).
+PHOTOS = {
+    "txparks": "https://tpwd.texas.gov/state-parks/park-information/passes/images/parklandsgrid3.png/@@images/fd9c7b91-611d-44ad-8a32-e73609fa5d39.jpeg",
+    "toyota": "https://tmna.aemassets.toyota.com/is/image/toyota/toyota/military-rebate/story-features/TUN_MY22_0007_V001_lzSVAAOB_4x3.png?fmt=jpeg&qlt=90&wid=1024",
+    "shades": "https://www.shadesofgreen.org/application/static/7316/6859/7933/hotel_sog_1-82.jpg",
+    "resorts": "https://www.halekoa.com/application/static/1815/9615/3983/hkh_intro_optimized.jpg",
+    "afvc": "https://www.armymwr.com/application/files/3115/8732/5636/vacc.jpg",
+    "aft": "https://download.militaryonesource.mil/MilitaryOneSource/images/prod/2026/08/parents-and-kids-on-vacation-as124456909-1.jpg",
+    "parks": "https://www.nps.gov/common/commonspot/templates/images/logos/nps_social_image_02.jpg",
+    "vettix": "https://static-cdn.vettix.org/images/hd/design/vettix-facebook-card.jpg",
+    "seaworld": "https://seaworld.com/san-antonio/-/media/commercial/seaworld-san-antonio/images/promos/2026/black-friday/presale/swt-presale-update/swt_lto_home.jpg?h=550&w=1900&la=en&hash=39434AD2BDCA0B31B1D38B13AB1FAE3D",
+    "govx": "https://i1.govx.net/images/cdn/govx-og-new-image-2019.jpg?t=1200",
+    "folds": "https://foldsofhonor.org/wp-content/uploads/2025/06/Image-4-1434x1143-1.jpg",
+    "miltax": "https://download.militaryonesource.mil/MilitaryOneSource/images/prod/2020/09/13986-MCFP-MilTax-LandingPageImageResizes-1013074108-500x328-1.jpg",
+    "b-glorious": "https://cdn.shopify.com/s/files/1/0549/2681/files/Glorious_Web_SocialSharing_1200x628_965492d7-7fb7-4eae-8716-39e5d072680d.png?v=1714660472",
+    "b-vertagear": "https://cdn.shopify.com/s/files/1/1759/4609/files/Audi_x_Vertagear_banner_licensed_5d09875a-99f0-42bb-8e19-ade66db41616.jpg?v=1747239132",
+    "b-skullcandy": "https://www.skullcandy.com/cdn/shop/files/new-social.jpg?v=1726116747",
+    "b-lenovo": "https://www.lenovo.com/content/dam/lenovo/site-design/lenovo-helix/ftv/hero-discover-ai-solutions.png"
+}
+
+# Featured slider order: (card id, short line shown on the slide)
+FEATURED = [
+    ("shades", "Disney World's military resort"), ("resorts", "Hale Koa resort in Honolulu"), ("aft", "Hotels, cruises and vacation packages"),
+    ("afvc", "Resort condo weeks for $349"), ("seaworld", "SeaWorld San Antonio veteran pass"), ("vettix", "Free event tickets"),
+    ("txparks", "Free Texas state park entry"), ("toyota", "$500 rebate on a new Toyota"),
+    ("parks", "Free lifetime national parks pass"), ("govx", "Members-only military store"), ("b-vertagear", "Gaming chairs, 20% reported"),
+    ("b-glorious", "Gaming mice and keyboards, 10% reported"), ("b-skullcandy", "Gaming audio with ID.me"), ("folds", "Scholarships for military families"),
+    ("miltax", "Free tax filing"),
+]
+
+LOGO_DIR = "assets/vet-logos"
+
+
+def brand_id(b):
+    return "b-" + "".join(ch for ch in b["name"].lower() if ch.isalnum())
+
+
+def logo_html(cid, name, color):
+    """The program's own site icon (stored in /assets/vet-logos/), or its initials when we don't have one."""
+    import os
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    e = html.escape
+    if os.path.exists(os.path.join(root, LOGO_DIR, cid + ".png")):
+        return f'<span class="vlogo"><img src="/{LOGO_DIR}/{cid}.png" alt="{e(name)} logo" width="40" height="40" loading="lazy" decoding="async"></span>'
+    initials = "".join(w[0] for w in name.replace("(", "").split()[:3] if w[0].isalnum()).upper()[:3]
+    return f'<span class="vlogo vmono" style="--c:{color}" aria-hidden="true">{e(initials)}</span>'
+
 
 HUB_CSS = """<style>
 .vet-hero{background:radial-gradient(120% 140% at 85% 0%,rgba(255,176,32,.20),transparent 60%),radial-gradient(100% 120% at 0% 100%,rgba(102,192,244,.14),transparent 60%)}
@@ -353,14 +536,53 @@ HUB_CSS = """<style>
 .vgo:hover{background:color-mix(in srgb,var(--c) 25%,transparent);color:#fff}
 .vcard[hidden],.vsec.is-empty{display:none}
 .vempty{color:var(--muted)}
+.vcard{position:relative;overflow:hidden}
+.vhead{display:flex;align-items:center;gap:12px}
+.vhead h3{margin:0}
+.vlogo{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:12px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.vlogo img{width:40px;height:40px;object-fit:contain;border-radius:6px}
+.vmono{background:color-mix(in srgb,var(--c) 30%,#1A1342);color:#fff;font:700 15px var(--display);letter-spacing:.5px;border:1px solid var(--c)}
+.vpic{display:block;margin:-16px -16px 2px;aspect-ratio:16/7;background:#150E38;overflow:hidden}
+.vpic img{width:100%;height:100%;object-fit:cover}
+.vcard.has-pic{border-top-width:1px}
+.vfeat-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.vfeat-h h2{display:flex;gap:8px;align-items:center;color:#FFD76A;font-size:20px}
+.vfeat-wrap{position:relative}
+.vfeat{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,24%);gap:12px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#4A37A8 transparent;padding-bottom:8px}
+.vfeat>*{scroll-snap-align:start}
+.vslide{position:relative;display:flex;flex-direction:column;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#261B5C 0%,#1A1342 100%);border:1px solid var(--line);color:#fff;text-decoration:none;transition:transform .12s ease,border-color .12s ease,box-shadow .12s ease}
+.vslide:hover{transform:translateY(-2px);border-color:#FFB020;box-shadow:0 8px 22px rgba(255,176,32,.25);color:#fff}
+.vslide .vs-img{position:relative;aspect-ratio:16/9;background:#150E38}
+.vslide .vs-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vslide .vlogo{position:absolute;left:10px;bottom:-22px;width:46px;height:46px}
+.vslide .vlogo img{width:34px;height:34px}
+.vslide .vs-body{padding:28px 12px 12px;display:flex;flex-direction:column;gap:3px}
+.vslide b{font-family:var(--display);font-size:16px;line-height:1.25}
+.vslide small{color:var(--steel);font-size:13px}
+.varrow{position:absolute;top:30%;z-index:2;width:38px;height:64px;display:flex;align-items:center;justify-content:center;border:0;border-radius:8px;background:rgba(10,6,25,.82);color:#fff;cursor:pointer;padding:0}
+.varrow:hover{background:#FFB020;color:#1A0E04}
+.vprev{left:-6px}.vnext{right:-6px}
+@media (max-width:700px){.varrow{display:none}.vfeat{grid-auto-columns:78%}}
+@media (prefers-reduced-motion:reduce){.vslide{transition:none}}
 </style>
 """
+
+
+def pic_html(cid, name):
+    e = html.escape
+    u = PHOTOS.get(cid)
+    if not u:
+        return ""
+    return (f'<span class="vpic"><img src="{e(u)}" alt="{e(name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" '
+            f'onerror="this.parentNode.remove();"></span>')
 
 
 def vcard(cid, name, url, get, who, how, tags, codes, color):
     e = html.escape
     t = "".join(f"<span>{e(x)}</span>" for x in tags)
-    return (f'<article class="vcard" id="{cid}" data-who="{codes}" style="--c:{color}"><h3>{e(name)}</h3>'
+    pic = pic_html(cid, name)
+    return (f'<article class="vcard{" has-pic" if pic else ""}" id="{cid}" data-who="{codes}" style="--c:{color}">{pic}'
+            f'<div class="vhead">{logo_html(cid, name, color)}<h3>{e(name)}</h3></div>'
             f'<dl><div><dt>You get</dt><dd>{e(get)}</dd></div><div><dt>Who qualifies</dt><dd>{e(who)}</dd></div>'
             f'<div><dt>How to get it</dt><dd>{e(how)}</dd></div></dl><span class="tags">{t}</span>'
             f'<a class="vgo" href="{e(url)}" target="_blank" rel="noopener noreferrer">Official page &rarr;</a></article>')
@@ -368,10 +590,51 @@ def vcard(cid, name, url, get, who, how, tags, codes, color):
 
 def brand_vcard(b):
     e = html.escape
+    bid = brand_id(b)
     codes = " ".join({"mil": "vet ret", "fr": "fr"}[w] for w in b["who"])
     t = "".join(f"<span>{e(x)}</span>" for x in [b["cat"]] + b["tags"])
-    return (f'<article class="vcard" data-who="{codes}" style="--c:{b["c"]}"><h3>{e(b["name"])}</h3><p>{e(b["desc"])}</p>'
+    pic = pic_html(bid, b["name"])
+    return (f'<article class="vcard{" has-pic" if pic else ""}" id="{bid}" data-who="{codes}" style="--c:{b["c"]}">{pic}'
+            f'<div class="vhead">{logo_html(bid, b["name"], b["c"])}<h3>{e(b["name"])}</h3></div><p>{e(b["desc"])}</p>'
             f'<span class="tags">{t}</span><a class="vgo" href="{e(b["url"])}" target="_blank" rel="noopener noreferrer">See the program &rarr;</a></article>')
+
+
+def featured_html():
+    """Scrolling picture slider of the hub's best deals and packages. Each slide jumps to its card below."""
+    e = html.escape
+    names = {}
+    for sid, _, _, _, color, items in SAVINGS:
+        for it in items:
+            names[it[0]] = (it[1], color, it[6])
+    for b in BRANDS:
+        names[brand_id(b)] = (b["name"], b["c"], [b["cat"]] + b["tags"])
+    slides = ""
+    for cid, line in FEATURED:
+        if cid not in names or cid not in PHOTOS:
+            continue
+        name, color, tags = names[cid]
+        slides += (f'<a class="vslide" href="#{cid}"><span class="vs-img"><img src="{e(PHOTOS[cid])}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">'
+                   f'{logo_html(cid, name, color)}</span><span class="vs-body"><b>{e(name)}</b><small>{e(line)}</small></span></a>')
+    arrow = lambda d: (f'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" '
+                       f'stroke-linejoin="round" aria-hidden="true"><path d="{"m15 5-7 7 7 7" if d < 0 else "m9 5 7 7-7 7"}"/></svg>')
+    return (f'<div class="vfeat-h"><h2>{icon("star", 20)}Featured deals and packages</h2></div>'
+            f'<div class="vfeat-wrap"><button type="button" class="varrow vprev" aria-label="Scroll featured deals left">{arrow(-1)}</button>'
+            f'<div class="vfeat" id="vfeat">{slides}</div>'
+            f'<button type="button" class="varrow vnext" aria-label="Scroll featured deals right">{arrow(1)}</button></div>')
+
+
+FEAT_JS = """<script>
+(function(){var el=document.getElementById('vfeat');if(!el)return;
+el.querySelectorAll('img').forEach(function(i){i.addEventListener('error',function(){var s=i.closest('.vslide');if(s&&i.parentNode.classList.contains('vs-img'))s.remove();});});
+function step(d){var c=el.firstElementChild;var w=c?c.getBoundingClientRect().width+12:el.clientWidth/3;var end=el.scrollLeft+el.clientWidth>=el.scrollWidth-4;
+el.scrollTo({left:d>0&&end?0:el.scrollLeft+d*w,behavior:'smooth'});}
+document.querySelector('.vprev').addEventListener('click',function(){step(-1);});document.querySelector('.vnext').addEventListener('click',function(){step(1);});
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;var paused=false,w=el.parentNode;
+w.addEventListener('mouseenter',function(){paused=true;});w.addEventListener('mouseleave',function(){paused=false;});
+w.addEventListener('focusin',function(){paused=true;});w.addEventListener('focusout',function(){paused=false;});
+el.addEventListener('touchstart',function(){paused=true;},{passive:true});
+setInterval(function(){if(!paused&&!document.hidden)step(1);},3500);})();
+</script>"""
 
 
 HUB_JS = """<script>
@@ -414,12 +677,12 @@ def build():
 <section class="hero vet-hero"><div class="wrap">
 <p class="eyebrow">Veteran-owned &middot; SteelGames Veteran Hub</p>
 <h1>Veteran Hub: savings for veterans and their families</h1>
-<p class="lede">Discounts, tax-free shopping, travel deals, free park passes and event tickets, VA home loan basics and education money for veterans' spouses and kids, all in one place. SteelGames is veteran-owned, so this hub is personal.</p>
-<div class="vstats"><span><b>{n_programs + len(BRANDS)}</b> programs and brands</span><span><b>6</b> ways to save</span><span>Checked <b>{e(SAVINGS_CHECKED)}</b></span><span><b>No</b> affiliate links in the hub</span></div>
+<p class="lede">Discounts on tech, cars and insurance, tax-free shopping, travel deals, free park passes and event tickets, health care, career help, VA home loan basics and education money for veterans' spouses and kids, all in one place. SteelGames is veteran-owned, so this hub is personal.</p>
+<div class="vstats"><span><b>{n_programs + len(BRANDS)}</b> programs and brands</span><span><b>{len(SAVINGS) + 1}</b> ways to save</span><span>Checked <b>{e(SAVINGS_CHECKED)}</b></span><span><b>No</b> affiliate links in the hub</span></div>
 <p class="vnote">SteelGames is not part of VA or the Department of Defense, and nothing here is financial or legal advice. Each program sets its own rules and they can change, so confirm on the official page before you plan or buy.</p>
 </div></section>
 <section class="block"><div class="wrap"><div class="vtiles">{tiles}</div></div></section>
-<section class="block"><div class="wrap"><div class="vtop"><h2>{icon("star", 20)}Top picks for any veteran</h2><ol>{top}</ol></div></div></section>
+<section class="block"><div class="wrap">{featured_html()}</div></section>
 <div class="vbar"><div class="wrap"><input type="search" id="vq" placeholder="Search the hub, like parks, mortgage, tickets or scholarship" aria-label="Search the Veteran Hub">
 <div class="vwho" role="group" aria-label="Show programs for">{who_btns}</div><p class="vcount" id="vcount" aria-live="polite"></p></div></div>
 {sections}<section class="block vsec" id="gaming"><div class="wrap"><h2><span class="vico" style="--c:#4DD0E1">{icon("gaming")}</span>Gaming discounts for veterans and first responders</h2>
@@ -432,7 +695,8 @@ def build():
 <p class="lede">Tell us about a discount, travel deal or money program for veterans and their families. We check it on the official page before we add it.</p>
 <div class="chips"><a href="{mail}">Send a tip</a><a href="https://discord.gg/ekrRaejc6">Join the Discord</a><a href="/gifts/">Holiday gift shop</a></div></div></section>
 </main>
-{HUB_JS}"""
+{HUB_JS}
+{FEAT_JS}"""
             + layout.footer())
 
 
