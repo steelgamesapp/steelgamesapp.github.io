@@ -209,6 +209,194 @@
    "name": "Quicken Classic Deluxe (1 year)",
    "blurb": "Budgeting and money tracking for your household.",
    "cat": "tools"
+  },
+  {
+   "asin": "B09V71FYGS",
+   "name": "Windows 11 Pro on USB (retail)",
+   "blurb": "A full retail Windows 11 Pro license on a USB installer you can move to a new PC later.",
+   "cat": "windows",
+   "img": "61r5zmzDO8L"
+  },
+  {
+   "asin": "B07Q6B5YL5",
+   "name": "Norton 360 Premium, 10 devices",
+   "blurb": "Antivirus, VPN, 75GB cloud backup and a password manager for the whole family.",
+   "cat": "security",
+   "img": "61f0DyvbSJL"
+  },
+  {
+   "asin": "B08C81ZCXX",
+   "name": "Norton 360 for Gamers, 3 devices",
+   "blurb": "Antivirus with a game optimizer that frees up CPU while you play.",
+   "cat": "security",
+   "img": "61wNiWHGh6L"
+  },
+  {
+   "asin": "B0BB2N3SM3",
+   "name": "McAfee+ Premium, unlimited devices",
+   "blurb": "Antivirus, VPN and identity monitoring for every device you own.",
+   "cat": "security",
+   "img": "51fvj0ucHML"
+  },
+  {
+   "asin": "B07CY6RYFW",
+   "name": "Bitdefender Family Pack, 15 devices, 2 years",
+   "blurb": "Bitdefender protection for a big household, two years at once.",
+   "cat": "security",
+   "img": "71VKV+o8ZwL"
+  },
+  {
+   "asin": "B07CY74S5B",
+   "name": "Bitdefender Antivirus Plus, 3 PCs",
+   "blurb": "Bitdefender's light antivirus for Windows PCs.",
+   "cat": "security",
+   "img": "71GELZtxJ0L"
+  },
+  {
+   "asin": "B07DDL3N69",
+   "name": "Webroot Internet Security Complete, 5 devices",
+   "blurb": "Antivirus plus cloud backup and a password manager.",
+   "cat": "security",
+   "img": "71dSKXXc54L"
+  },
+  {
+   "asin": "B08X2KBP8Z",
+   "name": "ESET Home Security Premium, 3 devices",
+   "blurb": "ESET antivirus with a password manager and encryption.",
+   "cat": "security"
+  },
+  {
+   "asin": "B0D9HYGCLQ",
+   "name": "NordVPN Basic, 1 year, 10 devices",
+   "blurb": "NordVPN's plain VPN plan.",
+   "cat": "vpn"
+  },
+  {
+   "asin": "B0CD37PMCL",
+   "name": "NordVPN Plus, 1 year, 10 devices",
+   "blurb": "VPN, malware protection and a password manager.",
+   "cat": "vpn"
+  },
+  {
+   "asin": "B0D48139YN",
+   "name": "Adobe Creative Cloud Pro (Student and Teacher)",
+   "blurb": "All 20+ Adobe apps at the education price for 12 months.",
+   "cat": "creative",
+   "img": "81R4yk+Jd4L"
+  },
+  {
+   "asin": "B07Q3SPSZ2",
+   "name": "Adobe Creative Cloud (1 month)",
+   "blurb": "Every Adobe app for a month, good for a single project.",
+   "cat": "creative",
+   "img": "81LY3DzjHtL"
+  },
+  {
+   "asin": "B07Q96J2QT",
+   "name": "Adobe Photoshop (12 months)",
+   "blurb": "The standard photo and design editor, used for thumbnails everywhere.",
+   "cat": "creative"
+  },
+  {
+   "asin": "B07Q6ZQXCZ",
+   "name": "Adobe Illustrator (12 months)",
+   "blurb": "Vector design for logos, emotes and merch.",
+   "cat": "creative",
+   "img": "514dmq6MANS"
+  },
+  {
+   "asin": "B09J1LYWXR",
+   "name": "Adobe Lightroom 1TB (12 months)",
+   "blurb": "AI-assisted photo editing with 1TB of cloud storage.",
+   "cat": "creative",
+   "img": "71VQ2QG6uWL"
+  },
+  {
+   "asin": "B0FPJG1SGK",
+   "name": "CyberLink PowerDirector 2026",
+   "blurb": "A Windows video editor with AI tools, good for gameplay edits.",
+   "cat": "creative",
+   "img": "71le4SiwZcL"
+  },
+  {
+   "asin": "B0B8R7WLGW",
+   "name": "Pinnacle Studio 26",
+   "blurb": "Budget video editing and screen recording.",
+   "cat": "creative"
+  },
+  {
+   "asin": "B0B7KHVLRH",
+   "name": "Corel PaintShop Pro 2023",
+   "blurb": "A one-time-purchase photo editor for Windows.",
+   "cat": "creative"
+  },
+  {
+   "asin": "B0CQXNY528",
+   "name": "Ableton Live 12 Suite",
+   "blurb": "Ableton's full music production suite with every instrument.",
+   "cat": "creative",
+   "img": "61Z5GaPq3tL"
+  },
+  {
+   "asin": "B0CPKY9CJL",
+   "name": "Ableton Live 12 Intro",
+   "blurb": "A starter edition of Ableton Live for beginners.",
+   "cat": "creative",
+   "img": "61RAa96ixnL"
+  },
+  {
+   "asin": "B07Q3SPT17",
+   "name": "Adobe Acrobat Standard (12 months)",
+   "blurb": "Create, edit and sign PDFs on Windows.",
+   "cat": "office"
+  },
+  {
+   "asin": "B07YWKYZWD",
+   "name": "PDF Extra Lifetime",
+   "blurb": "A one-time-purchase PDF editor and Acrobat alternative.",
+   "cat": "office",
+   "img": "61JLg+27OSL"
+  },
+  {
+   "asin": "B09VLYKW94",
+   "name": "Norton Utilities Ultimate, 10 devices",
+   "blurb": "Cleans up and speeds up Windows PCs.",
+   "cat": "tools",
+   "img": "61yF8ZNsBRL"
+  },
+  {
+   "asin": "B0FCJB49G8",
+   "name": "CyberLink PowerDVD 24 Ultra",
+   "blurb": "Play Blu-ray, DVD and 4K media files on your PC.",
+   "cat": "tools",
+   "img": "81NWz8q8kTL"
+  },
+  {
+   "asin": "B0CK9MNB4P",
+   "name": "Snagit 2024",
+   "blurb": "Screen capture and image editing for guides and tutorials.",
+   "cat": "tools",
+   "img": "518iro+q1IL"
+  },
+  {
+   "asin": "B09CK4M9J3",
+   "name": "Roxio Toast 20 Pro (Mac)",
+   "blurb": "CD, DVD and Blu-ray burning and media tools for Mac.",
+   "cat": "tools",
+   "img": "61XBT2vLpvL"
+  },
+  {
+   "asin": "B09JLDNLGN",
+   "name": "Roxio Creator NXT Pro 9",
+   "blurb": "Disc burning, photo editing and media tools for Windows.",
+   "cat": "tools",
+   "img": "711fovmbfTL"
+  },
+  {
+   "asin": "B0CFT56V4V",
+   "name": "Quicken Classic Business and Personal (1 year)",
+   "blurb": "Track household and small business money in one app.",
+   "cat": "tools"
   }
  ]
 }
