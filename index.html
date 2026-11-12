@@ -404,6 +404,39 @@ img.noimg { visibility: hidden; }
 .ext-banner .ext-sub { display: none; }
 .ext-banner .btn { min-height: 36px; padding: 0 16px; font-size: 14px; }
 
+/* Home promos: veteran pill, Black Friday + gifts picture slider, side Chrome extension tab */
+.promo-top { padding-block: 14px 0; }
+.vet-pill { display: inline-flex; align-items: center; gap: 8px; max-width: 100%; padding: 7px 14px; border-radius: 999px; background: linear-gradient(90deg, #2E2078 0%, #1A1342 100%); border: 1px solid var(--line-strong); color: #fff; text-decoration: none; font-size: 14px; white-space: nowrap; }
+.vet-pill:hover { border-color: #B9AEFF; color: #fff; }
+.vet-pill .vet-star { color: #FFB020; }
+.vet-pill .vet-sub { color: var(--steel); overflow: hidden; text-overflow: ellipsis; }
+.pr { margin-top: 16px; }
+.pr-links { display: flex; gap: 16px; }
+.pr-wrap { position: relative; }
+.pr-slider { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 19%); gap: 12px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: #4A37A8 transparent; padding-bottom: 8px; }
+.pr-slider > * { scroll-snap-align: start; }
+.pr-prev { left: -6px; } .pr-next { right: -6px; }
+.pr-card { position: relative; display: flex; flex-direction: column; border-radius: 6px; overflow: hidden; background: linear-gradient(180deg, #261B5C 0%, #1A1342 100%); border: 1px solid var(--line); color: #fff; text-decoration: none; transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease; }
+.pr-card:hover { transform: translateY(-2px); border-color: #B9AEFF; box-shadow: 0 8px 22px rgba(106,77,240,.38); color: #fff; }
+.pr-img { position: relative; aspect-ratio: 4 / 3; background: #fff; }
+.pr-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+.pr-tag { position: absolute; left: 6px; top: 6px; padding: 3px 7px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; background: #6A4DF0; color: #fff; }
+.pr-card[data-kind="deal"] .pr-tag { background: #beee11; color: #1A1342; }
+.pr-body { display: flex; flex-direction: column; gap: 4px; padding: 9px 10px 11px; }
+.pr-title { font-size: 14px; font-weight: 600; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pr-meta { font-size: 13px; color: var(--steel); }
+.pr-meta b { color: #beee11; font-size: 15px; }
+.ext-tab { position: fixed; right: 0; top: 50%; z-index: 40; display: flex; align-items: center; gap: 6px; padding: 10px 8px; border-radius: 10px 0 0 10px; background: #261B5C; border: 1px solid #4A37A8; border-right: 0; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; writing-mode: vertical-rl; transform: translateY(-50%) rotate(180deg); box-shadow: 0 6px 18px rgba(0,0,0,.4); }
+.ext-tab svg { transform: rotate(180deg); }
+.ext-tab:hover { background: #6A4DF0; color: #fff; }
+@media (max-width: 700px) {
+  .pr-slider { grid-auto-columns: 46%; }
+  .pr-links a + a { display: none; }
+  .vet-pill .vet-sub { display: none; }
+  .ext-tab { padding: 8px 6px; } .ext-tab span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .pr-card { transition: none; } }
+
 .st-hit:focus-visible { outline-offset: -3px; }
 @media (max-width: 700px) {
   .st-top p { display: none; }
@@ -459,48 +492,18 @@ img.noimg { visibility: hidden; }
 </header>
 
 <main id="top">
-  <div class="wrap wrap-wide promo-strip">
-<section class="ext-banner" aria-label="SteelGames Chrome extension">
-    <div class="wrap wrap-wide">
-      <div>
-        <p class="eyebrow">New</p>
-        <p class="ext-title">See the lowest price on every Steam page</p>
-        <p class="ext-sub">The SteelGames Chrome extension shows the best price across major PC game stores, the all-time low and a Wait-O-Meter right on Steam game pages.</p>
+  <div class="wrap wrap-wide promo-top">
+    <a class="vet-pill" href="/military.html"><span class="vet-star" aria-hidden="true">&#9733;</span><b>Veteran Hub</b><span class="vet-sub">Savings for veterans and their families</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a>
+    <section class="pr" aria-labelledby="pr-h">
+      <div class="st-h"><h2 id="pr-h">Black Friday deals &amp; holiday gifts</h2><span class="pr-links"><a href="/gear.html#deals">All Black Friday deals</a><a href="/gifts/">Shop gifts</a></span></div>
+      <div class="pr-wrap">
+        <button type="button" class="st-arrow pr-prev" aria-label="Scroll deals and gifts left"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+        <div class="pr-slider" id="prSlider"><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div></div>
+        <button type="button" class="st-arrow pr-next" aria-label="Scroll deals and gifts right"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
       </div>
-      <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/digihifdddmmflefajfemioefidnoaif" rel="noopener">Get the Chrome extension</a>
-    </div>
-  </section>
-  <section class="ext-banner" aria-label="Savings for veterans and their families">
-    <div class="wrap wrap-wide">
-      <div>
-        <p class="eyebrow">Veteran-owned &middot; Veteran Hub</p>
-        <p class="ext-title">Savings for veterans and their families</p>
-        <p class="ext-sub">Military discounts, tax-free exchange shopping, travel deals, free park passes and event tickets, VA home loan basics and education money for veterans' kids.</p>
-      </div>
-      <a class="btn btn-primary" href="/military.html">Open the Veteran Hub</a>
-    </div>
-  </section>
-  <section class="ext-banner" aria-label="Black Friday gear and key deals">
-    <div class="wrap wrap-wide">
-      <div>
-        <p class="eyebrow">Black Friday</p>
-        <p class="ext-title">Gear and key deals for Black Friday 2026</p>
-        <p class="ext-sub">Redragon keyboards, AutoFull chairs from Nov 10, UPERFECT monitors, GMKtec mini PCs and game key marketplaces, all in one place.</p>
-      </div>
-      <a class="btn btn-primary" href="/gear.html#deals">See the deals</a>
-    </div>
-  </section>
-  <section class="ext-banner" aria-label="Holiday gift shop">
-    <div class="wrap wrap-wide">
-      <div>
-        <p class="eyebrow">Black Friday to Christmas</p>
-        <p class="ext-title">Holiday gift shop for gamers</p>
-        <p class="ext-sub">Gaming gifts sorted by budget, from stocking stuffers under $25 to big gifts, plus gifts for streamers, console players and PC builders.</p>
-      </div>
-      <a class="btn btn-primary" href="/gifts/">Shop gifts</a>
-    </div>
-  </section>
+    </section>
   </div>
+  <a class="ext-tab" href="https://chromewebstore.google.com/detail/digihifdddmmflefajfemioefidnoaif" rel="noopener" aria-label="Get the SteelGames Chrome extension: lowest price on every Steam page"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#FF7A1A"/><circle cx="12" cy="12" r="4.2" fill="#fff"/><circle cx="12" cy="12" r="3" fill="#6A4DF0"/></svg><span>Chrome extension</span></a>
   <section class="st" id="deals" aria-labelledby="st-title">
     <div class="wrap wrap-wide">
       <div class="st-top">
@@ -834,6 +837,40 @@ img.noimg { visibility: hidden; }
 (() => { const h = location.hash.slice(1); if (!h) return;
   if (h === 'privacy') location.replace('/privacy.html');
   else if (['help','get-app','features','about','community','guides','start'].includes(h)) location.replace('/get-app/#' + h); })();
+</script>
+<script>
+/* Black Friday deals + holiday gifts picture slider (data from /data/home_promos.json, built by tools/home_promos.py). Auto-scrolls, pauses on hover/touch. */
+(() => {
+  const el = document.getElementById('prSlider');
+  if (!el) return;
+  const esc = s => String(s || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const card = s => `<a class="pr-card" data-kind="${esc(s.kind)}" href="${esc(s.href)}" target="_blank" rel="sponsored nofollow noopener">
+    <span class="pr-img"><img src="${esc(s.img)}" alt="" loading="lazy" decoding="async"><span class="pr-tag">${esc(s.tag)}</span></span>
+    <span class="pr-body"><span class="pr-title">${esc(s.title)}</span><span class="pr-meta">${s.price ? `<b>${esc(s.price)}</b>` : s.kind === 'deal' ? 'Black Friday sale' : 'See price'}</span></span></a>`;
+  fetch('/data/home_promos.json', { cache: 'no-cache' }).then(r => r.json()).then(d => {
+    const slides = (d && d.slides) || [];
+    if (!slides.length) { el.closest('.pr').hidden = true; return; }
+    el.innerHTML = slides.map(card).join('');
+    el.querySelectorAll('img').forEach(img => img.addEventListener('error', () => img.closest('.pr-card').remove()));
+  }).catch(() => { el.closest('.pr').hidden = true; });
+  const step = dir => {
+    const w = el.firstElementChild ? el.firstElementChild.getBoundingClientRect().width + 12 : el.clientWidth / 4;
+    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+    el.scrollTo({ left: dir > 0 && atEnd ? 0 : el.scrollLeft + dir * w, behavior: 'smooth' });
+  };
+  document.querySelector('.pr-prev').addEventListener('click', () => step(-1));
+  document.querySelector('.pr-next').addEventListener('click', () => step(1));
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let paused = false;
+    const wrap = el.parentElement;
+    wrap.addEventListener('mouseenter', () => { paused = true; });
+    wrap.addEventListener('mouseleave', () => { paused = false; });
+    el.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+    wrap.addEventListener('focusin', () => { paused = true; });
+    wrap.addEventListener('focusout', () => { paused = false; });
+    setInterval(() => { if (!paused && !document.hidden) step(1); }, 3500);
+  }
+})();
 </script>
 </body>
 </html>
