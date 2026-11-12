@@ -3786,6 +3786,1509 @@
           ]
         }
       ]
+    },
+    {
+      "after": "console-shop",
+      "id": "consoles-games",
+      "nav": "Consoles and games",
+      "title": "Consoles and video games",
+      "intro": "New consoles and the games everyone is playing, in physical editions you can gift, lend or trade in later.",
+      "cats": [
+        {
+          "title": "Consoles and VR headsets",
+          "items": [
+            {
+              "asin": "B0F3GWXLTS",
+              "name": "Nintendo Switch 2",
+              "blurb": "Nintendo's new console with a bigger 1080p screen, magnetic Joy-Con 2 and 4K on the TV.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true,
+              "img": "714-Fh3ngmL"
+            },
+            {
+              "asin": "B0GZ5DFHC5",
+              "name": "Nintendo Switch 2: Choose Your Game Bundle",
+              "blurb": "The Switch 2 bundled with a game of your choice.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "img": "710fwupv1xL"
+            },
+            {
+              "asin": "B0DGY63Z2H",
+              "name": "PlayStation 5 Pro",
+              "blurb": "Sony's most powerful PS5, with a stronger GPU and PSSR upscaling for sharper 4K.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true,
+              "img": "61vR3ovb2UL"
+            },
+            {
+              "asin": "B0FTMY4YZ2",
+              "name": "PlayStation 5 Pro, 2TB",
+              "blurb": "The PS5 Pro with 2TB of built-in storage.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "img": "51f-7a6i5PL"
+            },
+            {
+              "asin": "B09Z7J8194",
+              "name": "Xbox Series X 1TB Digital Edition",
+              "blurb": "The all-digital Xbox Series X with a 1TB SSD.",
+              "chips": [
+                [
+                  "xbox",
+                  "Xbox"
+                ]
+              ],
+              "img": "51bcwM0qLaL"
+            },
+            {
+              "asin": "B0DDK1WM9K",
+              "name": "Meta Quest 3S 128GB",
+              "blurb": "The lowest-priced Meta Quest, for mixed reality and VR games.",
+              "chips": [
+                [
+                  "all",
+                  "VR"
+                ]
+              ],
+              "top": true,
+              "img": "61OseHapCUL"
+            }
+          ]
+        },
+        {
+          "title": "Switch 2 and Switch games",
+          "items": [
+            {
+              "asin": "B0F66GQLHH",
+              "name": "Mario Kart World (Switch 2)",
+              "blurb": "The open-world Mario Kart made for Switch 2.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "img": "91uAxozhVLL"
+            },
+            {
+              "asin": "B0F66KLYVH",
+              "name": "Donkey Kong Bananza (Switch 2)",
+              "blurb": "A 3D Donkey Kong adventure where you smash through everything.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true,
+              "img": "91Zq0HAtL4L"
+            },
+            {
+              "asin": "B0FC6J5CMG",
+              "name": "Pokemon Legends: Z-A, Switch 2 Edition",
+              "blurb": "The newest Pokemon adventure, set in Lumiose City.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true,
+              "img": "81JAV3LFOjL"
+            },
+            {
+              "asin": "B0G1VH7HZ1",
+              "name": "Pokemon Pokopia (Switch 2)",
+              "blurb": "A cozy Pokemon life-sim for Switch 2.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "img": "81GP6bubI3L"
+            },
+            {
+              "asin": "B0GZSLD685",
+              "name": "Star Fox (Switch 2)",
+              "blurb": "Arwing dogfights return on Switch 2.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "img": "81CWQ+F4FoL"
+            },
+            {
+              "asin": "B0F66JNF9W",
+              "name": "Super Mario Party Jamboree, Switch 2 Edition",
+              "blurb": "The party game plus the Jamboree TV add-on.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "img": "91St4Iv4rRL"
+            },
+            {
+              "asin": "B097B2YWFX",
+              "name": "Zelda: Tears of the Kingdom",
+              "blurb": "One of the best-rated Switch games ever, playable on Switch 2.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true,
+              "img": "81o5QpJ7aVL"
+            },
+            {
+              "asin": "B07D13QGXM",
+              "name": "Minecraft (Switch)",
+              "blurb": "The best-selling game of all time, rated by over 46,000 buyers.",
+              "chips": [
+                [
+                  "nin",
+                  "Nintendo"
+                ]
+              ],
+              "top": true,
+              "img": "61-czRWDghL"
+            }
+          ]
+        },
+        {
+          "title": "PS5 games",
+          "items": [
+            {
+              "asin": "B0F6F41T4H",
+              "name": "Ghost of Yotei",
+              "blurb": "Sucker Punch's samurai open world, set in 1600s Japan.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true,
+              "img": "81ZD-UIELoL"
+            },
+            {
+              "asin": "B0G6157JKW",
+              "name": "Marvel's Wolverine",
+              "blurb": "Insomniac's Wolverine action game.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "img": "81bEpiIjnOL"
+            },
+            {
+              "asin": "B0FBHCYKXX",
+              "name": "007 First Light, Specialist Edition",
+              "blurb": "A young James Bond's first mission.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "img": "81G59YFhmsL"
+            },
+            {
+              "asin": "B0FMC62NCK",
+              "name": "Call of Duty: Black Ops 7",
+              "blurb": "The newest Black Ops campaign, multiplayer and Zombies.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "img": "81mwBa-kziL"
+            },
+            {
+              "asin": "B09Z7HJPWL",
+              "name": "Call of Duty: Black Ops 6",
+              "blurb": "Last year's Black Ops, now at a lower price.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true,
+              "img": "81J6y4tm-WL"
+            },
+            {
+              "asin": "B0FH132GYR",
+              "name": "EA SPORTS FC 26",
+              "blurb": "The yearly soccer game with Ultimate Team.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "img": "81aMKJCm9BL"
+            },
+            {
+              "asin": "B0F6423HHV",
+              "name": "Madden NFL 26",
+              "blurb": "This season's NFL game.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true,
+              "img": "81Q5-opGeqL"
+            },
+            {
+              "asin": "B0FH5GW64H",
+              "name": "NBA 2K26",
+              "blurb": "This season's NBA game.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true,
+              "img": "81TbR0FGhbL"
+            },
+            {
+              "asin": "B09GSK788K",
+              "name": "Gran Turismo 7",
+              "blurb": "The PlayStation racing sim, great with a wheel.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true,
+              "img": "81MdKU3FomL"
+            },
+            {
+              "asin": "B0DVNF1F49",
+              "name": "Elden Ring Nightreign",
+              "blurb": "A co-op roguelike spin-off of Elden Ring.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "img": "81S4S6n4b9L"
+            },
+            {
+              "asin": "B0BPJRGNSD",
+              "name": "Street Fighter 6",
+              "blurb": "Capcom's fighting game, now at a budget price.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "top": true,
+              "img": "81lBSgYg9wL"
+            }
+          ]
+        },
+        {
+          "title": "Xbox games",
+          "items": [
+            {
+              "asin": "B0C7FM8QVG",
+              "name": "Forza Motorsport",
+              "blurb": "Turn 10's track racer for Xbox Series X.",
+              "chips": [
+                [
+                  "xbox",
+                  "Xbox"
+                ]
+              ],
+              "img": "61exYkUH1ZL"
+            },
+            {
+              "asin": "B0B9ZTTCJG",
+              "name": "Sonic Frontiers",
+              "blurb": "Open-zone Sonic at a low price.",
+              "chips": [
+                [
+                  "xbox",
+                  "Xbox"
+                ]
+              ],
+              "img": "81aqvlzrIjL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "after": "desk-extras",
+      "id": "esports",
+      "nav": "Esports mice, keyboards, headsets",
+      "title": "Esports mice, keyboards and headsets",
+      "intro": "The mice, keyboards and headsets pros and streamers use, plus budget picks that punch above their price.",
+      "cats": [
+        {
+          "title": "Gaming mice",
+          "items": [
+            {
+              "asin": "B087LXCTFJ",
+              "name": "Logitech G PRO X Superlight",
+              "blurb": "An ultralight wireless esports mouse used by many pros.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "51uy8gOG-iL"
+            },
+            {
+              "asin": "B0FY4KCL81",
+              "name": "Logitech G PRO X Superlight 2 SE",
+              "blurb": "The newer Superlight with a faster sensor.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "51FVxk5spcL"
+            },
+            {
+              "asin": "B0CJ4TPLRM",
+              "name": "Logitech G PRO 2 Lightspeed",
+              "blurb": "An ambidextrous wireless mouse with side buttons on both sides.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "51dTiXbtqoL"
+            },
+            {
+              "asin": "B07W7MQMD9",
+              "name": "Logitech G502 Hero (wired)",
+              "blurb": "The classic G502 with 11 buttons and adjustable weights.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "61BZuQV0xzS"
+            },
+            {
+              "asin": "B0CF4DJM7F",
+              "name": "Razer Viper V3 HyperSpeed",
+              "blurb": "An 82g wireless esports mouse at a mid-range price.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61LI6E0sJwL"
+            },
+            {
+              "asin": "B01LXC1QL0",
+              "name": "Razer DeathAdder Elite",
+              "blurb": "Razer's best-known ergonomic gaming mouse.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "51GVALfqnIL"
+            },
+            {
+              "asin": "B0C51J2ZXN",
+              "name": "Razer Cobra (wired)",
+              "blurb": "A light 58g wired mouse for small to medium hands.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "61N55jovDVL"
+            },
+            {
+              "asin": "B0916N2LPZ",
+              "name": "Razer Orochi V2",
+              "blurb": "A small wireless mouse with up to 950 hours of battery.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "61GOts9RwEL"
+            },
+            {
+              "asin": "B09VPBF8NY",
+              "name": "Redragon M656 Wireless",
+              "blurb": "A budget wireless gaming mouse under $20.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "51gVnLijAYL"
+            },
+            {
+              "asin": "B0F1MQDS4J",
+              "name": "Redragon M725 Lightweight Wireless",
+              "blurb": "A 49g honeycomb-shell wireless mouse.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61j2kAVmbrL"
+            },
+            {
+              "asin": "B0H39G3WY9",
+              "name": "TECKNET dual-mode gaming mouse",
+              "blurb": "Wireless or wired, 8000 DPI, at a very low price.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "71LGnW+stvL"
+            },
+            {
+              "asin": "B0D4QD1677",
+              "name": "AULA SC580 tri-mode wireless mouse",
+              "blurb": "Bluetooth, 2.4GHz or wired, in white.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "51R9u3u6s1L"
+            },
+            {
+              "asin": "B0B7VB5NPX",
+              "name": "Razer Mouse Dock Pro",
+              "blurb": "A magnetic wireless charging dock for Razer mice.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61RcqqmJBKL"
+            }
+          ]
+        },
+        {
+          "title": "Gaming keyboards",
+          "items": [
+            {
+              "asin": "B085RMD5TP",
+              "name": "Logitech G915 TKL",
+              "blurb": "A low-profile wireless mechanical keyboard with RGB.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61aezyfO5cL"
+            },
+            {
+              "asin": "B08BFF4C7J",
+              "name": "Razer Huntsman Mini",
+              "blurb": "A 60% optical keyboard for more mouse room.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "618etkLUt9L"
+            },
+            {
+              "asin": "B08LSJ4RHH",
+              "name": "Keychron K3 Version 2",
+              "blurb": "A slim 75% wireless mechanical keyboard for PC and Mac.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61x3nRatR9L"
+            },
+            {
+              "asin": "B0CBWJ9SKX",
+              "name": "Keychron C3 Pro",
+              "blurb": "A budget wired TKL keyboard with QMK and VIA remapping.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61FB-87wo+L"
+            }
+          ]
+        },
+        {
+          "title": "Gaming headsets",
+          "items": [
+            {
+              "asin": "B07W5JKB8Z",
+              "name": "Logitech G PRO X Wireless",
+              "blurb": "A pro wireless headset with Blue VO!CE mic filters.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "61gmWSsyn0L"
+            },
+            {
+              "asin": "B07MRMHML9",
+              "name": "Logitech G432 (wired)",
+              "blurb": "A budget wired headset with 7.1 surround.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true,
+              "img": "61j6ey6mBpL"
+            },
+            {
+              "asin": "B0CD8T9QF1",
+              "name": "SteelSeries Arctis Nova 7P (White)",
+              "blurb": "A wireless multiplatform headset with long battery life.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "img": "61YjwXQ9U5L"
+            },
+            {
+              "asin": "B01H6GUCCQ",
+              "name": "BENGOO G9000 gaming headset",
+              "blurb": "A low-cost wired headset rated by over 120,000 buyers.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "61CGHv6kmWL"
+            },
+            {
+              "asin": "B09TB15CTL",
+              "name": "Ozeino gaming headset",
+              "blurb": "A budget wired headset for PC, PS5 and Xbox.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "712OyBPPL0L"
+            },
+            {
+              "asin": "B0FJ3WX2L9",
+              "name": "Razer Kraken Kitty V3 X (Pink)",
+              "blurb": "A wired headset with kitty ears, a favorite gift.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "61q7dqyoSBL"
+            },
+            {
+              "asin": "B09FXFSY6R",
+              "name": "Tatybo gaming headset",
+              "blurb": "A kid-friendly wired headset for PS5, PC and Xbox.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "91XqyL7RiYL"
+            }
+          ]
+        },
+        {
+          "title": "XXL mousepads",
+          "items": [
+            {
+              "asin": "B0DYK8D295",
+              "name": "Razer Gigantus V2 XXL",
+              "blurb": "A thick, desk-size cloth mousepad.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "31HGLFYucgL"
+            },
+            {
+              "asin": "B01L731DSQ",
+              "name": "XXL desk-size mouse mat (35 x 16 in)",
+              "blurb": "A big desk mat rated by over 16,000 buyers.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "61FHaLsFXZL"
+            },
+            {
+              "asin": "B08DS7FM9K",
+              "name": "Large stitched-edge gaming mousepad",
+              "blurb": "A low-cost large pad with stitched edges.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "81yhNGnIOYL"
+            },
+            {
+              "asin": "B0CKWYGJJ4",
+              "name": "Topographic XXL mouse pad",
+              "blurb": "A desk mat with a black topographic map print.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "81ufm-5nStL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "after": "pc-extras",
+      "id": "build-parts",
+      "nav": "Monitors, CPUs and GPUs",
+      "title": "Monitors, CPUs, graphics cards and builds",
+      "intro": "Gaming monitors for every budget, plus the processors, graphics cards, memory and cases for a new build.",
+      "cats": [
+        {
+          "title": "Gaming monitors",
+          "items": [
+            {
+              "asin": "B0BCDD4KTK",
+              "name": "KOORUI 24-inch 180Hz monitor",
+              "blurb": "A budget 1080p VA monitor rated by over 15,000 buyers.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "71cQCv8fWKL"
+            },
+            {
+              "asin": "B0C4DNVG5H",
+              "name": "KOORUI 24-inch curved 180Hz",
+              "blurb": "A curved 1080p monitor at a low price.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "71ysm1UlqaL"
+            },
+            {
+              "asin": "B0FLL354M2",
+              "name": "LG 24G411A UltraGear 24-inch IPS",
+              "blurb": "LG's budget 1080p IPS gaming monitor.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "710ykhVHmNL"
+            },
+            {
+              "asin": "B0D97HDVT3",
+              "name": "SANSUI 24-inch 200Hz",
+              "blurb": "A 1080p monitor with a 200Hz refresh rate.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "71w5oxxatCL"
+            },
+            {
+              "asin": "B0D8LH2VSP",
+              "name": "Acer Nitro 27-inch QHD 180Hz IPS",
+              "blurb": "A 1440p 180Hz IPS monitor at a great price.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71BulG5wsRL"
+            },
+            {
+              "asin": "B0BZR9TMBJ",
+              "name": "ASUS TUF VG27AQ3A 27-inch 1440p 180Hz",
+              "blurb": "A popular 1440p gaming monitor with G-SYNC compatibility.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71awxc1RPRL"
+            },
+            {
+              "asin": "B0CJVK87Y7",
+              "name": "Acer Nitro 27-inch curved QHD 180Hz",
+              "blurb": "A curved 1440p monitor for under $150.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "51ospfDeYSL"
+            },
+            {
+              "asin": "B0CWQMZPJC",
+              "name": "SANSUI 34-inch ultrawide 200Hz",
+              "blurb": "A curved 3440 x 1440 ultrawide at a budget price.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "71tpbFGr+0L"
+            },
+            {
+              "asin": "B0DZL719V1",
+              "name": "Alienware AW3425DWM 34-inch ultrawide",
+              "blurb": "A 34-inch 1440p 180Hz curved monitor from Alienware.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61qGYTlW3FL"
+            },
+            {
+              "asin": "B08LCMYT54",
+              "name": "ASUS TUF VG34VQL1B 34-inch ultrawide",
+              "blurb": "A 165Hz ultrawide with HDR.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "712Z-vGAq0L"
+            }
+          ]
+        },
+        {
+          "title": "Portable monitors",
+          "items": [
+            {
+              "asin": "B088D8JG3L",
+              "name": "KYY 15.6-inch portable monitor",
+              "blurb": "A slim USB-C second screen for laptops, handhelds and Switch.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true,
+              "img": "71LMr1TboQL"
+            },
+            {
+              "asin": "B095GG31KX",
+              "name": "InnoView 15.6-inch portable monitor",
+              "blurb": "A 1080p travel screen with USB-C and HDMI.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true,
+              "img": "71C3uFMWVJL"
+            },
+            {
+              "asin": "B0B9NNWXVP",
+              "name": "MNN 15.6-inch portable monitor",
+              "blurb": "A low-cost portable IPS screen.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true,
+              "img": "81-7N-LhOoL"
+            }
+          ]
+        },
+        {
+          "title": "Processors",
+          "items": [
+            {
+              "asin": "B0BBJDS62N",
+              "name": "AMD Ryzen 5 7600X",
+              "blurb": "A six-core AM5 gaming CPU with great value.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "51m7L9bQI8L"
+            },
+            {
+              "asin": "B0BMQJWBDM",
+              "name": "AMD Ryzen 5 7600",
+              "blurb": "A cooler-running six-core AM5 chip that includes a cooler.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "61h39mKsSBL"
+            },
+            {
+              "asin": "B0BBHHT8LY",
+              "name": "AMD Ryzen 7 7700X",
+              "blurb": "An eight-core AM5 chip for gaming and streaming.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "51hfER1cZVL"
+            },
+            {
+              "asin": "B0D6NMDNNX",
+              "name": "AMD Ryzen 7 9700X",
+              "blurb": "AMD's efficient Zen 5 eight-core.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "61F3ZChalyL"
+            },
+            {
+              "asin": "B0G8JMLXNQ",
+              "name": "AMD Ryzen 7 9850X3D",
+              "blurb": "AMD's newest 3D V-Cache gaming chip.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71KDfkysoeL"
+            },
+            {
+              "asin": "B08166SLDF",
+              "name": "AMD Ryzen 5 5600X",
+              "blurb": "A budget AM4 upgrade rated by over 30,000 buyers.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "51ld6RR8IrL"
+            },
+            {
+              "asin": "B09VCHQHZ6",
+              "name": "AMD Ryzen 7 5700X",
+              "blurb": "An eight-core AM4 drop-in upgrade.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "51gRv8z+K6L"
+            },
+            {
+              "asin": "B0H41D4KFT",
+              "name": "AMD Ryzen 7 5800X3D",
+              "blurb": "The AM4 3D V-Cache chip for a last big upgrade on an older board.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61vkFq7H9tL"
+            }
+          ]
+        },
+        {
+          "title": "Graphics cards",
+          "items": [
+            {
+              "asin": "B0DS6S98ZF",
+              "name": "ASUS TUF RTX 5070 12GB OC",
+              "blurb": "A tough, quiet RTX 5070 for 1440p gaming.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "815-M4vy8JL"
+            },
+            {
+              "asin": "B0DTGP2WMT",
+              "name": "Gigabyte RTX 5070 WINDFORCE OC SFF",
+              "blurb": "A compact RTX 5070 that fits small cases.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71N6P3QQplL"
+            },
+            {
+              "asin": "B0DRRMZDH6",
+              "name": "ASUS Prime Radeon RX 9070 XT 16GB",
+              "blurb": "AMD's high-end RDNA 4 card with 16GB of memory.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "81huTBuLV+L"
+            },
+            {
+              "asin": "B0DS2QG2KW",
+              "name": "Gigabyte Radeon RX 9070 XT Gaming OC",
+              "blurb": "An RX 9070 XT with a triple-fan cooler.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71R7fXnFGCL"
+            },
+            {
+              "asin": "B0DRRJ511M",
+              "name": "ASUS Prime Radeon RX 9070 16GB",
+              "blurb": "A slightly cheaper RX 9070 for 1440p.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "817n67VXh1L"
+            }
+          ]
+        },
+        {
+          "title": "Memory and cases",
+          "items": [
+            {
+              "asin": "B0CTHXMYL8",
+              "name": "Crucial Pro DDR5 32GB 6000MHz",
+              "blurb": "A plain, reliable 2x16GB DDR5 kit.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "61EUuA9HiaL"
+            },
+            {
+              "asin": "B0BZHTVHN5",
+              "name": "CORSAIR Vengeance RGB DDR5 32GB 6000MHz",
+              "blurb": "An RGB 2x16GB DDR5 kit.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "61XsKRKsGoL"
+            },
+            {
+              "asin": "B0BFGB2D2Z",
+              "name": "G.SKILL Flare X5 DDR5 32GB",
+              "blurb": "A low-profile kit tuned for AMD EXPO.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "61gD0yqG+AL"
+            },
+            {
+              "asin": "B0F2T66QC9",
+              "name": "Lian Li V100 ATX mid-tower",
+              "blurb": "A budget airflow case from Lian Li.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71rMfdhZejL"
+            },
+            {
+              "asin": "B0DFHNV7TK",
+              "name": "CORSAIR 4000D RS ARGB",
+              "blurb": "Corsair's popular airflow case with ARGB fans.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "61-u3G8Bg9L"
+            },
+            {
+              "asin": "B0D5PHHCK5",
+              "name": "MONTECH XR panoramic case",
+              "blurb": "A glass-front showcase case with three ARGB fans.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "81HNlMMbZbL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "after": "laptops-handhelds",
+      "id": "on-the-go",
+      "nav": "Docks and mobile gaming",
+      "title": "Handheld docks and phone gaming",
+      "intro": "Docks that turn a Steam Deck or ROG Ally into a desktop, plus controllers and coolers for gaming on your phone.",
+      "cats": [
+        {
+          "title": "Handheld docks",
+          "items": [
+            {
+              "asin": "B0B7HVZNMB",
+              "name": "JSAUX 6-in-1 dock for Steam Deck and ROG Ally",
+              "blurb": "HDMI, Ethernet, USB and charging in one stand.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "71sx4hghv5L"
+            },
+            {
+              "asin": "B0CS6BWL4Q",
+              "name": "Anker 6-in-1 Steam Deck dock",
+              "blurb": "A 4K60 HDMI dock from Anker.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "61HMF4EHokL"
+            },
+            {
+              "asin": "B0B28PCDM2",
+              "name": "JSAUX 5-in-1 docking station",
+              "blurb": "A smaller, lower-cost handheld dock.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "top": true,
+              "img": "71peof84jPL"
+            },
+            {
+              "asin": "B0DPGZKF7V",
+              "name": "WAVLINK HDMI 2.1 gaming dock",
+              "blurb": "A handheld dock with 4K144 output.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "71tJq7V41sL"
+            }
+          ]
+        },
+        {
+          "title": "Phone and tablet gaming",
+          "items": [
+            {
+              "asin": "B0CT17GPNT",
+              "name": "Backbone One PlayStation Edition (2nd Gen, Lightning)",
+              "blurb": "A phone controller for cloud gaming and PS Remote Play.",
+              "chips": [
+                [
+                  "ps",
+                  "PlayStation"
+                ]
+              ],
+              "img": "61dkUC2c1PL"
+            },
+            {
+              "asin": "B0GTV71HP3",
+              "name": "Black Shark Magnetic Phone Cooler 6 Pro",
+              "blurb": "A magnetic cooler that keeps phones from throttling.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "71zqaEpL5eL"
+            },
+            {
+              "asin": "B0F4D7M75J",
+              "name": "Black Shark FunCooler 5",
+              "blurb": "A lower-cost magnetic phone cooler.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "71CNe6nK1hL"
+            },
+            {
+              "asin": "B0BN98QRK2",
+              "name": "Gaming finger sleeves (10 pack)",
+              "blurb": "Smooth, sweat-free touch controls for mobile games.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true,
+              "img": "91D6F+hPFvL"
+            },
+            {
+              "asin": "B0BTDHQJ6X",
+              "name": "LISEN tablet stand",
+              "blurb": "A foldable stand for tablets and phones.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true,
+              "img": "61cX2X47G3L"
+            },
+            {
+              "asin": "B09MJRJ3C8",
+              "name": "Quest carrying case for Meta Quest 3 and 3S",
+              "blurb": "A hard case to protect a Quest on the go.",
+              "chips": [
+                [
+                  "all",
+                  "VR"
+                ]
+              ],
+              "img": "51lvByz7vsL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "after": "game-room",
+      "id": "room-storage",
+      "nav": "Game room storage",
+      "title": "Game room storage and organization",
+      "intro": "TV stands, game racks, wall mounts and floor protection to keep a game room tidy.",
+      "cats": [
+        {
+          "title": "TV stands and game storage",
+          "items": [
+            {
+              "asin": "B0CX13SRT7",
+              "name": "Bestier gaming LED TV stand (55-inch)",
+              "blurb": "A carbon-fiber look TV stand with LED lights and storage.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "815ph1eZ1rL"
+            },
+            {
+              "asin": "B0F7XNKVY5",
+              "name": "Casaottima LED TV stand with outlets",
+              "blurb": "A TV stand with built-in power outlets and LEDs.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "71sYrL4zdeL"
+            },
+            {
+              "asin": "B0D1C1X7R3",
+              "name": "LED TV stand with fabric drawers",
+              "blurb": "A budget entertainment center with open shelves.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "819hMjOlZsL"
+            },
+            {
+              "asin": "B0GS19XZZ2",
+              "name": "Video game storage tower",
+              "blurb": "Holds discs, controllers and headsets next to the console.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "71TuMiUj2YL"
+            },
+            {
+              "asin": "B0F5HBCSLQ",
+              "name": "Game disc rack tower",
+              "blurb": "A tall rack for a growing disc collection.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "81g4n1PGkAL"
+            },
+            {
+              "asin": "B0B6GV6BXW",
+              "name": "Stock Your Home game and Blu-ray storage box",
+              "blurb": "A fabric bin that holds game cases and Blu-rays.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true,
+              "img": "81bKU1SOi4L"
+            }
+          ]
+        },
+        {
+          "title": "Wall mounts and floor protection",
+          "items": [
+            {
+              "asin": "B0C5R224R6",
+              "name": "KUNSLUCK controller wall mounts (6 pack)",
+              "blurb": "Display controllers on the wall.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "img": "715Fu+2snSL"
+            },
+            {
+              "asin": "B097QLKH9D",
+              "name": "TotalMount controller wall mounts (2 pack)",
+              "blurb": "Removable adhesive mounts, no drilling.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true,
+              "img": "71XXwtWn0FL"
+            },
+            {
+              "asin": "B083FM1LFC",
+              "name": "OIVO controller and headset wall mount",
+              "blurb": "A foldable holder for a controller and a headset.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true,
+              "img": "81C+2tZ84tL"
+            },
+            {
+              "asin": "B0078NU4C6",
+              "name": "D-Line 6ft floor cord cover",
+              "blurb": "Hides cords that cross the floor so no one trips.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true,
+              "img": "51k7TleR+bL"
+            },
+            {
+              "asin": "B082V3WHNQ",
+              "name": "10ft heavy-duty floor cable cover",
+              "blurb": "A longer cable protector.",
+              "chips": [
+                [
+                  "all",
+                  "Any platform"
+                ]
+              ],
+              "top": true,
+              "img": "61yfqsTyysL"
+            },
+            {
+              "asin": "B0FCBDMRSS",
+              "name": "Baroyal chair mat for hardwood (36 x 48)",
+              "blurb": "Protects floors from gaming chair wheels.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "81HExvK9OxL"
+            },
+            {
+              "asin": "B0BNP1BX45",
+              "name": "Gorilla Grip chair mat for carpet",
+              "blurb": "A heavy-duty clear mat for carpeted rooms.",
+              "chips": [
+                [
+                  "pc",
+                  "PC"
+                ]
+              ],
+              "img": "519Epvb5lXL"
+            }
+          ]
+        }
+      ]
     }
   ],
   "thumbs": {

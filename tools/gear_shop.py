@@ -418,10 +418,10 @@ BAR = f"""<!--shop:bar-->
 EMPTY = '<!--shop:empty--><p class="shop-empty wrap" id="shop-empty" hidden>No gear matches that search. Try a shorter word, like "mouse" or "chair".</p><!--/shop:empty-->'
 
 NAV = [("deals", "Black Friday deals"), ("jlab", "JLab"), ("brand-shop", "Brand picks"), ("brand-stores", "Brand stores"),
-       ("gaming-pcs", "Gaming PCs"), ("laptops-handhelds", "Laptops and handhelds"), ("pc-parts", "PC parts"), ("pc-extras", "PC upgrades"),
-       ("desk-setup", "Desk setup"), ("desk-extras", "Desk and room"), ("streaming", "Streaming and audio"), ("creator", "Creator gear"),
-       ("console", "Console accessories"), ("console-shop", "PlayStation, Xbox, Switch 2"), ("sim-retro", "Sim and retro"),
-       ("portable-vr", "VR and handheld"), ("vr-extras", "VR accessories"), ("game-room", "Game room and collectibles"),
+       ("gaming-pcs", "Gaming PCs"), ("laptops-handhelds", "Laptops and handhelds"), ("on-the-go", "Docks and mobile"), ("pc-parts", "PC parts"), ("pc-extras", "PC upgrades"), ("build-parts", "Monitors, CPUs, GPUs"),
+       ("desk-setup", "Desk setup"), ("desk-extras", "Desk and room"), ("esports", "Mice, keyboards, headsets"), ("streaming", "Streaming and audio"), ("creator", "Creator gear"),
+       ("console", "Console accessories"), ("console-shop", "PlayStation, Xbox, Switch 2"), ("consoles-games", "Consoles and games"), ("sim-retro", "Sim and retro"),
+       ("portable-vr", "VR and handheld"), ("vr-extras", "VR accessories"), ("game-room", "Game room and collectibles"), ("room-storage", "Game room storage"),
        ("/keys.html#software", "Software")]
 
 
