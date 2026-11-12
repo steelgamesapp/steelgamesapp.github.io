@@ -1,0 +1,42 @@
+name: Site upkeep (RAM ticker + home deal slider)
+# 1) Refreshes data/home_promos.json (home page Black Friday + gifts picture slider) from the gift shop page.
+# 2) Makes sure every page loads /assets/ram-ticker.js (the scrolling LIVE RAM strip).
+# Runs after any push, after the bots that rebuild pages, and hourly as a backstop.
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows:
+      - "Build SEO deal pages"
+      - "Pro setups live data (RAM prices + Amazon best sellers)"
+      - "Daily deal bot"
+    types: [completed]
+  schedule:
+    - cron: "41 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: site-upkeep
+  cancel-in-progress: false
+jobs:
+  upkeep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/home_promos.py
+      - run: python3 tools/ram_ticker_inject.py
+      - name: Commit changes
+        run: |
+          git config user.name "SteelGames Bot"
+          git config user.email "steelgames.app@outlook.com"
+          git add -A -- '*.html' data/home_promos.json
+          git diff --cached --quiet && { echo "Nothing changed."; exit 0; }
+          git commit -m "Site upkeep: RAM ticker on every page, home deal slider refresh"
+          for i in 1 2 3; do
+            git pull --rebase --autostash -X theirs origin main && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          exit 1
