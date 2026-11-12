@@ -311,16 +311,10 @@ const CS = 'https://www.cheapshark.com/api/1.0/';
 const STORES = [['1','Steam'],['25','Epic'],['3','Green Man Gaming'],['7','GOG'],['11','Humble'],['15','Fanatical']];
 
 // ---------- Money settings ----------
-// Store commission links. Once a store's affiliate program approves you, paste its deep-link
-// pattern here. {url} = the store page (URL-encoded), {title} = game title, {steamAppID}.
-//   Green Man Gaming (Impact):  'https://greenmangaming.sjv.io/c/ACCOUNT/AD/CAMPAIGN?u={url}'
-//   Fanatical (Awin):           'https://www.awin1.com/cread.php?awinmid=MERCHANT&awinaffid=YOURID&ued={url}'
-//   Humble (CJ):                'https://www.anrdoezrs.net/click-PID-AID?url={url}'
-const AFFILIATE = {
-  // '3': '',
-  // '15': '',
-  // '11': '',
-};
+// Game deal links: CheapShark gives us its price data for free only if every buy link
+// for a store it tracks goes through its redirect (https://www.cheapshark.com/redirect?dealID=...).
+// So game deals never link straight to a store or a store search, and are never wrapped
+// in a store's own affiliate link. Affiliate links stay fine for gear and key resellers.
 // Google AdSense: set both once AdSense approves the site. Until then no ads load.
 const ADSENSE_CLIENT = 'ca-pub-3613204296597380';   // e.g. 'ca-pub-1234567890123456'
 const ADSENSE_SLOT = '';     // e.g. '1234567890'
@@ -341,26 +335,9 @@ const view = document.getElementById('view');
 // ---------- Small helpers ----------
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const money = (v) => (v == null || isNaN(v)) ? '' : (Number(v) === 0 ? 'Free' : '$' + Number(v).toFixed(2));
-// Buy links go straight to the store's own site (no in-between pages),
-// wrapped in your commission link when that store's program is set up above.
-function storePage(storeID, dealID, title, steamAppID) {
-  const q = encodeURIComponent(title || '');
-  switch (String(storeID)) {
-    case '1': if (steamAppID && steamAppID !== '0') return `https://store.steampowered.com/app/${steamAppID}/`; return `https://store.steampowered.com/search/?term=${q}`;
-    case '3': return `https://www.greenmangaming.com/search/?query=${q}`;
-    case '7': return `https://www.gog.com/en/games?query=${q}`;
-    case '11': return `https://www.humblebundle.com/store/search?search=${q}`;
-    case '15': return `https://www.fanatical.com/en/search?search=${q}`;
-    case '25': return `https://store.epicgames.com/en-US/browse?q=${q}&sortBy=relevancy&sortDir=DESC`;
-    default: return `https://www.cheapshark.com/redirect?dealID=${encodeURIComponent(dealID)}`;
-  }
-}
-const earnsAt = (storeID) => !!AFFILIATE[String(storeID)];
-function storeLink(storeID, dealID, title, steamAppID) {
-  const page = storePage(storeID, dealID, title, steamAppID);
-  const t = AFFILIATE[String(storeID)];
-  if (!t) return page;
-  return t.replace('{url}', encodeURIComponent(page)).replace('{title}', encodeURIComponent(title || '')).replace('{steamAppID}', steamAppID || '');
+// Every game deal opens through CheapShark's redirect to that exact deal (see note above).
+function storeLink(storeID, dealID) {
+  return `https://www.cheapshark.com/redirect?dealID=${encodeURIComponent(dealID || '')}`;
 }
 
 // ---------- Ads and sponsors ----------
@@ -669,10 +646,8 @@ async function screenGame(id) {
   try { g = await getJSON(CS + 'games?id=' + encodeURIComponent(id)); }
   catch { view.innerHTML = errorBox("Couldn't load this game. Check your connection and try again."); return; }
   const names = await getStoreNames();
-  // Cheapest first. On a tie (within 5 cents), a store that pays SteelGames a commission goes first.
-  const official = (g.deals || []).filter((d) => names[d.storeID]).sort((a, b) => {
-    const diff = a.price - b.price;
-    return Math.abs(diff) <= 0.05 ? (earnsAt(b.storeID) - earnsAt(a.storeID)) || diff : diff; });
+  // Cheapest first.
+  const official = (g.deals || []).filter((d) => names[d.storeID] && d.dealID).sort((a, b) => a.price - b.price);
   const best = official[0];
   const title = g.info?.title || 'Game';
   document.title = title + ' · SteelGames';
@@ -701,9 +676,9 @@ async function screenGame(id) {
         <div class="store ${i === 0 ? 'best' : ''}"><div class="store-info">
           <span class="store-name">${esc(names[d.storeID])}${i === 0 ? ' · lowest price' : ''}</span>
           <span><span class="price">${money(d.price)}</span>${+d.savings >= 1 ? `<span class="was">${money(d.retailPrice)}</span>` : ''}</span>
-          <span class="earn">${earnsAt(d.storeID) ? 'Affiliate link' : ''}</span></div>
-          <a class="btn ${i === 0 ? 'btn-primary' : 'btn-ghost'}" href="${esc(storeLink(d.storeID, d.dealID, title, steamID))}" target="_blank" rel="noopener">Buy ↗</a></div>`).join('')}</div>
-        <p class="hint">You pay the store directly, the way you normally would.</p>` : '<p class="empty">No official store has this game for sale right now.</p>'}
+          </div>
+          <a class="btn ${i === 0 ? 'btn-primary' : 'btn-ghost'}" href="${esc(storeLink(d.storeID, d.dealID))}" target="_blank" rel="noopener">Buy ↗</a></div>`).join('')}</div>
+        <p class="hint">You pay the store directly, the way you normally would. Prices and store links by <a href="https://www.cheapshark.com" target="_blank" rel="noopener">CheapShark</a>.</p>` : '<p class="empty">No official store has this game for sale right now.</p>'}
     </div>
     ${adSlot()}
     <div class="section" id="resellers"></div>

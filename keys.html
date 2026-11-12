@@ -273,11 +273,6 @@ window.addEventListener('hashchange',fromHash);fromHash();})();
   const R = [{"store": "Fanatical", "name": "Fanatical", "c": "#FF8A3D", "trust": "auth", "desc": "Official Steam keys, big bundles and frequent flash sales. A favorite for single-game discounts.", "url": "https://www.fanatical.com"}, {"store": "GreenManGaming", "name": "Green Man Gaming", "c": "#5CE08A", "trust": "auth", "desc": "Long-running authorized retailer selling Steam keys, with a loyalty program that gives money back.", "url": "https://www.greenmangaming.com"}, {"store": "Humble Store", "name": "Humble Store", "c": "#FF5A5F", "trust": "auth", "desc": "Steam keys and DRM-free games, and a share of each sale supports charity.", "url": "https://www.humblebundle.com/store"}, {"store": "Gamesplanet", "name": "Gamesplanet", "c": "#4DD0E1", "trust": "auth", "desc": "Publisher-authorized store with regional sites and a steady stream of deals on PC games.", "url": "https://us.gamesplanet.com"}, {"store": "GamersGate", "name": "GamersGate", "c": "#FF7043", "trust": "auth", "desc": "One of the older digital stores, strong on strategy and simulation catalogs.", "url": "https://www.gamersgate.com"}, {"store": "GameBillet", "name": "GameBillet", "c": "#FFD43B", "trust": "keys", "desc": "Key store with deep discounts on recent PC releases and big publisher catalogs.", "url": "https://www.gamebillet.com"}, {"store": "Voidu", "name": "Voidu", "c": "#F06292", "trust": "keys", "desc": "Digital key store known for low prices on Steam and publisher launcher keys.", "url": "https://www.voidu.com"}, {"store": "IndieGala", "name": "IndieGala", "c": "#FF5252", "trust": "keys", "desc": "Indie-focused store with bundles that pack many small games into one low price.", "url": "https://www.indiegala.com"}, {"store": "WinGameStore", "name": "WinGameStore", "c": "#4FC3F7", "trust": "keys", "desc": "Key seller with aggressive pricing on older and mid-priced PC games.", "url": "https://www.wingamestore.com"}, {"store": null, "name": "Loaded (formerly CDKeys)", "c": "#B388FF", "trust": "keys", "desc": "The key retailer that used to be CDKeys, now called Loaded. It sells PC games, gift cards and software. Compare prices on their site.", "url": "https://go.loaded.com/4a7vz9"}, {"store": null, "name": "Kinguin", "c": "#FF9A1A", "trust": "mkt", "desc": "A marketplace where many third-party sellers list keys. Prices can be very low, so check seller ratings first.", "url": "https://www.kinguin.net"}, {"store": null, "name": "Eneba", "c": "#8E6BFF", "trust": "mkt", "desc": "A marketplace with keys from many sellers, plus gift cards and software. Check seller ratings and buyer protection.", "url": "https://www.eneba.com"}];
   const AFF = {"Kinguin": "https://www.awin1.com/cread.php?awinmid=125780&awinaffid=3137720&ued={url}"};
   const TRUST = { auth: 'Authorized retailer', keys: 'Key store', mkt: 'Marketplace' };
-  // With an affiliate template set we cannot deep-link to the exact deal, so the link opens that store's search for the game.
-  const SEARCH = {
-    'Fanatical': (q) => 'https://www.fanatical.com/en/search?search=' + encodeURIComponent(q),
-    'Humble Store': (q) => 'https://www.humblebundle.com/store/search?search=' + encodeURIComponent(q)
-  };
   const MARKETS = [
     { name: 'Kinguin', url: (q) => 'https://www.kinguin.net/listing?phrase=' + encodeURIComponent(q) },
     { name: 'Eneba', url: (q) => 'https://www.eneba.com/store/all?text=' + encodeURIComponent(q) },
@@ -298,10 +293,8 @@ window.addEventListener('hashchange',fromHash);fromHash();})();
   });
   const art = (d) => d.steamAppID && d.steamAppID !== '0' ? 'https://cdn.cloudflare.steamstatic.com/steam/apps/' + d.steamAppID + '/header.jpg' : d.thumb;
   const finite = (v) => isFinite(v) ? v : Infinity;
-  const buyUrl = (d, r) => {
-    const tpl = AFF[r.store], s = SEARCH[r.store];
-    return tpl && s ? tpl.replace('{url}', encodeURIComponent(s(d.title))) : 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(d.dealID);
-  };
+  // Stores CheapShark tracks always open through its redirect: that is the condition for its free price data.
+  const buyUrl = (d) => 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(d.dealID);
   const mktUrl = (m, q) => AFF[m.name] ? AFF[m.name].replace('{url}', encodeURIComponent(m.url(q))) : m.url(q);
 
   // Every game that matches the search, with the key store deals that exist for it right now (often none).

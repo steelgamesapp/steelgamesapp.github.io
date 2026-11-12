@@ -1,7 +1,8 @@
 """Key finder for /keys.html: search any game across the key stores and compare their prices.
 
 Affiliate links: paste each approved program's tracking template into tools/affiliates.json.
-Until a template is set, every Buy button keeps using the CheapShark redirect, exactly as before.
+Templates apply to the key marketplaces only (Kinguin, Eneba, CDKeys). Stores that CheapShark tracks
+always use the CheapShark redirect, because that is the condition for its free price data.
 """
 import json
 import os
@@ -82,11 +83,6 @@ SCRIPT = r"""<script>
   const R = __DATA__;
   const AFF = __AFF__;
   const TRUST = { auth: 'Authorized retailer', keys: 'Key store', mkt: 'Marketplace' };
-  // With an affiliate template set we cannot deep-link to the exact deal, so the link opens that store's search for the game.
-  const SEARCH = {
-    'Fanatical': (q) => 'https://www.fanatical.com/en/search?search=' + encodeURIComponent(q),
-    'Humble Store': (q) => 'https://www.humblebundle.com/store/search?search=' + encodeURIComponent(q)
-  };
   const MARKETS = [
     { name: 'Kinguin', url: (q) => 'https://www.kinguin.net/listing?phrase=' + encodeURIComponent(q) },
     { name: 'Eneba', url: (q) => 'https://www.eneba.com/store/all?text=' + encodeURIComponent(q) },
@@ -107,10 +103,8 @@ SCRIPT = r"""<script>
   });
   const art = (d) => d.steamAppID && d.steamAppID !== '0' ? 'https://cdn.cloudflare.steamstatic.com/steam/apps/' + d.steamAppID + '/header.jpg' : d.thumb;
   const finite = (v) => isFinite(v) ? v : Infinity;
-  const buyUrl = (d, r) => {
-    const tpl = AFF[r.store], s = SEARCH[r.store];
-    return tpl && s ? tpl.replace('{url}', encodeURIComponent(s(d.title))) : 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(d.dealID);
-  };
+  // Stores CheapShark tracks always open through its redirect: that is the condition for its free price data.
+  const buyUrl = (d) => 'https://www.cheapshark.com/redirect?dealID=' + encodeURIComponent(d.dealID);
   const mktUrl = (m, q) => AFF[m.name] ? AFF[m.name].replace('{url}', encodeURIComponent(m.url(q))) : m.url(q);
 
   // Every game that matches the search, with the key store deals that exist for it right now (often none).

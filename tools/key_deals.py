@@ -280,11 +280,9 @@ def _updated(day):
 
 
 def _buy_url(p, aff):
-    """CheapShark redirect to the exact deal. If an affiliate template exists for the store, open that store's search instead."""
-    tpl = aff.get(p["store"])
-    search = {"Fanatical": "https://www.fanatical.com/en/search?search=", "Humble Store": "https://www.humblebundle.com/store/search?search="}.get(p["store"])
-    if tpl and search:
-        return tpl.replace("{url}", urllib.parse.quote(search + urllib.parse.quote(p["title"]), safe=""))
+    """CheapShark redirect to the exact deal. CheapShark requires its redirect for every store it
+    tracks (that is the condition for its free price data), so these links are never swapped for a
+    store search or a store's own affiliate link."""
     return "https://www.cheapshark.com/redirect?dealID=" + urllib.parse.quote(p["dealID"], safe="%")
 
 
