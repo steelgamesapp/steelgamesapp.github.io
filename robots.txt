@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /game/
 Sitemap: https://steelgamesapp.com/sitemap.xml
