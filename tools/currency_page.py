@@ -1,4 +1,4 @@
-"""Gift Cards and Game Currency page (/gift-cards/). DRAFT: noindex, not in the sitemap, not in the site menu.
+"""Gift Cards and Game Currency page (/gift-cards/). Live since Nov 13, 2026; linked from the Gifts page and listed in the sitemap.
 
 Run `python3 tools/currency_page.py` to rebuild gift-cards/index.html.
 
@@ -71,7 +71,7 @@ def build():
     title = "Gift Cards and Game Currency for US Accounts | SteelGames"
     desc = "PlayStation and Xbox gift cards and memberships for US accounts, plus where to buy Steam Wallet and Fortnite V-Bucks for the best price."
     steel4 = STEEL4.format(href=esc(kinguin("https://www.kinguin.net/campaign/prepaids", "steel4")))
-    out = [layout.head(title, desc, URL, extra='<meta name="robots" content="noindex, nofollow">\n' + CSS), layout.header("gifts")]
+    out = [layout.head(title, desc, URL, extra=CSS), layout.header("gifts")]
     out.append(f"""<main id="main">
 <section class="hero"><div class="wrap">
   <p class="crumbs"><a href="/">Home</a> / <a href="/gifts/">Gifts</a> / Gift cards</p>

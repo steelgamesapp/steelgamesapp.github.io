@@ -642,7 +642,7 @@ def main():
             print(f"::warning title=Price API unavailable::skipped this run ({ex}); existing pages left unchanged")
             return
         fetch = lambda q: get("/deals", {**q, "pageSize": 40, "onSale": 1})
-    urls = [f"{SITE}/", f"{SITE}/games.html", f"{SITE}/keys.html", f"{SITE}/get-app/", f"{SITE}/gear.html", f"{SITE}/gifts/", f"{SITE}/reviews.html", f"{SITE}/about.html", f"{SITE}/military.html", f"{SITE}/advertise.html", f"{SITE}/deals/", f"{SITE}/international.html"]
+    urls = [f"{SITE}/", f"{SITE}/games.html", f"{SITE}/keys.html", f"{SITE}/get-app/", f"{SITE}/gear.html", f"{SITE}/gifts/", f"{SITE}/gift-cards/", f"{SITE}/reviews.html", f"{SITE}/about.html", f"{SITE}/military.html", f"{SITE}/advertise.html", f"{SITE}/deals/", f"{SITE}/international.html"]
     # Per-game pages first (most of the site), while the price API budget is fresh.
     # Per-game pages: seed with today's top deals, then rebuild every tracked game.
     try:

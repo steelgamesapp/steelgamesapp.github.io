@@ -45,7 +45,7 @@ KINDS = [
 
 JUMP = {"pc-gamer": "PC gamers", "desk": "Desk setup", "creator": "Streamers", "console": "Console players",
         "builder": "PC builders", "vr": "VR", "stores": "Brand stores"}
-GAME_LINKS = [("/deals/free-pc-games-right-now/", "Free PC games right now"), ("/deals/pc-games-under-5/", "PC games under $5"),
+GAME_LINKS = [("/gift-cards/", "PlayStation and Xbox gift cards"), ("/deals/free-pc-games-right-now/", "Free PC games right now"), ("/deals/pc-games-under-5/", "PC games under $5"),
               ("/deals/pc-games-under-10/", "PC games under $10"), ("/deals/pc-games-under-15/", "PC games under $15"),
               ("/guides/best-co-op-pc-games-under-10-dollars/", "Best co-op PC games under $10"),
               ("/guides/best-pc-games-under-10-dollars-worth-buying/", "Best PC games under $10 worth buying"),
