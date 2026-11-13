@@ -1,0 +1,206 @@
+{
+ "_help": "Snapshot of Xbox.com's US 'This week's digital game deals' list, read by hand from https://www.xbox.com/en-US/promotions/sales/sales-and-specials. Replace 'checked' and 'deals' each week; the page hides itself 7 days after 'checked'.",
+ "checked": "2026-11-13",
+ "deals": [
+  {
+   "name": "Super Meat Boy 3D",
+   "path": "super-meat-boy-3d/9nj67tqq51z0",
+   "off": 30,
+   "pc": true,
+   "was": 24.99,
+   "now": 17.49
+  },
+  {
+   "name": "007 First Light - Standard Edition",
+   "path": "007-first-light-standard-edition/9npf9f0dcvks",
+   "off": 40,
+   "pc": true,
+   "was": 69.99,
+   "now": 41.99
+  },
+  {
+   "name": "Hidden Cats in Beijing",
+   "path": "hidden-cats-in-beijing/9mxs90v0rhtv",
+   "off": 20,
+   "pc": true,
+   "was": 3.99,
+   "now": 3.19
+  },
+  {
+   "name": "Forza Horizon 6 Standard Edition",
+   "path": "forza-horizon-6-standard-edition/9n431px143p8",
+   "off": 25,
+   "pc": true,
+   "was": 69.99,
+   "now": 52.49
+  },
+  {
+   "name": "FATAL FURY: City of the Wolves",
+   "path": "fatal-fury-city-of-the-wolves/9p9m35wvgck9",
+   "off": 75,
+   "pc": false,
+   "was": 19.99,
+   "now": 4.99
+  },
+  {
+   "name": "Shrek 2 Remastered",
+   "path": "shrek-2-remastered/9pcw6x6zqp4z",
+   "off": 10,
+   "pc": false,
+   "was": 29.99,
+   "now": 26.99
+  },
+  {
+   "name": "Carry The Glass",
+   "path": "carry-the-glass/9nxz0jnc5zpr",
+   "off": 20,
+   "pc": true,
+   "was": 5.99,
+   "now": 4.79
+  },
+  {
+   "name": "IXION",
+   "path": "ixion/9mvmphf8nkhb",
+   "off": 65,
+   "pc": false,
+   "was": 34.99,
+   "now": 12.24
+  },
+  {
+   "name": "SULFUR",
+   "path": "sulfur/9p37qqcptr8m",
+   "off": 10,
+   "pc": false,
+   "was": 29.99,
+   "now": 26.99
+  },
+  {
+   "name": "Ys Origin",
+   "path": "ys-origin/bnsrqv4c66x9",
+   "off": 90,
+   "pc": false,
+   "was": 19.99,
+   "now": 1.99
+  },
+  {
+   "name": "Streets of Rage 4",
+   "path": "streets-of-rage-4/9n7h54kncb9n",
+   "off": 75,
+   "pc": true,
+   "was": 24.99,
+   "now": 6.24
+  },
+  {
+   "name": "EA SPORTS Madden NFL 27 Deluxe Edition",
+   "path": "ea-sports-madden-nfl-27-deluxe-edition/9nfjrh7wm33m",
+   "off": 35,
+   "pc": false,
+   "was": 99.99,
+   "now": 64.99
+  },
+  {
+   "name": "Fantasy Dash",
+   "path": "fantasy-dash/9n0102b834zm",
+   "off": 67,
+   "pc": false,
+   "was": 2.99,
+   "now": 0.99
+  },
+  {
+   "name": "VOID/BREAKER",
+   "path": "voidbreaker/9n9k5qp9g3gl",
+   "off": 40,
+   "pc": true,
+   "was": 29.99,
+   "now": 17.99
+  },
+  {
+   "name": "Bus Simulator",
+   "path": "bus-simulator/brhb1g8f8zcb",
+   "off": 80,
+   "pc": false,
+   "was": 19.99,
+   "now": 3.99
+  },
+  {
+   "name": "Warhammer Survivors",
+   "path": "warhammer-survivors/9mzzwgtf7v65",
+   "off": 10,
+   "pc": true,
+   "was": 7.99,
+   "now": 7.19
+  },
+  {
+   "name": "Police Simulator: Patrol Officers",
+   "path": "police-simulator-patrol-officers/9p0nplq9p1db",
+   "off": 70,
+   "pc": true,
+   "was": 29.99,
+   "now": 8.99
+  },
+  {
+   "name": "Teenage Mutant Ninja Turtles: Shredder's Revenge",
+   "path": "teenage-mutant-ninja-turtles-shredders-revenge/9ns3673hvh41",
+   "off": 60,
+   "pc": true,
+   "was": 24.99,
+   "now": 9.99
+  },
+  {
+   "name": "Starship Troopers: Ultimate Bug War!",
+   "path": "starship-troopers-ultimate-bug-war/9p7rw7v55lf0",
+   "off": 50,
+   "pc": false,
+   "was": 24.99,
+   "now": 12.49
+  },
+  {
+   "name": "The Cabin Factory",
+   "path": "the-cabin-factory/9nl6bb89092t",
+   "off": 40,
+   "pc": false,
+   "was": 2.99,
+   "now": 1.79
+  },
+  {
+   "name": "Outbreak: Dead City",
+   "path": "outbreak-dead-city/9p31x50d793n",
+   "off": 20,
+   "pc": true,
+   "was": 6.99,
+   "now": 5.59
+  },
+  {
+   "name": "Forza Horizon 6 Premium Edition",
+   "path": "forza-horizon-6-premium-edition/9n4xw3n02mnj",
+   "off": 25,
+   "pc": true,
+   "was": 119.99,
+   "now": 89.99
+  },
+  {
+   "name": "Pumpkin Jack",
+   "path": "pumpkin-jack/9n7tb1sb2m0k",
+   "off": 90,
+   "pc": false,
+   "was": 29.99,
+   "now": 2.99
+  },
+  {
+   "name": "PAYDAY 3",
+   "path": "payday-3/9npzvdch73sx",
+   "off": 35,
+   "pc": true,
+   "was": 29.99,
+   "now": 19.49
+  },
+  {
+   "name": "Forza Horizon 6 Premium Upgrade",
+   "path": "forza-horizon-6-premium-upgrade/9nzftfqfkjjp",
+   "off": 25,
+   "pc": true,
+   "was": 59.99,
+   "now": 44.99
+  }
+ ]
+}
