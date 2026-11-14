@@ -231,9 +231,17 @@
 "id": "281345",
 "title": "Balatro"
 },
+"238960": {
+"skip": "free to play",
+"title": "Path of Exile"
+},
 "2399830": {
 "id": "276883",
 "title": "ARK: Survival Ascended"
+},
+"2406770": {
+"id": "287812",
+"title": "Bodycam"
 },
 "244210": {
 "id": "102717",
@@ -507,6 +515,10 @@
 "id": "36",
 "title": "Portal 2"
 },
+"629520": {
+"skip": "not on the price API",
+"title": "Soundpad"
+},
 "632470": {
 "id": "227942",
 "title": "Disco Elysium - The Final Cut"
@@ -538,6 +550,10 @@
 "892970": {
 "id": "225747",
 "title": "Valheim"
+},
+"949230": {
+"id": "264418",
+"title": "Cities: Skylines II"
 },
 "960090": {
 "id": "196536",
