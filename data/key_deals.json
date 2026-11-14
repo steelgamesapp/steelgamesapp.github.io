@@ -2,16 +2,16 @@
  "days": [
   {
    "date": "2026-11-14",
-   "updated": "2026-11-14 12:38 UTC",
+   "updated": "2026-11-14 17:19 UTC",
    "picks": [
     {
      "gameID": "265818",
      "dealID": "yWYF%2B7AvgfvHS6Cx4Py%2F%2BCSVlc%2B6ffU7WNyz5tVuqOo%3D",
      "title": "RoboCop: Rogue City",
      "store": "GameBillet",
-     "sale": 3.46,
+     "sale": 3.36,
      "normal": 39.99,
-     "off": 91,
+     "off": 92,
      "rating": 86,
      "reviews": 15595,
      "steam": "1681430",
@@ -88,7 +88,7 @@
      "normal": 9.99,
      "off": 90,
      "rating": 77,
-     "reviews": 3085,
+     "reviews": 3084,
      "steam": "214340",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/214340/capsule_231x87.jpg?t=1793896446",
      "score": 8.7,
