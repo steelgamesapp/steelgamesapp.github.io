@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-14T15:02:37Z",
+"updated": "2026-11-14T20:42:10Z",
 "source": "Amazon Best Sellers: PC Games & Accessories",
 "items": [
 {
@@ -34,7 +34,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61A2SEGdV2L._AC_SL400_.jpg",
 "price": 37.99,
 "stars": 4.6,
-"ratings": 58945,
+"ratings": 58946,
 "url": "https://www.amazon.com/dp/B07GBZ4Q68?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -46,7 +46,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71pz2njkNRL._AC_SL400_.jpg",
 "price": 57.99,
 "stars": 4.3,
-"ratings": 13403,
+"ratings": 13401,
 "url": "https://www.amazon.com/dp/B0C3BV19Q3?tag=steelgames-20",
 "kind": "headset"
 },
@@ -92,7 +92,7 @@
 "name": "8Bitdo Ultimate 2C Wireless Controller for Windows PC and Android, with 1000 Hz Polling Rate, Hall Effect Joysticks and Trigg",
 "short": "8Bitdo Ultimate 2C Wireless Controller for Windows PC and",
 "img": "https://images-na.ssl-images-amazon.com/images/I/51DTcaDKELL._AC_SL400_.jpg",
-"price": 29.99,
+"price": 25.49,
 "stars": 4.4,
 "ratings": 8170,
 "url": "https://www.amazon.com/dp/B0D739FJLG?tag=steelgames-20",
@@ -154,7 +154,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61tncw0i36L._AC_SL400_.jpg",
 "price": 109.99,
 "stars": 4.3,
-"ratings": 12381,
+"ratings": 12497,
 "url": "https://www.amazon.com/dp/B0B789CGGQ?tag=steelgames-20",
 "kind": "controller"
 },
@@ -188,7 +188,7 @@
 "name": "Turtle Beach Recon 50 Wired  Multiplatform Gaming Headset for Xbox, PS5, PC | Xbox Series X|S, Xbox One, PlayStation, PS4, Mo",
 "short": "Turtle Beach Recon 50 Wired  Multiplatform Gaming Headset",
 "img": "https://images-na.ssl-images-amazon.com/images/I/617IVT65RxL._AC_SL400_.jpg",
-"price": 27.88,
+"price": 27.14,
 "stars": 4.4,
 "ratings": 110208,
 "url": "https://www.amazon.com/dp/B00YXO5U40?tag=steelgames-20",
@@ -202,7 +202,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/41sNt1-AT6L._AC_SL400_.jpg",
 "price": 29.99,
 "stars": 4.7,
-"ratings": 81118,
+"ratings": 81119,
 "url": "https://www.amazon.com/dp/B0D1T1HZCC?tag=steelgames-20",
 "kind": "pad"
 },
