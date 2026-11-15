@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-15T17:07:14Z",
+"updated": "2026-11-15T22:46:47Z",
 "source": "Amazon Best Sellers: PC Games & Accessories",
 "items": [
 {
@@ -8,7 +8,7 @@
 "name": "Logitech G305 LIGHTSPEED Wireless Gaming Mouse, Hero 12K Sensor - Black | 12,000 DPI, lightweight, 6 programmable buttons, 25",
 "short": "Logitech G305 LIGHTSPEED Wireless Gaming Mouse",
 "img": "https://images-na.ssl-images-amazon.com/images/I/51sg9BLSMTL._AC_SL400_.jpg",
-"price": 28.99,
+"price": 29.49,
 "stars": 4.6,
 "ratings": 40694,
 "url": "https://www.amazon.com/dp/B07CMS5Q6P?tag=steelgames-20",
@@ -34,7 +34,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61A2SEGdV2L._AC_SL400_.jpg",
 "price": 37.99,
 "stars": 4.6,
-"ratings": 58956,
+"ratings": 58957,
 "url": "https://www.amazon.com/dp/B07GBZ4Q68?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -46,7 +46,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71pz2njkNRL._AC_SL400_.jpg",
 "price": 57.99,
 "stars": 4.3,
-"ratings": 13413,
+"ratings": 13424,
 "url": "https://www.amazon.com/dp/B0C3BV19Q3?tag=steelgames-20",
 "kind": "headset"
 },
@@ -58,7 +58,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71hsvNd1BtL._AC_SL400_.jpg",
 "price": 49.99,
 "stars": 4.5,
-"ratings": 1869,
+"ratings": 1870,
 "url": "https://www.amazon.com/dp/B0HGR4SDYC?tag=steelgames-20",
 "kind": "headset"
 },
@@ -70,7 +70,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/51iXILIT27L._AC_SL400_.jpg",
 "price": 44.99,
 "stars": 4.4,
-"ratings": 18099,
+"ratings": 18102,
 "url": "https://www.amazon.com/dp/B0C7GW9F88?tag=steelgames-20",
 "kind": "controller"
 },
@@ -116,9 +116,9 @@
 "name": "8Bitdo Ultimate 2C Wireless Controller for Windows PC and Android, with 1000 Hz Polling Rate, Hall Effect Joysticks and Trigg",
 "short": "8Bitdo Ultimate 2C Wireless Controller for Windows PC and",
 "img": "https://images-na.ssl-images-amazon.com/images/I/51DTcaDKELL._AC_SL400_.jpg",
-"price": 29.99,
+"price": 25.49,
 "stars": 4.4,
-"ratings": 8174,
+"ratings": 8177,
 "url": "https://www.amazon.com/dp/B0D739FJLG?tag=steelgames-20",
 "kind": "controller"
 },
@@ -130,7 +130,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61vF4LdktpL._AC_SL400_.jpg",
 "price": 16.99,
 "stars": 4.6,
-"ratings": 11889,
+"ratings": 11893,
 "url": "https://www.amazon.com/dp/B08SJ5Z8JL?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -142,7 +142,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71-mnhc4Q8L._AC_SL400_.jpg",
 "price": 39.99,
 "stars": 4.4,
-"ratings": 19608,
+"ratings": 19610,
 "url": "https://www.amazon.com/dp/B086PKMZ21?tag=steelgames-20",
 "kind": "headset"
 },
@@ -154,7 +154,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71yDbSBCd5L._AC_SL400_.jpg",
 "price": 149.99,
 "stars": 4.3,
-"ratings": 12498,
+"ratings": 12497,
 "url": "https://www.amazon.com/dp/B0GY291P22?tag=steelgames-20",
 "kind": "controller"
 },
@@ -176,9 +176,9 @@
 "name": "Turtle Beach Recon 50 Wired  Multiplatform Gaming Headset for Xbox, PS5, PC | Xbox Series X|S, Xbox One, PlayStation, PS4, Mo",
 "short": "Turtle Beach Recon 50 Wired  Multiplatform Gaming Headset",
 "img": "https://images-na.ssl-images-amazon.com/images/I/617IVT65RxL._AC_SL400_.jpg",
-"price": 26.8,
+"price": 27.48,
 "stars": 4.4,
-"ratings": 110217,
+"ratings": 110221,
 "url": "https://www.amazon.com/dp/B00YXO5U40?tag=steelgames-20",
 "kind": "headset"
 },
@@ -226,7 +226,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/41sNt1-AT6L._AC_SL400_.jpg",
 "price": 29.99,
 "stars": 4.7,
-"ratings": 81124,
+"ratings": 81126,
 "url": "https://www.amazon.com/dp/B0D1T1HZCC?tag=steelgames-20",
 "kind": "pad"
 },
@@ -262,7 +262,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71kp4T3JSIL._AC_SL400_.jpg",
 "price": 16.99,
 "stars": 4.3,
-"ratings": 11494,
+"ratings": 11496,
 "url": "https://www.amazon.com/dp/B0DRFGNWV1?tag=steelgames-20",
 "kind": "keyboard"
 },
@@ -274,7 +274,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/718TLhNbG-L._AC_SL400_.jpg",
 "price": 59.99,
 "stars": 4.5,
-"ratings": 6204,
+"ratings": 6205,
 "url": "https://www.amazon.com/dp/B0DR8V899R?tag=steelgames-20",
 "kind": "controller"
 },
@@ -286,7 +286,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71mP5tV5c3L._AC_SL400_.jpg",
 "price": 69.99,
 "stars": 4.6,
-"ratings": 598,
+"ratings": 599,
 "url": "https://www.amazon.com/dp/B0H73TPXR7?tag=steelgames-20",
 "kind": "controller"
 }
