@@ -96,9 +96,9 @@
    "img": "https://m.media-amazon.com/images/I/71k6li%2B9vFL._AC_SL400_.jpg"
   },
   "quadcast": {
-   "name": "HyperX QuadCast S",
-   "url": "https://www.amazon.com/dp/B08XC4M4Z3?tag=steelgames-20",
-   "img": "https://m.media-amazon.com/images/I/51NgFP5sB7L._AC_SL400_.jpg"
+   "name": "HyperX QuadCast 2",
+   "url": "https://www.amazon.com/dp/B0D9MCK4R8?tag=steelgames-20",
+   "img": "https://m.media-amazon.com/images/I/71qTtU45xSL._AC_SL400_.jpg"
   },
   "yeti": {
    "name": "Logitech Blue Yeti USB Microphone",
@@ -267,7 +267,7 @@
    "label": "Microphone",
    "value": "am8",
    "up": "quadcast",
-   "why": "For crisp voice chat or streaming {t}, a desk mic beats any headset mic. The AM8 is a great USB starter; the QuadCast S is the creator favorite.",
+   "why": "For crisp voice chat or streaming {t}, a desk mic beats any headset mic. The AM8 is a great USB starter; the QuadCast 2 is the creator favorite.",
    "icon": "mic"
   },
   "controller": {
