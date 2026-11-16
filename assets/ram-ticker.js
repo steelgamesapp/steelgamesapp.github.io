@@ -78,3 +78,27 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
 })();
+
+/* Amazon click counter: this file loads on every page, so it also records each click on an Amazon
+   link as a GoatCounter event ("amazon/<product id>"), with the page it came from as the title.
+   That shows which pages and products send people to Amazon. No personal data is sent. */
+(function () {
+  function asin(href) {
+    var m = /\/(?:dp|gp\/product)\/([A-Z0-9]{10})/.exec(href);
+    if (m) return m[1];
+    if (/\/blackfriday/.test(href)) return 'blackfriday';
+    if (/\/s\?/.test(href)) return 'search';
+    return 'other';
+  }
+  function send(path, title, tries) {
+    try {
+      if (window.goatcounter && window.goatcounter.count) { window.goatcounter.count({ path: path, title: title, event: true }); return; }
+    } catch (e) { return; }
+    if ((tries || 0) < 3) setTimeout(function () { send(path, title, (tries || 0) + 1); }, 500);
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="amazon.com"]') : null;
+    if (!a) return;
+    send('amazon/' + asin(a.href), location.pathname);
+  }, true);
+})();
