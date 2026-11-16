@@ -1,47 +1,74 @@
 {
  "slides": [
   {
-   "title": "Kinguin prepaids: 4% off with code STEEL4",
-   "img": "/assets/promos/kinguin-steel4.png",
-   "href": "https://kinguin.sjv.io/c/8059330/3827272/50048?subId1=site-bf-steel4&u=https%3A%2F%2Fwww.kinguin.net%2Fcampaign%2Fprepaids&partnerpropertyid=9076396",
+   "title": "Amazon's Black Friday deals page",
+   "img": "/assets/promos/amazon-black-friday-gear.png",
+   "href": "https://www.amazon.com/blackfriday?tag=steelgames-20",
    "price": "",
-   "note": "4% off prepaids with code STEEL4 through Nov 26",
+   "note": "Amazon Black Friday runs through Cyber Monday, Nov 30",
    "tag": "Black Friday",
    "kind": "deal"
   },
   {
-   "title": "Redragon Black Friday sale",
-   "img": "https://cdn.shopify.com/s/files/1/0012/4957/4961/products/minikeyboard.png?width=520",
-   "href": "https://redragonshop.com/pages/black-friday-cyber-monday?aff=7360",
+   "title": "Logitech G305 Lightspeed Wireless Mouse",
+   "img": "https://m.media-amazon.com/images/I/51sg9BLSMTL._AC_SL400_.jpg",
+   "href": "https://www.amazon.com/dp/B07CMS5Q6P?tag=steelgames-20",
    "price": "",
-   "note": "10% off through this link",
+   "note": "Marked down on Amazon when we checked Nov 16",
    "tag": "Black Friday",
    "kind": "deal"
   },
   {
-   "title": "AutoFull gaming chairs: Black Friday Early Access",
-   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/gaming_chair_1_c5f546de-af69-4926-b5e4-a859ea893772.jpg?width=520",
-   "href": "https://go.sjv.io/k4EE4M",
+   "title": "HyperX Cloud III Gaming Headset",
+   "img": "https://m.media-amazon.com/images/I/71pz2njkNRL._AC_SL400_.jpg",
+   "href": "https://www.amazon.com/dp/B0C3BV19Q3?tag=steelgames-20",
    "price": "",
-   "note": "",
+   "note": "Marked down on Amazon when we checked Nov 16",
    "tag": "Black Friday",
    "kind": "deal"
   },
   {
-   "title": "UPERFECT portable monitor sale",
-   "img": "https://cdn.shopify.com/s/files/1/0039/6387/9494/files/01_c9b0c587-8b4b-4a66-97cf-142a4a108b2d.png?width=520",
-   "href": "https://uperfect.sjv.io/1GBBGg",
+   "title": "Logitech G502 Hero Wired Mouse",
+   "img": "https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SL400_.jpg",
+   "href": "https://www.amazon.com/dp/B07GBZ4Q68?tag=steelgames-20",
    "price": "",
-   "note": "",
+   "note": "Marked down on Amazon when we checked Nov 16",
    "tag": "Black Friday",
    "kind": "deal"
   },
   {
-   "title": "GMKtec mini PC Black Friday Early Access",
-   "img": "https://cdn.shopify.com/s/files/1/0715/1314/5498/files/K17_8070872b-6c05-4410-90c1-abb7d5e8f6f9.jpg?width=520",
-   "href": "https://www.awin1.com/cread.php?awinmid=45751&awinaffid=3137720",
+   "title": "Logitech G733 Lightspeed Wireless Headset",
+   "img": "https://m.media-amazon.com/images/I/71xNjrzG69L._AC_SL400_.jpg",
+   "href": "https://www.amazon.com/dp/B081415GCS?tag=steelgames-20",
    "price": "",
-   "note": "",
+   "note": "Marked down on Amazon when we checked Nov 16",
+   "tag": "Black Friday",
+   "kind": "deal"
+  },
+  {
+   "title": "Logitech G Pro X Superlight 2",
+   "img": "https://m.media-amazon.com/images/I/51Cps60NQpL._AC_SL400_.jpg",
+   "href": "https://www.amazon.com/dp/B09NBWL8J5?tag=steelgames-20",
+   "price": "",
+   "note": "Marked down on Amazon when we checked Nov 16",
+   "tag": "Black Friday",
+   "kind": "deal"
+  },
+  {
+   "title": "Razer Huntsman V3 Pro TKL",
+   "img": "https://m.media-amazon.com/images/I/81y14ID9oHL._AC_SL400_.jpg",
+   "href": "https://www.amazon.com/dp/B0CG7BWG7J?tag=steelgames-20",
+   "price": "",
+   "note": "Marked down on Amazon when we checked Nov 16",
+   "tag": "Black Friday",
+   "kind": "deal"
+  },
+  {
+   "title": "GTPLAYER Gaming Chair with Footrest",
+   "img": "https://m.media-amazon.com/images/I/61phC8Ix9bL._AC_SL400_.jpg",
+   "href": "https://www.amazon.com/dp/B08B12P6CS?tag=steelgames-20",
+   "price": "",
+   "note": "Marked down on Amazon when we checked Nov 16",
    "tag": "Black Friday",
    "kind": "deal"
   },
