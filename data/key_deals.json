@@ -2,7 +2,7 @@
  "days": [
   {
    "date": "2026-11-17",
-   "updated": "2026-11-17 15:04 UTC",
+   "updated": "2026-11-17 20:04 UTC",
    "picks": [
     {
      "gameID": "154826",
@@ -43,7 +43,7 @@
      "normal": 19.99,
      "off": 91,
      "rating": 88,
-     "reviews": 1353,
+     "reviews": 1354,
      "steam": "493540",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/493540/capsule_231x87.jpg?t=1729500541",
      "score": 9.5,
@@ -110,21 +110,6 @@
      "low": 1.0
     },
     {
-     "gameID": "253237",
-     "dealID": "W7k2a6ggjcftaRE9dyK1FRNqBUL27sD1HxuDBsPYhNI%3D",
-     "title": "Atari 50: The Anniversary Celebration",
-     "store": "WinGameStore",
-     "sale": 3.89,
-     "normal": 39.99,
-     "off": 90,
-     "rating": 92,
-     "reviews": 471,
-     "steam": "1919470",
-     "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1919470/a3d0ce0907a9a09d0601b1536bcb054a1f833586/capsule_231x87.jpg?t=1781273808",
-     "score": 8.9,
-     "low": 3.89
-    },
-    {
      "gameID": "204421",
      "dealID": "wRj94TzdcbMcU0yGIROKKgaxKuiChM4gyQrc0IQMQLs%3D",
      "title": "Trine 4: The Nightmare Prince",
@@ -183,6 +168,21 @@
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/91200/capsule_231x87.jpg?t=1634818526",
      "score": 8.6,
      "low": 0.74
+    },
+    {
+     "gameID": "158443",
+     "dealID": "n6QCiG9FKdQSNO3qxF9g2yOdez8wpOkbnc%2FhrgVXTDw%3D",
+     "title": "Shadow Tactics: Blades of the Shogun",
+     "store": "WinGameStore",
+     "sale": 2.49,
+     "normal": 39.99,
+     "off": 94,
+     "rating": 94,
+     "reviews": 9108,
+     "steam": "418240",
+     "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/418240/capsule_231x87.jpg?t=1789475696",
+     "score": 10.0,
+     "low": 0.0
     }
    ]
   },
