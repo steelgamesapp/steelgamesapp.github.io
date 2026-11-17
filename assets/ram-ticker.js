@@ -102,3 +102,6 @@
     send('amazon/' + asin(a.href), location.pathname);
   }, true);
 })();
+
+;/* sg-shop-nav: add Shop link to the menu on every page */
+(function(){try{var n=document.querySelector('nav.nav');if(!n||n.querySelector('a[href^="/shop"]'))return;var a=document.createElement('a');a.href='/shop/';a.textContent='Shop';var g=n.querySelector('a[href="/gear.html"]');if(g)n.insertBefore(a,g);else n.appendChild(a);}catch(e){}})();
