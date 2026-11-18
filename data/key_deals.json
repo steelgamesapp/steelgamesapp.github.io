@@ -2,7 +2,7 @@
  "days": [
   {
    "date": "2026-11-18",
-   "updated": "2026-11-18 00:03 UTC",
+   "updated": "2026-11-18 02:34 UTC",
    "picks": [
     {
      "gameID": "102249",
@@ -13,7 +13,7 @@
      "normal": 19.99,
      "off": 90,
      "rating": 91,
-     "reviews": 13650,
+     "reviews": 13651,
      "steam": "238010",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/238010/capsule_231x87.jpg?t=1779722099",
      "score": 10.0,
@@ -88,7 +88,7 @@
      "normal": 19.99,
      "off": 90,
      "rating": 88,
-     "reviews": 29947,
+     "reviews": 29948,
      "steam": "286690",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/286690/capsule_231x87.jpg?t=1792681167",
      "score": 9.4,
@@ -108,21 +108,6 @@
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1085220/capsule_231x87.jpg?t=1729500878",
      "score": 9.3,
      "low": 0.0
-    },
-    {
-     "gameID": "285864",
-     "dealID": "rJnMNYooAxELE8UCOS8YVKfr7v8%2B59rMvSN0qMsZ3%2BM%3D",
-     "title": "Still Wakes the Deep",
-     "store": "IndieGala",
-     "sale": 3.49,
-     "normal": 34.99,
-     "off": 90,
-     "rating": 88,
-     "reviews": 7637,
-     "steam": "1622910",
-     "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1622910/74e6db81ddca29fc1c07caee1e4abf9188b6aa84/capsule_231x87.jpg?t=1786719937",
-     "score": 9.3,
-     "low": 3.49
     },
     {
      "gameID": "271434",
@@ -170,19 +155,34 @@
      "low": 0.0
     },
     {
-     "gameID": "166740",
-     "dealID": "ghnfV5o5BWN0wlvOEbLE5G8jTF3oWVsfzJVH70SmKt8%3D",
-     "title": "For The King",
-     "store": "GameBillet",
-     "sale": 3.56,
+     "gameID": "157493",
+     "dealID": "MQmGYPIkdNXGxv%2FjTb5NSfexq%2BjWUwstNxd2QsEZWxE%3D",
+     "title": "Everspace",
+     "store": "Green Man Gaming",
+     "sale": 1.8,
      "normal": 19.99,
-     "off": 82,
-     "rating": 88,
-     "reviews": 11714,
-     "steam": "527230",
-     "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/527230/capsule_231x87.jpg?t=1793907567",
-     "score": 8.8,
-     "low": 1.99
+     "off": 91,
+     "rating": 77,
+     "reviews": 5125,
+     "steam": "396750",
+     "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/396750/capsule_231x87.jpg?t=1784066303",
+     "score": 8.7,
+     "low": 0.99
+    },
+    {
+     "gameID": "216873",
+     "dealID": "%2ByEFgORtBuPv%2BuoqJ%2BqP8gThwWhvbcmKuTM%2BRq4H3%2F0%3D",
+     "title": "Evans Remains",
+     "store": "Green Man Gaming",
+     "sale": 1.15,
+     "normal": 6.99,
+     "off": 84,
+     "rating": 89,
+     "reviews": 1108,
+     "steam": "1110050",
+     "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1110050/capsule_231x87.jpg?t=1750953380",
+     "score": 8.7,
+     "low": 0.69
     }
    ]
   },
