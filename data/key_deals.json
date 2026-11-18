@@ -2,7 +2,7 @@
  "days": [
   {
    "date": "2026-11-18",
-   "updated": "2026-11-18 19:35 UTC",
+   "updated": "2026-11-18 23:37 UTC",
    "picks": [
     {
      "gameID": "102249",
@@ -88,7 +88,7 @@
      "normal": 19.99,
      "off": 90,
      "rating": 88,
-     "reviews": 29950,
+     "reviews": 29953,
      "steam": "286690",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/286690/capsule_231x87.jpg?t=1792681167",
      "score": 9.2,
