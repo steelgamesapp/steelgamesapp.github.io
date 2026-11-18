@@ -22,6 +22,14 @@
     IN: '', JP: '', AU: '', SG: '',
   };
 
+  /* AMAZON ONELINK (earn from visitors outside the US with our one US store ID).
+     Once OneLink is switched on in Associates Central (Tools > OneLink > Manage countries), Amazon itself sends a shopper who
+     clicks a normal amazon.com link, with our US tag, to their local store and credits us. For those countries we then leave
+     the original link alone instead of rewriting it to a local-store search that earns nothing.
+     Keep ONELINK_ON false until the countries are saved in Associates Central. List the same countries that were ticked there. */
+  const ONELINK_ON = false;
+  const ONELINK_REGIONS = ['CA', 'GB', 'ES', 'DE', 'FR', 'IT', 'NL', 'PL', 'SE', 'AU', 'SG', 'JP'];
+
   /* country code: [Amazon site, country name] */
   const SITES = {
     US: ['www.amazon.com', 'United States'],
@@ -163,7 +171,7 @@
       try { u = new URL(orig, location.href); } catch (e) { return; }
       if (!AMZ.test(u.hostname)) return;
       a.dataset.sgOrig = orig;
-      if (region === 'US') {
+      if (region === 'US' || (ONELINK_ON && ONELINK_REGIONS.indexOf(region) !== -1)) {
         a.setAttribute('href', orig);
       } else {
         const m = /\/dp\/([A-Za-z0-9]{10})/.exec(u.pathname);
