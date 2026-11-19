@@ -39,7 +39,7 @@ PROGRAM = 50048                                           # Kinguin on Impact
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
-BUDGET = int(os.environ.get("KINGUIN_BUDGET", "260"))  # Impact searches per run
+BUDGET = int(os.environ.get("KINGUIN_BUDGET", "400"))  # Impact searches per run
 FRESH_DAYS = 3        # show a price only if seen this recently
 REFRESH_DAYS = 1      # re-check a matched game's price after this many days
 RESEARCH_DAYS = 7     # look again for a game Kinguin didn't have after this many days
@@ -253,7 +253,6 @@ def best_match(title, items, rates):
     """The Kinguin product for this title from feed items, with a fresh USD price if there is one."""
     want = norm(title)
     found = {}  # (sku) -> info
-    cutoff = datetime.now(timezone.utc) - timedelta(days=FRESH_DAYS)
     for it in items:
         if not _is_kinguin(it):
             continue
@@ -271,23 +270,15 @@ def best_match(title, items, rates):
             price, cur = float(it.get("CurrentPrice")), str(it.get("Currency", "")).upper()
         except (TypeError, ValueError):
             continue
-        upd = str(it.get("LastUpdated") or it.get("DateLastUpdated") or "")
-        try:
-            when = datetime.fromisoformat(upd.replace("Z", "+00:00"))
-            if when.tzinfo is None:
-                when = when.replace(tzinfo=timezone.utc)
-        except ValueError:
-            when = None
-        if price > 0 and cur in rates and when and when >= cutoff:
-            f["offers"].append((cur, round(price / float(rates[cur]), 2), when))
+        # Only Kinguin's UK feed is kept current (the USD and EUR feeds lag by months), and the raw API
+        # gives no update time, so the price is taken from the GBP feed alone, as on the gift card page.
+        if price > 0 and cur == "GBP" and cur in rates:
+            f["offers"].append(round(price / float(rates[cur]), 2))
     if not found:
         return None
     # Region-free key first, then North America.
     pick = sorted(found.values(), key=lambda f: (f["region"] != "global", not f["offers"]))[0]
-    usd = None
-    if pick["offers"]:
-        gbp = [o for o in pick["offers"] if o[0] == "GBP"]  # Kinguin's UK feed is the one kept current
-        usd = (gbp or sorted(pick["offers"], key=lambda o: o[2], reverse=True))[0][1]
+    usd = min(pick["offers"]) if pick["offers"] else None
     return {"sku": pick["sku"], "slug": pick["slug"], "region": pick["region"], "name": pick["name"], "usd": usd}
 
 
