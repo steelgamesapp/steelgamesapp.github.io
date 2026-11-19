@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-18T17:16:13Z",
+"updated": "2026-11-19T00:22:24Z",
 "source": "Amazon Best Sellers: PC Games & Accessories",
 "items": [
 {
@@ -10,7 +10,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/51sg9BLSMTL._AC_SL400_.jpg",
 "price": 29.49,
 "stars": 4.6,
-"ratings": 40725,
+"ratings": 40724,
 "url": "https://www.amazon.com/dp/B07CMS5Q6P?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -46,7 +46,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71pz2njkNRL._AC_SL400_.jpg",
 "price": 57.99,
 "stars": 4.3,
-"ratings": 13472,
+"ratings": 13464,
 "url": "https://www.amazon.com/dp/B0C3BV19Q3?tag=steelgames-20",
 "kind": "headset"
 },
@@ -58,7 +58,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71hsvNd1BtL._AC_SL400_.jpg",
 "price": 49.99,
 "stars": 4.5,
-"ratings": 1885,
+"ratings": 1887,
 "url": "https://www.amazon.com/dp/B0HGR4SDYC?tag=steelgames-20",
 "kind": "headset"
 },
@@ -70,7 +70,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/51iXILIT27L._AC_SL400_.jpg",
 "price": 44.99,
 "stars": 4.4,
-"ratings": 18135,
+"ratings": 18137,
 "url": "https://www.amazon.com/dp/B0C7GW9F88?tag=steelgames-20",
 "kind": "controller"
 },
@@ -106,7 +106,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61kI0PIuXVL._AC_SL400_.jpg",
 "price": 32.89,
 "stars": 4.4,
-"ratings": 11883,
+"ratings": 11884,
 "url": "https://www.amazon.com/dp/B07HC4NBQ8?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -130,7 +130,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61t8-7jBzGL._AC_SL400_.jpg",
 "price": 29.99,
 "stars": 4.4,
-"ratings": 8225,
+"ratings": 8224,
 "url": "https://www.amazon.com/dp/B0FX3TJ5RX?tag=steelgames-20",
 "kind": "controller"
 },
@@ -178,7 +178,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71-mnhc4Q8L._AC_SL400_.jpg",
 "price": 39.99,
 "stars": 4.4,
-"ratings": 19647,
+"ratings": 19648,
 "url": "https://www.amazon.com/dp/B086PKMZ21?tag=steelgames-20",
 "kind": "headset"
 },
@@ -188,9 +188,9 @@
 "name": "Turtle Beach Recon 50 Wired  Multiplatform Gaming Headset for Xbox, PS5, PC | Xbox Series X|S, Xbox One, PlayStation, PS4, Mo",
 "short": "Turtle Beach Recon 50 Wired  Multiplatform Gaming Headset",
 "img": "https://images-na.ssl-images-amazon.com/images/I/617IVT65RxL._AC_SL400_.jpg",
-"price": 27.48,
+"price": 27.32,
 "stars": 4.4,
-"ratings": 110248,
+"ratings": 110249,
 "url": "https://www.amazon.com/dp/B00YXO5U40?tag=steelgames-20",
 "kind": "headset"
 },
@@ -214,7 +214,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71mqaEv2KRL._AC_SL400_.jpg",
 "price": 134.91,
 "stars": 4.3,
-"ratings": 2866,
+"ratings": 2868,
 "url": "https://www.amazon.com/dp/B0F6NZWPTC?tag=steelgames-20",
 "kind": "headset"
 },
@@ -238,7 +238,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/41sNt1-AT6L._AC_SL400_.jpg",
 "price": 29.99,
 "stars": 4.7,
-"ratings": 81136,
+"ratings": 81135,
 "url": "https://www.amazon.com/dp/B0D1T1HZCC?tag=steelgames-20",
 "kind": "pad"
 },
@@ -262,7 +262,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61n3DWmBUTL._AC_SL400_.jpg",
 "price": 21.99,
 "stars": 4.3,
-"ratings": 4080,
+"ratings": 4081,
 "url": "https://www.amazon.com/dp/B0C1GTXY5S?tag=steelgames-20",
 "kind": "headset"
 },
@@ -274,7 +274,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/51AlFaEnY2L._AC_SL400_.jpg",
 "price": 199.99,
 "stars": 4.6,
-"ratings": 201,
+"ratings": 200,
 "url": "https://www.amazon.com/dp/B0H8BR7BCW?tag=steelgames-20",
 "kind": "mouse"
 },
