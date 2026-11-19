@@ -411,7 +411,7 @@ def game_page(gid, g, stores, today):
 {waitometer.widget(_wom)}
 <div class="gact" style="border:0;background:none;padding:0">{shop_btns}</div>
 <a class="btn" rel="sponsored noopener" href="https://www.cheapshark.com/redirect?dealID={e(str(best.get('dealID','')))}">Buy at {e(stores[str(best['storeID'])])} for {money(cur)}</a>
-{kinguin_keys.block(gid)}
+{kinguin_keys.block(gid, official=cur)}
 {low_line}
 {military_page.best_for_game_html()}
 </div></div>

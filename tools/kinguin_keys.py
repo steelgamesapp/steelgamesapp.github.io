@@ -40,6 +40,7 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
 BUDGET = int(os.environ.get("KINGUIN_BUDGET", "400"))  # Impact searches per run
+TIME_LIMIT = int(os.environ.get("KINGUIN_MINUTES", "25")) * 60  # stop looking up after this long
 FRESH_DAYS = 3        # show a price only if seen this recently
 REFRESH_DAYS = 1      # re-check a matched game's price after this many days
 RESEARCH_DAYS = 7     # look again for a game Kinguin didn't have after this many days
@@ -125,8 +126,11 @@ def _short(d):
         return ""
 
 
-def block(gid, data=None):
-    """HTML for the game page's price box, or "" when Kinguin has no matching key."""
+def block(gid, data=None, official=None):
+    """HTML for the game page's price box, or "" when Kinguin has no matching key.
+
+    The feed price is printed only when it is fresh and below the page's best official store price
+    (official): a feed price above that is more likely a stale or odd listing than a deal."""
     try:
         g = (data or load(cached=True)).get("games", {}).get(str(gid))
         if not g or not g.get("sku") or not g.get("slug"):
@@ -135,8 +139,8 @@ def block(gid, data=None):
         page = f"https://www.kinguin.net/category/{g['sku']}/{g['slug']}"
         where = "Works worldwide on Steam." if g.get("region") == "global" else "North America key: for Steam accounts in the US and Canada."
         price = ""
-        if g.get("usd") and _fresh(g.get("checked", "")):
-            price = f" Sellers started at about <strong style=\"color:#fff\">${g['usd']:.2f}</strong> when we checked on {_short(g['checked'])}; prices change all day."
+        if g.get("usd") and _fresh(g.get("checked", "")) and official and 0 < g["usd"] < official:
+            price = f" Kinguin sellers listed it from about <strong style=\"color:#fff\">${g['usd']:.2f}</strong> when we checked on {_short(g['checked'])}; prices change all day."
         return (f'{START}<div class="kgk" style="margin-top:12px;padding-top:12px;border-top:1px solid var(--line)">'
                 f'<a class="btn btn-ghost" style="width:100%" rel="sponsored nofollow noopener" target="_blank" href="{e(track(page, gid))}">Buy the Steam key on Kinguin</a>'
                 f'<p class="fine" style="margin-top:8px">{where}{price} Kinguin is a marketplace of third-party key sellers, so check the seller rating before you buy. '
@@ -151,7 +155,9 @@ BUY_RE = re.compile(r'(<a class="btn" rel="sponsored noopener" href="https://www
 
 def inject(page_html, gid, data=None):
     """Put (or refresh, or remove) the Kinguin block in an existing game page."""
-    new = block(gid, data)
+    m = re.search(r'">Buy at [^<]* for \$([0-9,]+\.[0-9]{2})</a>', page_html)
+    official = float(m.group(1).replace(",", "")) if m else None
+    new = block(gid, data, official)
     if START in page_html and END in page_html:
         return re.sub(re.escape(START) + r".*?" + re.escape(END), lambda m: new, page_html, count=1, flags=re.S)
     if not new:
@@ -302,9 +308,20 @@ def refresh(sid, token):
     print(f"{len(pages)} game pages, {len(games)} matched, {len(misses)} not on Kinguin, {len(queue)} to look up")
     api = Impact(sid, token)
     done = 0
+    started = time.time()
+
+    def save():
+        data["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+        os.makedirs(os.path.dirname(DATA), exist_ok=True)
+        with open(DATA, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=1, sort_keys=True)
+
     for gid in queue:
-        if api.calls >= BUDGET:
+        if api.calls >= BUDGET or time.time() - started > TIME_LIMIT:
             break
+        if done and done % 25 == 0:
+            save()
+            print(f"  {done} looked up, {len(games)} matched so far", flush=True)
         title = pages[gid][1]
         kw = games[gid]["name"] if gid in games else f"{title} Steam CD Key"
         try:
@@ -328,10 +345,7 @@ def refresh(sid, token):
     for d in (games, misses):
         for gid in [g for g in d if g not in pages]:
             d.pop(gid)
-    data["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    os.makedirs(os.path.dirname(DATA), exist_ok=True)
-    with open(DATA, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=1, sort_keys=True)
+    save()
     print(f"looked up {done} games with {api.calls} API calls; now {len(games)} matched, {len(misses)} not on Kinguin")
     return data
 
