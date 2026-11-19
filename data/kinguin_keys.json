@@ -36,6 +36,51 @@
    "title": "Urban Trial Freestyle",
    "usd": 0.72
   },
+  "101459": {
+   "checked": "2026-11-19",
+   "name": "Door Kickers PC Steam CD Key",
+   "region": "global",
+   "sku": "5478",
+   "slug": "door-kickers-pc-steam-cd-key",
+   "title": "Door Kickers",
+   "usd": 3.63
+  },
+  "101835": {
+   "checked": "2026-11-19",
+   "name": "The Inner World Steam CD Key",
+   "region": "global",
+   "sku": "15649",
+   "slug": "the-inner-world-steam-key",
+   "title": "The Inner World",
+   "usd": 0.36
+  },
+  "101886": {
+   "checked": "2026-11-19",
+   "name": "Gas Guzzlers Extreme Steam CD Key",
+   "region": "global",
+   "sku": "6581",
+   "slug": "gas-guzzlers-extreme-steam-cd-key",
+   "title": "Gas Guzzlers Extreme",
+   "usd": 1.38
+  },
+  "102328": {
+   "checked": "2026-11-19",
+   "name": "Space Rangers HD: A War Apart PC Steam CD Key",
+   "region": "global",
+   "sku": "9798",
+   "slug": "space-rangers-hd-a-war-apart-pc-steam-cd-key",
+   "title": "Space Rangers HD: A War Apart",
+   "usd": 1.39
+  },
+  "102333": {
+   "checked": "2026-11-19",
+   "name": "140 Steam CD Key",
+   "region": "global",
+   "sku": "15865",
+   "slug": "140-steam-key",
+   "title": "140",
+   "usd": 2.14
+  },
   "102499": {
    "checked": "2026-11-19",
    "name": "WRC 4 - FIA World Rally Championship Steam CD Key",
@@ -44,6 +89,15 @@
    "slug": "wrc-4-fia-world-rally-championship-steam-key",
    "title": "WRC 4 FIA World Rally Championship",
    "usd": 0.84
+  },
+  "102576": {
+   "checked": "2026-11-19",
+   "name": "Avadon 2: The Corruption PC Steam CD Key",
+   "region": "global",
+   "sku": "13155",
+   "slug": "avadon-2-the-corruption-pc-steam-cd-key",
+   "title": "Avadon 2: The Corruption",
+   "usd": 193.43
   },
   "103444": {
    "checked": "2026-11-19",
@@ -54,6 +108,15 @@
    "title": "POSTAL 2",
    "usd": 0.59
   },
+  "103899": {
+   "checked": "2026-11-19",
+   "name": "SteamWorld Dig Steam CD Key",
+   "region": "global",
+   "sku": "6075",
+   "slug": "steamworld-dig-steam-key",
+   "title": "SteamWorld Dig",
+   "usd": 0.66
+  },
   "104616": {
    "checked": "2026-11-19",
    "name": "Hitman: Contracts US Steam CD Key",
@@ -63,6 +126,42 @@
    "title": "Hitman: Contracts",
    "usd": 2.26
   },
+  "107364": {
+   "checked": "2026-11-19",
+   "name": "Project Temporality Steam CD Key",
+   "region": "global",
+   "sku": "6896",
+   "slug": "project-temporality-steam-key",
+   "title": "Project Temporality",
+   "usd": 0.45
+  },
+  "107877": {
+   "checked": "2026-11-19",
+   "name": "Escape Goat 2 Steam CD Key",
+   "region": "global",
+   "sku": "7145",
+   "slug": "escape-goat-2-steam-cd-key",
+   "title": "Escape Goat 2",
+   "usd": 0.43
+  },
+  "108262": {
+   "checked": "2026-11-19",
+   "name": "Broforce PC Steam CD Key",
+   "region": "global",
+   "sku": "6777",
+   "slug": "broforce-pc-steam-cd-key",
+   "title": "Broforce",
+   "usd": 3.31
+  },
+  "108708": {
+   "checked": "2026-11-19",
+   "name": "The Last Tinker: City of Colors Steam CD Key",
+   "region": "global",
+   "sku": "6936",
+   "slug": "the-last-tinker-city-of-colors-steam-key",
+   "title": "The Last Tinker: City of Colors",
+   "usd": 0.78
+  },
   "108884": {
    "checked": "2026-11-19",
    "name": "8BitBoy PC Steam CD Key",
@@ -71,6 +170,15 @@
    "slug": "8bitboy-pc-steam-cd-key",
    "title": "8BitBoy",
    "usd": 0.59
+  },
+  "109515": {
+   "checked": "2026-11-19",
+   "name": "Freaking Meatbags Steam CD Key",
+   "region": "global",
+   "sku": "10333",
+   "slug": "freaking-meatbags-steam-key",
+   "title": "Freaking Meatbags",
+   "usd": 0.54
   },
   "109546": {
    "checked": "2026-11-19",
@@ -90,6 +198,33 @@
    "title": "Distant Worlds: Universe",
    "usd": 1.25
   },
+  "109746": {
+   "checked": "2026-11-19",
+   "name": "Metro 2033 Redux PC Steam CD Key",
+   "region": "global",
+   "sku": "9290",
+   "slug": "metro-2033-redux-pc-steam-cd-key",
+   "title": "Metro 2033 Redux",
+   "usd": 1.75
+  },
+  "1111": {
+   "checked": "2026-11-19",
+   "name": "Secret Files 2: Puritas Cordis Steam CD Key",
+   "region": "global",
+   "sku": "27247",
+   "slug": "secret-files-2-puritas-cordis-steam-cd-key",
+   "title": "Secret Files 2: Puritas Cordis",
+   "usd": 8.77
+  },
+  "1112": {
+   "checked": "2026-11-19",
+   "name": "Secret Files: Tunguska Steam CD Key",
+   "region": "global",
+   "sku": "20899",
+   "slug": "secret-files-tunguska-steam-cd-key",
+   "title": "Secret Files Tunguska",
+   "usd": 1.88
+  },
   "111307": {
    "checked": "2026-11-19",
    "name": "Anomaly Defenders Steam CD Key",
@@ -99,6 +234,15 @@
    "title": "Anomaly Defenders",
    "usd": 0.25
   },
+  "111449": {
+   "checked": "2026-11-19",
+   "name": "Road Redemption Steam CD Key",
+   "region": "global",
+   "sku": "9940",
+   "slug": "road-redemption-steam-key",
+   "title": "Road Redemption",
+   "usd": 0.63
+  },
   "113336": {
    "checked": "2026-11-19",
    "name": "Ultra Street Fighter IV PC Steam CD Key",
@@ -107,6 +251,24 @@
    "slug": "ultra-street-fighter-iv-pc-steam-cd-key",
    "title": "Ultra Street Fighter IV",
    "usd": 3.93
+  },
+  "1145": {
+   "checked": "2026-11-19",
+   "name": "Elven Legacy Steam CD Key",
+   "region": "global",
+   "sku": "428",
+   "slug": "elven-legacy-steam-key",
+   "title": "Elven Legacy",
+   "usd": 0.7
+  },
+  "1155": {
+   "checked": "2026-11-19",
+   "name": "Death to Spies: Moment of Truth Steam CD Key",
+   "region": "global",
+   "sku": "1664",
+   "slug": "death-to-spies-moment-of-truth-steam-key",
+   "title": "Death to Spies: Moment of Truth",
+   "usd": 1.13
   },
   "116168": {
    "checked": "2026-11-19",
@@ -126,6 +288,42 @@
    "title": "Company of Heroes",
    "usd": 3.3
   },
+  "119227": {
+   "checked": "2026-11-19",
+   "name": "Dead Rising 3 Apocalypse Edition PC Steam CD Key",
+   "region": "global",
+   "sku": "9449",
+   "slug": "dead-rising-3-apocalypse-edition-pc-steam-cd-key",
+   "title": "Dead Rising 3: Apocalypse Edition",
+   "usd": 8.32
+  },
+  "122040": {
+   "checked": "2026-11-19",
+   "name": "Ziggurat Steam CD Key",
+   "region": "global",
+   "sku": "16128",
+   "slug": "ziggurat-steam-key",
+   "title": "Ziggurat",
+   "usd": 0.63
+  },
+  "122799": {
+   "checked": "2026-11-19",
+   "name": "Dex Steam CD Key",
+   "region": "global",
+   "sku": "9143",
+   "slug": "dex-steam-cd-key",
+   "title": "Dex",
+   "usd": 2.83
+  },
+  "122961": {
+   "checked": "2026-11-19",
+   "name": "The Escapists PC Steam CD Key",
+   "region": "global",
+   "sku": "9209",
+   "slug": "the-escapists-pc-steam-cd-key",
+   "title": "The Escapists",
+   "usd": 2.63
+  },
   "126": {
    "checked": "2026-11-19",
    "name": "Sid Meier's Civilization IV PC Steam CD Key",
@@ -134,6 +332,15 @@
    "slug": "sid-meier-s-civilization-iv-pc-steam-cd-key",
    "title": "Sid Meier's Civilization IV",
    "usd": 1.38
+  },
+  "1271": {
+   "checked": "2026-11-19",
+   "name": "Fleet Command Steam CD Key",
+   "region": "global",
+   "sku": "30573",
+   "slug": "fleet-command-steam-cd-key",
+   "title": "Fleet Command",
+   "usd": 0.75
   },
   "127567": {
    "checked": "2026-11-19",
@@ -144,6 +351,15 @@
    "title": "Styx: Master of Shadows",
    "usd": 1.45
   },
+  "1316": {
+   "checked": "2026-11-19",
+   "name": "Death to Spies Steam CD Key",
+   "region": "global",
+   "sku": "36252",
+   "slug": "death-to-spies-steam-cd-key",
+   "title": "Death to Spies",
+   "usd": 0.82
+  },
   "136930": {
    "checked": "2026-11-19",
    "name": "This War of Mine Steam CD Key",
@@ -152,6 +368,24 @@
    "slug": "this-war-of-mine-steam-cd-key",
    "title": "This War of Mine",
    "usd": 1.07
+  },
+  "139991": {
+   "checked": "2026-11-19",
+   "name": "Soul Axiom Steam CD Key",
+   "region": "global",
+   "sku": "16985",
+   "slug": "soul-axiom-steam-cd-key",
+   "title": "Soul Axiom",
+   "usd": 1.25
+  },
+  "140084": {
+   "checked": "2026-11-19",
+   "name": "Mordheim: City of the Damned Steam CD Key",
+   "region": "global",
+   "sku": "12452",
+   "slug": "mordheim-city-of-the-damned-steam-key",
+   "title": "Mordheim: City of the Damned",
+   "usd": 1.0
   },
   "141034": {
    "checked": "2026-11-19",
@@ -162,6 +396,15 @@
    "title": "Grim Fandango Remastered",
    "usd": 4.38
   },
+  "141067": {
+   "checked": "2026-11-19",
+   "name": "Tengami Steam CD Key",
+   "region": "global",
+   "sku": "13629",
+   "slug": "tengami-steam-key",
+   "title": "Tengami",
+   "usd": 0.51
+  },
   "141090": {
    "checked": "2026-11-19",
    "name": "The Next Penelope Steam CD Key",
@@ -170,6 +413,24 @@
    "slug": "the-next-penelope-steam-key",
    "title": "The Next Penelope",
    "usd": 0.47
+  },
+  "141323": {
+   "checked": "2026-11-19",
+   "name": "Fahrenheit Indigo Prophecy Remastered PC Steam CD Key",
+   "region": "global",
+   "sku": "13980",
+   "slug": "fahrenheit-indigo-prophecy-remastered-pc-steam-cd-key",
+   "title": "Fahrenheit: Indigo Prophecy Remastered",
+   "usd": 1.09
+  },
+  "141408": {
+   "checked": "2026-11-19",
+   "name": "Darkest Dungeon PC Steam CD Key",
+   "region": "global",
+   "sku": "19647",
+   "slug": "darkest-dungeon-pc-steam-cd-key",
+   "title": "Darkest Dungeon",
+   "usd": 2.34
   },
   "1423": {
    "checked": "2026-11-19",
@@ -180,6 +441,15 @@
    "title": "Shadowgrounds",
    "usd": 0.53
   },
+  "142481": {
+   "checked": "2026-11-19",
+   "name": "White Night Steam CD Key",
+   "region": "global",
+   "sku": "15293",
+   "slug": "white-night-steam-key",
+   "title": "White Night",
+   "usd": 0.5
+  },
   "142961": {
    "checked": "2026-11-19",
    "name": "Dead Synchronicity: Tomorrow Comes Today Steam CD Key",
@@ -188,6 +458,15 @@
    "slug": "dead-synchronicity-tomorrow-comes-today-steam-cd-key",
    "title": "Dead Synchronicity: Tomorrow Comes Today",
    "usd": 0.57
+  },
+  "144076": {
+   "checked": "2026-11-19",
+   "name": "BADLAND: Game of the Year Edition Steam CD Key",
+   "region": "global",
+   "sku": "16907",
+   "slug": "badland-game-of-the-year-edition-steam-cd-key",
+   "title": "BADLAND: Game of the Year Edition",
+   "usd": 2.53
   },
   "144703": {
    "checked": "2026-11-19",
@@ -207,6 +486,51 @@
    "title": "Divide By Sheep",
    "usd": 0.3
   },
+  "144886": {
+   "checked": "2026-11-19",
+   "name": "Rebel Galaxy PC Steam CD Key",
+   "region": "global",
+   "sku": "21406",
+   "slug": "rebel-galaxy-pc-steam-cd-key",
+   "title": "Rebel Galaxy",
+   "usd": 1.24
+  },
+  "145115": {
+   "checked": "2026-11-19",
+   "name": "Splasher Steam CD Key",
+   "region": "global",
+   "sku": "33732",
+   "slug": "splasher-steam-cd-key",
+   "title": "Splasher",
+   "usd": 0.38
+  },
+  "145148": {
+   "checked": "2026-11-19",
+   "name": "Dropsy PC Steam CD Key",
+   "region": "global",
+   "sku": "20141",
+   "slug": "dropsy-pc-steam-cd-key",
+   "title": "Dropsy",
+   "usd": 0.63
+  },
+  "145440": {
+   "checked": "2026-11-19",
+   "name": "Volume Steam CD Key",
+   "region": "global",
+   "sku": "19477",
+   "slug": "volume-steam-cd-key",
+   "title": "Volume",
+   "usd": 1.25
+  },
+  "146236": {
+   "checked": "2026-11-19",
+   "name": "Dragon's Dogma: Dark Arisen Steam CD Key",
+   "region": "global",
+   "sku": "23492",
+   "slug": "dragon-s-dogma-dark-arisen-steam-cd-key",
+   "title": "Dragons Dogma: Dark Arisen",
+   "usd": 4.59
+  },
   "146570": {
    "checked": "2026-11-19",
    "name": "Hard West Steam CD Key",
@@ -224,6 +548,42 @@
    "slug": "zombie-vikings-steam-cd-key",
    "title": "Zombie Vikings",
    "usd": 2.51
+  },
+  "147836": {
+   "checked": "2026-11-19",
+   "name": "Punch Club PC Steam CD Key",
+   "region": "global",
+   "sku": "23457",
+   "slug": "punch-club-pc-steam-cd-key",
+   "title": "Punch Club",
+   "usd": 1.01
+  },
+  "147951": {
+   "checked": "2026-11-19",
+   "name": "Slime Rancher PC Steam CD Key",
+   "region": "global",
+   "sku": "23816",
+   "slug": "slime-rancher-pc-steam-cd-key",
+   "title": "Slime Rancher",
+   "usd": 2.67
+  },
+  "148013": {
+   "checked": "2026-11-19",
+   "name": "The Witness Steam CD Key",
+   "region": "global",
+   "sku": "24011",
+   "slug": "the-witness-steam-cd-key",
+   "title": "The Witness",
+   "usd": 1.35
+  },
+  "150009": {
+   "checked": "2026-11-19",
+   "name": "Californium Steam CD Key",
+   "region": "global",
+   "sku": "24511",
+   "slug": "californium-steam-cd-key",
+   "title": "Californium",
+   "usd": 0.46
   },
   "150051": {
    "checked": "2026-11-19",
@@ -270,6 +630,15 @@
    "title": "SteamWorld Heist",
    "usd": 2.14
   },
+  "153795": {
+   "checked": "2026-11-19",
+   "name": "On Rusty Trails PC Steam CD Key",
+   "region": "global",
+   "sku": "28161",
+   "slug": "on-rusty-trails-pc-steam-cd-key",
+   "title": "On Rusty Trails",
+   "usd": 0.25
+  },
   "154826": {
    "checked": "2026-11-19",
    "name": "Anarcute Steam CD Key",
@@ -296,6 +665,33 @@
    "slug": "sudden-strike-4-steam-cd-key",
    "title": "Sudden Strike 4",
    "usd": 2.09
+  },
+  "157229": {
+   "checked": "2026-11-19",
+   "name": "Motorsport Manager Steam CD Key",
+   "region": "global",
+   "sku": "29190",
+   "slug": "motorsport-manager-steam-cd-key",
+   "title": "Motorsport Manager",
+   "usd": 16.32
+  },
+  "157493": {
+   "checked": "2026-11-19",
+   "name": "EVERSPACE PC Steam CD Key",
+   "region": "global",
+   "sku": "29906",
+   "slug": "everspace-pc-steam-cd-key",
+   "title": "Everspace",
+   "usd": 1.14
+  },
+  "157512": {
+   "checked": "2026-11-19",
+   "name": "Yesterday Origins Steam CD Key",
+   "region": "global",
+   "sku": "30266",
+   "slug": "yesterday-origins-steam-cd-key",
+   "title": "Yesterday Origins",
+   "usd": 0.54
   },
   "157807": {
    "checked": "2026-11-19",
@@ -324,6 +720,24 @@
    "title": "Jotun: Valhalla Edition",
    "usd": 0.82
   },
+  "158443": {
+   "checked": "2026-11-19",
+   "name": "Shadow Tactics: Blades of the Shogun PC Steam CD Key",
+   "region": "global",
+   "sku": "32249",
+   "slug": "shadow-tactics-blades-of-the-shogun-pc-steam-cd-key",
+   "title": "Shadow Tactics: Blades of the Shogun",
+   "usd": 2.43
+  },
+  "158453": {
+   "checked": "2026-11-19",
+   "name": "ClusterTruck PC Steam CD Key",
+   "region": "global",
+   "sku": "44832",
+   "slug": "clustertruck-pc-steam-cd-key",
+   "title": "Clustertruck",
+   "usd": 2.51
+  },
   "158740": {
    "checked": "2026-11-19",
    "name": "Beholder PC Steam CD Key",
@@ -342,6 +756,24 @@
    "title": "WRC 6 FIA World Rally Championship",
    "usd": 1.25
   },
+  "160182": {
+   "checked": "2026-11-19",
+   "name": "Transport Fever PC Steam CD Key",
+   "region": "global",
+   "sku": "31190",
+   "slug": "transport-fever-pc-steam-cd-key",
+   "title": "Transport Fever",
+   "usd": 3.26
+  },
+  "160967": {
+   "checked": "2026-11-19",
+   "name": "Through the Woods Steam CD Key",
+   "region": "global",
+   "sku": "31230",
+   "slug": "through-the-woods-steam-cd-key",
+   "title": "Through the Woods",
+   "usd": 1.72
+  },
   "163295": {
    "checked": "2026-11-19",
    "name": "Quern: Undying Thoughts Steam CD Key",
@@ -350,6 +782,15 @@
    "slug": "quern-undying-thoughts-steam-cd-key",
    "title": "Quern - Undying Thoughts",
    "usd": 9.21
+  },
+  "163507": {
+   "checked": "2026-11-19",
+   "name": "Bulletstorm Full Clip Edition Steam CD Key",
+   "region": "global",
+   "sku": "35701",
+   "slug": "bulletstorm-full-clip-edition-steam-cd-key",
+   "title": "Bulletstorm: Full Clip Edition",
+   "usd": 0.89
   },
   "164014": {
    "checked": "2026-11-19",
@@ -360,6 +801,24 @@
    "title": "Outlast 2",
    "usd": 2.93
   },
+  "164161": {
+   "checked": "2026-11-19",
+   "name": "Styx: Shards of Darkness Steam CD Key",
+   "region": "global",
+   "sku": "28806",
+   "slug": "styx-shards-of-darkness-steam-cd-key",
+   "title": "Styx: Shards of Darkness",
+   "usd": 1.57
+  },
+  "164421": {
+   "checked": "2026-11-19",
+   "name": "Sairento VR Steam CD Key",
+   "region": "global",
+   "sku": "32684",
+   "slug": "sairento-vr-steam-cd-key",
+   "title": "Sairento VR",
+   "usd": 0.95
+  },
   "165440": {
    "checked": "2026-11-19",
    "name": "Beat Cop Steam CD Key",
@@ -368,6 +827,24 @@
    "slug": "beat-cop-steam-cd-key",
    "title": "Beat Cop",
    "usd": 0.51
+  },
+  "165704": {
+   "checked": "2026-11-19",
+   "name": "Antihero PC Steam CD Key",
+   "region": "global",
+   "sku": "38375",
+   "slug": "antihero-pc-steam-cd-key",
+   "title": "Antihero",
+   "usd": 1.54
+  },
+  "165726": {
+   "checked": "2026-11-19",
+   "name": "Arelite Core Steam CD Key",
+   "region": "global",
+   "sku": "33721",
+   "slug": "arelite-core-steam-cd-key",
+   "title": "Arelite Core",
+   "usd": 22.78
   },
   "166": {
    "checked": "2026-11-19",
@@ -396,6 +873,42 @@
    "title": "911 Operator",
    "usd": 1.13
   },
+  "166717": {
+   "checked": "2026-11-19",
+   "name": "Middle-Earth: Shadow of War PC Steam CD Key",
+   "region": "global",
+   "sku": "41631",
+   "slug": "middle-earth-shadow-of-war-pc-steam-cd-key",
+   "title": "Middle-earth: Shadow of War",
+   "usd": 3.08
+  },
+  "166740": {
+   "checked": "2026-11-19",
+   "name": "For The King PC Steam CD Key",
+   "region": "global",
+   "sku": "34456",
+   "slug": "for-the-king-pc-steam-cd-key",
+   "title": "For The King",
+   "usd": 1.0
+  },
+  "167708": {
+   "checked": "2026-11-19",
+   "name": "Narcosis Steam CD Key",
+   "region": "global",
+   "sku": "36816",
+   "slug": "narcosis-steam-cd-key",
+   "title": "Narcosis",
+   "usd": 1.5
+  },
+  "168488": {
+   "checked": "2026-11-19",
+   "name": "Rising Storm 2: Vietnam PC Steam CD Key",
+   "region": "global",
+   "sku": "36464",
+   "slug": "rising-storm-2-vietnam-pc-steam-cd-key",
+   "title": "Rising Storm 2: Vietnam",
+   "usd": 2.04
+  },
   "168835": {
    "checked": "2026-11-19",
    "name": "Dungeons 3 PC Steam CD Key",
@@ -404,6 +917,60 @@
    "slug": "dungeons-3-pc-steam-cd-key",
    "title": "Dungeons 3",
    "usd": 1.47
+  },
+  "169000": {
+   "checked": "2026-11-19",
+   "name": "Old Man's Journey Steam CD Key",
+   "region": "global",
+   "sku": "36966",
+   "slug": "old-man-s-journey-steam-cd-key",
+   "title": "Old Man's Journey",
+   "usd": 0.38
+  },
+  "169248": {
+   "checked": "2026-11-19",
+   "name": "Emily is Away Too Steam CD Key",
+   "region": "global",
+   "sku": "37316",
+   "slug": "emily-is-away-too-steam-cd-key",
+   "title": "Emily is Away Too",
+   "usd": 1.55
+  },
+  "170108": {
+   "checked": "2026-11-19",
+   "name": "Dishonored: Complete Collection PC Steam CD Key",
+   "region": "global",
+   "sku": "41247",
+   "slug": "dishonored-complete-collection-pc-steam-cd-key",
+   "title": "Dishonored Complete Collection",
+   "usd": 13.47
+  },
+  "170871": {
+   "checked": "2026-11-19",
+   "name": "Tower of Time Steam CD Key",
+   "region": "global",
+   "sku": "38685",
+   "slug": "tower-of-time-steam-cd-key",
+   "title": "Tower of Time",
+   "usd": 0.8
+  },
+  "171002": {
+   "checked": "2026-11-19",
+   "name": "Hob Steam CD Key",
+   "region": "global",
+   "sku": "41315",
+   "slug": "hob-steam-cd-key",
+   "title": "Hob",
+   "usd": 0.93
+  },
+  "171016": {
+   "checked": "2026-11-19",
+   "name": "Absolver PC Steam CD Key",
+   "region": "global",
+   "sku": "40655",
+   "slug": "absolver-pc-steam-cd-key",
+   "title": "Absolver",
+   "usd": 2.59
   },
   "172299": {
    "checked": "2026-11-19",
@@ -422,6 +989,24 @@
    "slug": "children-of-morta-pc-steam-cd-key",
    "title": "Children of Morta",
    "usd": 1.16
+  },
+  "173034": {
+   "checked": "2026-11-19",
+   "name": "RUINER Steam CD Key",
+   "region": "global",
+   "sku": "41527",
+   "slug": "ruiner-steam-cd-key",
+   "title": "RUINER",
+   "usd": 3.06
+  },
+  "173440": {
+   "checked": "2026-11-19",
+   "name": "SteamWorld Dig 2 PC Steam CD Key",
+   "region": "global",
+   "sku": "41223",
+   "slug": "steamworld-dig-2-pc-steam-cd-key",
+   "title": "SteamWorld Dig 2",
+   "usd": 5.26
   },
   "173455": {
    "checked": "2026-11-19",
@@ -522,6 +1107,15 @@
    "title": "Strikers Edge",
    "usd": 0.46
   },
+  "177905": {
+   "checked": "2026-11-19",
+   "name": "Fishing: Barents Sea PC Steam CD Key",
+   "region": "global",
+   "sku": "45499",
+   "slug": "fishing-barents-sea-pc-steam-cd-key",
+   "title": "Fishing: Barents Sea",
+   "usd": 3.77
+  },
   "178060": {
    "checked": "2026-11-19",
    "name": "Darksiders III PC Steam CD Key",
@@ -603,6 +1197,15 @@
    "title": "Haimrik",
    "usd": 0.42
   },
+  "187189": {
+   "checked": "2026-11-19",
+   "name": "FAR: Lone Sails PC Steam CD Key",
+   "region": "global",
+   "sku": "50119",
+   "slug": "far-lone-sails-pc-steam-cd-key",
+   "title": "FAR: Lone Sails",
+   "usd": 1.53
+  },
   "188722": {
    "checked": "2026-11-19",
    "name": "Lovecraft's Untold Stories PC Steam CD Key",
@@ -621,6 +1224,15 @@
    "title": "Impulsion",
    "usd": 0.38
   },
+  "19": {
+   "checked": "2026-11-19",
+   "name": "Saints Row: The Third PC Steam CD Key",
+   "region": "global",
+   "sku": "104",
+   "slug": "saints-row-the-third-pc-steam-cd-key",
+   "title": "Saints Row: The Third",
+   "usd": 2.04
+  },
   "190701": {
    "checked": "2026-11-19",
    "name": "Flipping Death Steam CD Key",
@@ -630,6 +1242,33 @@
    "title": "Flipping Death",
    "usd": 3.17
   },
+  "190757": {
+   "checked": "2026-11-19",
+   "name": "Warhammer 40,000: Mechanicus PC Steam CD Key",
+   "region": "global",
+   "sku": "54417",
+   "slug": "warhammer-40-000-mechanicus-pc-steam-cd-key",
+   "title": "Warhammer 40,000: Mechanicus",
+   "usd": 1.25
+  },
+  "191008": {
+   "checked": "2026-11-19",
+   "name": "Metro Exodus PC Steam CD Key",
+   "region": "global",
+   "sku": "71289",
+   "slug": "metro-exodus-pc-steam-cd-key",
+   "title": "Metro Exodus",
+   "usd": 3.72
+  },
+  "191039": {
+   "checked": "2026-11-19",
+   "name": "Fell Seal: Arbiter's Mark PC Steam CD Key",
+   "region": "global",
+   "sku": "54147",
+   "slug": "fell-seal-arbiter-s-mark-pc-steam-cd-key",
+   "title": "Fell Seal: Arbiter's Mark",
+   "usd": 1.32
+  },
   "192": {
    "checked": "2026-11-19",
    "name": "Dungeon Siege PC Steam CD Key",
@@ -638,6 +1277,33 @@
    "slug": "dungeon-siege-pc-steam-cd-key",
    "title": "Dungeon Siege",
    "usd": 1.3
+  },
+  "194665": {
+   "checked": "2026-11-19",
+   "name": "When Ski Lifts Go Wrong Steam CD Key",
+   "region": "global",
+   "sku": "59531",
+   "slug": "when-ski-lifts-go-wrong-steam-cd-key",
+   "title": "When Ski Lifts Go Wrong",
+   "usd": 0.42
+  },
+  "194679": {
+   "checked": "2026-11-19",
+   "name": "11-11 Memories Retold Steam CD Key",
+   "region": "global",
+   "sku": "57219",
+   "slug": "11-11-memories-retold-steam-cd-key",
+   "title": "11-11 Memories Retold",
+   "usd": 1.05
+  },
+  "195105": {
+   "checked": "2026-11-19",
+   "name": "Mutant Year Zero: Road to Eden Steam CD Key",
+   "region": "global",
+   "sku": "57932",
+   "slug": "mutant-year-zero-road-to-eden-steam-cd-key",
+   "title": "Mutant Year Zero: Road to Eden",
+   "usd": 6.26
   },
   "195959": {
    "checked": "2026-11-19",
@@ -666,6 +1332,42 @@
    "title": "Bury me, my Love",
    "usd": 0.42
   },
+  "198143": {
+   "checked": "2026-11-19",
+   "name": "The Textorcist: The Story of Ray Bibbia PC Steam CD Key",
+   "region": "global",
+   "sku": "60389",
+   "slug": "the-textorcist-the-story-of-ray-bibbia-pc-steam-cd-key",
+   "title": "The Textorcist: The Story of Ray Bibbia",
+   "usd": 0.2
+  },
+  "198423": {
+   "checked": "2026-11-19",
+   "name": "Dark Devotion PC Steam CD Key",
+   "region": "global",
+   "sku": "62673",
+   "slug": "dark-devotion-pc-steam-cd-key",
+   "title": "Dark Devotion",
+   "usd": 1.33
+  },
+  "199077": {
+   "checked": "2026-11-19",
+   "name": "God's Trigger PC Steam CD Key",
+   "region": "global",
+   "sku": "62458",
+   "slug": "god-s-trigger-pc-steam-cd-key",
+   "title": "God's Trigger",
+   "usd": 0.79
+  },
+  "200270": {
+   "checked": "2026-11-19",
+   "name": "HyperParasite PC Steam CD Key",
+   "region": "global",
+   "sku": "62179",
+   "slug": "hyperparasite-pc-steam-cd-key",
+   "title": "HyperParasite",
+   "usd": 0.96
+  },
   "200621": {
    "checked": "2026-11-19",
    "name": "Borderlands 3 PC Steam CD Key",
@@ -683,6 +1385,51 @@
    "slug": "remnant-from-the-ashes-pc-steam-cd-key",
    "title": "Remnant: From the Ashes",
    "usd": 4.13
+  },
+  "201277": {
+   "checked": "2026-11-19",
+   "name": "Astrologaster Steam CD Key",
+   "region": "global",
+   "sku": "63215",
+   "slug": "astrologaster-steam-cd-key",
+   "title": "Astrologaster",
+   "usd": 0.39
+  },
+  "201542": {
+   "checked": "2026-11-19",
+   "name": "Reventure Steam CD Key",
+   "region": "global",
+   "sku": "64464",
+   "slug": "reventure-steam-cd-key",
+   "title": "Reventure",
+   "usd": 2.13
+  },
+  "202395": {
+   "checked": "2026-11-19",
+   "name": "Dry Drowning Steam CD Key",
+   "region": "global",
+   "sku": "66440",
+   "slug": "dry-drowning-steam-cd-key",
+   "title": "Dry Drowning",
+   "usd": 1.7
+  },
+  "202559": {
+   "checked": "2026-11-19",
+   "name": "Lovely Planet 2: April Skies Steam CD Key",
+   "region": "global",
+   "sku": "64622",
+   "slug": "lovely-planet-2-april-skies-steam-cd-key",
+   "title": "Lovely Planet 2: April Skies",
+   "usd": 1.3
+  },
+  "202696": {
+   "checked": "2026-11-19",
+   "name": "Heavy Rain PC Steam CD Key",
+   "region": "global",
+   "sku": "78714",
+   "slug": "heavy-rain-pc-steam-cd-key",
+   "title": "Heavy Rain",
+   "usd": 1.66
   },
   "203164": {
    "checked": "2026-11-19",
@@ -720,6 +1467,15 @@
    "title": "Wanderlust Travel Stories",
    "usd": 0.96
   },
+  "203387": {
+   "checked": "2026-11-19",
+   "name": "Beyond: Two Souls PC Steam CD Key",
+   "region": "global",
+   "sku": "78772",
+   "slug": "beyond-two-souls-pc-steam-cd-key",
+   "title": "Beyond: Two Souls",
+   "usd": 1.67
+  },
   "203925": {
    "checked": "2026-11-19",
    "name": "Indivisible PC Steam CD Key",
@@ -728,6 +1484,33 @@
    "slug": "indivisible-pc-steam-cd-key",
    "title": "Indivisible",
    "usd": 1.35
+  },
+  "204144": {
+   "checked": "2026-11-19",
+   "name": "Overpass PC Steam CD Key",
+   "region": "global",
+   "sku": "66700",
+   "slug": "overpass-pc-steam-cd-key",
+   "title": "Overpass",
+   "usd": 7.58
+  },
+  "204250": {
+   "checked": "2026-11-19",
+   "name": "Maneater PC Steam CD Key",
+   "region": "global",
+   "sku": "87424",
+   "slug": "maneater-pc-steam-cd-key",
+   "title": "Maneater",
+   "usd": 2.76
+  },
+  "204421": {
+   "checked": "2026-11-19",
+   "name": "Trine 4: The Nightmare Prince PC Steam CD Key",
+   "region": "global",
+   "sku": "67724",
+   "slug": "trine-4-the-nightmare-prince-pc-steam-cd-key",
+   "title": "Trine 4: The Nightmare Prince",
+   "usd": 2.28
   },
   "204666": {
    "checked": "2026-11-19",
@@ -756,6 +1539,15 @@
    "title": "Flotsam",
    "usd": 2073.57
   },
+  "205626": {
+   "checked": "2026-11-19",
+   "name": "Yaga Steam CD Key",
+   "region": "global",
+   "sku": "81108",
+   "slug": "yaga-steam-cd-key",
+   "title": "Yaga",
+   "usd": 1.38
+  },
   "205832": {
    "checked": "2026-11-19",
    "name": "Neo Cab PC Steam CD Key",
@@ -764,6 +1556,60 @@
    "slug": "neo-cab-pc-steam-cd-key",
    "title": "Neo Cab",
    "usd": 0.18
+  },
+  "206054": {
+   "checked": "2026-11-19",
+   "name": "Vampire: The Masquerade - Coteries of New York Steam CD Key",
+   "region": "global",
+   "sku": "69509",
+   "slug": "vampire-the-masquerade-coteries-of-new-york-steam-cd-key",
+   "title": "Vampire: The Masquerade - Coteries of New York",
+   "usd": 0.45
+  },
+  "206171": {
+   "checked": "2026-11-19",
+   "name": "Arise: A Simple Story PC Steam CD Key",
+   "region": "global",
+   "sku": "80178",
+   "slug": "arise-a-simple-story-pc-steam-cd-key",
+   "title": "Arise: A Simple Story",
+   "usd": 2.17
+  },
+  "206721": {
+   "checked": "2026-11-19",
+   "name": "Sniper Ghost Warrior Contracts Steam CD Key",
+   "region": "global",
+   "sku": "68328",
+   "slug": "sniper-ghost-warrior-contracts-steam-cd-key",
+   "title": "Sniper Ghost Warrior Contracts",
+   "usd": 1.24
+  },
+  "206783": {
+   "checked": "2026-11-19",
+   "name": "The Wanderer: Frankenstein's Creature PC Steam CD Key",
+   "region": "global",
+   "sku": "68287",
+   "slug": "the-wanderer-frankenstein-s-creature-pc-steam-cd-key",
+   "title": "The Wanderer: Frankensteins Creature",
+   "usd": 0.59
+  },
+  "207006": {
+   "checked": "2026-11-19",
+   "name": "The Coma 2: Vicious Sisters PC Steam CD Key",
+   "region": "global",
+   "sku": "70179",
+   "slug": "the-coma-2-vicious-sisters-pc-steam-cd-key",
+   "title": "The Coma 2: Vicious Sisters",
+   "usd": 0.38
+  },
+  "208": {
+   "checked": "2026-11-19",
+   "name": "Company of Heroes: Opposing Fronts Steam CD Key",
+   "region": "global",
+   "sku": "2179",
+   "slug": "company-of-heroes-opposing-fronts-steam-key",
+   "title": "Company of Heroes: Opposing Fronts",
+   "usd": 2.76
   },
   "209296": {
    "checked": "2026-11-19",
@@ -782,6 +1628,15 @@
    "slug": "ao-tennis-2-steam-cd-key",
    "title": "AO Tennis 2",
    "usd": 3.81
+  },
+  "209723": {
+   "checked": "2026-11-19",
+   "name": "Mythic Ocean Steam CD Key",
+   "region": "global",
+   "sku": "148014",
+   "slug": "mythic-ocean-steam-cd-key",
+   "title": "Mythic Ocean",
+   "usd": 0.34
   },
   "210088": {
    "checked": "2026-11-19",
@@ -819,6 +1674,15 @@
    "title": "TT Isle of Man - Ride on the Edge 2",
    "usd": 1.42
   },
+  "211721": {
+   "checked": "2026-11-19",
+   "name": "Biped Steam CD Key",
+   "region": "global",
+   "sku": "71633",
+   "slug": "biped-steam-cd-key",
+   "title": "Biped",
+   "usd": 0.47
+  },
   "213772": {
    "checked": "2026-11-19",
    "name": "Drug Dealer Simulator PC Steam CD Key",
@@ -828,6 +1692,15 @@
    "title": "Drug Dealer Simulator",
    "usd": 1.18
   },
+  "214162": {
+   "checked": "2026-11-19",
+   "name": "Filament Steam CD Key",
+   "region": "global",
+   "sku": "73018",
+   "slug": "filament-steam-cd-key",
+   "title": "Filament",
+   "usd": 2.79
+  },
   "214694": {
    "checked": "2026-11-19",
    "name": "112 Operator Steam CD Key",
@@ -836,6 +1709,33 @@
    "slug": "112-operator-steam-cd-key",
    "title": "112 Operator",
    "usd": 1.7
+  },
+  "215071": {
+   "checked": "2026-11-19",
+   "name": "Wintermoor Tactics Club Steam CD Key",
+   "region": "global",
+   "sku": "73302",
+   "slug": "wintermoor-tactics-club-steam-cd-key",
+   "title": "Wintermoor Tactics Club",
+   "usd": 2.26
+  },
+  "215255": {
+   "checked": "2026-11-19",
+   "name": "Vampire: The Masquerade - Shadows of New York PC Steam CD Key",
+   "region": "global",
+   "sku": "76896",
+   "slug": "vampire-the-masquerade-shadows-of-new-york-pc-steam-cd-key",
+   "title": "Vampire The Masquerade - Shadows of New York",
+   "usd": 0.39
+  },
+  "215388": {
+   "checked": "2026-11-19",
+   "name": "Spiritfarer Steam CD Key",
+   "region": "global",
+   "sku": "76262",
+   "slug": "spiritfarer-steam-cd-key",
+   "title": "Spiritfarer",
+   "usd": 2.97
   },
   "216211": {
    "checked": "2026-11-19",
@@ -864,6 +1764,15 @@
    "title": "A Jugglers Tale",
    "usd": 0.45
   },
+  "216873": {
+   "checked": "2026-11-19",
+   "name": "Evan's Remains Steam CD Key",
+   "region": "global",
+   "sku": "74806",
+   "slug": "evan-s-remains-steam-cd-key",
+   "title": "Evans Remains",
+   "usd": 0.34
+  },
   "217644": {
    "checked": "2026-11-19",
    "name": "UnMetal Steam CD Key",
@@ -891,6 +1800,24 @@
    "title": "The Dungeon Of Naheulbeuk: The Amulet Of Chaos",
    "usd": 1.71
   },
+  "218281": {
+   "checked": "2026-11-19",
+   "name": "Hunting Simulator 2 Steam CD Key",
+   "region": "global",
+   "sku": "75761",
+   "slug": "hunting-simulator-2-steam-cd-key",
+   "title": "Hunting Simulator 2",
+   "usd": 1.97
+  },
+  "218292": {
+   "checked": "2026-11-19",
+   "name": "Pumpkin Jack PC Steam CD Key",
+   "region": "global",
+   "sku": "78468",
+   "slug": "pumpkin-jack-pc-steam-cd-key",
+   "title": "Pumpkin Jack",
+   "usd": 1.09
+  },
   "218578": {
    "checked": "2026-11-19",
    "name": "Werewolf: The Apocalypse - Heart of the Forest Steam CD Key",
@@ -900,6 +1827,33 @@
    "title": "Werewolf: the Apocalypse - Heart of the Forest",
    "usd": 0.7
   },
+  "219285": {
+   "checked": "2026-11-19",
+   "name": "Dreamscaper Steam CD Key",
+   "region": "global",
+   "sku": "76081",
+   "slug": "dreamscaper-steam-cd-key",
+   "title": "Dreamscaper",
+   "usd": 0.85
+  },
+  "219607": {
+   "checked": "2026-11-19",
+   "name": "As Far As The Eye Steam CD Key",
+   "region": "global",
+   "sku": "76818",
+   "slug": "as-far-as-the-eye-steam-cd-key",
+   "title": "As Far As The Eye",
+   "usd": 0.45
+  },
+  "219648": {
+   "checked": "2026-11-19",
+   "name": "The Last Campfire PC Steam CD Key",
+   "region": "global",
+   "sku": "98987",
+   "slug": "the-last-campfire-pc-steam-cd-key",
+   "title": "The Last Campfire",
+   "usd": 0.46
+  },
   "219681": {
    "checked": "2026-11-19",
    "name": "El Hijo: A Wild West Tale PC Steam CD Key",
@@ -908,6 +1862,15 @@
    "slug": "el-hijo-a-wild-west-tale-pc-steam-cd-key",
    "title": "El Hijo - A Wild West Tale",
    "usd": 2.2
+  },
+  "220702": {
+   "checked": "2026-11-19",
+   "name": "Freedom Fighters PC Steam CD Key",
+   "region": "global",
+   "sku": "77195",
+   "slug": "freedom-fighters-pc-steam-cd-key",
+   "title": "Freedom Fighters",
+   "usd": 12.52
   },
   "220706": {
    "checked": "2026-11-19",
@@ -936,6 +1899,15 @@
    "title": "Alba: A Wildlife Adventure",
    "usd": 2.04
   },
+  "224722": {
+   "checked": "2026-11-19",
+   "name": "EVERSPACE 2 Steam CD Key",
+   "region": "global",
+   "sku": "81704",
+   "slug": "everspace-2-steam-cd-key",
+   "title": "EVERSPACE 2",
+   "usd": 7.42
+  },
   "225164": {
    "checked": "2026-11-19",
    "name": "Bonkies Steam CD Key",
@@ -944,6 +1916,15 @@
    "slug": "bonkies-steam-cd-key",
    "title": "Bonkies",
    "usd": 2.16
+  },
+  "225453": {
+   "checked": "2026-11-19",
+   "name": "Olija Steam CD Key",
+   "region": "global",
+   "sku": "148909",
+   "slug": "olija-steam-cd-key",
+   "title": "Olija",
+   "usd": 2.76
   },
   "225769": {
    "checked": "2026-11-19",
@@ -972,6 +1953,15 @@
    "title": "Rustler",
    "usd": 0.79
   },
+  "226504": {
+   "checked": "2026-11-19",
+   "name": "Time Loader PC Steam CD Key",
+   "region": "global",
+   "sku": "101731",
+   "slug": "time-loader-pc-steam-cd-key",
+   "title": "Time Loader",
+   "usd": 0.38
+  },
   "226505": {
    "checked": "2026-11-19",
    "name": "Stubbs the Zombie in Rebel Without a Pulse PC Steam CD Key",
@@ -990,6 +1980,24 @@
    "title": "Revita",
    "usd": 0.38
   },
+  "227218": {
+   "checked": "2026-11-19",
+   "name": "Sunblaze PC Steam CD Key",
+   "region": "global",
+   "sku": "87820",
+   "slug": "sunblaze-pc-steam-cd-key",
+   "title": "Sunblaze",
+   "usd": 0.82
+  },
+  "227619": {
+   "checked": "2026-11-19",
+   "name": "Scarlet Hood and the Wicked Wood PC Steam CD Key",
+   "region": "global",
+   "sku": "84558",
+   "slug": "scarlet-hood-and-the-wicked-wood-pc-steam-cd-key",
+   "title": "Scarlet Hood and the Wicked Wood",
+   "usd": 1.32
+  },
   "227775": {
    "checked": "2026-11-19",
    "name": "Kaze and the Wild Masks Steam CD Key",
@@ -998,6 +2006,15 @@
    "slug": "kaze-and-the-wild-masks-steam-cd-key",
    "title": "Kaze and the Wild Masks",
    "usd": 0.89
+  },
+  "227942": {
+   "checked": "2026-11-19",
+   "name": "Disco Elysium - The Final Cut PC Steam CD Key",
+   "region": "global",
+   "sku": "85103",
+   "slug": "disco-elysium-the-final-cut-pc-steam-cd-key",
+   "title": "Disco Elysium - The Final Cut",
+   "usd": 3.76
   },
   "228428": {
    "checked": "2026-11-19",
@@ -1017,6 +2034,24 @@
    "title": "Say No! More",
    "usd": 0.26
   },
+  "228533": {
+   "checked": "2026-11-19",
+   "name": "Sniper Ghost Warrior Contracts 2 PC Steam CD Key",
+   "region": "global",
+   "sku": "87922",
+   "slug": "sniper-ghost-warrior-contracts-2-pc-steam-cd-key",
+   "title": "Sniper Ghost Warrior Contracts 2",
+   "usd": 2.24
+  },
+  "228789": {
+   "checked": "2026-11-19",
+   "name": "Lacuna - A Sci-Fi Noir Adventure PC Steam CD Key",
+   "region": "global",
+   "sku": "87037",
+   "slug": "lacuna-a-sci-fi-noir-adventure-pc-steam-cd-key",
+   "title": "Lacuna  A Sci-Fi Noir Adventure",
+   "usd": 0.38
+  },
   "228793": {
    "checked": "2026-11-19",
    "name": "Just Die Already PC Steam CD Key",
@@ -1025,6 +2060,15 @@
    "slug": "just-die-already-pc-steam-cd-key",
    "title": "Just Die Already",
    "usd": 1.17
+  },
+  "229416": {
+   "checked": "2026-11-19",
+   "name": "The World After PC Steam CD Key",
+   "region": "global",
+   "sku": "86728",
+   "slug": "the-world-after-pc-steam-cd-key",
+   "title": "The World After",
+   "usd": 0.95
   },
   "229583": {
    "checked": "2026-11-19",
@@ -1044,6 +2088,24 @@
    "title": "Sumire",
    "usd": null
   },
+  "230921": {
+   "checked": "2026-11-19",
+   "name": "Death's Door PC Steam CD Key",
+   "region": "global",
+   "sku": "91382",
+   "slug": "death-s-door-pc-steam-cd-key",
+   "title": "Deaths Door",
+   "usd": 2.38
+  },
+  "230997": {
+   "checked": "2026-11-19",
+   "name": "Dark Deity PC Steam CD Key",
+   "region": "global",
+   "sku": "89402",
+   "slug": "dark-deity-pc-steam-cd-key",
+   "title": "Dark Deity",
+   "usd": 1.64
+  },
   "231293": {
    "checked": "2026-11-19",
    "name": "Super Magbot PC Steam CD Key",
@@ -1052,6 +2114,33 @@
    "slug": "super-magbot-pc-steam-cd-key",
    "title": "Super Magbot",
    "usd": 0.17
+  },
+  "231643": {
+   "checked": "2026-11-19",
+   "name": "They Always Run PC Steam CD Key",
+   "region": "global",
+   "sku": "100497",
+   "slug": "they-always-run-pc-steam-cd-key",
+   "title": "They Always Run",
+   "usd": 0.51
+  },
+  "233076": {
+   "checked": "2026-11-19",
+   "name": "Greak: Memories of Azur PC Steam CD Key",
+   "region": "global",
+   "sku": "93042",
+   "slug": "greak-memories-of-azur-pc-steam-cd-key",
+   "title": "Greak: Memories of Azur",
+   "usd": 1.25
+  },
+  "233218": {
+   "checked": "2026-11-19",
+   "name": "Industria PC Steam CD Key",
+   "region": "global",
+   "sku": "99466",
+   "slug": "industria-pc-steam-cd-key",
+   "title": "INDUSTRIA",
+   "usd": 0.71
   },
   "233875": {
    "checked": "2026-11-19",
@@ -1116,6 +2205,15 @@
    "title": "I Am Fish",
    "usd": 1.71
   },
+  "234770": {
+   "checked": "2026-11-19",
+   "name": "Tails of Iron Steam CD Key",
+   "region": "global",
+   "sku": "94462",
+   "slug": "tails-of-iron-steam-cd-key",
+   "title": "Tails of Iron",
+   "usd": 2.42
+  },
   "235190": {
    "checked": "2026-11-19",
    "name": "Rogue Lords Steam CD Key",
@@ -1124,6 +2222,24 @@
    "slug": "rogue-lords-steam-cd-key",
    "title": "Rogue Lords",
    "usd": 0.38
+  },
+  "235761": {
+   "checked": "2026-11-19",
+   "name": "The Sundew Steam CD Key",
+   "region": "global",
+   "sku": "99790",
+   "slug": "the-sundew-steam-cd-key",
+   "title": "The Sundew",
+   "usd": 1.03
+  },
+  "235971": {
+   "checked": "2026-11-19",
+   "name": "Nuclear Blaze PC Steam CD Key",
+   "region": "global",
+   "sku": "100259",
+   "slug": "nuclear-blaze-pc-steam-cd-key",
+   "title": "Nuclear Blaze",
+   "usd": 1.24
   },
   "236049": {
    "checked": "2026-11-19",
@@ -1134,6 +2250,15 @@
    "title": "Grotto",
    "usd": 0.3
   },
+  "236612": {
+   "checked": "2026-11-19",
+   "name": "The Legend of Tianding PC Steam CD Key",
+   "region": "global",
+   "sku": "348368",
+   "slug": "the-legend-of-tianding-pc-steam-cd-key",
+   "title": "The Legend of Tianding",
+   "usd": 1.42
+  },
   "236786": {
    "checked": "2026-11-19",
    "name": "Alfred Hitchcock: Vertigo Steam CD Key",
@@ -1142,6 +2267,42 @@
    "slug": "alfred-hitchcock-vertigo-steam-cd-key",
    "title": "Alfred Hitchcock - Vertigo",
    "usd": 1.47
+  },
+  "237067": {
+   "checked": "2026-11-19",
+   "name": "Middle-earth: The Shadow Bundle PC Steam CD Key",
+   "region": "global",
+   "sku": "117728",
+   "slug": "middle-earth-the-shadow-bundle-pc-steam-cd-key",
+   "title": "Middle-earth: The Shadow Bundle",
+   "usd": 4.76
+  },
+  "241853": {
+   "checked": "2026-11-19",
+   "name": "Coromon PC Steam CD Key",
+   "region": "global",
+   "sku": "114626",
+   "slug": "coromon-pc-steam-cd-key",
+   "title": "Coromon",
+   "usd": 0.78
+  },
+  "244127": {
+   "checked": "2026-11-19",
+   "name": "Skabma - Snowfall PC Steam CD Key",
+   "region": "global",
+   "sku": "116749",
+   "slug": "skabma-snowfall-pc-steam-cd-key",
+   "title": "Skabma - Snowfall",
+   "usd": 1.54
+  },
+  "246058": {
+   "checked": "2026-11-19",
+   "name": "Soundfall PC Steam CD Key",
+   "region": "global",
+   "sku": "119532",
+   "slug": "soundfall-pc-steam-cd-key",
+   "title": "Soundfall",
+   "usd": 2.3
   },
   "246941": {
    "checked": "2026-11-19",
@@ -1170,6 +2331,15 @@
    "title": "Steelrising",
    "usd": 2.17
   },
+  "248374": {
+   "checked": "2026-11-19",
+   "name": "The Tale of Bistun PC Steam CD Key",
+   "region": "global",
+   "sku": "123803",
+   "slug": "the-tale-of-bistun-pc-steam-cd-key",
+   "title": "The Tale of Bistun",
+   "usd": 1.8
+  },
   "249066": {
    "checked": "2026-11-19",
    "name": "Hell Pie PC Steam CD Key",
@@ -1178,6 +2348,15 @@
    "slug": "hell-pie-pc-steam-cd-key",
    "title": "Hell Pie",
    "usd": 0.79
+  },
+  "249085": {
+   "checked": "2026-11-19",
+   "name": "Tyrant's Blessing Steam CD Key",
+   "region": "global",
+   "sku": "126465",
+   "slug": "tyrant-s-blessing-steam-cd-key",
+   "title": "Tyrants Blessing",
+   "usd": 1.25
   },
   "249354": {
    "checked": "2026-11-19",
@@ -1224,6 +2403,15 @@
    "title": "Nine Noir Lives",
    "usd": 0.8
   },
+  "251015": {
+   "checked": "2026-11-19",
+   "name": "Metal: Hellsinger Steam CD Key",
+   "region": "global",
+   "sku": "130577",
+   "slug": "metal-hellsinger-steam-cd-key",
+   "title": "Metal: Hellsinger",
+   "usd": 2.68
+  },
   "251021": {
    "checked": "2026-11-19",
    "name": "Foretales Steam CD Key",
@@ -1233,6 +2421,24 @@
    "title": "Foretales",
    "usd": 0.97
   },
+  "251157": {
+   "checked": "2026-11-19",
+   "name": "Soulstice PC Steam CD Key",
+   "region": "global",
+   "sku": "131548",
+   "slug": "soulstice-pc-steam-cd-key",
+   "title": "Soulstice",
+   "usd": 1.78
+  },
+  "252920": {
+   "checked": "2026-11-19",
+   "name": "Outshine PC Steam CD Key",
+   "region": "global",
+   "sku": "137048",
+   "slug": "outshine-pc-steam-cd-key",
+   "title": "Outshine",
+   "usd": 0.7
+  },
   "253": {
    "checked": "2026-11-19",
    "name": "The Longest Journey Steam CD Key",
@@ -1241,6 +2447,24 @@
    "slug": "the-longest-journey-steam-cd-key",
    "title": "The Longest Journey",
    "usd": 2.88
+  },
+  "254390": {
+   "checked": "2026-11-19",
+   "name": "The Forest Quartet PC Steam CD Key",
+   "region": "global",
+   "sku": "141552",
+   "slug": "the-forest-quartet-pc-steam-cd-key",
+   "title": "The Forest Quartet",
+   "usd": 0.55
+  },
+  "256950": {
+   "checked": "2026-11-19",
+   "name": "Deceive Inc. PC Steam CD Key",
+   "region": "global",
+   "sku": "152804",
+   "slug": "deceive-inc-pc-steam-cd-key",
+   "title": "Deceive Inc.",
+   "usd": 1.13
   },
   "256980": {
    "checked": "2026-11-19",
@@ -1296,6 +2520,87 @@
    "title": "Vernal Edge",
    "usd": 1.74
   },
+  "258978": {
+   "checked": "2026-11-19",
+   "name": "LUNARK PC Steam CD Key",
+   "region": "global",
+   "sku": "154296",
+   "slug": "lunark-pc-steam-cd-key",
+   "title": "LUNARK",
+   "usd": 2.54
+  },
+  "259482": {
+   "checked": "2026-11-19",
+   "name": "Lil' Guardsman Steam CD Key",
+   "region": "global",
+   "sku": "211616",
+   "slug": "lil-guardsman-steam-cd-key",
+   "title": "Lil Guardsman",
+   "usd": 1.25
+  },
+  "259537": {
+   "checked": "2026-11-19",
+   "name": "Trinity Fusion PC Steam CD Key",
+   "region": "global",
+   "sku": "436363",
+   "slug": "trinity-fusion-pc-steam-cd-key",
+   "title": "Trinity Fusion",
+   "usd": 2.09
+  },
+  "259706": {
+   "checked": "2026-11-19",
+   "name": "Afterimage PC Steam CD Key",
+   "region": "global",
+   "sku": "158931",
+   "slug": "afterimage-pc-steam-cd-key",
+   "title": "Afterimage",
+   "usd": 1.7
+  },
+  "259830": {
+   "checked": "2026-11-19",
+   "name": "City of Beats PC Steam CD Key",
+   "region": "global",
+   "sku": "160540",
+   "slug": "city-of-beats-pc-steam-cd-key",
+   "title": "City of Beats",
+   "usd": 1.03
+  },
+  "259837": {
+   "checked": "2026-11-19",
+   "name": "Dead Island 2 PC Steam CD Key",
+   "region": "global",
+   "sku": "225548",
+   "slug": "dead-island-2-steam-cd-key",
+   "title": "Dead Island 2",
+   "usd": 4.89
+  },
+  "259924": {
+   "checked": "2026-11-19",
+   "name": "Bramble: The Mountain King PC Steam CD Key",
+   "region": "global",
+   "sku": "158871",
+   "slug": "bramble-the-mountain-king-pc-steam-cd-key",
+   "title": "Bramble: The Mountain King",
+   "usd": 1.58
+  },
+  "260598": {
+   "checked": "2026-11-19",
+   "name": "Agatha Christie - Murder on the Orient Express PC Steam CD Key",
+   "region": "global",
+   "sku": "191451",
+   "slug": "agatha-christie-murder-on-the-orient-express-pc-steam-cd-key",
+   "title": "Agatha Christie: Murder On The Orient Express",
+   "usd": 2.26
+  },
+  "263": {
+   "checked": "2026-11-19",
+   "name": "Sid Meier's Civilization IV: Colonization PC Steam CD Key",
+   "region": "global",
+   "sku": "9748",
+   "slug": "sid-meier-s-civilization-iv-colonization-pc-steam-cd-key",
+   "title": "Sid Meier's Civilization IV: Colonization",
+   "usd": 2.67
+  },
   "264052": {
    "checked": "2026-11-19",
    "name": "Nocturnal PC Steam CD Key",
@@ -1304,6 +2609,15 @@
    "slug": "nocturnal-pc-steam-cd-key",
    "title": "Nocturnal",
    "usd": 1.92
+  },
+  "265448": {
+   "checked": "2026-11-19",
+   "name": "The Bookwalker: Thief of Tales PC Steam CD Key",
+   "region": "global",
+   "sku": "168830",
+   "slug": "the-bookwalker-thief-of-tales-pc-steam-cd-key",
+   "title": "The Bookwalker: Thief of Tales",
+   "usd": 0.3
   },
   "265818": {
    "checked": "2026-11-19",
@@ -1332,6 +2646,15 @@
    "title": "Kingdom Eighties",
    "usd": null
   },
+  "267370": {
+   "checked": "2026-11-19",
+   "name": "Gravity Circuit PC Steam CD Key",
+   "region": "global",
+   "sku": "172632",
+   "slug": "gravity-circuit-pc-steam-cd-key",
+   "title": "Gravity Circuit",
+   "usd": 0.38
+  },
   "267924": {
    "checked": "2026-11-19",
    "name": "Let's! Revolution! Steam CD Key",
@@ -1340,6 +2663,24 @@
    "slug": "let-s-revolution-steam-cd-key",
    "title": "Lets! Revolution!",
    "usd": 0.39
+  },
+  "268452": {
+   "checked": "2026-11-19",
+   "name": "Blasphemous 2 PC Steam CD Key",
+   "region": "global",
+   "sku": "174970",
+   "slug": "blasphemous-2-pc-steam-cd-key",
+   "title": "Blasphemous 2",
+   "usd": 5.14
+  },
+  "271434": {
+   "checked": "2026-11-19",
+   "name": "Under The Waves PC Steam CD Key",
+   "region": "global",
+   "sku": "181221",
+   "slug": "under-the-waves-pc-steam-cd-key",
+   "title": "Under The Waves",
+   "usd": 0.64
   },
   "271977": {
    "checked": "2026-11-19",
@@ -1359,6 +2700,33 @@
    "title": "Psychonauts",
    "usd": 1.25
   },
+  "275692": {
+   "checked": "2026-11-19",
+   "name": "We Were Here Expeditions: The FriendShip PC Steam CD Key",
+   "region": "global",
+   "sku": "260070",
+   "slug": "we-were-here-expeditions-the-friendship-pc-steam-cd-key",
+   "title": "We Were Here Expeditions: The FriendShip",
+   "usd": 1.59
+  },
+  "278103": {
+   "checked": "2026-11-19",
+   "name": "Nickelodeon All-Star Brawl 2 PC Steam CD Key",
+   "region": "global",
+   "sku": "195616",
+   "slug": "nickelodeon-all-star-brawl-2-pc-steam-cd-key",
+   "title": "Nickelodeon All-Star Brawl 2",
+   "usd": 5.67
+  },
+  "279127": {
+   "checked": "2026-11-19",
+   "name": "Cross Blitz PC Steam CD Key",
+   "region": "global",
+   "sku": "200198",
+   "slug": "cross-blitz-pc-steam-cd-key",
+   "title": "Cross Blitz",
+   "usd": 0.83
+  },
   "279309": {
    "checked": "2026-11-19",
    "name": "Make Way Steam CD Key",
@@ -1367,6 +2735,24 @@
    "slug": "make-way-steam-cd-key",
    "title": "Make Way",
    "usd": 3.02
+  },
+  "279403": {
+   "checked": "2026-11-19",
+   "name": "Born of Bread Steam CD Key",
+   "region": "global",
+   "sku": "203152",
+   "slug": "born-of-bread-steam-cd-key",
+   "title": "Born of Bread",
+   "usd": 2.53
+  },
+  "282327": {
+   "checked": "2026-11-19",
+   "name": "Lysfanga: The Time Shift Warrior PC Steam CD Key",
+   "region": "global",
+   "sku": "213890",
+   "slug": "lysfanga-the-time-shift-warrior-pc-steam-cd-key",
+   "title": "Lysfanga: The Time Shift Warrior",
+   "usd": 0.72
   },
   "284493": {
    "checked": "2026-11-19",
@@ -1377,6 +2763,15 @@
    "title": "Saviorless",
    "usd": 1.7
   },
+  "284626": {
+   "checked": "2026-11-19",
+   "name": "Death Noodle Delivery Steam CD Key",
+   "region": "global",
+   "sku": "229620",
+   "slug": "death-noodle-delivery-steam-cd-key",
+   "title": "Death Noodle Delivery",
+   "usd": 0.47
+  },
   "286264": {
    "checked": "2026-11-19",
    "name": "Still Joking PC Steam CD Key",
@@ -1385,6 +2780,15 @@
    "slug": "still-joking-pc-steam-cd-key",
    "title": "Still Joking",
    "usd": 3.27
+  },
+  "287": {
+   "checked": "2026-11-19",
+   "name": "IL-2 Sturmovik 1946 PC Steam CD Key",
+   "region": "global",
+   "sku": "3166",
+   "slug": "il-2-sturmovik-1946-pc-steam-cd-key",
+   "title": "IL-2 Sturmovik: 1946",
+   "usd": 1.39
   },
   "287946": {
    "checked": "2026-11-19",
@@ -1413,6 +2817,15 @@
    "title": "Dustborn",
    "usd": 1.41
   },
+  "292127": {
+   "checked": "2026-11-19",
+   "name": "Spirit Mancer PC Steam CD Key",
+   "region": "global",
+   "sku": "288820",
+   "slug": "spirit-mancer-pc-steam-cd-key",
+   "title": "Spirit Mancer",
+   "usd": 4.92
+  },
   "294704": {
    "checked": "2026-11-19",
    "name": "Mindcop PC Steam CD Key",
@@ -1440,6 +2853,33 @@
    "title": "Planet Coaster",
    "usd": 4.21
   },
+  "304806": {
+   "checked": "2026-11-19",
+   "name": "Star Overdrive PC Steam CD Key",
+   "region": "global",
+   "sku": "546479",
+   "slug": "star-overdrive-pc-steam-cd-key",
+   "title": "Star Overdrive",
+   "usd": 4.46
+  },
+  "311155": {
+   "checked": "2026-11-19",
+   "name": "Hunting Simulator 3 PC Steam CD Key",
+   "region": "global",
+   "sku": "878555",
+   "slug": "hunting-simulator-3-pc-steam-cd-key",
+   "title": "Hunting Simulator 3",
+   "usd": 21.65
+  },
+  "314150": {
+   "checked": "2026-11-19",
+   "name": "Superhero Simulator PC Steam CD Key",
+   "region": "global",
+   "sku": "383583",
+   "slug": "superhero-simulator-pc-steam-cd-key",
+   "title": "Superhero Simulator",
+   "usd": 1.08
+  },
   "315520": {
    "checked": "2026-11-19",
    "name": "Don't Stop, Girlypop! PC Steam CD Key",
@@ -1457,6 +2897,42 @@
    "slug": "last-man-sitting-pc-steam-cd-key",
    "title": "Last Man Sitting",
    "usd": 2.76
+  },
+  "321": {
+   "checked": "2026-11-19",
+   "name": "X3: Terran Conflict Steam CD Key",
+   "region": "global",
+   "sku": "15085",
+   "slug": "x3-terran-conflict-steam-cd-key",
+   "title": "X3: Terran Conflict",
+   "usd": 1.35
+  },
+  "323114": {
+   "checked": "2026-11-19",
+   "name": "Luna Abyss PC Steam CD Key",
+   "region": "global",
+   "sku": "184176",
+   "slug": "luna-abyss-pc-steam-cd-key",
+   "title": "Luna Abyss",
+   "usd": 34.17
+  },
+  "329275": {
+   "checked": "2026-11-19",
+   "name": "Tukoni: Forest Keepers PC Steam CD Key",
+   "region": "global",
+   "sku": "656028",
+   "slug": "tukoni-forest-keepers-pc-steam-cd-key",
+   "title": "Tukoni: Forest Keepers",
+   "usd": 10.19
+  },
+  "330831": {
+   "checked": "2026-11-19",
+   "name": "SPRAWL zero PC Steam CD Key",
+   "region": "global",
+   "sku": "839810",
+   "slug": "sprawl-zero-pc-steam-cd-key",
+   "title": "SPRAWL zero",
+   "usd": 18.78
   },
   "334": {
    "checked": "2026-11-19",
@@ -1476,6 +2952,33 @@
    "title": "Anomaly: Warzone Earth",
    "usd": 0.32
   },
+  "3957": {
+   "checked": "2026-11-19",
+   "name": "UFO: Aftermath Steam CD Key",
+   "region": "global",
+   "sku": "7739",
+   "slug": "ufo-aftermath-steam-key",
+   "title": "UFO: Aftermath",
+   "usd": 0.58
+  },
+  "3958": {
+   "checked": "2026-11-19",
+   "name": "UFO: Aftershock Steam CD Key",
+   "region": "global",
+   "sku": "7738",
+   "slug": "ufo-aftershock-steam-key",
+   "title": "UFO: Aftershock",
+   "usd": 0.82
+  },
+  "3977": {
+   "checked": "2026-11-19",
+   "name": "Perimeter: Emperor's Testament Steam CD Key",
+   "region": "global",
+   "sku": "36251",
+   "slug": "perimeter-emperor-s-testament-steam-cd-key",
+   "title": "Perimeter: Emperor's Testament",
+   "usd": 0.34
+  },
   "403": {
    "checked": "2026-11-19",
    "name": "Men of War: Assault Squad PC Steam CD Key",
@@ -1494,6 +2997,15 @@
    "title": "Hitman: Blood Money",
    "usd": 4.62
   },
+  "447": {
+   "checked": "2026-11-19",
+   "name": "Sub Command Steam CD Key",
+   "region": "global",
+   "sku": "28374",
+   "slug": "sub-command-steam-cd-key",
+   "title": "Sub Command",
+   "usd": 1.28
+  },
   "450": {
    "checked": "2026-11-19",
    "name": "The Next Big Thing Steam CD Key",
@@ -1502,6 +3014,42 @@
    "slug": "the-next-big-thing-steam-cd-key",
    "title": "The Next BIG Thing",
    "usd": 1.78
+  },
+  "459": {
+   "checked": "2026-11-19",
+   "name": "Dead Rising 2 US PC Steam CD Key",
+   "region": "na",
+   "sku": "390660",
+   "slug": "dead-rising-2-us-pc-steam-cd-key",
+   "title": "Dead Rising 2",
+   "usd": 5.09
+  },
+  "469": {
+   "checked": "2026-11-19",
+   "name": "King's Bounty: Armored Princess Steam CD Key",
+   "region": "global",
+   "sku": "713",
+   "slug": "king-s-bounty-armored-princess-steam-key",
+   "title": "King's Bounty: Armored Princess",
+   "usd": 1.14
+  },
+  "544": {
+   "checked": "2026-11-19",
+   "name": "Dangerous Waters Steam CD Key",
+   "region": "global",
+   "sku": "887",
+   "slug": "dangerous-waters-steam-key",
+   "title": "Dangerous Waters",
+   "usd": 1.18
+  },
+  "556": {
+   "checked": "2026-11-19",
+   "name": "AI War: Fleet Command Steam CD Key",
+   "region": "global",
+   "sku": "6290",
+   "slug": "ai-war-fleet-command-steam-key",
+   "title": "AI War: Fleet Command",
+   "usd": 0.28
   },
   "560": {
    "checked": "2026-11-19",
@@ -1521,6 +3069,24 @@
    "title": "X3: Reunion",
    "usd": 1.0
   },
+  "575": {
+   "checked": "2026-11-19",
+   "name": "Lost Horizon Steam CD Key",
+   "region": "global",
+   "sku": "4468",
+   "slug": "lost-horizon-steam-key",
+   "title": "Lost Horizon",
+   "usd": 2.26
+  },
+  "582": {
+   "checked": "2026-11-19",
+   "name": "King's Bounty: Crossworlds Steam CD Key",
+   "region": "global",
+   "sku": "2150",
+   "slug": "king-s-bounty-crossworlds-steam-key",
+   "title": "King's Bounty: Crossworlds",
+   "usd": 2.58
+  },
   "61": {
    "checked": "2026-11-19",
    "name": "Sid Meier's Civilization V Steam CD Key",
@@ -1539,6 +3105,24 @@
    "title": "Tomb Raider: Underworld",
    "usd": 3.96
   },
+  "658": {
+   "checked": "2026-11-19",
+   "name": "King's Bounty: The Legend Steam CD Key",
+   "region": "global",
+   "sku": "382",
+   "slug": "king-s-bounty-the-legend-steam-cd-key",
+   "title": "King's Bounty: The Legend",
+   "usd": 0.91
+  },
+  "713": {
+   "checked": "2026-11-19",
+   "name": "Men of War: Red Tide Steam CD Key",
+   "region": "global",
+   "sku": "498",
+   "slug": "men-of-war-red-tide",
+   "title": "Men of War: Red Tide",
+   "usd": 0.38
+  },
   "803": {
    "checked": "2026-11-19",
    "name": "Lead and Gold: Gangs of the Wild West Steam CD Key",
@@ -1547,6 +3131,42 @@
    "slug": "lead-and-gold-steam-key",
    "title": "Lead and Gold: Gangs of the Wild West",
    "usd": 0.54
+  },
+  "860": {
+   "checked": "2026-11-19",
+   "name": "Fantasy Wars PC Steam CD Key",
+   "region": "global",
+   "sku": "595",
+   "slug": "fantasy-wars-pc-steam-cd-key",
+   "title": "Fantasy Wars",
+   "usd": 0.58
+  },
+  "86793": {
+   "checked": "2026-11-19",
+   "name": "Men of War: Condemned Heroes PC Steam CD Key",
+   "region": "global",
+   "sku": "2201",
+   "slug": "men-of-war-condemned-heroes-pc-steam-cd-key",
+   "title": "Men of War: Condemned Heroes",
+   "usd": 0.95
+  },
+  "87268": {
+   "checked": "2026-11-19",
+   "name": "Perimeter Steam CD Key",
+   "region": "global",
+   "sku": "36248",
+   "slug": "perimeter-steam-cd-key",
+   "title": "Perimeter",
+   "usd": 0.63
+  },
+  "87393": {
+   "checked": "2026-11-19",
+   "name": "Hitman Absolution PC Steam CD Key",
+   "region": "global",
+   "sku": "156",
+   "slug": "hitman-absolution-pc-steam-cd-key",
+   "title": "Hitman Absolution",
+   "usd": 4.81
   },
   "87435": {
    "checked": "2026-11-19",
@@ -1593,6 +3213,15 @@
    "title": "Of Orcs and Men",
    "usd": 0.58
   },
+  "93451": {
+   "checked": "2026-11-19",
+   "name": "King's Bounty: Warriors of the North Steam CD Key",
+   "region": "global",
+   "sku": "2472",
+   "slug": "king-s-bounty-warriors-of-the-north-steam-key",
+   "title": "King's Bounty: Warriors of the North",
+   "usd": 0.55
+  },
   "93749": {
    "checked": "2026-11-19",
    "name": "Fly'N Steam CD Key",
@@ -1620,6 +3249,15 @@
    "title": "Fallen Enchantress: Legendary Heroes",
    "usd": 1.42
   },
+  "96975": {
+   "checked": "2026-11-19",
+   "name": "Weird Worlds: Return to Infinite Space PC Steam CD Key",
+   "region": "global",
+   "sku": "2057",
+   "slug": "weird-worlds-return-to-infinite-space-pc-steam-cd-key",
+   "title": "Weird Worlds: Return to Infinite Space",
+   "usd": 0.7
+  },
   "97298": {
    "checked": "2026-11-19",
    "name": "Anomaly 2 Steam CD Key",
@@ -1646,24 +3284,66 @@
    "slug": "the-night-of-the-rabbit-pc-steam-cd-key",
    "title": "The Night of the Rabbit",
    "usd": 0.89
+  },
+  "98151": {
+   "checked": "2026-11-19",
+   "name": "Europa Universalis IV PC Steam CD Key",
+   "region": "global",
+   "sku": "2272",
+   "slug": "europa-universalis-iv-pc-steam-cd-key",
+   "title": "Europa Universalis IV",
+   "usd": 4.66
+  },
+  "99636": {
+   "checked": "2026-11-19",
+   "name": "Joe Danger 2: The Movie PC Steam CD Key",
+   "region": "global",
+   "sku": "22184",
+   "slug": "joe-danger-2-the-movie-pc-steam-cd-key",
+   "title": "Joe Danger 2: The Movie",
+   "usd": 0.38
+  },
+  "99673": {
+   "checked": "2026-11-19",
+   "name": "CastleStorm PC Steam CD Key",
+   "region": "global",
+   "sku": "14868",
+   "slug": "castlestorm-pc-steam-cd-key",
+   "title": "Castlestorm",
+   "usd": 1.41
   }
  },
  "misses": {
+  "104": "2026-11-19",
   "128804": "2026-11-19",
+  "149356": "2026-11-19",
+  "150371": "2026-11-19",
   "157736": "2026-11-19",
   "167954": "2026-11-19",
   "170047": "2026-11-19",
   "176105": "2026-11-19",
   "188214": "2026-11-19",
+  "189754": "2026-11-19",
   "190653": "2026-11-19",
   "196050": "2026-11-19",
   "202775": "2026-11-19",
+  "214681": "2026-11-19",
+  "218": "2026-11-19",
   "220805": "2026-11-19",
+  "223946": "2026-11-19",
   "232354": "2026-11-19",
+  "242071": "2026-11-19",
   "243884": "2026-11-19",
+  "247715": "2026-11-19",
+  "255107": "2026-11-19",
   "278": "2026-11-19",
   "285909": "2026-11-19",
-  "290092": "2026-11-19"
+  "290092": "2026-11-19",
+  "302797": "2026-11-19",
+  "339": "2026-11-19",
+  "347": "2026-11-19",
+  "428": "2026-11-19",
+  "549": "2026-11-19"
  },
- "updated": "2026-11-19 20:51 UTC"
+ "updated": "2026-11-19 21:04 UTC"
 }
