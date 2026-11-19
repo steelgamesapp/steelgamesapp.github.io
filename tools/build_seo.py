@@ -20,6 +20,7 @@ import shop_pages
 import deal_page
 import gear
 import pros
+import kinguin_keys
 from datetime import datetime, timezone
 
 SITE = "https://steelgamesapp.com"
@@ -410,6 +411,7 @@ def game_page(gid, g, stores, today):
 {waitometer.widget(_wom)}
 <div class="gact" style="border:0;background:none;padding:0">{shop_btns}</div>
 <a class="btn" rel="sponsored noopener" href="https://www.cheapshark.com/redirect?dealID={e(str(best.get('dealID','')))}">Buy at {e(stores[str(best['storeID'])])} for {money(cur)}</a>
+{kinguin_keys.block(gid)}
 {low_line}
 {military_page.best_for_game_html()}
 </div></div>
@@ -475,6 +477,7 @@ def build_games(stores, today, seeds, fetch_game):
                     _t = old_cards[old][0]
                     _old_html = open(_p).read()
                     _new_html = gear.inject(_old_html, _t) if len(_old_html) > 1000 else ""
+                    _new_html = kinguin_keys.inject(_new_html, gid) if len(_new_html) > 1000 else _new_html
                     if len(_new_html) > 1000:  # never blank an existing page
                         open(_p, "w").write(_new_html)
                     GEAR_GAMES[str(gid)] = gear.slots_for(_t)[0]
