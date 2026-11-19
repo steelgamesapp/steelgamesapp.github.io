@@ -2,7 +2,7 @@
  "days": [
   {
    "date": "2026-11-19",
-   "updated": "2026-11-19 14:51 UTC",
+   "updated": "2026-11-19 19:40 UTC",
    "picks": [
     {
      "gameID": "237067",
@@ -110,21 +110,6 @@
      "low": 0.99
     },
     {
-     "gameID": "251021",
-     "dealID": "1Nk53Q1FrI0hhtwVXayM10Ea3yXezrqMlxfZBDes0fc%3D",
-     "title": "Foretales",
-     "store": "Green Man Gaming",
-     "sale": 3.0,
-     "normal": 19.99,
-     "off": 85,
-     "rating": 86,
-     "reviews": 797,
-     "steam": "1170080",
-     "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1170080/capsule_231x87.jpg?t=1744981707",
-     "score": 8.4,
-     "low": 1.99
-    },
-    {
      "gameID": "206736",
      "dealID": "LRvo0ZKZLGk0S79rw49s6Lg2eiiHS2M70Q4ysRCIPoA%3D",
      "title": "Detroit: Become Human",
@@ -155,21 +140,6 @@
      "low": 2.7
     },
     {
-     "gameID": "215441",
-     "dealID": "94jQBiGRaAYsnZbviqISkbbgeYu4bgTplFuCDaxXSHA%3D",
-     "title": "Crusader Kings III",
-     "store": "Green Man Gaming",
-     "sale": 13.5,
-     "normal": 49.99,
-     "off": 73,
-     "rating": 90,
-     "reviews": 50664,
-     "steam": "1158310",
-     "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1158310/755efd7a4a622a5f012c44ff4cd1f2c0fdbfad61/capsule_231x87_alt_assets_14.jpg?t=1794934751",
-     "score": 8.4,
-     "low": 13.16
-    },
-    {
      "gameID": "153363",
      "dealID": "HbK%2Bl2V9%2F9%2BZOMKhANEeDQ6bbdESAEH6%2FfYwWNUZqS0%3D",
      "title": "SteamWorld Heist",
@@ -183,6 +153,36 @@
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/322190/capsule_231x87.jpg?t=1726132166",
      "score": 8.3,
      "low": 0.59
+    },
+    {
+     "gameID": "98151",
+     "dealID": "Xonoitn5pg6vfsMzfxqXcWaDT545YgjCyhjagZJR%2BYc%3D",
+     "title": "Europa Universalis IV",
+     "store": "GameBillet",
+     "sale": 4.0,
+     "normal": 39.99,
+     "off": 90,
+     "rating": 86,
+     "reviews": 47868,
+     "steam": "236850",
+     "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/236850/f4e714d0f5a6be6b76e4b7cfddd692ccc689884a/capsule_231x87.jpg?t=1790873960",
+     "score": 10.0,
+     "low": 3.49
+    },
+    {
+     "gameID": "256932",
+     "dealID": "yXWoPbOU0lIAUrHfByAcNgDjUGy3oCM%2FKu0M%2BtHgbTM%3D",
+     "title": "Aces and Adventures",
+     "store": "GameBillet",
+     "sale": 2.0,
+     "normal": 19.99,
+     "off": 90,
+     "rating": 88,
+     "reviews": 633,
+     "steam": "1815570",
+     "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1815570/capsule_231x87.jpg?t=1731955791",
+     "score": 9.8,
+     "low": 1.45
     }
    ]
   },
