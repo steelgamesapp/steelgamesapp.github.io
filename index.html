@@ -404,6 +404,14 @@ img.noimg { visibility: hidden; }
 .ext-banner .ext-sub { display: none; }
 .ext-banner .btn { min-height: 36px; padding: 0 16px; font-size: 14px; }
 
+/* Temporary GTA 6 launch banner (added Nov 19, 2026; hides itself after Dec 15) */
+.gta-bn{display:flex;align-items:center;gap:14px;margin:12px 0 4px;padding:14px 18px;border-radius:12px;background:linear-gradient(110deg,#261B5C 0%,#3A1F6E 55%,#FF3D8A 130%);color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.12)}
+.gta-bn:hover{filter:brightness(1.08)}
+.gta-bn .gb-tag{flex-shrink:0;background:#FF7A1A;color:#fff;font:700 12px/1 'Space Grotesk',sans-serif;padding:6px 9px;border-radius:6px;letter-spacing:.5px}
+.gta-bn .gb-t{flex:1;min-width:0;font:600 16px/1.3 'Space Grotesk',sans-serif}
+.gta-bn .gb-t small{display:block;font:400 13px/1.35 Inter,sans-serif;color:#DAD4F7;margin-top:2px}
+.gta-bn .gb-go{flex-shrink:0;font-weight:700;color:#FFB27A;white-space:nowrap}
+@media (max-width:600px){.gta-bn{flex-wrap:wrap}.gta-bn .gb-go{width:100%}}
 /* Home promos: veteran pill, Black Friday + gifts picture slider, side Chrome extension tab */
 .promo-top { padding-block: 14px 0; }
 .vet-pill { display: inline-flex; align-items: center; gap: 8px; max-width: 100%; padding: 7px 14px; border-radius: 999px; background: linear-gradient(90deg, #2E2078 0%, #1A1342 100%); border: 1px solid var(--line-strong); color: #fff; text-decoration: none; font-size: 14px; white-space: nowrap; }
@@ -495,6 +503,8 @@ img.noimg { visibility: hidden; }
 <main id="top">
   <div class="wrap wrap-wide promo-top">
     <a class="vet-pill" href="/military.html"><span class="vet-star" aria-hidden="true">&#9733;</span><b>Veteran Hub</b><span class="vet-sub">Savings for veterans and their families</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a>
+    <a class="gta-bn" id="gtaBanner" href="/gta-6/" data-until="2026-12-15"><span class="gb-tag">OUT NOW</span><span class="gb-t">GTA 6 is here: storage, controller and gift card deals<small>Everything for GTA 6 on PS5 and Xbox, plus what to play on PC while you wait.</small></span><span class="gb-go">Open the GTA 6 Shop &rarr;</span></a>
+    <script>(function(){var b=document.getElementById('gtaBanner');if(b&&new Date()>new Date(b.dataset.until+'T23:59:59'))b.remove()})();</script>
     <section class="pr" aria-labelledby="pr-h">
       <div class="st-h"><h2 id="pr-h">Black Friday deals &amp; holiday gifts</h2><span class="pr-links"><a href="/gear.html#deals">All Black Friday deals</a><a href="/gifts/">Shop gifts</a></span></div>
       <div class="pr-wrap">
