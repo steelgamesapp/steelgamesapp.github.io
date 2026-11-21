@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-21T12:39:14Z",
+"updated": "2026-11-21T20:32:19Z",
 "source": "Amazon Best Sellers: PC Games & Accessories",
 "items": [
 {
@@ -10,7 +10,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61RiSsDfveL._AC_SL400_.jpg",
 "price": 49.0,
 "stars": 4.7,
-"ratings": 2062,
+"ratings": 2061,
 "url": "https://www.amazon.com/dp/B0F1J12R6N?tag=steelgames-20",
 "kind": "controller"
 },
@@ -22,7 +22,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/51sg9BLSMTL._AC_SL400_.jpg",
 "price": 26.99,
 "stars": 4.6,
-"ratings": 40768,
+"ratings": 40769,
 "url": "https://www.amazon.com/dp/B07CMS5Q6P?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -58,7 +58,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71hsvNd1BtL._AC_SL400_.jpg",
 "price": 37.98,
 "stars": 4.5,
-"ratings": 1914,
+"ratings": 1916,
 "url": "https://www.amazon.com/dp/B0HGR4SDYC?tag=steelgames-20",
 "kind": "headset"
 },
@@ -70,7 +70,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/51DTcaDKELL._AC_SL400_.jpg",
 "price": 19.89,
 "stars": 4.4,
-"ratings": 8260,
+"ratings": 8261,
 "url": "https://www.amazon.com/dp/B0D739FJLG?tag=steelgames-20",
 "kind": "controller"
 },
@@ -106,7 +106,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71mqaEv2KRL._AC_SL400_.jpg",
 "price": 99.69,
 "stars": 4.3,
-"ratings": 2895,
+"ratings": 2896,
 "url": "https://www.amazon.com/dp/B0F6NZWPTC?tag=steelgames-20",
 "kind": "headset"
 },
@@ -142,7 +142,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/51iXILIT27L._AC_SL400_.jpg",
 "price": 34.99,
 "stars": 4.4,
-"ratings": 18176,
+"ratings": 18178,
 "url": "https://www.amazon.com/dp/B0C7GW9F88?tag=steelgames-20",
 "kind": "controller"
 },
@@ -178,7 +178,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/7165L+SRfDL._AC_SL400_.jpg",
 "price": 46.74,
 "stars": 4.5,
-"ratings": 51834,
+"ratings": 51833,
 "url": "https://www.amazon.com/dp/B0DXTV9BGJ?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -202,7 +202,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71PP-K4uX8L._AC_SL400_.jpg",
 "price": 103.99,
 "stars": 4.4,
-"ratings": 2162,
+"ratings": 2164,
 "url": "https://www.amazon.com/dp/B0F29F712R?tag=steelgames-20",
 "kind": "controller"
 },
@@ -286,7 +286,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/813woQfLQ2L._AC_SL400_.jpg",
 "price": 63.99,
 "stars": 4.4,
-"ratings": 341,
+"ratings": 342,
 "url": "https://www.amazon.com/dp/B0HDT94SVJ?tag=steelgames-20",
 "kind": "controller"
 }
