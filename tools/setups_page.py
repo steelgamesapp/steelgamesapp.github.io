@@ -186,6 +186,33 @@ CSS = """
 .pair{color:var(--accent-soft);font-weight:600;font-size:14px}
 .earns{font-size:12px;color:var(--muted);margin:0}
 body.vw-open{overflow:hidden}
+.ds-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin:40px 0 6px}
+.ds-head h2{margin:0;font-size:clamp(22px,3vw,30px)}
+.ds-head p{margin:6px 0 0;color:var(--steel);max-width:640px}
+.ds-build{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:12px;background:var(--grad-cta);color:var(--accent-ink);font-weight:700;text-decoration:none}
+.ds-chips{display:flex;gap:7px;overflow-x:auto;padding:12px 0 14px;scrollbar-width:none}
+.ds-chips button{flex:none;font:600 13px/1 var(--body);color:var(--steel);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 13px;cursor:pointer}
+.ds-chips button[aria-pressed=true]{color:#fff;background:var(--chip);border-color:#9C86FF}
+.ds-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(290px,100%),1fr));gap:16px}
+.ds{display:flex;flex-direction:column;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;scroll-margin-top:80px}
+.ds[hidden]{display:none}
+.ds-pic{display:block;aspect-ratio:5/3;background:#140f2a}
+.ds-pic img{display:block;width:100%;height:100%;object-fit:cover}
+.ds-b{display:flex;flex-direction:column;gap:8px;padding:12px 14px 14px;flex:1}
+.ds-k{margin:0;color:var(--accent-soft);font:700 11px var(--body);letter-spacing:1px;text-transform:uppercase}
+.ds h3{margin:0;font-size:19px}
+.ds-d{margin:0;color:var(--steel);font-size:14px}
+.ds details{border-top:1px solid var(--line);padding-top:8px;margin-top:auto}
+.ds summary{cursor:pointer;color:#fff;font-weight:600;font-size:14px;min-height:36px;display:flex;align-items:center}
+.ds-l{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.ds-l li{display:flex;align-items:center;gap:10px;justify-content:space-between}
+.ds-l .t{min-width:0}
+.ds-l small{display:block;color:var(--muted);font-size:11px}
+.ds-l span{display:block;color:#fff;font-size:13px;line-height:1.3}
+.ds-l a{flex:none;font-size:12px;font-weight:700;text-decoration:none;padding:7px 9px;border-radius:9px;border:1px solid var(--line-strong);color:#fff;background:var(--raised)}
+.ds-open{display:inline-flex;align-self:flex-start;align-items:center;min-height:40px;padding:0 13px;border-radius:10px;border:1px solid var(--line-strong);color:#fff;font-weight:700;font-size:14px;text-decoration:none;background:var(--raised)}
+.ds-open:hover,.ds-l a:hover{background:var(--line)}
+
 """
 
 JS = """<script>
@@ -194,7 +221,7 @@ var posts=[].slice.call(document.querySelectorAll('.post'));
 var vw=document.getElementById('vw'),box=vw.querySelector('.box'),amb=vw.querySelector('.amb'),cur=-1;
 function vis(){return posts.filter(function(p){return !p.hidden})}
 function open(slug,push){
-  var p=document.getElementById(slug);if(!p)return;
+  var p=document.getElementById(slug);if(!p||!p.classList.contains('post'))return;
   var full=p.querySelector('.full').cloneNode(true);full.hidden=false;
   var im=full.querySelector('img[data-src]');im.src=im.getAttribute('data-src');
   box.querySelectorAll('.stage,.side').forEach(function(n){n.remove()});
@@ -235,6 +262,74 @@ if(location.hash.length>1)open(decodeURIComponent(location.hash.slice(1)),false)
 """
 
 
+TIERS = ["budget", "mid", "premium"]
+TL = {"budget": "Budget", "mid": "Mid-range", "premium": "Premium"}
+
+
+def idea_items(B, state):
+    """The shopping list for a builder state, in the same order the builder shows it."""
+    q = dict(urllib.parse.parse_qsl(state))
+    t = TIERS.index(q.get("t", "mid"))
+    x = q.get("x", "").split(".")
+    out = []
+    for part in B["parts"]:
+        if part.get("colors"):
+            continue
+        o = next((o for o in part["options"] if o["id"] == q.get(part["key"])), None)
+        if o and o.get("p"):
+            out.append((part["label"], o["p"][min(t, len(o["p"]) - 1)]))
+    for ex in B["extras"]:
+        if ex["id"] in x:
+            out.append((ex["label"], ex["p"][min(t, len(ex["p"]) - 1)]))
+    return out
+
+
+def ideas_html():
+    """The drawn setups from data/setup_ideas.json (pictures: node tools/render_setups.js)."""
+    B = json.load(open(os.path.join(ROOT, "data", "setup_builder.json")))
+    ideas = json.load(open(os.path.join(ROOT, "data", "setup_ideas.json")))["setups"]
+    looks = []
+    for it in ideas:
+        if it["look"] not in looks:
+            looks.append(it["look"])
+    chips = '<button type="button" data-look="all" aria-pressed="true">All</button>' + "".join(
+        f'<button type="button" data-look="{e(lk)}" aria-pressed="false">{e(lk)}</button>' for lk in looks)
+    cards, n = [], 0
+    for it in ideas:
+        items = idea_items(B, it["s"])
+        n += len(items)
+        t = dict(urllib.parse.parse_qsl(it["s"])).get("t", "mid")
+        lis = "".join(
+            f'<li><span class="t"><small>{e(k)}</small><span>{e(p["name"])}</span></span>'
+            f'<a href="{e(link(p))}" target="_blank" rel="sponsored nofollow noopener">{"See price" if p.get("asin") else "Shop"}</a></li>'
+            for k, p in items)
+        bl = e("/setups/#" + it["s"])
+        nm, sl = e(it["name"]), e(it["slug"])
+        cards.append(
+            f'<article class="ds" id="{sl}" data-look="{e(it["look"])}">'
+            f'<a class="ds-pic" href="{bl}" aria-label="Open {nm} in the setup builder"><img src="/assets/setups/draw/{sl}.svg" width="1200" height="720" loading="lazy" alt="Drawing of the {nm} desk setup"></a>'
+            f'<div class="ds-b"><p class="ds-k">{e(it["look"])} &middot; {TL[t]} picks</p><h3>{nm}</h3><p class="ds-d">{e(it["blurb"])}</p>'
+            f'<details><summary>Shop all {len(items)} pieces</summary><ul class="ds-l">{lis}</ul></details>'
+            f'<a class="ds-open" href="{bl}">Open in builder</a></div></article>\n')
+    sec = (f'<div class="ds-head"><div><h2 id="ds-h">{len(ideas)} more setups to shop</h2>'
+           '<p>Every look below is made in our Desk Setup Builder. Open one to swap any piece or change the price level, or shop the whole list right here.</p></div>'
+           '<a class="ds-build" href="/setups/">Build your own</a></div>'
+           f'<div class="ds-chips" role="toolbar" aria-label="Filter setups by look">{chips}</div>'
+           f'<div class="ds-grid">\n{"".join(cards)}</div>')
+    return sec, len(ideas), n
+
+
+DS_JS = """<script>
+(function(){var cs=document.querySelectorAll('.ds-chips button'),cards=document.querySelectorAll('.ds');
+cs.forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-look');
+cs.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+cards.forEach(function(c){c.hidden=!(k==='all'||c.getAttribute('data-look')===k)});});});
+document.querySelectorAll('.ds a').forEach(function(a){a.addEventListener('click',function(){try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'/setups/ideas/'+(a.closest('li')?'buy':'open-builder')+'-'+a.closest('.ds').id,event:true})}catch(err){}})});
+})();
+</script>
+"""
+
+
 def build():
     data = json.load(open(os.path.join(ROOT, "data", "setups_gallery.json")))
     posts = data["posts"]
@@ -243,7 +338,7 @@ def build():
     kinds = [k for k in ["setup", "gear", "wallpaper", "shot"] if any(p.get("type") == k for p in posts)]
     n_items = sum(len(p.get("items", [])) for p in posts)
     title = "Shop the Setup: Gaming Desk Setups with Gear Links | SteelGames"
-    desc = "An image-first gallery of gaming desk setups. Tap any item in a setup to find similar gear on Amazon."
+    desc = "More than 30 gaming desk setups you can shop: all-white, RGB, cozy wood, budget, console, handheld, sim racing, veteran and more, with every piece linked on Amazon."
     ld = {"@context": "https://schema.org", "@type": "ImageGallery", "name": "SteelGames Setups", "url": f"{SITE}/setups/ideas/",
           "image": [{"@type": "ImageObject", "contentUrl": SITE + p["img"], "name": p["title"]} for p in posts]}
     og = f'<meta property="og:image" content="{SITE}{posts[0]["img"]}">'
@@ -254,24 +349,26 @@ def build():
     tabs = ('<div class="ig-tabs" role="toolbar" aria-label="Filter posts"><button type="button" data-k="all" aria-pressed="true">All</button>' + "".join(
         f'<button type="button" data-k="{k}" aria-pressed="false">{KIND[k]}s</button>' for k in kinds) + '</div>') if len(kinds) > 1 else '<div class="ig-tabs"></div>'
     n_dl = sum(len(p.get("downloads", [])) for p in posts)
+    ds_sec, n_ideas, n_idea_items = ideas_html()
     body = f"""<main id="main">
 <section class="block"><div class="wrap">
 <div class="ig-top"><div class="ig-ava"><span>{layout.LOGO}</span></div>
 <div class="ig-meta"><h1>Shop the Setup</h1>
-<p class="ig-stats"><span><b>{len(posts)}</b> posts</span><span><b>{n_items}</b> shoppable items</span>{f'<span><b>{n_dl}</b> free wallpapers</span>' if n_dl else ''}</p>
+<p class="ig-stats"><span><b>{len(posts) + n_ideas}</b> setups</span><span><b>{n_items + n_idea_items}</b> shoppable items</span>{f'<span><b>{n_dl}</b> free wallpapers</span>' if n_dl else ''}</p>
 <p class="lede" style="margin:8px 0 0">Dream gaming desks you can actually build. Tap a setup, then tap the dots to find each piece.</p></div></div>
 {tabs}
 <div class="ig-grid">
 {"".join(post_html(p, by_slug) for p in posts)}
 </div>
-<div class="how"><b>About these pictures.</b> Pictures marked AI-made are ideas, not photos of real desks. Each dot links to real gear that looks and works like what you see, mostly picks from our <a href="/gear.html">gear guides</a>. Links go to Amazon, where you can see today's price, and we earn a commission if you buy.</div>
+{ds_sec}
+<div class="how"><b>About these pictures.</b> Pictures marked AI-made, and the drawings, are ideas, not photos of real desks. Each dot links to real gear that looks and works like what you see, mostly picks from our <a href="/gear.html">gear guides</a>. Links go to Amazon, where you can see today's price. As an Amazon Associate, SteelGames earns from qualifying purchases at no extra cost to you.</div>
 </div></section>
 </main>
 <div class="vw" id="vw" role="dialog" aria-modal="true" aria-label="Post viewer"><div class="amb"></div>
 <button class="nav-b prev" type="button" aria-label="Previous post">&#8249;</button><button class="nav-b next" type="button" aria-label="Next post">&#8250;</button>
 <div class="box"><button class="x" type="button" aria-label="Close">&#215;</button></div></div>
 """
-    return head + layout.header("setups") + body + JS + layout.footer()
+    return head + layout.header("setups") + body + JS + DS_JS + layout.footer()
 
 
 if __name__ == "__main__":
