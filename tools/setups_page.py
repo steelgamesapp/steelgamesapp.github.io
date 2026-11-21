@@ -1,4 +1,4 @@
-"""Setups & Wallpapers gallery (/setups/): an Instagram-style grid of desk setups,
+"""Shop the Setup gallery (/setups/ideas/): an Instagram-style grid of desk setups,
 gear spotlights and wallpapers. Every post lives in data/setups_gallery.json.
 
 Add a post: put the picture in assets/setups/<slug>.jpg (any shape), add an entry
@@ -206,7 +206,7 @@ function open(slug,push){
   wire(box);cur=vis().indexOf(p);vw.classList.add('on');document.body.classList.add('vw-open');
   if(push!==false)history.replaceState(null,'','#'+slug);
   vw.querySelector('.x').focus({preventScroll:true});
-  if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'/setups/#'+slug,event:true});
+  if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'/setups/ideas/#'+slug,event:true});
 }
 function close(){vw.classList.remove('on');document.body.classList.remove('vw-open');history.replaceState(null,'',location.pathname);}
 function step(d){var v=vis();if(!v.length)return;cur=(cur+d+v.length)%v.length;open(v[cur].id)}
@@ -244,10 +244,10 @@ def build():
     n_items = sum(len(p.get("items", [])) for p in posts)
     title = "Shop the Setup: Gaming Desk Setups with Gear Links | SteelGames"
     desc = "An image-first gallery of gaming desk setups. Tap any item in a setup to find similar gear on Amazon."
-    ld = {"@context": "https://schema.org", "@type": "ImageGallery", "name": "SteelGames Setups", "url": f"{SITE}/setups/",
+    ld = {"@context": "https://schema.org", "@type": "ImageGallery", "name": "SteelGames Setups", "url": f"{SITE}/setups/ideas/",
           "image": [{"@type": "ImageObject", "contentUrl": SITE + p["img"], "name": p["title"]} for p in posts]}
     og = f'<meta property="og:image" content="{SITE}{posts[0]["img"]}">'
-    head = layout.head(title, desc, f"{SITE}/setups/",
+    head = layout.head(title, desc, f"{SITE}/setups/ideas/",
                        extra=f'<style>{CSS}</style>\n<script type="application/ld+json">{json.dumps(ld)}</script>\n')
     head = head.replace(f'<meta property="og:image" content="{SITE}/assets/og-steelgames.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">', og)
     head = head.replace(f'<meta name="twitter:image" content="{SITE}/assets/og-steelgames.png">', f'<meta name="twitter:image" content="{SITE}{posts[0]["img"]}">')
@@ -275,6 +275,6 @@ def build():
 
 
 if __name__ == "__main__":
-    os.makedirs(os.path.join(ROOT, "setups"), exist_ok=True)
-    open(os.path.join(ROOT, "setups", "index.html"), "w").write(build())
-    print("built /setups/")
+    os.makedirs(os.path.join(ROOT, "setups", "ideas"), exist_ok=True)
+    open(os.path.join(ROOT, "setups", "ideas", "index.html"), "w").write(build())
+    print("built /setups/ideas/")

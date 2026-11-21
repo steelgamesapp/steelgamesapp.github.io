@@ -1,0 +1,215 @@
+{
+  "_how_to_edit": "Desk Setup Builder (/setups/). Each part has options; each option has up to 3 Amazon picks: budget, mid, premium. Use asin for one exact product page, or q for an Amazon search. The picture for each option is drawn in tools/builder_page.py (option ids must match). After editing run: python3 tools/builder_page.py",
+  "colors": [
+    {"id": "purple", "label": "Purple", "hex": "#8B5CF6"},
+    {"id": "pink", "label": "Pink", "hex": "#FF4FA3"},
+    {"id": "blue", "label": "Blue", "hex": "#3B82F6"},
+    {"id": "cyan", "label": "Cyan", "hex": "#22D3EE"},
+    {"id": "red", "label": "Red", "hex": "#FF4D4D"},
+    {"id": "green", "label": "Green", "hex": "#34D399"},
+    {"id": "orange", "label": "Orange", "hex": "#FF8A1A"},
+    {"id": "warm", "label": "Warm white", "hex": "#FFD39A"}
+  ],
+  "parts": [
+    {"id": "light", "key": "l", "label": "Back light", "options": [
+      {"id": "none", "label": "None"},
+      {"id": "bars", "label": "Light bars", "p": [
+        {"name": "RGB light bars (budget picks)", "q": "rgb light bars gaming monitor"},
+        {"name": "Govee RGBIC Gaming Light Bars", "asin": "B0B6CQ2LQ2"},
+        {"name": "Govee Glide Wall Light Bars", "asin": "B09H5VSKTZ"}]},
+      {"id": "strip", "label": "LED strip", "p": [
+        {"name": "RGB LED strip lights (budget picks)", "q": "rgb led strip lights 16ft app control"},
+        {"name": "Govee RGBIC LED Strip", "asin": "B0991Q94KP"},
+        {"name": "Govee neon rope lights", "q": "govee neon rope light rgbic"}]},
+      {"id": "hex", "label": "Hex panels", "p": [
+        {"name": "Hexagon LED wall panels (budget picks)", "q": "hexagon led light panels rgb"},
+        {"name": "Govee Glide Hexa light panels", "q": "govee glide hexa light panels"},
+        {"name": "Nanoleaf Shapes hexagons", "q": "nanoleaf shapes hexagons starter kit"}]},
+      {"id": "lamp", "label": "Floor lamp", "p": [
+        {"name": "RGB corner floor lamps (budget picks)", "q": "rgb corner floor lamp"},
+        {"name": "Govee RGBIC Floor Lamp", "asin": "B099WTN2TR"},
+        {"name": "Philips Hue gradient floor lamps", "q": "philips hue gradient signe floor lamp"}]}
+    ]},
+    {"id": "color", "key": "c", "label": "Light color", "colors": true},
+    {"id": "desk", "key": "d", "label": "Desk", "options": [
+      {"id": "black", "label": "Black", "p": [
+        {"name": "Black gaming desks, 47 inch (budget picks)", "q": "black gaming desk 47 inch"},
+        {"name": "Black gaming desks, 55 inch with monitor shelf", "q": "black gaming desk 55 inch monitor shelf"},
+        {"name": "Black electric standing desks, 63 inch", "q": "black electric standing desk 63 inch"}]},
+      {"id": "white", "label": "White", "p": [
+        {"name": "White computer desks, 47 inch (budget picks)", "q": "white computer desk 47 inch"},
+        {"name": "White gaming desks, 55 inch", "q": "white gaming desk 55 inch"},
+        {"name": "White electric standing desks", "q": "white electric standing desk 55 inch"}]},
+      {"id": "wood", "label": "Wood", "p": [
+        {"name": "Rustic wood computer desks (budget picks)", "q": "rustic wood computer desk 47 inch"},
+        {"name": "Walnut finish computer desks", "q": "walnut computer desk 55 inch"},
+        {"name": "Solid wood top standing desks", "q": "solid wood top electric standing desk"}]},
+      {"id": "stand", "label": "Standing", "p": [
+        {"name": "ErGear Electric Standing Desk 48x24", "asin": "B0B41YH9B6"},
+        {"name": "FlexiSpot standing desks, 55 inch", "q": "flexispot electric standing desk 55 inch"},
+        {"name": "FlexiSpot E6 Standing Desk", "asin": "B0BVQMQMY2"}]}
+    ]},
+    {"id": "monitor", "key": "m", "label": "Monitor", "options": [
+      {"id": "single", "label": "27-inch", "p": [
+        {"name": "Dell 27 Plus QHD Monitor S2725DSM", "asin": "B0GD1LMWH3"},
+        {"name": "LG UltraGear 27GR75Q 1440p Monitor", "asin": "B0BVWMSP1V"},
+        {"name": "27-inch OLED gaming monitors", "q": "27 inch oled gaming monitor 1440p 240hz"}]},
+      {"id": "curved", "label": "Curved 32\"", "p": [
+        {"name": "32-inch curved gaming monitors (budget picks)", "q": "32 inch curved gaming monitor 165hz"},
+        {"name": "Samsung Odyssey G55C 32-inch QHD Curved", "asin": "B0CRGJC5ZD"},
+        {"name": "32-inch 4K OLED gaming monitors", "q": "32 inch 4k oled gaming monitor"}]},
+      {"id": "ultra", "label": "Ultrawide", "p": [
+        {"name": "34-inch ultrawide monitors (budget picks)", "q": "34 inch ultrawide curved monitor 1440p"},
+        {"name": "34-inch ultrawide 165Hz gaming monitors", "q": "34 inch ultrawide 165hz gaming monitor"},
+        {"name": "34-inch ultrawide OLED gaming monitors", "q": "34 inch ultrawide oled gaming monitor"}]},
+      {"id": "dual", "label": "Two screens", "p": [
+        {"name": "SANSUI 27-inch 1440p 180Hz (get 2)", "asin": "B0CWCWL81G"},
+        {"name": "LG UltraGear 27GR75Q (get 2)", "asin": "B0BVWMSP1V"},
+        {"name": "27-inch OLED gaming monitors (get 2)", "q": "27 inch oled gaming monitor 1440p 240hz"}]}
+    ]},
+    {"id": "pc", "key": "p", "label": "PC or console", "options": [
+      {"id": "none", "label": "None"},
+      {"id": "black", "label": "Black PC", "p": [
+        {"name": "Prebuilt gaming PCs with RTX 5060", "q": "prebuilt gaming pc rtx 5060"},
+        {"name": "Prebuilt gaming PCs with RTX 5070", "q": "prebuilt gaming pc rtx 5070 ryzen 7"},
+        {"name": "Prebuilt gaming PCs with RTX 5080", "q": "prebuilt gaming pc rtx 5080 9800x3d"}]},
+      {"id": "white", "label": "White PC", "p": [
+        {"name": "White prebuilt gaming PCs with RTX 5060", "q": "white prebuilt gaming pc rtx 5060"},
+        {"name": "White prebuilt gaming PCs with RTX 5070", "q": "white prebuilt gaming pc rtx 5070"},
+        {"name": "White prebuilt gaming PCs with RTX 5080", "q": "white prebuilt gaming pc rtx 5080"}]},
+      {"id": "console", "label": "Console", "p": [
+        {"name": "Xbox Series S", "q": "xbox series s console"},
+        {"name": "PlayStation 5 Slim", "q": "playstation 5 slim console"},
+        {"name": "PlayStation 5 Pro", "q": "playstation 5 pro console"}]},
+      {"id": "laptop", "label": "Laptop", "p": [
+        {"name": "Gaming laptops with RTX 5050", "q": "gaming laptop rtx 5050"},
+        {"name": "Gaming laptops with RTX 5060", "q": "gaming laptop rtx 5060 16 inch"},
+        {"name": "Gaming laptops with RTX 5080", "q": "gaming laptop rtx 5080"}]}
+    ]},
+    {"id": "keyboard", "key": "k", "label": "Keyboard", "options": [
+      {"id": "rgb", "label": "RGB full size", "p": [
+        {"name": "SteelSeries Apex 3 Gaming Keyboard", "asin": "B07ZGDPT4M"},
+        {"name": "Logitech G413 SE Mechanical Keyboard", "asin": "B08Z6X4NK3"},
+        {"name": "Razer BlackWidow V4 Pro", "q": "razer blackwidow v4 pro"}]},
+      {"id": "tkl", "label": "Black compact", "p": [
+        {"name": "Redragon Kumara K552", "q": "redragon kumara k552"},
+        {"name": "Keychron K8 Pro", "asin": "B09MNFMLSV"},
+        {"name": "SteelSeries Apex Pro TKL Gen 3", "asin": "B0DGZLHN8G"}]},
+      {"id": "white", "label": "White 75%", "p": [
+        {"name": "White 75% wireless keyboards (budget picks)", "q": "white 75 percent wireless mechanical keyboard"},
+        {"name": "AULA F75 Pro Wireless Mechanical Keyboard", "asin": "B0D14N2QZF"},
+        {"name": "Keychron Q1 Max", "q": "keychron q1 max white"}]},
+      {"id": "retro", "label": "Retro cream", "p": [
+        {"name": "Retro beige mechanical keyboards", "q": "retro beige mechanical keyboard"},
+        {"name": "Typewriter style retro keyboards", "q": "typewriter style retro mechanical keyboard"},
+        {"name": "Retro keycap Keychron keyboards", "q": "keychron retro beige keyboard"}]}
+    ]},
+    {"id": "mouse", "key": "ms", "label": "Mouse", "options": [
+      {"id": "black", "label": "Black", "p": [
+        {"name": "Logitech G305 Lightspeed Wireless", "asin": "B07CMS5Q6P"},
+        {"name": "Logitech G502 Lightspeed Wireless", "asin": "B07L4BM851"},
+        {"name": "Logitech G Pro X Superlight 2", "asin": "B09NBWL8J5"}]},
+      {"id": "white", "label": "White", "p": [
+        {"name": "White wireless gaming mice (budget picks)", "q": "white wireless gaming mouse"},
+        {"name": "Logitech G305 Lightspeed (pick white)", "asin": "B07CMS5Q6P"},
+        {"name": "Logitech G Pro X Superlight 2 (pick white)", "asin": "B09NBWL8J5"}]},
+      {"id": "rgb", "label": "RGB", "p": [
+        {"name": "Logitech G502 Hero Wired Mouse", "asin": "B07GBZ4Q68"},
+        {"name": "Razer Basilisk V3 Wired Mouse", "asin": "B09C13PZX7"},
+        {"name": "Logitech G502 X", "asin": "B0943HXDVM"}]}
+    ]},
+    {"id": "controller", "key": "ct", "label": "Controller", "options": [
+      {"id": "none", "label": "None"},
+      {"id": "black", "label": "Black (Xbox)", "p": [
+        {"name": "PowerA wired Xbox controllers", "q": "powera wired controller xbox series x"},
+        {"name": "Xbox Wireless Controller", "asin": "B01LPZM7VI"},
+        {"name": "Xbox Elite Series 2 Controller", "q": "xbox elite series 2 controller"}]},
+      {"id": "white", "label": "White (PlayStation)", "p": [
+        {"name": "8BitDo Ultimate 2C Wireless Controller", "asin": "B0D739FJLG"},
+        {"name": "PlayStation DualSense Wireless Controller", "asin": "B0CQKLS4RP"},
+        {"name": "PlayStation DualSense Edge", "asin": "B0BSYFB99D"}]}
+    ]},
+    {"id": "headset", "key": "h", "label": "Headset", "options": [
+      {"id": "none", "label": "None"},
+      {"id": "black", "label": "Black", "p": [
+        {"name": "Razer BlackShark V2 X Headset", "asin": "B086PKMZ21"},
+        {"name": "HyperX Cloud III", "asin": "B0C3BV19Q3"},
+        {"name": "SteelSeries Arctis Nova 7", "asin": "B0FRNR8Y11"}]},
+      {"id": "white", "label": "White", "p": [
+        {"name": "White gaming headsets (budget picks)", "q": "white gaming headset"},
+        {"name": "Logitech G733 Lightspeed Wireless (pick white)", "asin": "B081415GCS"},
+        {"name": "SteelSeries Arctis Nova Pro Wireless (white)", "q": "steelseries arctis nova pro wireless white"}]}
+    ]},
+    {"id": "mat", "key": "mt", "label": "Desk mat", "options": [
+      {"id": "none", "label": "None"},
+      {"id": "black", "label": "Black XXL", "p": [
+        {"name": "KTRIO Extended Gaming Mouse Pad", "asin": "B0788LMLZL"},
+        {"name": "SteelSeries QcK XXL Mousepad", "asin": "B0D1T1HZCC"},
+        {"name": "Logitech G840 XL Mousepad", "asin": "B0BHMN52LY"}]},
+      {"id": "rgb", "label": "RGB edge", "p": [
+        {"name": "RGB extended mouse pads (budget picks)", "q": "rgb extended gaming mouse pad"},
+        {"name": "Corsair MM700 RGB Extended", "q": "corsair mm700 rgb extended mouse pad"},
+        {"name": "Razer Goliathus Chroma Extended", "q": "razer goliathus chroma extended"}]},
+      {"id": "felt", "label": "Grey felt", "p": [
+        {"name": "Grey felt desk mats", "q": "grey felt desk mat large"},
+        {"name": "Wool felt desk pads", "q": "wool felt desk pad large"},
+        {"name": "Grovemade style felt desk pads", "q": "premium merino wool felt desk pad"}]},
+      {"id": "map", "label": "City map", "p": [
+        {"name": "City map desk mats", "q": "city map desk mat xxl"},
+        {"name": "Topographic map desk mats", "q": "topographic map desk mat extended"},
+        {"name": "Stitched edge art desk mats", "q": "art desk mat extended stitched edge"}]}
+    ]},
+    {"id": "chair", "key": "ch", "label": "Chair", "options": [
+      {"id": "none", "label": "None"},
+      {"id": "black", "label": "Gaming black", "p": [
+        {"name": "GTPLAYER Gaming Chair with Footrest", "asin": "B08B12P6CS"},
+        {"name": "Corsair TC100 Relaxed", "asin": "B0BN7FDFVP"},
+        {"name": "Secretlab Titan Evo", "asin": "B0B3RHCV9R"}]},
+      {"id": "white", "label": "Gaming white", "p": [
+        {"name": "White gaming chairs (budget picks)", "q": "white gaming chair with footrest"},
+        {"name": "White ergonomic gaming chairs", "q": "white ergonomic gaming chair lumbar support"},
+        {"name": "Secretlab Titan Evo (pick a white finish)", "asin": "B0B3RHCV9R"}]},
+      {"id": "mesh", "label": "Mesh office", "p": [
+        {"name": "Ergonomic mesh office chairs (budget picks)", "q": "ergonomic mesh office chair lumbar"},
+        {"name": "Mesh chairs with adjustable lumbar and arms", "q": "ergonomic mesh office chair adjustable lumbar 4d arms"},
+        {"name": "Premium ergonomic task chairs", "q": "premium ergonomic office chair"}]}
+    ]}
+  ],
+  "extras": [
+    {"id": "stand", "label": "Headset stand", "p": [
+      {"name": "EURPMASK Clamp-On Headset Holder", "asin": "B07BVK2FQW"},
+      {"name": "New Bee RGB Headphone Stand with USB", "asin": "B09XHJBYTJ"},
+      {"name": "Razer Base Station V2 Chroma", "asin": "B08J5WQTL5"}]},
+    {"id": "lbar", "label": "Monitor light", "p": [
+      {"name": "Monitor light bars (budget picks)", "q": "monitor light bar"},
+      {"name": "BenQ ScreenBar Monitor Light", "asin": "B076VNFZJG"},
+      {"name": "BenQ ScreenBar Halo", "q": "benq screenbar halo"}]},
+    {"id": "spk", "label": "Speakers", "p": [
+      {"name": "Amazon Basics USB-Powered PC Speakers", "asin": "B07DDK3W5D"},
+      {"name": "Creative Pebble V3 Speakers", "asin": "B08F57GSJ7"},
+      {"name": "Edifier G2000 Gaming Speakers", "asin": "B00UAFSN5O"}]},
+    {"id": "mic", "label": "Mic on arm", "p": [
+      {"name": "FIFINE T669 USB Microphone Kit", "asin": "B07Y1C6GDS"},
+      {"name": "FIFINE AmpliGame AM8 USB/XLR Microphone", "asin": "B0BMFQP2ZZ"},
+      {"name": "Shure MV7+", "asin": "B0CTJ7PVN1"}]},
+    {"id": "cam", "label": "Webcam", "p": [
+      {"name": "Logitech Brio 101 1080p Webcam", "asin": "B0BXGFFSL1"},
+      {"name": "Logitech C920 HD Pro Webcam", "asin": "B006JH8T3S"},
+      {"name": "Elgato Facecam MK.2", "asin": "B0CW1S7XP5"}]},
+    {"id": "deck", "label": "Stream Deck", "p": [
+      {"name": "Elgato Stream Deck Mini", "asin": "B07DYRS1WH"},
+      {"name": "Elgato Stream Deck MK.2", "asin": "B09738CV2G"},
+      {"name": "Elgato Stream Deck +", "asin": "B0BJL8SJ59"}]},
+    {"id": "plant", "label": "Plant", "p": [
+      {"name": "Small artificial potted plants", "q": "small artificial potted plant desk"},
+      {"name": "Faux snake plants", "q": "faux snake plant pot"},
+      {"name": "Real-look faux plants in ceramic pots", "q": "realistic faux plant ceramic pot"}]}
+  ],
+  "presets": [
+    {"name": "Sunset neon", "s": "l=bars&c=pink&d=white&m=curved&p=console&k=retro&ms=white&ct=white&h=white&mt=map&ch=white&x=stand.lbar.plant&t=mid"},
+    {"name": "Clean white", "s": "l=strip&c=warm&d=white&m=single&p=white&k=white&ms=white&ct=none&h=white&mt=felt&ch=mesh&x=stand.lbar.spk.plant&t=mid"},
+    {"name": "Streamer", "s": "l=hex&c=purple&d=black&m=dual&p=black&k=rgb&ms=rgb&ct=none&h=black&mt=rgb&ch=black&x=stand.mic.cam.deck&t=mid"},
+    {"name": "Budget starter", "s": "l=strip&c=blue&d=black&m=single&p=console&k=tkl&ms=black&ct=black&h=black&mt=black&ch=black&x=stand&t=budget"}
+  ],
+  "default": "l=bars&c=purple&d=black&m=single&p=black&k=rgb&ms=black&ct=none&h=black&mt=black&ch=black&x=stand.plant&t=mid"
+}

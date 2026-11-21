@@ -723,13 +723,20 @@ def main():
         urls.append(f"{SITE}/media-kit/")
     except Exception as ex:
         print("media kit failed", ex, file=sys.stderr)
-    try:  # Shop the Setup gallery: posts live in data/setups_gallery.json
-        import setups_page
+    try:  # Desk Setup Builder (/setups/): parts and Amazon picks live in data/setup_builder.json
+        import builder_page
         os.makedirs(os.path.join(ROOT, "setups"), exist_ok=True)
-        open(os.path.join(ROOT, "setups", "index.html"), "w").write(setups_page.build())
+        open(os.path.join(ROOT, "setups", "index.html"), "w").write(builder_page.build())
         urls.append(f"{SITE}/setups/")
     except Exception as ex:
-        print("setups page failed", ex, file=sys.stderr)
+        print("setup builder failed", ex, file=sys.stderr)
+    try:  # Shop the Setup gallery (/setups/ideas/): posts live in data/setups_gallery.json
+        import setups_page
+        os.makedirs(os.path.join(ROOT, "setups", "ideas"), exist_ok=True)
+        open(os.path.join(ROOT, "setups", "ideas", "index.html"), "w").write(setups_page.build())
+        urls.append(f"{SITE}/setups/ideas/")
+    except Exception as ex:
+        print("setups gallery failed", ex, file=sys.stderr)
     os.makedirs(os.path.join(ROOT, "deals"), exist_ok=True)
     open(os.path.join(ROOT, "deals", "index.html"), "w").write(hub_html(today))
     try:
