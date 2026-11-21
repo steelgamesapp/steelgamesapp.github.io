@@ -235,7 +235,8 @@ function drawKeyboard(){
 }
 function drawMouse(){
   const c=colorHex(S.color), f={black:'#141319',white:'#f4f3f8',rgb:'#141319'}[S.mouse];
-  let s=`<ellipse cx="790" cy="505" rx="19" ry="14" fill="${f}" stroke="${S.mouse==='white'?'#cfcdd9':'#2d2c36'}" stroke-width="2"/><path d="M790 491 V503" stroke="${S.mouse==='white'?'#c2c0cc':'#2d2c36'}" stroke-width="2"/>`;
+  const ln=S.mouse==='white'?'#c2c0cc':'#5a5868';
+  let s=`<ellipse cx="790" cy="507" rx="23" ry="17" fill="#000" opacity=".35"/><ellipse cx="790" cy="505" rx="21" ry="15" fill="${f}" stroke="${ln}" stroke-width="2.5"/><path d="M790 490 V503" stroke="${ln}" stroke-width="2"/><ellipse cx="783" cy="498" rx="6" ry="3" fill="#fff" opacity=".18"/>`;
   if(S.mouse==='rgb')s+=`<ellipse cx="790" cy="505" rx="19" ry="14" fill="none" stroke="${c}" stroke-width="3"/><rect x="788" y="493" width="4" height="7" rx="2" fill="${c}"/>`;
   return s;
 }
@@ -343,9 +344,11 @@ def build(preview=False):
           "url": f"{SITE}/setups/", "applicationCategory": "LifestyleApplication", "operatingSystem": "Any",
           "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}
     extra = f'<style>{CSS}</style>\n<script type="application/ld+json">{json.dumps(ld)}</script>\n'
-    if preview:
-        extra = '<base href="https://steelgamesapp.com/">\n<meta name="robots" content="noindex">\n' + extra
     head = layout.head(title, desc, f"{SITE}/setups/", extra=extra)
+    if preview:  # review copy that works off-site: site styles inlined, site links made absolute
+        css = "".join(open(os.path.join(ROOT, "assets", f)).read() for f in ("pages.css", "mobile.css"))
+        head = head.replace('<link rel="stylesheet" href="/assets/pages.css">', '<meta name="robots" content="noindex"><style>' + css + '</style>')
+        head = head.replace('<link rel="stylesheet" href="/assets/mobile.css">', '')
     presets = "".join(f'<button type="button" data-preset="{e(p["s"])}">{e(p["name"])}</button>' for p in data["presets"])
     acts = ('<button type="button" class="go" data-act="share">Share my setup</button>'
             '<button type="button" data-act="random">Surprise me</button>'
@@ -372,7 +375,10 @@ def build(preview=False):
 <div class="sb-toast" id="sbtoast" role="status" aria-live="polite"></div>
 <script>window.SB_DATA={json.dumps(data, separators=(",", ":"))};</script>
 """
-    return head + layout.header("setups") + body + JS + layout.footer()
+    page = head + layout.header("setups") + body + JS + layout.footer()
+    if preview:
+        page = page.replace('href="/', f'href="{SITE}/').replace('src="/assets', f'src="{SITE}/assets').replace(f'href="{SITE}/#main"', 'href="#main"')
+    return page
 
 
 if __name__ == "__main__":
