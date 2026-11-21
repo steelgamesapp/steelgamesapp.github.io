@@ -7,9 +7,9 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PICK = ["neon-cyberpunk", "all-white-minimal", "veteran-ops-room", "cozy-wood-cabin", "sim-racing-rig",
-        "gta-6-night-drive", "bubblegum-pink", "dual-screen-streamer", "handheld-cozy-corner", "desert-sunset",
-        "console-tv-corner", "crimson-battlestation", "forest-green", "first-setup-budget"]
+PICK = ["neon-cyberpunk", "fortnite-victory-royale", "veteran-ops-room", "cozy-wood-cabin", "all-razer",
+        "gta-6-night-drive", "couples-side-by-side", "minecraft-builder", "dual-screen-streamer", "handheld-cozy-corner",
+        "valorant-aim-desk", "bubblegum-pink", "sim-racing-rig", "holiday-cozy-desk", "all-white-minimal", "no-limit-dream"]
 e = html.escape
 
 CSS = """<style>

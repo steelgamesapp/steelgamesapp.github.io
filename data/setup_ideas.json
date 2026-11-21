@@ -1,201 +1,588 @@
 {
- "_how_to_edit": "Finished setups for /setups/ideas/ and the home page. s is a Desk Setup Builder state (see data/setup_builder.json for keys and option ids). After editing run: node tools/render_setups.js && python3 tools/setups_page.py",
+ "_how_to_edit": "Finished setups for /setups/ideas/ and the home page. s is a Desk Setup Builder state (see data/setup_builder.json for keys and option ids). group picks the section on the page; look is the small label. Optional swap replaces a shop-list row by its label (brand setups), add appends rows; each needs name plus asin (only a confirmed one) or q (Amazon search). After editing run: node tools/render_setups.js && python3 tools/setups_page.py && python3 tools/builder_page.py && python3 tools/home_setups.py",
  "setups": [
   {
    "slug": "all-white-minimal",
    "name": "All-white minimal",
    "look": "Minimal",
    "blurb": "White desk, white PC, white gear and a warm strip of light underneath. Calm, bright and easy to keep tidy.",
-   "s": "l=strip&c=warm&d=white&m=single&p=white&k=white&ms=white&ct=none&h=white&mt=felt&ch=white&x=stand.lbar.plant&t=mid"
+   "s": "l=strip&c=warm&d=white&m=single&p=white&k=white&ms=white&ct=none&h=white&mt=felt&ch=white&x=stand.lbar.plant&t=mid",
+   "group": "Styles and colors"
   },
   {
    "slug": "neon-cyberpunk",
    "name": "Neon cyberpunk",
    "look": "RGB",
    "blurb": "Cyan hex panels, an ultrawide and RGB on every surface. Turn the room lights off and let the desk glow.",
-   "s": "l=hex&c=cyan&d=black&m=ultra&p=black&k=rgb&ms=rgb&ct=none&h=black&mt=rgb&ch=black&x=stand.deck&t=mid"
+   "s": "l=hex&c=cyan&d=black&m=ultra&p=black&k=rgb&ms=rgb&ct=none&h=black&mt=rgb&ch=black&x=stand.deck&t=mid",
+   "group": "Styles and colors"
   },
   {
    "slug": "cozy-wood-cabin",
    "name": "Cozy wood cabin",
    "look": "Cozy",
    "blurb": "Warm wood, a corner lamp, a cream keyboard and a plant. A desk that feels like a weekend at the lake.",
-   "s": "l=lamp&c=warm&d=wood&m=single&p=console&k=retro&ms=white&ct=white&h=black&mt=felt&ch=mesh&x=plant.spk.lbar&t=mid"
+   "s": "l=lamp&c=warm&d=wood&m=single&p=console&k=retro&ms=white&ct=white&h=black&mt=felt&ch=mesh&x=plant.spk.lbar&t=mid",
+   "group": "Styles and colors"
   },
   {
    "slug": "first-setup-budget",
    "name": "First setup on a budget",
    "look": "Budget",
    "blurb": "Budget picks for every piece, with an Xbox Series S doing the gaming. A real starter desk without the big bill.",
-   "s": "l=strip&c=blue&d=black&m=single&p=console&k=tkl&ms=black&ct=black&h=black&mt=black&ch=black&x=stand&t=budget"
+   "s": "l=strip&c=blue&d=black&m=single&p=console&k=tkl&ms=black&ct=black&h=black&mt=black&ch=black&x=stand&t=budget",
+   "group": "Budgets"
   },
   {
    "slug": "small-apartment",
    "name": "Small apartment corner",
    "look": "Small space",
    "blurb": "A compact standing desk, a laptop and a lavender floor lamp. Fits in a corner and folds into work hours.",
-   "s": "l=lamp&c=lavender&d=stand&m=single&p=laptop&k=white&ms=white&ct=none&h=none&mt=felt&ch=mesh&x=lbar.plant&t=budget"
+   "s": "l=lamp&c=lavender&d=stand&m=single&p=laptop&k=white&ms=white&ct=none&h=none&mt=felt&ch=mesh&x=lbar.plant&t=budget",
+   "group": "Spaces"
   },
   {
    "slug": "dual-screen-streamer",
    "name": "Dual-screen streamer",
    "look": "Streamer",
    "blurb": "Two screens, a boom mic, a webcam and a stream deck. Game on one screen and run chat and alerts on the other.",
-   "s": "l=hex&c=purple&d=black&m=dual&p=black&k=rgb&ms=rgb&ct=none&h=black&mt=rgb&ch=black&x=stand.mic.cam.deck.lbar&t=premium"
+   "s": "l=hex&c=purple&d=black&m=dual&p=black&k=rgb&ms=rgb&ct=none&h=black&mt=rgb&ch=black&x=stand.mic.cam.deck.lbar&t=premium",
+   "group": "Who it's for"
   },
   {
    "slug": "console-tv-corner",
    "name": "Console TV corner",
    "look": "Console",
    "blurb": "A big TV on a wood console, a PlayStation and speakers either side. Grab the controller and sink in.",
-   "s": "l=strip&c=blue&d=wood&m=tv&p=console&k=none&ms=none&ct=white&h=white&mt=none&ch=none&x=spk.plant.stand&t=mid"
+   "s": "l=strip&c=blue&d=wood&m=tv&p=console&k=none&ms=none&ct=white&h=white&mt=none&ch=none&x=spk.plant.stand&t=mid",
+   "group": "Console and handheld"
   },
   {
    "slug": "handheld-cozy-corner",
    "name": "Handheld cozy corner",
    "look": "Handheld",
    "blurb": "A handheld PC in its dock doubles as the desk computer. Play at the desk, then take it to the couch.",
-   "s": "l=lamp&c=orange&d=wood&m=single&p=handheld&k=retro&ms=white&ct=white&h=white&mt=felt&ch=mesh&x=plant&t=mid"
+   "s": "l=lamp&c=orange&d=wood&m=single&p=handheld&k=retro&ms=white&ct=white&h=white&mt=felt&ch=mesh&x=plant&t=mid",
+   "group": "Console and handheld"
   },
   {
    "slug": "black-stealth",
    "name": "Black stealth",
    "look": "Stealth",
    "blurb": "No lights, no color, just black gear on a black desk. Quiet, serious and built for focus.",
-   "s": "l=none&c=purple&d=black&m=curved&p=black&k=tkl&ms=black&ct=black&h=black&mt=black&ch=black&x=stand&t=mid"
+   "s": "l=none&c=purple&d=black&m=curved&p=black&k=tkl&ms=black&ct=black&h=black&mt=black&ch=black&x=stand&t=mid",
+   "group": "Styles and colors"
   },
   {
    "slug": "pastel-dream",
    "name": "Pastel dream",
    "look": "Pastel",
    "blurb": "Lavender light bars, a white desk and soft white gear. Gentle colors that still look great on camera.",
-   "s": "l=bars&c=lavender&d=white&m=single&p=white&k=white&ms=white&ct=white&h=white&mt=felt&ch=white&x=stand.plant.lbar&t=mid"
+   "s": "l=bars&c=lavender&d=white&m=single&p=white&k=white&ms=white&ct=white&h=white&mt=felt&ch=white&x=stand.plant.lbar&t=mid",
+   "group": "Styles and colors"
   },
   {
    "slug": "bubblegum-pink",
    "name": "Bubblegum pink",
    "look": "Pastel",
    "blurb": "Pink hex panels over an all-white build with a curved screen. Bold color on a budget.",
-   "s": "l=hex&c=pink&d=white&m=curved&p=white&k=white&ms=white&ct=white&h=white&mt=rgb&ch=white&x=stand.plant&t=budget"
+   "s": "l=hex&c=pink&d=white&m=curved&p=white&k=white&ms=white&ct=white&h=white&mt=rgb&ch=white&x=stand.plant&t=budget",
+   "group": "Styles and colors"
   },
   {
    "slug": "retro-arcade",
    "name": "Retro arcade",
    "look": "Retro",
    "blurb": "Orange glow, a cream keyboard and a city map desk mat. Feels like an arcade after closing time.",
-   "s": "l=strip&c=orange&d=wood&m=single&p=console&k=retro&ms=white&ct=white&h=black&mt=map&ch=black&x=spk.plant&t=budget"
+   "s": "l=strip&c=orange&d=wood&m=single&p=console&k=retro&ms=white&ct=white&h=black&mt=map&ch=black&x=spk.plant&t=budget",
+   "group": "Styles and colors"
   },
   {
    "slug": "sim-racing-rig",
    "name": "Sim racing rig",
    "look": "Racing",
    "blurb": "A racing wheel clamped to the desk in front of an ultrawide, with red light bars. Built for laps, not spreadsheets.",
-   "s": "l=bars&c=red&d=black&m=ultra&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=wheel&t=mid"
+   "s": "l=bars&c=red&d=black&m=ultra&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=wheel&t=mid",
+   "group": "Games"
   },
   {
    "slug": "veteran-ops-room",
    "name": "Veteran ops room",
    "look": "Veteran",
    "blurb": "Olive light, a wooden flag on the wall and solid black gear. Made for late squad nights with the people you served with.",
-   "s": "l=strip&c=olive&d=wood&m=curved&p=black&k=tkl&ms=black&ct=black&h=black&mt=black&ch=black&x=flag.stand.lbar&t=mid"
+   "s": "l=strip&c=olive&d=wood&m=curved&p=black&k=tkl&ms=black&ct=black&h=black&mt=black&ch=black&x=flag.stand.lbar&t=mid",
+   "group": "Who it's for"
   },
   {
    "slug": "squad-night-streamer",
    "name": "Squad night streamer",
    "look": "Veteran",
    "blurb": "Two screens, a mic and a webcam for streaming squad games, with the flag behind you on camera.",
-   "s": "l=bars&c=olive&d=black&m=dual&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=mic.cam.flag.stand&t=mid"
+   "s": "l=bars&c=olive&d=black&m=dual&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=mic.cam.flag.stand&t=mid",
+   "group": "Who it's for"
   },
   {
    "slug": "gta-6-night-drive",
    "name": "GTA 6 night drive",
    "look": "GTA 6",
    "blurb": "A PS5 Pro, a big TV and pink neon, ready for launch night in Leonida. No keyboard needed.",
-   "s": "l=strip&c=pink&d=black&m=tv&p=console&k=none&ms=none&ct=white&h=white&mt=map&ch=black&x=spk&t=premium"
+   "s": "l=strip&c=pink&d=black&m=tv&p=console&k=none&ms=none&ct=white&h=white&mt=map&ch=black&x=spk&t=premium",
+   "group": "Games"
   },
   {
    "slug": "college-dorm",
    "name": "College dorm desk",
    "look": "Dorm",
    "blurb": "A laptop, a compact keyboard and a light bar on a small white desk. Study by day, game by night.",
-   "s": "l=strip&c=purple&d=white&m=single&p=laptop&k=tkl&ms=black&ct=none&h=black&mt=black&ch=mesh&x=lbar&t=budget"
+   "s": "l=strip&c=purple&d=white&m=single&p=laptop&k=tkl&ms=black&ct=none&h=black&mt=black&ch=mesh&x=lbar&t=budget",
+   "group": "Who it's for"
   },
   {
    "slug": "lofi-study-night",
    "name": "Lofi study night",
    "look": "Cozy",
    "blurb": "A purple lamp, a cream keyboard and a laptop on warm wood. Put on a lofi playlist and get to work.",
-   "s": "l=lamp&c=purple&d=wood&m=single&p=laptop&k=retro&ms=white&ct=none&h=white&mt=felt&ch=mesh&x=plant.lbar&t=budget"
+   "s": "l=lamp&c=purple&d=wood&m=single&p=laptop&k=retro&ms=white&ct=none&h=white&mt=felt&ch=mesh&x=plant.lbar&t=budget",
+   "group": "Styles and colors"
   },
   {
    "slug": "ultrawide-immersion",
    "name": "Ultrawide immersion",
    "look": "Ultrawide",
    "blurb": "A 34-inch ultrawide on a standing desk with speakers and a light bar. Wide games, wide spreadsheets.",
-   "s": "l=strip&c=blue&d=stand&m=ultra&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=mesh&x=lbar.spk&t=premium"
+   "s": "l=strip&c=blue&d=stand&m=ultra&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=mesh&x=lbar.spk&t=premium",
+   "group": "Styles and colors"
   },
   {
    "slug": "esports-pro",
    "name": "Esports pro",
    "look": "Competitive",
    "blurb": "A fast 27-inch screen, a light wireless mouse and a compact keyboard. Everything tuned for aim, nothing extra.",
-   "s": "l=bars&c=red&d=black&m=single&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=stand&t=premium"
+   "s": "l=bars&c=red&d=black&m=single&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=stand&t=premium",
+   "group": "Who it's for"
   },
   {
    "slug": "creator-studio",
    "name": "Creator studio",
    "look": "Creator",
    "blurb": "Two white screens, a mic, a webcam and a stream deck, lit warm and soft. A desk for editing and recording.",
-   "s": "l=lamp&c=warm&d=white&m=dual&p=white&k=white&ms=white&ct=none&h=white&mt=felt&ch=mesh&x=mic.cam.lbar.deck.plant&t=mid"
+   "s": "l=lamp&c=warm&d=white&m=dual&p=white&k=white&ms=white&ct=none&h=white&mt=felt&ch=mesh&x=mic.cam.lbar.deck.plant&t=mid",
+   "group": "Who it's for"
   },
   {
    "slug": "forest-green",
    "name": "Forest green",
    "look": "Nature",
    "blurb": "Green glow, wood, a plant and a cream keyboard. Brings a bit of the outdoors inside.",
-   "s": "l=strip&c=green&d=wood&m=single&p=black&k=retro&ms=black&ct=none&h=black&mt=felt&ch=mesh&x=plant.spk&t=mid"
+   "s": "l=strip&c=green&d=wood&m=single&p=black&k=retro&ms=black&ct=none&h=black&mt=felt&ch=mesh&x=plant.spk&t=mid",
+   "group": "Styles and colors"
   },
   {
    "slug": "ocean-blue",
    "name": "Ocean blue",
    "look": "Color",
    "blurb": "Blue light bars over a white build with a curved screen. Clean like the minimal look, with more color.",
-   "s": "l=bars&c=blue&d=white&m=curved&p=white&k=white&ms=white&ct=none&h=white&mt=rgb&ch=white&x=stand&t=mid"
+   "s": "l=bars&c=blue&d=white&m=curved&p=white&k=white&ms=white&ct=none&h=white&mt=rgb&ch=white&x=stand&t=mid",
+   "group": "Styles and colors"
   },
   {
    "slug": "desert-sunset",
    "name": "Desert sunset",
    "look": "Color",
    "blurb": "Orange hex panels, a wood desk and an ultrawide. Warm colors that match a sunset wallpaper.",
-   "s": "l=hex&c=orange&d=wood&m=ultra&p=black&k=retro&ms=black&ct=none&h=black&mt=map&ch=black&x=stand&t=mid"
+   "s": "l=hex&c=orange&d=wood&m=ultra&p=black&k=retro&ms=black&ct=none&h=black&mt=map&ch=black&x=stand&t=mid",
+   "group": "Styles and colors"
   },
   {
    "slug": "crimson-battlestation",
    "name": "Crimson battlestation",
    "look": "RGB",
    "blurb": "Red hex panels, two screens and RGB gear on black. Loud, proud and ready for raid night.",
-   "s": "l=hex&c=red&d=black&m=dual&p=black&k=rgb&ms=rgb&ct=black&h=black&mt=rgb&ch=black&x=stand.deck&t=mid"
+   "s": "l=hex&c=red&d=black&m=dual&p=black&k=rgb&ms=rgb&ct=black&h=black&mt=rgb&ch=black&x=stand.deck&t=mid",
+   "group": "Styles and colors"
   },
   {
    "slug": "work-and-play",
    "name": "Work and play standing desk",
    "look": "Work + play",
    "blurb": "A standing desk with two screens, a laptop and a webcam. Calls all day, games after five.",
-   "s": "l=strip&c=warm&d=stand&m=dual&p=laptop&k=white&ms=black&ct=none&h=black&mt=felt&ch=mesh&x=lbar.cam.spk&t=mid"
+   "s": "l=strip&c=warm&d=stand&m=dual&p=laptop&k=white&ms=black&ct=none&h=black&mt=felt&ch=mesh&x=lbar.cam.spk&t=mid",
+   "group": "Spaces"
   },
   {
    "slug": "xbox-night",
    "name": "Xbox night on a budget",
    "look": "Console",
    "blurb": "An Xbox Series S on a big TV with green light behind it. A living room setup at a starter price.",
-   "s": "l=strip&c=green&d=black&m=tv&p=console&k=none&ms=none&ct=black&h=black&mt=none&ch=black&x=spk&t=budget"
+   "s": "l=strip&c=green&d=black&m=tv&p=console&k=none&ms=none&ct=black&h=black&mt=none&ch=black&x=spk&t=budget",
+   "group": "Console and handheld"
   },
   {
    "slug": "steelgames-purple",
    "name": "SteelGames purple",
    "look": "RGB",
    "blurb": "Our own colors: purple hex panels, a curved screen and a white controller on black. The setup we would build.",
-   "s": "l=hex&c=purple&d=black&m=curved&p=black&k=rgb&ms=rgb&ct=white&h=black&mt=rgb&ch=black&x=stand.spk&t=mid"
+   "s": "l=hex&c=purple&d=black&m=curved&p=black&k=rgb&ms=rgb&ct=white&h=black&mt=rgb&ch=black&x=stand.spk&t=mid",
+   "group": "Styles and colors"
+  },
+  {
+   "slug": "fortnite-victory-royale",
+   "name": "Fortnite victory royale",
+   "group": "Games",
+   "look": "Fortnite",
+   "blurb": "Bright purple hex panels, an RGB keyboard and a white controller for building fights on PC or console.",
+   "s": "l=hex&c=purple&d=white&m=single&p=white&k=rgb&ms=rgb&ct=white&h=white&mt=rgb&ch=white&x=stand&t=mid"
+  },
+  {
+   "slug": "valorant-aim-desk",
+   "name": "Valorant aim desk",
+   "group": "Games",
+   "look": "Valorant",
+   "blurb": "Red light, a fast 27-inch screen, a compact keyboard and a huge mouse pad. Room to flick, nothing in the way.",
+   "s": "l=bars&c=red&d=black&m=single&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=stand&t=premium"
+  },
+  {
+   "slug": "cs2-lan-desk",
+   "name": "CS2 LAN-party desk",
+   "group": "Games",
+   "look": "CS2",
+   "blurb": "Orange glow, a black PC and a low-sens setup with a big desk mat, like a LAN booth at home.",
+   "s": "l=strip&c=orange&d=black&m=single&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=stand.spk&t=mid"
+  },
+  {
+   "slug": "minecraft-builder",
+   "name": "Minecraft builder's desk",
+   "group": "Games",
+   "look": "Minecraft",
+   "blurb": "Green light, warm wood, a plant and a cream keyboard. Cozy enough for a three-hour build session.",
+   "s": "l=lamp&c=green&d=wood&m=single&p=white&k=retro&ms=white&ct=none&h=white&mt=felt&ch=mesh&x=plant.spk&t=budget"
+  },
+  {
+   "slug": "call-of-duty-ops",
+   "name": "Call of Duty ops desk",
+   "group": "Games",
+   "look": "Call of Duty",
+   "blurb": "Olive light, a curved screen and an Xbox controller next to the keyboard, for playing either way.",
+   "s": "l=strip&c=olive&d=black&m=curved&p=black&k=tkl&ms=black&ct=black&h=black&mt=black&ch=black&x=stand.lbar&t=mid"
+  },
+  {
+   "slug": "battlefield-6-squad",
+   "name": "Battlefield 6 squad station",
+   "group": "Games",
+   "look": "Battlefield 6",
+   "blurb": "An ultrawide for big maps, a boom mic for squad calls and blue light bars behind it all.",
+   "s": "l=bars&c=blue&d=black&m=ultra&p=black&k=rgb&ms=black&ct=none&h=black&mt=black&ch=black&x=mic.stand&t=mid"
+  },
+  {
+   "slug": "rocket-league-arena",
+   "name": "Rocket League arena",
+   "group": "Games",
+   "look": "Rocket League",
+   "blurb": "Blue hex panels, a controller front and center and speakers for the goal horn.",
+   "s": "l=hex&c=blue&d=black&m=curved&p=black&k=none&ms=none&ct=black&h=none&mt=rgb&ch=black&x=spk&t=budget"
+  },
+  {
+   "slug": "dark-fantasy-rpg",
+   "name": "Dark fantasy RPG den",
+   "group": "Games",
+   "look": "RPG",
+   "blurb": "A warm floor lamp, a wood desk and a big OLED-style screen for long nights in soulslike games.",
+   "s": "l=lamp&c=warm&d=wood&m=curved&p=black&k=retro&ms=black&ct=black&h=black&mt=map&ch=black&x=spk.plant&t=premium"
+  },
+  {
+   "slug": "couples-side-by-side",
+   "name": "Couple's side-by-side desk",
+   "group": "Who it's for",
+   "look": "Couples",
+   "blurb": "Two screens on one long desk so you can play together. The shop list includes a second chair and headset.",
+   "s": "l=bars&c=pink&d=black&m=dual&p=black&k=rgb&ms=rgb&ct=none&h=black&mt=rgb&ch=black&x=stand&t=mid",
+   "add": [
+    {
+     "label": "Second chair",
+     "name": "Matching black gaming chair",
+     "q": "black gaming chair"
+    },
+    {
+     "label": "Second headset",
+     "name": "Matching wireless gaming headset",
+     "q": "wireless gaming headset"
+    }
+   ]
+  },
+  {
+   "slug": "kids-first-desk",
+   "name": "Kids' first gaming desk",
+   "group": "Who it's for",
+   "look": "Kids",
+   "blurb": "A white desk, a console and a controller with a soft lavender lamp. Simple, sturdy and easy to clean.",
+   "s": "l=lamp&c=lavender&d=white&m=single&p=console&k=none&ms=none&ct=white&h=white&mt=felt&ch=white&x=plant&t=budget",
+   "add": [
+    {
+     "label": "Volume limit",
+     "name": "Kids' volume-limited headphones",
+     "q": "kids headphones volume limited 85db"
+    }
+   ]
+  },
+  {
+   "slug": "video-editing-bay",
+   "name": "Video editing bay",
+   "group": "Who it's for",
+   "look": "Editor",
+   "blurb": "An ultrawide timeline, a stream deck for shortcuts and good speakers. Edit by day, game by night.",
+   "s": "l=strip&c=warm&d=wood&m=ultra&p=black&k=tkl&ms=black&ct=none&h=black&mt=felt&ch=mesh&x=deck.spk.lbar&t=premium"
+  },
+  {
+   "slug": "podcast-and-play",
+   "name": "Podcast and play desk",
+   "group": "Who it's for",
+   "look": "Podcaster",
+   "blurb": "A mic on an arm, a webcam and a warm lamp for recording, with a full gaming rig behind it.",
+   "s": "l=lamp&c=warm&d=black&m=single&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=mesh&x=mic.cam.stand&t=mid"
+  },
+  {
+   "slug": "vtuber-studio",
+   "name": "VTuber studio",
+   "group": "Who it's for",
+   "look": "VTuber",
+   "blurb": "Pink hex panels, two screens, a webcam for face tracking and a stream deck for scene changes.",
+   "s": "l=hex&c=pink&d=white&m=dual&p=white&k=white&ms=white&ct=none&h=white&mt=rgb&ch=white&x=mic.cam.deck&t=mid"
+  },
+  {
+   "slug": "retro-collector",
+   "name": "Retro collector's shelf desk",
+   "group": "Who it's for",
+   "look": "Collector",
+   "blurb": "A console on a wood desk, a cream keyboard and orange glow, for old favorites and new remasters.",
+   "s": "l=strip&c=orange&d=wood&m=tv&p=console&k=retro&ms=white&ct=black&h=black&mt=map&ch=black&x=spk.plant&t=mid"
+  },
+  {
+   "slug": "corner-desk-nook",
+   "name": "Corner desk nook",
+   "group": "Spaces",
+   "look": "Corner",
+   "blurb": "A single screen and a light bar tucked into a corner, with a plant to soften it.",
+   "s": "l=strip&c=blue&d=wood&m=single&p=black&k=tkl&ms=black&ct=none&h=black&mt=felt&ch=mesh&x=lbar.plant&t=budget"
+  },
+  {
+   "slug": "closet-battlestation",
+   "name": "Closet battlestation",
+   "group": "Spaces",
+   "look": "Closet",
+   "blurb": "A full rig built into a closet. Shut the doors and the room is a bedroom again.",
+   "s": "l=strip&c=purple&d=black&m=single&p=black&k=rgb&ms=rgb&ct=none&h=black&mt=rgb&ch=black&x=lbar&t=mid"
+  },
+  {
+   "slug": "standing-desk-gamer",
+   "name": "Standing desk gamer",
+   "group": "Spaces",
+   "look": "Standing",
+   "blurb": "A sit-stand desk with a monitor light and a mesh chair. Easy on your back through long sessions.",
+   "s": "l=bars&c=cyan&d=stand&m=curved&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=mesh&x=lbar.stand&t=mid"
+  },
+  {
+   "slug": "bedroom-tv-setup",
+   "name": "Bedroom TV setup",
+   "group": "Spaces",
+   "look": "Bedroom",
+   "blurb": "A TV on a low console with a PlayStation and soft lamp light. Play from bed, no desk needed.",
+   "s": "l=lamp&c=purple&d=wood&m=tv&p=console&k=none&ms=none&ct=white&h=white&mt=none&ch=none&x=spk&t=mid"
+  },
+  {
+   "slug": "basement-game-room",
+   "name": "Basement game room",
+   "group": "Spaces",
+   "look": "Basement",
+   "blurb": "A big TV, a racing wheel and speakers on a black desk. The whole family will end up down here.",
+   "s": "l=bars&c=red&d=black&m=tv&p=console&k=none&ms=none&ct=black&h=black&mt=none&ch=black&x=wheel.spk&t=premium"
+  },
+  {
+   "slug": "studio-apartment-laptop",
+   "name": "Studio apartment laptop desk",
+   "group": "Spaces",
+   "look": "Small space",
+   "blurb": "A laptop with a second screen on a small white desk. Fits in a studio and packs away fast.",
+   "s": "l=lamp&c=warm&d=white&m=single&p=laptop&k=white&ms=white&ct=none&h=none&mt=felt&ch=mesh&x=lbar&t=budget"
+  },
+  {
+   "slug": "all-logitech",
+   "name": "All-Logitech setup",
+   "group": "Brands",
+   "look": "Logitech",
+   "blurb": "Every input from one brand, so one app runs your keyboard, mouse, headset and lights.",
+   "s": "l=bars&c=blue&d=black&m=single&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=mic.lbar&t=mid",
+   "swap": {
+    "Keyboard": {
+     "name": "Logitech G915 TKL wireless keyboard",
+     "q": "logitech g915 tkl wireless keyboard"
+    },
+    "Mouse": {
+     "name": "Logitech G Pro X Superlight 2",
+     "asin": "B09NBWL8J5"
+    },
+    "Headset": {
+     "name": "Logitech G733 Lightspeed Wireless",
+     "asin": "B081415GCS"
+    },
+    "Desk mat": {
+     "name": "Logitech G840 XL gaming mouse pad",
+     "q": "logitech g840 xl mouse pad"
+    },
+    "Mic on arm": {
+     "name": "Logitech G Yeti GX microphone",
+     "q": "logitech g yeti gx microphone"
+    },
+    "Monitor light": {
+     "name": "Logitech Litra Glow streaming light",
+     "q": "logitech litra glow"
+    }
+   }
+  },
+  {
+   "slug": "all-razer",
+   "name": "All-Razer setup",
+   "group": "Brands",
+   "look": "Razer",
+   "blurb": "Razer's green RGB on everything, controlled from one app. Loud in the best way.",
+   "s": "l=strip&c=green&d=black&m=curved&p=black&k=rgb&ms=rgb&ct=none&h=black&mt=rgb&ch=black&x=mic.cam&t=premium",
+   "swap": {
+    "Keyboard": {
+     "name": "Razer Huntsman V3 Pro TKL",
+     "asin": "B0CG7BWG7J"
+    },
+    "Mouse": {
+     "name": "Razer DeathAdder V3 Pro wireless mouse",
+     "q": "razer deathadder v3 pro"
+    },
+    "Headset": {
+     "name": "Razer BlackShark V2 Pro headset",
+     "q": "razer blackshark v2 pro"
+    },
+    "Desk mat": {
+     "name": "Razer Goliathus Extended Chroma mat",
+     "q": "razer goliathus extended chroma"
+    },
+    "Mic on arm": {
+     "name": "Razer Seiren V3 Chroma microphone",
+     "q": "razer seiren v3 chroma"
+    },
+    "Webcam": {
+     "name": "Razer Kiyo Pro webcam",
+     "q": "razer kiyo pro webcam"
+    },
+    "Chair": {
+     "name": "Razer Iskur V2 gaming chair",
+     "q": "razer iskur v2 gaming chair"
+    }
+   }
+  },
+  {
+   "slug": "all-corsair",
+   "name": "All-Corsair setup",
+   "group": "Brands",
+   "look": "Corsair",
+   "blurb": "Corsair gear from the keyboard to the chair, with yellow-white light. Matching and easy to sync.",
+   "s": "l=hex&c=warm&d=black&m=single&p=black&k=rgb&ms=rgb&ct=none&h=black&mt=rgb&ch=black&x=stand&t=mid",
+   "swap": {
+    "Keyboard": {
+     "name": "Corsair K70 RGB Pro keyboard",
+     "q": "corsair k70 rgb pro"
+    },
+    "Mouse": {
+     "name": "Corsair M75 wireless gaming mouse",
+     "q": "corsair m75 wireless gaming mouse"
+    },
+    "Headset": {
+     "name": "Corsair HS80 RGB wireless headset",
+     "q": "corsair hs80 rgb wireless"
+    },
+    "Desk mat": {
+     "name": "Corsair MM700 RGB extended mat",
+     "q": "corsair mm700 rgb extended"
+    },
+    "Chair": {
+     "name": "Corsair TC100 Relaxed",
+     "asin": "B0BN7FDFVP"
+    },
+    "PC or console": {
+     "name": "Corsair Vengeance gaming PC",
+     "q": "corsair vengeance gaming pc"
+    }
+   }
+  },
+  {
+   "slug": "all-steelseries",
+   "name": "All-SteelSeries setup",
+   "group": "Brands",
+   "look": "SteelSeries",
+   "blurb": "SteelSeries keyboard, mouse, headset and the classic QcK mat, lit orange.",
+   "s": "l=strip&c=orange&d=black&m=single&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=stand&t=mid",
+   "swap": {
+    "Keyboard": {
+     "name": "SteelSeries Apex Pro TKL keyboard",
+     "q": "steelseries apex pro tkl"
+    },
+    "Mouse": {
+     "name": "SteelSeries Aerox 5 wireless mouse",
+     "q": "steelseries aerox 5 wireless"
+    },
+    "Headset": {
+     "name": "SteelSeries Arctis Nova 7 headset",
+     "q": "steelseries arctis nova 7"
+    },
+    "Desk mat": {
+     "name": "SteelSeries QcK XXL mouse pad",
+     "q": "steelseries qck xxl"
+    }
+   }
+  },
+  {
+   "slug": "cheapest-starter",
+   "name": "Cheapest starter desk",
+   "group": "Budgets",
+   "look": "Starter",
+   "blurb": "The budget pick for every piece and no extras. The least you can spend and still have a real setup.",
+   "s": "l=strip&c=purple&d=black&m=single&p=console&k=tkl&ms=black&ct=black&h=black&mt=black&ch=black&x=&t=budget"
+  },
+  {
+   "slug": "sweet-spot-build",
+   "name": "Sweet-spot mid build",
+   "group": "Budgets",
+   "look": "Mid",
+   "blurb": "Mid-range picks across the board, where you get most of the quality for a fair price.",
+   "s": "l=bars&c=purple&d=black&m=curved&p=black&k=rgb&ms=black&ct=none&h=black&mt=black&ch=black&x=stand.lbar&t=mid"
+  },
+  {
+   "slug": "high-end-build",
+   "name": "High-end build",
+   "group": "Budgets",
+   "look": "High-end",
+   "blurb": "Premium picks for the screen, PC, keyboard and chair, with only the extras you need.",
+   "s": "l=bars&c=cyan&d=stand&m=ultra&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=stand.lbar&t=premium"
+  },
+  {
+   "slug": "no-limit-dream",
+   "name": "No-limit dream desk",
+   "group": "Budgets",
+   "look": "No limit",
+   "blurb": "Premium everything: two screens, mic, webcam, stream deck, speakers and a racing wheel.",
+   "s": "l=hex&c=purple&d=stand&m=dual&p=black&k=rgb&ms=rgb&ct=black&h=black&mt=rgb&ch=black&x=stand.lbar.spk.mic.cam.deck.wheel&t=premium"
+  },
+  {
+   "slug": "holiday-cozy-desk",
+   "name": "Holiday cozy desk",
+   "group": "Styles and colors",
+   "look": "Holiday",
+   "blurb": "Red glow, a wood desk and a plant standing in for the tree. A warm desk for the holidays.",
+   "s": "l=strip&c=red&d=wood&m=single&p=white&k=retro&ms=white&ct=white&h=white&mt=felt&ch=mesh&x=plant.spk&t=mid"
+  },
+  {
+   "slug": "arctic-cyan",
+   "name": "Arctic cyan",
+   "group": "Styles and colors",
+   "look": "Cool",
+   "blurb": "Cyan light bars over an all-white build. Cold, crisp and very clean.",
+   "s": "l=bars&c=cyan&d=white&m=curved&p=white&k=white&ms=white&ct=white&h=white&mt=felt&ch=white&x=stand.lbar&t=mid"
   }
  ]
 }

@@ -9,6 +9,7 @@ picture from the left and top). Wallpapers take "downloads".
 """
 import html
 import json
+import re
 import os
 import sys
 import urllib.parse
@@ -193,6 +194,10 @@ body.vw-open{overflow:hidden}
 .ds-chips{display:flex;gap:7px;overflow-x:auto;padding:12px 0 14px;scrollbar-width:none}
 .ds-chips button{flex:none;font:600 13px/1 var(--body);color:var(--steel);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 13px;cursor:pointer}
 .ds-chips button[aria-pressed=true]{color:#fff;background:var(--chip);border-color:#9C86FF}
+.ds-chips button span{opacity:.65;font-weight:500;margin-left:3px}
+.ds-sec{margin:6px 0 26px}.ds-sec[hidden]{display:none}
+.ds-sh{font-size:20px;margin:6px 0 12px;scroll-margin-top:80px}
+.ds-n{margin:4px 0 6px;font-size:13px;color:var(--steel)}
 .ds-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(290px,100%),1fr));gap:16px}
 .ds{display:flex;flex-direction:column;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;scroll-margin-top:80px}
 .ds[hidden]{display:none}
@@ -266,8 +271,9 @@ TIERS = ["budget", "mid", "premium"]
 TL = {"budget": "Budget", "mid": "Mid-range", "premium": "Premium"}
 
 
-def idea_items(B, state):
-    """The shopping list for a builder state, in the same order the builder shows it."""
+def idea_items(B, state, it=None):
+    """The shopping list for a builder state, in the same order the builder shows it.
+    it may carry swap (replace a row by its label, for brand setups) and add (extra rows)."""
     q = dict(urllib.parse.parse_qsl(state))
     t = TIERS.index(q.get("t", "mid"))
     x = q.get("x", "").split(".")
@@ -281,49 +287,72 @@ def idea_items(B, state):
     for ex in B["extras"]:
         if ex["id"] in x:
             out.append((ex["label"], ex["p"][min(t, len(ex["p"]) - 1)]))
+    if it:
+        sw = it.get("swap", {})
+        labels = {k for k, _ in out}
+        missing = set(sw) - labels
+        if missing:
+            raise SystemExit(f"{it['slug']}: swap labels not in its list: {missing}")
+        out = [(k, sw.get(k, p)) for k, p in out]
+        out += [(a["label"], a) for a in it.get("add", [])]
+    for k, p in out:
+        if not (p.get("asin") or p.get("q")):
+            raise SystemExit(f"no asin or q for {k}")
     return out
 
 
+GROUPS = ["Styles and colors", "Games", "Who it's for", "Spaces", "Console and handheld", "Brands", "Budgets"]
+
+
 def ideas_html():
-    """The drawn setups from data/setup_ideas.json (pictures: node tools/render_setups.js)."""
+    """The drawn setups from data/setup_ideas.json (pictures: node tools/render_setups.js), in sections by group."""
     B = json.load(open(os.path.join(ROOT, "data", "setup_builder.json")))
     ideas = json.load(open(os.path.join(ROOT, "data", "setup_ideas.json")))["setups"]
-    looks = []
-    for it in ideas:
-        if it["look"] not in looks:
-            looks.append(it["look"])
-    chips = '<button type="button" data-look="all" aria-pressed="true">All</button>' + "".join(
-        f'<button type="button" data-look="{e(lk)}" aria-pressed="false">{e(lk)}</button>' for lk in looks)
-    cards, n = [], 0
-    for it in ideas:
-        items = idea_items(B, it["s"])
-        n += len(items)
-        t = dict(urllib.parse.parse_qsl(it["s"])).get("t", "mid")
-        lis = "".join(
-            f'<li><span class="t"><small>{e(k)}</small><span>{e(p["name"])}</span></span>'
-            f'<a href="{e(link(p))}" target="_blank" rel="sponsored nofollow noopener">{"See price" if p.get("asin") else "Shop"}</a></li>'
-            for k, p in items)
-        bl = e("/setups/#" + it["s"])
-        nm, sl = e(it["name"]), e(it["slug"])
-        cards.append(
-            f'<article class="ds" id="{sl}" data-look="{e(it["look"])}">'
-            f'<a class="ds-pic" href="{bl}" aria-label="Open {nm} in the setup builder"><img src="/assets/setups/draw/{sl}.svg" width="1200" height="720" loading="lazy" alt="Drawing of the {nm} desk setup"></a>'
-            f'<div class="ds-b"><p class="ds-k">{e(it["look"])} &middot; {TL[t]} picks</p><h3>{nm}</h3><p class="ds-d">{e(it["blurb"])}</p>'
-            f'<details><summary>Shop all {len(items)} pieces</summary><ul class="ds-l">{lis}</ul></details>'
-            f'<a class="ds-open" href="{bl}">Open in builder</a></div></article>\n')
+    groups = [g for g in GROUPS if any(i["group"] == g for i in ideas)]
+    bad = [i["slug"] for i in ideas if i["group"] not in GROUPS]
+    if bad:
+        raise SystemExit(f"unknown group on {bad}")
+    gid = lambda g: "g-" + re.sub(r"[^a-z]+", "-", g.lower()).strip("-")
+    chips = f'<button type="button" data-g="all" aria-pressed="true">All {len(ideas)}</button>' + "".join(
+        f'<button type="button" data-g="{gid(g)}" aria-pressed="false">{e(g)} <span>{sum(i["group"] == g for i in ideas)}</span></button>'
+        for g in groups)
+    secs, n = [], 0
+    for g in groups:
+        cards = []
+        for it in [i for i in ideas if i["group"] == g]:
+            items = idea_items(B, it["s"], it)
+            n += len(items)
+            t = dict(urllib.parse.parse_qsl(it["s"])).get("t", "mid")
+            lis = "".join(
+                f'<li><span class="t"><small>{e(k)}</small><span>{e(p["name"])}</span></span>'
+                f'<a href="{e(link(p))}" target="_blank" rel="sponsored nofollow noopener">{"See price" if p.get("asin") else "Shop"}</a></li>'
+                for k, p in items)
+            bl = e("/setups/#" + it["s"])
+            nm, sl = e(it["name"]), e(it["slug"])
+            note = ('<p class="ds-n">The builder shows our usual picks. The list below is the brand version.</p>'
+                    if it.get("swap") else "")
+            cards.append(
+                f'<article class="ds" id="{sl}">'
+                f'<a class="ds-pic" href="{bl}" aria-label="Open {nm} in the setup builder"><img src="/assets/setups/draw/{sl}.svg" width="1200" height="720" loading="lazy" alt="Drawing of the {nm} desk setup"></a>'
+                f'<div class="ds-b"><p class="ds-k">{e(it["look"])} &middot; {TL[t]} picks</p><h3>{nm}</h3><p class="ds-d">{e(it["blurb"])}</p>'
+                f'<details><summary>Shop all {len(items)} pieces</summary>{note}<ul class="ds-l">{lis}</ul></details>'
+                f'<a class="ds-open" href="{bl}">Open in builder</a></div></article>\n')
+        secs.append(f'<section class="ds-sec" id="{gid(g)}" aria-labelledby="{gid(g)}-h"><h3 class="ds-sh" id="{gid(g)}-h">{e(g)}</h3>'
+                    f'<div class="ds-grid">\n{"".join(cards)}</div></section>\n')
     sec = (f'<div class="ds-head"><div><h2 id="ds-h">{len(ideas)} more setups to shop</h2>'
-           '<p>Every look below is made in our Desk Setup Builder. Open one to swap any piece or change the price level, or shop the whole list right here.</p></div>'
+           '<p>Every look below is made in our Desk Setup Builder. Pick a group, open a setup to swap any piece or change the price level, or shop the whole list right here.</p></div>'
            '<a class="ds-build" href="/setups/">Build your own</a></div>'
-           f'<div class="ds-chips" role="toolbar" aria-label="Filter setups by look">{chips}</div>'
-           f'<div class="ds-grid">\n{"".join(cards)}</div>')
+           f'<div class="ds-chips" role="toolbar" aria-label="Show setups by group">{chips}</div>'
+           + "".join(secs))
     return sec, len(ideas), n
 
 
 DS_JS = """<script>
-(function(){var cs=document.querySelectorAll('.ds-chips button'),cards=document.querySelectorAll('.ds');
-cs.forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-look');
-cs.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
-cards.forEach(function(c){c.hidden=!(k==='all'||c.getAttribute('data-look')===k)});});});
+(function(){var cs=document.querySelectorAll('.ds-chips button'),secs=document.querySelectorAll('.ds-sec');
+function show(k){cs.forEach(function(x){x.setAttribute('aria-pressed',String(x.getAttribute('data-g')===k))});
+secs.forEach(function(c){c.hidden=!(k==='all'||c.id===k)});}
+cs.forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('data-g'))})});
+var h=location.hash.slice(1);if(h.indexOf('g-')===0&&document.getElementById(h))show(h);
 document.querySelectorAll('.ds a').forEach(function(a){a.addEventListener('click',function(){try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:'/setups/ideas/'+(a.closest('li')?'buy':'open-builder')+'-'+a.closest('.ds').id,event:true})}catch(err){}})});
 })();
 </script>
