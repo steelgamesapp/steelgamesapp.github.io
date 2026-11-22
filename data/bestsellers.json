@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-22T02:13:51Z",
+"updated": "2026-11-22T12:34:52Z",
 "source": "Amazon Best Sellers: PC Games & Accessories",
 "items": [
 {
@@ -10,7 +10,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61RiSsDfveL._AC_SL400_.jpg",
 "price": 49.0,
 "stars": 4.7,
-"ratings": 2061,
+"ratings": 2063,
 "url": "https://www.amazon.com/dp/B0F1J12R6N?tag=steelgames-20",
 "kind": "controller"
 },
@@ -22,7 +22,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/51sg9BLSMTL._AC_SL400_.jpg",
 "price": 26.99,
 "stars": 4.6,
-"ratings": 40769,
+"ratings": 40775,
 "url": "https://www.amazon.com/dp/B07CMS5Q6P?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -34,7 +34,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61ZCKIYRU6L._AC_SL400_.jpg",
 "price": 29.99,
 "stars": 4.6,
-"ratings": 58988,
+"ratings": 58990,
 "url": "https://www.amazon.com/dp/B07GBZ4Q68?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -46,7 +46,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/51DTcaDKELL._AC_SL400_.jpg",
 "price": 19.89,
 "stars": 4.4,
-"ratings": 8262,
+"ratings": 8275,
 "url": "https://www.amazon.com/dp/B0D739FJLG?tag=steelgames-20",
 "kind": "controller"
 },
@@ -57,33 +57,33 @@
 "short": "AOC 2.4GHz Wireless Gaming Headset for PS5",
 "img": "https://images-na.ssl-images-amazon.com/images/I/71hsvNd1BtL._AC_SL400_.jpg",
 "price": 37.98,
-"stars": 4.5,
-"ratings": 1916,
+"stars": 4.4,
+"ratings": 1919,
 "url": "https://www.amazon.com/dp/B0HGR4SDYC?tag=steelgames-20",
 "kind": "headset"
 },
 {
 "rank": 9,
-"asin": "B081415GCS",
-"name": "Logitech G733 Lightspeed Wireless Gaming Headset - Black | Suspension Headband, Blue VO!CE Mic, PRO-G Audio, PC, PS5, PS4, Sw",
-"short": "Logitech G733 Lightspeed Wireless Gaming Headset",
-"img": "https://images-na.ssl-images-amazon.com/images/I/710MzmBFzkL._AC_SL400_.jpg",
-"price": 79.96,
-"stars": 4.4,
-"ratings": 19926,
-"url": "https://www.amazon.com/dp/B081415GCS?tag=steelgames-20",
-"kind": "headset"
-},
-{
-"rank": 10,
 "asin": "B0C3BV19Q3",
 "name": "HyperX Cloud III Wired Gaming Headset for PC, PS5, PS4, Xbox Series X | S | USB-C + USB-A + 3.5mm Connectivity | Memory Foam",
 "short": "HyperX Cloud III Wired Gaming Headset for PC",
 "img": "https://images-na.ssl-images-amazon.com/images/I/71pz2njkNRL._AC_SL400_.jpg",
 "price": 57.99,
 "stars": 4.3,
-"ratings": 13520,
+"ratings": 13529,
 "url": "https://www.amazon.com/dp/B0C3BV19Q3?tag=steelgames-20",
+"kind": "headset"
+},
+{
+"rank": 10,
+"asin": "B081415GCS",
+"name": "Logitech G733 Lightspeed Wireless Gaming Headset - Black | Suspension Headband, Blue VO!CE Mic, PRO-G Audio, PC, PS5, PS4, Sw",
+"short": "Logitech G733 Lightspeed Wireless Gaming Headset",
+"img": "https://images-na.ssl-images-amazon.com/images/I/710MzmBFzkL._AC_SL400_.jpg",
+"price": 79.96,
+"stars": 4.4,
+"ratings": 19930,
+"url": "https://www.amazon.com/dp/B081415GCS?tag=steelgames-20",
 "kind": "headset"
 },
 {
@@ -106,7 +106,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71mqaEv2KRL._AC_SL400_.jpg",
 "price": 99.69,
 "stars": 4.3,
-"ratings": 2896,
+"ratings": 2905,
 "url": "https://www.amazon.com/dp/B0F6NZWPTC?tag=steelgames-20",
 "kind": "headset"
 },
@@ -118,33 +118,33 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/718TLhNbG-L._AC_SL400_.jpg",
 "price": 47.39,
 "stars": 4.5,
-"ratings": 6257,
+"ratings": 6274,
 "url": "https://www.amazon.com/dp/B0DR8V899R?tag=steelgames-20",
 "kind": "controller"
 },
 {
 "rank": 14,
-"asin": "B0D14N2QZF",
-"name": "AULA F75 Pro Wireless Mechanical Keyboard,75% Hot Swappable Custom Keyboard with Knob,RGB Backlit,Pre-lubed Reaper Switches,S",
-"short": "AULA F75 Pro Wireless Mechanical Keyboard,75% Hot Swappable",
-"img": "https://images-na.ssl-images-amazon.com/images/I/61MC8BK0w0L._AC_SL400_.jpg",
-"price": 61.74,
-"stars": 4.6,
-"ratings": 1921,
-"url": "https://www.amazon.com/dp/B0D14N2QZF?tag=steelgames-20",
-"kind": "keyboard"
-},
-{
-"rank": 15,
 "asin": "B0C7GW9F88",
 "name": "GameSir G7 SE Wired Controller for Xbox Series X|S, Xbox One & Windows 10/11, Plug and Play Gaming Gamepad with Hall Effect J",
 "short": "GameSir G7 SE Wired Controller for Xbox Series X|S",
 "img": "https://images-na.ssl-images-amazon.com/images/I/51iXILIT27L._AC_SL400_.jpg",
 "price": 34.99,
 "stars": 4.4,
-"ratings": 18178,
+"ratings": 18184,
 "url": "https://www.amazon.com/dp/B0C7GW9F88?tag=steelgames-20",
 "kind": "controller"
+},
+{
+"rank": 15,
+"asin": "B0D14N2QZF",
+"name": "AULA F75 Pro Wireless Mechanical Keyboard,75% Hot Swappable Custom Keyboard with Knob,RGB Backlit,Pre-lubed Reaper Switches,S",
+"short": "AULA F75 Pro Wireless Mechanical Keyboard,75% Hot Swappable",
+"img": "https://images-na.ssl-images-amazon.com/images/I/61MC8BK0w0L._AC_SL400_.jpg",
+"price": 61.74,
+"stars": 4.6,
+"ratings": 1920,
+"url": "https://www.amazon.com/dp/B0D14N2QZF?tag=steelgames-20",
+"kind": "keyboard"
 },
 {
 "rank": 16,
@@ -154,7 +154,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61YULkQowXL._AC_SL400_.jpg",
 "price": 56.99,
 "stars": 4.1,
-"ratings": 1522,
+"ratings": 1524,
 "url": "https://www.amazon.com/dp/B0BGJT87N2?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -176,35 +176,35 @@
 "name": "GameSir G7 Pro Wireless XBOX Controller,TMR Sticks,Windows,Trigger Stops | XBOX Series X|S,Hall Effect Triggers, 4 Remappable",
 "short": "GameSir G7 Pro Wireless XBOX Controller,TMR",
 "img": "https://images-na.ssl-images-amazon.com/images/I/71PP-K4uX8L._AC_SL400_.jpg",
-"price": 129.99,
+"price": 103.99,
 "stars": 4.4,
-"ratings": 2164,
+"ratings": 2169,
 "url": "https://www.amazon.com/dp/B0F29F712R?tag=steelgames-20",
 "kind": "controller"
 },
 {
 "rank": 19,
-"asin": "B0CSY8PD63",
-"name": "BOBOVR S3 Pro Battery Strap Accessories,Head Air Cooling System and 10000mah Hot-swappable Battery Pack,Compatible with Meta",
-"short": "BOBOVR S3 Pro Battery Strap Accessories,Head Air Cooling",
-"img": "https://images-na.ssl-images-amazon.com/images/I/71WIeOVkQyL._AC_SL400_.jpg",
-"price": 69.25,
-"stars": 4.6,
-"ratings": 7130,
-"url": "https://www.amazon.com/dp/B0CSY8PD63?tag=steelgames-20",
-"kind": "gear"
-},
-{
-"rank": 20,
 "asin": "B08SJ5Z8JL",
 "name": "Redragon M612 Wired RGB Optical Gaming Mouse 8000 DPI Remapping Keys | Stable Lag-Free Connection, Redefine Keybinding Macro,",
 "short": "Redragon M612 Wired RGB Optical Gaming Mouse 8000 DPI",
 "img": "https://images-na.ssl-images-amazon.com/images/I/61vF4LdktpL._AC_SL400_.jpg",
 "price": 15.99,
 "stars": 4.6,
-"ratings": 11940,
+"ratings": 11952,
 "url": "https://www.amazon.com/dp/B08SJ5Z8JL?tag=steelgames-20",
 "kind": "mouse"
+},
+{
+"rank": 20,
+"asin": "B0CSY8PD63",
+"name": "BOBOVR S3 Pro Battery Strap Accessories,Head Air Cooling System and 10000mah Hot-swappable Battery Pack,Compatible with Meta",
+"short": "BOBOVR S3 Pro Battery Strap Accessories,Head Air Cooling",
+"img": "https://images-na.ssl-images-amazon.com/images/I/71WIeOVkQyL._AC_SL400_.jpg",
+"price": 69.25,
+"stars": 4.6,
+"ratings": 7133,
+"url": "https://www.amazon.com/dp/B0CSY8PD63?tag=steelgames-20",
+"kind": "gear"
 },
 {
 "rank": 21,
@@ -214,7 +214,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61tncw0i36L._AC_SL400_.jpg",
 "price": 109.99,
 "stars": 4.3,
-"ratings": 12518,
+"ratings": 12520,
 "url": "https://www.amazon.com/dp/B0B789CGGQ?tag=steelgames-20",
 "kind": "controller"
 },
@@ -226,7 +226,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61VrVSiIRGL._AC_SL400_.jpg",
 "price": 26.84,
 "stars": 4.2,
-"ratings": 2581,
+"ratings": 2586,
 "url": "https://www.amazon.com/dp/B0F8VYDRDP?tag=steelgames-20",
 "kind": "keyboard"
 },
@@ -244,27 +244,27 @@
 },
 {
 "rank": 24,
-"asin": "B0HDT94SVJ",
-"name": "GameSir G7 Pro 8K PC Wireless Gaming Controller for Esports - Black | 8000hz Polling Rate, 0.25ms Latency, Gen-2 TMR Anti-dri",
-"short": "GameSir G7 Pro 8K PC Wireless Gaming Controller for Esports",
-"img": "https://images-na.ssl-images-amazon.com/images/I/813woQfLQ2L._AC_SL400_.jpg",
-"price": 63.99,
-"stars": 4.4,
-"ratings": 343,
-"url": "https://www.amazon.com/dp/B0HDT94SVJ?tag=steelgames-20",
-"kind": "controller"
-},
-{
-"rank": 25,
 "asin": "B086PKMZ21",
 "name": "Razer BlackShark V2 X Wired Gaming Headset with Mic for PC and PS5, Black | TriForce Titanium 50 mm Drivers, HyperClear Cardi",
 "short": "Razer BlackShark V2 X Wired Gaming Headset with Mic for PC",
 "img": "https://images-na.ssl-images-amazon.com/images/I/71-mnhc4Q8L._AC_SL400_.jpg",
 "price": 32.99,
 "stars": 4.4,
-"ratings": 19676,
+"ratings": 19679,
 "url": "https://www.amazon.com/dp/B086PKMZ21?tag=steelgames-20",
 "kind": "headset"
+},
+{
+"rank": 25,
+"asin": "B0HDT94SVJ",
+"name": "GameSir G7 Pro 8K PC Wireless Gaming Controller for Esports - Black | 8000hz Polling Rate, 0.25ms Latency, Gen-2 TMR Anti-dri",
+"short": "GameSir G7 Pro 8K PC Wireless Gaming Controller for Esports",
+"img": "https://images-na.ssl-images-amazon.com/images/I/813woQfLQ2L._AC_SL400_.jpg",
+"price": 63.99,
+"stars": 4.4,
+"ratings": 347,
+"url": "https://www.amazon.com/dp/B0HDT94SVJ?tag=steelgames-20",
+"kind": "controller"
 },
 {
 "rank": 26,
@@ -272,9 +272,9 @@
 "name": "PlayStation DualSense\u00ae Wireless Controller \u2013 Midnight Black + USB Cable for PC",
 "short": "PlayStation DualSense\u00ae Wireless Controller",
 "img": "https://images-na.ssl-images-amazon.com/images/I/61cUsm-9AfL._AC_SL400_.jpg",
-"price": null,
+"price": 54.0,
 "stars": 4.8,
-"ratings": 456,
+"ratings": 460,
 "url": "https://www.amazon.com/dp/B0GL96NJL5?tag=steelgames-20",
 "kind": "controller"
 },
@@ -284,9 +284,9 @@
 "name": "Turtle Beach Recon 50 Wired  Multiplatform Gaming Headset for Xbox, PS5, PC | Xbox Series X|S, Xbox One, PlayStation, PS4, Mo",
 "short": "Turtle Beach Recon 50 Wired  Multiplatform Gaming Headset",
 "img": "https://images-na.ssl-images-amazon.com/images/I/617IVT65RxL._AC_SL400_.jpg",
-"price": 25.6,
+"price": 25.5,
 "stars": 4.4,
-"ratings": 110281,
+"ratings": 110289,
 "url": "https://www.amazon.com/dp/B00YXO5U40?tag=steelgames-20",
 "kind": "headset"
 }
