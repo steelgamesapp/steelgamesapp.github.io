@@ -45,11 +45,18 @@ def build():
         extra = ' aria-hidden="true" tabindex="-1"' if dup else ''
         post = ph.get("post")
         href = f'/setups/ideas/#{e(post["slug"])}' if post else "/setups/"
-        name = post["title"] if post else names.get(ph["colors"][0], "Real setup")
+        name = post["title"] if post else ph["_name"]
         return (f'<a class="sbp-c" href="{href}"{extra}>'
                 f'<img src="{px(ph["id"])}" width="480" height="288" loading="lazy" alt="{"" if dup else "Real gaming desk setup photo: " + e(name)}">'
                 f'<span><small>{"Shop this desk" if post else "Real setup"}</small>{e(name)}</span></a>')
     picks = sorted(photos, key=lambda ph: not ph.get("post"))
+    used = set()
+    for ph in picks:
+        c = ph["colors"]
+        n = names.get(c[0], "Real setup")
+        if n in used and len(c) > 1:
+            n = f"{c[0].title()} and {c[1]} glow"
+        used.add(n); ph["_name"] = n
     ideas = [ph for ph in photos if ph.get("post")]
     track = "".join(card(i, False) for i in picks) + "".join(card(i, True) for i in picks)
     return f"""<!-- setups-preview -->
