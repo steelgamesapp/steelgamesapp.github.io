@@ -7,9 +7,7 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PICK = ["neon-cyberpunk", "fortnite-victory-royale", "veteran-ops-room", "cozy-wood-cabin", "all-razer",
-        "gta-6-night-drive", "couples-side-by-side", "minecraft-builder", "dual-screen-streamer", "handheld-cozy-corner",
-        "valorant-aim-desk", "bubblegum-pink", "sim-racing-rig", "holiday-cozy-desk", "all-white-minimal", "no-limit-dream"]
+PICK = ["neon-cyberpunk", "all-white-minimal", "sim-racing-rig", "cozy-wood-cabin", "console-tv-corner", "bubblegum-pink", "dual-screen-streamer", "retro-collector", "gta-6-night-drive", "handheld-cozy-corner", "high-end-build", "couples-side-by-side", "ocean-blue", "ultrawide-immersion", "esports-pro", "video-editing-bay"]
 e = html.escape
 
 CSS = """<style>
@@ -37,12 +35,13 @@ CSS = """<style>
 
 def build():
     ideas = {i["slug"]: i for i in json.load(open(os.path.join(ROOT, "data", "setup_ideas.json")))["setups"]}
-    picks = [ideas[s] for s in PICK if s in ideas]
+    ideas = {k: v for k, v in ideas.items() if v.get("photo")}
+    picks = [ideas[s] for s in PICK if s in ideas] or list(ideas.values())
 
     def card(it, dup):
         extra = ' aria-hidden="true" tabindex="-1"' if dup else ''
         return (f'<a class="sbp-c" href="/setups/ideas/#{e(it["slug"])}"{extra}>'
-                f'<img src="/assets/setups/draw/{e(it["slug"])}.svg" width="1200" height="720" loading="lazy" alt="{"" if dup else "Drawing of the " + e(it["name"]) + " setup"}">'
+                f'<img src="https://images.pexels.com/photos/{int(it["photo"])}/pexels-photo-{int(it["photo"])}.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480&amp;h=288&amp;fit=crop" width="480" height="288" loading="lazy" alt="{"" if dup else "Photo of the " + e(it["name"]) + " setup style"}">'
                 f'<span><small>{e(it["look"])}</small>{e(it["name"])}</span></a>')
     track = "".join(card(i, False) for i in picks) + "".join(card(i, True) for i in picks)
     return f"""<!-- setups-preview -->

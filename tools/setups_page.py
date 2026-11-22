@@ -312,8 +312,7 @@ def ideas_html():
     """The drawn setups from data/setup_ideas.json (pictures: node tools/render_setups.js), in sections by group."""
     B = json.load(open(os.path.join(ROOT, "data", "setup_builder.json")))
     ideas = json.load(open(os.path.join(ROOT, "data", "setup_ideas.json")))["setups"]
-    if PREVIEW:
-        ideas = [i for i in ideas if i.get("photo")]
+    ideas = [i for i in ideas if i.get("photo")]  # only setups with a real photo are shown
     groups = [g for g in GROUPS if any(i["group"] == g for i in ideas)]
     bad = [i["slug"] for i in ideas if i["group"] not in GROUPS]
     if bad:
@@ -341,8 +340,7 @@ def ideas_html():
                 f'<article class="ds" id="{sl}">' +
                 (f'<a class="ds-pic" href="{bl}" aria-label="Open {nm} in the setup builder"><img src="{PX.format(int(it["photo"]))}" width="900" height="540" loading="{'eager' if PREVIEW else 'lazy'}" alt="Photo of a desk setup in the {nm} style"></a>'
                  f'<a class="ds-cr" href="https://www.pexels.com/photo/{int(it["photo"])}/" target="_blank" rel="noopener">Photo: Pexels</a>'
-                 if PREVIEW else
-                 f'<a class="ds-pic" href="{bl}" aria-label="Open {nm} in the setup builder"><img src="/assets/setups/draw/{sl}.svg" width="1200" height="720" loading="lazy" alt="Drawing of the {nm} desk setup"></a>') +
+                 ) +
                 f'<div class="ds-b"><p class="ds-k">{e(it["look"])} &middot; {TL[t]} picks</p><h3>{nm}</h3><p class="ds-d">{e(it["blurb"])}</p>'
                 f'<details><summary>Shop all {len(items)} pieces</summary>{note}<ul class="ds-l">{lis}</ul></details>'
                 f'<a class="ds-open" href="{bl}">Open in builder</a></div></article>\n')
@@ -376,7 +374,7 @@ def build():
     kinds = [k for k in ["setup", "gear", "wallpaper", "shot"] if any(p.get("type") == k for p in posts)]
     n_items = sum(len(p.get("items", [])) for p in posts)
     title = "Shop the Setup: Gaming Desk Setups with Gear Links | SteelGames"
-    desc = "More than 30 gaming desk setups you can shop: all-white, RGB, cozy wood, budget, console, handheld, sim racing, veteran and more, with every piece linked on Amazon."
+    desc = "Real gaming desk setups you can shop: all-white, RGB neon, cozy wood, pink, console TV, handheld, sim racing, retro and more, with every piece linked on Amazon."
     ld = {"@context": "https://schema.org", "@type": "ImageGallery", "name": "SteelGames Setups", "url": f"{SITE}/setups/ideas/",
           "image": [{"@type": "ImageObject", "contentUrl": SITE + p["img"], "name": p["title"]} for p in posts]}
     og = f'<meta property="og:image" content="{SITE}{posts[0]["img"]}">'
@@ -412,9 +410,11 @@ def build():
 if __name__ == "__main__":
     out = "ideas-preview" if PREVIEW else "ideas"
     html = build()
+    html = html.replace("Pictures marked AI-made, and the drawings, are ideas, not photos of real desks.", "Pictures marked AI-made are ideas. The setup photos are free stock photos from Pexels that show the look, not the exact gear listed.", 1)
     if PREVIEW:
         html = html.replace("<head>", '<head><meta name="robots" content="noindex,nofollow">', 1)
-        html = html.replace("Pictures marked AI-made, and the drawings, are ideas, not photos of real desks.", "Pictures marked AI-made are ideas. The setup photos are free stock photos from Pexels that show the look, not the exact gear listed.", 1)
+    if "ram-ticker.js" not in html:  # keep the site-wide RAM ticker another job adds
+        html = html.replace('<link rel="stylesheet" href="/assets/mobile.css">', '<link rel="stylesheet" href="/assets/mobile.css"><script src="/assets/ram-ticker.js" defer></script>\n', 1)
     os.makedirs(os.path.join(ROOT, "setups", out), exist_ok=True)
     open(os.path.join(ROOT, "setups", out, "index.html"), "w").write(html)
     print("built /setups/" + out + "/")

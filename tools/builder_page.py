@@ -202,7 +202,7 @@ def build(preview=False):
         head = head.replace('<link rel="stylesheet" href="/assets/pages.css">', '<meta name="robots" content="noindex"><style>' + css + '</style>')
         head = head.replace('<link rel="stylesheet" href="/assets/mobile.css">', '')
     presets = "".join(f'<button type="button" data-preset="{e(p["s"])}">{e(p["name"])}</button>' for p in data["presets"])
-    n_ideas = len(json.load(open(os.path.join(ROOT, "data", "setup_ideas.json")))["setups"])
+    n_ideas = sum(1 for i in json.load(open(os.path.join(ROOT, "data", "setup_ideas.json")))["setups"] if i.get("photo"))
     presets += f'<a href="/setups/ideas/#ds-h">See {n_ideas} more setups</a>'
     acts = ('<button type="button" class="go" data-act="share">Share my setup</button>'
             '<button type="button" data-act="random">Surprise me</button>'
