@@ -33,6 +33,24 @@ def link(it):
     return f"https://www.amazon.com/s?k={urllib.parse.quote_plus(it['q'])}&tag={TAG}"
 
 
+def px(pid, w, h=None):
+    """Pexels image URL at a given size (Pexels serves resized, compressed copies)."""
+    u = f"https://images.pexels.com/photos/{pid}/pexels-photo-{pid}.jpeg?auto=compress&cs=tinysrgb&w={w}"
+    return u + (f"&h={h}&fit=crop" if h else "")
+
+
+def photo_posts():
+    """Real setup photos (data/setup_photos.json) that have a product list, as gallery posts."""
+    out = []
+    for ph in json.load(open(os.path.join(ROOT, "data", "setup_photos.json")))["photos"]:
+        po = ph.get("post")
+        if not po:
+            continue
+        out.append(dict(po, type="setup", img=px(ph["id"], 1600), thumb=px(ph["id"], 640, 800),
+                        w=ph["w"], h=ph["h"], credit=ph["page"]))
+    return out
+
+
 def thumbs(posts):
     """Square-ish 4:5 grid thumbnails, made once per picture."""
     try:
@@ -42,6 +60,8 @@ def thumbs(posts):
     tdir = os.path.join(ROOT, "assets", "setups", "thumb")
     os.makedirs(tdir, exist_ok=True)
     for p in posts:
+        if p.get("thumb"):
+            continue
         src = os.path.join(ROOT, p["img"].lstrip("/"))
         out = os.path.join(tdir, p["slug"] + ".jpg")
         if not os.path.exists(src) or (os.path.exists(out) and os.path.getmtime(out) >= os.path.getmtime(src)):
@@ -92,6 +112,8 @@ def post_html(p, by_slug):
         extra += f'<a class="dl" href="{e(d["href"])}" download>{DL}Download {e(d["label"])}</a>'
     if p.get("tip"):
         extra += f'<p class="ptip">{e(p["tip"])}</p>'
+    if p.get("credit"):
+        extra += f'<p class="credit">Real photo from <a href="{e(p["credit"])}" target="_blank" rel="noopener">Pexels</a>. Product dots show gear that matches what you see.</p>'
     if p.get("pair") in by_slug:
         q = by_slug[p["pair"]]
         extra += f'<a class="pair" href="#{e(q["slug"])}" data-open="{e(q["slug"])}">Shop the matching desk: {e(q["title"])}</a>'
@@ -101,7 +123,7 @@ def post_html(p, by_slug):
     count = f'<span class="cnt">{BAG}{k}</span>' if items else ""
     return (f'<article class="post" id="{e(p["slug"])}" data-kind="{e(kind)}">'
             f'<a class="tile" href="#{e(p["slug"])}" data-open="{e(p["slug"])}" aria-label="Open {e(p["title"])}">'
-            f'<img src="/assets/setups/thumb/{e(p["slug"])}.jpg" width="640" height="800" loading="lazy" alt="{e(alt)}">'
+            f'<img src="{e(p.get("thumb") or "/assets/setups/thumb/" + p["slug"] + ".jpg")}" width="640" height="800" loading="lazy" alt="{e(alt)}">'
             f'<span class="ov"><span class="ovk">{e(KIND.get(kind, kind))}</span><span class="ovt">{e(p["title"])}</span>{count}</span>'
             f'<span class="badge-i">{icon}</span></a>'
             f'<div class="full" hidden><div class="stage"><div class="pic">'
@@ -160,6 +182,7 @@ CSS = """
  .vw .side{max-height:none;overflow:visible;padding:18px 16px 40px}
  .vw .prev,.vw .next{top:36vh}
 }
+.credit{font-size:12px;color:var(--muted);margin:0}.credit a{color:inherit}
 .aitag{position:absolute;left:10px;top:10px;background:rgba(10,6,28,.78);color:#fff;font:600 12px/1.2 var(--body);padding:5px 9px;border-radius:8px}
 .hs{position:absolute;transform:translate(-50%,-50%);z-index:2;line-height:1.3}
 .hs:hover,.hs:focus-within,.hs.open{z-index:5}
@@ -361,24 +384,25 @@ document.querySelectorAll('.ds a').forEach(function(a){a.addEventListener('click
 
 def build():
     data = json.load(open(os.path.join(ROOT, "data", "setups_gallery.json")))
-    posts = data["posts"]
+    posts = photo_posts() + [p for p in data["posts"] if not p.get("ai") and p.get("type") != "setup"]
     thumbs(posts)
     by_slug = {p["slug"]: p for p in posts}
     kinds = [k for k in ["setup", "gear", "wallpaper", "shot"] if any(p.get("type") == k for p in posts)]
     n_items = sum(len(p.get("items", [])) for p in posts)
     title = "Shop the Setup: Gaming Desk Setups with Gear Links | SteelGames"
-    desc = "More than 30 gaming desk setups you can shop: all-white, RGB, cozy wood, budget, console, handheld, sim racing, veteran and more, with every piece linked on Amazon."
+    desc = "Real gaming desk setups you can shop: neon, RGB, clean minimal and more. Tap the dots on each photo to find every piece on Amazon."
     ld = {"@context": "https://schema.org", "@type": "ImageGallery", "name": "SteelGames Setups", "url": f"{SITE}/setups/ideas/",
-          "image": [{"@type": "ImageObject", "contentUrl": SITE + p["img"], "name": p["title"]} for p in posts]}
-    og = f'<meta property="og:image" content="{SITE}{posts[0]["img"]}">'
+          "image": [{"@type": "ImageObject", "contentUrl": p["img"] if p["img"].startswith("http") else SITE + p["img"], "name": p["title"]} for p in posts]}
+    og_img = posts[0]["img"] if posts[0]["img"].startswith("http") else SITE + posts[0]["img"]
+    og = f'<meta property="og:image" content="{og_img}">'
     head = layout.head(title, desc, f"{SITE}/setups/ideas/",
                        extra=f'<style>{CSS}</style>\n<script type="application/ld+json">{json.dumps(ld)}</script>\n')
     head = head.replace(f'<meta property="og:image" content="{SITE}/assets/og-steelgames.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">', og)
-    head = head.replace(f'<meta name="twitter:image" content="{SITE}/assets/og-steelgames.png">', f'<meta name="twitter:image" content="{SITE}{posts[0]["img"]}">')
+    head = head.replace(f'<meta name="twitter:image" content="{SITE}/assets/og-steelgames.png">', f'<meta name="twitter:image" content="{og_img}">')
     tabs = ('<div class="ig-tabs" role="toolbar" aria-label="Filter posts"><button type="button" data-k="all" aria-pressed="true">All</button>' + "".join(
         f'<button type="button" data-k="{k}" aria-pressed="false">{KIND[k]}s</button>' for k in kinds) + '</div>') if len(kinds) > 1 else '<div class="ig-tabs"></div>'
     n_dl = sum(len(p.get("downloads", [])) for p in posts)
-    ds_sec, n_ideas, n_idea_items = ideas_html()
+    ds_sec, n_ideas, n_idea_items = "", 0, 0  # drawn setups retired Nov 22: real photos only
     body = f"""<main id="main">
 <section class="block"><div class="wrap">
 <div class="ig-top"><div class="ig-ava"><span>{layout.LOGO}</span></div>
@@ -390,14 +414,15 @@ def build():
 {"".join(post_html(p, by_slug) for p in posts)}
 </div>
 {ds_sec}
-<div class="how"><b>About these pictures.</b> Pictures marked AI-made, and the drawings, are ideas, not photos of real desks. Each dot links to real gear that looks and works like what you see, mostly picks from our <a href="/gear.html">gear guides</a>. Links go to Amazon, where you can see today's price. As an Amazon Associate, SteelGames earns from qualifying purchases at no extra cost to you.</div>
+<p class="ds-more"><a class="ds-build" href="/setups/">Build your own setup</a></p>
+<div class="how"><b>About these photos.</b> These are real desk photos from Pexels, free to use. Each dot links to gear that matches what you see, mostly picks from our <a href="/gear.html">gear guides</a>. Links go to Amazon, where you can see today's price. As an Amazon Associate, SteelGames earns from qualifying purchases at no extra cost to you.</div>
 </div></section>
 </main>
 <div class="vw" id="vw" role="dialog" aria-modal="true" aria-label="Post viewer"><div class="amb"></div>
 <button class="nav-b prev" type="button" aria-label="Previous post">&#8249;</button><button class="nav-b next" type="button" aria-label="Next post">&#8250;</button>
 <div class="box"><button class="x" type="button" aria-label="Close">&#215;</button></div></div>
 """
-    return head + layout.header("setups") + body + JS + DS_JS + layout.footer()
+    return head + layout.header("setups") + body + JS + layout.footer()
 
 
 if __name__ == "__main__":

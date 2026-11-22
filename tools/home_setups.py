@@ -1,6 +1,6 @@
 """Home page band that advertises the Desk Setup Builder with an auto-scrolling strip of finished setups.
 Writes between <!-- setups-preview --> and <!-- /setups-preview --> in index.html.
-Pictures come from data/setup_ideas.json (node tools/render_setups.js). Run: python3 tools/home_setups.py"""
+Pictures are real Pexels photos from data/setup_photos.json. Run: python3 tools/home_setups.py"""
 import html
 import json
 import os
@@ -27,7 +27,7 @@ CSS = """<style>
 @keyframes sbp-run{to{transform:translateX(calc(-50% - 6px))}}
 .sbp-c{flex:none;width:230px;border-radius:12px;overflow:hidden;background:#140F2A;border:1px solid var(--line);color:#fff;text-decoration:none}
 .sbp-c:hover{border-color:#B9AEFF;color:#fff}
-.sbp-c img{display:block;width:100%;height:auto;aspect-ratio:5/3}
+.sbp-c img{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover}
 .sbp-c span{display:block;padding:7px 10px 9px;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sbp-c small{display:block;color:var(--accent-soft,#B9AEFF);font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
 @media (max-width:760px){.sbp{grid-template-columns:minmax(0,1fr);padding:14px}.sbp-c{width:190px}}
@@ -36,21 +36,28 @@ CSS = """<style>
 
 
 def build():
-    ideas = {i["slug"]: i for i in json.load(open(os.path.join(ROOT, "data", "setup_ideas.json")))["setups"]}
-    picks = [ideas[s] for s in PICK if s in ideas]
+    photos = json.load(open(os.path.join(ROOT, "data", "setup_photos.json")))["photos"]
+    names = {"pink": "Pink glow", "blue": "Blue glow", "cyan": "Cyan glow", "purple": "Purple glow", "red": "Red glow",
+             "orange": "Orange glow", "warm": "Warm light", "green": "Green glow"}
+    px = lambda pid: f"https://images.pexels.com/photos/{pid}/pexels-photo-{pid}.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop"
 
-    def card(it, dup):
+    def card(ph, dup):
         extra = ' aria-hidden="true" tabindex="-1"' if dup else ''
-        return (f'<a class="sbp-c" href="/setups/ideas/#{e(it["slug"])}"{extra}>'
-                f'<img src="/assets/setups/draw/{e(it["slug"])}.svg" width="1200" height="720" loading="lazy" alt="{"" if dup else "Drawing of the " + e(it["name"]) + " setup"}">'
-                f'<span><small>{e(it["look"])}</small>{e(it["name"])}</span></a>')
+        post = ph.get("post")
+        href = f'/setups/ideas/#{e(post["slug"])}' if post else "/setups/"
+        name = post["title"] if post else names.get(ph["colors"][0], "Real setup")
+        return (f'<a class="sbp-c" href="{href}"{extra}>'
+                f'<img src="{px(ph["id"])}" width="480" height="288" loading="lazy" alt="{"" if dup else "Real gaming desk setup photo: " + e(name)}">'
+                f'<span><small>{"Shop this desk" if post else "Real setup"}</small>{e(name)}</span></a>')
+    picks = sorted(photos, key=lambda ph: not ph.get("post"))
+    ideas = [ph for ph in photos if ph.get("post")]
     track = "".join(card(i, False) for i in picks) + "".join(card(i, True) for i in picks)
     return f"""<!-- setups-preview -->
     {CSS}
     <section class="sbp" aria-labelledby="sbp-h">
       <div class="sbp-txt"><span class="sbp-new">NEW</span><h2 id="sbp-h">Build your dream gaming desk</h2>
-        <p>Pick a desk, lights, screens and gear and watch it come together. Every piece links to Amazon, from budget to premium.</p>
-        <div class="sbp-btns"><a class="sbp-go" href="/setups/">Open the Setup Builder</a><a class="sbp-alt" href="/setups/ideas/#ds-h">See {len(ideas)} setups</a></div></div>
+        <p>Pick a desk, lights, screens and gear and see a real setup with the same look. Every piece links to Amazon, from budget to premium.</p>
+        <div class="sbp-btns"><a class="sbp-go" href="/setups/">Open the Setup Builder</a><a class="sbp-alt" href="/setups/ideas/">See {len(ideas)} real setups</a></div></div>
       <div class="sbp-view"><div class="sbp-track">{track}</div></div>
     </section>
     <!-- /setups-preview -->"""

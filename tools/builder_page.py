@@ -1,4 +1,4 @@
-"""Desk Setup Builder (/setups/): visitors pick each part of a desk and see a drawn preview update live,
+"""Desk Setup Builder (/setups/): visitors pick each part of a desk and see the closest real setup photo,
 then shop every pick on Amazon at a budget, mid or premium tier.
 
 Parts, options and Amazon picks live in data/setup_builder.json. The pictures are simple drawings made
@@ -28,7 +28,14 @@ CSS = r"""
 .sb{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:20px;align-items:start}
 .sb-stage{position:sticky;top:12px;z-index:5}
 .sb-view{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#120d26;box-shadow:0 18px 50px rgba(0,0,0,.45)}
-.sb-view svg{display:block;width:100%;height:auto}
+.sb-view{position:relative;aspect-ratio:3/2}
+.sb-view img{display:block;width:100%;height:100%;object-fit:cover;transition:opacity .35s ease}
+.sb-view img.fade{opacity:.25}
+.sb-cap{position:absolute;left:0;right:0;bottom:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(8,5,20,.85));font:600 13px/1.3 var(--body);color:#fff}
+.sb-cap a{color:#fff}
+.sb-cap .shop{background:var(--grad-cta);color:var(--accent-ink);border-radius:999px;padding:7px 12px;text-decoration:none;font-weight:700}
+.sb-cap .cr{font-weight:500;font-size:11px;opacity:.8}
+@media(max-width:700px){.sb-view{aspect-ratio:4/3}}
 .sb-note{font-size:12px;color:var(--muted);margin:8px 2px 0}
 .sb-act{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .sb-act .go{background:var(--grad-cta);color:var(--accent-ink);border:0}
@@ -74,12 +81,11 @@ CSS = r"""
 
 # Drawing + UI. DATA is injected as JSON. Every picture is drawn here; option ids match data/setup_builder.json.
 JS = r"""
-<script src="/assets/setup-draw.js"></script>
 <script>
 (()=>{
 'use strict';
 const D=window.SB_DATA, TAG='steelgames-20', TIERS=['budget','mid','premium'], TL={budget:'Budget',mid:'Mid',premium:'Premium'};
-const svgEl=document.getElementById('sbsvg'), listEl=document.getElementById('sbrows'), ctl=document.getElementById('sbctl');
+const img=document.getElementById('sbimg'), capEl=document.getElementById('sbcap'), listEl=document.getElementById('sbrows'), ctl=document.getElementById('sbctl');
 const parts=D.parts, extras=D.extras, byKey={}, partById={};
 parts.forEach(p=>{byKey[p.key]=p;partById[p.id]=p;});
 const colorHex=id=>(D.colors.find(c=>c.id===id)||D.colors[0]).hex;
@@ -108,12 +114,28 @@ function ser(s){
 }
 function save(){try{history.replaceState(null,'','#'+ser(S));}catch(e){}}
 
-/* ---------- drawing (assets/setup-draw.js) ---------- */
-const drawAll=SetupDraw.make(D);
-const has=x=>S.x.includes(x);
+/* ---------- real photo preview (data/setup_photos.json) ---------- */
+const PH=D.photos, has=x=>S.x.includes(x);
+const px=(id,w)=>`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+let cur=null;
+function score(ph){
+  let s=0;const ci=ph.colors.indexOf(S.color);
+  if(S.light!=='none'&&ci>=0)s+=5-ci*.5;
+  if(S.light==='none'&&ph.colors.includes('warm'))s+=2;
+  if(ph.desk===S.desk)s+=2; if(ph.mon===S.monitor)s+=2; if(ph.pc===S.pc)s+=1;
+  if(ph.kb&&ph.kb===S.keyboard)s+=1; if(ph.hs&&ph.hs===S.headset)s+=1; if(ph.ms&&ph.ms===S.mouse)s+=.5; if(ph.ct&&ph.ct===S.controller)s+=1;
+  (ph.x||[]).forEach(x=>{if(has(x))s+=1;});
+  return s;
+}
 function draw(){
-  svgEl.innerHTML=drawAll(S);
-  svgEl.setAttribute('aria-label','Drawing of your desk setup: '+rows().map(r=>r.k).join(', '));
+  let best=PH[0],bs=-1;PH.forEach(ph=>{const s=score(ph);if(s>bs){bs=s;best=ph;}});
+  if(best===cur)return; cur=best;
+  const alt='Real gaming desk setup photo with a look close to your picks';
+  img.classList.add('fade');
+  const n=new Image();n.onload=()=>{img.src=n.src;img.alt=alt;img.classList.remove('fade');};
+  n.src=px(best.id,img.clientWidth>700?1600:1000);
+  capEl.innerHTML=`<span>Real setup with a similar look <span class="cr">Photo: <a href="${best.page}" target="_blank" rel="noopener">Pexels</a></span></span>`
+    +(best.post?`<a class="shop" href="/setups/ideas/#${best.post.slug}">Shop this exact desk</a>`:'');
 }
 
 /* ---------- product list ---------- */
@@ -191,7 +213,7 @@ def build(preview=False):
     e = html.escape
     title = "Desk Setup Builder: Design Your Gaming Setup and Shop the Gear | SteelGames"
     desc = ("Build your dream gaming desk. Pick the back light, desk, monitor, PC, keyboard, mouse and more, "
-            "watch it come together, then shop every piece on Amazon at budget, mid or premium prices.")
+            "see a real setup with the same look, then shop every piece on Amazon at budget, mid or premium prices.")
     ld = {"@context": "https://schema.org", "@type": "WebApplication", "name": "SteelGames Desk Setup Builder",
           "url": f"{SITE}/setups/", "applicationCategory": "LifestyleApplication", "operatingSystem": "Any",
           "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}
@@ -202,19 +224,20 @@ def build(preview=False):
         head = head.replace('<link rel="stylesheet" href="/assets/pages.css">', '<meta name="robots" content="noindex"><style>' + css + '</style>')
         head = head.replace('<link rel="stylesheet" href="/assets/mobile.css">', '')
     presets = "".join(f'<button type="button" data-preset="{e(p["s"])}">{e(p["name"])}</button>' for p in data["presets"])
-    n_ideas = len(json.load(open(os.path.join(ROOT, "data", "setup_ideas.json")))["setups"])
-    presets += f'<a href="/setups/ideas/#ds-h">See {n_ideas} more setups</a>'
+    photos = json.load(open(os.path.join(ROOT, "data", "setup_photos.json")))["photos"]
+    data = dict(data, photos=[{k: v for k, v in ph.items() if k != "post"} | ({"post": {"slug": ph["post"]["slug"]}} if ph.get("post") else {}) for ph in photos])
+    presets += '<a href="/setups/ideas/">See real setups</a>'
     acts = ('<button type="button" class="go" data-act="share">Share my setup</button>'
             '<button type="button" data-act="random">Surprise me</button>'
             '<button type="button" data-act="list">Shop this setup</button>')
     body = f"""<main id="main">
 <section class="block"><div class="wrap">
 <div class="sb-top"><div><h1>Desk Setup Builder</h1>
-<p class="lede">Pick each piece and watch your setup come together. Every pick links to real gear on Amazon, at the price level you choose.</p></div>
+<p class="lede">Pick each piece and see a real setup with the same look. Every pick links to real gear on Amazon, at the price level you choose.</p></div>
 <div class="sb-pre" aria-label="Start from a setup">{presets}</div></div>
 <div class="sb">
-<div class="sb-stage"><div class="sb-view"><svg id="sbsvg" viewBox="0 0 1200 720" role="img" aria-label="Drawing of your desk setup"></svg></div>
-<p class="sb-note">A simple drawing to help you picture it, not the exact products. Prices are on Amazon.</p>
+<div class="sb-stage"><div class="sb-view"><img id="sbimg" width="1200" height="800" alt="Real gaming desk setup photo"><div class="sb-cap" id="sbcap"></div></div>
+<p class="sb-note">The photo changes to the real setup closest to your picks. Your list below has the exact gear. Prices are on Amazon.</p>
 <div class="sb-act">{acts}</div></div>
 <div><div class="sb-ctl" id="sbctl"></div><div class="sb-act m">{acts}</div></div>
 </div>

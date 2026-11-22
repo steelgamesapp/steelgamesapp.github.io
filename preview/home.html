@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name='impact-site-verification' value='a192b583-9f74-4bb6-a8f1-de2675b009ce'>
+<meta name="mitgo-verification" content="8ad94a85-b56d-4854-b0c9-7aff77af6952" />
+<title>SteelGames: Best PC Game Deals Today</title>
+<meta name="description" content="Today's best PC game deals from official stores, one lowest price per game. Veteran-owned.">
+<link rel="canonical" href="https://steelgamesapp.com/">
+<meta property="og:type" content="website"><meta property="og:title" content="SteelGames: Best PC Game Deals Today"><meta property="og:description" content="Today's best PC game deals from official stores, one lowest price per game. Veteran-owned."><meta property="og:url" content="https://steelgamesapp.com/">
+<meta property="og:site_name" content="SteelGames"><meta property="og:image" content="https://steelgamesapp.com/assets/og-steelgames.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://steelgamesapp.com/assets/og-steelgames.png">
+<link rel="icon" href="https://steelgamesapp.com/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="https://steelgamesapp.com/favicon.svg"><link rel="apple-touch-icon" href="https://steelgamesapp.com/apple-touch-icon.png"><meta name="theme-color" content="#0F0A24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: one dark steel column — header, hero with live app preview, feature grid, guides, platforms, privacy, footer. Same look as the app. */
+:root {
+  --bg: #0F0A24;
+  --surface: #1A1342;
+  --raised: #261B5C;
+  --line: #35288A;
+  --line-strong: #4A37A8;
+  --fg: #FFFFFF;
+  --muted: #C9C2EE;
+  --steel: #DAD4F7;
+  --accent: #FFB020;
+  --accent-soft: #CFC6FF;
+  --accent-ink: #1A0E04;
+  --verify: #8FB4E3;
+  --resale: #C4B5FD;
+  --pc: #B9AEFF;
+  --xbox: #5CCB72;
+  --ps: #6FA0FF;
+  --nin: #FF6B74;
+  --display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --body: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+}
+a { color: var(--accent-soft); }
+a:hover { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.15; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 640px) {
+  .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); }
+}
+
+/* Header */
+.site-header { border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); }
+.brand:hover { color: var(--fg); }
+.brand span { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: 2.5px; }
+.nav { display: flex; gap: 6px; flex-wrap: wrap; }
+.nav a { color: var(--steel); text-decoration: none; font-size: 14px; font-weight: 500; padding: 10px 12px; border-radius: 10px; }
+.nav a:hover { color: var(--fg); background: var(--surface); }
+.nav a[aria-current="page"] { color: var(--fg); background: var(--surface); }
+
+/* Hero */
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 56px; align-items: center; padding-block: 72px 64px; }
+@media (max-width: 820px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 44px 40px; } }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); }
+.hero h1 { font-size: clamp(38px, 6vw, 64px); font-weight: 700; letter-spacing: -1px; margin-top: 14px; }
+.hero h1 .cut { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 3px; text-decoration-color: var(--accent); }
+.hero .lede { margin-top: 20px; max-width: 34em; font-size: 18px; color: var(--steel); }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px; border-radius: 12px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid transparent; }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: var(--accent-soft); color: var(--accent-ink); }
+.btn-ghost { border-color: var(--line-strong); color: var(--fg); background: var(--surface); }
+.btn-ghost:hover { color: var(--fg); background: var(--raised); }
+.status-note { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+/* App preview */
+.phone {
+  width: 320px; max-width: 100%; justify-self: center;
+  background: var(--bg); border: 1px solid var(--line-strong); border-radius: 36px;
+  padding: 22px 16px 18px; display: flex; flex-direction: column; gap: 12px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+}
+.phone-label { font-size:12px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+.deal { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.cover { width: 44px; height: 58px; flex-shrink: 0; border-radius: 8px; display: flex; align-items: flex-end; padding: 5px; font-family: var(--display); font-weight: 700; font-size: 12px; color: #FFFFFF; }
+.deal-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.deal-title { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.deal-store { font-size:12px; color: var(--muted); }
+.deal-price { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.deal-price s { font-weight: 400; font-size: 12px; color: var(--muted); margin-left: 6px; }
+.tag { padding: 4px 7px; border-radius: 7px; background: var(--accent); color: var(--accent-ink); font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.deal.resold { background: #14121D; border: 1px dashed #4B4270; }
+.resold-chip { font-size:12px; font-weight: 700; letter-spacing: 0.8px; color: var(--resale); background: #2A2347; padding: 2px 5px; border-radius: 4px; margin-left: 6px; vertical-align: 1px; }
+.section-mini { font-size:12px; font-weight: 700; letter-spacing: 1px; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
+
+/* Sections */
+.section { border-top: 1px solid var(--line); }
+.section .wrap { padding-block: 64px; display: flex; flex-direction: column; gap: 32px; }
+@media (max-width: 640px) { .section .wrap { padding-block: 44px; } }
+.section-head { display: flex; flex-direction: column; gap: 10px; max-width: 40em; }
+.section-head h2 { font-size: clamp(28px, 4vw, 38px); font-weight: 700; letter-spacing: -0.5px; }
+.section-head p { color: var(--steel); font-size: 17px; }
+
+.features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 720px) { .features { grid-template-columns: minmax(0, 1fr); } }
+.feature { padding: 24px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.feature h3 { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.feature p { color: var(--steel); font-size: 16px; }
+.feature.resale-card { background: #14121D; border: 1px dashed #4B4270; }
+.feature.resale-card h3 { color: var(--resale); }
+
+/* Guides */
+.guides { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 900px) { .guides { grid-template-columns: minmax(0, 1fr); } }
+.guide { display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: 18px; border: 1px solid var(--line); min-width: 0; }
+.guide .kicker { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+.guide h3 { font-size: 20px; font-weight: 700; }
+.guide p { color: var(--steel); font-size: 16px; }
+.guide ul { margin: 0; padding-left: 18px; color: var(--steel); font-size: 16px; display: flex; flex-direction: column; gap: 6px; }
+
+/* Platforms */
+.platforms { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 720px) { .platforms { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.platform { padding: 18px; border-radius: 16px; border: 1px solid; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.platform strong { font-family: var(--display); font-size: 18px; }
+.platform span { font-size: 13px; color: var(--steel); }
+.p-pc { background: #1E150E; border-color: #4A2E16; } .p-pc strong { color: var(--pc); }
+.p-xbox { background: #0F1D14; border-color: #244A30; } .p-xbox strong { color: var(--xbox); }
+.p-ps { background: #0E1526; border-color: #243C68; } .p-ps strong { color: var(--ps); }
+.p-nin { background: #231114; border-color: #5A262C; } .p-nin strong { color: var(--nin); }
+
+/* Privacy */
+.policy { max-width: 44em; display: flex; flex-direction: column; gap: 18px; }
+.policy h3 { font-size: 18px; font-weight: 600; font-family: var(--body); }
+.policy p, .policy li { color: var(--steel); font-size: 16px; }
+.policy ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+
+.nav a.nav-cta { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.nav a.nav-cta:hover { background: var(--accent-soft); color: var(--accent-ink); }
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(23,16,58,0.92); backdrop-filter: blur(10px); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+html { scroll-padding-top: 88px; }
+@media (max-width: 640px) { .site-header { position: static; } html { scroll-padding-top: 0; } }
+
+/* Community */
+.community { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+@media (max-width: 820px) { .community { grid-template-columns: minmax(0, 1fr); } }
+.community-points { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.cpoint h3 { font-size: 18px; font-weight: 700; }
+.cpoint p { color: var(--steel); font-size: 16px; margin-top: 4px; }
+.thread { background: var(--surface); border: 1px solid var(--line-strong); border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.review { padding: 16px; border-radius: 14px; background: var(--raised); display: flex; flex-direction: column; gap: 8px; }
+.review p { font-size: 14px; color: var(--steel); }
+.who { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.avatar { width: 30px; height: 30px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; font-size:12px; font-weight: 700; color: #FFFFFF; flex-shrink: 0; }
+.name { font-size: 14px; font-weight: 600; }
+.badge-verified { font-size:12px; font-weight: 700; color: var(--verify); border: 1px solid #3A5272; padding: 2px 7px; border-radius: 6px; }
+.stars { color: var(--accent); letter-spacing: 2px; font-size: 15px; }
+.chat { display: flex; flex-direction: column; gap: 12px; }
+.msg { display: flex; gap: 10px; align-items: flex-start; }
+.msg p { font-size: 14px; color: var(--steel); }
+.composer { display: flex; justify-content: space-between; align-items: center; min-height: 46px; padding: 0 6px 0 14px; border-radius: 12px; border: 1px solid var(--line-strong); color: var(--muted); font-size: 14px; }
+.composer .send { background: var(--raised); color: var(--fg); font-weight: 600; padding: 8px 14px; border-radius: 9px; font-size: 13px; }
+
+/* Get the app */
+.getapp-band { display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; padding: 36px; border-radius: 24px; background: var(--raised); border: 1px solid var(--line-strong); }
+@media (max-width: 640px) { .getapp-band { padding: 24px; } }
+.getapp-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.store-btn { display: inline-flex; align-items: center; gap: 12px; min-height: 58px; padding: 0 22px; border-radius: 14px; background: var(--fg); color: var(--bg); text-decoration: none; }
+.store-btn:hover { color: var(--bg); background: #FFFFFF; }
+.store-btn span { display: flex; flex-direction: column; font-family: var(--display); font-size: 20px; font-weight: 700; line-height: 1.1; }
+.store-btn small { font-family: var(--body); font-size:12px; font-weight: 500; }
+
+/* Veteran badge */
+.vet-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 8px; border-radius: 999px; background: #121A26; border: 1px solid #2B3D57; color: #CFE0F5; font-size: 14px; font-weight: 600; }
+.vet-badge svg { flex-shrink: 0; }
+
+/* Start here hub */
+.hub { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 960px) { .hub { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .hub { grid-template-columns: minmax(0, 1fr); } }
+.hub-card { display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line-strong); text-decoration: none; color: var(--fg); min-width: 0; min-height: 100%; }
+.hub-card:hover { background: var(--raised); color: var(--fg); border-color: #3A4350; }
+.hub-card .hub-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--raised); }
+.hub-card h3 { font-size: 21px; font-weight: 700; }
+.hub-card p { color: var(--steel); font-size: 16px; flex: 1; }
+.hub-card .go { color: var(--accent-soft); font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; gap: 6px; }
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 32px; align-items: start; }
+@media (max-width: 820px) { .about { grid-template-columns: minmax(0, 1fr); } }
+.about-copy { display: flex; flex-direction: column; gap: 14px; color: var(--steel); font-size: 17px; }
+.promise { display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); }
+.promise h3 { font-size: 18px; }
+.promise ul { margin: 0; padding-left: 20px; color: var(--steel); font-size: 16px; display: flex; flex-direction: column; gap: 8px; }
+
+/* Help */
+.faq { display: flex; flex-direction: column; gap: 10px; max-width: 48em; }
+.faq details { border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.faq summary { cursor: pointer; padding: 18px 20px; font-weight: 600; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: center; min-height: 56px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--accent-soft); font-size: 22px; line-height: 1; flex-shrink: 0; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 14px; }
+.faq details p { padding: 0 20px 18px; color: var(--steel); font-size: 16px; }
+.help-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--line); background: #0A0C0F; }
+.site-footer .wrap { padding-block: 36px; display: flex; flex-direction: column; gap: 14px; font-size: 14px; color: var(--muted); }
+.footer-row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+.footer-links { display: flex; gap: 6px 16px; flex-wrap: wrap; }
+.disclosure { color: var(--steel); }
+.fake-select { user-select: all; color: var(--fg); }
+
+[hidden] { display: none !important; }
+.live { padding-block: 40px 8px; }
+.live-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; }
+.live-head h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 700; letter-spacing: -0.5px; }
+.live-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.live-links a { padding: 8px 14px; border-radius: 999px; border: 1px solid #343B45; color: var(--steel); text-decoration: none; font-size: 15px; font-weight: 600; }
+.live-links a:hover { color: var(--fg); border-color: var(--steel); }
+.live-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 20px; }
+.live-card { display: flex; gap: 12px; align-items: center; padding: 10px; border-radius: 14px; background: #14181E; border: 1px solid #2A313A; color: var(--fg); text-decoration: none; min-width: 0; }
+.live-card:hover { border-color: var(--accent); }
+.live-card img { width: 112px; height: 52px; object-fit: cover; border-radius: 8px; flex-shrink: 0; background: #261B5C; }
+.live-card .t { display: block; font-weight: 600; font-size: 15px; line-height: 1.25; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.live-card .m { display: block; color: var(--muted); font-size: 13px; }
+.live-card .p { font-family: var(--display); font-weight: 700; color: var(--fg); }
+.live-card .p s { color: var(--muted); font-weight: 400; margin-left: 6px; font-size: 13px; }
+.live-card .off { margin-left: auto; flex-shrink: 0; padding: 3px 8px; border-radius: 8px; background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 13px; }
+.live-sk { height: 74px; border-radius: 14px; background: #14181E; border: 1px solid #2A313A; }
+
+.plat-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.plat-tabs button { min-height: 42px; padding: 0 18px; border-radius: 999px; border: 1px solid #343B45; background: transparent; color: var(--steel); font: 600 15px var(--body); cursor: pointer; }
+.plat-tabs button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.con-card { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 14px; background: #14181E; border: 1px solid #2A313A; color: var(--fg); text-decoration: none; }
+.con-card:hover { border-color: var(--accent); }
+.con-card b { font-family: var(--display); font-size: 17px; }
+.con-card span { color: var(--muted); font-size: 14px; }
+
+/* Chrome extension banner */
+.ext-banner { border-bottom: 1px solid var(--line); background: var(--surface); }
+.ext-banner .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-block: 18px; }
+.ext-title { font-size: 18px; font-weight: 700; margin-top: 4px; }
+.ext-sub { color: var(--steel); font-size: 14px; margin-top: 4px; max-width: 42em; }
+
+/* ===== Store front: Steam-style deal browser (home page) ===== */
+.wrap-wide { max-width: 1240px; }
+.st { padding-block: 20px 12px; }
+.st-top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 6px 24px; }
+.st-top h1 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 700; letter-spacing: -0.4px; background: linear-gradient(90deg, #fff 0%, #C8BDFF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.st-top p { color: var(--steel); font-size: 14px; line-height: 1.5; max-width: 46em; }
+.st-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin-top: 14px; padding: 8px 10px; border-radius: 8px; background: linear-gradient(90deg, #2E2078 0%, #1A1342 70%); border: 1px solid var(--line-strong); }
+.st-nav .plat-tabs { margin: 0; gap: 6px; }
+.st-nav .plat-tabs button { min-height: 34px; padding: 0 14px; font-size: 14px; border-width: 1px; }
+.st-pills { display: flex; flex-wrap: wrap; gap: 4px 2px; }
+.st-pills a { color: var(--steel); text-decoration: none; font-size: 14px; font-weight: 600; padding: 7px 11px; border-radius: 6px; }
+.st-pills a:hover { background: rgba(255,255,255,.12); color: #fff; }
+.st-pills a.hot { color: #beee11; }
+
+.st-sec { margin-top: 28px; }
+.st-h { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+.st-h h2 { font-size: 15px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #E6E1FF; background: none; -webkit-text-fill-color: #E6E1FF; }
+.st-h a { font-size: 13px; font-weight: 600; text-decoration: none; color: var(--accent-soft); }
+.st-h a:hover { color: var(--accent); }
+.st-empty { color: var(--steel); font-size: 14px; padding: 14px 4px; }
+
+/* Featured carousel */
+.st-hero { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 10px; }
+.st-hero-main { position: relative; display: block; height: clamp(230px, 30vw, 380px); border-radius: 8px; overflow: hidden; background: #150E38; border: 1px solid var(--line-strong); color: #fff; text-decoration: none; }
+.st-hero-main:hover { color: #fff; border-color: #B9AEFF; }
+.st-hero-main img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; animation: stfade .45s ease; }
+.st-hero-main img.noimg { visibility: hidden; }
+@keyframes stfade { from { opacity: .25; } to { opacity: 1; } }
+.st-hero-over { position: absolute; inset: auto 0 0 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; padding: 70px 16px 14px; background: linear-gradient(180deg, transparent 0%, rgba(10,6,25,.94) 100%); }
+.st-hero-txt { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.st-eyebrow { font-size:12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #beee11; }
+.st-hero-title { font-family: var(--display); font-size: clamp(20px, 2.8vw, 30px); font-weight: 700; line-height: 1.15; text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+.st-hero-meta { font-size: 13px; color: var(--steel); }
+.st-hero-over .st-badge { position: static; flex-shrink: 0; }
+.st-hero-over .st-off { font-size: 22px; }
+.st-hero-over .st-pr b { font-size: 20px; }
+.st-hero-list { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.st-hero-item { flex: 1; display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: center; gap: 10px; padding: 4px 10px 4px 4px; border-radius: 6px; border: 1px solid transparent; background: rgba(255,255,255,.05); color: var(--steel); text-align: left; font: 600 13px/1.3 var(--body); cursor: pointer; min-height: 44px; }
+.st-hero-item img { width: 96px; height: 100%; max-height: 44px; object-fit: cover; border-radius: 4px; background: #150E38; display: block; }
+.st-hero-item span { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.st-hero-item:hover { background: rgba(255,255,255,.12); color: #fff; }
+.st-hero-item[aria-current="true"] { background: linear-gradient(90deg, #4A37A8, #35288A); border-color: #8F7BFF; color: #fff; }
+.st-hero-sk { height: clamp(230px, 30vw, 380px); border-radius: 8px; background: #1F1650; border: 1px solid var(--line); grid-column: 1 / -1; }
+
+/* Tiles (Steam-style capsule: art, lime discount block, dark price box) */
+.st-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(216px, 1fr)); gap: 12px; }
+.st-tile { position: relative; display: flex; flex-direction: column; border-radius: 6px; overflow: hidden; background: linear-gradient(180deg, #261B5C 0%, #1A1342 100%); border: 1px solid var(--line); transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease; min-width: 0; }
+.st-tile:hover { transform: translateY(-2px); border-color: #B9AEFF; box-shadow: 0 8px 22px rgba(106,77,240,.38); }
+.st-hit { display: flex; flex-direction: column; flex: 1; color: #fff; text-decoration: none; min-width: 0; }
+.st-hit:hover { color: #fff; }
+.st-art { position: relative; display: block; aspect-ratio: 460 / 215; background: #150E38; overflow: hidden; }
+.st-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+img.noimg { visibility: hidden; }
+.st-badge { position: absolute; right: 6px; bottom: 6px; display: flex; align-items: stretch; border-radius: 3px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.55); font-family: var(--display); line-height: 1.1; }
+.st-off { display: flex; align-items: center; padding: 0 7px; background: #4c6b22; color: #beee11; font-weight: 700; font-size: 16px; }
+.st-pr { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; padding: 3px 8px; background: rgba(10,6,25,.93); }
+.st-pr s { color: #8f86c8; font-size:12px; font-weight: 500; }
+.st-pr b { color: #beee11; font-size: 15px; font-weight: 700; }
+.st-info { display: flex; flex-direction: column; gap: 2px; padding: 8px 10px 10px; min-width: 0; }
+.st-name { font-weight: 600; font-size: 14px; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.st-sub { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.st-sub i { flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--store, #7B5CFF); }
+.st-rv { font-size: 12px; font-weight: 600; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.st-rv small { font-weight: 400; color: var(--muted); }
+.st-rv.pos { color: #66c0f4; } .st-rv.mix { color: #c9b183; } .st-rv.neg { color: #e0834f; }
+.st-heart { position: absolute; top: 6px; left: 6px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); background: rgba(10,6,25,.78); color: #fff; cursor: pointer; opacity: 0; transition: opacity .12s ease; padding: 0; }
+.st-tile:hover .st-heart, .st-heart:focus-visible, .st-heart[aria-pressed="true"] { opacity: 1; }
+@media (hover: none) { .st-heart { opacity: 1; } }
+.st-heart[aria-pressed="true"] { background: rgba(255,46,147,.25); border-color: #FF2E93; color: #FF9DC8; }
+.st-heart[aria-pressed="true"] svg { fill: #FF2E93; stroke: #FF2E93; }
+.st-sk { aspect-ratio: 460 / 262; border-radius: 6px; background: #1F1650; border: 1px solid var(--line); }
+
+/* Hot deals slider */
+.st-slider-wrap { position: relative; }
+.st-slider { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, 22%); gap: 12px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: #4A37A8 transparent; padding-bottom: 8px; }
+.st-slider > * { scroll-snap-align: start; }
+.st-arrow { position: absolute; top: 34%; z-index: 2; width: 38px; height: 64px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 6px; background: rgba(10,6,25,.82); color: #fff; cursor: pointer; padding: 0; }
+.st-arrow:hover { background: #6A4DF0; }
+.st-prev { left: -6px; } .st-next { right: -6px; }
+@media (max-width: 700px) { .st-arrow { display: none; } .st-slider { grid-auto-columns: 62%; } }
+
+/* Browse by price */
+.st-browse { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+.st-browse a { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; min-height: 88px; padding: 12px 14px; border-radius: 8px; color: #fff; text-decoration: none; background: linear-gradient(135deg, var(--g1), var(--g2)); border: 1px solid rgba(255,255,255,.18); transition: transform .12s ease, filter .12s ease; }
+.st-browse a:hover { color: #fff; transform: translateY(-2px); filter: brightness(1.1); }
+.st-browse b { font-family: var(--display); font-size: 19px; line-height: 1.1; }
+.st-browse span { font-size: 12px; opacity: .9; }
+@media (max-width: 980px) { .st-browse { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .st-browse { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Four side-by-side lists */
+.st-lists { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1100px) { .st-lists { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .st-lists { grid-template-columns: minmax(0, 1fr); } }
+.st-list { min-width: 0; background: rgba(255,255,255,.04); border: 1px solid var(--line); border-radius: 8px; padding: 10px 10px 6px; }
+.st-list h3 { font-family: var(--body); font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #E6E1FF; padding: 2px 4px 8px; display: flex; justify-content: space-between; gap: 8px; }
+.st-list h3 a { font-size: 12px; letter-spacing: 0; text-transform: none; font-weight: 600; text-decoration: none; }
+.st-row { display: grid; grid-template-columns: 84px minmax(0, 1fr); align-items: center; gap: 10px; padding: 5px 6px; border-radius: 5px; color: #fff; text-decoration: none; }
+.st-row:hover { background: rgba(255,255,255,.1); color: #fff; }
+.st-row img { width: 84px; height: 39px; object-fit: cover; border-radius: 3px; background: #150E38; display: block; }
+.st-rt { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.st-rt b { font-size: 13px; font-weight: 600; line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.st-rl { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.st-rl small { font-size:12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.st-rp { display: flex; flex: none; align-items: stretch; border-radius: 3px; overflow: hidden; font-family: var(--display); font-size: 12px; font-weight: 700; }
+.st-rp em { font-style: normal; background: #4c6b22; color: #beee11; padding: 2px 5px; display: flex; align-items: center; }
+.st-rp b { background: rgba(10,6,25,.85); color: #beee11; padding: 2px 6px; display: flex; align-items: center; }
+.st-lsk { height: 54px; margin: 4px 0; border-radius: 5px; background: #1F1650; }
+
+/* All deals: the big grid */
+.st-allhead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin-bottom: 12px; }
+.st-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.st-chips button { min-height: 34px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--line-strong); background: rgba(255,255,255,.06); color: #fff; font: 600 13px var(--body); cursor: pointer; }
+.st-chips button:hover { border-color: #B9AEFF; }
+.st-chips button[aria-pressed="true"] { background: var(--chip); border-color: transparent; }
+.st-sort { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--steel); }
+.st-sort select { min-height: 34px; padding: 0 10px; border-radius: 6px; border: 1px solid var(--line-strong); background: #1A1342; color: #fff; font: 600 13px var(--body); }
+.st-count { margin: 0 0 12px; font-size: 13px; color: var(--steel); }
+.st-more { display: flex; justify-content: center; margin-top: 20px; }
+.st-more button { min-height: 48px; padding: 0 26px; border: 0; border-radius: 10px; font: 700 15px var(--body); cursor: pointer; background: var(--grad-cta, var(--accent)); color: var(--accent-ink); box-shadow: 0 4px 14px rgba(255,138,26,.3); }
+.st-more button:hover { filter: brightness(1.08); }
+.st-more button:disabled { opacity: .7; cursor: progress; }
+
+@media (max-width: 900px) { .st-hero { grid-template-columns: minmax(0, 1fr); } .st-hero-list { flex-direction: row; overflow-x: auto; scroll-snap-type: x proximity; } .st-hero-item { flex: 0 0 200px; scroll-snap-align: start; } }
+@media (max-width: 560px) {
+  .st-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .st-off { font-size: 13px; padding: 0 5px; } .st-pr b { font-size: 13px; } .st-pr s { font-size:12px; } .st-pr { padding: 2px 6px; }
+  .st-name { font-size: 13px; } .st-info { padding: 7px 8px 9px; }
+  .st-hero-over { padding: 48px 12px 10px; } .st-hero-over .st-off { font-size: 16px; } .st-hero-over .st-pr b { font-size: 15px; }
+  .st-nav { padding: 6px; }
+}
+@media (prefers-reduced-motion: reduce) { .st-tile, .st-browse a, .st-heart { transition: none; } .st-hero-main img { animation: none; } }
+
+/* Slim Chrome extension strip so the games start higher on the page */
+.ext-banner .wrap { padding-block: 9px; gap: 8px 16px; }
+.ext-banner .wrap > div { display: flex; align-items: center; gap: 4px 12px; flex-wrap: wrap; }
+.ext-banner .eyebrow { margin: 0; padding: 2px 8px; border-radius: 4px; background: #beee11; color: #1A1342; font-size:12px; }
+.ext-banner .ext-title { margin: 0; font-size: 15px; }
+.ext-banner .ext-sub { display: none; }
+.ext-banner .btn { min-height: 36px; padding: 0 16px; font-size: 14px; }
+
+/* Temporary GTA 6 launch banner (added Nov 19, 2026; hides itself after Dec 15) */
+.gta-bn{display:flex;align-items:center;gap:14px;margin:12px 0 4px;padding:14px 18px;border-radius:12px;background:linear-gradient(110deg,#261B5C 0%,#3A1F6E 55%,#FF3D8A 130%);color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.12)}
+.gta-bn:hover{filter:brightness(1.08)}
+.gta-bn .gb-tag{flex-shrink:0;background:#FF7A1A;color:#fff;font:700 12px/1 'Space Grotesk',sans-serif;padding:6px 9px;border-radius:6px;letter-spacing:.5px}
+.gta-bn .gb-t{flex:1;min-width:0;font:600 16px/1.3 'Space Grotesk',sans-serif}
+.gta-bn .gb-t small{display:block;font:400 13px/1.35 Inter,sans-serif;color:#DAD4F7;margin-top:2px}
+.gta-bn .gb-go{flex-shrink:0;font-weight:700;color:#FFB27A;white-space:nowrap}
+@media (max-width:600px){.gta-bn{flex-wrap:wrap}.gta-bn .gb-go{width:100%}}
+/* Home promos: veteran pill, Black Friday + gifts picture slider, side Chrome extension tab */
+.promo-top { padding-block: 14px 0; }
+.vet-pill { display: inline-flex; align-items: center; gap: 8px; max-width: 100%; padding: 7px 14px; border-radius: 999px; background: linear-gradient(90deg, #2E2078 0%, #1A1342 100%); border: 1px solid var(--line-strong); color: #fff; text-decoration: none; font-size: 14px; white-space: nowrap; }
+.vet-pill:hover { border-color: #B9AEFF; color: #fff; }
+.vet-pill .vet-star { color: #FFB020; }
+.vet-pill .vet-sub { color: var(--steel); overflow: hidden; text-overflow: ellipsis; }
+.pr { margin-top: 16px; }
+.pr-links { display: flex; gap: 16px; }
+.pr-wrap { position: relative; }
+.pr-slider { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 19%); gap: 12px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: #4A37A8 transparent; padding-bottom: 8px; }
+.pr-slider > * { scroll-snap-align: start; }
+.pr-prev { left: -6px; } .pr-next { right: -6px; }
+.pr-card { position: relative; display: flex; flex-direction: column; border-radius: 6px; overflow: hidden; background: linear-gradient(180deg, #261B5C 0%, #1A1342 100%); border: 1px solid var(--line); color: #fff; text-decoration: none; transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease; }
+.pr-card:hover { transform: translateY(-2px); border-color: #B9AEFF; box-shadow: 0 8px 22px rgba(106,77,240,.38); color: #fff; }
+.pr-img { position: relative; aspect-ratio: 4 / 3; background: #fff; }
+.pr-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+.pr-tag { position: absolute; left: 6px; top: 6px; padding: 3px 7px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; background: #6A4DF0; color: #fff; }
+.pr-card[data-kind="deal"] .pr-tag { background: #beee11; color: #1A1342; }
+.pr-body { display: flex; flex-direction: column; gap: 4px; padding: 9px 10px 11px; }
+.pr-title { font-size: 14px; font-weight: 600; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pr-meta { font-size: 13px; color: var(--steel); }
+.pr-meta b { color: #beee11; font-size: 15px; }
+.ext-tab { position: fixed; right: 0; top: 50%; z-index: 40; display: flex; align-items: center; gap: 6px; padding: 10px 8px; border-radius: 10px 0 0 10px; background: #261B5C; border: 1px solid #4A37A8; border-right: 0; color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; writing-mode: vertical-rl; transform: translateY(-50%) rotate(180deg); box-shadow: 0 6px 18px rgba(0,0,0,.4); }
+.ext-tab svg { transform: rotate(180deg); }
+.ext-tab:hover { background: #6A4DF0; color: #fff; }
+@media (max-width: 700px) {
+  .pr-slider { grid-auto-columns: 46%; }
+  .pr-links a + a { display: none; }
+  .vet-pill .vet-sub { display: none; }
+  .ext-tab { padding: 8px 6px; } .ext-tab span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .pr-card { transition: none; } }
+
+.st-hit:focus-visible { outline-offset: -3px; }
+@media (max-width: 700px) {
+  .st-top p { display: none; }
+  .st-nav { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; scrollbar-width: none; }
+  .st-nav::-webkit-scrollbar { display: none; }
+  .st-nav > *, .st-pills { flex: none; flex-wrap: nowrap; }
+  .st-pills a { white-space: nowrap; }
+  .ext-banner .eyebrow { display: none; }
+  .ext-banner .btn { min-height: 34px; padding: 0 14px; font-size: 13px; }
+  .st-sec { margin-top: 22px; }
+}
+@media (max-width: 640px) {
+  .st-lists { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 88%; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; padding-bottom: 6px; }
+  .st-list { scroll-snap-align: start; }
+}
+
+/* Promo banners: compact 2x2 strip so the deals start higher on the page */
+.promo-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding-block: 14px 4px; }
+.promo-strip .ext-banner { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.promo-strip .ext-banner .wrap { max-width: none; padding: 10px 14px; flex-wrap: nowrap; gap: 12px; }
+.promo-strip .ext-banner .wrap > div { flex: 1; min-width: 0; }
+.promo-strip .ext-banner .ext-title { font-size: 14px; line-height: 1.3; }
+.promo-strip .ext-banner .btn { flex-shrink: 0; white-space: nowrap; }
+@media (max-width: 960px) { .promo-strip { grid-template-columns: minmax(0, 1fr); } }
+/* Featured deal fills the same height as the picker beside it (no dead space) */
+.st-hero { align-items: stretch; }
+.st-hero-main { height: auto; min-height: clamp(230px, 28vw, 340px); }
+</style>
+<meta name="google-adsense-account" content="ca-pub-3613204296597380">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3613204296597380" crossorigin="anonymous"></script>
+<script data-goatcounter="https://steelgames.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<link rel="stylesheet" href="https://steelgamesapp.com/assets/vivid.css">
+<script src="https://steelgamesapp.com/assets/shop.js" defer></script>
+<script src="https://steelgamesapp.com/assets/sponsors.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"SteelGames","url":"https://steelgamesapp.com/","description":"Best PC game deals today, with price history and a veteran-owned focus."},{"@type":"Organization","name":"SteelGames","url":"https://steelgamesapp.com/","logo":"https://steelgamesapp.com/apple-touch-icon.png"}]}</script><script src="https://steelgamesapp.com/assets/ram-ticker.js" defer></script>
+</head>
+<body><a class="skip" href="#main" onclick="var m=document.querySelector('main');if(m){m.setAttribute('tabindex','-1');m.focus();m.scrollIntoView();}return false;">Skip to content</a>
+<header class="site-header">
+  <div class="wrap wrap-wide">
+    <a class="brand" href="https://steelgamesapp.com/" aria-label="SteelGames home">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#261B5C" stroke="#DAD4F7" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span>STEELGAMES</span>
+    </a>
+    <nav class="nav" aria-label="Site">
+      <a href="https://steelgamesapp.com/games.html">Games</a>
+      <a href="https://steelgamesapp.com/keys.html">Keys</a>
+      <a href="https://steelgamesapp.com/news.html">News</a>
+      <a href="https://steelgamesapp.com/gear.html">Gear</a><a href="https://steelgamesapp.com/gifts/">Gifts</a><a href="https://steelgamesapp.com/pros/">Pro setups</a><a href="setup-builder.html">Setups</a>
+      <a href="https://steelgamesapp.com/reviews.html">Reviews</a>
+      <a href="https://steelgamesapp.com/community.html">Community</a><a href="https://steelgamesapp.com/military.html">Veterans</a>
+      <a class="nav-cta" href="https://steelgamesapp.com/app/#/account">Profile</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap wrap-wide promo-top">
+    <a class="vet-pill" href="https://steelgamesapp.com/military.html"><span class="vet-star" aria-hidden="true">&#9733;</span><b>Veteran Hub</b><span class="vet-sub">Savings for veterans and their families</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a>
+    <a class="gta-bn" id="gtaBanner" href="https://steelgamesapp.com/gta-6/" data-until="2026-12-15"><span class="gb-tag">OUT NOW</span><span class="gb-t">GTA 6 is here: storage, controller and gift card deals<small>Everything for GTA 6 on PS5 and Xbox, plus what to play on PC while you wait.</small></span><span class="gb-go">Open the GTA 6 Shop &rarr;</span></a>
+    <script>(function(){var b=document.getElementById('gtaBanner');if(b&&new Date()>new Date(b.dataset.until+'T23:59:59'))b.remove()})();</script>
+    <section class="pr" aria-labelledby="pr-h">
+      <div class="st-h"><h2 id="pr-h">Black Friday deals &amp; holiday gifts</h2><span class="pr-links"><a href="https://steelgamesapp.com/gear.html#deals">All Black Friday deals</a><a href="https://steelgamesapp.com/gifts/">Shop gifts</a></span></div>
+      <div class="pr-wrap">
+        <button type="button" class="st-arrow pr-prev" aria-label="Scroll deals and gifts left"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+        <div class="pr-slider" id="prSlider"><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div></div>
+        <button type="button" class="st-arrow pr-next" aria-label="Scroll deals and gifts right"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+      </div>
+    </section>
+    <!-- setups-preview -->
+    <style>
+.sbp{margin-top:22px;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:18px;align-items:center;padding:18px;border-radius:16px;background:linear-gradient(120deg,#1F1650 0%,#140F2A 70%);border:1px solid var(--line-strong);overflow:hidden}
+.sbp-txt h2{margin:0;font-size:clamp(21px,2.4vw,27px);line-height:1.15}
+.sbp-txt p{margin:8px 0 14px;color:var(--steel);font-size:15px}
+.sbp-new{display:inline-block;margin-bottom:8px;background:#FF8A1A;color:#fff;font:700 11px/1 'Space Grotesk',sans-serif;letter-spacing:.6px;padding:5px 8px;border-radius:6px}
+.sbp-btns{display:flex;flex-wrap:wrap;gap:8px}
+.sbp-go{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:12px;background:linear-gradient(135deg,#FFC21A 0%,#FF8A1A 100%);color:#1A0E04;font-weight:700;text-decoration:none}
+.sbp-alt{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:12px;border:1px solid var(--line-strong);color:#fff;font-weight:600;text-decoration:none}
+.sbp-alt:hover{background:rgba(255,255,255,.06);color:#fff}
+.sbp-view{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.sbp-track{display:flex;gap:12px;width:max-content;animation:sbp-run 70s linear infinite}
+.sbp-view:hover .sbp-track,.sbp-view:focus-within .sbp-track{animation-play-state:paused}
+@keyframes sbp-run{to{transform:translateX(calc(-50% - 6px))}}
+.sbp-c{flex:none;width:230px;border-radius:12px;overflow:hidden;background:#140F2A;border:1px solid var(--line);color:#fff;text-decoration:none}
+.sbp-c:hover{border-color:#B9AEFF;color:#fff}
+.sbp-c img{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:cover}
+.sbp-c span{display:block;padding:7px 10px 9px;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sbp-c small{display:block;color:var(--accent-soft,#B9AEFF);font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+@media (max-width:760px){.sbp{grid-template-columns:minmax(0,1fr);padding:14px}.sbp-c{width:190px}}
+@media (prefers-reduced-motion:reduce){.sbp-track{animation:none}.sbp-view{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.sbp-track [aria-hidden=true]{display:none}}
+</style>
+    <section class="sbp" aria-labelledby="sbp-h">
+      <div class="sbp-txt"><span class="sbp-new">NEW</span><h2 id="sbp-h">Build your dream gaming desk</h2>
+        <p>Pick a desk, lights, screens and gear and see a real setup with the same look. Every piece links to Amazon, from budget to premium.</p>
+        <div class="sbp-btns"><a class="sbp-go" href="setup-builder.html">Open the Setup Builder</a><a class="sbp-alt" href="setup-ideas.html">See 4 real setups</a></div></div>
+      <div class="sbp-view"><div class="sbp-track"><a class="sbp-c" href="setup-ideas.html#neon-hello"><img src="https://images.pexels.com/photos/9794458/pexels-photo-9794458.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt="Real gaming desk setup photo: Neon Hello battlestation"><span><small>Shop this desk</small>Neon Hello battlestation</span></a><a class="sbp-c" href="setup-ideas.html#orange-glow"><img src="https://images.pexels.com/photos/30469973/pexels-photo-30469973.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt="Real gaming desk setup photo: Orange Glow showcase PC"><span><small>Shop this desk</small>Orange Glow showcase PC</span></a><a class="sbp-c" href="setup-ideas.html#clean-minimal"><img src="https://images.pexels.com/photos/32327414/pexels-photo-32327414.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt="Real gaming desk setup photo: Clean minimal desk"><span><small>Shop this desk</small>Clean minimal desk</span></a><a class="sbp-c" href="setup-ideas.html#blue-green-rig"><img src="https://images.pexels.com/photos/7858742/pexels-photo-7858742.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt="Real gaming desk setup photo: Blue and green RGB rig"><span><small>Shop this desk</small>Blue and green RGB rig</span></a><a class="sbp-c" href="setup-builder.html"><img src="https://images.pexels.com/photos/1038916/pexels-photo-1038916.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt="Real gaming desk setup photo: Cyan glow"><span><small>Real setup</small>Cyan glow</span></a><a class="sbp-c" href="setup-builder.html"><img src="https://images.pexels.com/photos/31862217/pexels-photo-31862217.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt="Real gaming desk setup photo: Red glow"><span><small>Real setup</small>Red glow</span></a><a class="sbp-c" href="setup-builder.html"><img src="https://images.pexels.com/photos/34697345/pexels-photo-34697345.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt="Real gaming desk setup photo: Pink glow"><span><small>Real setup</small>Pink glow</span></a><a class="sbp-c" href="setup-builder.html"><img src="https://images.pexels.com/photos/28993061/pexels-photo-28993061.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt="Real gaming desk setup photo: Purple glow"><span><small>Real setup</small>Purple glow</span></a><a class="sbp-c" href="setup-builder.html"><img src="https://images.pexels.com/photos/33888375/pexels-photo-33888375.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt="Real gaming desk setup photo: Red glow"><span><small>Real setup</small>Red glow</span></a><a class="sbp-c" href="setup-builder.html"><img src="https://images.pexels.com/photos/7862493/pexels-photo-7862493.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt="Real gaming desk setup photo: Cyan glow"><span><small>Real setup</small>Cyan glow</span></a><a class="sbp-c" href="setup-ideas.html#neon-hello" aria-hidden="true" tabindex="-1"><img src="https://images.pexels.com/photos/9794458/pexels-photo-9794458.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt=""><span><small>Shop this desk</small>Neon Hello battlestation</span></a><a class="sbp-c" href="setup-ideas.html#orange-glow" aria-hidden="true" tabindex="-1"><img src="https://images.pexels.com/photos/30469973/pexels-photo-30469973.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt=""><span><small>Shop this desk</small>Orange Glow showcase PC</span></a><a class="sbp-c" href="setup-ideas.html#clean-minimal" aria-hidden="true" tabindex="-1"><img src="https://images.pexels.com/photos/32327414/pexels-photo-32327414.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt=""><span><small>Shop this desk</small>Clean minimal desk</span></a><a class="sbp-c" href="setup-ideas.html#blue-green-rig" aria-hidden="true" tabindex="-1"><img src="https://images.pexels.com/photos/7858742/pexels-photo-7858742.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt=""><span><small>Shop this desk</small>Blue and green RGB rig</span></a><a class="sbp-c" href="setup-builder.html" aria-hidden="true" tabindex="-1"><img src="https://images.pexels.com/photos/1038916/pexels-photo-1038916.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt=""><span><small>Real setup</small>Cyan glow</span></a><a class="sbp-c" href="setup-builder.html" aria-hidden="true" tabindex="-1"><img src="https://images.pexels.com/photos/31862217/pexels-photo-31862217.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt=""><span><small>Real setup</small>Red glow</span></a><a class="sbp-c" href="setup-builder.html" aria-hidden="true" tabindex="-1"><img src="https://images.pexels.com/photos/34697345/pexels-photo-34697345.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt=""><span><small>Real setup</small>Pink glow</span></a><a class="sbp-c" href="setup-builder.html" aria-hidden="true" tabindex="-1"><img src="https://images.pexels.com/photos/28993061/pexels-photo-28993061.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt=""><span><small>Real setup</small>Purple glow</span></a><a class="sbp-c" href="setup-builder.html" aria-hidden="true" tabindex="-1"><img src="https://images.pexels.com/photos/33888375/pexels-photo-33888375.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt=""><span><small>Real setup</small>Red glow</span></a><a class="sbp-c" href="setup-builder.html" aria-hidden="true" tabindex="-1"><img src="https://images.pexels.com/photos/7862493/pexels-photo-7862493.jpeg?auto=compress&cs=tinysrgb&w=480&h=288&fit=crop" width="480" height="288" loading="lazy" alt=""><span><small>Real setup</small>Cyan glow</span></a></div></div>
+    </section>
+    <!-- /setups-preview -->
+  </div>
+  <a class="ext-tab" href="https://chromewebstore.google.com/detail/digihifdddmmflefajfemioefidnoaif" rel="noopener" aria-label="Get the SteelGames Chrome extension: lowest price on every Steam page"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#FF7A1A"/><circle cx="12" cy="12" r="4.2" fill="#fff"/><circle cx="12" cy="12" r="3" fill="#6A4DF0"/></svg><span>Chrome extension</span></a>
+  <section class="st" id="deals" aria-labelledby="st-title">
+    <div class="wrap wrap-wide">
+      <div class="st-top">
+        <h1 id="st-title">Today's best PC game deals</h1>
+        <p>Live prices from official stores and trusted key sellers. One card per game at its lowest price. Open a game to compare every store.</p>
+      </div>
+      <div class="st-nav">
+        <div class="plat-tabs" role="group" aria-label="Platform">
+          <button type="button" data-plat="pc" aria-pressed="true">PC</button>
+          <button type="button" data-plat="ps" aria-pressed="false">PlayStation</button>
+          <button type="button" data-plat="xbox" aria-pressed="false">Xbox</button>
+          <button type="button" data-plat="switch" aria-pressed="false">Switch</button>
+        </div>
+        <nav class="st-pills" aria-label="Deal shortcuts">
+          <a class="hot" href="#stAll">All deals</a>
+          <a href="deals/pc-games-under-5/">Under $5</a>
+          <a href="deals/pc-games-under-10/">Under $10</a>
+          <a href="deals/free-pc-games-right-now/">Free games</a>
+          <a href="deals/highly-rated-pc-game-deals/">Top rated</a>
+          <a href="deals/biggest-pc-game-discounts/">Biggest discounts</a>
+          <a href="keys.html">Keys</a>
+          <a href="gear.html">Gaming gear</a>
+        </nav>
+      </div>
+
+      <div id="pcStore">
+        <section class="st-sec" id="stFeatured" aria-label="Featured and recommended">
+          <div class="st-h"><h2>Featured &amp; recommended</h2><a href="deals/">All deal lists</a></div>
+          <div class="st-hero" id="stHero"><div class="st-hero-sk"></div></div>
+        </section>
+
+        <div class="st-sec" id="stSponsor" data-sponsor-slot="home"></div>
+
+        <section class="st-sec" id="stHot" aria-label="Hot deals">
+          <div class="st-h"><h2>Hot deals</h2><a href="#stAll">Browse everything</a></div>
+          <div class="st-slider-wrap">
+            <button type="button" class="st-arrow st-prev" aria-label="Scroll hot deals left"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+            <div class="st-slider" id="stSlider"><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div></div>
+            <button type="button" class="st-arrow st-next" aria-label="Scroll hot deals right"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+          </div>
+        </section>
+
+        <section class="st-sec" aria-label="Browse by price">
+          <div class="st-h"><h2>Browse by price</h2></div>
+          <div class="st-browse">
+            <a href="deals/pc-games-under-5/" style="--g1:#6A4DF0;--g2:#B05CFF"><b>Under $5</b><span>Cheap picks</span></a>
+            <a href="deals/pc-games-under-10/" style="--g1:#1F7A8C;--g2:#2DD4BF"><b>Under $10</b><span>Great value</span></a>
+            <a href="deals/free-pc-games-right-now/" style="--g1:#2E7D32;--g2:#76C043"><b>Free games</b><span>Keep them forever</span></a>
+            <a href="deals/highly-rated-pc-game-deals/" style="--g1:#1D4ED8;--g2:#4DA3FF"><b>Top rated</b><span>Players love these</span></a>
+            <a href="deals/biggest-pc-game-discounts/" style="--g1:#C2410C;--g2:#FF8A3D"><b>Biggest discounts</b><span>Deepest cuts</span></a>
+            <a href="gear.html" style="--g1:#BE185D;--g2:#FF6B8A"><b>Gaming gear</b><span>Mice, headsets, more</span></a>
+          </div>
+        </section>
+
+        <section class="st-sec" aria-label="Top lists">
+          <div class="st-lists">
+            <div class="st-list"><h3>Top rated <a href="deals/highly-rated-pc-game-deals/">See all</a></h3><div id="stLtop"><div class="st-lsk"></div><div class="st-lsk"></div><div class="st-lsk"></div><div class="st-lsk"></div></div></div>
+            <div class="st-list"><h3>New releases <a href="deals/">See all</a></h3><div id="stLnew"><div class="st-lsk"></div><div class="st-lsk"></div><div class="st-lsk"></div><div class="st-lsk"></div></div></div>
+            <div class="st-list"><h3>Biggest discounts <a href="deals/biggest-pc-game-discounts/">See all</a></h3><div id="stLoff"><div class="st-lsk"></div><div class="st-lsk"></div><div class="st-lsk"></div><div class="st-lsk"></div></div></div>
+            <div class="st-list"><h3>Under $5 <a href="deals/pc-games-under-5/">See all</a></h3><div id="stLu5"><div class="st-lsk"></div><div class="st-lsk"></div><div class="st-lsk"></div><div class="st-lsk"></div></div></div>
+          </div>
+        </section>
+
+        <section class="st-sec" id="stAll" aria-label="All deals">
+          <div class="st-h"><h2>All deals</h2></div>
+          <div class="st-allhead">
+            <div class="st-chips" role="group" aria-label="Filter deals">
+              <button type="button" data-f="all" aria-pressed="true">All</button>
+              <button type="button" data-f="u5" aria-pressed="false">Under $5</button>
+              <button type="button" data-f="u10" aria-pressed="false">Under $10</button>
+              <button type="button" data-f="u20" aria-pressed="false">Under $20</button>
+              <button type="button" data-f="o75" aria-pressed="false">75% off or more</button>
+              <button type="button" data-f="top" aria-pressed="false">Highly rated</button>
+            </div>
+            <label class="st-sort">Sort by
+              <select id="stSort">
+                <option value="best">Best deals</option>
+                <option value="off">Biggest discount</option>
+                <option value="low">Lowest price</option>
+                <option value="rated">Top rated</option>
+                <option value="new">Newest</option>
+              </select>
+            </label>
+          </div>
+          <p class="st-count" id="stCount" aria-live="polite">Loading games...</p>
+          <div class="st-grid" id="stGrid"><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div><div class="st-sk"></div></div>
+          <div class="st-more"><button type="button" id="stMore" hidden>Show more games</button></div>
+          <noscript><p class="st-empty">Deals load with JavaScript. You can still <a href="deals/">browse the deal lists</a>.</p></noscript>
+        </section>
+      </div>
+
+      <div class="live-grid" id="conGrid" hidden></div>
+    </div>
+  </section>
+  <section class="section" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="how-title">How SteelGames helps you pay less for PC games</h2>
+        <p>SteelGames is a veteran-owned site that shows the lowest current price for a PC game across official stores and trusted resellers, so you do not have to check each store by hand. Every game page lists the stores that carry it, the best price we can find, and the lowest price that game has ever sold for.</p>
+      </div>
+      <div class="hub">
+        <a class="hub-card" href="https://steelgamesapp.com/guides/how-to-tell-a-real-pc-game-sale-from-a-fake-one/"><h3>Is the sale real?</h3><p>List prices can be inflated. Compare the current price with the game's price history before you buy.</p></a>
+        <a class="hub-card" href="https://steelgamesapp.com/guides/steam-vs-epic-vs-gog-where-to-buy-pc-games-cheapest/"><h3>Where should you buy?</h3><p>Steam, Epic and GOG differ on refunds, DRM and free games. Our guide compares them.</p></a>
+        <a class="hub-card" href="https://steelgamesapp.com/guides/are-cheap-pc-game-keys-safe-how-to-buy-steam-keys/"><h3>Are cheap keys safe?</h3><p>Learn the difference between authorized stores and key marketplaces, with a checklist.</p></a>
+        <a class="hub-card" href="https://steelgamesapp.com/reviews.html"><h3>Gear buying guides</h3><p>Mice, keyboards, headsets, monitors and controllers, with advice on how to choose.</p></a>
+      </div>
+      <div class="section-head">
+        <h2>Buy now, or wait?</h2>
+        <p>Each game page includes a Wait-O-Meter that scores from 0 (buy now) to 100 (wait). It looks at how far today's price sits above the game's all-time low, how soon the next big sale event is, and how often the game has dipped in price before. It is a guide, not a promise, because publishers can change prices at any time.</p>
+        <p>Prices come from the CheapShark price-comparison service and game details come from Steam. As an Amazon Associate and an affiliate of other stores, SteelGames earns a commission on some purchases at no extra cost to you. You can read how this works on the <a href="https://steelgamesapp.com/about.html">About page</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9z" fill="#261B5C" stroke="#DAD4F7" stroke-width="2" stroke-linejoin="round"/><path d="M20 11h-6a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5h-6" fill="none" stroke="#FF7A1A" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <span style="font-size:14px">STEELGAMES</span>
+      </a>
+      <span class="vet-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB4E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 15.4l-5.3 3 1.2-6L3.4 8.3l6-.7z"/></svg>Veteran-owned and operated</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://steelgamesapp.com/game/">All game prices</a>
+      <a href="gear.html">Shop gear</a>
+      <a href="https://discord.gg/ekrRaejc6">Discord</a>
+      <a href="https://www.youtube.com/channel/UCxnxfOz2r4jsk6TTFB1Ar-Q" rel="noopener">YouTube</a>
+      <a href="https://www.tiktok.com/@steelgamesapp" rel="noopener">TikTok</a>
+      <a href="https://www.instagram.com/steelgamesapp/" rel="noopener">Instagram</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="terms.html">Terms of use</a>
+      <a href="https://steelgamesapp.com/deals/">Deal lists</a>
+      <a href="advertise.html">Advertise</a>
+      <a href="https://chromewebstore.google.com/detail/digihifdddmmflefajfemioefidnoaif" rel="noopener">Chrome extension</a><a href="mailto:steelgames.app@outlook.com">Contact us</a>
+      <span>© 2026 Lonestar PPS, LLC</span>
+    </div>
+    <p class="disclosure">As an Amazon Associate, SteelGames earns from qualifying purchases. We earn a commission from links on this site, at no extra cost to you.</p>
+    <p>SteelGames is a product of Lonestar PPS, LLC, a veteran-owned company. SteelGames is not affiliated with Valve, Epic Games, Microsoft, Sony or Nintendo. Product and platform names belong to their owners.</p>
+  </div>
+</footer>
+<script>
+// Store front: live PC deals in a Steam-style layout. One card per game at its lowest price across stores.
+// Prices come straight from CheapShark; responses are cached in the visitor's browser for 20 minutes.
+(() => {
+  const grid = document.getElementById('stGrid'); if (!grid) return;
+  const API = 'https://www.cheapshark.com/api/1.0';
+  const CDN = 'https://cdn.cloudflare.steamstatic.com/steam/apps/';
+  const TTL = 20 * 60 * 1000;
+  const NOW = Date.now() / 1000;
+  const FIRST_SHOWN = 300, STEP = 120, MAX_PAGE = 29;
+  const MAIN = 'sortBy=Deal%20Rating&steamRating=70';
+  const $ = (id) => document.getElementById(id);
+  const esc = (t) => String(t == null ? '' : t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const usd = (n) => '$' + (+n).toFixed(2);
+  const SC = { 'Steam': '#66C0F4', 'GreenManGaming': '#5CCB72', 'Fanatical': '#FF8A3D', 'GOG': '#B388FF', 'Epic Games Store': '#E8E8F0', 'Humble Store': '#FF5A5F', 'GameBillet': '#FFD43B', 'Gamesplanet': '#4DD0E1', 'GamersGate': '#FF7043', 'Voidu': '#F06292', 'Direct2Drive': '#9CCC65', 'IndieGala': '#FF5252', 'WinGameStore': '#4DB6AC', 'Gamesload': '#F9A825' };
+  const FALLBACK = { 1: 'Steam', 2: 'GamersGate', 3: 'GreenManGaming', 7: 'GOG', 11: 'Humble Store', 15: 'Fanatical', 21: 'WinGameStore', 23: 'GameBillet', 25: 'Epic Games Store', 30: 'IndieGala' };
+  let names = null;
+  const sn = (s) => (names && names[s]) || FALLBACK[s] || 'Store';
+
+  // Image fallback chain: best art first, then smaller Steam art, then the store's own thumbnail.
+  window.sgImg = (i) => {
+    const a = (i.dataset.fb || '').split(' ').filter(Boolean);
+    if (a.length) { i.dataset.fb = a.slice(1).join(' '); i.src = a[0]; } else { i.onerror = null; i.classList.add('noimg'); }
+  };
+  const SZ = { hero: ['library_hero', 'capsule_616x353', 'header'], tile: ['header', 'capsule_616x353'], row: ['header', 'capsule_184x69'] };
+  const srcs = (g, k) => (g.a ? SZ[k].map((f) => CDN + g.a + '/' + f + '.jpg') : []).concat(g.th ? [g.th] : []);
+  const img = (g, k) => { const s = srcs(g, k); return '<img' + (s[0] ? ' src="' + esc(s[0]) + '"' : ' class="noimg"') + ' data-fb="' + esc(s.slice(1).join(' ')) + '" onerror="sgImg(this)" alt="' + esc(g.t || '') + ' cover art" loading="lazy" decoding="async">'; };
+
+  // Network: two requests at a time, a retry on busy or failed calls, cached in the browser.
+  let busy = 0; const waiting = [];
+  const pump = () => { while (busy < 2 && waiting.length) { const job = waiting.shift(); busy++; job().finally(() => { busy--; pump(); }); } };
+  const queued = (fn, prio) => new Promise((res, rej) => { const job = () => fn().then(res, rej); if (prio) waiting.unshift(job); else waiting.push(job); pump(); });
+  const fetchJSON = async (url, ttl, map) => {
+    const ck = 'sg1:' + url;
+    try { const c = JSON.parse(localStorage.getItem(ck)); if (c && Date.now() - c.t < ttl) return c.d; } catch (e) { /* no cache available */ }
+    let err;
+    for (let i = 0; i < 3; i++) {
+      try {
+        const r = await fetch(url, { signal: window.AbortSignal && AbortSignal.timeout ? AbortSignal.timeout(12000) : undefined });
+        if (!r.ok) throw new Error('http ' + r.status);
+        let d = await r.json(); if (map) d = map(d);
+        try { localStorage.setItem(ck, JSON.stringify({ t: Date.now(), d })); } catch (e) { /* storage full or blocked: fine */ }
+        return d;
+      } catch (e) { err = e; await new Promise((s) => setTimeout(s, 800 * (i + 1))); }
+    }
+    throw err;
+  };
+  const slim = (rows) => rows.map((r) => ({ g: r.gameID, t: r.title, s: r.storeID, p: +r.salePrice, n: +r.normalPrice, o: Math.round(+r.savings), a: r.steamAppID && r.steamAppID !== '0' ? r.steamAppID : '', rp: +r.steamRatingPercent || 0, rc: +r.steamRatingCount || 0, rt: r.steamRatingText || '', d: +r.releaseDate || 0, dr: +r.dealRating || 0, th: r.thumb || '' }));
+  const deals = (qs, prio) => queued(() => fetchJSON(API + '/deals?onSale=1&pageSize=60&' + qs, TTL, slim), prio);
+
+  // One entry per game: the lowest price seen across every store row we have loaded.
+  const pool = new Map();
+  const ingest = (into, rows) => {
+    rows.forEach((r) => {
+      if (!(r.p > 0) || (names && !names[r.s])) return;
+      const g = into.get(r.g);
+      if (!g) { into.set(r.g, Object.assign({}, r, { st: new Set([r.s]) })); return; }
+      g.st.add(r.s);
+      if (r.p < g.p) { const st = g.st; Object.assign(g, r); g.st = st; }
+    });
+  };
+  const byBest = (a, b) => b.dr - a.dr || b.rc - a.rc;
+
+  // Card pieces
+  const revClass = (t) => (/positive/i.test(t) ? 'pos' : /mixed/i.test(t) ? 'mix' : /negative/i.test(t) ? 'neg' : '');
+  const badge = (g) => '<span class="st-badge">' + (g.o > 0 ? '<span class="st-off">-' + g.o + '%</span>' : '') + '<span class="st-pr">' + (g.n > g.p ? '<s>' + usd(g.n) + '</s>' : '') + '<b>' + usd(g.p) + '</b></span></span>';
+  const href = (g) => '/deal/?id=' + encodeURIComponent(g.g);
+  const HEART = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6.6 5.4 5.4 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg>';
+  const tile = (g) => '<div class="st-tile" style="--store:' + (SC[sn(g.s)] || '#7B5CFF') + '"><a class="st-hit" href="' + href(g) + '"><span class="st-art">' + img(g, 'tile') + badge(g) + '</span><span class="st-info"><span class="st-name">' + esc(g.t) + '</span><span class="st-sub"><i></i>' + esc(sn(g.s)) + (g.st.size > 1 ? ' · +' + (g.st.size - 1) + ' more' : '') + '</span>' + (g.rt ? '<span class="st-rv ' + revClass(g.rt) + '">' + esc(g.rt) + ' <small>(' + g.rp + '%)</small></span>' : '') + '</span></a>' +
+    '<button type="button" class="st-heart" data-wish data-id="' + esc(g.g) + '" data-title="' + esc(g.t) + '" data-thumb="' + esc(g.th) + '" data-steam="' + esc(g.a) + '" data-store="' + esc(sn(g.s)) + '" data-price="' + g.p + '" data-normal="' + g.n + '" aria-pressed="false" aria-label="Add to wishlist: ' + esc(g.t) + '">' + HEART + '</button></div>';
+  const row = (g) => '<a class="st-row" href="' + href(g) + '">' + img(g, 'row') + '<span class="st-rt"><b>' + esc(g.t) + '</b><span class="st-rl"><span class="st-rp">' + (g.o > 0 ? '<em>-' + g.o + '%</em>' : '') + '<b>' + usd(g.p) + '</b></span><small>' + esc(sn(g.s)) + '</small></span></span></a>';
+
+  // All deals grid with filters, sorting and "show more"
+  const S = { filter: 'all', sort: 'best', shown: FIRST_SHOWN, next: 8, busy: false, failed: false };
+  const F = { all: () => true, u5: (g) => g.p <= 5, u10: (g) => g.p <= 10, u20: (g) => g.p <= 20, o75: (g) => g.o >= 75, top: (g) => g.rp >= 85 && g.rc >= 500 };
+  const SORT = {
+    best: byBest,
+    off: (a, b) => b.o - a.o || b.rc - a.rc,
+    low: (a, b) => a.p - b.p || b.rc - a.rc,
+    rated: (a, b) => (b.rc >= 100) - (a.rc >= 100) || b.rp - a.rp || b.rc - a.rc,
+    new: (a, b) => ((b.d <= NOW && b.d > 0) - (a.d <= NOW && a.d > 0)) || b.d - a.d
+  };
+  const more = $('stMore'), count = $('stCount');
+  const view = () => [...pool.values()].filter((g) => g.a && F[S.filter](g)).sort(SORT[S.sort]);
+  const renderGrid = () => {
+    if (!pool.size) {
+      if (S.failed) { grid.innerHTML = '<p class="st-empty">Deals are loading slowly. <a href="">Try again</a> or <a href="deals/">browse the deal lists</a>.</p>'; count.textContent = ''; }
+      return;
+    }
+    const a = view(), n = Math.min(S.shown, a.length);
+    grid.innerHTML = n ? a.slice(0, n).map(tile).join('') : '<p class="st-empty">No games match this filter yet. Try another one.</p>';
+    count.textContent = a.length ? 'Showing ' + n + ' of ' + a.length + ' games on sale. Prices are live.' : '';
+    more.hidden = !(S.shown < a.length || S.next <= MAX_PAGE);
+  };
+  let timer = 0;
+  const schedule = () => { if (!timer) timer = setTimeout(() => { timer = 0; renderGrid(); }, 250); };
+  const page = (p, prio) => deals(MAIN + '&pageNumber=' + p, prio).then((rows) => { ingest(pool, rows); schedule(); return rows; });
+
+  document.querySelectorAll('.st-chips button').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('.st-chips button').forEach((x) => x.setAttribute('aria-pressed', x === b));
+    S.filter = b.dataset.f; S.shown = FIRST_SHOWN; renderGrid();
+  }));
+  $('stSort').addEventListener('change', (e) => { S.sort = e.target.value; S.shown = FIRST_SHOWN; renderGrid(); });
+  more.addEventListener('click', async () => {
+    S.shown += STEP; renderGrid();
+    if (view().length < S.shown + 60 && S.next <= MAX_PAGE && !S.busy) {
+      S.busy = true; more.disabled = true; more.textContent = 'Loading more games...';
+      const ps = []; for (let i = 0; i < 3 && S.next <= MAX_PAGE; i++) ps.push(page(S.next++));
+      await Promise.allSettled(ps);
+      S.busy = false; more.disabled = false; more.textContent = 'Show more games';
+      renderGrid();
+    }
+  });
+
+  // Featured carousel and the hot-deals slider
+  let hero = [], hi = 0, htimer = 0;
+  const setHero = (i) => {
+    hi = i; const g = hero[i], m = $('hMain'), im = $('hImg'), s = srcs(g, 'hero');
+    m.href = href(g); im.classList.remove('noimg'); im.dataset.fb = s.slice(1).join(' '); im.onerror = () => window.sgImg(im); im.src = s[0] || '';
+    $('hTitle').textContent = g.t;
+    $('hMeta').textContent = sn(g.s) + (g.rt ? ' · ' + g.rt + ' (' + g.rp + '% positive)' : '') + (g.st.size > 1 ? ' · +' + (g.st.size - 1) + ' more stores' : '');
+    $('hBadge').innerHTML = badge(g);
+    document.querySelectorAll('.st-hero-item').forEach((b, k) => b.setAttribute('aria-current', k === i));
+  };
+  const spin = () => { clearInterval(htimer); if (hero.length > 1 && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) htimer = setInterval(() => { if (!document.hidden) setHero((hi + 1) % hero.length); }, 6500); };
+  const buildFeatured = () => {
+    const all = [...pool.values()].filter((g) => g.a);
+    const strong = (rc, n, o) => all.filter((g) => g.rp >= 80 && g.rc >= rc && g.n >= n && g.o >= o).sort(byBest);
+    let h = strong(1500, 14.99, 30); if (h.length < 6) h = strong(300, 9.99, 25); if (h.length < 6) h = all.slice().sort(byBest);
+    hero = h.slice(0, 6);
+    if (!hero.length) { $('stFeatured').hidden = true; $('stHot').hidden = true; return; }
+    $('stHero').innerHTML = '<a class="st-hero-main" id="hMain" href="#"><img id="hImg" alt="" decoding="async"><span class="st-hero-over"><span class="st-hero-txt"><span class="st-eyebrow">Featured deal</span><span class="st-hero-title" id="hTitle"></span><span class="st-hero-meta" id="hMeta"></span></span><span id="hBadge"></span></span></a>' +
+      '<div class="st-hero-list" id="hList">' + hero.map((g, i) => '<button type="button" class="st-hero-item" data-i="' + i + '">' + img(g, 'row') + '<span>' + esc(g.t) + '</span></button>').join('') + '</div>';
+    const list = $('hList');
+    ['mouseover', 'focusin', 'click'].forEach((ev) => list.addEventListener(ev, (e) => { const b = e.target.closest('.st-hero-item'); if (b && +b.dataset.i !== hi) { setHero(+b.dataset.i); spin(); } }));
+    const box = $('stHero'); box.addEventListener('mouseenter', () => clearInterval(htimer)); box.addEventListener('mouseleave', spin);
+    setHero(0); spin();
+    const taken = new Set(hero.map((g) => g.g));
+    const hot = all.filter((g) => !taken.has(g.g) && g.o >= 40 && g.rp >= 70).sort(byBest).slice(0, 24);
+    $('stSlider').innerHTML = hot.length ? hot.map(tile).join('') : '<p class="st-empty">More hot deals are loading.</p>';
+  };
+  const slider = $('stSlider');
+  document.querySelector('.st-prev').addEventListener('click', () => slider.scrollBy({ left: -slider.clientWidth * 0.9, behavior: 'smooth' }));
+  document.querySelector('.st-next').addEventListener('click', () => slider.scrollBy({ left: slider.clientWidth * 0.9, behavior: 'smooth' }));
+
+  // The four side-by-side lists
+  const LISTS = [
+    { id: 'stLtop', qs: 'sortBy=Reviews&steamRating=90&lowerPrice=1', keep: (g) => g.rc >= 500, by: (a, b) => b.rp - a.rp || b.rc - a.rc },
+    { id: 'stLnew', qs: 'sortBy=Release&steamRating=60&lowerPrice=1', keep: (g) => g.d > 0 && g.d <= NOW, by: (a, b) => b.d - a.d },
+    { id: 'stLoff', qs: 'sortBy=Savings&steamRating=75&lowerPrice=1', keep: (g) => g.rc >= 200, by: (a, b) => b.o - a.o || b.rc - a.rc },
+    { id: 'stLu5', qs: 'sortBy=Deal%20Rating&steamRating=80&lowerPrice=0.01&upperPrice=5', keep: (g) => g.rc >= 500, by: byBest }
+  ];
+  const runList = (L) => deals(L.qs).then((rows) => {
+    const lp = new Map(); ingest(lp, rows); ingest(pool, rows); schedule();
+    const a = [...lp.values()].filter(L.keep).sort(L.by).slice(0, 8);
+    $(L.id).innerHTML = a.length ? a.map(row).join('') : '<p class="st-empty">Nothing here right now.</p>';
+  }).catch(() => { $(L.id).innerHTML = '<p class="st-empty">Could not load this list. <a href="deals/">Browse the deal lists</a></p>'; });
+
+  // Go
+  (async () => {
+    try { const s = await fetchJSON(API + '/stores', 24 * 3600 * 1000); names = Object.fromEntries(s.filter((x) => x.isActive).map((x) => [x.storeID, x.storeName])); } catch (e) { names = null; }
+    const p0 = page(0, true);
+    const wave = Promise.allSettled([p0, page(1, true), page(2, true)]);
+    p0.catch(() => { S.failed = true; renderGrid(); });
+    wave.then(() => { buildFeatured(); renderGrid(); });
+    LISTS.forEach(runList);
+    for (let p = 3; p < 8; p++) page(p).catch(() => {});
+  })();
+
+  // Console tabs: curated shortcuts to current console game deals (Amazon links).
+  const tag = 'steelgames-20', A = (q) => 'https://www.amazon.com/s?k=' + encodeURIComponent(q) + '&i=videogames&tag=' + tag;
+  const P = {
+    ps: [['PS5 game deals', 'Current discounts on PS5 games', 'ps5 games deals'], ['PS5 games under $20', 'Cheap picks for PlayStation 5', 'ps5 games under 20'], ['PS4 games under $20', 'Still plays on PS5', 'ps4 games under 20'], ['Best-selling PS5 games', 'What people are buying now', 'best selling ps5 games'], ['PS5 co-op and party games', 'For game night on the couch', 'ps5 co-op party games'], ['PS5 controllers and headsets', 'Gear for your setup', 'ps5 controller headset']],
+    xbox: [['Xbox game deals', 'Current discounts on Xbox games', 'xbox series x games deals'], ['Xbox games under $20', 'Cheap picks for Xbox', 'xbox games under 20'], ['Best-selling Xbox games', 'What people are buying now', 'best selling xbox series x games'], ['Xbox co-op and party games', 'For game night on the couch', 'xbox co-op party games'], ['Xbox controllers', 'Wireless and elite controllers', 'xbox wireless controller'], ['Xbox headsets', 'Chat and surround sound', 'xbox gaming headset']],
+    switch: [['Switch game deals', 'Current discounts on Switch games', 'nintendo switch games deals'], ['Switch games under $30', 'Cheap picks for Switch', 'nintendo switch games under 30'], ['Best-selling Switch games', 'What people are buying now', 'best selling nintendo switch games'], ['Switch party and family games', 'For the whole group', 'nintendo switch party family games'], ['Switch controllers', 'Pro and Joy-Con controllers', 'nintendo switch controller'], ['Switch memory cards and cases', 'Storage and protection', 'nintendo switch microsd case']]
+  };
+  const pc = $('pcStore'), con = $('conGrid');
+  document.querySelectorAll('.plat-tabs button').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('.plat-tabs button').forEach((x) => x.setAttribute('aria-pressed', x === b));
+    const k = b.dataset.plat;
+    pc.hidden = k !== 'pc'; con.hidden = k === 'pc';
+    if (k !== 'pc') con.innerHTML = P[k].map((c) => '<a class="con-card" href="' + A(c[2]) + '" target="_blank" rel="noopener sponsored"><b>' + c[0] + '</b><span>' + c[1] + '</span></a>').join('');
+  }));
+})();
+</script>
+<script>
+// Old links to sections that moved: send them to the right page.
+(() => { const h = location.hash.slice(1); if (!h) return;
+  if (h === 'privacy') location.replace('/privacy.html');
+  else if (['help','get-app','features','about','community','guides','start'].includes(h)) location.replace('/get-app/#' + h); })();
+</script>
+<script>
+/* Black Friday deals + holiday gifts picture slider (data from /data/home_promos.json, built by tools/home_promos.py). Auto-scrolls, pauses on hover/touch. */
+(() => {
+  const el = document.getElementById('prSlider');
+  if (!el) return;
+  const esc = s => String(s || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const card = s => `<a class="pr-card" data-kind="${esc(s.kind)}" href="${esc(s.href)}" target="_blank" rel="sponsored nofollow noopener">
+    <span class="pr-img"><img src="${esc(s.img)}" alt="" loading="lazy" decoding="async"><span class="pr-tag">${esc(s.tag)}</span></span>
+    <span class="pr-body"><span class="pr-title">${esc(s.title)}</span><span class="pr-meta">${s.price ? `<b>${esc(s.price)}</b>` : s.note ? esc(s.note) : s.kind === 'deal' ? 'Black Friday sale' : 'See price'}</span></span></a>`;
+  fetch('/data/home_promos.json', { cache: 'no-cache' }).then(r => r.json()).then(d => {
+    const slides = (d && d.slides) || [];
+    if (!slides.length) { el.closest('.pr').hidden = true; return; }
+    el.innerHTML = slides.map(card).join('');
+    el.querySelectorAll('img').forEach(img => img.addEventListener('error', () => img.closest('.pr-card').remove()));
+  }).catch(() => { el.closest('.pr').hidden = true; });
+  const step = dir => {
+    const w = el.firstElementChild ? el.firstElementChild.getBoundingClientRect().width + 12 : el.clientWidth / 4;
+    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+    el.scrollTo({ left: dir > 0 && atEnd ? 0 : el.scrollLeft + dir * w, behavior: 'smooth' });
+  };
+  document.querySelector('.pr-prev').addEventListener('click', () => step(-1));
+  document.querySelector('.pr-next').addEventListener('click', () => step(1));
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let paused = false;
+    const wrap = el.parentElement;
+    wrap.addEventListener('mouseenter', () => { paused = true; });
+    wrap.addEventListener('mouseleave', () => { paused = false; });
+    el.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+    wrap.addEventListener('focusin', () => { paused = true; });
+    wrap.addEventListener('focusout', () => { paused = false; });
+    setInterval(() => { if (!paused && !document.hidden) step(1); }, 3500);
+  }
+})();
+</script>
+</body>
+</html>
