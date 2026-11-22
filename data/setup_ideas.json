@@ -1,5 +1,5 @@
 {
- "_how_to_edit": "Finished setups for /setups/ideas/ and the home page. s is a Desk Setup Builder state (see data/setup_builder.json for keys and option ids). group picks the section on the page; look is the small label. Optional swap replaces a shop-list row by its label (brand setups), add appends rows; each needs name plus asin (only a confirmed one) or q (Amazon search). After editing run: node tools/render_setups.js && python3 tools/setups_page.py && python3 tools/builder_page.py && python3 tools/home_setups.py",
+ "_how_to_edit": "Finished setups for /setups/ideas/ and the home page. s is a Desk Setup Builder state (see data/setup_builder.json for keys and option ids). group picks the section on the page; look is the small label. Optional swap replaces a shop-list row by its label (brand setups), add appends rows; each needs name plus asin (only a confirmed one) or q (Amazon search). After editing run: node tools/render_setups.js && python3 tools/setups_page.py && python3 tools/builder_page.py && python3 tools/home_setups.py Optional photo: a Pexels photo id (free to use); the photo preview page shows only setups that have one.",
  "setups": [
   {
    "slug": "all-white-minimal",
@@ -7,7 +7,8 @@
    "look": "Minimal",
    "blurb": "White desk, white PC, white gear and a warm strip of light underneath. Calm, bright and easy to keep tidy.",
    "s": "l=strip&c=warm&d=white&m=single&p=white&k=white&ms=white&ct=none&h=white&mt=felt&ch=white&x=stand.lbar.plant&t=mid",
-   "group": "Styles and colors"
+   "group": "Styles and colors",
+   "photo": 30047570
   },
   {
    "slug": "neon-cyberpunk",
@@ -15,7 +16,8 @@
    "look": "RGB",
    "blurb": "Cyan hex panels, an ultrawide and RGB on every surface. Turn the room lights off and let the desk glow.",
    "s": "l=hex&c=cyan&d=black&m=ultra&p=black&k=rgb&ms=rgb&ct=none&h=black&mt=rgb&ch=black&x=stand.deck&t=mid",
-   "group": "Styles and colors"
+   "group": "Styles and colors",
+   "photo": 9794458
   },
   {
    "slug": "cozy-wood-cabin",
@@ -23,7 +25,8 @@
    "look": "Cozy",
    "blurb": "Warm wood, a corner lamp, a cream keyboard and a plant. A desk that feels like a weekend at the lake.",
    "s": "l=lamp&c=warm&d=wood&m=single&p=console&k=retro&ms=white&ct=white&h=black&mt=felt&ch=mesh&x=plant.spk.lbar&t=mid",
-   "group": "Styles and colors"
+   "group": "Styles and colors",
+   "photo": 12470765
   },
   {
    "slug": "first-setup-budget",
@@ -47,7 +50,8 @@
    "look": "Streamer",
    "blurb": "Two screens, a boom mic, a webcam and a stream deck. Game on one screen and run chat and alerts on the other.",
    "s": "l=hex&c=purple&d=black&m=dual&p=black&k=rgb&ms=rgb&ct=none&h=black&mt=rgb&ch=black&x=stand.mic.cam.deck.lbar&t=premium",
-   "group": "Who it's for"
+   "group": "Who it's for",
+   "photo": 10782398
   },
   {
    "slug": "console-tv-corner",
@@ -55,7 +59,8 @@
    "look": "Console",
    "blurb": "A big TV on a wood console, a PlayStation and speakers either side. Grab the controller and sink in.",
    "s": "l=strip&c=blue&d=wood&m=tv&p=console&k=none&ms=none&ct=white&h=white&mt=none&ch=none&x=spk.plant.stand&t=mid",
-   "group": "Console and handheld"
+   "group": "Console and handheld",
+   "photo": 28729690
   },
   {
    "slug": "handheld-cozy-corner",
@@ -63,7 +68,8 @@
    "look": "Handheld",
    "blurb": "A handheld PC in its dock doubles as the desk computer. Play at the desk, then take it to the couch.",
    "s": "l=lamp&c=orange&d=wood&m=single&p=handheld&k=retro&ms=white&ct=white&h=white&mt=felt&ch=mesh&x=plant&t=mid",
-   "group": "Console and handheld"
+   "group": "Console and handheld",
+   "photo": 3248143
   },
   {
    "slug": "black-stealth",
@@ -87,7 +93,8 @@
    "look": "Pastel",
    "blurb": "Pink hex panels over an all-white build with a curved screen. Bold color on a budget.",
    "s": "l=hex&c=pink&d=white&m=curved&p=white&k=white&ms=white&ct=white&h=white&mt=rgb&ch=white&x=stand.plant&t=budget",
-   "group": "Styles and colors"
+   "group": "Styles and colors",
+   "photo": 28993111
   },
   {
    "slug": "retro-arcade",
@@ -103,7 +110,8 @@
    "look": "Racing",
    "blurb": "A racing wheel clamped to the desk in front of an ultrawide, with red light bars. Built for laps, not spreadsheets.",
    "s": "l=bars&c=red&d=black&m=ultra&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=wheel&t=mid",
-   "group": "Games"
+   "group": "Games",
+   "photo": 28993071
   },
   {
    "slug": "veteran-ops-room",
@@ -127,7 +135,8 @@
    "look": "GTA 6",
    "blurb": "A PS5 Pro, a big TV and pink neon, ready for launch night in Leonida. No keyboard needed.",
    "s": "l=strip&c=pink&d=black&m=tv&p=console&k=none&ms=none&ct=white&h=white&mt=map&ch=black&x=spk&t=premium",
-   "group": "Games"
+   "group": "Games",
+   "photo": 34697345
   },
   {
    "slug": "college-dorm",
@@ -143,7 +152,8 @@
    "look": "Cozy",
    "blurb": "A purple lamp, a cream keyboard and a laptop on warm wood. Put on a lofi playlist and get to work.",
    "s": "l=lamp&c=purple&d=wood&m=single&p=laptop&k=retro&ms=white&ct=none&h=white&mt=felt&ch=mesh&x=plant.lbar&t=budget",
-   "group": "Styles and colors"
+   "group": "Styles and colors",
+   "photo": 3653849
   },
   {
    "slug": "ultrawide-immersion",
@@ -151,7 +161,8 @@
    "look": "Ultrawide",
    "blurb": "A 34-inch ultrawide on a standing desk with speakers and a light bar. Wide games, wide spreadsheets.",
    "s": "l=strip&c=blue&d=stand&m=ultra&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=mesh&x=lbar.spk&t=premium",
-   "group": "Styles and colors"
+   "group": "Styles and colors",
+   "photo": 7858742
   },
   {
    "slug": "esports-pro",
@@ -159,7 +170,8 @@
    "look": "Competitive",
    "blurb": "A fast 27-inch screen, a light wireless mouse and a compact keyboard. Everything tuned for aim, nothing extra.",
    "s": "l=bars&c=red&d=black&m=single&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=stand&t=premium",
-   "group": "Who it's for"
+   "group": "Who it's for",
+   "photo": 9072216
   },
   {
    "slug": "creator-studio",
@@ -183,7 +195,8 @@
    "look": "Color",
    "blurb": "Blue light bars over a white build with a curved screen. Clean like the minimal look, with more color.",
    "s": "l=bars&c=blue&d=white&m=curved&p=white&k=white&ms=white&ct=none&h=white&mt=rgb&ch=white&x=stand&t=mid",
-   "group": "Styles and colors"
+   "group": "Styles and colors",
+   "photo": 18966439
   },
   {
    "slug": "desert-sunset",
@@ -207,7 +220,8 @@
    "look": "Work + play",
    "blurb": "A standing desk with two screens, a laptop and a webcam. Calls all day, games after five.",
    "s": "l=strip&c=warm&d=stand&m=dual&p=laptop&k=white&ms=black&ct=none&h=black&mt=felt&ch=mesh&x=lbar.cam.spk&t=mid",
-   "group": "Spaces"
+   "group": "Spaces",
+   "photo": 32327414
   },
   {
    "slug": "xbox-night",
@@ -223,7 +237,8 @@
    "look": "RGB",
    "blurb": "Our own colors: purple hex panels, a curved screen and a white controller on black. The setup we would build.",
    "s": "l=hex&c=purple&d=black&m=curved&p=black&k=rgb&ms=rgb&ct=white&h=black&mt=rgb&ch=black&x=stand.spk&t=mid",
-   "group": "Styles and colors"
+   "group": "Styles and colors",
+   "photo": 28993061
   },
   {
    "slug": "fortnite-victory-royale",
@@ -307,7 +322,8 @@
      "name": "Matching wireless gaming headset",
      "q": "wireless gaming headset"
     }
-   ]
+   ],
+   "photo": 9068966
   },
   {
    "slug": "kids-first-desk",
@@ -330,7 +346,8 @@
    "group": "Who it's for",
    "look": "Editor",
    "blurb": "An ultrawide timeline, a stream deck for shortcuts and good speakers. Edit by day, game by night.",
-   "s": "l=strip&c=warm&d=wood&m=ultra&p=black&k=tkl&ms=black&ct=none&h=black&mt=felt&ch=mesh&x=deck.spk.lbar&t=premium"
+   "s": "l=strip&c=warm&d=wood&m=ultra&p=black&k=tkl&ms=black&ct=none&h=black&mt=felt&ch=mesh&x=deck.spk.lbar&t=premium",
+   "photo": 30591531
   },
   {
    "slug": "podcast-and-play",
@@ -338,7 +355,8 @@
    "group": "Who it's for",
    "look": "Podcaster",
    "blurb": "A mic on an arm, a webcam and a warm lamp for recording, with a full gaming rig behind it.",
-   "s": "l=lamp&c=warm&d=black&m=single&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=mesh&x=mic.cam.stand&t=mid"
+   "s": "l=lamp&c=warm&d=black&m=single&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=mesh&x=mic.cam.stand&t=mid",
+   "photo": 31575852
   },
   {
    "slug": "vtuber-studio",
@@ -354,7 +372,8 @@
    "group": "Who it's for",
    "look": "Collector",
    "blurb": "A console on a wood desk, a cream keyboard and orange glow, for old favorites and new remasters.",
-   "s": "l=strip&c=orange&d=wood&m=tv&p=console&k=retro&ms=white&ct=black&h=black&mt=map&ch=black&x=spk.plant&t=mid"
+   "s": "l=strip&c=orange&d=wood&m=tv&p=console&k=retro&ms=white&ct=black&h=black&mt=map&ch=black&x=spk.plant&t=mid",
+   "photo": 9100862
   },
   {
    "slug": "corner-desk-nook",
@@ -402,7 +421,8 @@
    "group": "Spaces",
    "look": "Small space",
    "blurb": "A laptop with a second screen on a small white desk. Fits in a studio and packs away fast.",
-   "s": "l=lamp&c=warm&d=white&m=single&p=laptop&k=white&ms=white&ct=none&h=none&mt=felt&ch=mesh&x=lbar&t=budget"
+   "s": "l=lamp&c=warm&d=white&m=single&p=laptop&k=white&ms=white&ct=none&h=none&mt=felt&ch=mesh&x=lbar&t=budget",
+   "photo": 8534385
   },
   {
    "slug": "all-logitech",
@@ -558,7 +578,8 @@
    "group": "Budgets",
    "look": "High-end",
    "blurb": "Premium picks for the screen, PC, keyboard and chair, with only the extras you need.",
-   "s": "l=bars&c=cyan&d=stand&m=ultra&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=stand.lbar&t=premium"
+   "s": "l=bars&c=cyan&d=stand&m=ultra&p=black&k=tkl&ms=black&ct=none&h=black&mt=black&ch=black&x=stand.lbar&t=premium",
+   "photo": 30469973
   },
   {
    "slug": "no-limit-dream",

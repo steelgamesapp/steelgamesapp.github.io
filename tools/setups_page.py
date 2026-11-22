@@ -202,6 +202,7 @@ body.vw-open{overflow:hidden}
 .ds{display:flex;flex-direction:column;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;scroll-margin-top:80px}
 .ds[hidden]{display:none}
 .ds-pic{display:block;aspect-ratio:5/3;background:#140f2a}
+.ds{position:relative}.ds-cr{position:absolute;top:8px;right:8px;font-size:11px;line-height:1.4;background:rgba(0,0,0,.6);color:#fff;padding:2px 7px;border-radius:6px;text-decoration:none}
 .ds-pic img{display:block;width:100%;height:100%;object-fit:cover}
 .ds-b{display:flex;flex-direction:column;gap:8px;padding:12px 14px 14px;flex:1}
 .ds-k{margin:0;color:var(--accent-soft);font:700 11px var(--body);letter-spacing:1px;text-transform:uppercase}
@@ -301,6 +302,9 @@ def idea_items(B, state, it=None):
     return out
 
 
+PREVIEW = os.environ.get("PHOTO_PREVIEW") == "1"
+PX = "https://images.pexels.com/photos/{0}/pexels-photo-{0}.jpeg?auto=compress&cs=tinysrgb&w=900&h=540&fit=crop"
+
 GROUPS = ["Styles and colors", "Games", "Who it's for", "Spaces", "Console and handheld", "Brands", "Budgets"]
 
 
@@ -308,6 +312,8 @@ def ideas_html():
     """The drawn setups from data/setup_ideas.json (pictures: node tools/render_setups.js), in sections by group."""
     B = json.load(open(os.path.join(ROOT, "data", "setup_builder.json")))
     ideas = json.load(open(os.path.join(ROOT, "data", "setup_ideas.json")))["setups"]
+    if PREVIEW:
+        ideas = [i for i in ideas if i.get("photo")]
     groups = [g for g in GROUPS if any(i["group"] == g for i in ideas)]
     bad = [i["slug"] for i in ideas if i["group"] not in GROUPS]
     if bad:
@@ -332,8 +338,11 @@ def ideas_html():
             note = ('<p class="ds-n">The builder shows our usual picks. The list below is the brand version.</p>'
                     if it.get("swap") else "")
             cards.append(
-                f'<article class="ds" id="{sl}">'
-                f'<a class="ds-pic" href="{bl}" aria-label="Open {nm} in the setup builder"><img src="/assets/setups/draw/{sl}.svg" width="1200" height="720" loading="lazy" alt="Drawing of the {nm} desk setup"></a>'
+                f'<article class="ds" id="{sl}">' +
+                (f'<a class="ds-pic" href="{bl}" aria-label="Open {nm} in the setup builder"><img src="{PX.format(int(it["photo"]))}" width="900" height="540" loading="lazy" alt="Photo of a desk setup in the {nm} style"></a>'
+                 f'<a class="ds-cr" href="https://www.pexels.com/photo/{int(it["photo"])}/" target="_blank" rel="noopener">Photo: Pexels</a>'
+                 if PREVIEW else
+                 f'<a class="ds-pic" href="{bl}" aria-label="Open {nm} in the setup builder"><img src="/assets/setups/draw/{sl}.svg" width="1200" height="720" loading="lazy" alt="Drawing of the {nm} desk setup"></a>') +
                 f'<div class="ds-b"><p class="ds-k">{e(it["look"])} &middot; {TL[t]} picks</p><h3>{nm}</h3><p class="ds-d">{e(it["blurb"])}</p>'
                 f'<details><summary>Shop all {len(items)} pieces</summary>{note}<ul class="ds-l">{lis}</ul></details>'
                 f'<a class="ds-open" href="{bl}">Open in builder</a></div></article>\n')
@@ -401,6 +410,11 @@ def build():
 
 
 if __name__ == "__main__":
-    os.makedirs(os.path.join(ROOT, "setups", "ideas"), exist_ok=True)
-    open(os.path.join(ROOT, "setups", "ideas", "index.html"), "w").write(build())
-    print("built /setups/ideas/")
+    out = "ideas-preview" if PREVIEW else "ideas"
+    html = build()
+    if PREVIEW:
+        html = html.replace("<head>", '<head><meta name="robots" content="noindex,nofollow">', 1)
+        html = html.replace("Pictures marked AI-made, and the drawings, are ideas, not photos of real desks.", "Pictures marked AI-made are ideas. The setup photos are free stock photos from Pexels that show the look, not the exact gear listed.", 1)
+    os.makedirs(os.path.join(ROOT, "setups", out), exist_ok=True)
+    open(os.path.join(ROOT, "setups", out, "index.html"), "w").write(html)
+    print("built /setups/" + out + "/")
