@@ -339,7 +339,7 @@ def ideas_html():
                     if it.get("swap") else "")
             cards.append(
                 f'<article class="ds" id="{sl}">' +
-                (f'<a class="ds-pic" href="{bl}" aria-label="Open {nm} in the setup builder"><img src="{PX.format(int(it["photo"]))}" width="900" height="540" loading="lazy" alt="Photo of a desk setup in the {nm} style"></a>'
+                (f'<a class="ds-pic" href="{bl}" aria-label="Open {nm} in the setup builder"><img src="{PX.format(int(it["photo"]))}" width="900" height="540" loading="{'eager' if PREVIEW else 'lazy'}" alt="Photo of a desk setup in the {nm} style"></a>'
                  f'<a class="ds-cr" href="https://www.pexels.com/photo/{int(it["photo"])}/" target="_blank" rel="noopener">Photo: Pexels</a>'
                  if PREVIEW else
                  f'<a class="ds-pic" href="{bl}" aria-label="Open {nm} in the setup builder"><img src="/assets/setups/draw/{sl}.svg" width="1200" height="720" loading="lazy" alt="Drawing of the {nm} desk setup"></a>') +
