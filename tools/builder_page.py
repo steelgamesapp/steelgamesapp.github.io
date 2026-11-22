@@ -132,7 +132,7 @@ function draw(){
   if(best===cur)return; cur=best;
   const alt='Real gaming desk setup photo with a look close to your picks';
   img.classList.add('fade');
-  const n=new Image();n.onload=()=>{img.src=n.src;img.alt=alt;img.classList.remove('fade');};
+  const n=new Image();n.onload=()=>{img.src=n.src;img.alt=alt;img.style.objectPosition=best.h>best.w?'50% 22%':'50% 50%';img.classList.remove('fade');};
   n.src=px(best.id,img.clientWidth>700?1600:1000);
   capEl.innerHTML=`<span>Real setup with a similar look <span class="cr">Photo: <a href="${best.page}" target="_blank" rel="noopener">Pexels</a></span></span>`
     +(best.post?`<a class="shop" href="/setups/ideas/#${best.post.slug}">Shop this exact desk</a>`:'');
