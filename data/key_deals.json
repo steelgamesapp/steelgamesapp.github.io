@@ -2,7 +2,7 @@
  "days": [
   {
    "date": "2026-11-23",
-   "updated": "2026-11-23 16:42 UTC",
+   "updated": "2026-11-23 22:53 UTC",
    "picks": [
     {
      "gameID": "237067",
@@ -13,7 +13,7 @@
      "normal": 69.99,
      "off": 92,
      "rating": 90,
-     "reviews": 153576,
+     "reviews": 153581,
      "steam": "648168",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/subs/648168/capsule_231x87.jpg?t=1773778564",
      "score": 10.0,
@@ -28,7 +28,7 @@
      "normal": 69.99,
      "off": 92,
      "rating": 90,
-     "reviews": 38560,
+     "reviews": 38561,
      "steam": "785847",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/subs/785847/capsule_231x87.jpg?t=1698432746",
      "score": 10.0,
@@ -36,17 +36,17 @@
     },
     {
      "gameID": "256932",
-     "dealID": "yXWoPbOU0lIAUrHfByAcNgDjUGy3oCM%2FKu0M%2BtHgbTM%3D",
+     "dealID": "7xh47COvylsUNj6UlLQoTr8qesilsGngT7wbTE%2B0d7k%3D",
      "title": "Aces and Adventures",
-     "store": "GameBillet",
-     "sale": 1.45,
+     "store": "Fanatical",
+     "sale": 1.49,
      "normal": 19.99,
      "off": 93,
      "rating": 88,
      "reviews": 634,
      "steam": "1815570",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1815570/capsule_231x87.jpg?t=1731955791",
-     "score": 9.5,
+     "score": 8.6,
      "low": 1.45
     },
     {
@@ -133,7 +133,7 @@
      "normal": 24.99,
      "off": 90,
      "rating": 85,
-     "reviews": 27754,
+     "reviews": 27759,
      "steam": "815370",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/815370/11b2c1dd531149d24a276ea0abae5f05b966f781/capsule_231x87.jpg?t=1783077147",
      "score": 9.3,
@@ -148,7 +148,7 @@
      "normal": 39.99,
      "off": 90,
      "rating": 75,
-     "reviews": 19151,
+     "reviews": 19152,
      "steam": "261640",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/261640/capsule_231x87.jpg?t=1750081341",
      "score": 9.2,
