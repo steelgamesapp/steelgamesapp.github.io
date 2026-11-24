@@ -2,7 +2,7 @@
  "days": [
   {
    "date": "2026-11-24",
-   "updated": "2026-11-24 03:36 UTC",
+   "updated": "2026-11-24 16:33 UTC",
    "picks": [
     {
      "gameID": "165849",
@@ -31,7 +31,7 @@
      "reviews": 1819,
      "steam": "600130",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/600130/capsule_231x87.jpg?t=1738686818",
-     "score": 10.0,
+     "score": 9.9,
      "low": 2.09
     },
     {
@@ -58,10 +58,10 @@
      "normal": 39.99,
      "off": 80,
      "rating": 92,
-     "reviews": 58635,
+     "reviews": 58639,
      "steam": "632470",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/632470/e2afca9fe9b3e70e0da58b3006c893f6d07d10d6/capsule_231x87.jpg?t=1780913406",
-     "score": 9.9,
+     "score": 9.7,
      "low": 3.59
     },
     {
@@ -73,10 +73,10 @@
      "normal": 59.99,
      "off": 92,
      "rating": 85,
-     "reviews": 108269,
+     "reviews": 108273,
      "steam": "289070",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/289070/capsule_231x87.jpg?t=1792718069",
-     "score": 9.7,
+     "score": 9.6,
      "low": 2.36
     },
     {
@@ -88,10 +88,10 @@
      "normal": 39.99,
      "off": 91,
      "rating": 92,
-     "reviews": 23009,
+     "reviews": 23013,
      "steam": "752590",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/752590/capsule_231x87.jpg?t=1784712345",
-     "score": 9.6,
+     "score": 9.5,
      "low": 3.55
     },
     {
@@ -106,7 +106,7 @@
      "reviews": 737,
      "steam": "1364100",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1364100/2f141b70398ce62fb98c1d849a56a05267f917a7/capsule_231x87.jpg?t=1794218067",
-     "score": 9.6,
+     "score": 9.4,
      "low": 1.59
     },
     {
@@ -121,7 +121,7 @@
      "reviews": 476,
      "steam": "1919470",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1919470/a3d0ce0907a9a09d0601b1536bcb054a1f833586/capsule_231x87.jpg?t=1781273808",
-     "score": 9.6,
+     "score": 9.5,
      "low": 3.89
     },
     {
@@ -133,10 +133,10 @@
      "normal": 59.99,
      "off": 88,
      "rating": 88,
-     "reviews": 88648,
+     "reviews": 88650,
      "steam": "518699",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/subs/518699/capsule_231x87.jpg?t=1780429573",
-     "score": 9.6,
+     "score": 9.5,
      "low": 6.99
     },
     {
@@ -148,10 +148,10 @@
      "normal": 39.99,
      "off": 92,
      "rating": 86,
-     "reviews": 15639,
+     "reviews": 15642,
      "steam": "1681430",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1681430/capsule_231x87.jpg?t=1778174302",
-     "score": 9.4,
+     "score": 9.2,
      "low": 2.49
     },
     {
@@ -166,7 +166,7 @@
      "reviews": 19098,
      "steam": "8190",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8190/e90146c1858e5d8ebd2aa1abdcc8e2895c1d2b19/capsule_231x87.jpg?t=1782912561",
-     "score": 9.4,
+     "score": 9.3,
      "low": 1.49
     },
     {
@@ -181,7 +181,7 @@
      "reviews": 1780,
      "steam": "1071870",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1071870/55167b258ab54819d0c06c9ff904af28ab86173c/capsule_231x87.jpg?t=1793866644",
-     "score": 9.3,
+     "score": 9.1,
      "low": 1.12
     }
    ]
