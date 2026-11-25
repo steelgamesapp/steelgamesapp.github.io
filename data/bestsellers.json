@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-25T11:15:55Z",
+"updated": "2026-11-25T21:39:35Z",
 "source": "Amazon Best Sellers: PC Games & Accessories",
 "items": [
 {
@@ -22,7 +22,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/51sg9BLSMTL._AC_SL400_.jpg",
 "price": 26.99,
 "stars": 4.6,
-"ratings": 40808,
+"ratings": 40810,
 "url": "https://www.amazon.com/dp/B07CMS5Q6P?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -58,7 +58,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/710MzmBFzkL._AC_SL400_.jpg",
 "price": 79.96,
 "stars": 4.4,
-"ratings": 19937,
+"ratings": 19938,
 "url": "https://www.amazon.com/dp/B081415GCS?tag=steelgames-20",
 "kind": "headset"
 },
@@ -69,8 +69,8 @@
 "short": "AOC 2.4GHz Wireless Gaming Headset for PS5",
 "img": "https://images-na.ssl-images-amazon.com/images/I/71hsvNd1BtL._AC_SL400_.jpg",
 "price": 37.98,
-"stars": null,
-"ratings": null,
+"stars": 4.4,
+"ratings": 2004,
 "url": "https://www.amazon.com/dp/B0HGR4SDYC?tag=steelgames-20",
 "kind": "headset"
 },
@@ -82,7 +82,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71pz2njkNRL._AC_SL400_.jpg",
 "price": 57.99,
 "stars": 4.3,
-"ratings": 13568,
+"ratings": 13567,
 "url": "https://www.amazon.com/dp/B0C3BV19Q3?tag=steelgames-20",
 "kind": "headset"
 },
@@ -94,7 +94,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71mqaEv2KRL._AC_SL400_.jpg",
 "price": 99.69,
 "stars": 4.3,
-"ratings": 2927,
+"ratings": 2926,
 "url": "https://www.amazon.com/dp/B0F6NZWPTC?tag=steelgames-20",
 "kind": "headset"
 },
@@ -118,7 +118,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61hvcoyQ8cL._AC_SL400_.jpg",
 "price": 39.99,
 "stars": 4.3,
-"ratings": 1537,
+"ratings": 1538,
 "url": "https://www.amazon.com/dp/B0943HXDVM?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -130,7 +130,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/718TLhNbG-L._AC_SL400_.jpg",
 "price": 47.39,
 "stars": 4.5,
-"ratings": 6304,
+"ratings": 6305,
 "url": "https://www.amazon.com/dp/B0DR8V899R?tag=steelgames-20",
 "kind": "controller"
 },
@@ -214,7 +214,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71ltsViEA8L._AC_SL400_.jpg",
 "price": 44.99,
 "stars": 4.5,
-"ratings": 69383,
+"ratings": 69384,
 "url": "https://www.amazon.com/dp/B00SAYCXWG?tag=steelgames-20",
 "kind": "headset"
 },
@@ -226,7 +226,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61vF4LdktpL._AC_SL400_.jpg",
 "price": 15.99,
 "stars": 4.6,
-"ratings": 11968,
+"ratings": 11970,
 "url": "https://www.amazon.com/dp/B08SJ5Z8JL?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -238,7 +238,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71PP-K4uX8L._AC_SL400_.jpg",
 "price": 129.99,
 "stars": 4.4,
-"ratings": 2180,
+"ratings": 2181,
 "url": "https://www.amazon.com/dp/B0F29F712R?tag=steelgames-20",
 "kind": "controller"
 },
@@ -250,7 +250,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61VrVSiIRGL._AC_SL400_.jpg",
 "price": 26.84,
 "stars": 4.2,
-"ratings": 2597,
+"ratings": 2598,
 "url": "https://www.amazon.com/dp/B0F8VYDRDP?tag=steelgames-20",
 "kind": "keyboard"
 },
@@ -262,7 +262,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71-mnhc4Q8L._AC_SL400_.jpg",
 "price": 32.99,
 "stars": 4.4,
-"ratings": 19701,
+"ratings": 19703,
 "url": "https://www.amazon.com/dp/B086PKMZ21?tag=steelgames-20",
 "kind": "headset"
 },
@@ -286,7 +286,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/71wGjrmGo6L._AC_SL400_.jpg",
 "price": 159.99,
 "stars": 4.2,
-"ratings": 421,
+"ratings": 423,
 "url": "https://www.amazon.com/dp/B0FRPH94LH?tag=steelgames-20",
 "kind": "headset"
 }
