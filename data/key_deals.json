@@ -2,22 +2,22 @@
  "days": [
   {
    "date": "2026-11-25",
-   "updated": "2026-11-25 01:40 UTC",
+   "updated": "2026-11-25 16:13 UTC",
    "picks": [
     {
      "gameID": "61",
      "dealID": "UC0WgDfCnJeedl7IzegVYgEWWfd2yvXOo%2BPPB%2FuDK%2Bw%3D",
      "title": "Sid Meier's Civilization V",
      "store": "WinGameStore",
-     "sale": 2.99,
+     "sale": 1.99,
      "normal": 29.99,
-     "off": 90,
+     "off": 93,
      "rating": 95,
      "reviews": 79002,
      "steam": "8930",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/8930/capsule_231x87.jpg?t=1724341158",
      "score": 10.0,
-     "low": 2.98
+     "low": 1.99
     },
     {
      "gameID": "273",
@@ -28,10 +28,10 @@
      "normal": 9.99,
      "off": 89,
      "rating": 95,
-     "reviews": 9125,
+     "reviews": 9126,
      "steam": "3830",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3830/capsule_231x87.jpg?t=1793063134",
-     "score": 10.0,
+     "score": 9.9,
      "low": 0.89
     },
     {
@@ -39,15 +39,15 @@
      "dealID": "%2F%2BAE6cH6NTYWBu0J7b5KaG1seT0IN9hqLBjdEFxq1Cs%3D",
      "title": "Borderlands 2",
      "store": "WinGameStore",
-     "sale": 2.49,
+     "sale": 1.89,
      "normal": 19.99,
-     "off": 88,
+     "off": 91,
      "rating": 90,
-     "reviews": 123391,
+     "reviews": 123396,
      "steam": "49520",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/49520/capsule_231x87.jpg?t=1793288352",
      "score": 10.0,
-     "low": 1.99
+     "low": 1.89
     },
     {
      "gameID": "176105",
@@ -61,7 +61,7 @@
      "reviews": 5830,
      "steam": "544750",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/544750/capsule_231x87.jpg?t=1718967845",
-     "score": 9.6,
+     "score": 9.5,
      "low": 4.73
     },
     {
@@ -76,7 +76,7 @@
      "reviews": 3580,
      "steam": "351970",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/351970/capsule_231x87.jpg?t=1718967588",
-     "score": 9.5,
+     "score": 9.3,
      "low": 0.35
     },
     {
@@ -91,7 +91,7 @@
      "reviews": 2519,
      "steam": "798460",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/798460/capsule_231x87.jpg?t=1771958172",
-     "score": 9.5,
+     "score": 9.3,
      "low": 5.9
     },
     {
@@ -106,7 +106,7 @@
      "reviews": 5298,
      "steam": "45760",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/45760/capsule_231x87.jpg?t=1793843026",
-     "score": 9.4,
+     "score": 9.3,
      "low": 2.93
     },
     {
@@ -121,7 +121,7 @@
      "reviews": 1783,
      "steam": "871980",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/871980/capsule_231x87.jpg?t=1792446567",
-     "score": 9.4,
+     "score": 9.3,
      "low": 7.45
     },
     {
@@ -133,10 +133,10 @@
      "normal": 39.99,
      "off": 83,
      "rating": 96,
-     "reviews": 61189,
+     "reviews": 61192,
      "steam": "883710",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/883710/capsule_231x87.jpg?t=1779433152",
-     "score": 9.4,
+     "score": 9.2,
      "low": 1.74
     },
     {
@@ -148,10 +148,10 @@
      "normal": 59.99,
      "off": 90,
      "rating": 83,
-     "reviews": 8513,
+     "reviews": 8514,
      "steam": "1577120",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1577120/capsule_231x87.jpg?t=1730303267",
-     "score": 9.2,
+     "score": 9.0,
      "low": 5.02
     },
     {
@@ -166,7 +166,7 @@
      "reviews": 1548,
      "steam": "585450",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/585450/capsule_231x87.jpg?t=1730810569",
-     "score": 9.2,
+     "score": 9.0,
      "low": 2.24
     },
     {
@@ -181,7 +181,7 @@
      "reviews": 311,
      "steam": "1647920",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1647920/capsule_231x87.jpg?t=1738686981",
-     "score": 9.2,
+     "score": 9.1,
      "low": 2.89
     }
    ]
