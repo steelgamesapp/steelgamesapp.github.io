@@ -1,0 +1,519 @@
+{
+ "updated": "2026-11-26T17:22:07Z",
+ "gear": [
+  {
+   "brand": "Satechi",
+   "name": "Duo Wireless Charger Power Stand",
+   "price": 29.99,
+   "was": 99.99,
+   "off": 70,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=40133408981080&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fduo-wireless-charger-power-stand&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/products/duo-wireless-charger-power-stand-charging-stations-wireless-chargers-satechi-752969.jpg?v=1762441300"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA SM900 Gaming Mouse",
+   "price": 7.99,
+   "was": 19.99,
+   "off": 60,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=14207077744943&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-sm900-gaming-mouse&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/SOLAKAKASM900_9.jpg?v=1776335014"
+  },
+  {
+   "brand": "Satechi",
+   "name": "Trio Wireless Charger With Magnetic Pad",
+   "price": 48.99,
+   "was": 119.99,
+   "off": 59,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=32008960573528&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Ftrio-wireless-charging-pad&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/products/trio-wireless-charging-pad-charging-stations-satechi-868975.jpg?v=1762440331"
+  },
+  {
+   "brand": "Satechi",
+   "name": "USB-C Monitor Stand Hub XL",
+   "price": 69.99,
+   "was": 149.99,
+   "off": 53,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=42180772626520&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fusb-c-monitor-stand-hub-xl&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/usb-c-monitor-stand-hub-xl-satechi-990162.webp?v=1762441653"
+  },
+  {
+   "brand": "Satechi",
+   "name": "Dual USB-C Hub For Surface Pro",
+   "price": 29.39,
+   "was": 59.99,
+   "off": 51,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=40228609949784&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fdual-usb-c-hub-for-surface-pro-9&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/products/dual-usb-c-hub-for-surface-pro-9-hubs-satechi-379939.jpg?v=1762441386"
+  },
+  {
+   "brand": "Satechi",
+   "name": "Pro Hub Mini",
+   "price": 34.29,
+   "was": 69.99,
+   "off": 51,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=6841221513304&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fpro-hub-mini&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/products/pro-hub-mini-hubs-adapters-satechi-space-gray-140701.jpg?v=1762441042"
+  },
+  {
+   "brand": "Satechi",
+   "name": "OntheGo\u2122 3-in-1 Charger",
+   "price": 49.99,
+   "was": 99.99,
+   "off": 50,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=8231802798168&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fonthego-3-in-1-charger&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/Onthego3-in-1Black.webp?v=1792521060"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull G7 Black Ergonomic Gaming Chair",
+   "price": 455.99,
+   "was": 799.99,
+   "off": 43,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=49026118844665&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-g7-ergonomic-gaming-chair-black&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/gaming_chair_1_c5f546de-af69-4926-b5e4-a859ea893772.jpg?v=1777458714"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull G7 RGB Ergonomic Gaming Chair",
+   "price": 471.99,
+   "was": 799.99,
+   "off": 41,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=48259707633913&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-g7-rgb-ergonomic-gaming-chair&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/G7_RGB_MainImage_03_41abd7e1-be56-4dba-b398-b5283ab185b3.png?v=1778730828"
+  },
+  {
+   "brand": "Satechi",
+   "name": "Aluminum Dock for MagSafe Charger",
+   "price": 14.99,
+   "was": 24.99,
+   "off": 40,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=39527884390488&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Faluminum-dock-for-magsafe-charger&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/products/aluminum-dock-for-magsafe-charger-case-satechi-467687.jpg?v=1762440945"
+  },
+  {
+   "brand": "Satechi",
+   "name": "OntheGo\u2122 2-in-1 Charger",
+   "price": 47.99,
+   "was": 79.99,
+   "off": 40,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=8231811285080&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fonthego-2-in-1-charger&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/onthego-2-in-1-charger-wireless-chargers-satechi-black-897980.webp?v=1762441795"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA AX68 SE Magnetic 68-key Gaming Wired Keyboard",
+   "price": 39.99,
+   "was": 63.99,
+   "off": 38,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=16184572641583&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-ax68-se-magnetic-gaming-wired-keyboard&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/SOLAKAKAAX68SE-black.jpg?v=1790157576"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA AX68 SE Magnetic 68-key Gaming Wired Keyboard - Gradient Gray Side-Printed",
+   "price": 39.99,
+   "was": 63.99,
+   "off": 38,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=58527503221039&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-ax68-se-magnetic-gaming-wired-keyboard%3Fvariant%3D58527503221039&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/SOLAKAKAAX68SEgrey.jpg?v=1790157576"
+  },
+  {
+   "brand": "Satechi",
+   "name": "Type-C Pro Hub Adapter with Ethernet",
+   "price": 62.99,
+   "was": 99.99,
+   "off": 37,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=219806859273&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Faluminum-type-c-pro-hub-adapter-with-ethernet&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/products/type-c-pro-hub-adapter-with-ethernet-hubs-adapters-hubs-satechi-space-gray-335187.jpg?v=1762439632"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull C3 Pro Ergonomic Gaming Chair + A4 Pro Gaming Desk Bundle",
+   "price": 849.99,
+   "was": 1298.0,
+   "off": 35,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=15355201192185&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-c3-pro-ergonomic-gaming-chair-a4-pro-gaming-desk-bundle&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/C3_Pro_Black_A4_Pro_Main_Image_01_Product_image_front.png?v=1793932617"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull C3 Pro Ergonomic Gaming Chair + A4 Pro Gaming Desk Bundle - Silver / Standard (without ventilation and footrest)",
+   "price": 849.99,
+   "was": 1298.0,
+   "off": 35,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=67611696726265&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-c3-pro-ergonomic-gaming-chair-a4-pro-gaming-desk-bundle%3Fvariant%3D67611696726265&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/C3ProWhite_A4Pro_MainImage_01_Productimage_front.png?v=1793932619"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull C3 Pro Ergonomic Gaming Chair + A4 Pro Gaming Desk Bundle - Black / Standard (without ventilation and footrest)",
+   "price": 849.99,
+   "was": 1298.0,
+   "off": 35,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=67611696660729&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-c3-pro-ergonomic-gaming-chair-a4-pro-gaming-desk-bundle%3Fvariant%3D67611696660729&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/C3_Pro_Black_A4_Pro_Main_Image_01_Product_image_front.png?v=1793932617"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA Z2 Dual 8K Polling Rate Lightweight Gaming Mouse",
+   "price": 45.99,
+   "was": 69.99,
+   "off": 34,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=16242011930927&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-z2-tri-mode-mouse&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/z2_1.png?v=1793943256"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull G7  Gaming Chair & A4 Pro Gaming Desk Bundle [\ud83d\udca5Combo Off]",
+   "price": 1079.99,
+   "was": 1599.99,
+   "off": 33,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=8947849101561&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fg7-gaming-chair-and-a4-pro-desk-chair-combo-%25F0%259F%2592%25A5combo-off&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/20251109-151002.jpg?v=1762672486"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull M6 Ultra 2.0 Ergonomic Gaming Chair & A4 Pro Gaming Desk Bundle",
+   "price": 1079.99,
+   "was": 1599.99,
+   "off": 33,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=48330251993337&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-m6-ultra-2-0-ergonomic-gaming-chair-a4-pro-gaming-desk-bundle&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/20260317-154756_1.jpg?v=1777372340"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull G7 Ergonomic Gaming Chair",
+   "price": 455.99,
+   "was": 669.99,
+   "off": 32,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=10254852358393&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-g7-ergonomic-gaming-chair-1&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/G7_RGB_Main_Image_03_Product_image_Back_webp_37ab08d6-1767-4bdc-b50c-371024947795.webp?v=1778408723"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull G7 Pink Ergonomic Gaming Chair",
+   "price": 455.99,
+   "was": 669.99,
+   "off": 32,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=49026173141241&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-g7-ergonomic-gaming-chair-pink-1&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/20250415-090041_1_aaf1f535-be9e-433a-ac12-0a68bd00f9cc.jpg?v=1755739130"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull C3 Pro Ergonomic Gaming Chair + A4 Pro Gaming Desk Bundle - Black / Advanced (with ventilation and footrest)",
+   "price": 949.99,
+   "was": 1398.0,
+   "off": 32,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=67611696693497&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-c3-pro-ergonomic-gaming-chair-a4-pro-gaming-desk-bundle%3Fvariant%3D67611696693497&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/C3_Pro_Advanced_Black_A4_Pro_Main_Image_01_Product_image_front.png?v=1793932621"
+  },
+  {
+   "brand": "Satechi",
+   "name": "Slim EX3 Wireless Keyboard",
+   "price": 48.99,
+   "was": 69.99,
+   "off": 30,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=8546727723096&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fslim-ex3-wireless-keyboard&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/slim-ex3-wireless-keyboard-satechi-853405.webp?v=1766771020"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA Ki75 Wireless Mechanical Keyboard",
+   "price": 69.99,
+   "was": 100.0,
+   "off": 30,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=10464499859759&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-ki75-gaming-keyboard&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/Ki75WirelessKeyboard.png?v=1792119354"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA A99 Pro Mechanical Keyboard",
+   "price": 69.99,
+   "was": 99.99,
+   "off": 30,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=10921453912367&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-a99-pro-mechanical-keyboard&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/a99-pro-zhutu-brown.jpg?v=1792651068"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA A99 Pro Mechanical Keyboard - Gray-Black",
+   "price": 69.99,
+   "was": 99.99,
+   "off": 30,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=57047736877359&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-a99-pro-mechanical-keyboard%3Fvariant%3D57047736877359&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/SOLAKAKA_A99_pro-gary_-BLACK.jpg?v=1776766023"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA Ki75 Wireless Mechanical Keyboard - White-Gray-Brown",
+   "price": 69.99,
+   "was": 100.0,
+   "off": 30,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=58662275088687&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-ki75-gaming-keyboard%3Fvariant%3D58662275088687&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/Ki75WirelessKeyboard.png?v=1792119354"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA KI99 Pro Wireless Mechanical Keyboard Non-Silent Version",
+   "price": 66.99,
+   "was": 95.99,
+   "off": 30,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=10669495189807&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-ki99pro-wireless-mechanical-keyboard&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/KI99PRO-White.jpg?v=1751334751"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA E9 Vertical  Ergonomic MMO Gaming Wireless Office Mouse",
+   "price": 55.99,
+   "was": 79.99,
+   "off": 30,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=15591304429871&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-e9-vertical-mmo-gaming-mouse&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/E9-white.png?v=1776916094"
+  }
+ ],
+ "games": [
+  {
+   "name": "Borderlands 4 Deluxe Edition PC",
+   "price": 46.99,
+   "was": 99.99,
+   "off": 53,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=BRDRLNDS4DEPC&u=https%3A%2F%2Fwww.loaded.com%2Fborderlands-4-deluxe-edition-pc-steam-ww%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/b/o/borderlands_4_de_cdkeys.png"
+  },
+  {
+   "name": "Red Dead Redemption 2 PC - Rockstar Games Launcher",
+   "price": 13.29,
+   "was": 79.79,
+   "off": 83,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=RDDDR2PC_2&u=https%3A%2F%2Fwww.loaded.com%2Fred-dead-redemption-2-pc-rockstar-cd-key%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/f/i/fifa-22-pc-game-origin-cover_4_.jpg"
+  },
+  {
+   "name": "SILENT HILL 2 PC",
+   "price": 19.29,
+   "was": 79.79,
+   "off": 76,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=SLHL2PC&u=https%3A%2F%2Fwww.loaded.com%2Fsilent-hill-2-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/s/i/silent_hill_2.jpg"
+  },
+  {
+   "name": "Monster Hunter Wilds PC (North America)",
+   "price": 26.59,
+   "was": 79.79,
+   "off": 67,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=MSTHWPC_NA&u=https%3A%2F%2Fwww.loaded.com%2Fmonster-hunter-wilds-pc-na-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/m/o/monster_hunter_wilds_1.png"
+  },
+  {
+   "name": "Borderlands 4 PC",
+   "price": 32.99,
+   "was": 69.99,
+   "off": 53,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=BRDRLNDS4PC&u=https%3A%2F%2Fwww.loaded.com%2Fborderlands-4-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/b/o/borderlands_4_cdkeys_updated.png"
+  },
+  {
+   "name": "Hogwarts Legacy PC",
+   "price": 5.29,
+   "was": 66.49,
+   "off": 92,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=HGWTLGYPC&u=https%3A%2F%2Fwww.loaded.com%2Fhogwarts-legacy-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/c/u/cupheaddeliciouslast-1640043161876_3_.jpg"
+  },
+  {
+   "name": "Cyberpunk 2077 PC (GOG.com)",
+   "price": 38.59,
+   "was": 66.49,
+   "off": 42,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=CYBPNK2077PC&u=https%3A%2F%2Fwww.loaded.com%2Fcyberpunk-2077-gog-pc%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/1/1/111-1119967_cyberpunk-2077-yellow-plain-background-wallpaper-cyberpunk-2077_4.jpg"
+  },
+  {
+   "name": "Black Myth: Wukong PC",
+   "price": 37.19,
+   "was": 59.99,
+   "off": 38,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=BCKMWGPC&u=https%3A%2F%2Fwww.loaded.com%2Fblack-myth-wukong-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/b/l/black-myth-wukong-steam.jpg"
+  },
+  {
+   "name": "SILENT HILL: Townfall PC",
+   "price": 34.59,
+   "was": 59.79,
+   "off": 42,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=SHTFPC&u=https%3A%2F%2Fwww.loaded.com%2Fsilent-hill-townfall-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/s/i/silent_hill-_townfall_pc.png"
+  },
+  {
+   "name": "Assassin's Creed Unity PC",
+   "price": 6.49,
+   "was": 53.19,
+   "off": 88,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=3307215786178&u=https%3A%2F%2Fwww.loaded.com%2Fassassin-s-creed-unity-pc-cd-key-uplay%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/3/3/3307215786178.jpg"
+  },
+  {
+   "name": "Minecraft Legends PC - Windows (WW)",
+   "price": 5.29,
+   "was": 46.69,
+   "off": 89,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=MCTLGSEWIN10_WW&u=https%3A%2F%2Fwww.loaded.com%2Fminecraft-legends-pc-windows-ww%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/n/e/new_project_-_2023-01-31t162306.683_1_1.jpg"
+  },
+  {
+   "name": "The Sims 4 - Eco Lifestyle PC",
+   "price": 10.59,
+   "was": 46.49,
+   "off": 77,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=TS4ECOLSTPC&u=https%3A%2F%2Fwww.loaded.com%2Fthe-sims-4-eco-lifestyle-origin-pc%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/s/i/sims4els.jpg"
+  },
+  {
+   "name": "The Sims 4 - Cottage Living PC",
+   "price": 12.59,
+   "was": 46.49,
+   "off": 73,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=TS4CTLVPC&u=https%3A%2F%2Fwww.loaded.com%2Fthe-sims-4-cottage-living-pc-origin%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/s/i/sims4cl.jpg"
+  },
+  {
+   "name": "HELLDIVERS 2 PC",
+   "price": 24.59,
+   "was": 39.99,
+   "off": 39,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=HLDV2PC&u=https%3A%2F%2Fwww.loaded.com%2Fhelldivers-2-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/h/e/helldivers_2.png"
+  },
+  {
+   "name": "Silent Hill Homecoming PC",
+   "price": 2.69,
+   "was": 23.89,
+   "off": 89,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=SHHOCPC&u=https%3A%2F%2Fwww.loaded.com%2Fsilent-hill-homecoming-pc-steam-cd-key%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/s/i/silent_hill_homecoming_pc.jpg"
+  },
+  {
+   "name": "DOOM PC",
+   "price": 4.49,
+   "was": 19.89,
+   "off": 77,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=5050013388898&u=https%3A%2F%2Fwww.loaded.com%2Fdoom-pc-cd-key-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/n/e/new_project_7__2.jpg"
+  },
+  {
+   "name": "Assassin's Creed Revelations PC",
+   "price": 4.79,
+   "was": 16.59,
+   "off": 71,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=3307215588277&u=https%3A%2F%2Fwww.loaded.com%2Fassassin-s-creed-revelations-pc%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/a/s/assassin_s_creed_revelations_pc.png"
+  },
+  {
+   "name": "Final Fantasy XIII PC",
+   "price": 5.69,
+   "was": 14.59,
+   "off": 61,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=FINALFANT13PC&u=https%3A%2F%2Fwww.loaded.com%2Ffinal-fantasy-xiii-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/f/i/final_fantasy_xiii_pc.jpg"
+  },
+  {
+   "name": "Final Fantasy III PC",
+   "price": 5.69,
+   "was": 14.59,
+   "off": 61,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=FINALFANT3PC&u=https%3A%2F%2Fwww.loaded.com%2Ffinal-fantasy-3-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/f/f/ffcover_1_.jpg"
+  },
+  {
+   "name": "Assassin's Creed 2 PC",
+   "price": 3.29,
+   "was": 13.29,
+   "off": 75,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=ASSNSCR2PC&u=https%3A%2F%2Fwww.loaded.com%2Fassassins-creed-2-uplay-pc%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/a/s/assassins-creed-2-pc-cover-cdkeys.jpg"
+  },
+  {
+   "name": "FINAL FANTASY VIII PC",
+   "price": 5.69,
+   "was": 11.99,
+   "off": 53,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=FINALFANT8PC&u=https%3A%2F%2Fwww.loaded.com%2Ffinal-fantasy-viii-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/f/i/final-fantasy-viii-pc-steam.jpg"
+  }
+ ],
+ "cards": [
+  {
+   "card": "Nintendo eShop",
+   "face": 10,
+   "store": "Kinguin",
+   "usd": 8.22,
+   "approx": true,
+   "off": 18,
+   "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=3926&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F3926%2Fnintendo-eshop-prepaid-card-usd-10-us-key%3Fnosalesbooster%3D1%26currency%3DGBP%26gs%3Dtrue%26countryCode%3DGB&intsrc=APIG_32658&subId1=site-bf-card-nintendo10-kinguin"
+  },
+  {
+   "card": "Xbox",
+   "face": 50,
+   "store": "Kinguin",
+   "usd": 44.49,
+   "approx": true,
+   "off": 11,
+   "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=7234&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F7234%2Fxbox-live-usd-50-prepaid-card-us%3Fnosalesbooster%3D1%26currency%3DGBP%26gs%3Dtrue%26countryCode%3DGB&intsrc=APIG_32658&subId1=site-bf-card-xbox50-kinguin"
+  },
+  {
+   "card": "Nintendo eShop",
+   "face": 70,
+   "store": "Gameseal",
+   "usd": 63.79,
+   "approx": true,
+   "off": 9,
+   "url": "https://impact.gameseal.com/c/8059330/3722709/25825?prodsku=31772&u=https%3A%2F%2Fgameseal.com%2Fnintendo-eshop-card-70-usd-key-united-states%3Fcurrency%3DGBP&intsrc=APIG_29769&subId1=site-bf-card-nintendo70-gameseal"
+  },
+  {
+   "card": "Xbox",
+   "face": 10,
+   "store": "Kinguin",
+   "usd": 9.41,
+   "approx": true,
+   "off": 6,
+   "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=11097&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F11097%2Fxbox-live-us-10-usd-prepaid%3Fnosalesbooster%3D1%26currency%3DGBP%26gs%3Dtrue%26countryCode%3DGB&intsrc=APIG_32658&subId1=site-bf-card-xbox10-kinguin"
+  },
+  {
+   "card": "Nintendo eShop",
+   "face": 20,
+   "store": "Loaded",
+   "usd": 18.79,
+   "approx": false,
+   "off": 6,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=NES20USD&u=https%3A%2F%2Fwww.loaded.com%2Fnintendo-eshop-card-20-usd%3F__currency%3Dusd&intsrc=APIG_12134&subId1=site-bf-card-nintendo20-loaded"
+  },
+  {
+   "card": "Nintendo eShop",
+   "face": 35,
+   "store": "Gameseal",
+   "usd": 32.93,
+   "approx": false,
+   "off": 6,
+   "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=1004&u=https%3A%2F%2Fgameseal.com%2Fnintendo-eshop-card-35-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_24509&subId1=site-bf-card-nintendo35-gameseal"
+  },
+  {
+   "card": "Nintendo eShop",
+   "face": 50,
+   "store": "Loaded",
+   "usd": 46.99,
+   "approx": false,
+   "off": 6,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=NESC50USD&u=https%3A%2F%2Fwww.loaded.com%2Fnintendo-eshop-card-50-usd%3F__currency%3Dusd&intsrc=APIG_12134&subId1=site-bf-card-nintendo50-loaded"
+  },
+  {
+   "card": "Roblox",
+   "face": 50,
+   "store": "Gameseal",
+   "usd": 46.94,
+   "approx": false,
+   "off": 6,
+   "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=48597&u=https%3A%2F%2Fgameseal.com%2Froblox-card-50-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_24509&subId1=site-bf-card-roblox50-gameseal"
+  }
+ ]
+}
