@@ -111,6 +111,12 @@ class Impact:
         return items
 
 
+def usd_landing(url):
+    """Feed links for the UK/GBP feeds land on the store in pounds; send US shoppers to the dollar version."""
+    url = url.replace("currency%3DGBP%26gs%3Dtrue%26countryCode%3DGB", "currency%3DUSD")
+    return url.replace("currency%3DGBP", "currency%3DUSD")
+
+
 def store_of(it):
     blob = (str(it.get("CampaignId") or it.get("ProgramId") or "") + " " + str(it.get("Url") or "")).lower()
     for sid, s in STORES.items():
@@ -180,7 +186,7 @@ def collect(api, rates):
                 # Guard against mismatched products: a real offer is between 60% and 140% of face value.
                 if not (0.6 * face <= usd <= 1.4 * face):
                     continue
-                url = str(it.get("Url") or "")
+                url = usd_landing(str(it.get("Url") or ""))
                 if STORES[sid]["host"] not in url:
                     continue
                 key = (card, face, sid)

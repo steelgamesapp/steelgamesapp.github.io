@@ -103,3 +103,17 @@
 
 ;/* sg-shop-nav: add Shop link to the menu on every page */
 (function(){try{var n=document.querySelector('nav.nav');if(!n||n.querySelector('a[href^="/shop"]'))return;var a=document.createElement('a');a.href='/shop/';a.textContent='Shop';var g=n.querySelector('a[href="/gear.html"]');if(g)n.insertBefore(a,g);else n.appendChild(a);}catch(e){}})();
+
+;/* sg-bf-bar: site-wide Black Friday / Cyber Monday bar linking to the live deals hub (hides after Dec 1, 2026) */
+(function(){try{
+  if(Date.now()>Date.parse('2026-12-01T23:59:59-06:00')||location.pathname.indexOf('/black-friday')===0)return;
+  function go(){if(document.getElementById('sgBfBar'))return;
+    var b=document.createElement('a');b.id='sgBfBar';b.href='/black-friday/';
+    var cm=Date.now()>Date.parse('2026-11-29T00:00:00-06:00');
+    b.innerHTML='<b>'+(cm?'CYBER MONDAY':'BLACK FRIDAY')+'</b> Live deals on gaming gear, PC games and gift cards &rarr;';
+    b.style.cssText='display:block;text-align:center;padding:10px 14px;background:linear-gradient(90deg,#FF7A1A,#E0303A);color:#140D33;font:600 15px Inter,system-ui,sans-serif;text-decoration:none';
+    b.addEventListener('click',function(){try{window.goatcounter&&goatcounter.count&&goatcounter.count({path:'bf-bar-click',title:location.pathname,event:true})}catch(e){}});
+    var h=document.querySelector('header.site-header')||document.querySelector('header');
+    if(h&&h.parentNode)h.parentNode.insertBefore(b,h);else document.body.insertBefore(b,document.body.firstChild);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();
+}catch(e){}})();

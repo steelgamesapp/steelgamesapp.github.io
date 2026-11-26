@@ -32,6 +32,7 @@ BLURB = {
     "roblox": "Robux and Roblox Premium. Check that the card works in your country before you buy.",
 }
 PROMOS = [
+    {"store": "all", "until": "2026-12-01", "html": '<b>Black Friday and Cyber Monday:</b> gift cards under face value plus live gear and PC game deals. <a href="/black-friday/">See every deal</a>.'},
     {"store": "kinguin", "until": "2026-11-26", "html": 'Kinguin reader code <b class="gc-hl">STEEL4</b>: 4% off the Prepaid category, Nov 12 to Nov 26 (carts up to &euro;150, two uses per person).'},
 ]
 

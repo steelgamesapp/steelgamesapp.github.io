@@ -37,7 +37,7 @@ GEAR_BRANDS = {  # CampaignName contains -> display name, what to keep (regex on
     "edifier": ("Edifier", None),
     "twinkly": ("Twinkly", None),
     "uperfect": ("UPERFECT", None),
-    "satechi": ("Satechi", r"keyboard|hub|dock|charger|stand|ssd|enclosure|mouse|controller"),
+    "satechi": ("Satechi", r"keyboard|monitor stand|ssd|mouse|controller"),
     "lemorele": ("Lemorele", r"hub|dock|kvm|adapter|switch|charger"),
 }
 GEAR_QUERIES = ["gaming keyboard", "gaming mouse", "mechanical keyboard", "gaming headset", "gaming speakers", "speakers",
@@ -76,7 +76,9 @@ def num(v):
 
 
 def base_name(n):
-    return re.sub(r"\s+-\s+[^-]{1,40}$", "", n).strip()
+    """Product name without colour or variant ("Keyboard - White", "[Combo Off]")."""
+    n = re.sub(r"\[[^\]]*\]", "", n)
+    return re.split(r"\s+-\s+", n)[0].strip()
 
 
 def track(url, sub):
@@ -118,7 +120,7 @@ def gear_deals(api):
     keep = []
     for d in out:  # at most 10 per brand so one brand can't fill the page
         per[d["brand"]] = per.get(d["brand"], 0) + 1
-        if per[d["brand"]] <= 10:
+        if per[d["brand"]] <= (4 if d["brand"] in ("Satechi", "Lemorele") else 10):
             keep.append(d)
     return keep
 
