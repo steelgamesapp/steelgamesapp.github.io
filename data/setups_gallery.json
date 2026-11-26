@@ -1,0 +1,331 @@
+{
+ "_how_to_add": "Add a setup: save the picture as assets/setups/<slug>.jpg (4:5 or square), add a post here with its real width (w) and height (h) and its numbered product list. Each item: what (product type), name (the real product it looks like), q (Amazon search phrase) or asin (exact product), x and y (dot position, percent from left and top). Put new posts first. Then run python3 tools/setups_page.py.",
+ "posts": [
+  {
+   "slug": "vice-city-sunset",
+   "type": "setup",
+   "title": "Vice City Sunset setup",
+   "caption": "Pink and purple neon, a palm-tree beach wallpaper and a retro cream keyboard. Built for the GTA 6 hype without a single logo.",
+   "tip": "Set the light bars to pink and purple, then grab a sunset palm-beach wallpaper for the monitor.",
+   "img": "/assets/setups/vice-city-sunset.jpg",
+   "w": 1536,
+   "h": 1536,
+   "ai": true,
+   "items": [
+    {
+     "what": "Monitor",
+     "name": "LG UltraGear 27GR75Q 27-inch 1440p Monitor",
+     "asin": "B0BVWMSP1V",
+     "x": 53,
+     "y": 36
+    },
+    {
+     "what": "Monitor light bar",
+     "name": "BenQ ScreenBar Monitor Light",
+     "asin": "B076VNFZJG",
+     "x": 51,
+     "y": 13
+    },
+    {
+     "what": "Retro cream keyboard",
+     "name": "Retro beige mechanical keyboards",
+     "q": "retro beige mechanical keyboard",
+     "x": 43,
+     "y": 72
+    },
+    {
+     "what": "White wireless mouse",
+     "name": "Logitech G305 Lightspeed Wireless Mouse (white option)",
+     "asin": "B07CMS5Q6P",
+     "x": 77,
+     "y": 77
+    },
+    {
+     "what": "Headset",
+     "name": "White wireless gaming headsets",
+     "q": "white wireless gaming headset",
+     "x": 91,
+     "y": 42
+    },
+    {
+     "what": "Headphone stand",
+     "name": "Metal headphone stands",
+     "q": "aluminum headphone stand",
+     "x": 91,
+     "y": 63
+    },
+    {
+     "what": "Controller",
+     "name": "PlayStation DualSense Wireless Controller",
+     "asin": "B0CQKLS4RP",
+     "x": 18,
+     "y": 55
+    },
+    {
+     "what": "Controller stand",
+     "name": "OIVO PS5 Controller Charging Station",
+     "asin": "B08LZGPPBH",
+     "x": 21,
+     "y": 64
+    },
+    {
+     "what": "City map desk mat",
+     "name": "City map desk mats",
+     "q": "city map desk mat xxl",
+     "x": 24,
+     "y": 87
+    },
+    {
+     "what": "Pink wall glow (behind the desk)",
+     "name": "Govee RGBIC Gaming Light Bars",
+     "asin": "B0B6CQ2LQ2"
+    }
+   ]
+  },
+  {
+   "slug": "clean-white",
+   "type": "setup",
+   "title": "Clean White setup",
+   "caption": "All white, daylight and one plant. Calm enough for work, fast enough for games.",
+   "tip": "Pick the white color option on each Amazon page before you add it to your cart.",
+   "img": "/assets/setups/clean-white.jpg",
+   "w": 1536,
+   "h": 1536,
+   "ai": true,
+   "items": [
+    {
+     "what": "Monitor",
+     "name": "Dell 27 Plus QHD Monitor S2725DSM",
+     "asin": "B0GD1LMWH3",
+     "x": 54,
+     "y": 38
+    },
+    {
+     "what": "White monitor arm",
+     "name": "White single monitor arms",
+     "q": "white single monitor arm",
+     "x": 65,
+     "y": 64
+    },
+    {
+     "what": "Monitor light bar",
+     "name": "BenQ ScreenBar Monitor Light",
+     "asin": "B076VNFZJG",
+     "x": 51,
+     "y": 20
+    },
+    {
+     "what": "Keyboard",
+     "name": "AULA F75 Pro Wireless Mechanical Keyboard (white option)",
+     "asin": "B0D14N2QZF",
+     "x": 41,
+     "y": 76
+    },
+    {
+     "what": "Mouse",
+     "name": "Logitech G Pro X Superlight 2 (white option)",
+     "asin": "B09NBWL8J5",
+     "x": 69,
+     "y": 81
+    },
+    {
+     "what": "Headset",
+     "name": "Logitech G733 Lightspeed Wireless Headset (white option)",
+     "asin": "B081415GCS",
+     "x": 90,
+     "y": 53
+    },
+    {
+     "what": "Headphone stand",
+     "name": "White headphone stands",
+     "q": "white headphone stand",
+     "x": 90,
+     "y": 67
+    },
+    {
+     "what": "Speakers",
+     "name": "Creative Pebble V3 Speakers (white option)",
+     "asin": "B08F57GSJ7",
+     "x": 21,
+     "y": 61
+    },
+    {
+     "what": "Felt desk mat",
+     "name": "Grey felt desk mats",
+     "q": "grey felt desk mat large",
+     "x": 13,
+     "y": 83
+    },
+    {
+     "what": "Controller",
+     "name": "Xbox Wireless Controller (Robot White)",
+     "asin": "B01LPZM7VI",
+     "x": 91,
+     "y": 80
+    }
+   ]
+  },
+  {
+   "slug": "rgb-streamer",
+   "type": "setup",
+   "title": "RGB Streamer setup",
+   "caption": "Two screens, a boom-arm mic, a key light and hex panels. Everything you need to go live tonight.",
+   "tip": "Start with the mic and the light. Viewers forgive a cheap webcam, not bad audio.",
+   "img": "/assets/setups/rgb-streamer.jpg",
+   "w": 1536,
+   "h": 1536,
+   "ai": true,
+   "items": [
+    {
+     "what": "Main monitor",
+     "name": "LG UltraGear 27GR75Q 27-inch 1440p Monitor",
+     "asin": "B0BVWMSP1V",
+     "x": 24,
+     "y": 27
+    },
+    {
+     "what": "Microphone",
+     "name": "FIFINE AmpliGame AM8 USB/XLR Microphone",
+     "asin": "B0BMFQP2ZZ",
+     "x": 43,
+     "y": 52
+    },
+    {
+     "what": "Mic boom arm",
+     "name": "Low-profile mic boom arms",
+     "q": "low profile microphone boom arm",
+     "x": 16,
+     "y": 34
+    },
+    {
+     "what": "Webcam",
+     "name": "Logitech Brio 101 1080p Webcam",
+     "asin": "B0BXGFFSL1",
+     "x": 38,
+     "y": 22
+    },
+    {
+     "what": "Key light",
+     "name": "LED key lights for streaming",
+     "q": "led key light streaming desk",
+     "x": 79,
+     "y": 13
+    },
+    {
+     "what": "Stream controller",
+     "name": "Elgato Stream Deck MK.2",
+     "asin": "B09738CV2G",
+     "x": 64,
+     "y": 62
+    },
+    {
+     "what": "Hex wall lights",
+     "name": "Hexagon RGB light panels",
+     "q": "hexagon rgb light panels",
+     "x": 55,
+     "y": 9
+    },
+    {
+     "what": "RGB keyboard",
+     "name": "SteelSeries Apex 3 Gaming Keyboard",
+     "asin": "B07ZGDPT4M",
+     "x": 43,
+     "y": 73
+    },
+    {
+     "what": "Mouse",
+     "name": "Logitech G502 Hero Wired Mouse",
+     "asin": "B07GBZ4Q68",
+     "x": 80,
+     "y": 72
+    },
+    {
+     "what": "RGB desk mat",
+     "name": "RGB extended mouse pads",
+     "q": "rgb extended gaming mouse pad",
+     "x": 20,
+     "y": 88
+    },
+    {
+     "what": "Headset",
+     "name": "Razer BlackShark V2 X Headset",
+     "asin": "B086PKMZ21",
+     "x": 91,
+     "y": 40
+    },
+    {
+     "what": "RGB headset stand",
+     "name": "Razer Base Station V2 Chroma Headset Stand",
+     "asin": "B08J5WQTL5",
+     "x": 91,
+     "y": 62
+    }
+   ]
+  },
+  {
+   "slug": "handheld-corner",
+   "type": "setup",
+   "title": "Cozy Handheld corner",
+   "caption": "An armchair, a warm lamp and a handheld PC on a dock. Couch gaming without the desk.",
+   "tip": "A dock turns the handheld into a TV console. Add a microSD card for more games.",
+   "img": "/assets/setups/handheld-corner.jpg",
+   "w": 1536,
+   "h": 1536,
+   "ai": true,
+   "items": [
+    {
+     "what": "Handheld PC",
+     "name": "Handheld gaming PCs (ROG Xbox Ally, Steam Deck, Legion Go)",
+     "q": "handheld gaming pc",
+     "x": 54,
+     "y": 47
+    },
+    {
+     "what": "Dock",
+     "name": "Handheld gaming PC docks",
+     "q": "handheld gaming pc dock usb c hdmi",
+     "x": 54,
+     "y": 60
+    },
+    {
+     "what": "Carry case",
+     "name": "Handheld gaming PC cases",
+     "q": "handheld gaming pc carrying case",
+     "x": 47,
+     "y": 71
+    },
+    {
+     "what": "Power bank",
+     "name": "65W USB-C power banks",
+     "q": "65w usb c power bank laptop",
+     "x": 18,
+     "y": 66
+    },
+    {
+     "what": "Earbuds",
+     "name": "Low-latency gaming earbuds",
+     "q": "low latency gaming earbuds",
+     "x": 72,
+     "y": 69
+    },
+    {
+     "what": "Warm lamp",
+     "name": "Warm RGB table lamps",
+     "q": "rgb table lamp warm glow",
+     "x": 17,
+     "y": 34
+    },
+    {
+     "what": "Storage",
+     "name": "SanDisk 256GB Ultra microSD",
+     "asin": "B0B7NV73PJ"
+    },
+    {
+     "what": "Controller for the TV",
+     "name": "8BitDo Ultimate 2 Wireless Controller",
+     "asin": "B0DR8V899R"
+    }
+   ]
+  }
+ ]
+}

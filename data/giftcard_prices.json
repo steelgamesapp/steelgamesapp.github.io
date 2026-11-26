@@ -1,0 +1,7 @@
+{
+  "note": "Kinguin prices for US PlayStation and Xbox cards, read from Kinguin's Impact product feed (UK price list, GBP). Used only when the Impact keys aren't set, and only for 2 days after checked.",
+  "checked": "2026-11-17",
+  "currency": "GBP",
+  "psn": {"10": 7.60, "25": 18.94, "50": 38.49, "75": 57.71, "100": 76.78},
+  "xbox": {"25": 18.24, "50": 36.69, "100": 73.36}
+}

@@ -11,6 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Refresh prices
+        env:
+          IMPACT_ACCOUNT_SID: ${{ secrets.IMPACT_ACCOUNT_SID }}
+          IMPACT_AUTH_TOKEN: ${{ secrets.IMPACT_AUTH_TOKEN }}
         run: python3 scripts/update_prices.py
       - name: Commit changes
         run: |

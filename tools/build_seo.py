@@ -20,6 +20,7 @@ import shop_pages
 import deal_page
 import gear
 import pros
+import kinguin_keys
 from datetime import datetime, timezone
 
 SITE = "https://steelgamesapp.com"
@@ -410,6 +411,7 @@ def game_page(gid, g, stores, today):
 {waitometer.widget(_wom)}
 <div class="gact" style="border:0;background:none;padding:0">{shop_btns}</div>
 <a class="btn" rel="sponsored noopener" href="https://www.cheapshark.com/redirect?dealID={e(str(best.get('dealID','')))}">Buy at {e(stores[str(best['storeID'])])} for {money(cur)}</a>
+{kinguin_keys.block(gid, official=cur)}
 {low_line}
 {military_page.best_for_game_html()}
 </div></div>
@@ -475,6 +477,7 @@ def build_games(stores, today, seeds, fetch_game):
                     _t = old_cards[old][0]
                     _old_html = open(_p).read()
                     _new_html = gear.inject(_old_html, _t) if len(_old_html) > 1000 else ""
+                    _new_html = kinguin_keys.inject(_new_html, gid) if len(_new_html) > 1000 else _new_html
                     if len(_new_html) > 1000:  # never blank an existing page
                         open(_p, "w").write(_new_html)
                     GEAR_GAMES[str(gid)] = gear.slots_for(_t)[0]
@@ -642,7 +645,7 @@ def main():
             print(f"::warning title=Price API unavailable::skipped this run ({ex}); existing pages left unchanged")
             return
         fetch = lambda q: get("/deals", {**q, "pageSize": 40, "onSale": 1})
-    urls = [f"{SITE}/", f"{SITE}/games.html", f"{SITE}/keys.html", f"{SITE}/get-app/", f"{SITE}/gear.html", f"{SITE}/gifts/", f"{SITE}/gift-cards/", f"{SITE}/reviews.html", f"{SITE}/about.html", f"{SITE}/military.html", f"{SITE}/advertise.html", f"{SITE}/deals/", f"{SITE}/international.html"]
+    urls = [f"{SITE}/", f"{SITE}/games.html", f"{SITE}/keys.html", f"{SITE}/get-app/", f"{SITE}/gear.html", f"{SITE}/gifts/", f"{SITE}/gift-cards/", f"{SITE}/gta-6/", f"{SITE}/reviews.html", f"{SITE}/about.html", f"{SITE}/military.html", f"{SITE}/advertise.html", f"{SITE}/deals/", f"{SITE}/international.html"]
     # Per-game pages first (most of the site), while the price API budget is fresh.
     # Per-game pages: seed with today's top deals, then rebuild every tracked game.
     try:
@@ -720,6 +723,20 @@ def main():
         urls.append(f"{SITE}/media-kit/")
     except Exception as ex:
         print("media kit failed", ex, file=sys.stderr)
+    try:  # Desk Setup Builder (/setups/): parts and Amazon picks live in data/setup_builder.json
+        import builder_page
+        os.makedirs(os.path.join(ROOT, "setups"), exist_ok=True)
+        open(os.path.join(ROOT, "setups", "index.html"), "w").write(builder_page.build())
+        urls.append(f"{SITE}/setups/")
+    except Exception as ex:
+        print("setup builder failed", ex, file=sys.stderr)
+    try:  # Shop the Setup gallery (/setups/ideas/): posts live in data/setups_gallery.json
+        import setups_page
+        os.makedirs(os.path.join(ROOT, "setups", "ideas"), exist_ok=True)
+        open(os.path.join(ROOT, "setups", "ideas", "index.html"), "w").write(setups_page.build())
+        urls.append(f"{SITE}/setups/ideas/")
+    except Exception as ex:
+        print("setups gallery failed", ex, file=sys.stderr)
     os.makedirs(os.path.join(ROOT, "deals"), exist_ok=True)
     open(os.path.join(ROOT, "deals", "index.html"), "w").write(hub_html(today))
     try:
