@@ -1,15 +1,6 @@
 {
- "updated": "2026-11-26T17:22:07Z",
+ "updated": "2026-11-26T17:25:16Z",
  "gear": [
-  {
-   "brand": "Satechi",
-   "name": "Duo Wireless Charger Power Stand",
-   "price": 29.99,
-   "was": 99.99,
-   "off": 70,
-   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=40133408981080&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fduo-wireless-charger-power-stand&intsrc=APIG_32670",
-   "img": "https://cdn.shopify.com/s/files/1/1520/4366/products/duo-wireless-charger-power-stand-charging-stations-wireless-chargers-satechi-752969.jpg?v=1762441300"
-  },
   {
    "brand": "SOLAKAKA",
    "name": "SOLAKAKA SM900 Gaming Mouse",
@@ -21,48 +12,12 @@
   },
   {
    "brand": "Satechi",
-   "name": "Trio Wireless Charger With Magnetic Pad",
-   "price": 48.99,
-   "was": 119.99,
-   "off": 59,
-   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=32008960573528&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Ftrio-wireless-charging-pad&intsrc=APIG_32670",
-   "img": "https://cdn.shopify.com/s/files/1/1520/4366/products/trio-wireless-charging-pad-charging-stations-satechi-868975.jpg?v=1762440331"
-  },
-  {
-   "brand": "Satechi",
    "name": "USB-C Monitor Stand Hub XL",
    "price": 69.99,
    "was": 149.99,
    "off": 53,
    "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=42180772626520&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fusb-c-monitor-stand-hub-xl&intsrc=APIG_32670",
    "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/usb-c-monitor-stand-hub-xl-satechi-990162.webp?v=1762441653"
-  },
-  {
-   "brand": "Satechi",
-   "name": "Dual USB-C Hub For Surface Pro",
-   "price": 29.39,
-   "was": 59.99,
-   "off": 51,
-   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=40228609949784&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fdual-usb-c-hub-for-surface-pro-9&intsrc=APIG_32670",
-   "img": "https://cdn.shopify.com/s/files/1/1520/4366/products/dual-usb-c-hub-for-surface-pro-9-hubs-satechi-379939.jpg?v=1762441386"
-  },
-  {
-   "brand": "Satechi",
-   "name": "Pro Hub Mini",
-   "price": 34.29,
-   "was": 69.99,
-   "off": 51,
-   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=6841221513304&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fpro-hub-mini&intsrc=APIG_32670",
-   "img": "https://cdn.shopify.com/s/files/1/1520/4366/products/pro-hub-mini-hubs-adapters-satechi-space-gray-140701.jpg?v=1762441042"
-  },
-  {
-   "brand": "Satechi",
-   "name": "OntheGo\u2122 3-in-1 Charger",
-   "price": 49.99,
-   "was": 99.99,
-   "off": 50,
-   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=8231802798168&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fonthego-3-in-1-charger&intsrc=APIG_32670",
-   "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/Onthego3-in-1Black.webp?v=1792521060"
   },
   {
    "brand": "AutoFull",
@@ -83,24 +38,6 @@
    "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/G7_RGB_MainImage_03_41abd7e1-be56-4dba-b398-b5283ab185b3.png?v=1778730828"
   },
   {
-   "brand": "Satechi",
-   "name": "Aluminum Dock for MagSafe Charger",
-   "price": 14.99,
-   "was": 24.99,
-   "off": 40,
-   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=39527884390488&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Faluminum-dock-for-magsafe-charger&intsrc=APIG_32670",
-   "img": "https://cdn.shopify.com/s/files/1/1520/4366/products/aluminum-dock-for-magsafe-charger-case-satechi-467687.jpg?v=1762440945"
-  },
-  {
-   "brand": "Satechi",
-   "name": "OntheGo\u2122 2-in-1 Charger",
-   "price": 47.99,
-   "was": 79.99,
-   "off": 40,
-   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=8231811285080&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fonthego-2-in-1-charger&intsrc=APIG_32670",
-   "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/onthego-2-in-1-charger-wireless-chargers-satechi-black-897980.webp?v=1762441795"
-  },
-  {
    "brand": "SOLAKAKA",
    "name": "SOLAKAKA AX68 SE Magnetic 68-key Gaming Wired Keyboard",
    "price": 39.99,
@@ -110,48 +47,12 @@
    "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/SOLAKAKAAX68SE-black.jpg?v=1790157576"
   },
   {
-   "brand": "SOLAKAKA",
-   "name": "SOLAKAKA AX68 SE Magnetic 68-key Gaming Wired Keyboard - Gradient Gray Side-Printed",
-   "price": 39.99,
-   "was": 63.99,
-   "off": 38,
-   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=58527503221039&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-ax68-se-magnetic-gaming-wired-keyboard%3Fvariant%3D58527503221039&intsrc=APIG_37975",
-   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/SOLAKAKAAX68SEgrey.jpg?v=1790157576"
-  },
-  {
-   "brand": "Satechi",
-   "name": "Type-C Pro Hub Adapter with Ethernet",
-   "price": 62.99,
-   "was": 99.99,
-   "off": 37,
-   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=219806859273&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Faluminum-type-c-pro-hub-adapter-with-ethernet&intsrc=APIG_32670",
-   "img": "https://cdn.shopify.com/s/files/1/1520/4366/products/type-c-pro-hub-adapter-with-ethernet-hubs-adapters-hubs-satechi-space-gray-335187.jpg?v=1762439632"
-  },
-  {
    "brand": "AutoFull",
    "name": "AutoFull C3 Pro Ergonomic Gaming Chair + A4 Pro Gaming Desk Bundle",
    "price": 849.99,
    "was": 1298.0,
    "off": 35,
    "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=15355201192185&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-c3-pro-ergonomic-gaming-chair-a4-pro-gaming-desk-bundle&intsrc=APIG_22782",
-   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/C3_Pro_Black_A4_Pro_Main_Image_01_Product_image_front.png?v=1793932617"
-  },
-  {
-   "brand": "AutoFull",
-   "name": "AutoFull C3 Pro Ergonomic Gaming Chair + A4 Pro Gaming Desk Bundle - Silver / Standard (without ventilation and footrest)",
-   "price": 849.99,
-   "was": 1298.0,
-   "off": 35,
-   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=67611696726265&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-c3-pro-ergonomic-gaming-chair-a4-pro-gaming-desk-bundle%3Fvariant%3D67611696726265&intsrc=APIG_22782",
-   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/C3ProWhite_A4Pro_MainImage_01_Productimage_front.png?v=1793932619"
-  },
-  {
-   "brand": "AutoFull",
-   "name": "AutoFull C3 Pro Ergonomic Gaming Chair + A4 Pro Gaming Desk Bundle - Black / Standard (without ventilation and footrest)",
-   "price": 849.99,
-   "was": 1298.0,
-   "off": 35,
-   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=67611696660729&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-c3-pro-ergonomic-gaming-chair-a4-pro-gaming-desk-bundle%3Fvariant%3D67611696660729&intsrc=APIG_22782",
    "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/C3_Pro_Black_A4_Pro_Main_Image_01_Product_image_front.png?v=1793932617"
   },
   {
@@ -165,7 +66,7 @@
   },
   {
    "brand": "AutoFull",
-   "name": "AutoFull G7  Gaming Chair & A4 Pro Gaming Desk Bundle [\ud83d\udca5Combo Off]",
+   "name": "AutoFull G7  Gaming Chair & A4 Pro Gaming Desk Bundle",
    "price": 1079.99,
    "was": 1599.99,
    "off": 33,
@@ -201,12 +102,21 @@
   },
   {
    "brand": "AutoFull",
-   "name": "AutoFull C3 Pro Ergonomic Gaming Chair + A4 Pro Gaming Desk Bundle - Black / Advanced (with ventilation and footrest)",
-   "price": 949.99,
-   "was": 1398.0,
-   "off": 32,
-   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=67611696693497&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-c3-pro-ergonomic-gaming-chair-a4-pro-gaming-desk-bundle%3Fvariant%3D67611696693497&intsrc=APIG_22782",
-   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/C3_Pro_Advanced_Black_A4_Pro_Main_Image_01_Product_image_front.png?v=1793932621"
+   "name": "AutoFull M6 Ultra+ 2.0 Shiatsu Massage Gaming Chair & A4 Pro Gaming Desk Bundle",
+   "price": 1319.98,
+   "was": 1899.99,
+   "off": 31,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=48763196670201&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-m6-ultra-2-0-shiatsu-massage-gaming-chair-gaming-desk-bundle&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/20260602-141934.jpg?v=1786096470"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull M6 Ultra 2.0 Ergonomic Gaming Chair",
+   "price": 479.99,
+   "was": 699.99,
+   "off": 31,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=8996768547065&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fm6-ultra-2-0-new-upgraded&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/M602_MainImage_01_Productimage_front_webp_2e0b5122-4aa4-425a-b6cf-92aee82804d6.webp?v=1778408270"
   },
   {
    "brand": "Satechi",
@@ -216,6 +126,24 @@
    "off": 30,
    "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=8546727723096&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fslim-ex3-wireless-keyboard&intsrc=APIG_32670",
    "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/slim-ex3-wireless-keyboard-satechi-853405.webp?v=1766771020"
+  },
+  {
+   "brand": "Satechi",
+   "name": "Slim LX3 Wired Keyboard",
+   "price": 34.99,
+   "was": 49.99,
+   "off": 30,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=8699869954136&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fslim-lx3-wired-keyboard&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/SATECHI_Keyboard_BANANABREAD_silver_US_2bcopy.webp?v=1775758574"
+  },
+  {
+   "brand": "Satechi",
+   "name": "Slim EX1 Wireless Keyboard",
+   "price": 34.99,
+   "was": 49.99,
+   "off": 30,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=8546716188760&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fslim-ex1-wireless-keyboard&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/slim-ex1-wireless-keyboard-satechi-879769.webp?v=1770747426"
   },
   {
    "brand": "SOLAKAKA",
@@ -237,24 +165,6 @@
   },
   {
    "brand": "SOLAKAKA",
-   "name": "SOLAKAKA A99 Pro Mechanical Keyboard - Gray-Black",
-   "price": 69.99,
-   "was": 99.99,
-   "off": 30,
-   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=57047736877359&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-a99-pro-mechanical-keyboard%3Fvariant%3D57047736877359&intsrc=APIG_37975",
-   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/SOLAKAKA_A99_pro-gary_-BLACK.jpg?v=1776766023"
-  },
-  {
-   "brand": "SOLAKAKA",
-   "name": "SOLAKAKA Ki75 Wireless Mechanical Keyboard - White-Gray-Brown",
-   "price": 69.99,
-   "was": 100.0,
-   "off": 30,
-   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=58662275088687&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-ki75-gaming-keyboard%3Fvariant%3D58662275088687&intsrc=APIG_37975",
-   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/Ki75WirelessKeyboard.png?v=1792119354"
-  },
-  {
-   "brand": "SOLAKAKA",
    "name": "SOLAKAKA KI99 Pro Wireless Mechanical Keyboard Non-Silent Version",
    "price": 66.99,
    "was": 95.99,
@@ -270,6 +180,42 @@
    "off": 30,
    "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=15591304429871&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-e9-vertical-mmo-gaming-mouse&intsrc=APIG_37975",
    "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/E9-white.png?v=1776916094"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "(Canada Exclusive) AutoFull M6 Elite Ergonomic Gaming Chair",
+   "price": 349.99,
+   "was": 499.99,
+   "off": 30,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=67236789256441&u=https%3A%2F%2Fwww.autofull.com%2Fen-ca%2Fproducts%2Fautofull-m6-elite-gaming-chair&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/10_65c145e7-1b66-4db2-9fb0-ddc9da6e486c.jpg?v=1790587123"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA A75 Wireless Mechanical Keyboard",
+   "price": 59.99,
+   "was": 82.99,
+   "off": 28,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=10799052456239&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-a75-wireless-mechanical-keyboard&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/a75-Purple_3.png?v=1792656994"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA A75 PRO 75% Wireless Mechanical Gaming Keyboard",
+   "price": 59.99,
+   "was": 79.99,
+   "off": 25,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=15997130965295&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-a75-pro-wireless-mechanical-gaming-keyboard&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/SOLAKAKA-A75-PRO-zhutu-black.jpg?v=1782973625"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA SM822 Wireless Gaming Mouse",
+   "price": 24.99,
+   "was": 32.99,
+   "off": 24,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=14869724758319&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-sm822-wireless-gaming-mouse&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/solakaka-sm822-white.jpg?v=1777011900"
   }
  ],
  "games": [
@@ -450,7 +396,7 @@
    "usd": 8.22,
    "approx": true,
    "off": 18,
-   "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=3926&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F3926%2Fnintendo-eshop-prepaid-card-usd-10-us-key%3Fnosalesbooster%3D1%26currency%3DGBP%26gs%3Dtrue%26countryCode%3DGB&intsrc=APIG_32658&subId1=site-bf-card-nintendo10-kinguin"
+   "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=3926&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F3926%2Fnintendo-eshop-prepaid-card-usd-10-us-key%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658&subId1=site-bf-card-nintendo10-kinguin"
   },
   {
    "card": "Xbox",
@@ -459,7 +405,7 @@
    "usd": 44.49,
    "approx": true,
    "off": 11,
-   "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=7234&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F7234%2Fxbox-live-usd-50-prepaid-card-us%3Fnosalesbooster%3D1%26currency%3DGBP%26gs%3Dtrue%26countryCode%3DGB&intsrc=APIG_32658&subId1=site-bf-card-xbox50-kinguin"
+   "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=7234&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F7234%2Fxbox-live-usd-50-prepaid-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658&subId1=site-bf-card-xbox50-kinguin"
   },
   {
    "card": "Nintendo eShop",
@@ -468,7 +414,7 @@
    "usd": 63.79,
    "approx": true,
    "off": 9,
-   "url": "https://impact.gameseal.com/c/8059330/3722709/25825?prodsku=31772&u=https%3A%2F%2Fgameseal.com%2Fnintendo-eshop-card-70-usd-key-united-states%3Fcurrency%3DGBP&intsrc=APIG_29769&subId1=site-bf-card-nintendo70-gameseal"
+   "url": "https://impact.gameseal.com/c/8059330/3722709/25825?prodsku=31772&u=https%3A%2F%2Fgameseal.com%2Fnintendo-eshop-card-70-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_29769&subId1=site-bf-card-nintendo70-gameseal"
   },
   {
    "card": "Xbox",
@@ -477,7 +423,7 @@
    "usd": 9.41,
    "approx": true,
    "off": 6,
-   "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=11097&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F11097%2Fxbox-live-us-10-usd-prepaid%3Fnosalesbooster%3D1%26currency%3DGBP%26gs%3Dtrue%26countryCode%3DGB&intsrc=APIG_32658&subId1=site-bf-card-xbox10-kinguin"
+   "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=11097&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F11097%2Fxbox-live-us-10-usd-prepaid%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658&subId1=site-bf-card-xbox10-kinguin"
   },
   {
    "card": "Nintendo eShop",
