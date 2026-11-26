@@ -164,7 +164,7 @@ def main():
         sel = [c for c in priced if lo <= c["price"] < hi]
         if not sel:
             continue
-        intro = (f"Brand-store prices as each store listed them on {esc(asof)}, and JLab list prices (JLab buttons go to Amazon, where the price can differ). "
+        intro = (f"Brand-store prices as each store listed them on {esc(asof)}. "
                  "Prices can change, so check the final price at checkout.")
         out_sections.append(section(sid, title, intro, '<div class="cat">' + grid(sel) + "</div>"))
         jump.append((sid, title.replace("Gifts from ", "").replace("Stocking stuffers under", "Under")))

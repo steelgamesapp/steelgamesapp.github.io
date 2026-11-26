@@ -182,6 +182,9 @@ def kind_of(n):
     return "gear"
 
 
+AMAZON_ONLY = ("price", "stars", "ratings")
+
+
 def update_bestsellers():
     old = load(BEST, {"items": []})
     lists = [("https://www.amazon.com/Best-Sellers-Video-Games-PC-Accessories/zgbs/videogames/229575", "PC gaming"),
@@ -199,6 +202,11 @@ def update_bestsellers():
     if len(items) < 6:
         print("bestseller list too short, keeping old data", file=sys.stderr)
         return old
+    # Amazon Associates linking rules: we may not show Amazon prices or ratings we copied ourselves
+    # (only Amazon-served links or PA-API data). Keep name, picture, link and rank only.
+    for it in items:
+        for k in AMAZON_ONLY:
+            it.pop(k, None)
     data = {"updated": now_iso(), "source": "Amazon Best Sellers: PC Games & Accessories", "items": items[:24]}
     json.dump(data, open(BEST, "w"), indent=0)
     return data
@@ -215,19 +223,12 @@ def update_ram_kits(ram):
         gen = re.search(r"ddr[45]", i["name"], re.I).group(0).upper()
         cap = re.search(r"(\d{1,3})\s?GB", i["name"], re.I)
         i["gen"], i["gb"] = gen, int(cap.group(1)) if cap else None
-        hist = ram["kits_history"].setdefault(i["asin"], [])
-        if not hist or hist[-1][1] != i["price"] or hist[-1][0][:10] != t[:10]:
-            hist.append([t, i["price"]])
-        ram["kits_history"][i["asin"]] = hist[-400:]
+        for k in AMAZON_ONLY:  # no copied Amazon prices or ratings on our pages (Associates rules)
+            i.pop(k, None)
     ram["kits"] = items[:12]
     ram["kits_updated"] = t
-    # An average $/GB index across the best-selling desktop kits, one per generation, recorded each run.
-    for gen in ("DDR5", "DDR4"):
-        per = [i["price"] / i["gb"] for i in items if i["gen"] == gen and i["gb"]]
-        if per:
-            s = ram["retail"].setdefault(gen, [])
-            s.append([t, round(sum(per) / len(per), 3)])
-            ram["retail"][gen] = s[-MAX_POINTS:]
+    # Amazon kit price history and the $/GB index were removed Nov 26, 2026 (Associates rules).
+    ram["kits_history"], ram["retail"] = {}, {}
 
 
 def main():

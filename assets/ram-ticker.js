@@ -38,11 +38,9 @@
       const up = t.chg > 0, flat = !t.chg;
       cells.push(`<a class="tk" href="/pros/#ram"><b>${esc(s.name)}</b> ${money(t.avg, 3)} <i class="${flat ? 'fl' : up ? 'up' : 'dn'}">${flat ? '■' : up ? '▲' : '▼'} ${Math.abs(t.chg).toFixed(2)}%</i></a>`);
     }
+    // Amazon's Associates rules: no copied Amazon prices on our pages, so kits show a "check price" link only.
     for (const k of (data.kits || []).slice(0, 8)) {
-      const h = (data.kits_history || {})[k.asin] || [];
-      const prev = h.length > 1 ? h[h.length - 2][1] : null;
-      const d = prev ? (k.price - prev) / prev * 100 : 0;
-      cells.push(`<a class="tk" href="${esc(k.url)}" target="_blank" rel="sponsored nofollow noopener"><b>${esc(k.gen)} ${k.gb || ''}GB</b> ${esc(String(k.short || '').replace(/ (DDR[45]|RAM).*/i, ''))} ${money(k.price)}${d ? ` <i class="${d > 0 ? 'up' : 'dn'}">${d > 0 ? '▲' : '▼'} ${Math.abs(d).toFixed(1)}%</i>` : ''}</a>`);
+      cells.push(`<a class="tk" href="${esc(k.url)}" target="_blank" rel="sponsored nofollow noopener"><b>${esc(k.gen)} ${k.gb || ''}GB</b> ${esc(String(k.short || '').replace(/ (DDR[45]|RAM).*/i, ''))} <i class="fl">check price on Amazon</i></a>`);
     }
     return cells;
   }

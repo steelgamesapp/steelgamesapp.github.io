@@ -222,14 +222,14 @@ def ram_section(ram):
                       f'<span class="rng">Day range ${t.get("lo") or 0:,.2f} – ${t.get("hi") or 0:,.2f}</span></div>')
     return f"""<section class="block"><div class="wrap"><div class="ram-board" id="ram">
 <div class="ram-head"><h2><span class="live-dot" aria-hidden="true"></span>RAM price tracker</h2><span class="fine" id="ramUpdated" aria-live="polite"></span></div>
-<p class="fine" style="margin:0 0 12px">Memory prices have exploded as AI data centers buy up chips. This tracks the wholesale spot price of one memory chip (what RAM makers pay), plus what the best-selling RAM kits cost on Amazon right now.</p>
+<p class="fine" style="margin:0 0 12px">Memory prices have exploded as AI data centers buy up chips. This tracks the wholesale spot price of one memory chip (what RAM makers pay), plus links to the best-selling RAM kits on Amazon.</p>
 <div class="ram-stats" id="ramStats">{stats}</div>
 <div class="ram-ctl" id="ramCtl" role="group" aria-label="Chart options"></div>
 <div class="ram-chart" id="ramChart"></div>
 <p class="fine" id="ramNote"></p>
 <h3 style="margin-top:14px">Best-selling RAM kits on Amazon</h3>
 <div class="ram-kits" id="ramKits"></div>
-<p class="fine">Spot prices: <a href="https://www.dramexchange.com/" rel="nofollow noopener" target="_blank">DRAMeXchange</a> session average, USD per chip. Kit prices: Amazon Best Sellers in Computer Memory. Checked every two hours.</p>
+<p class="fine">Spot prices: <a href="https://www.dramexchange.com/" rel="nofollow noopener" target="_blank">DRAMeXchange</a> session average, USD per chip. Kits: Amazon Best Sellers in Computer Memory; tap a kit to see today's price on Amazon.</p>
 </div></div></section>
 """
 
@@ -243,14 +243,14 @@ def best_section(best):
     cards = ""
     for i in best.get("items", [])[:20]:
         icon = KIND_ICON.get(i.get("kind"), "mouse")
-        rating = f'★ {i["stars"]:.1f}' + (f' · {i["ratings"]:,}' if i.get("ratings") else "") if i.get("stars") else ""
-        price = f'<b>${i["price"]:,.2f}</b>' if i.get("price") else "<b>See price</b>"
+        rating = ""  # no copied Amazon ratings or prices on our pages (Associates rules)
+        price = "<b>See price on Amazon</b>"
         cards += (f'<a class="bs" href="{_e(i["url"])}" {REL}><span class="rk{" r1" if i["rank"] == best["items"][0]["rank"] else ""}">#{i["rank"]}</span>'
                   + ('<span class="pa">Pro pick</span>' if i["asin"] in pro_asins else "")
                   + f'<span class="pic"><img src="{_e(i["img"])}" alt="{_e(i["short"])}" loading="lazy" width="200" height="200" '
                   f'onerror="this.onerror=null;this.src=\'/assets/gear-icons/{icon}.svg\'"></span>'
                   f'<span class="bi"><h3>{_e(i["short"])}</h3><span class="meta">{price}<span>{rating}</span></span></span></a>')
-    slim = {"items": [{k: i.get(k) for k in ("short", "img", "price", "url", "kind")} for i in best.get("items", [])]}
+    slim = {"items": [{k: i.get(k) for k in ("short", "img", "url", "kind")} for i in best.get("items", [])]}
     return cards, json.dumps(slim).replace("<", "\\u003c")
 
 

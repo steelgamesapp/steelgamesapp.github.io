@@ -8,7 +8,7 @@ Links:
 - Brand items: the brand's product page wrapped in that brand's affiliate link (a ref parameter, an Impact
   deep link with ?u=, or an Awin deep link with &ued=).
 - JLab items go to Amazon until jlab.direct_template is filled in with the JLab tracking link, then to jlab.com.
-Prices are only shown for brand stores and JLab list prices, never for Amazon, because Amazon prices change constantly.
+Prices are only shown for brand-store buttons, never beside an Amazon button (Associates rules), because Amazon prices change constantly.
 """
 import html
 import json
@@ -137,7 +137,7 @@ def jlab_card(it):
         return card(url, jlab_img(it), it["name"], it["blurb"], it["chips"], "Shop at JLab",
                     top=it.get("top", False), price=it["price"], price_note="at JLab", src="brand", brand="JLab")
     return card(amazon_url(it["asin"]), jlab_img(it), it["name"], it["blurb"], it["chips"], "See price on Amazon",
-                top=it.get("top", False), price=it["price"], price_note="JLab list price", src="amazon", brand="JLab")
+                top=it.get("top", False), src="amazon", brand="JLab")  # no price beside an Amazon button (Associates rules)
 
 
 def brand_card(brand, it):
@@ -433,7 +433,7 @@ def build(h):
     jl_cats = [cat_html(c["title"], "\n".join(jlab_card(i) for i in c["items"])) for c in DATA["jlab_cats"]]
     jl = group_html("jlab", "JLab Audio and gaming gear",
                     "JLab makes headsets, keyboards, mice, headphones and speakers at everyday prices. These are the pieces we would "
-                    f"look at first. Prices shown are JLab's own list prices as of {ASOF}; check the store for today's price.", jl_cats)
+                    f"look at first. Tap any button to see today's price.", jl_cats)
     h = insert_after_section(h, "deals", jl)
 
     br_cats = [cat_html(c["title"], "\n".join(brand_card(c["brand"], i) for i in c["items"])) for c in DATA["brand_cats"]]
