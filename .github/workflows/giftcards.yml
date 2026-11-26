@@ -9,6 +9,7 @@ on:
     paths:
       - "tools/giftcards.py"
       - "tools/giftcards_page.py"
+      - "tools/black_friday.py"
       - ".github/workflows/giftcards.yml"
   workflow_dispatch:
     inputs:
@@ -24,7 +25,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - name: Read live prices from the Impact feeds
@@ -38,15 +39,21 @@ jobs:
       - name: Build the gift card page
         if: ${{ github.event.inputs.probe == '' }}
         run: |
-          if [ -f data/giftcards.json ]; then cd tools && python3 giftcards_page.py; fi
+          if [ -f data/giftcards.json ]; then (cd tools && python3 giftcards_page.py); fi
+      - name: Black Friday deals hub (live partner sale prices)
+        if: ${{ github.event.inputs.probe == '' }}
+        env:
+          IMPACT_ACCOUNT_SID: ${{ secrets.IMPACT_ACCOUNT_SID }}
+          IMPACT_AUTH_TOKEN: ${{ secrets.IMPACT_AUTH_TOKEN }}
+        run: python3 tools/black_friday.py
       - name: Commit changes
         if: ${{ github.event.inputs.probe == '' }}
         run: |
           git config user.name "SteelGames Bot"
           git config user.email "steelgames.app@outlook.com"
-          git add data/giftcards.json gift-cards
+          git add data/giftcards.json gift-cards data/black_friday.json black-friday
           git diff --cached --quiet && { echo "Nothing changed."; exit 0; }
-          git commit -m "Gift card prices: live comparison refresh"
+          git commit -m "Gift card prices and Black Friday deals: live refresh"
           for i in 1 2 3; do
             git pull --rebase --autostash -X theirs origin main && git push && exit 0
             git rebase --abort 2>/dev/null || true
