@@ -102,6 +102,8 @@ def gear_deals(api):
             brand, keep = GEAR_BRANDS[key]
             if keep and not re.search(keep, name, re.I):
                 continue
+            if re.search(r"canada|\bUK\b|\bEU\b|australia|refurbished|open box", name, re.I):
+                continue
             cur, orig = num(it.get("CurrentPrice")), num(it.get("OriginalPrice"))
             if not (orig > cur > 0) or (orig - cur) / orig < 0.10:
                 continue
