@@ -1,0 +1,16 @@
+name: Black Friday feed probe (temporary)
+on:
+  push:
+    branches: [main]
+    paths: ["tools/bf_probe.py"]
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          IMPACT_ACCOUNT_SID: ${{ secrets.IMPACT_ACCOUNT_SID }}
+          IMPACT_AUTH_TOKEN: ${{ secrets.IMPACT_AUTH_TOKEN }}
+        run: python3 tools/bf_probe.py
