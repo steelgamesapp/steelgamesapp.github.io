@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-25T21:39:35Z",
+"updated": "2026-11-26T04:08:49Z",
 "source": "Amazon Best Sellers: PC Games & Accessories",
 "items": [
 {
@@ -22,7 +22,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/51sg9BLSMTL._AC_SL400_.jpg",
 "price": 26.99,
 "stars": 4.6,
-"ratings": 40810,
+"ratings": 40811,
 "url": "https://www.amazon.com/dp/B07CMS5Q6P?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -34,7 +34,7 @@
 "img": "https://images-na.ssl-images-amazon.com/images/I/61ZCKIYRU6L._AC_SL400_.jpg",
 "price": 29.99,
 "stars": 4.6,
-"ratings": 59004,
+"ratings": 59005,
 "url": "https://www.amazon.com/dp/B07GBZ4Q68?tag=steelgames-20",
 "kind": "mouse"
 },
@@ -64,14 +64,14 @@
 },
 {
 "rank": 9,
-"asin": "B0HGR4SDYC",
-"name": "AOC 2.4GHz Wireless Gaming Headset for PS5, PS4, PC, Switch, 45Hr, White | Bluetooth 6.0 Gaming Headphones with Noise Canceli",
-"short": "AOC 2.4GHz Wireless Gaming Headset for PS5",
-"img": "https://images-na.ssl-images-amazon.com/images/I/71hsvNd1BtL._AC_SL400_.jpg",
-"price": 37.98,
-"stars": 4.4,
-"ratings": 2004,
-"url": "https://www.amazon.com/dp/B0HGR4SDYC?tag=steelgames-20",
+"asin": "B0F6NZWPTC",
+"name": "HyperX Cloud III S Wireless Gaming Headset | Multi-Platform Compatibility | Wireless Headphones | 2.4GHz + Bluetooth | 120-Ho",
+"short": "HyperX Cloud III S Wireless Gaming Headset",
+"img": "https://images-na.ssl-images-amazon.com/images/I/71mqaEv2KRL._AC_SL400_.jpg",
+"price": 99.69,
+"stars": 4.3,
+"ratings": 2926,
+"url": "https://www.amazon.com/dp/B0F6NZWPTC?tag=steelgames-20",
 "kind": "headset"
 },
 {
@@ -88,14 +88,14 @@
 },
 {
 "rank": 11,
-"asin": "B0F6NZWPTC",
-"name": "HyperX Cloud III S Wireless Gaming Headset | Multi-Platform Compatibility | Wireless Headphones | 2.4GHz + Bluetooth | 120-Ho",
-"short": "HyperX Cloud III S Wireless Gaming Headset",
-"img": "https://images-na.ssl-images-amazon.com/images/I/71mqaEv2KRL._AC_SL400_.jpg",
-"price": 99.69,
-"stars": 4.3,
-"ratings": 2926,
-"url": "https://www.amazon.com/dp/B0F6NZWPTC?tag=steelgames-20",
+"asin": "B0HGR4SDYC",
+"name": "AOC 2.4GHz Wireless Gaming Headset for PS5, PS4, PC, Switch, 45Hr, White | Bluetooth 6.0 Gaming Headphones with Noise Canceli",
+"short": "AOC 2.4GHz Wireless Gaming Headset for PS5",
+"img": "https://images-na.ssl-images-amazon.com/images/I/71hsvNd1BtL._AC_SL400_.jpg",
+"price": 37.98,
+"stars": 4.4,
+"ratings": 2004,
+"url": "https://www.amazon.com/dp/B0HGR4SDYC?tag=steelgames-20",
 "kind": "headset"
 },
 {
@@ -112,18 +112,6 @@
 },
 {
 "rank": 13,
-"asin": "B0943HXDVM",
-"name": "Logitech G502 X Wired Gaming Mouse - Black | Optical Switches, 13 Buttons, Infinite Scroll, PC/MacOS Compatible",
-"short": "Logitech G502 X Wired Gaming Mouse",
-"img": "https://images-na.ssl-images-amazon.com/images/I/61hvcoyQ8cL._AC_SL400_.jpg",
-"price": 39.99,
-"stars": 4.3,
-"ratings": 1538,
-"url": "https://www.amazon.com/dp/B0943HXDVM?tag=steelgames-20",
-"kind": "mouse"
-},
-{
-"rank": 14,
 "asin": "B0DR8V899R",
 "name": "8Bitdo Ultimate 2 Wireless Controller for PC, Apple, Steam & Android, Black | TMR Joysticks, Hall/Tactile Triggers, 8Speed 2.",
 "short": "8Bitdo Ultimate 2 Wireless Controller for PC",
@@ -133,6 +121,18 @@
 "ratings": 6305,
 "url": "https://www.amazon.com/dp/B0DR8V899R?tag=steelgames-20",
 "kind": "controller"
+},
+{
+"rank": 14,
+"asin": "B0943HXDVM",
+"name": "Logitech G502 X Wired Gaming Mouse - Black | Optical Switches, 13 Buttons, Infinite Scroll, PC/MacOS Compatible",
+"short": "Logitech G502 X Wired Gaming Mouse",
+"img": "https://images-na.ssl-images-amazon.com/images/I/61hvcoyQ8cL._AC_SL400_.jpg",
+"price": 39.99,
+"stars": 4.3,
+"ratings": 1538,
+"url": "https://www.amazon.com/dp/B0943HXDVM?tag=steelgames-20",
+"kind": "mouse"
 },
 {
 "rank": 15,
@@ -148,6 +148,18 @@
 },
 {
 "rank": 16,
+"asin": "B0GL96NJL5",
+"name": "PlayStation DualSense\u00ae Wireless Controller \u2013 Midnight Black + USB Cable for PC",
+"short": "PlayStation DualSense\u00ae Wireless Controller",
+"img": "https://images-na.ssl-images-amazon.com/images/I/61cUsm-9AfL._AC_SL400_.jpg",
+"price": null,
+"stars": 4.8,
+"ratings": 466,
+"url": "https://www.amazon.com/dp/B0GL96NJL5?tag=steelgames-20",
+"kind": "controller"
+},
+{
+"rank": 17,
 "asin": "B0D14N2QZF",
 "name": "AULA F75 Pro Wireless Mechanical Keyboard,75% Hot Swappable Custom Keyboard with Knob,RGB Backlit,Pre-lubed Reaper Switches,S",
 "short": "AULA F75 Pro Wireless Mechanical Keyboard,75% Hot Swappable",
@@ -159,7 +171,7 @@
 "kind": "keyboard"
 },
 {
-"rank": 17,
+"rank": 18,
 "asin": "B0CSY8PD63",
 "name": "BOBOVR S3 Pro Battery Strap Accessories,Head Air Cooling System and 10000mah Hot-swappable Battery Pack,Compatible with Meta",
 "short": "BOBOVR S3 Pro Battery Strap Accessories,Head Air Cooling",
@@ -171,7 +183,7 @@
 "kind": "gear"
 },
 {
-"rank": 18,
+"rank": 19,
 "asin": "B0DXTV9BGJ",
 "name": "Redragon S101M-KS Gaming Keyboard and Mouse Wireless with Tri-Mode, RGB Keyboard and 4800 DPI Gaming Mouse, 10 Independent Mu",
 "short": "Redragon S101M-KS Gaming Keyboard and Mouse Wireless with",
@@ -181,18 +193,6 @@
 "ratings": 51837,
 "url": "https://www.amazon.com/dp/B0DXTV9BGJ?tag=steelgames-20",
 "kind": "mouse"
-},
-{
-"rank": 19,
-"asin": "B0GL96NJL5",
-"name": "PlayStation DualSense\u00ae Wireless Controller \u2013 Midnight Black + USB Cable for PC",
-"short": "PlayStation DualSense\u00ae Wireless Controller",
-"img": "https://images-na.ssl-images-amazon.com/images/I/61cUsm-9AfL._AC_SL400_.jpg",
-"price": 54.0,
-"stars": 4.8,
-"ratings": 466,
-"url": "https://www.amazon.com/dp/B0GL96NJL5?tag=steelgames-20",
-"kind": "controller"
 },
 {
 "rank": 20,
@@ -232,15 +232,15 @@
 },
 {
 "rank": 23,
-"asin": "B0F29F712R",
-"name": "GameSir G7 Pro Wireless XBOX Controller,TMR Sticks,Windows,Trigger Stops | XBOX Series X|S,Hall Effect Triggers, 4 Remappable",
-"short": "GameSir G7 Pro Wireless XBOX Controller,TMR",
-"img": "https://images-na.ssl-images-amazon.com/images/I/71PP-K4uX8L._AC_SL400_.jpg",
-"price": 129.99,
-"stars": 4.4,
-"ratings": 2181,
-"url": "https://www.amazon.com/dp/B0F29F712R?tag=steelgames-20",
-"kind": "controller"
+"asin": "B0DXQ8X9GT",
+"name": "HyperX Cloud Jet Wireless Gaming Headset | Wireless Headphones | Wireless Connectivity",
+"short": "HyperX Cloud Jet Wireless Gaming Headset",
+"img": "https://images-na.ssl-images-amazon.com/images/I/61gQyJac5sL._AC_SL400_.jpg",
+"price": 29.99,
+"stars": 4.2,
+"ratings": 1441,
+"url": "https://www.amazon.com/dp/B0DXQ8X9GT?tag=steelgames-20",
+"kind": "headset"
 },
 {
 "rank": 24,
@@ -256,18 +256,6 @@
 },
 {
 "rank": 25,
-"asin": "B086PKMZ21",
-"name": "Razer BlackShark V2 X Wired Gaming Headset with Mic for PC and PS5, Black | TriForce Titanium 50 mm Drivers, HyperClear Cardi",
-"short": "Razer BlackShark V2 X Wired Gaming Headset with Mic for PC",
-"img": "https://images-na.ssl-images-amazon.com/images/I/71-mnhc4Q8L._AC_SL400_.jpg",
-"price": 32.99,
-"stars": 4.4,
-"ratings": 19703,
-"url": "https://www.amazon.com/dp/B086PKMZ21?tag=steelgames-20",
-"kind": "headset"
-},
-{
-"rank": 26,
 "asin": "B0DRFGNWV1",
 "name": "Redragon K521 Upgrade Rainbow LED Gaming Keyboard, 104 Keys Wired Mechanical Feeling Keyboard with Multimedia Keys, One-Touch",
 "short": "Redragon K521 Upgrade Rainbow LED Gaming Keyboard",
@@ -279,16 +267,28 @@
 "kind": "keyboard"
 },
 {
-"rank": 27,
-"asin": "B0FRPH94LH",
-"name": "SteelSeries Arctis Nova 7X Wireless Gen 2 Gaming Headset - Black | Real-Time App Control, 50+ HR Play, Neodymium Drivers, Mix",
-"short": "SteelSeries Arctis Nova 7X Wireless Gen 2 Gaming Headset",
-"img": "https://images-na.ssl-images-amazon.com/images/I/71wGjrmGo6L._AC_SL400_.jpg",
-"price": 159.99,
-"stars": 4.2,
-"ratings": 423,
-"url": "https://www.amazon.com/dp/B0FRPH94LH?tag=steelgames-20",
+"rank": 26,
+"asin": "B086PKMZ21",
+"name": "Razer BlackShark V2 X Wired Gaming Headset with Mic for PC and PS5, Black | TriForce Titanium 50 mm Drivers, HyperClear Cardi",
+"short": "Razer BlackShark V2 X Wired Gaming Headset with Mic for PC",
+"img": "https://images-na.ssl-images-amazon.com/images/I/71-mnhc4Q8L._AC_SL400_.jpg",
+"price": 32.99,
+"stars": 4.4,
+"ratings": 19703,
+"url": "https://www.amazon.com/dp/B086PKMZ21?tag=steelgames-20",
 "kind": "headset"
+},
+{
+"rank": 27,
+"asin": "B09C13PZX7",
+"name": "Razer Basilisk V3 Customizable RGB Wired Ergonomic Gaming Mouse, Black | Fastest Gaming Mouse Switch, Chroma RGB Lighting, 26",
+"short": "Razer Basilisk V3 Customizable RGB Wired Ergonomic Gaming",
+"img": "https://images-na.ssl-images-amazon.com/images/I/61AcT0ZuO3L._AC_SL400_.jpg",
+"price": 32.99,
+"stars": 4.6,
+"ratings": 10804,
+"url": "https://www.amazon.com/dp/B09C13PZX7?tag=steelgames-20",
+"kind": "mouse"
 }
 ]
 }
