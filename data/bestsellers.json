@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-27T08:25:04Z",
+"updated": "2026-11-27T19:28:25Z",
 "source": "Amazon Best Sellers: PC Games & Accessories",
 "items": [
 {
@@ -175,21 +175,21 @@
 },
 {
 "rank": 23,
-"asin": "B08SJ5Z8JL",
-"name": "Redragon M612 Wired RGB Optical Gaming Mouse 8000 DPI Remapping Keys | Stable Lag-Free Connection, Redefine Keybinding Macro,",
-"short": "Redragon M612 Wired RGB Optical Gaming Mouse 8000 DPI",
-"img": "https://images-na.ssl-images-amazon.com/images/I/61vF4LdktpL._AC_SL400_.jpg",
-"url": "https://www.amazon.com/dp/B08SJ5Z8JL?tag=steelgames-20",
-"kind": "mouse"
-},
-{
-"rank": 24,
 "asin": "B086PKMZ21",
 "name": "Razer BlackShark V2 X Wired Gaming Headset with Mic for PC and PS5, Black | TriForce Titanium 50 mm Drivers, HyperClear Cardi",
 "short": "Razer BlackShark V2 X Wired Gaming Headset with Mic for PC",
 "img": "https://images-na.ssl-images-amazon.com/images/I/71-mnhc4Q8L._AC_SL400_.jpg",
 "url": "https://www.amazon.com/dp/B086PKMZ21?tag=steelgames-20",
 "kind": "headset"
+},
+{
+"rank": 24,
+"asin": "B08SJ5Z8JL",
+"name": "Redragon M612 Wired RGB Optical Gaming Mouse 8000 DPI Remapping Keys | Stable Lag-Free Connection, Redefine Keybinding Macro,",
+"short": "Redragon M612 Wired RGB Optical Gaming Mouse 8000 DPI",
+"img": "https://images-na.ssl-images-amazon.com/images/I/61vF4LdktpL._AC_SL400_.jpg",
+"url": "https://www.amazon.com/dp/B08SJ5Z8JL?tag=steelgames-20",
+"kind": "mouse"
 },
 {
 "rank": 25,
