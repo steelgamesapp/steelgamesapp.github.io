@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T17:28:00Z",
+ "updated": "2026-11-27T01:47:41Z",
  "gear": [
   {
    "brand": "SOLAKAKA",
@@ -56,6 +56,15 @@
    "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/C3_Pro_Black_A4_Pro_Main_Image_01_Product_image_front.png?v=1793932617"
   },
   {
+   "brand": "AutoFull",
+   "name": "AutoFull G7 Ergonomic Gaming Chair",
+   "price": 455.99,
+   "was": 699.99,
+   "off": 35,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=8752318054649&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-g7&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/G7_RGB_Main_Image_03_Product_image_Back_webp_37ab08d6-1767-4bdc-b50c-371024947795.webp?v=1778408723"
+  },
+  {
    "brand": "SOLAKAKA",
    "name": "SOLAKAKA Z2 Dual 8K Polling Rate Lightweight Gaming Mouse",
    "price": 45.99,
@@ -81,15 +90,6 @@
    "off": 33,
    "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=48330251993337&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-m6-ultra-2-0-ergonomic-gaming-chair-a4-pro-gaming-desk-bundle&intsrc=APIG_22782",
    "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/20260317-154756_1.jpg?v=1777372340"
-  },
-  {
-   "brand": "AutoFull",
-   "name": "AutoFull G7 Ergonomic Gaming Chair",
-   "price": 455.99,
-   "was": 669.99,
-   "off": 32,
-   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=10254852358393&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-g7-ergonomic-gaming-chair-1&intsrc=APIG_22782",
-   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/G7_RGB_Main_Image_03_Product_image_Back_webp_37ab08d6-1767-4bdc-b50c-371024947795.webp?v=1778408723"
   },
   {
    "brand": "AutoFull",
@@ -120,21 +120,21 @@
   },
   {
    "brand": "Satechi",
-   "name": "Slim EX3 Wireless Keyboard",
-   "price": 48.99,
-   "was": 69.99,
-   "off": 30,
-   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=8546727723096&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fslim-ex3-wireless-keyboard&intsrc=APIG_32670",
-   "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/slim-ex3-wireless-keyboard-satechi-853405.webp?v=1766771020"
-  },
-  {
-   "brand": "Satechi",
    "name": "Slim LX3 Wired Keyboard",
    "price": 34.99,
    "was": 49.99,
    "off": 30,
    "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=8699869954136&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fslim-lx3-wired-keyboard&intsrc=APIG_32670",
    "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/SATECHI_Keyboard_BANANABREAD_silver_US_2bcopy.webp?v=1775758574"
+  },
+  {
+   "brand": "Satechi",
+   "name": "Slim EX3 Wireless Keyboard",
+   "price": 48.99,
+   "was": 69.99,
+   "off": 30,
+   "url": "https://satechi.pxf.io/c/8059330/3856653/50830?prodsku=8546727723096&u=https%3A%2F%2Fsatechi.com%2Fproducts%2Fslim-ex3-wireless-keyboard&intsrc=APIG_32670",
+   "img": "https://cdn.shopify.com/s/files/1/1520/4366/files/slim-ex3-wireless-keyboard-satechi-853405.webp?v=1766771020"
   },
   {
    "brand": "Satechi",
@@ -228,14 +228,6 @@
    "img": "https://cdn.loaded.com/500x706/media/catalog/product/b/o/borderlands_4_de_cdkeys.png"
   },
   {
-   "name": "Red Dead Redemption 2 PC - Rockstar Games Launcher",
-   "price": 13.29,
-   "was": 79.79,
-   "off": 83,
-   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=RDDDR2PC_2&u=https%3A%2F%2Fwww.loaded.com%2Fred-dead-redemption-2-pc-rockstar-cd-key%3F__currency%3Dusd&intsrc=APIG_12134",
-   "img": "https://cdn.loaded.com/500x706/media/catalog/product/f/i/fifa-22-pc-game-origin-cover_4_.jpg"
-  },
-  {
    "name": "SILENT HILL 2 PC",
    "price": 19.29,
    "was": 79.79,
@@ -316,6 +308,14 @@
    "img": "https://cdn.loaded.com/500x706/media/catalog/product/s/i/sims4els.jpg"
   },
   {
+   "name": "The Sims 4 - Snowy Escape PC",
+   "price": 11.29,
+   "was": 46.49,
+   "off": 76,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=TS4SNWEPC&u=https%3A%2F%2Fwww.loaded.com%2Fthe-sims-4-snowy-escape-pc-origin%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/s/i/sims4swe.jpg"
+  },
+  {
    "name": "The Sims 4 - Cottage Living PC",
    "price": 12.59,
    "was": 46.49,
@@ -348,12 +348,12 @@
    "img": "https://cdn.loaded.com/500x706/media/catalog/product/n/e/new_project_7__2.jpg"
   },
   {
-   "name": "Assassin's Creed Revelations PC",
-   "price": 4.79,
+   "name": "Assassin's Creed Brotherhood (PC)",
+   "price": 3.69,
    "was": 16.59,
-   "off": 71,
-   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=3307215588277&u=https%3A%2F%2Fwww.loaded.com%2Fassassin-s-creed-revelations-pc%3F__currency%3Dusd&intsrc=APIG_12134",
-   "img": "https://cdn.loaded.com/500x706/media/catalog/product/a/s/assassin_s_creed_revelations_pc.png"
+   "off": 78,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=3307217926909&u=https%3A%2F%2Fwww.loaded.com%2Fassassin-s-creed-brotherhood-pc%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/a/s/assassin_s_creed_brotherhood_pc.png"
   },
   {
    "name": "Final Fantasy XIII PC",
@@ -380,12 +380,12 @@
    "img": "https://cdn.loaded.com/500x706/media/catalog/product/a/s/assassins-creed-2-pc-cover-cdkeys.jpg"
   },
   {
-   "name": "FINAL FANTASY VIII PC",
+   "name": "Final Fantasy VII PC",
    "price": 5.69,
-   "was": 11.99,
-   "off": 53,
-   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=FINALFANT8PC&u=https%3A%2F%2Fwww.loaded.com%2Ffinal-fantasy-viii-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
-   "img": "https://cdn.loaded.com/500x706/media/catalog/product/f/i/final-fantasy-viii-pc-steam.jpg"
+   "was": 13.29,
+   "off": 57,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=FINALFAN7PC&u=https%3A%2F%2Fwww.loaded.com%2Ffinal-fantasy-vii-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/f/i/final_fantasy_vii.png"
   }
  ],
  "cards": [
@@ -399,33 +399,6 @@
    "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=3926&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F3926%2Fnintendo-eshop-prepaid-card-usd-10-us-key%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658&subId1=site-bf-card-nintendo10-kinguin"
   },
   {
-   "card": "Xbox",
-   "face": 50,
-   "store": "Kinguin",
-   "usd": 44.49,
-   "approx": true,
-   "off": 11,
-   "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=7234&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F7234%2Fxbox-live-usd-50-prepaid-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658&subId1=site-bf-card-xbox50-kinguin"
-  },
-  {
-   "card": "Nintendo eShop",
-   "face": 70,
-   "store": "Gameseal",
-   "usd": 63.79,
-   "approx": true,
-   "off": 9,
-   "url": "https://impact.gameseal.com/c/8059330/3722709/25825?prodsku=31772&u=https%3A%2F%2Fgameseal.com%2Fnintendo-eshop-card-70-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_29769&subId1=site-bf-card-nintendo70-gameseal"
-  },
-  {
-   "card": "Xbox",
-   "face": 10,
-   "store": "Kinguin",
-   "usd": 9.41,
-   "approx": true,
-   "off": 6,
-   "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=11097&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F11097%2Fxbox-live-us-10-usd-prepaid%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658&subId1=site-bf-card-xbox10-kinguin"
-  },
-  {
    "card": "Nintendo eShop",
    "face": 20,
    "store": "Loaded",
@@ -433,15 +406,6 @@
    "approx": false,
    "off": 6,
    "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=NES20USD&u=https%3A%2F%2Fwww.loaded.com%2Fnintendo-eshop-card-20-usd%3F__currency%3Dusd&intsrc=APIG_12134&subId1=site-bf-card-nintendo20-loaded"
-  },
-  {
-   "card": "Nintendo eShop",
-   "face": 35,
-   "store": "Gameseal",
-   "usd": 32.93,
-   "approx": false,
-   "off": 6,
-   "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=1004&u=https%3A%2F%2Fgameseal.com%2Fnintendo-eshop-card-35-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_24509&subId1=site-bf-card-nintendo35-gameseal"
   },
   {
    "card": "Nintendo eShop",
@@ -460,6 +424,42 @@
    "approx": false,
    "off": 6,
    "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=48597&u=https%3A%2F%2Fgameseal.com%2Froblox-card-50-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_24509&subId1=site-bf-card-roblox50-gameseal"
+  },
+  {
+   "card": "Xbox",
+   "face": 20,
+   "store": "Loaded",
+   "usd": 18.99,
+   "approx": false,
+   "off": 5,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=CDK0624513975&u=https%3A%2F%2Fwww.loaded.com%2Fxbox-gift-card-20-usd%3F__currency%3Dusd&intsrc=APIG_12134&subId1=site-bf-card-xbox20-loaded"
+  },
+  {
+   "card": "Xbox",
+   "face": 100,
+   "store": "Loaded",
+   "usd": 94.99,
+   "approx": false,
+   "off": 5,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=CDK0649243463&u=https%3A%2F%2Fwww.loaded.com%2Fxbox-gift-card-100-usd%3F__currency%3Dusd&intsrc=APIG_12134&subId1=site-bf-card-xbox100-loaded"
+  },
+  {
+   "card": "Roblox",
+   "face": 25,
+   "store": "Loaded",
+   "usd": 23.69,
+   "approx": false,
+   "off": 5,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=ROBLOX25USGC&u=https%3A%2F%2Fwww.loaded.com%2Froblox-25-usd-gift-card%3F__currency%3Dusd&intsrc=APIG_12134&subId1=site-bf-card-roblox25-loaded"
+  },
+  {
+   "card": "PlayStation Store",
+   "face": 75,
+   "store": "Loaded",
+   "usd": 71.99,
+   "approx": false,
+   "off": 4,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=PSN75USD_US&u=https%3A%2F%2Fwww.loaded.com%2Fplaystation-network-psn-card-75-usd-usa%3F__currency%3Dusd&intsrc=APIG_12134&subId1=site-bf-card-psn75-loaded"
   }
  ]
 }
