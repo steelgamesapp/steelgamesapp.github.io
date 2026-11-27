@@ -2,7 +2,7 @@
  "days": [
   {
    "date": "2026-11-27",
-   "updated": "2026-11-27 15:45 UTC",
+   "updated": "2026-11-27 20:10 UTC",
    "picks": [
     {
      "gameID": "237067",
@@ -66,17 +66,17 @@
     },
     {
      "gameID": "256932",
-     "dealID": "7xh47COvylsUNj6UlLQoTr8qesilsGngT7wbTE%2B0d7k%3D",
+     "dealID": "yXWoPbOU0lIAUrHfByAcNgDjUGy3oCM%2FKu0M%2BtHgbTM%3D",
      "title": "Aces and Adventures",
-     "store": "Fanatical",
-     "sale": 1.49,
+     "store": "GameBillet",
+     "sale": 1.45,
      "normal": 19.99,
      "off": 93,
      "rating": 88,
      "reviews": 634,
      "steam": "1815570",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1815570/capsule_231x87.jpg?t=1731955791",
-     "score": 8.0,
+     "score": 10.0,
      "low": 1.45
     },
     {
@@ -178,7 +178,7 @@
      "normal": 6.99,
      "off": 86,
      "rating": 80,
-     "reviews": 2236,
+     "reviews": 2237,
      "steam": "39190",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/39190/capsule_231x87.jpg?t=1784217836",
      "score": 8.7,
