@@ -2,7 +2,7 @@
  "days": [
   {
    "date": "2026-11-27",
-   "updated": "2026-11-27 01:16 UTC",
+   "updated": "2026-11-27 15:45 UTC",
    "picks": [
     {
      "gameID": "237067",
@@ -13,7 +13,7 @@
      "normal": 69.99,
      "off": 92,
      "rating": 90,
-     "reviews": 153650,
+     "reviews": 153667,
      "steam": "648168",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/subs/648168/capsule_231x87.jpg?t=1773778564",
      "score": 10.0,
@@ -28,7 +28,7 @@
      "normal": 69.99,
      "off": 92,
      "rating": 90,
-     "reviews": 38573,
+     "reviews": 38581,
      "steam": "785847",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/subs/785847/capsule_231x87.jpg?t=1698432746",
      "score": 10.0,
@@ -46,7 +46,7 @@
      "reviews": 16546,
      "steam": "337000",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/337000/96fc2a82c1820c77aae26304c62388841c2a93be/capsule_231x87.jpg?t=1780670420",
-     "score": 9.7,
+     "score": 9.6,
      "low": 0.0
     },
     {
@@ -58,25 +58,25 @@
      "normal": 29.99,
      "off": 92,
      "rating": 92,
-     "reviews": 8119,
+     "reviews": 8122,
      "steam": "673880",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/673880/capsule_231x87.jpg?t=1747933345",
-     "score": 9.7,
+     "score": 9.5,
      "low": 1.49
     },
     {
      "gameID": "256932",
-     "dealID": "yXWoPbOU0lIAUrHfByAcNgDjUGy3oCM%2FKu0M%2BtHgbTM%3D",
+     "dealID": "7xh47COvylsUNj6UlLQoTr8qesilsGngT7wbTE%2B0d7k%3D",
      "title": "Aces and Adventures",
-     "store": "GameBillet",
-     "sale": 1.45,
+     "store": "Fanatical",
+     "sale": 1.49,
      "normal": 19.99,
      "off": 93,
      "rating": 88,
      "reviews": 634,
      "steam": "1815570",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1815570/capsule_231x87.jpg?t=1731955791",
-     "score": 9.6,
+     "score": 8.0,
      "low": 1.45
     },
     {
@@ -91,7 +91,7 @@
      "reviews": 3452,
      "steam": "699170",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/699170/capsule_231x87.jpg?t=1789474578",
-     "score": 9.6,
+     "score": 9.5,
      "low": 2.49
     },
     {
@@ -106,7 +106,7 @@
      "reviews": 981,
      "steam": "115110",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/115110/capsule_231x87.jpg?t=1793063456",
-     "score": 9.6,
+     "score": 9.4,
      "low": 0.99
     },
     {
@@ -121,7 +121,7 @@
      "reviews": 631,
      "steam": "1137350",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1137350/capsule_231x87.jpg?t=1762525549",
-     "score": 9.3,
+     "score": 9.1,
      "low": 2.54
     },
     {
@@ -136,7 +136,7 @@
      "reviews": 1235,
      "steam": "205650",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/205650/capsule_231x87.jpg?t=1689178759",
-     "score": 9.2,
+     "score": 9.0,
      "low": 1.7
     },
     {
@@ -148,10 +148,10 @@
      "normal": 19.99,
      "off": 90,
      "rating": 95,
-     "reviews": 3116,
+     "reviews": 3117,
      "steam": "571310",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/571310/capsule_231x87.jpg?t=1726132098",
-     "score": 9.0,
+     "score": 8.9,
      "low": 0.99
     },
     {
@@ -163,10 +163,10 @@
      "normal": 24.99,
      "off": 95,
      "rating": 90,
-     "reviews": 1463,
+     "reviews": 1464,
      "steam": "1449280",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1449280/capsule_231x87.jpg?t=1607351334",
-     "score": 8.9,
+     "score": 8.8,
      "low": 1.24
     },
     {
@@ -178,10 +178,10 @@
      "normal": 6.99,
      "off": 86,
      "rating": 80,
-     "reviews": 2235,
+     "reviews": 2236,
      "steam": "39190",
      "thumb": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/39190/capsule_231x87.jpg?t=1784217836",
-     "score": 8.9,
+     "score": 8.7,
      "low": 0.78
     }
    ]
