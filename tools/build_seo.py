@@ -21,6 +21,7 @@ import deal_page
 import gear
 import pros
 import kinguin_keys
+import videos_page
 from datetime import datetime, timezone
 
 SITE = "https://steelgamesapp.com"
@@ -706,6 +707,11 @@ def main():
         urls += pros.build_all()
     except Exception as ex:
         print('pros failed', ex, file=sys.stderr)
+    try:
+        videos_page.build()
+        urls.append(f"{SITE}/s/")
+    except Exception as ex:
+        print('videos page failed', ex, file=sys.stderr)
     gear.write_json(GEAR_GAMES)
     open(os.path.join(ROOT, "games.html"), "w").write(games_page.build())
     open(os.path.join(ROOT, "keys.html"), "w").write(keys_page.build())

@@ -35,11 +35,9 @@
       const up = t.chg > 0, flat = !t.chg;
       cells.push(`<span class="tk"><b>${esc(s.name)}</b> ${money(t.avg, 3)} <i class="${flat ? 'fl' : up ? 'up' : 'dn'}">${flat ? '■' : up ? '▲' : '▼'} ${Math.abs(t.chg).toFixed(2)}%</i></span>`);
     }
+    // No copied Amazon prices on our pages (Associates rules): kits link out to check the price.
     for (const k of (data.kits || []).slice(0, 8)) {
-      const h = (data.kits_history || {})[k.asin] || [];
-      const prev = h.length > 1 ? h[h.length - 2][1] : null;
-      const d = prev ? (k.price - prev) / prev * 100 : 0;
-      cells.push(`<a class="tk" href="${esc(k.url)}" target="_blank" rel="sponsored nofollow noopener"><b>${esc(k.gen)} ${k.gb || ''}GB</b> ${esc(k.short.replace(/ (DDR[45]|RAM).*/i, ''))} ${money(k.price)}${d ? ` <i class="${d > 0 ? 'up' : 'dn'}">${d > 0 ? '▲' : '▼'} ${Math.abs(d).toFixed(1)}%</i>` : ''}</a>`);
+      cells.push(`<a class="tk" href="${esc(k.url)}" target="_blank" rel="sponsored nofollow noopener"><b>${esc(k.gen)} ${k.gb || ''}GB</b> ${esc(k.short.replace(/ (DDR[45]|RAM).*/i, ''))} <i class="fl">check price on Amazon</i></a>`);
     }
     const row = cells.join('<span class="sep" aria-hidden="true">•</span>');
     el.innerHTML = `<div class="tape-run">${row}<span class="sep" aria-hidden="true">•</span>${row}<span class="sep" aria-hidden="true">•</span></div>`;
@@ -146,7 +144,7 @@
     if (!box || !data || !(data.kits || []).length) return;
     box.innerHTML = data.kits.slice(0, 6).map(k => `<a class="kit" href="${esc(k.url)}" target="_blank" rel="sponsored nofollow noopener">
       <img src="${esc(k.img)}" alt="" loading="lazy" width="64" height="64"><span><small>#${k.rank} best seller · ${esc(k.gen)} ${k.gb || ''}GB</small>${esc(k.short)}</span>
-      <strong>${money(k.price)}${k.gb ? `<em>${money(k.price / k.gb)}/GB</em>` : ''}</strong></a>`).join('');
+      <strong>See price<em>on Amazon</em></strong></a>`).join('');
   }
 
   async function load() {
@@ -175,14 +173,13 @@
         let n = 0;
         const spin = setInterval(() => {
           const it = n++ < (reduce ? 0 : 8 + i * 5) ? pool[Math.floor(Math.random() * pool.length)] : picks[i];
-          r.innerHTML = it ? `<img src="${esc(it.img)}" alt="" width="96" height="96"><b>${esc(it.short)}</b><span>${it.price ? money(it.price) : ''}</span>
+          r.innerHTML = it ? `<img src="${esc(it.img)}" alt="" width="96" height="96"><b>${esc(it.short)}</b><span></span>
             <a href="${esc(it.url)}" target="_blank" rel="sponsored nofollow noopener">See it on Amazon</a>` : '';
           r.classList.toggle('spinning', it !== picks[i]);
           if (it === picks[i]) {
             clearInterval(spin);
             if (i === reels.length - 1) {
-              const sum = picks.reduce((a, p) => a + (p && p.price || 0), 0);
-              total.innerHTML = `Your loadout: <strong>${money(sum)}</strong>. A full pro setup like shroud's runs over $700. ${sum < 150 ? 'Budget legend.' : sum < 250 ? 'Solid value.' : 'Big spender.'}`;
+              total.innerHTML = `Your loadout is set. Tap any piece to see today's price on Amazon, then compare it with a pro's setup below.`;
               btn.disabled = false; btn.textContent = 'Spin again';
               if (window.goatcounter && goatcounter.count) goatcounter.count({ path: 'pros-roulette-spin', event: true });
             }

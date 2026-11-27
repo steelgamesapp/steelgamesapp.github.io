@@ -1,0 +1,555 @@
+{
+ "updated": "2026-11-27T12:30:27Z",
+ "stores": {
+  "kinguin": {
+   "name": "Kinguin",
+   "kind": "Marketplace (third-party sellers)"
+  },
+  "gameseal": {
+   "name": "Gameseal",
+   "kind": "Key store"
+  },
+  "loaded": {
+   "name": "Loaded",
+   "kind": "Key store (formerly CDKeys)"
+  }
+ },
+ "cards": {
+  "psn": {
+   "name": "PlayStation Store",
+   "faces": {
+    "10": [
+     {
+      "store": "loaded",
+      "usd": 9.79,
+      "approx": false,
+      "cur": "USD",
+      "price": 9.79,
+      "name": "PlayStation Store Gift Card - 10 USD (US)",
+      "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=CDK0727965236&u=https%3A%2F%2Fwww.loaded.com%2F10-playstation-store-gift-card-ps3-ps4-ps-vita-digital-code%3F__currency%3Dusd&intsrc=APIG_12134",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "kinguin",
+      "usd": 10.37,
+      "approx": true,
+      "cur": "GBP",
+      "price": 7.91,
+      "name": "PlayStation Network Card USD 10 Gift Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=3292&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F3292%2Fplaystation-network-card-usd-10-gift-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "gameseal",
+      "usd": 10.84,
+      "approx": false,
+      "cur": "USD",
+      "price": 10.84,
+      "name": "PlayStation Gift Card 10 USD - QATAR",
+      "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=50965&u=https%3A%2F%2Fgameseal.com%2Fplaystation-network-card-10-usd-qar-psn-key-qatar%3Fcurrency%3DUSD&intsrc=APIG_24509",
+      "checked": "2026-11-27T01:46:26Z"
+     }
+    ],
+    "20": [
+     {
+      "store": "gameseal",
+      "usd": 20.35,
+      "approx": true,
+      "cur": "GBP",
+      "price": 15.53,
+      "name": "PlayStation Gift Card 20 USD - KUWAIT",
+      "url": "https://impact.gameseal.com/c/8059330/3722709/25825?prodsku=50973&u=https%3A%2F%2Fgameseal.com%2Fplaystation-network-card-20-usd-kwd-psn-key-kuwait%3Fcurrency%3DUSD&intsrc=APIG_29769",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "25": [
+     {
+      "store": "loaded",
+      "usd": 24.49,
+      "approx": false,
+      "cur": "USD",
+      "price": 24.49,
+      "name": "PlayStation Network (PSN) Card - 25 USD",
+      "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=PSN25USD&u=https%3A%2F%2Fwww.loaded.com%2Fplaystation-network-psn-card-25-usd%3F__currency%3Dusd&intsrc=APIG_12134",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "kinguin",
+      "usd": 24.83,
+      "approx": true,
+      "cur": "GBP",
+      "price": 18.95,
+      "name": "PlayStation Network Card USD 25 Gift Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=51810&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F51810%2Fplaystation-network-card-usd-25-gift-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "50": [
+     {
+      "store": "loaded",
+      "usd": 48.49,
+      "approx": false,
+      "cur": "USD",
+      "price": 48.49,
+      "name": "PLAYSTATION STORE GIFT CARD - 50 USD (US)",
+      "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=CDK0728352011&u=https%3A%2F%2Fwww.loaded.com%2F50-playstation-store-gift-card-ps3-ps4-ps-vita-digital-code%3F__currency%3Dusd&intsrc=APIG_12134",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "kinguin",
+      "usd": 50.28,
+      "approx": true,
+      "cur": "GBP",
+      "price": 38.37,
+      "name": "PlayStation Network Card USD 50 Gift Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=1970&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F1970%2Fplaystation-network-card-usd-50-gift-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "gameseal",
+      "usd": 53.0,
+      "approx": true,
+      "cur": "GBP",
+      "price": 40.45,
+      "name": "PlayStation Gift Card 50 USD - KUWAIT",
+      "url": "https://impact.gameseal.com/c/8059330/3722709/25825?prodsku=51000&u=https%3A%2F%2Fgameseal.com%2Fplaystation-network-card-50-usd-kwd-psn-key-kuwait%3Fcurrency%3DUSD&intsrc=APIG_29769",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "75": [
+     {
+      "store": "loaded",
+      "usd": 71.99,
+      "approx": false,
+      "cur": "USD",
+      "price": 71.99,
+      "name": "PLAYSTATION STORE GIFT CARD - 75 USD (USA)",
+      "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=PSN75USD_US&u=https%3A%2F%2Fwww.loaded.com%2Fplaystation-network-psn-card-75-usd-usa%3F__currency%3Dusd&intsrc=APIG_12134",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "kinguin",
+      "usd": 74.04,
+      "approx": true,
+      "cur": "GBP",
+      "price": 56.5,
+      "name": "PlayStation Network Card USD 75 Gift Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=41259&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F41259%2Fplaystation-network-card-usd-75-gift-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "100": [
+     {
+      "store": "loaded",
+      "usd": 97.49,
+      "approx": false,
+      "cur": "USD",
+      "price": 97.49,
+      "name": "PLAYSTATION STORE GIFT CARD - 100 USD (US)",
+      "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=PSN100USD_US&u=https%3A%2F%2Fwww.loaded.com%2Fplaystation-network-psn-card-100-usd-usa%3F__currency%3Dusd&intsrc=APIG_12134",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "kinguin",
+      "usd": 98.16,
+      "approx": true,
+      "cur": "GBP",
+      "price": 74.91,
+      "name": "PlayStation Network Card USD 100 Gift Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=38378&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F38378%2Fplaystation-network-card-usd-100-gift-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "gameseal",
+      "usd": 107.2,
+      "approx": false,
+      "cur": "USD",
+      "price": 107.2,
+      "name": "PlayStation Gift Card 100 USD - BAHRAIN",
+      "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=78113&u=https%3A%2F%2Fgameseal.com%2Fplaystation-network-card-100-usd-bah-psn-key-bahrain%3Fcurrency%3DUSD&intsrc=APIG_24509",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ]
+   }
+  },
+  "xbox": {
+   "name": "Xbox",
+   "faces": {
+    "10": [
+     {
+      "store": "kinguin",
+      "usd": 9.7,
+      "approx": true,
+      "cur": "GBP",
+      "price": 7.4,
+      "name": "XBOX Live $10 Prepaid Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=11097&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F11097%2Fxbox-live-us-10-usd-prepaid%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "gameseal",
+      "usd": 10.31,
+      "approx": false,
+      "cur": "USD",
+      "price": 10.31,
+      "name": "Xbox Live Gift Card 10 USD Xbox Live Key - UNITED STATES",
+      "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=1728&u=https%3A%2F%2Fgameseal.com%2Fxbox-live-gift-card-10-usd-xbox-live-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_24509",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "15": [
+     {
+      "store": "kinguin",
+      "usd": 14.39,
+      "approx": true,
+      "cur": "GBP",
+      "price": 10.98,
+      "name": "XBOX Live USD 15 Prepaid Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=6319&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F6319%2Fxbox-live-usd-15-prepaid-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "20": [
+     {
+      "store": "loaded",
+      "usd": 18.99,
+      "approx": false,
+      "cur": "USD",
+      "price": 18.99,
+      "name": "Xbox Gift Card - 20 USD",
+      "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=CDK0624513975&u=https%3A%2F%2Fwww.loaded.com%2Fxbox-gift-card-20-usd%3F__currency%3Dusd&intsrc=APIG_12134",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "kinguin",
+      "usd": 19.97,
+      "approx": true,
+      "cur": "GBP",
+      "price": 15.24,
+      "name": "XBOX Live USD 20 Prepaid Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=4497&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F4497%2Fxbox-live-usd-20-prepaid-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "gameseal",
+      "usd": 20.6,
+      "approx": false,
+      "cur": "USD",
+      "price": 20.6,
+      "name": "Xbox Live Gift Card 20 USD Xbox Live Key - UNITED STATES",
+      "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=1732&u=https%3A%2F%2Fgameseal.com%2Fxbox-live-gift-card-20-usd-xbox-live-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_24509",
+      "checked": "2026-11-27T01:46:26Z"
+     }
+    ],
+    "25": [
+     {
+      "store": "kinguin",
+      "usd": 24.6,
+      "approx": true,
+      "cur": "GBP",
+      "price": 18.77,
+      "name": "XBOX Live USD 25 Prepaid Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=6320&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F6320%2Fxbox-live-usd-25-prepaid-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "50": [
+     {
+      "store": "gameseal",
+      "usd": 47.99,
+      "approx": true,
+      "cur": "GBP",
+      "price": 36.62,
+      "name": "Xbox Live Gift Card 50 USD Xbox Live Key - UNITED STATES",
+      "url": "https://impact.gameseal.com/c/8059330/3722709/25825?prodsku=1741&u=https%3A%2F%2Fgameseal.com%2Fxbox-live-gift-card-50-usd-xbox-live-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_29769",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "kinguin",
+      "usd": 48.85,
+      "approx": true,
+      "cur": "GBP",
+      "price": 37.28,
+      "name": "XBOX Live USD 50 Prepaid Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=7234&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F7234%2Fxbox-live-usd-50-prepaid-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "100": [
+     {
+      "store": "loaded",
+      "usd": 94.99,
+      "approx": false,
+      "cur": "USD",
+      "price": 94.99,
+      "name": "Xbox Gift Card - 100 USD",
+      "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=CDK0649243463&u=https%3A%2F%2Fwww.loaded.com%2Fxbox-gift-card-100-usd%3F__currency%3Dusd&intsrc=APIG_12134",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "kinguin",
+      "usd": 95.33,
+      "approx": true,
+      "cur": "GBP",
+      "price": 72.75,
+      "name": "XBOX Live USD 100 Prepaid Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=19173&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F19173%2Fxbox-live-usd-100-prepaid-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ]
+   }
+  },
+  "nintendo": {
+   "name": "Nintendo eShop",
+   "faces": {
+    "10": [
+     {
+      "store": "kinguin",
+      "usd": 8.22,
+      "approx": true,
+      "cur": "GBP",
+      "price": 6.27,
+      "name": "Nintendo eShop Prepaid Card USD 10 US Key",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=3926&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F3926%2Fnintendo-eshop-prepaid-card-usd-10-us-key%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "gameseal",
+      "usd": 8.65,
+      "approx": false,
+      "cur": "USD",
+      "price": 8.65,
+      "name": "Nintendo eShop Card 10 USD Key - UNITED STATES",
+      "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=1002&u=https%3A%2F%2Fgameseal.com%2Fnintendo-eshop-card-10-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_24509",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "loaded",
+      "usd": 9.49,
+      "approx": false,
+      "cur": "USD",
+      "price": 9.49,
+      "name": "Nintendo eShop Gift Card - 10 USD",
+      "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=NESC15USD&u=https%3A%2F%2Fwww.loaded.com%2Fnintendo-eshop-card-10-usd%3F__currency%3Dusd&intsrc=APIG_12134",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "20": [
+     {
+      "store": "loaded",
+      "usd": 18.79,
+      "approx": false,
+      "cur": "USD",
+      "price": 18.79,
+      "name": "Nintendo eShop Gift Card - 20 USD",
+      "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=NES20USD&u=https%3A%2F%2Fwww.loaded.com%2Fnintendo-eshop-card-20-usd%3F__currency%3Dusd&intsrc=APIG_12134",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "gameseal",
+      "usd": 19.68,
+      "approx": false,
+      "cur": "USD",
+      "price": 19.68,
+      "name": "Nintendo eShop Card 20 USD Key - NORTH AMERICA",
+      "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=131817&u=https%3A%2F%2Fgameseal.com%2Fnintendo-eshop-card-20-usd-key-north-america%3Fcurrency%3DUSD&intsrc=APIG_24509",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "35": [
+     {
+      "store": "gameseal",
+      "usd": 32.91,
+      "approx": false,
+      "cur": "USD",
+      "price": 32.91,
+      "name": "Nintendo eShop Card 35 USD Key - UNITED STATES",
+      "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=1004&u=https%3A%2F%2Fgameseal.com%2Fnintendo-eshop-card-35-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_24509",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "kinguin",
+      "usd": 33.72,
+      "approx": true,
+      "cur": "GBP",
+      "price": 25.73,
+      "name": "Nintendo eShop Prepaid Card USD 35 Key NA",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=411539&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F411539%2Fnintendo-eshop-prepaid-card-usd-35-key-na%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T01:46:26Z"
+     }
+    ],
+    "50": [
+     {
+      "store": "loaded",
+      "usd": 46.99,
+      "approx": false,
+      "cur": "USD",
+      "price": 46.99,
+      "name": "Nintendo eShop Gift Card - 50 USD",
+      "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=NESC50USD&u=https%3A%2F%2Fwww.loaded.com%2Fnintendo-eshop-card-50-usd%3F__currency%3Dusd&intsrc=APIG_12134",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "gameseal",
+      "usd": 48.2,
+      "approx": false,
+      "cur": "USD",
+      "price": 48.2,
+      "name": "Nintendo eShop Card 50 USD Key - UNITED STATES",
+      "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=1005&u=https%3A%2F%2Fgameseal.com%2Fnintendo-eshop-card-50-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_24509",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "70": [
+     {
+      "store": "kinguin",
+      "usd": 67.0,
+      "approx": true,
+      "cur": "GBP",
+      "price": 51.13,
+      "name": "Nintendo eShop Prepaid Card USD 70 Key US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=58185&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F58185%2Fnintendo-eshop-prepaid-card-usd-70-key-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "gameseal",
+      "usd": 67.97,
+      "approx": false,
+      "cur": "USD",
+      "price": 67.97,
+      "name": "Nintendo eShop Card 70 USD Key - UNITED STATES",
+      "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=31772&u=https%3A%2F%2Fgameseal.com%2Fnintendo-eshop-card-70-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_24509",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "99": []
+   }
+  },
+  "steam": {
+   "name": "Steam Wallet",
+   "faces": {
+    "5": [
+     {
+      "store": "kinguin",
+      "usd": 5.62,
+      "approx": true,
+      "cur": "GBP",
+      "price": 4.29,
+      "name": "Steam Wallet USD 5 Gift Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=41288&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F41288%2Fsteam-wallet-usd-5-gift-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "10": [
+     {
+      "store": "kinguin",
+      "usd": 11.11,
+      "approx": true,
+      "cur": "GBP",
+      "price": 8.48,
+      "name": "Steam Wallet USD 10 Gift Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=130561&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F130561%2Fsteam-wallet-usd-10-gift-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "20": [
+     {
+      "store": "kinguin",
+      "usd": 21.67,
+      "approx": true,
+      "cur": "GBP",
+      "price": 16.54,
+      "name": "Steam Wallet USD 20 Gift Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=13938&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F13938%2Fsteam-wallet-usd-20-gift-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "50": [
+     {
+      "store": "kinguin",
+      "usd": 54.67,
+      "approx": true,
+      "cur": "GBP",
+      "price": 41.72,
+      "name": "Steam Wallet USD 50 Gift Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=13939&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F13939%2Fsteam-wallet-usd-50-gift-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T01:46:26Z"
+     }
+    ],
+    "100": [
+     {
+      "store": "kinguin",
+      "usd": 112.17,
+      "approx": true,
+      "cur": "GBP",
+      "price": 85.6,
+      "name": "Steam Wallet USD 100 Gift Card US",
+      "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=14685&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F14685%2Fsteam-wallet-usd-100-gift-card-us%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ]
+   }
+  },
+  "roblox": {
+   "name": "Roblox",
+   "faces": {
+    "10": [
+     {
+      "store": "gameseal",
+      "usd": 10.6,
+      "approx": false,
+      "cur": "USD",
+      "price": 10.6,
+      "name": "Roblox Card 10 USD Key - LATIN AMERICA",
+      "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=73604&u=https%3A%2F%2Fgameseal.com%2Froblox-card-10-usd-key-latin-america%3Fcurrency%3DUSD&intsrc=APIG_24509",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "25": [
+     {
+      "store": "loaded",
+      "usd": 23.69,
+      "approx": false,
+      "cur": "USD",
+      "price": 23.69,
+      "name": "Roblox Gift Card - 25 USD",
+      "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=ROBLOX25USGC&u=https%3A%2F%2Fwww.loaded.com%2Froblox-25-usd-gift-card%3F__currency%3Dusd&intsrc=APIG_12134",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "gameseal",
+      "usd": 24.56,
+      "approx": true,
+      "cur": "GBP",
+      "price": 18.74,
+      "name": "Roblox Card 25 USD Key - UNITED STATES",
+      "url": "https://impact.gameseal.com/c/8059330/3722709/25825?prodsku=26368&u=https%3A%2F%2Fgameseal.com%2Froblox-card-25-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_29769",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ],
+    "50": [
+     {
+      "store": "gameseal",
+      "usd": 46.91,
+      "approx": false,
+      "cur": "USD",
+      "price": 46.91,
+      "name": "Roblox Card 50 USD Key - UNITED STATES",
+      "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=48597&u=https%3A%2F%2Fgameseal.com%2Froblox-card-50-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_24509",
+      "checked": "2026-11-27T12:30:27Z"
+     },
+     {
+      "store": "loaded",
+      "usd": 46.99,
+      "approx": false,
+      "cur": "USD",
+      "price": 46.99,
+      "name": "Roblox Gift Card - 50 USD",
+      "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=ROBLOX50USDGC&u=https%3A%2F%2Fwww.loaded.com%2Froblox-50-usd-gift-card%3F__currency%3Dusd&intsrc=APIG_12134",
+      "checked": "2026-11-27T12:30:27Z"
+     }
+    ]
+   }
+  }
+ }
+}

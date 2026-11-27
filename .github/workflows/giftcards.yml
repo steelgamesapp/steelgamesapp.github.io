@@ -1,0 +1,63 @@
+name: Gift card price comparison
+# Reads live gift card prices from our affiliate stores' Impact product feeds (Kinguin, Gameseal, Loaded)
+# and rebuilds /gift-cards/. See tools/giftcards.py and tools/giftcards_page.py.
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "tools/giftcards.py"
+      - "tools/giftcards_page.py"
+      - "tools/black_friday.py"
+      - ".github/workflows/giftcards.yml"
+  workflow_dispatch:
+    inputs:
+      probe:
+        description: "Only print what the feed returns for these search words (no changes)"
+        required: false
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: giftcards
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read live prices from the Impact feeds
+        env:
+          IMPACT_ACCOUNT_SID: ${{ secrets.IMPACT_ACCOUNT_SID }}
+          IMPACT_AUTH_TOKEN: ${{ secrets.IMPACT_AUTH_TOKEN }}
+          PROBE: ${{ github.event.inputs.probe }}
+        run: |
+          if [ -n "$PROBE" ]; then python3 tools/giftcards.py --probe "$PROBE"; exit 0; fi
+          python3 tools/giftcards.py
+      - name: Build the gift card page
+        if: ${{ github.event.inputs.probe == '' }}
+        run: |
+          if [ -f data/giftcards.json ]; then (cd tools && python3 giftcards_page.py); fi
+      - name: Black Friday deals hub (live partner sale prices)
+        if: ${{ github.event.inputs.probe == '' }}
+        env:
+          IMPACT_ACCOUNT_SID: ${{ secrets.IMPACT_ACCOUNT_SID }}
+          IMPACT_AUTH_TOKEN: ${{ secrets.IMPACT_AUTH_TOKEN }}
+        run: python3 tools/black_friday.py
+      - name: Commit changes
+        if: ${{ github.event.inputs.probe == '' }}
+        run: |
+          git config user.name "SteelGames Bot"
+          git config user.email "steelgames.app@outlook.com"
+          git add data/giftcards.json gift-cards data/black_friday.json black-friday
+          git diff --cached --quiet && { echo "Nothing changed."; exit 0; }
+          git commit -m "Gift card prices and Black Friday deals: live refresh"
+          for i in 1 2 3; do
+            git pull --rebase --autostash -X theirs origin main && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          echo "Could not push after 3 tries" >&2
+          exit 1

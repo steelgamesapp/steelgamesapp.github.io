@@ -53,7 +53,7 @@
 <div class="sh-grid" id="sh-best"><p class="fine">Loading today's best sellers…</p></div>
 
 <h2 style="margin-top:34px">Gear from our settings videos</h2>
-<p class="fine">The mice, keyboards and headsets we recommend in our "Best Settings" Shorts.</p>
+<p class="fine">The mice, keyboards and headsets we recommend in our "Best Settings" Shorts. Watched one of our videos? <a href="/s/">Find its gear by video number</a>.</p>
 <div class="sh-grid" id="sh-picks"></div>
 
 <h2 style="margin-top:34px">More gaming gear</h2>
@@ -87,9 +87,7 @@ function card(p){
  (p.badge?'<span class="sh-badge'+(p.badgeNew?' new':'')+'">'+esc(p.badge)+'</span>':'')+
  '<div class="sh-img"><img loading="lazy" alt="" src="'+esc(p.img||img(p.asin))+'"></div>'+
  '<div class="sh-info"><span class="sh-name">'+esc(p.short||p.name)+'</span>'+
- (p.stars?'<span class="sh-meta">&#9733; '+p.stars+' &middot; '+Number(p.ratings||0).toLocaleString()+' ratings</span>':'')+
  (p.why?'<span class="sh-meta">'+esc(p.why)+'</span>':'')+
- (p.price?'<span class="sh-price">$'+Number(p.price).toFixed(2)+'</span>':'')+
  '<span class="sh-go">See price on Amazon &rarr;</span></div></a>';
 }
 document.getElementById('sh-picks').innerHTML=PICKS.map(function(p){p.badge='Our pick';return card(p)}).join('');
