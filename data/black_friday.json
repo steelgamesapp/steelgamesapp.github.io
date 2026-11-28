@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T23:31:23Z",
+ "updated": "2026-11-28T07:59:38Z",
  "gear": [
   {
    "brand": "SOLAKAKA",
@@ -21,12 +21,12 @@
   },
   {
    "brand": "AutoFull",
-   "name": "AutoFull M6 Ultra 2.0 Ergonomic Gaming Chair",
-   "price": 479.99,
-   "was": 899.99,
-   "off": 47,
-   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=8877584843001&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2F%25F0%259F%2594%25A5hot-sale%25F0%259F%2594%25A5-autofull-m6-ultra-gaming-chair&intsrc=APIG_22782",
-   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/20251008-151910.jpg?v=1759908899"
+   "name": "AutoFull G7 Black Ergonomic Gaming Chair",
+   "price": 455.99,
+   "was": 799.99,
+   "off": 43,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=49026118844665&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-g7-ergonomic-gaming-chair-black&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/gaming_chair_1_c5f546de-af69-4926-b5e4-a859ea893772.jpg?v=1777458714"
   },
   {
    "brand": "AutoFull",
@@ -54,6 +54,15 @@
    "off": 35,
    "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=15355201192185&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-c3-pro-ergonomic-gaming-chair-a4-pro-gaming-desk-bundle&intsrc=APIG_22782",
    "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/C3_Pro_Black_A4_Pro_Main_Image_01_Product_image_front.png?v=1793932617"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull G7 Pink Ergonomic Gaming Chair",
+   "price": 455.99,
+   "was": 699.99,
+   "off": 35,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=46556947284217&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-g7-ergonomic-gaming-chair-pink&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/20250415-090041_1_aaf1f535-be9e-433a-ac12-0a68bd00f9cc.jpg?v=1755739130"
   },
   {
    "brand": "SOLAKAKA",
@@ -93,30 +102,21 @@
   },
   {
    "brand": "AutoFull",
-   "name": "AutoFull G7 Pink Ergonomic Gaming Chair",
-   "price": 455.99,
-   "was": 669.99,
-   "off": 32,
-   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=49026173141241&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-g7-ergonomic-gaming-chair-pink-1&intsrc=APIG_22782",
-   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/20250415-090041_1_aaf1f535-be9e-433a-ac12-0a68bd00f9cc.jpg?v=1755739130"
-  },
-  {
-   "brand": "AutoFull",
-   "name": "AutoFull G7 Black Ergonomic Gaming Chair",
-   "price": 455.99,
-   "was": 669.99,
-   "off": 32,
-   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=47085555450105&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-g7-black-ergonomic-gaming-chair&intsrc=APIG_22782",
-   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/gaming_chair_1_c5f546de-af69-4926-b5e4-a859ea893772.jpg?v=1777458714"
-  },
-  {
-   "brand": "AutoFull",
    "name": "AutoFull M6 Ultra+ 2.0 Shiatsu Massage Gaming Chair & A4 Pro Gaming Desk Bundle",
    "price": 1319.98,
    "was": 1899.99,
    "off": 31,
-   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=48763196670201&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-m6-ultra-2-0-shiatsu-massage-gaming-chair-gaming-desk-bundle&intsrc=APIG_22782",
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=67853731037433&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fautofull-m6-ultra-2-0-shiatsu-massage-gaming-chair-gaming-desk-bundle&intsrc=APIG_22782",
    "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/20260602-141934.jpg?v=1786096470"
+  },
+  {
+   "brand": "AutoFull",
+   "name": "AutoFull M6 Ultra 2.0 Ergonomic Gaming Chair",
+   "price": 479.99,
+   "was": 699.99,
+   "off": 31,
+   "url": "https://go.sjv.io/c/8059330/2860735/32662?prodsku=8996768547065&u=https%3A%2F%2Fwww.autofull.com%2Fproducts%2Fm6-ultra-2-0-new-upgraded&intsrc=APIG_22782",
+   "img": "https://cdn.shopify.com/s/files/1/0303/9805/4531/files/M602_MainImage_01_Productimage_front_webp_2e0b5122-4aa4-425a-b6cf-92aee82804d6.webp?v=1778408270"
   },
   {
    "brand": "Satechi",
@@ -147,15 +147,6 @@
   },
   {
    "brand": "SOLAKAKA",
-   "name": "SOLAKAKA A99 Pro Mechanical Keyboard",
-   "price": 69.99,
-   "was": 99.99,
-   "off": 30,
-   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=10921453912367&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-a99-pro-mechanical-keyboard&intsrc=APIG_37975",
-   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/a99-pro-zhutu-brown.jpg?v=1792651068"
-  },
-  {
-   "brand": "SOLAKAKA",
    "name": "SOLAKAKA Ki75 Wireless Mechanical Keyboard",
    "price": 69.99,
    "was": 100.0,
@@ -165,12 +156,21 @@
   },
   {
    "brand": "SOLAKAKA",
-   "name": "SOLAKAKA E9 Vertical  Ergonomic MMO Gaming Wireless Office Mouse",
-   "price": 55.99,
-   "was": 79.99,
+   "name": "SOLAKAKA A99 Pro Mechanical Keyboard",
+   "price": 69.99,
+   "was": 99.99,
    "off": 30,
-   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=15591304429871&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-e9-vertical-mmo-gaming-mouse&intsrc=APIG_37975",
-   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/E9-white.png?v=1776916094"
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=10921453912367&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-a99-pro-mechanical-keyboard&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/a99-pro-zhutu-brown.jpg?v=1792651068"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA A75 and SM822 Keyboard and Mouse Combo",
+   "price": 80.99,
+   "was": 115.99,
+   "off": 30,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=16050768544047&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-a75-and-sm822-wireless-keyboard-and-mouse-combo&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/A75-SM822-purple-keyboard.png?v=1793687109"
   },
   {
    "brand": "SOLAKAKA",
@@ -180,6 +180,15 @@
    "off": 30,
    "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=10669495189807&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-ki99pro-wireless-mechanical-keyboard&intsrc=APIG_37975",
    "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/KI99PRO-White.jpg?v=1751334751"
+  },
+  {
+   "brand": "SOLAKAKA",
+   "name": "SOLAKAKA E9 Vertical  Ergonomic MMO Gaming Wireless Office Mouse",
+   "price": 55.99,
+   "was": 79.99,
+   "off": 30,
+   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=15591304429871&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-e9-vertical-mmo-gaming-mouse&intsrc=APIG_37975",
+   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/E9-white.png?v=1776916094"
   },
   {
    "brand": "AutoFull",
@@ -207,15 +216,6 @@
    "off": 25,
    "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=15997130965295&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-a75-pro-wireless-mechanical-gaming-keyboard&intsrc=APIG_37975",
    "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/SOLAKAKA-A75-PRO-zhutu-black.jpg?v=1782973625"
-  },
-  {
-   "brand": "SOLAKAKA",
-   "name": "SOLAKAKA SM822 Wireless Gaming Mouse",
-   "price": 24.99,
-   "was": 32.99,
-   "off": 24,
-   "url": "https://solakaka.sjv.io/c/8059330/4088125/59170?prodsku=14869724758319&u=https%3A%2F%2Fsolakaka.com%2Fproducts%2Fsolakaka-sm822-wireless-gaming-mouse&intsrc=APIG_37975",
-   "img": "https://cdn.shopify.com/s/files/1/0910/3661/4959/files/solakaka-sm822-white.jpg?v=1777011900"
   }
  ],
  "games": [
@@ -258,14 +258,6 @@
    "off": 43,
    "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=BF6EAPC&u=https%3A%2F%2Fwww.loaded.com%2Fbattlefield-6-pc-eaapp%3F__currency%3Dusd&intsrc=APIG_12134",
    "img": "https://cdn.loaded.com/500x706/media/catalog/product/b/a/battlefield_6_pc_cdkeys_1.png"
-  },
-  {
-   "name": "Black Myth: Wukong Digital Deluxe Edition PC",
-   "price": 44.49,
-   "was": 69.99,
-   "off": 36,
-   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=BCKMWGDEPC&u=https%3A%2F%2Fwww.loaded.com%2Fblack-myth-wukong-digital-deluxe-edition-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
-   "img": "https://cdn.loaded.com/500x706/media/catalog/product/b/l/black_myth_wukong_de.jpg"
   },
   {
    "name": "Hogwarts Legacy PC",
@@ -388,12 +380,28 @@
    "img": "https://cdn.loaded.com/500x706/media/catalog/product/f/i/final_fantasy_xiii_pc.jpg"
   },
   {
+   "name": "Final Fantasy III PC",
+   "price": 5.69,
+   "was": 14.59,
+   "off": 61,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=FINALFANT3PC&u=https%3A%2F%2Fwww.loaded.com%2Ffinal-fantasy-3-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/f/f/ffcover_1_.jpg"
+  },
+  {
    "name": "Assassin's Creed 2 PC",
    "price": 3.29,
    "was": 13.29,
    "off": 75,
    "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=ASSNSCR2PC&u=https%3A%2F%2Fwww.loaded.com%2Fassassins-creed-2-uplay-pc%3F__currency%3Dusd&intsrc=APIG_12134",
    "img": "https://cdn.loaded.com/500x706/media/catalog/product/a/s/assassins-creed-2-pc-cover-cdkeys.jpg"
+  },
+  {
+   "name": "Final Fantasy VII PC",
+   "price": 5.69,
+   "was": 13.29,
+   "off": 57,
+   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=FINALFAN7PC&u=https%3A%2F%2Fwww.loaded.com%2Ffinal-fantasy-vii-pc-steam%3F__currency%3Dusd&intsrc=APIG_12134",
+   "img": "https://cdn.loaded.com/500x706/media/catalog/product/f/i/final_fantasy_vii.png"
   }
  ],
  "cards": [
@@ -405,6 +413,24 @@
    "approx": true,
    "off": 18,
    "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=3926&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F3926%2Fnintendo-eshop-prepaid-card-usd-10-us-key%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658&subId1=site-bf-card-nintendo10-kinguin"
+  },
+  {
+   "card": "Nintendo eShop",
+   "face": 35,
+   "store": "Gameseal",
+   "usd": 32.51,
+   "approx": true,
+   "off": 7,
+   "url": "https://impact.gameseal.com/c/8059330/3722709/25825?prodsku=1004&u=https%3A%2F%2Fgameseal.com%2Fnintendo-eshop-card-35-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_29769&subId1=site-bf-card-nintendo35-gameseal"
+  },
+  {
+   "card": "Xbox",
+   "face": 10,
+   "store": "Kinguin",
+   "usd": 9.37,
+   "approx": true,
+   "off": 6,
+   "url": "https://kinguin.sjv.io/c/8059330/3856237/50048?prodsku=11097&u=https%3A%2F%2Fwww.kinguin.net%2Fen%2Fcategory%2F11097%2Fxbox-live-us-10-usd-prepaid%3Fnosalesbooster%3D1%26currency%3DUSD&intsrc=APIG_32658&subId1=site-bf-card-xbox10-kinguin"
   },
   {
    "card": "Nintendo eShop",
@@ -428,7 +454,7 @@
    "card": "Roblox",
    "face": 50,
    "store": "Gameseal",
-   "usd": 46.91,
+   "usd": 46.76,
    "approx": false,
    "off": 6,
    "url": "https://impact.gameseal.com/c/8059330/3035464/25825?prodsku=48597&u=https%3A%2F%2Fgameseal.com%2Froblox-card-50-usd-key-united-states%3Fcurrency%3DUSD&intsrc=APIG_24509&subId1=site-bf-card-roblox50-gameseal"
@@ -450,24 +476,6 @@
    "approx": false,
    "off": 5,
    "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=CDK0649243463&u=https%3A%2F%2Fwww.loaded.com%2Fxbox-gift-card-100-usd%3F__currency%3Dusd&intsrc=APIG_12134&subId1=site-bf-card-xbox100-loaded"
-  },
-  {
-   "card": "Roblox",
-   "face": 25,
-   "store": "Loaded",
-   "usd": 23.69,
-   "approx": false,
-   "off": 5,
-   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=ROBLOX25USGC&u=https%3A%2F%2Fwww.loaded.com%2Froblox-25-usd-gift-card%3F__currency%3Dusd&intsrc=APIG_12134&subId1=site-bf-card-roblox25-loaded"
-  },
-  {
-   "card": "PlayStation Store",
-   "face": 75,
-   "store": "Loaded",
-   "usd": 71.99,
-   "approx": false,
-   "off": 4,
-   "url": "https://go.loaded.com/c/8059330/1625317/18216?prodsku=PSN75USD_US&u=https%3A%2F%2Fwww.loaded.com%2Fplaystation-network-psn-card-75-usd-usa%3F__currency%3Dusd&intsrc=APIG_12134&subId1=site-bf-card-psn75-loaded"
   }
  ]
 }
