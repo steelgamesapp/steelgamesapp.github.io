@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-27T19:28:25Z",
+"updated": "2026-11-28T02:40:27Z",
 "source": "Amazon Best Sellers: PC Games & Accessories",
 "items": [
 {
@@ -21,7 +21,7 @@
 "kind": "mouse"
 },
 {
-"rank": 6,
+"rank": 5,
 "asin": "B07GBZ4Q68",
 "name": "Logitech G502 HERO Wired Gaming Mouse, HERO 25K Sensor for PC/Mac | High performance, 25,600 DPI, RGB, adjustable weights, 11",
 "short": "Logitech G502 HERO Wired Gaming Mouse",
@@ -31,21 +31,21 @@
 },
 {
 "rank": 7,
-"asin": "B0D739FJLG",
-"name": "8Bitdo Ultimate 2C Wireless Controller for Windows PC and Android, with 1000 Hz Polling Rate, Hall Effect Joysticks and Trigg",
-"short": "8Bitdo Ultimate 2C Wireless Controller for Windows PC and",
-"img": "https://images-na.ssl-images-amazon.com/images/I/51DTcaDKELL._AC_SL400_.jpg",
-"url": "https://www.amazon.com/dp/B0D739FJLG?tag=steelgames-20",
-"kind": "controller"
-},
-{
-"rank": 8,
 "asin": "B081415GCS",
 "name": "Logitech G733 Lightspeed Wireless Gaming Headset - Black | Suspension Headband, Blue VO!CE Mic, PRO-G Audio, PC, PS5, PS4, Sw",
 "short": "Logitech G733 Lightspeed Wireless Gaming Headset",
 "img": "https://images-na.ssl-images-amazon.com/images/I/710MzmBFzkL._AC_SL400_.jpg",
 "url": "https://www.amazon.com/dp/B081415GCS?tag=steelgames-20",
 "kind": "headset"
+},
+{
+"rank": 8,
+"asin": "B0D739FJLG",
+"name": "8Bitdo Ultimate 2C Wireless Controller for Windows PC and Android, with 1000 Hz Polling Rate, Hall Effect Joysticks and Trigg",
+"short": "8Bitdo Ultimate 2C Wireless Controller for Windows PC and",
+"img": "https://images-na.ssl-images-amazon.com/images/I/51DTcaDKELL._AC_SL400_.jpg",
+"url": "https://www.amazon.com/dp/B0D739FJLG?tag=steelgames-20",
+"kind": "controller"
 },
 {
 "rank": 9,
@@ -67,33 +67,6 @@
 },
 {
 "rank": 11,
-"asin": "B0HGR4SDYC",
-"name": "AOC 2.4GHz Wireless Gaming Headset for PS5, PS4, PC, Switch, 45Hr, White | Bluetooth 6.0 Gaming Headphones with Noise Canceli",
-"short": "AOC 2.4GHz Wireless Gaming Headset for PS5",
-"img": "https://images-na.ssl-images-amazon.com/images/I/71hsvNd1BtL._AC_SL400_.jpg",
-"url": "https://www.amazon.com/dp/B0HGR4SDYC?tag=steelgames-20",
-"kind": "headset"
-},
-{
-"rank": 12,
-"asin": "B0943HXDVM",
-"name": "Logitech G502 X Wired Gaming Mouse - Black | Optical Switches, 13 Buttons, Infinite Scroll, PC/MacOS Compatible",
-"short": "Logitech G502 X Wired Gaming Mouse",
-"img": "https://images-na.ssl-images-amazon.com/images/I/61hvcoyQ8cL._AC_SL400_.jpg",
-"url": "https://www.amazon.com/dp/B0943HXDVM?tag=steelgames-20",
-"kind": "mouse"
-},
-{
-"rank": 13,
-"asin": "B0C7GW9F88",
-"name": "GameSir G7 SE Wired Controller for Xbox Series X|S, Xbox One & Windows 10/11, Plug and Play Gaming Gamepad with Hall Effect J",
-"short": "GameSir G7 SE Wired Controller for Xbox Series X|S",
-"img": "https://images-na.ssl-images-amazon.com/images/I/51iXILIT27L._AC_SL400_.jpg",
-"url": "https://www.amazon.com/dp/B0C7GW9F88?tag=steelgames-20",
-"kind": "controller"
-},
-{
-"rank": 14,
 "asin": "B0DR8V899R",
 "name": "8Bitdo Ultimate 2 Wireless Controller for PC, Apple, Steam & Android, Black | TMR Joysticks, Hall/Tactile Triggers, 8Speed 2.",
 "short": "8Bitdo Ultimate 2 Wireless Controller for PC",
@@ -102,13 +75,40 @@
 "kind": "controller"
 },
 {
-"rank": 15,
+"rank": 12,
+"asin": "B0HGR4SDYC",
+"name": "AOC 2.4GHz Wireless Gaming Headset for PS5, PS4, PC, Switch, 45Hr, White | Bluetooth 6.0 Gaming Headphones with Noise Canceli",
+"short": "AOC 2.4GHz Wireless Gaming Headset for PS5",
+"img": "https://images-na.ssl-images-amazon.com/images/I/71hsvNd1BtL._AC_SL400_.jpg",
+"url": "https://www.amazon.com/dp/B0HGR4SDYC?tag=steelgames-20",
+"kind": "headset"
+},
+{
+"rank": 13,
+"asin": "B0943HXDVM",
+"name": "Logitech G502 X Wired Gaming Mouse - Black | Optical Switches, 13 Buttons, Infinite Scroll, PC/MacOS Compatible",
+"short": "Logitech G502 X Wired Gaming Mouse",
+"img": "https://images-na.ssl-images-amazon.com/images/I/61hvcoyQ8cL._AC_SL400_.jpg",
+"url": "https://www.amazon.com/dp/B0943HXDVM?tag=steelgames-20",
+"kind": "mouse"
+},
+{
+"rank": 14,
 "asin": "B0BGJT87N2",
 "name": "Razer Naga V2 HyperSpeed Wireless MMO Gaming Mouse, 400 Hr Battery, Black | 19 Programmable Buttons, HyperScroll Technology,",
 "short": "Razer Naga V2 HyperSpeed Wireless MMO Gaming Mouse",
 "img": "https://images-na.ssl-images-amazon.com/images/I/61YULkQowXL._AC_SL400_.jpg",
 "url": "https://www.amazon.com/dp/B0BGJT87N2?tag=steelgames-20",
 "kind": "mouse"
+},
+{
+"rank": 15,
+"asin": "B0C7GW9F88",
+"name": "GameSir G7 SE Wired Controller for Xbox Series X|S, Xbox One & Windows 10/11, Plug and Play Gaming Gamepad with Hall Effect J",
+"short": "GameSir G7 SE Wired Controller for Xbox Series X|S",
+"img": "https://images-na.ssl-images-amazon.com/images/I/51iXILIT27L._AC_SL400_.jpg",
+"url": "https://www.amazon.com/dp/B0C7GW9F88?tag=steelgames-20",
+"kind": "controller"
 },
 {
 "rank": 16,
@@ -121,6 +121,24 @@
 },
 {
 "rank": 17,
+"asin": "B0B789CGGQ",
+"name": "XBOX Wireless Gaming Controller | Elite Series 2 Core | White | Adjustable Thumbsticks, Trigger Locks, XBOX Wireless, Bluetoo",
+"short": "XBOX Wireless Gaming Controller Elite Series 2 Core",
+"img": "https://images-na.ssl-images-amazon.com/images/I/61tncw0i36L._AC_SL400_.jpg",
+"url": "https://www.amazon.com/dp/B0B789CGGQ?tag=steelgames-20",
+"kind": "controller"
+},
+{
+"rank": 18,
+"asin": "B00SAYCXWG",
+"name": "HyperX Cloud II Gaming Headset - 7.1 Surround Sound - Memory Foam Ear Pads - Durable Aluminum Frame - Multi Platform Headset",
+"short": "HyperX Cloud II Gaming Headset",
+"img": "https://images-na.ssl-images-amazon.com/images/I/71ltsViEA8L._AC_SL400_.jpg",
+"url": "https://www.amazon.com/dp/B00SAYCXWG?tag=steelgames-20",
+"kind": "headset"
+},
+{
+"rank": 19,
 "asin": "B0CSY8PD63",
 "name": "BOBOVR S3 Pro Battery Strap Accessories,Head Air Cooling System and 10000mah Hot-swappable Battery Pack,Compatible with Meta",
 "short": "BOBOVR S3 Pro Battery Strap Accessories,Head Air Cooling",
@@ -129,31 +147,13 @@
 "kind": "gear"
 },
 {
-"rank": 18,
-"asin": "B0GL96NJL5",
-"name": "PlayStation DualSense\u00ae Wireless Controller \u2013 Midnight Black + USB Cable for PC",
-"short": "PlayStation DualSense\u00ae Wireless Controller",
-"img": "https://images-na.ssl-images-amazon.com/images/I/61cUsm-9AfL._AC_SL400_.jpg",
-"url": "https://www.amazon.com/dp/B0GL96NJL5?tag=steelgames-20",
-"kind": "controller"
-},
-{
-"rank": 19,
+"rank": 20,
 "asin": "B0DXTV9BGJ",
 "name": "Redragon S101M-KS Gaming Keyboard and Mouse Wireless with Tri-Mode, RGB Keyboard and 4800 DPI Gaming Mouse, 10 Independent Mu",
 "short": "Redragon S101M-KS Gaming Keyboard and Mouse Wireless with",
 "img": "https://images-na.ssl-images-amazon.com/images/I/7165L+SRfDL._AC_SL400_.jpg",
 "url": "https://www.amazon.com/dp/B0DXTV9BGJ?tag=steelgames-20",
 "kind": "mouse"
-},
-{
-"rank": 20,
-"asin": "B0B789CGGQ",
-"name": "XBOX Wireless Gaming Controller | Elite Series 2 Core | White | Adjustable Thumbsticks, Trigger Locks, XBOX Wireless, Bluetoo",
-"short": "XBOX Wireless Gaming Controller Elite Series 2 Core",
-"img": "https://images-na.ssl-images-amazon.com/images/I/61tncw0i36L._AC_SL400_.jpg",
-"url": "https://www.amazon.com/dp/B0B789CGGQ?tag=steelgames-20",
-"kind": "controller"
 },
 {
 "rank": 21,
@@ -166,21 +166,21 @@
 },
 {
 "rank": 22,
-"asin": "B00SAYCXWG",
-"name": "HyperX Cloud II Gaming Headset - 7.1 Surround Sound - Memory Foam Ear Pads - Durable Aluminum Frame - Multi Platform Headset",
-"short": "HyperX Cloud II Gaming Headset",
-"img": "https://images-na.ssl-images-amazon.com/images/I/71ltsViEA8L._AC_SL400_.jpg",
-"url": "https://www.amazon.com/dp/B00SAYCXWG?tag=steelgames-20",
-"kind": "headset"
-},
-{
-"rank": 23,
 "asin": "B086PKMZ21",
 "name": "Razer BlackShark V2 X Wired Gaming Headset with Mic for PC and PS5, Black | TriForce Titanium 50 mm Drivers, HyperClear Cardi",
 "short": "Razer BlackShark V2 X Wired Gaming Headset with Mic for PC",
 "img": "https://images-na.ssl-images-amazon.com/images/I/71-mnhc4Q8L._AC_SL400_.jpg",
 "url": "https://www.amazon.com/dp/B086PKMZ21?tag=steelgames-20",
 "kind": "headset"
+},
+{
+"rank": 23,
+"asin": "B0916N2LPZ",
+"name": "Razer Orochi V2 Wireless Gaming Mouse, 950 Hr Battery, Black | 2 Wireless Modes (HyperSpeed & Bluetooth), 18K DPI Sensor, 60M",
+"short": "Razer Orochi V2 Wireless Gaming Mouse",
+"img": "https://images-na.ssl-images-amazon.com/images/I/61SEqMSA-YL._AC_SL400_.jpg",
+"url": "https://www.amazon.com/dp/B0916N2LPZ?tag=steelgames-20",
+"kind": "mouse"
 },
 {
 "rank": 24,
@@ -193,20 +193,20 @@
 },
 {
 "rank": 25,
+"asin": "B09738CV2G",
+"name": "Elgato Stream Deck MK.2 Studio Controller, 15 Macro Keys | Trigger actions in OBS, Twitch, YouTube and more, Visual feedback,",
+"short": "Elgato Stream Deck MK.2 Studio Controller",
+"img": "https://images-na.ssl-images-amazon.com/images/I/61gtdFnK+UL._AC_SL400_.jpg",
+"url": "https://www.amazon.com/dp/B09738CV2G?tag=steelgames-20",
+"kind": "controller"
+},
+{
+"rank": 26,
 "asin": "B0DRFGNWV1",
 "name": "Redragon K521 Upgrade Rainbow LED Gaming Keyboard, 104 Keys Wired Mechanical Feeling Keyboard with Multimedia Keys, One-Touch",
 "short": "Redragon K521 Upgrade Rainbow LED Gaming Keyboard",
 "img": "https://images-na.ssl-images-amazon.com/images/I/71kp4T3JSIL._AC_SL400_.jpg",
 "url": "https://www.amazon.com/dp/B0DRFGNWV1?tag=steelgames-20",
-"kind": "keyboard"
-},
-{
-"rank": 26,
-"asin": "B0F8VYDRDP",
-"name": "AULA 99 Key Keyboard, Wireless Pink Gaming Keyboard Creamy with Number Pad | Membrane Keyboard,RGB Backlit,Tri-Mode BT/2.4GHz",
-"short": "AULA 99 Key Keyboard Membrane Keyboard,RGB Backlit,Tri-Mode",
-"img": "https://images-na.ssl-images-amazon.com/images/I/61VrVSiIRGL._AC_SL400_.jpg",
-"url": "https://www.amazon.com/dp/B0F8VYDRDP?tag=steelgames-20",
 "kind": "keyboard"
 },
 {
